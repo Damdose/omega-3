@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Nutrition et santé naturelle | EQOLOGY</title>
+  <meta name="description" content="Articles et ressources sur la nutrition, les oméga-3 et la naturopathie. Conseils pratiques pour enrichir votre pratique.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
+            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+            
+          },
+          fontFamily: {
+            serif: ['Space Grotesk', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAFAF8; }
+    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+    
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-answer.open { max-height: 500px; }
+    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-chevron.open { transform: rotate(180deg); }
+    .stat-number { font-variant-numeric: tabular-nums; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-6px); }
+  </style>
+</head>
+<body class="antialiased text-navy-900 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <div class="bg-white/80 backdrop-blur-xl rounded-2xl border border-glacier-100/50 shadow-sm px-6 py-3">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="font-serif text-xl font-bold tracking-tight text-navy-800">
+            eqology <span class="text-glacier-500">×</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">fena</span>
+          </a>
+          <div class="hidden md:flex items-center gap-1">
+            <a href="index.html" class="px-4 py-2 text-sm font-medium text-navy-800 hover:text-glacier-600 hover:bg-glacier-50 rounded-xl transition-all duration-300">Accueil</a>
+            <div class="relative group">
+              <button class="px-4 py-2 text-sm font-medium text-navy-800 hover:text-glacier-600 hover:bg-glacier-50 rounded-xl transition-all duration-300 inline-flex items-center gap-1 cursor-pointer">
+                Produits
+                <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div class="bg-white/95 backdrop-blur-xl rounded-xl border border-glacier-100/50 shadow-lg p-2 min-w-[200px]">
+                  <a href="omega-de-confiance.html" class="block px-4 py-2.5 text-sm text-navy-800 hover:bg-glacier-50 rounded-lg transition-all duration-200">Oméga-3 de confiance</a>
+                  <a href="produit-omega3.html" class="block px-4 py-2.5 text-sm text-navy-800 hover:bg-glacier-50 rounded-lg transition-all duration-200">Oméga 3 supérieur</a>
+                </div>
+              </div>
+            </div>
+            <a href="a-propos.html" class="px-4 py-2 text-sm font-medium text-navy-800 hover:text-glacier-600 hover:bg-glacier-50 rounded-xl transition-all duration-300">À propos</a>
+            <a href="blog.html" class="px-4 py-2 text-sm font-medium text-navy-700 bg-glacier-50 rounded-xl">Blog</a>
+          </div>
+          <a href="candidature.html" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-sm shadow-navy-700/20">
+            Parlons-en
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-navy-800 cursor-pointer" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2">
+      <div class="bg-white/95 backdrop-blur-xl rounded-2xl border border-glacier-100/50 shadow-lg p-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 text-sm font-medium text-navy-800 hover:bg-glacier-50 rounded-xl">Accueil</a>
+        <a href="omega-de-confiance.html" class="block px-4 py-3 text-sm font-medium text-navy-800 hover:bg-glacier-50 rounded-xl">Oméga-3 de confiance</a>
+        <a href="produit-omega3.html" class="block px-4 py-3 text-sm font-medium text-navy-800 hover:bg-glacier-50 rounded-xl">Oméga 3 supérieur</a>
+        <a href="a-propos.html" class="block px-4 py-3 text-sm font-medium text-navy-800 hover:bg-glacier-50 rounded-xl">À propos</a>
+        <a href="blog.html" class="block px-4 py-3 text-sm font-medium text-navy-700 bg-glacier-50 rounded-xl">Blog</a>
+        <a href="candidature.html" class="block px-4 py-3 text-sm font-medium text-center bg-navy-700 text-white rounded-xl mt-2">Parlons-en</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-8 md:pt-40 md:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight">
+          Nutrition et <br><span class="italic font-normal">santé naturelle</span>
+        </h1>
+        <p class="mt-6 text-lg text-navy-800/60 leading-relaxed">
+          Analyses empiriques et conseils pratiques pour nourrir votre expertise en naturopathie.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured article — large, editorial -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="article.html" class="reveal group block">
+        <div class="grid md:grid-cols-2 gap-0 bg-navy-800 rounded-[2rem] overflow-hidden">
+          <div class="aspect-[16/10] md:aspect-auto bg-navy-700/50 flex items-center justify-center min-h-[250px]">
+            <img src="assets/images/generated/14_blog_cardiac.png" alt="Santé cardiaque et oméga-3" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6 sm:p-10 md:p-14 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="px-3 py-1 bg-white/10 text-glacier-200 text-xs font-medium rounded-lg">Recherche</span>
+              <span class="text-glacier-400 text-xs">8 min de lecture</span>
+            </div>
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-white group-hover:text-glacier-200 transition-colors mb-4">L'oméga-3 et la santé cardiaque</h2>
+            <p class="text-glacier-300 leading-relaxed mb-6">Comprendre comment les acides gras essentiels protègent votre coeur : études récentes et implications pour votre pratique.</p>
+            <span class="inline-flex items-center gap-2 text-white font-medium text-sm group-hover:gap-3 transition-all">
+              Lire l'article
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Articles grid — varied sizes -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- 2 articles side by side -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <a href="article.html" class="reveal reveal-delay-1 card-hover group block bg-cream-100 rounded-3xl overflow-hidden cursor-pointer">
+          <div class="aspect-[16/9] bg-cream-100 flex items-center justify-center">
+            <img src="assets/images/generated/15_blog_cerveau.png" alt="Cerveau et nutrition" class="w-full h-full object-cover rounded-t-3xl">
+          </div>
+          <div class="p-5 sm:p-8">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-glacier-600 text-xs font-medium">Nutrition</span>
+              <span class="text-navy-800/30 text-xs">6 min</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-2">Cerveau et nutrition optimale</h3>
+            <p class="text-navy-800/50 text-sm leading-relaxed">Les mécanismes par lesquels les oméga-3 soutiennent les fonctions cognitives.</p>
+          </div>
+        </a>
+
+        <a href="article.html" class="reveal reveal-delay-2 card-hover group block bg-cream-100 rounded-3xl overflow-hidden cursor-pointer">
+          <div class="aspect-[16/9] bg-glacier-50 flex items-center justify-center">
+            <img src="assets/images/generated/16_blog_arctic.png" alt="Océan arctique — traçabilité" class="w-full h-full object-cover rounded-t-3xl">
+          </div>
+          <div class="p-5 sm:p-8">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-glacier-600 text-xs font-medium">Qualité</span>
+              <span class="text-navy-800/30 text-xs">5 min</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-2">Traçabilité et qualité des produits</h3>
+            <p class="text-navy-800/50 text-sm leading-relaxed">Comment vérifier la qualité d'un oméga-3 : Totox, certifications et traçabilité.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Smaller articles — list style -->
+      <div class="reveal space-y-4">
+        <a href="article.html" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
+          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
+            <img src="assets/images/generated/13_diagnostic.png" alt="Fidélisation clients" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-glacier-600 text-xs font-medium">Pratique</span>
+              <span class="text-navy-800/30 text-xs">4 min</span>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Fidéliser vos clients avec des résultats mesurables</h3>
+            <p class="text-navy-800/50 text-sm">Le test oméga-3 comme outil de diagnostic et de fidélisation en cabinet.</p>
+          </div>
+        </a>
+
+        <a href="article.html" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
+          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
+            <img src="assets/images/generated/08_halal_kosher.png" alt="Régimes halal et kascher" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-navy-500 text-xs font-medium">Inclusivité</span>
+              <span class="text-navy-800/30 text-xs">5 min</span>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Régimes spécifiques : halal, kascher et au-delà</h3>
+            <p class="text-navy-800/50 text-sm">Comment proposer une solution adaptée à chaque conviction alimentaire.</p>
+          </div>
+        </a>
+
+        <a href="article.html" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
+          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
+            <img src="assets/images/generated/18_omega_inclusivite.png" alt="Immunité et santé oculaire" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-glacier-600 text-xs font-medium">Science</span>
+              <span class="text-navy-800/30 text-xs">7 min</span>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Immunité et santé oculaire : les mécanismes</h3>
+            <p class="text-navy-800/50 text-sm">Le rôle de la lutéine, de la vitamine A et du DHA dans la protection visuelle.</p>
+          </div>
+        </a>
+
+        <a href="article.html" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
+          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
+            <img src="assets/images/generated/04_fullspectrum_omega.png" alt="Développer ses revenus" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-navy-800/70 text-xs font-medium">Business</span>
+              <span class="text-navy-800/30 text-xs">3 min</span>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Développer ses revenus en naturopathie</h3>
+            <p class="text-navy-800/50 text-sm">Le modèle EQOLOGY : de 6 000 euros la première année à 27 000 euros en cinq ans.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div>
+          <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-white">eqology <span class="text-glacier-400">×</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">fena</span></a>
+          <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.<br>Partenaire officiel FENA.</p>
+        </div>
+        <div>
+          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Explorer</h4>
+          <ul class="space-y-3 text-sm"><li><a href="omega-de-confiance.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Produits</a></li><li><a href="produit-omega3.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Oméga 3 supérieur</a></li><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li></ul>
+        </div>
+        <div>
+          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Informations</h4>
+          <ul class="space-y-3 text-sm"><li><a href="index.html#faq" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">FAQ</a></li><li><a href="#" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Certifications</a></li><li><a href="#" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Études scientifiques</a></li></ul>
+        </div>
+        <div>
+          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Contact</h4>
+          <ul class="space-y-3 text-sm"><li><a href="candidature.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Prendre rendez-vous</a></li></ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-cream-400/60 text-sm">&copy; 2025 YAC — EQOLOGY. Tous droits réservés.</p>
+        <div class="flex items-center gap-6 text-sm text-cream-400/60">
+          <a href="#" class="hover:text-white transition-colors duration-300 cursor-pointer">Confidentialité</a>
+          <a href="#" class="hover:text-white transition-colors duration-300 cursor-pointer">Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="components.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

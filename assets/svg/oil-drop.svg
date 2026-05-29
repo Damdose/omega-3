@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" rx="24" fill="#eef8f9"/>
+  <!-- Large oil drop -->
+  <path d="M200 80 Q200 80 240 160 Q280 240 280 300 Q280 360 240 390 Q210 410 200 410 Q190 410 160 390 Q120 360 120 300 Q120 240 160 160 Q200 80 200 80Z" fill="#d5eff2" stroke="#4DA8B5" stroke-width="2.5"/>
+  <!-- Inner highlight -->
+  <path d="M200 120 Q215 160 230 210 Q245 260 245 300 Q245 340 220 360 Q200 375 200 375" stroke="white" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <!-- Small omega-3 molecules floating -->
+  <g opacity="0.6">
+    <circle cx="170" cy="250" r="6" fill="#4DA8B5"/>
+    <circle cx="155" cy="265" r="4" fill="#4DA8B5" opacity="0.7"/>
+    <circle cx="178" cy="275" r="3" fill="#4DA8B5" opacity="0.5"/>
+    <circle cx="220" cy="270" r="5" fill="#4DA8B5"/>
+    <circle cx="235" cy="285" r="3.5" fill="#4DA8B5" opacity="0.7"/>
+    <circle cx="195" cy="310" r="4.5" fill="#4DA8B5" opacity="0.6"/>
+    <circle cx="210" cy="330" r="3" fill="#4DA8B5" opacity="0.4"/>
+    <circle cx="180" cy="340" r="5" fill="#4DA8B5" opacity="0.5"/>
+  </g>
+  <!-- EPA / DHA labels -->
+  <g font-family="DM Sans, sans-serif" font-size="11" font-weight="600">
+    <text x="152" y="250" fill="#0B1D2E" opacity="0.7">EPA</text>
+    <text x="222" y="272" fill="#0B1D2E" opacity="0.7">DHA</text>
+  </g>
+  <!-- Bottom text -->
+  <text x="200" y="448" text-anchor="middle" font-family="Space Grotesk, Georgia, serif" font-size="16" font-weight="600" fill="#0B1D2E">3 435 mg</text>
+  <text x="200" y="468" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#0B1D2E" opacity="0.5">oméga-3 par dose de 15 ml</text>
+  <!-- Arctic wave at bottom -->
+  <path d="M0 420 Q50 410 100 420 Q150 430 200 420 Q250 410 300 420 Q350 430 400 420 L400 500 L0 500Z" fill="#4DA8B5" opacity="0.08"/>
+</svg>

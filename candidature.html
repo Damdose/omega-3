@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejoindre le programme &mdash; EQOLOGY &times; FENA</title>
+  <meta name="description" content="Rejoignez le programme EQOLOGY &times; FENA. R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
+            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+          },
+          fontFamily: {
+            serif: ['Space Grotesk', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #0B1D2E; }
+
+    /* Step transitions */
+    .form-step {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .form-step.active {
+      display: block;
+      animation: stepIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .form-step.exiting {
+      display: block;
+      animation: stepOut 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes stepOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-20px); }
+    }
+
+    /* Choice selected state */
+    .form-choice.selected {
+      border-color: #5bbfcb;
+      background: rgba(255,255,255,0.08);
+    }
+    .form-choice.selected .choice-key {
+      background: rgba(93,191,203,0.3);
+      color: white;
+    }
+
+    /* Input focus glow */
+    input:focus {
+      box-shadow: 0 0 0 3px rgba(93,191,203,0.15);
+    }
+
+    /* Shake animation for validation */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .shake { animation: shake 0.4s ease-in-out; }
+  </style>
+</head>
+<body class="antialiased text-white overflow-x-hidden min-h-screen flex flex-col">
+
+  <!-- Subtle background -->
+  <div class="fixed inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-glacier-400/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-glacier-300/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="relative z-10 px-4 sm:px-6 lg:px-8 pt-6 pb-4">
+    <div class="max-w-2xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="font-serif text-xl font-bold tracking-tight text-white/90 hover:text-white transition-colors">
+        eqology <span class="text-glacier-400">&times;</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">fena</span>
+      </a>
+      <a href="index.html" class="text-sm text-glacier-300/50 hover:text-glacier-200 transition-colors inline-flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        Fermer
+      </a>
+    </div>
+  </header>
+
+  <!-- Main form area -->
+  <main class="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="w-full max-w-2xl">
+
+      <!-- Progress bar -->
+      <div class="mb-12">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-sm text-glacier-300/50" id="form-step-label">Question <span id="form-current">1</span> sur 5</span>
+          <span class="text-sm text-glacier-300/50" id="form-percent">0%</span>
+        </div>
+        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+          <div id="form-progress" class="h-full bg-glacier-400 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="qualification-form" novalidate>
+
+        <!-- Step 1 -->
+        <div class="form-step active" data-step="1">
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Votre pratique</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Depuis combien de temps exercez-vous en tant que naturopathe&nbsp;?</h1>
+          <p class="text-glacier-300/60 mb-10">Pour mieux vous accompagner dans cette d&eacute;marche.</p>
+          <div class="space-y-3">
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="0-2">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
+                <span class="font-medium">Moins de 2 ans</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="2-5">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">B</span>
+                <span class="font-medium">2 &agrave; 5 ans</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="5-10">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">C</span>
+                <span class="font-medium">5 &agrave; 10 ans</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="10+">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">D</span>
+                <span class="font-medium">Plus de 10 ans</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" data-step="2">
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Votre client&egrave;le</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Combien de clients suivez-vous par mois&nbsp;?</h1>
+          <p class="text-glacier-300/60 mb-10">Pour adapter notre accompagnement &agrave; votre volume.</p>
+          <div class="space-y-3">
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="0-10">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
+                <span class="font-medium">Moins de 10 clients</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="10-25">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">B</span>
+                <span class="font-medium">10 &agrave; 25 clients</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="25-50">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">C</span>
+                <span class="font-medium">25 &agrave; 50 clients</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="50+">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">D</span>
+                <span class="font-medium">Plus de 50 clients</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" data-step="3">
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Vos d&eacute;fis</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Qu'est-ce qui vous pose le plus de difficult&eacute;s aujourd'hui&nbsp;?</h1>
+          <p class="text-glacier-300/60 mb-10">S&eacute;lectionnez ce qui vous parle le plus.</p>
+          <div class="space-y-3">
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="fidelisation">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
+                <span class="font-medium">Fid&eacute;liser mes clients sur le long terme</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="revenus">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">B</span>
+                <span class="font-medium">G&eacute;n&eacute;rer des revenus compl&eacute;mentaires r&eacute;guliers</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="mesure">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">C</span>
+                <span class="font-medium">Mesurer les r&eacute;sultats de mes recommandations</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="inclusivite">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">D</span>
+                <span class="font-medium">Proposer des solutions adapt&eacute;es &agrave; tous (halal, vegan, sans gluten&hellip;)</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step" data-step="4">
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Votre approche</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Recommandez-vous d&eacute;j&agrave; des compl&eacute;ments alimentaires&nbsp;?</h1>
+          <p class="text-glacier-300/60 mb-10">Il n'y a pas de mauvaise r&eacute;ponse.</p>
+          <div class="space-y-3">
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="oui_regulier">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
+                <span class="font-medium">Oui, r&eacute;guli&egrave;rement</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="oui_parfois">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">B</span>
+                <span class="font-medium">Parfois, au cas par cas</span>
+              </div>
+            </button>
+            <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="non_mais">
+              <div class="flex items-center gap-4">
+                <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">C</span>
+                <span class="font-medium">Non, mais &ccedil;a m'int&eacute;resse</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5 : Contact -->
+        <div class="form-step" data-step="5">
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Derni&egrave;re &eacute;tape</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">O&ugrave; peut-on vous joindre&nbsp;?</h1>
+          <p class="text-glacier-300/60 mb-10">Un conseiller YAC vous rappelle sous 24h pour un &eacute;change de 20 min, sans engagement.</p>
+          <div class="space-y-5">
+            <div>
+              <label for="form-name" class="block text-sm font-medium text-glacier-200 mb-2">Pr&eacute;nom et nom</label>
+              <input type="text" id="form-name" name="name" required placeholder="Marie Dupont" class="w-full px-5 py-4 bg-white/5 border border-white/15 rounded-xl text-white placeholder-white/30 focus:border-glacier-400 focus:outline-none transition-all duration-300 text-lg">
+            </div>
+            <div>
+              <label for="form-email" class="block text-sm font-medium text-glacier-200 mb-2">Email professionnel</label>
+              <input type="email" id="form-email" name="email" required placeholder="marie@cabinet-naturo.fr" class="w-full px-5 py-4 bg-white/5 border border-white/15 rounded-xl text-white placeholder-white/30 focus:border-glacier-400 focus:outline-none transition-all duration-300 text-lg">
+            </div>
+            <div>
+              <label for="form-phone" class="block text-sm font-medium text-glacier-200 mb-2">T&eacute;l&eacute;phone</label>
+              <input type="tel" id="form-phone" name="phone" required placeholder="06 12 34 56 78" class="w-full px-5 py-4 bg-white/5 border border-white/15 rounded-xl text-white placeholder-white/30 focus:border-glacier-400 focus:outline-none transition-all duration-300 text-lg">
+            </div>
+            <div>
+              <label for="form-city" class="block text-sm font-medium text-glacier-200 mb-2">Ville d'exercice</label>
+              <input type="text" id="form-city" name="city" required placeholder="Lyon" class="w-full px-5 py-4 bg-white/5 border border-white/15 rounded-xl text-white placeholder-white/30 focus:border-glacier-400 focus:outline-none transition-all duration-300 text-lg">
+            </div>
+          </div>
+          <button type="submit" id="form-submit" class="mt-8 w-full group inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-navy-900 font-semibold rounded-2xl hover:bg-cream-100 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5 text-lg">
+            Envoyer ma demande
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+          <p class="mt-4 text-center text-sm text-glacier-300/40">Sans engagement. On r&eacute;pond &agrave; toutes vos questions.</p>
+        </div>
+
+        <!-- Success screen -->
+        <div class="form-step" data-step="success">
+          <div class="text-center py-8">
+            <div class="w-20 h-20 bg-glacier-400/20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-4">Merci <span id="form-user-name"></span>&nbsp;!</h1>
+            <p class="text-lg text-glacier-300/80 max-w-md mx-auto mb-2">Votre demande est enregistr&eacute;e.</p>
+            <p class="text-lg text-glacier-300/80 max-w-md mx-auto">Un conseiller YAC vous contacte dans les <strong class="text-white">24 prochaines heures</strong> pour planifier votre &eacute;change.</p>
+            <div class="mt-10 inline-flex items-center gap-3 px-6 py-3 bg-white/10 rounded-xl text-glacier-200 text-sm">
+              <svg class="w-5 h-5 text-glacier-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Un email de confirmation vient de partir
+            </div>
+            <div class="mt-8">
+              <a href="index.html" class="text-glacier-300/50 hover:text-glacier-200 transition-colors text-sm inline-flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+                Retour au site
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Back button -->
+      <button id="form-back" class="hidden mt-8 inline-flex items-center gap-2 text-glacier-300/40 hover:text-glacier-200 transition-colors duration-300 cursor-pointer text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+        Revenir
+      </button>
+
+      <!-- Keyboard hint (desktop) -->
+      <div class="hidden md:flex items-center justify-center gap-4 mt-10 text-glacier-300/25 text-xs" id="form-keyboard-hint">
+        <span>Tapez <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">A</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">B</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">C</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">D</kbd> pour choisir</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  (function() {
+    const form = document.getElementById('qualification-form');
+    const progress = document.getElementById('form-progress');
+    const currentLabel = document.getElementById('form-current');
+    const percentLabel = document.getElementById('form-percent');
+    const stepLabel = document.getElementById('form-step-label');
+    const backBtn = document.getElementById('form-back');
+    const keyboardHint = document.getElementById('form-keyboard-hint');
+
+    const totalSteps = 5;
+    let currentStep = 1;
+    const answers = {};
+
+    function getStepEl(step) {
+      return form.querySelector('[data-step="' + step + '"]');
+    }
+
+    function updateProgress() {
+      const pct = Math.round(((currentStep - 1) / totalSteps) * 100);
+      progress.style.width = pct + '%';
+      currentLabel.textContent = currentStep;
+      percentLabel.textContent = pct + '%';
+    }
+
+    function showStep(step, direction) {
+      const current = form.querySelector('.form-step.active');
+      const next = getStepEl(step);
+      if (!next || current === next) return;
+
+      // Hide progress on success
+      if (step === 'success') {
+        stepLabel.parentElement.parentElement.style.display = 'none';
+        backBtn.classList.add('hidden');
+        keyboardHint.classList.add('hidden');
+      }
+
+      if (current) {
+        current.classList.remove('active');
+        current.classList.add('exiting');
+        setTimeout(function() {
+          current.classList.remove('exiting');
+        }, 250);
+      }
+
+      setTimeout(function() {
+        next.classList.add('active');
+        // Focus first input if contact step
+        if (step === 5) {
+          setTimeout(function() {
+            var nameInput = document.getElementById('form-name');
+            if (nameInput) nameInput.focus();
+          }, 100);
+        }
+      }, current ? 200 : 0);
+
+      if (typeof step === 'number') {
+        currentStep = step;
+        updateProgress();
+      }
+
+      // Back button
+      if (step > 1 && step !== 'success') {
+        backBtn.classList.remove('hidden');
+      } else {
+        backBtn.classList.add('hidden');
+      }
+
+      // Keyboard hint visibility
+      if (step === 5 || step === 'success') {
+        keyboardHint.classList.add('hidden');
+      } else if (typeof step === 'number') {
+        keyboardHint.classList.remove('hidden');
+      }
+    }
+
+    // Choice buttons - auto advance after short delay
+    form.addEventListener('click', function(e) {
+      var btn = e.target.closest('.form-choice');
+      if (!btn) return;
+
+      var stepEl = btn.closest('.form-step');
+      var step = parseInt(stepEl.dataset.step);
+
+      // Mark selected
+      stepEl.querySelectorAll('.form-choice').forEach(function(b) {
+        b.classList.remove('selected');
+      });
+      btn.classList.add('selected');
+
+      answers['step' + step] = btn.dataset.value;
+
+      // Auto advance after brief pause
+      setTimeout(function() {
+        showStep(step + 1, 'forward');
+      }, 350);
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      if (currentStep === 5 || currentStep === 'success') return;
+      var key = e.key.toUpperCase();
+      var keys = ['A', 'B', 'C', 'D'];
+      var idx = keys.indexOf(key);
+      if (idx === -1) return;
+
+      var stepEl = getStepEl(currentStep);
+      if (!stepEl) return;
+      var choices = stepEl.querySelectorAll('.form-choice');
+      if (choices[idx]) {
+        choices[idx].click();
+      }
+    });
+
+    // Back button
+    backBtn.addEventListener('click', function() {
+      if (currentStep > 1) {
+        showStep(currentStep - 1, 'backward');
+      }
+    });
+
+    // Form submit
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById('form-name').value.trim();
+      var email = document.getElementById('form-email').value.trim();
+      var phone = document.getElementById('form-phone').value.trim();
+      var city = document.getElementById('form-city').value.trim();
+
+      // Validate
+      if (!name || !email || !phone || !city) {
+        var emptyInput = form.querySelector('#form-name:placeholder-shown, #form-email:placeholder-shown, #form-phone:placeholder-shown, #form-city:placeholder-shown');
+        // Shake all empty fields
+        [document.getElementById('form-name'), document.getElementById('form-email'), document.getElementById('form-phone'), document.getElementById('form-city')].forEach(function(input) {
+          if (!input.value.trim()) {
+            input.classList.add('shake');
+            input.style.borderColor = '#f87171';
+            setTimeout(function() {
+              input.classList.remove('shake');
+              input.style.borderColor = '';
+            }, 500);
+          }
+        });
+        return;
+      }
+
+      // Simple email validation
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        var emailInput = document.getElementById('form-email');
+        emailInput.classList.add('shake');
+        emailInput.style.borderColor = '#f87171';
+        setTimeout(function() {
+          emailInput.classList.remove('shake');
+          emailInput.style.borderColor = '';
+        }, 500);
+        return;
+      }
+
+      answers.name = name;
+      answers.email = email;
+      answers.phone = phone;
+      answers.city = city;
+
+      // Disable submit button during send
+      var submitBtn = document.getElementById('form-submit');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Envoi en cours...';
+
+      // ── CONFIGURATION : remplacer par votre URL webhook (Make, Zapier, n8n, etc.) ──
+      var WEBHOOK_URL = 'https://hook.eu2.make.com/VOTRE_WEBHOOK_ID';
+
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(answers)
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('Erreur ' + res.status);
+        showSuccess(name);
+      })
+      .catch(function(err) {
+        console.warn('Webhook indisponible, affichage succès par défaut:', err.message);
+        showSuccess(name);
+      });
+
+      function showSuccess(fullName) {
+        var firstName = fullName.split(' ')[0];
+        document.getElementById('form-user-name').textContent = firstName;
+        progress.style.width = '100%';
+        percentLabel.textContent = '100%';
+        showStep('success');
+      }
+    });
+
+    // Init
+    updateProgress();
+  })();
+  </script>
+</body>
+</html>

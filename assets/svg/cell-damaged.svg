@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <!-- Damaged cell membrane — rigid, impermeable -->
+  <rect width="400" height="400" rx="24" fill="#f0f3f6"/>
+  <!-- Cell body — irregular shape -->
+  <path d="M90 180 Q110 140 160 150 Q200 130 240 145 Q290 135 310 170 Q330 210 315 250 Q300 290 250 290 Q200 300 150 285 Q100 280 85 240 Q75 210 90 180Z" fill="#d9e0e8" stroke="#8da2ba" stroke-width="3"/>
+  <!-- Rigid membrane (jagged) -->
+  <path d="M85 200 L105 195 L115 205 L135 192 L150 203 L170 190 L185 205 L205 192 L220 200 L240 188 L255 202 L275 190 L290 200 L310 195 L320 205" stroke="#6783a3" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Nucleus — stressed -->
+  <circle cx="205" cy="210" r="30" fill="#8da2ba" opacity="0.3"/>
+  <circle cx="205" cy="210" r="15" fill="#8da2ba" opacity="0.4"/>
+  <!-- Nutrients blocked (X marks) -->
+  <g stroke="#c44" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+    <line x1="60" y1="150" x2="80" y2="165"/>
+    <line x1="72" y1="148" x2="68" y2="167"/>
+    <line x1="55" y1="225" x2="75" y2="235"/>
+    <line x1="67" y1="222" x2="63" y2="238"/>
+    <line x1="65" y1="270" x2="82" y2="278"/>
+    <line x1="76" y1="266" x2="71" y2="282"/>
+  </g>
+  <!-- Waste accumulating (dots stuck inside) -->
+  <circle cx="160" cy="230" r="5" fill="#c44" opacity="0.3"/>
+  <circle cx="240" cy="245" r="4" fill="#c44" opacity="0.3"/>
+  <circle cx="190" cy="260" r="6" fill="#c44" opacity="0.25"/>
+  <circle cx="225" cy="220" r="3.5" fill="#c44" opacity="0.35"/>
+  <!-- Inflammation indicator -->
+  <circle cx="200" cy="200" r="90" fill="none" stroke="#c44" stroke-width="1" stroke-dasharray="4 6" opacity="0.3"/>
+  <!-- Label -->
+  <text x="200" y="350" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#0B1D2E">Cellule endommagée</text>
+  <text x="200" y="370" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#0B1D2E" opacity="0.5">Membrane rigide — inflammations silencieuses</text>
+</svg>

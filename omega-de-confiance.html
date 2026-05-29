@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oméga-3 de confiance — EQOLOGY</title>
+  <meta name="description" content="Formules pures, traçables et adaptées à tous les régimes alimentaires et croyances.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
+            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+          },
+          fontFamily: {
+            serif: ['Space Grotesk', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAFAF8; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-4px); }
+    .faq-answer { max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-answer.open { max-height: 500px; padding-bottom: 1.5rem; }
+    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-chevron.open { transform: rotate(45deg); }
+  </style>
+</head>
+<body class="antialiased text-navy-900 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50"></nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Excellence</span>
+      <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mt-4">
+        Oméga-3 de confiance
+      </h1>
+      <p class="mt-6 text-lg text-navy-800/60 leading-relaxed max-w-2xl mx-auto">
+        Formules pures, traçables et adaptées à tous les régimes alimentaires et croyances.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4 justify-center">
+        <a href="#gamme" class="inline-flex items-center justify-center px-8 py-4 bg-navy-700 text-white font-medium rounded-2xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-lg shadow-navy-700/20">
+          Découvrir
+        </a>
+        <a href="candidature.html" class="inline-flex items-center justify-center px-8 py-4 bg-cream-100 text-navy-800 font-medium rounded-2xl hover:bg-cream-200 transition-all cursor-pointer border border-cream-200">
+          Rendez-vous
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gamme — Quatre solutions -->
+  <section id="gamme" class="py-20 md:py-28 bg-cream-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center mb-14">
+        <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Gamme</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-4 leading-tight">
+          Quatre solutions pour votre<br>pratique
+        </h2>
+        <p class="mt-4 text-navy-800/60 text-lg max-w-xl mx-auto">
+          Chaque formule répond à des besoins spécifiques de vos clients
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <a href="produit-omega3.html" class="reveal reveal-delay-1 card-hover group">
+          <div class="bg-navy-800 rounded-2xl p-6 h-full flex flex-col justify-between min-h-[260px]">
+            <div>
+              <div class="w-full aspect-[4/3] bg-navy-700/50 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+                <img src="assets/images/generated/04_fullspectrum_omega.png" alt="Oméga-3 full spectrum" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white leading-snug">Oméga-3 full spectrum du cabillaud</h3>
+              <p class="text-glacier-300 text-sm mt-2 leading-relaxed">Formules certifiées pour toutes les exigences.</p>
+            </div>
+            <span class="inline-flex items-center gap-2 text-glacier-300 text-sm font-medium mt-4 group-hover:gap-3 transition-all duration-300">
+              Découvrir
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <div class="reveal reveal-delay-2 card-hover group cursor-pointer">
+          <div class="bg-navy-800 rounded-2xl p-6 h-full flex flex-col justify-between min-h-[260px]">
+            <div>
+              <div class="w-full aspect-[4/3] bg-navy-700/50 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+                <img src="assets/images/generated/19_gamme_vegan.png" alt="Oméga-3 vegan microalgues" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white leading-snug">Oméga-3 vegan des microalgues</h3>
+              <p class="text-glacier-300 text-sm mt-2 leading-relaxed">Efficacité végétale certifiée et traçable.</p>
+            </div>
+            <span class="inline-flex items-center gap-2 text-glacier-300 text-sm font-medium mt-4 group-hover:gap-3 transition-all duration-300">
+              Découvrir
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-hover group cursor-pointer">
+          <div class="bg-navy-800 rounded-2xl p-6 h-full flex flex-col justify-between min-h-[260px]">
+            <div>
+              <div class="w-full aspect-[4/3] bg-navy-700/50 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+                <img src="assets/images/generated/20_gamme_diagnostic.png" alt="Tests de diagnostic oméga-3" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white leading-snug">Tests de diagnostic oméga-3</h3>
+              <p class="text-glacier-300 text-sm mt-2 leading-relaxed">Mesurer pour convaincre et fidéliser.</p>
+            </div>
+            <span class="inline-flex items-center gap-2 text-glacier-300 text-sm font-medium mt-4 group-hover:gap-3 transition-all duration-300">
+              Découvrir
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-4 card-hover group cursor-pointer">
+          <div class="bg-navy-800 rounded-2xl p-6 h-full flex flex-col justify-between min-h-[260px]">
+            <div>
+              <div class="w-full aspect-[4/3] bg-navy-700/50 rounded-xl mb-5 flex items-center justify-center overflow-hidden">
+                <img src="assets/images/generated/21_gamme_complements.png" alt="Compléments associés et synergies" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-serif text-lg font-bold text-white leading-snug">Compléments associés et synergies</h3>
+              <p class="text-glacier-300 text-sm mt-2 leading-relaxed">Vitamines, antioxydants et coenzyme Q10.</p>
+            </div>
+            <span class="inline-flex items-center gap-2 text-glacier-300 text-sm font-medium mt-4 group-hover:gap-3 transition-all duration-300">
+              Découvrir
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traçabilité -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Traçabilité</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-4 leading-tight">
+            Pureté vérifiée de la source à la bouteille
+          </h2>
+          <p class="mt-6 text-navy-800/60 text-lg leading-relaxed max-w-lg">
+            Chaque lot provient de morue sauvage de l'Arctique, pêchée selon les standards de durabilité les plus stricts. Aucun métal lourd, aucun compromis sur la qualité.
+          </p>
+          <div class="mt-8 space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-glacier-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-navy-800/70 text-sm">Certification MSC pour pêche durable</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-glacier-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-navy-800/70 text-sm">Standards GOED mondiaux respectés</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-glacier-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-navy-800/70 text-sm">Validé par la liste de Cologne antidopage</p>
+            </div>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="candidature.html" class="inline-flex items-center justify-center px-6 py-3 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer text-sm">Rendez-vous</a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 text-navy-800 font-medium rounded-xl hover:bg-cream-100 transition-all cursor-pointer text-sm">En savoir plus <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="bg-cream-200 rounded-[2rem] aspect-square flex items-center justify-center overflow-hidden">
+            <img src="assets/images/generated/05_hero_omega.png" alt="Fjords norvégiens — traçabilité" class="w-full h-full object-cover rounded-[2rem]">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formule -->
+  <section class="py-24 md:py-32 bg-cream-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal order-2 lg:order-1">
+          <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Formule</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-4 leading-tight">
+            Une synergie complète pour la santé
+          </h2>
+          <p class="mt-6 text-navy-800/60 text-lg leading-relaxed max-w-lg">
+            L'oméga-3 arctique s'unit à l'huile d'olive pure, pressée à froid, enrichie de vitamines A et D, lutéine et coenzyme Q10. Une formule liquide innovante, naturelle et dosée pour résultats mesurables.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="candidature.html" class="inline-flex items-center justify-center px-6 py-3 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer text-sm">Rendez-vous</a>
+            <a href="produit-omega3.html" class="inline-flex items-center gap-2 px-6 py-3 text-navy-800 font-medium rounded-xl hover:bg-cream-200 transition-all cursor-pointer text-sm">Détails <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <div class="bg-cream-200 rounded-[2rem] aspect-square flex items-center justify-center overflow-hidden">
+            <img src="assets/images/generated/06_formule_omega.png" alt="Synergie oméga-3" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inclusif -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <div class="bg-gradient-to-br from-glacier-50 to-cream-100 rounded-[2rem] aspect-[4/5] flex items-center justify-center overflow-hidden p-8">
+            <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <defs>
+                <!-- Floating animation keyframes -->
+                <style>
+                  @keyframes floatUp { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+                  @keyframes floatDown { 0%,100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+                  @keyframes floatSlow { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+                  @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+                  @keyframes scaleIn { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+                  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                  .float-1 { animation: floatUp 4s ease-in-out infinite; }
+                  .float-2 { animation: floatDown 5s ease-in-out infinite 0.5s; }
+                  .float-3 { animation: floatSlow 6s ease-in-out infinite 1s; }
+                  .float-4 { animation: floatUp 5.5s ease-in-out infinite 1.5s; }
+                  .pulse-soft { animation: pulse 3s ease-in-out infinite; }
+                  .scale-breathe { animation: scaleIn 4s ease-in-out infinite; }
+                  .orbit { animation: spin 20s linear infinite; transform-origin: 200px 250px; }
+                </style>
+              </defs>
+
+              <!-- Background decorative circles -->
+              <circle cx="200" cy="250" r="160" fill="#4DA8B5" opacity="0.06" class="scale-breathe"/>
+              <circle cx="200" cy="250" r="120" fill="#4DA8B5" opacity="0.08" class="scale-breathe" style="animation-delay:0.5s"/>
+              <circle cx="200" cy="250" r="80" fill="#4DA8B5" opacity="0.1" class="scale-breathe" style="animation-delay:1s"/>
+
+              <!-- Orbiting dots -->
+              <g class="orbit" opacity="0.15">
+                <circle cx="200" cy="90" r="3" fill="#4DA8B5"/>
+                <circle cx="310" cy="250" r="2.5" fill="#3d8691"/>
+                <circle cx="200" cy="410" r="3" fill="#4DA8B5"/>
+                <circle cx="90" cy="250" r="2.5" fill="#3d8691"/>
+              </g>
+
+              <!-- Central capsule / bottle shape -->
+              <g class="float-2" style="transform-origin: 200px 250px;">
+                <!-- Bottle body -->
+                <rect x="165" y="190" width="70" height="120" rx="20" fill="#253c5e" opacity="0.9"/>
+                <!-- Bottle neck -->
+                <rect x="182" y="170" width="36" height="30" rx="6" fill="#253c5e" opacity="0.9"/>
+                <!-- Bottle cap -->
+                <rect x="180" y="160" width="40" height="16" rx="5" fill="#4DA8B5"/>
+                <!-- Bottle label -->
+                <rect x="175" y="215" width="50" height="50" rx="6" fill="white" opacity="0.9"/>
+                <!-- Omega symbol on label -->
+                <text x="200" y="248" text-anchor="middle" font-size="24" font-weight="700" fill="#253c5e" font-family="serif">&#937;</text>
+                <!-- "3" subscript -->
+                <text x="216" y="254" text-anchor="middle" font-size="12" font-weight="600" fill="#4DA8B5" font-family="sans-serif">3</text>
+                <!-- Shine effect -->
+                <rect x="220" y="195" width="4" height="40" rx="2" fill="white" opacity="0.3"/>
+              </g>
+
+              <!-- Halal badge (top-left) -->
+              <g class="float-1" style="transform-origin: 90px 140px;">
+                <circle cx="90" cy="140" r="42" fill="white" stroke="#4DA8B5" stroke-width="2"/>
+                <circle cx="90" cy="140" r="36" fill="white" stroke="#4DA8B5" stroke-width="0.5" opacity="0.5"/>
+                <!-- Crescent moon -->
+                <path d="M82 125 A18 18 0 1 0 82 155 A14 14 0 1 1 82 125Z" fill="#4DA8B5" opacity="0.85"/>
+                <!-- Star -->
+                <polygon points="100,128 102,134 108,134 103,138 105,144 100,140 95,144 97,138 92,134 98,134" fill="#4DA8B5" opacity="0.85"/>
+                <text x="90" y="168" text-anchor="middle" font-size="8" font-weight="600" fill="#253c5e" font-family="sans-serif" letter-spacing="0.5">HALAL</text>
+              </g>
+
+              <!-- Kosher badge (top-right) -->
+              <g class="float-3" style="transform-origin: 310px 140px;">
+                <circle cx="310" cy="140" r="42" fill="white" stroke="#4DA8B5" stroke-width="2"/>
+                <circle cx="310" cy="140" r="36" fill="white" stroke="#4DA8B5" stroke-width="0.5" opacity="0.5"/>
+                <!-- Star of David -->
+                <polygon points="310,112 322,136 298,136" fill="none" stroke="#4DA8B5" stroke-width="2.5"/>
+                <polygon points="310,158 298,134 322,134" fill="none" stroke="#4DA8B5" stroke-width="2.5"/>
+                <!-- K inside -->
+                <text x="310" y="141" text-anchor="middle" font-size="14" font-weight="700" fill="#253c5e" font-family="serif">K</text>
+                <text x="310" y="168" text-anchor="middle" font-size="8" font-weight="600" fill="#253c5e" font-family="sans-serif" letter-spacing="0.5">KASCHER</text>
+              </g>
+
+              <!-- Gluten-free badge (bottom) -->
+              <g class="float-4" style="transform-origin: 200px 410px;">
+                <circle cx="200" cy="400" r="42" fill="white" stroke="#4DA8B5" stroke-width="2"/>
+                <circle cx="200" cy="400" r="36" fill="white" stroke="#4DA8B5" stroke-width="0.5" opacity="0.5"/>
+                <!-- Wheat crossed out -->
+                <g transform="translate(200, 395)">
+                  <!-- Wheat stalk -->
+                  <line x1="0" y1="-15" x2="0" y2="15" stroke="#C8C3B5" stroke-width="2"/>
+                  <ellipse cx="-4" cy="-10" rx="4" ry="7" fill="#C8C3B5" opacity="0.7"/>
+                  <ellipse cx="4" cy="-10" rx="4" ry="7" fill="#C8C3B5" opacity="0.7"/>
+                  <ellipse cx="-4" cy="-1" rx="4" ry="7" fill="#C8C3B5" opacity="0.7"/>
+                  <ellipse cx="4" cy="-1" rx="4" ry="7" fill="#C8C3B5" opacity="0.7"/>
+                  <ellipse cx="0" cy="-17" rx="3" ry="6" fill="#C8C3B5" opacity="0.7"/>
+                  <!-- Cross-out line -->
+                  <line x1="-16" y1="-16" x2="16" y2="16" stroke="#e05252" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="16" y1="-16" x2="-16" y2="16" stroke="#e05252" stroke-width="2.5" stroke-linecap="round"/>
+                </g>
+                <text x="200" y="432" text-anchor="middle" font-size="7" font-weight="600" fill="#253c5e" font-family="sans-serif" letter-spacing="0.5">SANS GLUTEN</text>
+              </g>
+
+              <!-- Connecting dashed lines from badges to center -->
+              <line x1="125" y1="165" x2="175" y2="210" stroke="#4DA8B5" stroke-width="1" stroke-dasharray="4 4" opacity="0.3" class="pulse-soft"/>
+              <line x1="275" y1="165" x2="225" y2="210" stroke="#4DA8B5" stroke-width="1" stroke-dasharray="4 4" opacity="0.3" class="pulse-soft" style="animation-delay:1s"/>
+              <line x1="200" y1="365" x2="200" y2="315" stroke="#4DA8B5" stroke-width="1" stroke-dasharray="4 4" opacity="0.3" class="pulse-soft" style="animation-delay:2s"/>
+
+              <!-- Small decorative elements -->
+              <circle cx="55" cy="280" r="5" fill="#4DA8B5" opacity="0.15" class="float-3"/>
+              <circle cx="340" cy="300" r="7" fill="#4DA8B5" opacity="0.12" class="float-1"/>
+              <circle cx="150" cy="420" r="4" fill="#4DA8B5" opacity="0.18" class="float-2"/>
+              <circle cx="280" cy="80" r="6" fill="#4DA8B5" opacity="0.1" class="float-4"/>
+              <circle cx="120" cy="70" r="3" fill="#3d8691" opacity="0.15" class="float-2"/>
+              <circle cx="320" cy="430" r="4" fill="#3d8691" opacity="0.12" class="float-1"/>
+
+              <!-- Checkmarks near badges -->
+              <g class="float-1" style="animation-delay: 0.3s;">
+                <circle cx="128" cy="110" r="10" fill="#4DA8B5" opacity="0.9"/>
+                <polyline points="123,110 127,114 134,106" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <g class="float-3" style="animation-delay: 0.8s;">
+                <circle cx="348" cy="115" r="10" fill="#4DA8B5" opacity="0.9"/>
+                <polyline points="343,115 347,119 354,111" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <g class="float-4" style="animation-delay: 1.2s;">
+                <circle cx="242" cy="420" r="10" fill="#4DA8B5" opacity="0.9"/>
+                <polyline points="237,420 241,424 248,416" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="reveal">
+          <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Inclusif</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-4 leading-tight">
+            Respecter chaque conviction et régime
+          </h2>
+          <p class="mt-6 text-navy-800/60 text-lg leading-relaxed max-w-lg">
+            Vos clients ont des besoins différents. Nos formules s'adaptent à tous sans compromis sur l'efficacité ni la pureté.
+          </p>
+          <ul class="mt-8 space-y-3">
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-glacier-500 rounded-full shrink-0"></span><p class="text-navy-800/70">Certifié halal pour les clients musulmans</p></li>
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-glacier-500 rounded-full shrink-0"></span><p class="text-navy-800/70">Certifié kascher pour les clients juifs</p></li>
+            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-glacier-500 rounded-full shrink-0"></span><p class="text-navy-800/70">Sans gluten pour les intolérants</p></li>
+          </ul>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="candidature.html" class="inline-flex items-center justify-center px-6 py-3 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer text-sm">Rendez-vous</a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 text-navy-800 font-medium rounded-xl hover:bg-cream-100 transition-all cursor-pointer text-sm">Explorer <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Validé par la science -->
+  <section class="py-24 md:py-32 bg-cream-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center mb-14">
+        <span class="text-sm font-semibold text-glacier-600 tracking-widest uppercase">Recherche</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-4">Validé par la science</h2>
+        <p class="mt-4 text-navy-800/60 text-lg max-w-xl mx-auto">Cinquante mille publications, quatre à huit nouvelles chaque jour</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="reveal reveal-delay-1 card-hover bg-white rounded-2xl border border-cream-200 p-6">
+          <div class="w-12 h-12 mb-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Plate -->
+              <ellipse cx="24" cy="34" rx="16" ry="5" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1"/>
+              <ellipse cx="24" cy="34" rx="10" ry="3" fill="none" stroke="#C4A97D" stroke-width="0.6" opacity="0.3"/>
+              <!-- Chef hat puffs -->
+              <circle cx="16" cy="16" r="4" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1"/>
+              <circle cx="24" cy="12" r="4" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1"/>
+              <circle cx="32" cy="16" r="4" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1"/>
+              <!-- Hat band -->
+              <rect x="16" y="18" width="16" height="5" rx="1" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1"/>
+              <!-- Star -->
+              <path d="M36 8l1 2 2.2.2-1.6 1.5.3 2.2L36 12.8l-1.9 1.1.3-2.2-1.6-1.5L35 10l1-2z" fill="#C4A97D" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="text-glacier-600 text-xs font-semibold tracking-widest uppercase">Qualité</span>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mt-3 mb-2">Goût supérieur international</h3>
+          <p class="text-navy-800/50 text-sm leading-relaxed">Médaille du GUFF Fine Food.</p>
+          <a href="#" class="inline-flex items-center gap-1.5 text-glacier-600 text-sm font-medium mt-4 hover:gap-2.5 transition-all duration-300">Découvrir <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="reveal reveal-delay-2 card-hover bg-white rounded-2xl border border-cream-200 p-6">
+          <div class="w-12 h-12 mb-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Ocean waves -->
+              <path d="M4 34c3-2 6-2 9 0s6 2 9 0 6-2 9 0 6 2 9 0" stroke="#B8D8D8" stroke-width="1" stroke-linecap="round"/>
+              <path d="M2 38c3-1.5 6-1.5 9 0s6 1.5 9 0 6-1.5 9 0 6 1.5 9 0" stroke="#B8D8D8" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+              <!-- Fish -->
+              <path d="M14 22c0 0 3-8 12-8s12 8 12 8-3 8-12 8S14 22 14 22z" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1.2"/>
+              <!-- Fish tail -->
+              <path d="M14 22l-7-5v10l7-5z" fill="#D4ECEC" stroke="#5B9E9E" stroke-width="1" stroke-linejoin="round"/>
+              <!-- Fish eye -->
+              <circle cx="32" cy="21" r="2" fill="#5B9E9E"/><circle cx="32.5" cy="20.5" r="0.7" fill="white"/>
+              <!-- Bubbles -->
+              <circle cx="36" cy="14" r="1" stroke="#B8D8D8" stroke-width="0.6" fill="none"/>
+              <circle cx="38" cy="11" r="0.7" stroke="#B8D8D8" stroke-width="0.5" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <span class="text-glacier-600 text-xs font-semibold tracking-widest uppercase">Durabilité</span>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mt-3 mb-2">Pêche durable certifiée</h3>
+          <p class="text-navy-800/50 text-sm leading-relaxed">Certification MSC pour l'Arctique.</p>
+          <a href="#" class="inline-flex items-center gap-1.5 text-glacier-600 text-sm font-medium mt-4 hover:gap-2.5 transition-all duration-300">Découvrir <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="reveal reveal-delay-3 card-hover bg-white rounded-2xl border border-cream-200 p-6">
+          <div class="w-12 h-12 mb-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Heart shape -->
+              <path d="M24 40S6 28 6 18c0-5 4-9 9-9 3.5 0 6.5 2 9 5 2.5-3 5.5-5 9-5 5 0 9 4 9 9 0 10-18 22-18 22z" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1.3" stroke-linejoin="round"/>
+              <!-- Heartbeat line -->
+              <path d="M10 24h6l3-5 4 10 4-10 3 5h8" stroke="#5B9E9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Pulse dots -->
+              <circle cx="40" cy="12" r="1" fill="#B8D8D8"/>
+              <circle cx="8" cy="14" r="0.7" fill="#B8D8D8" opacity="0.5"/>
+            </svg>
+          </div>
+          <span class="text-glacier-600 text-xs font-semibold tracking-widest uppercase">Cardiologie</span>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mt-3 mb-2">Approuvé par cardiologues européens</h3>
+          <p class="text-navy-800/50 text-sm leading-relaxed">Recommandé pour la santé du coeur.</p>
+          <a href="#" class="inline-flex items-center gap-1.5 text-glacier-600 text-sm font-medium mt-4 hover:gap-2.5 transition-all duration-300">Découvrir <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="reveal reveal-delay-4 card-hover bg-white rounded-2xl border border-cream-200 p-6">
+          <div class="w-12 h-12 mb-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Shield -->
+              <path d="M24 4L8 12v10c0 10 6 16 16 20 10-4 16-10 16-20V12L24 4z" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M24 9L12 15v8c0 8 5 13 12 16 7-3 12-8 12-16v-8L24 9z" fill="none" stroke="#5B9E9E" stroke-width="0.6" opacity="0.2" stroke-linejoin="round"/>
+              <!-- Checkmark -->
+              <path d="M17 24l5 5 10-10" stroke="#5B9E9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Cross decoration -->
+              <line x1="40" y1="6" x2="40" y2="12" stroke="#B8D8D8" stroke-width="0.8" stroke-linecap="round"/>
+              <line x1="37" y1="9" x2="43" y2="9" stroke="#B8D8D8" stroke-width="0.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="text-glacier-600 text-xs font-semibold tracking-widest uppercase">Antidopage</span>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mt-3 mb-2">Validé antidopage indépendant</h3>
+          <p class="text-navy-800/50 text-sm leading-relaxed">Liste de Cologne vérification.</p>
+          <a href="#" class="inline-flex items-center gap-1.5 text-glacier-600 text-sm font-medium mt-4 hover:gap-2.5 transition-all duration-300">Découvrir <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Double CTA -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="reveal">
+          <div class="w-14 h-14 mb-6">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Rocket body -->
+              <path d="M28 8c-4 6-6 14-6 22h12c0-8-2-16-6-22z" fill="#172847" stroke="#172847" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Window -->
+              <circle cx="28" cy="22" r="4" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1"/>
+              <!-- Fins -->
+              <path d="M22 30c-4 0-6 4-6 8h6v-8z" fill="#335075" stroke="#172847" stroke-width="1" stroke-linejoin="round"/>
+              <path d="M34 30c4 0 6 4 6 8h-6v-8z" fill="#335075" stroke="#172847" stroke-width="1" stroke-linejoin="round"/>
+              <!-- Flame -->
+              <path d="M24 38c0 0 2 6 4 8 2-2 4-8 4-8" fill="#C4A97D" stroke="#C4A97D" stroke-width="0.8" opacity="0.6"/>
+              <!-- Stars -->
+              <circle cx="10" cy="14" r="1" fill="#B8D8D8"/>
+              <circle cx="46" cy="18" r="0.8" fill="#B8D8D8" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold text-navy-900 mb-3">Commencer maintenant</h3>
+          <p class="text-navy-800/60 leading-relaxed mb-8">Intégrez l'oméga 3 à votre pratique dès aujourd'hui.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="candidature.html" class="inline-flex items-center justify-center px-5 py-3 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer text-sm">Commander</a>
+            <a href="candidature.html" class="inline-flex items-center justify-center px-5 py-3 bg-white text-navy-800 font-medium rounded-xl hover:bg-cream-50 transition-all cursor-pointer text-sm border border-cream-300">Échantillon</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="w-14 h-14 mb-6">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Clipboard -->
+              <rect x="12" y="10" width="32" height="38" rx="4" fill="#172847" stroke="#172847" stroke-width="1.5"/>
+              <!-- Clip top -->
+              <rect x="20" y="6" width="16" height="8" rx="3" fill="#335075" stroke="#172847" stroke-width="1.2"/>
+              <!-- Lines on clipboard -->
+              <line x1="20" y1="22" x2="36" y2="22" stroke="#5B9E9E" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="20" y1="28" x2="32" y2="28" stroke="#5B9E9E" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              <line x1="20" y1="34" x2="34" y2="34" stroke="#5B9E9E" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+              <!-- Checkmark -->
+              <path d="M18 39l2 2 4-4" stroke="#5B9E9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+              <circle cx="46" cy="12" r="1" fill="#B8D8D8"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold text-navy-900 mb-3">Parlons stratégie</h3>
+          <p class="text-navy-800/60 leading-relaxed mb-8">Découvrez comment fidéliser vos patients avec des résultats mesurables.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="candidature.html" class="inline-flex items-center justify-center px-5 py-3 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer text-sm">Rendez-vous</a>
+            <a href="candidature.html" class="inline-flex items-center justify-center px-5 py-3 bg-white text-navy-800 font-medium rounded-xl hover:bg-cream-50 transition-all cursor-pointer text-sm border border-cream-300">Discuter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Séparateur -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="border-t border-cream-300"></div></div>
+
+  <!-- FAQ -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal mb-12">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy-900">Questions</h2>
+        <p class="mt-4 text-navy-800/60 text-lg">Tout ce que vous devez savoir sur notre oméga 3 et son utilisation en pratique.</p>
+      </div>
+      <div class="reveal space-y-4">
+        <div class="border border-cream-200 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left cursor-pointer">
+            <span class="font-serif font-bold text-navy-900 pr-4">Comment prendre ce produit?</span>
+            <svg class="faq-chevron w-5 h-5 text-navy-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-navy-800/60 leading-relaxed">La dose recommandée est de 15 ml par jour. Cette quantité fournit jusqu'à 3435 mg d'EPA et de DHA, couvrant les besoins quotidiens optimaux. Le produit se prend facilement en une seule prise, de préférence le matin avec un repas.</p></div>
+        </div>
+        <div class="border border-cream-200 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left cursor-pointer">
+            <span class="font-serif font-bold text-navy-900 pr-4">Convient-il à tous les patients?</span>
+            <svg class="faq-chevron w-5 h-5 text-navy-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-navy-800/60 leading-relaxed">Oui, notre formule est halal, kascher et sans gluten. Elle existe en deux versions : l'une à base de morue sauvage de l'Arctique et l'autre entièrement végétalienne à partir de microalgues. Aucun patient n'est exclu.</p></div>
+        </div>
+        <div class="border border-cream-200 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left cursor-pointer">
+            <span class="font-serif font-bold text-navy-900 pr-4">Quelle est la durée de conservation?</span>
+            <svg class="faq-chevron w-5 h-5 text-navy-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-navy-800/60 leading-relaxed">Avec une valeur Totox de 3-4 et un excellent indice Rancimat, ce produit conserve sa fraîcheur et son efficacité longtemps. Stockez-le à l'abri de la lumière et de la chaleur pour préserver sa qualité.</p></div>
+        </div>
+        <div class="border border-cream-200 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left cursor-pointer">
+            <span class="font-serif font-bold text-navy-900 pr-4">D'où provient l'oméga 3?</span>
+            <svg class="faq-chevron w-5 h-5 text-navy-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-navy-800/60 leading-relaxed">La morue sauvage provient de pêcheries arctiques certifiées MSC, garantissant une source responsable et traçable. Chaque lot est purifié des métaux lourds et respecte les standards GOED internationaux.</p></div>
+        </div>
+        <div class="border border-cream-200 rounded-2xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left cursor-pointer">
+            <span class="font-serif font-bold text-navy-900 pr-4">Pourquoi cette formule est-elle supérieure?</span>
+            <svg class="faq-chevron w-5 h-5 text-navy-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer px-6"><p class="text-navy-800/60 leading-relaxed">La combinaison unique d'oméga 3 à spectre complet, d'huile d'olive biologique première pression, de vitamines A et D, de lutéine et de coenzyme Q10 crée une synergie puissante. Cette formule liquide assure une absorption optimale et des résultats mesurables pour vos patients.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Besoin d'aide -->
+  <section class="pb-24 md:pb-32">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal">
+        <h3 class="font-serif text-2xl md:text-3xl font-bold text-navy-900 mb-3">Besoin d'aide supplémentaire?</h3>
+        <p class="text-navy-800/60 leading-relaxed mb-8 max-w-lg">Contactez notre équipe pour discuter de la meilleure stratégie d'intégration dans votre pratique.</p>
+        <a href="candidature.html" class="inline-flex items-center justify-center px-6 py-3 bg-white text-navy-800 font-medium rounded-xl hover:bg-cream-100 transition-all cursor-pointer text-sm border border-cream-300">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA FINAL -->
+  <section class="py-24 md:py-32 bg-navy-900 text-white relative overflow-x-clip">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-glacier-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/3 w-72 h-72 bg-glacier-300 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-8">
+            <span class="w-2 h-2 bg-glacier-400 rounded-full animate-pulse"></span>
+            <span class="text-sm font-medium text-glacier-200">Places limit&eacute;es &mdash; 100 naturopathes</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Pr&ecirc;te &agrave; transformer votre pratique&nbsp;?</h2>
+          <p class="mt-6 text-lg text-glacier-300/80 max-w-xl">R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h pour un &eacute;change strat&eacute;gique personnalis&eacute;.</p>
+          <div class="mt-10">
+            <a href="candidature.html" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-navy-900 font-semibold rounded-2xl hover:bg-cream-100 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              Rejoindre le programme
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+          <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-sm text-glacier-300/60">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>2 min chrono</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <span>Sans engagement</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>On vous rappelle sous 24h</span>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2 hidden lg:flex items-center justify-center">
+          <div class="relative w-[420px] h-[420px]">
+            <div class="absolute inset-0 rounded-full border border-glacier-400/20" style="animation: cta-spin 30s linear infinite;"></div>
+            <div class="absolute inset-6 rounded-full border border-dashed border-glacier-400/15" style="animation: cta-spin 20s linear infinite reverse;"></div>
+            <div class="absolute inset-16 rounded-full bg-gradient-to-br from-glacier-400/10 to-glacier-600/5 backdrop-blur-sm"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg width="180" height="180" viewBox="0 0 180 180" fill="none" class="drop-shadow-lg">
+                <path d="M30 110 Q50 70, 70 90 T110 80 T150 70" stroke="url(#cta-grad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+                <path d="M25 120 Q50 80, 75 100 T120 85 T155 78" stroke="url(#cta-grad)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+                <circle cx="70" cy="90" r="8" fill="#4DA8B5" opacity="0.9"/>
+                <circle cx="70" cy="90" r="4" fill="white" opacity="0.6"/>
+                <circle cx="110" cy="80" r="6" fill="#5bbfcb" opacity="0.8"/>
+                <circle cx="110" cy="80" r="3" fill="white" opacity="0.5"/>
+                <circle cx="150" cy="70" r="5" fill="#81cfd8" opacity="0.7"/>
+                <circle cx="30" cy="110" r="5" fill="#81cfd8" opacity="0.7"/>
+                <line x1="85" y1="82" x2="95" y2="78" stroke="#5bbfcb" stroke-width="2" opacity="0.5"/>
+                <line x1="85" y1="86" x2="95" y2="82" stroke="#5bbfcb" stroke-width="2" opacity="0.5"/>
+                <text x="90" y="145" text-anchor="middle" font-family="serif" font-size="36" font-weight="bold" fill="url(#cta-grad2)" opacity="0.9">&omega;-3</text>
+                <defs>
+                  <linearGradient id="cta-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#81cfd8"/>
+                    <stop offset="100%" stop-color="#4DA8B5"/>
+                  </linearGradient>
+                  <linearGradient id="cta-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#abdfe5"/>
+                    <stop offset="100%" stop-color="#5bbfcb"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="absolute w-3 h-3 bg-glacier-400 rounded-full shadow-lg shadow-glacier-400/50" style="top: 8%; left: 50%; animation: cta-spin 12s linear infinite;transform-origin: 0 150px;"></div>
+            <div class="absolute w-2 h-2 bg-glacier-300 rounded-full shadow-md shadow-glacier-300/50" style="top: 50%; right: 5%; animation: cta-spin 18s linear infinite reverse;transform-origin: -150px 0;"></div>
+            <div class="absolute w-2.5 h-2.5 bg-glacier-500 rounded-full shadow-md shadow-glacier-500/40" style="bottom: 12%; left: 20%; animation: cta-spin 15s linear infinite;transform-origin: 100px -120px;"></div>
+            <div class="absolute -top-2 -right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3" style="animation: cta-float 4s ease-in-out infinite;">
+              <div class="text-xs text-glacier-300 font-medium">R&eacute;tribution</div>
+              <div class="text-lg font-bold text-white mt-0.5">+6&nbsp;000&nbsp;&euro;</div>
+              <div class="text-[10px] text-glacier-400/60">1&egrave;re ann&eacute;e</div>
+            </div>
+            <div class="absolute -bottom-2 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3" style="animation: cta-float 4s ease-in-out 2s infinite;">
+              <div class="text-xs text-glacier-300 font-medium">Kit offert</div>
+              <div class="text-lg font-bold text-white mt-0.5">250&nbsp;&euro;</div>
+              <div class="text-[10px] text-glacier-400/60">100 premiers</div>
+            </div>
+            <div class="absolute top-1/2 -translate-y-1/2 -left-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-3 py-2.5" style="animation: cta-float 4s ease-in-out 1s infinite;">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                <span class="text-xs text-glacier-200 font-medium">3 clients = gratuit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @keyframes cta-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes cta-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    </style>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-navy-900 text-white py-20"></footer>
+
+  <script src="components.js"></script>
+  <script>
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const chevron = btn.querySelector('.faq-chevron');
+      document.querySelectorAll('.faq-answer.open').forEach(a => { if (a !== answer) { a.classList.remove('open'); a.previousElementSibling.querySelector('.faq-chevron').classList.remove('open'); } });
+      answer.classList.toggle('open');
+      chevron.classList.toggle('open');
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
