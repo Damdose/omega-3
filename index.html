@@ -172,7 +172,7 @@
   </nav>
 
   <!-- 1. HERO -->
-  <section class="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+  <section class="relative flex items-center pt-28 pb-12 md:min-h-screen md:pt-24 md:pb-20 overflow-hidden">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
@@ -180,7 +180,7 @@
         <div>
           <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 bg-glacier-50 border border-glacier-200 rounded-full mb-8">
             <span class="w-2 h-2 bg-glacier-400 rounded-full animate-pulse"></span>
-            <span class="text-sm font-medium text-navy-700">Programme naturopathes partenaires</span>
+            <span class="text-xs sm:text-sm font-medium text-navy-700">Partenariat officiel FENA &times; EQOLOGY</span>
           </div>
           <h1 class="hero-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-navy-900">
             Proposez les meilleurs
@@ -216,18 +216,19 @@
           </div>
         </div>
         <div class="relative hero-image">
-          <div class="bg-glacier-50 rounded-[2rem] aspect-[3/4] max-w-md mx-auto flex items-center justify-center overflow-hidden">
+          <div class="bg-glacier-50 rounded-[2rem] aspect-[3/4] max-w-xs sm:max-w-md mx-auto flex items-center justify-center overflow-hidden">
             <img src="assets/images/generated/25_hero_naturopath.png" alt="Naturopathe présentant les produits EQOLOGY à un client" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
           </div>
-          <div class="float-card-1 absolute left-2 sm:-left-4 top-1/4 z-20 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-navy-900/5">
-            <p class="text-xl sm:text-2xl font-serif font-bold text-glacier-600 count-up" data-target="70" data-prefix="-" data-suffix="%">-70%</p>
+          <!-- Floating cards hidden on small mobile, visible from sm -->
+          <div class="float-card-1 hidden sm:block absolute -left-4 top-1/4 z-20 bg-white rounded-2xl p-4 shadow-lg shadow-navy-900/5">
+            <p class="text-2xl font-serif font-bold text-glacier-600 count-up" data-target="70" data-prefix="-" data-suffix="%">-70%</p>
             <p class="text-xs text-navy-800/60 mt-1">risque cardio</p>
           </div>
-          <div class="float-card-2 absolute right-2 sm:-right-2 bottom-1/4 z-20 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-navy-900/5">
-            <p class="text-xl sm:text-2xl font-serif font-bold text-glacier-600 count-up" data-target="3435" data-suffix="mg">3 435mg</p>
+          <div class="float-card-2 hidden sm:block absolute -right-2 bottom-1/4 z-20 bg-white rounded-2xl p-4 shadow-lg shadow-navy-900/5">
+            <p class="text-2xl font-serif font-bold text-glacier-600 count-up" data-target="3435" data-suffix="mg">3 435mg</p>
             <p class="text-xs text-navy-800/60 mt-1">par dose</p>
           </div>
-          <div class="float-card-3 absolute -left-2 sm:-left-8 bottom-[15%] z-20 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-navy-900/5">
+          <div class="float-card-3 hidden sm:block absolute -left-8 bottom-[15%] z-20 bg-white rounded-2xl p-4 shadow-lg shadow-navy-900/5">
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5 text-glacier-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               <div>
@@ -236,7 +237,7 @@
               </div>
             </div>
           </div>
-          <div class="float-card-4 absolute right-2 sm:-right-6 top-[10%] z-20 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-navy-900/5">
+          <div class="float-card-4 hidden sm:block absolute -right-6 top-[10%] z-20 bg-white rounded-2xl p-4 shadow-lg shadow-navy-900/5">
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5 text-glacier-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               <div>
@@ -245,13 +246,28 @@
               </div>
             </div>
           </div>
-          <div class="float-card-5 absolute left-1/2 -translate-x-1/2 -bottom-4 sm:-bottom-6 z-20 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-navy-900/5">
+          <div class="float-card-5 hidden sm:block absolute left-1/2 -translate-x-1/2 -bottom-6 z-20 bg-white rounded-2xl p-4 shadow-lg shadow-navy-900/5">
             <div class="flex items-center gap-2">
               <span class="text-lg">&#127475;&#127476;</span>
               <div>
                 <p class="text-sm font-bold text-navy-900 count-up" data-target="97" data-suffix="%">97%</p>
                 <p class="text-[10px] text-navy-800/50">renouvellement client</p>
               </div>
+            </div>
+          </div>
+          <!-- Mobile-only compact stats row -->
+          <div class="flex sm:hidden justify-center gap-3 mt-4">
+            <div class="bg-white rounded-xl px-3 py-2 shadow-sm border border-glacier-100 text-center">
+              <p class="text-lg font-serif font-bold text-glacier-600">-70%</p>
+              <p class="text-[10px] text-navy-800/50">risque cardio</p>
+            </div>
+            <div class="bg-white rounded-xl px-3 py-2 shadow-sm border border-glacier-100 text-center">
+              <p class="text-lg font-serif font-bold text-glacier-600">3435mg</p>
+              <p class="text-[10px] text-navy-800/50">par dose</p>
+            </div>
+            <div class="bg-white rounded-xl px-3 py-2 shadow-sm border border-glacier-100 text-center">
+              <p class="text-lg font-serif font-bold text-glacier-600">97%</p>
+              <p class="text-[10px] text-navy-800/50">renouvellement</p>
             </div>
           </div>
         </div>
@@ -782,9 +798,9 @@
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 mt-4 leading-tight">Concr&egrave;tement, comment rejoindre EQOLOGY&nbsp;?</h2>
         <p class="mt-4 text-lg text-navy-800/60 max-w-2xl mx-auto">Un mod&egrave;le simple et transparent. Vous ne prenez aucun risque.</p>
       </div>
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
         <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border border-glacier-100">
-          <div class="w-14 h-14 mb-5">
+          <div class="w-20 h-20 mb-5">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Coin stack -->
               <ellipse cx="28" cy="38" rx="14" ry="5" fill="#D4ECEC" stroke="#5B9E9E" stroke-width="1.2"/>
@@ -806,7 +822,7 @@
           <p class="text-navy-800/60 leading-relaxed text-[15px]">Le double le premier mois + frais de livraison. C'est tout. <strong class="text-navy-900">D&egrave;s 3 clients actifs, votre abonnement devient gratuit.</strong></p>
         </div>
         <div class="reveal reveal-delay-2 bg-white rounded-3xl p-8 border border-glacier-100">
-          <div class="w-14 h-14 mb-5">
+          <div class="w-20 h-20 mb-5">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Plant pot -->
               <path d="M18 36h20l-3 14H21l-3-14z" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1.2" stroke-linejoin="round"/>
@@ -829,7 +845,7 @@
           <p class="text-navy-800/60 leading-relaxed text-[15px]">Avec ~35 clients (moins d'un par semaine). <strong class="text-navy-900">27&nbsp;000&nbsp;&euro;/an &agrave; horizon 5 ans</strong> gr&acirc;ce aux renouvellements automatiques.</p>
         </div>
         <div class="reveal reveal-delay-3 bg-white rounded-3xl p-8 border border-glacier-100">
-          <div class="w-14 h-14 mb-5">
+          <div class="w-20 h-20 mb-5">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Open hand -->
               <path d="M18 30c0-6 4-10 10-10s10 4 10 10v8c0 4-4 8-10 8s-10-4-10-8v-8z" fill="#F5F0E8" stroke="#C4A97D" stroke-width="1.2"/>
@@ -851,7 +867,7 @@
           <p class="text-navy-800/60 leading-relaxed text-[15px]">Vous pouvez arr&ecirc;ter &agrave; tout moment. <strong class="text-navy-900">Vous conservez vos r&eacute;tributions &agrave; vie</strong> tant que vos clients restent actifs.</p>
         </div>
         <div class="reveal reveal-delay-4 bg-white rounded-3xl p-8 border border-glacier-100">
-          <div class="w-14 h-14 mb-5">
+          <div class="w-20 h-20 mb-5">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <!-- Gift box bottom -->
               <rect x="10" y="28" width="36" height="18" rx="3" fill="#E8F4F4" stroke="#5B9E9E" stroke-width="1.5"/>
