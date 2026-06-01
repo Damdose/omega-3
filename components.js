@@ -150,34 +150,22 @@
     document.body.appendChild(fab);
   }
 
-  // Mobile menu toggle (re-bind after injection)
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      mobileMenu.classList.toggle('hidden');
-      // Toggle hamburger to X
-      const isOpen = !mobileMenu.classList.contains('hidden');
-      menuBtn.innerHTML = isOpen
-        ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
-        : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
-    });
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-        mobileMenu.classList.add('hidden');
-        menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
-      }
-    });
-    // Close menu on link click
-    mobileMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-        menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
-      });
-    });
-  }
+  // Mobile menu toggle
+  setTimeout(function() {
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.onclick = function() {
+        if (menu.style.display === 'none' || menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.style.display = 'block';
+        } else {
+          menu.classList.add('hidden');
+          menu.style.display = 'none';
+        }
+      };
+    }
+  }, 100);
 
   // Reveal animations (IntersectionObserver)
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
