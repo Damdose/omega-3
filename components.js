@@ -20,8 +20,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
       <div class="bg-white/80 backdrop-blur-xl rounded-2xl border border-glacier-100/50 shadow-sm px-6 py-3">
         <div class="flex items-center justify-between">
-          <a href="index.html" class="font-serif text-xl font-bold tracking-tight text-navy-800">
-            FENA <span class="text-glacier-500">&times;</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">eqology</span>
+          <a href="index.html" class="inline-flex items-center gap-1.5" aria-label="FENA × Eqology">
+            <span style="display:inline-block;width:52px;height:58px;background-color:#172847;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
+            <span class="text-glacier-400 text-xl font-light">&times;</span>
+            <span style="display:inline-block;width:125px;height:37px;background-color:#172847;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
           </a>
           <div class="hidden md:flex items-center gap-1">
             <a href="index.html" class="${isActive('index.html') ? activeClass : inactiveClass}">Accueil</a>
@@ -67,7 +69,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-white">FENA <span class="text-glacier-400">&times;</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">eqology</span></a>
+          <a href="index.html" class="inline-flex items-center gap-2" aria-label="FENA × Eqology">
+            <span style="display:inline-block;width:74px;height:82px;background-color:#ffffff;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
+            <span class="text-glacier-400 text-2xl font-light">&times;</span>
+            <span style="display:inline-block;width:176px;height:52px;background-color:#ffffff;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
+          </a>
           <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.<br>Partenaire officiel FENA.</p>
         </div>
         <div>
