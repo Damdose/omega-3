@@ -21,9 +21,9 @@
       <div class="bg-white/80 backdrop-blur-xl rounded-2xl border border-glacier-100/50 shadow-sm px-6 py-3">
         <div class="flex items-center justify-between">
           <a href="index.html" class="inline-flex items-center gap-1.5" aria-label="FENA × Eqology">
-            <span style="display:inline-block;width:52px;height:58px;background-color:#172847;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
+            <span style="display:inline-block;width:43px;height:48px;background-color:#172847;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
             <span class="text-glacier-400 text-xl font-light">&times;</span>
-            <span style="display:inline-block;width:125px;height:37px;background-color:#172847;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
+            <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:22px;width:auto;display:inline-block;">
           </a>
           <div class="hidden md:flex items-center gap-1">
             <a href="index.html" class="${isActive('index.html') ? activeClass : inactiveClass}">Accueil</a>
@@ -42,8 +42,8 @@
             <a href="a-propos.html" class="${isActive('a-propos.html') ? activeClass : inactiveClass}">À propos</a>
             <a href="blog.html" class="${isActive('blog.html') ? activeClass : inactiveClass}">Blog</a>
           </div>
-          <a href="candidature.html" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-sm shadow-navy-700/20">
-            Rejoindre le programme
+          <a href="contact.html" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-sm shadow-navy-700/20">
+            Nous contacter
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
           <button id="mobile-menu-btn" class="md:hidden p-2 text-navy-800 cursor-pointer" aria-label="Menu">
@@ -59,7 +59,7 @@
         <a href="produit-omega3.html" class="${isActive('produit-omega3.html') ? mobileActiveClass : mobileInactiveClass}">Oméga 3 supérieur</a>
         <a href="a-propos.html" class="${isActive('a-propos.html') ? mobileActiveClass : mobileInactiveClass}">À propos</a>
         <a href="blog.html" class="${isActive('blog.html') ? mobileActiveClass : mobileInactiveClass}">Blog</a>
-        <a href="candidature.html" class="block px-4 py-3 text-sm font-medium text-center bg-navy-700 text-white rounded-xl mt-2">Rejoindre le programme</a>
+        <a href="contact.html" class="block px-4 py-3 text-sm font-medium text-center bg-navy-700 text-white rounded-xl mt-2">Nous contacter</a>
       </div>
     </div>`;
   }
@@ -70,9 +70,9 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
           <a href="index.html" class="inline-flex items-center gap-2" aria-label="FENA × Eqology">
-            <span style="display:inline-block;width:74px;height:82px;background-color:#ffffff;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
+            <span style="display:inline-block;width:40px;height:44px;background-color:#ffffff;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
             <span class="text-glacier-400 text-2xl font-light">&times;</span>
-            <span style="display:inline-block;width:176px;height:52px;background-color:#ffffff;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
+            <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:30px;width:auto;display:inline-block;">
           </a>
           <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.<br>Partenaire officiel FENA.</p>
         </div>
