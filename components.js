@@ -90,11 +90,11 @@
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-cream-400/60 text-sm">&copy; 2025 YAC — EQOLOGY. Tous droits réservés.</p>
+        <p class="text-cream-400/60 text-sm">&copy; 2026 YAC — EQOLOGY. Tous droits réservés.</p>
         <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-6 text-sm text-cream-400/60">
-          <a href="mentions-legales.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Mentions légales</a>
-          <a href="confidentialite.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Confidentialité</a>
-          <a href="conditions.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Conditions</a>
+          <span class="cursor-default select-none">Mentions légales</span>
+          <span class="cursor-default select-none">Confidentialité</span>
+          <span class="cursor-default select-none">Conditions</span>
         </div>
       </div>
     </div>`;
