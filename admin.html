@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin &mdash; Leads EQOLOGY &times; FENA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
+            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+          },
+          fontFamily: {
+            serif: ['Space Grotesk', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background: #FAFAF8; }
+    th { white-space: nowrap; }
+  </style>
+</head>
+<body class="antialiased text-navy-900">
+
+  <!-- Écran de connexion -->
+  <div id="login" class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-xl shadow-navy-900/10 p-8 border border-cream-200">
+      <h1 class="font-serif text-2xl font-bold mb-1">Espace admin</h1>
+      <p class="text-navy-800/50 text-sm mb-6">Leads EQOLOGY &times; FENA</p>
+      <form id="login-form">
+        <label class="block text-sm font-medium text-navy-800/70 mb-2">Mot de passe</label>
+        <input id="pwd" type="password" autocomplete="current-password" required
+               class="w-full px-4 py-3 bg-cream-50 border border-cream-300 rounded-xl focus:border-glacier-500 focus:outline-none transition-all">
+        <p id="login-error" class="hidden text-red-500 text-sm mt-2"></p>
+        <button type="submit" class="mt-5 w-full px-6 py-3 bg-navy-700 text-white font-semibold rounded-xl hover:bg-navy-800 transition-all cursor-pointer">
+          Se connecter
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tableau de bord -->
+  <div id="dashboard" class="hidden min-h-screen">
+    <header class="bg-navy-900 text-white">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 class="font-serif text-2xl font-bold">Leads</h1>
+          <p class="text-glacier-300/70 text-sm"><span id="count">0</span> demande(s) re&ccedil;ue(s)</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="refresh" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-sm font-medium transition-all cursor-pointer">Rafra&icirc;chir</button>
+          <button id="export" class="px-4 py-2 rounded-xl bg-glacier-500 hover:bg-glacier-600 text-sm font-medium transition-all cursor-pointer">Exporter CSV</button>
+          <button id="logout" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-sm text-glacier-300/70 transition-all cursor-pointer">D&eacute;connexion</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="mb-4">
+        <input id="search" type="text" placeholder="Rechercher (nom, email, ville&hellip;)"
+               class="w-full sm:w-80 px-4 py-2.5 bg-white border border-cream-300 rounded-xl focus:border-glacier-500 focus:outline-none transition-all text-sm">
+      </div>
+
+      <div id="state" class="text-navy-800/50 text-sm py-10 text-center">Chargement&hellip;</div>
+
+      <div id="table-wrap" class="hidden overflow-x-auto bg-white rounded-2xl border border-cream-200 shadow-sm">
+        <table class="w-full text-sm">
+          <thead class="bg-cream-100 text-navy-800/60 text-xs uppercase tracking-wider">
+            <tr>
+              <th class="text-left font-semibold px-4 py-3">Date</th>
+              <th class="text-left font-semibold px-4 py-3">Nom</th>
+              <th class="text-left font-semibold px-4 py-3">Email</th>
+              <th class="text-left font-semibold px-4 py-3">T&eacute;l&eacute;phone</th>
+              <th class="text-left font-semibold px-4 py-3">Ville</th>
+              <th class="text-left font-semibold px-4 py-3">Anciennet&eacute;</th>
+              <th class="text-left font-semibold px-4 py-3">Consultants/mois</th>
+              <th class="text-left font-semibold px-4 py-3">Principal d&eacute;fi</th>
+              <th class="text-left font-semibold px-4 py-3">Recommande d&eacute;j&agrave;&nbsp;?</th>
+            </tr>
+          </thead>
+          <tbody id="rows" class="divide-y divide-cream-200"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    var KEY_STORE = 'fena_admin_key';
+
+    var LABELS = {
+      anciennete: { '0-2': 'Moins de 2 ans', '2-5': '2 à 5 ans', '5-10': '5 à 10 ans', '10+': 'Plus de 10 ans' },
+      consultants: { '0-10': '< 10', '10-25': '10–25', '25-50': '25–50', '50+': '50+' },
+      defi: { fidelisation: 'Fidélisation', revenus: 'Revenus complémentaires', mesure: 'Mesurer les résultats', inclusivite: 'Solutions inclusives (halal, vegan…)' },
+      complements: { oui_regulier: 'Oui, régulièrement', oui_parfois: 'Parfois, au cas par cas', non_mais: 'Non, mais intéressé(e)' }
+    };
+
+    var login = document.getElementById('login');
+    var dashboard = document.getElementById('dashboard');
+    var loginForm = document.getElementById('login-form');
+    var pwdInput = document.getElementById('pwd');
+    var loginError = document.getElementById('login-error');
+    var stateEl = document.getElementById('state');
+    var tableWrap = document.getElementById('table-wrap');
+    var rowsEl = document.getElementById('rows');
+    var countEl = document.getElementById('count');
+    var searchEl = document.getElementById('search');
+
+    var allLeads = [];
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function label(group, v) {
+      if (!v) return '<span class="text-navy-800/30">—</span>';
+      return esc((LABELS[group] && LABELS[group][v]) || v);
+    }
+    function fmtDate(iso) {
+      if (!iso) return '—';
+      var d = new Date(iso);
+      if (isNaN(d)) return esc(iso);
+      return d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' });
+    }
+
+    function render(leads) {
+      if (!leads.length) {
+        tableWrap.classList.add('hidden');
+        stateEl.classList.remove('hidden');
+        stateEl.textContent = 'Aucun lead pour le moment.';
+        return;
+      }
+      stateEl.classList.add('hidden');
+      tableWrap.classList.remove('hidden');
+      rowsEl.innerHTML = leads.map(function (l) {
+        return '<tr class="hover:bg-cream-50 transition-colors">' +
+          '<td class="px-4 py-3 text-navy-800/50 whitespace-nowrap">' + fmtDate(l.date) + '</td>' +
+          '<td class="px-4 py-3 font-medium">' + (esc(l.name) || '—') + '</td>' +
+          '<td class="px-4 py-3">' + (l.email ? '<a class="text-glacier-600 hover:underline" href="mailto:' + esc(l.email) + '">' + esc(l.email) + '</a>' : '—') + '</td>' +
+          '<td class="px-4 py-3 whitespace-nowrap">' + (l.phone ? '<a class="text-glacier-600 hover:underline" href="tel:' + esc(l.phone.replace(/\s/g, '')) + '">' + esc(l.phone) + '</a>' : '—') + '</td>' +
+          '<td class="px-4 py-3">' + (esc(l.city) || '—') + '</td>' +
+          '<td class="px-4 py-3">' + label('anciennete', l.anciennete) + '</td>' +
+          '<td class="px-4 py-3">' + label('consultants', l.consultants) + '</td>' +
+          '<td class="px-4 py-3">' + label('defi', l.defi) + '</td>' +
+          '<td class="px-4 py-3">' + label('complements', l.complements) + '</td>' +
+        '</tr>';
+      }).join('');
+    }
+
+    function applySearch() {
+      var q = searchEl.value.trim().toLowerCase();
+      if (!q) { render(allLeads); return; }
+      render(allLeads.filter(function (l) {
+        return [l.name, l.email, l.phone, l.city].join(' ').toLowerCase().indexOf(q) !== -1;
+      }));
+    }
+
+    function exportCsv() {
+      var headers = ['Date', 'Nom', 'Email', 'Téléphone', 'Ville', 'Ancienneté', 'Consultants/mois', 'Défi', 'Recommande déjà'];
+      var lines = [headers.join(';')];
+      allLeads.forEach(function (l) {
+        var row = [
+          fmtDate(l.date), l.name, l.email, l.phone, l.city,
+          (LABELS.anciennete[l.anciennete] || l.anciennete || ''),
+          (LABELS.consultants[l.consultants] || l.consultants || ''),
+          (LABELS.defi[l.defi] || l.defi || ''),
+          (LABELS.complements[l.complements] || l.complements || '')
+        ].map(function (v) { return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; });
+        lines.push(row.join(';'));
+      });
+      var blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'leads-fena.csv';
+      a.click();
+    }
+
+    function loadLeads(key) {
+      stateEl.classList.remove('hidden');
+      stateEl.textContent = 'Chargement…';
+      tableWrap.classList.add('hidden');
+      return fetch('/api/leads', { headers: { 'x-admin-key': key } })
+        .then(function (r) {
+          if (r.status === 401) { var e = new Error('unauthorized'); e.code = 401; throw e; }
+          if (!r.ok) return r.json().then(function (j) { throw new Error(j.error || ('Erreur ' + r.status)); });
+          return r.json();
+        })
+        .then(function (data) {
+          allLeads = data.leads || [];
+          countEl.textContent = allLeads.length;
+          applySearch();
+        });
+    }
+
+    function showDashboard(key) {
+      login.classList.add('hidden');
+      dashboard.classList.remove('hidden');
+      loadLeads(key).catch(function (err) {
+        stateEl.textContent = 'Erreur : ' + err.message;
+      });
+    }
+
+    // Auto-login si clé déjà en session
+    var saved = sessionStorage.getItem(KEY_STORE);
+    if (saved) {
+      loadLeads(saved).then(function () { showDashboard(saved); }).catch(function (err) {
+        if (err.code === 401) { sessionStorage.removeItem(KEY_STORE); }
+      });
+    }
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      loginError.classList.add('hidden');
+      var key = pwdInput.value;
+      var btn = loginForm.querySelector('button');
+      btn.disabled = true; btn.textContent = 'Connexion…';
+      loadLeads(key).then(function () {
+        sessionStorage.setItem(KEY_STORE, key);
+        showDashboard(key);
+      }).catch(function (err) {
+        btn.disabled = false; btn.textContent = 'Se connecter';
+        loginError.textContent = err.code === 401 ? 'Mot de passe incorrect.' : ('Erreur : ' + err.message);
+        loginError.classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('refresh').addEventListener('click', function () {
+      loadLeads(sessionStorage.getItem(KEY_STORE)).catch(function (err) { stateEl.textContent = 'Erreur : ' + err.message; });
+    });
+    document.getElementById('export').addEventListener('click', exportCsv);
+    document.getElementById('logout').addEventListener('click', function () {
+      sessionStorage.removeItem(KEY_STORE);
+      location.reload();
+    });
+    searchEl.addEventListener('input', applySearch);
+  })();
+  </script>
+</body>
+</html>

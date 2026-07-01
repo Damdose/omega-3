@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rejoindre le programme &mdash; EQOLOGY &times; FENA</title>
+  <title>Prendre rendez-vous &mdash; EQOLOGY &times; FENA</title>
   <meta name="description" content="Rejoignez le programme EQOLOGY &times; FENA. R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,32 +151,32 @@
 
         <!-- Step 2 -->
         <div class="form-step" data-step="2">
-          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Votre client&egrave;le</p>
-          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Combien de clients suivez-vous par mois&nbsp;?</h1>
+          <p class="text-glacier-300/50 text-sm font-medium uppercase tracking-widest mb-4">Vos consultants</p>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-3">Combien de consultants suivez-vous par mois&nbsp;?</h1>
           <p class="text-glacier-300/60 mb-10">Pour adapter notre accompagnement &agrave; votre volume.</p>
           <div class="space-y-3">
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="0-10">
               <div class="flex items-center gap-4">
                 <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
-                <span class="font-medium">Moins de 10 clients</span>
+                <span class="font-medium">Moins de 10 consultants</span>
               </div>
             </button>
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="10-25">
               <div class="flex items-center gap-4">
                 <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">B</span>
-                <span class="font-medium">10 &agrave; 25 clients</span>
+                <span class="font-medium">10 &agrave; 25 consultants</span>
               </div>
             </button>
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="25-50">
               <div class="flex items-center gap-4">
                 <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">C</span>
-                <span class="font-medium">25 &agrave; 50 clients</span>
+                <span class="font-medium">25 &agrave; 50 consultants</span>
               </div>
             </button>
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="50+">
               <div class="flex items-center gap-4">
                 <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">D</span>
-                <span class="font-medium">Plus de 50 clients</span>
+                <span class="font-medium">Plus de 50 consultants</span>
               </div>
             </button>
           </div>
@@ -191,7 +191,7 @@
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="fidelisation">
               <div class="flex items-center gap-4">
                 <span class="choice-key w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sm font-bold text-glacier-300 group-hover:bg-glacier-400/20 transition-colors duration-300">A</span>
-                <span class="font-medium">Fid&eacute;liser mes clients sur le long terme</span>
+                <span class="font-medium">Fid&eacute;liser mes consultants sur le long terme</span>
               </div>
             </button>
             <button type="button" class="form-choice w-full text-left px-6 py-5 rounded-2xl border-2 border-white/80 hover:border-white hover:bg-white/5 transition-all duration-300 cursor-pointer group" data-value="revenus">
@@ -306,6 +306,16 @@
       <div class="hidden md:flex items-center justify-center gap-4 mt-10 text-glacier-300/25 text-xs" id="form-keyboard-hint">
         <span>Tapez <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">A</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">B</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">C</kbd> <kbd class="px-1.5 py-0.5 bg-white/10 rounded font-mono text-[11px]">D</kbd> pour choisir</span>
       </div>
+
+      <!-- RDV Calendly (affiché uniquement après l'envoi du formulaire) -->
+      <div id="calendly-rdv" class="hidden mt-12 bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-navy-900/20">
+        <h2 class="font-serif text-2xl font-bold text-navy-900 mb-2 text-center">Ou r&eacute;servez directement un appel</h2>
+        <p class="text-sm text-navy-800/70 leading-relaxed mb-6 text-center">Choisissez un cr&eacute;neau de 30 minutes avec YAC, premier distributeur EQOLOGY en France.</p>
+        <!-- Début de widget en ligne Calendly -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/zenco-coignard/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Fin de widget en ligne Calendly -->
+      </div>
     </div>
   </main>
 
@@ -344,6 +354,8 @@
         stepLabel.parentElement.parentElement.style.display = 'none';
         backBtn.classList.add('hidden');
         keyboardHint.classList.add('hidden');
+        var calendly = document.getElementById('calendly-rdv');
+        if (calendly) calendly.classList.remove('hidden');
       }
 
       if (current) {
@@ -478,8 +490,8 @@
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Envoi en cours...';
 
-      // ── CONFIGURATION : remplacer par votre URL webhook (Make, Zapier, n8n, etc.) ──
-      var WEBHOOK_URL = 'https://hook.eu2.make.com/VOTRE_WEBHOOK_ID';
+      // Enregistrement du lead dans /admin (fonction serverless Vercel + Vercel KV).
+      var WEBHOOK_URL = '/api/lead';
 
       fetch(WEBHOOK_URL, {
         method: 'POST',

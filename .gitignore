@@ -5,3 +5,5 @@ node_modules/
 __pycache__/
 .claude/
 .vercel
+.env*
+.env.local
