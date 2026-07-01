@@ -34,8 +34,8 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const from = process.env.LEAD_EMAIL_FROM || 'FENA x Eqology <zenco@a-future.fr>';
-    const to = (process.env.LEAD_EMAIL_TO || 'zenco@a-future.fr')
+    const from = process.env.LEAD_EMAIL_FROM || 'FENA x Eqology <zenco@heyfuture.fr>';
+    const to = (process.env.LEAD_EMAIL_TO || 'zenco@heyfuture.fr')
       .split(',').map(s => s.trim()).filter(Boolean);
 
     const esc = (s) => String(s == null ? '' : s)
