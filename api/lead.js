@@ -78,7 +78,7 @@ async function sendLeadEmail(r) {
   if (!key) return 'skipped (no RESEND_API_KEY)';
 
   const from = process.env.LEAD_EMAIL_FROM || 'FENA x Eqology <zenco@heyfuture.fr>';
-  const to = (process.env.LEAD_EMAIL_TO || 'zenco@heyfuture.fr')
+  const to = (process.env.LEAD_EMAIL_TO || 'zenco.coignard@gmail.com')
     .split(',').map(s => s.trim()).filter(Boolean);
 
   const esc = (s) => String(s == null ? '' : s)
