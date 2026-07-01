@@ -132,5 +132,6 @@ async function sendLeadEmail(r) {
     const detail = await resp.text();
     return 'error: ' + resp.status + ' ' + detail.slice(0, 300);
   }
-  return 'sent';
+  const data = await resp.json().catch(() => ({}));
+  return 'sent' + (data.id ? ':' + data.id : '');
 }
