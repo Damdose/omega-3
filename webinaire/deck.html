@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Webinaire Eqology - Les oméga-3, de la cellule au cabinet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0B1D2E; --navy-800:#172847; --navy-700:#253C5E; --navy-600:#335075;
+  --navy-500:#41648C; --navy-400:#6783A3; --navy-300:#8DA2BA; --navy-200:#B3C1D1;
+  --navy-100:#D9E0E8; --navy-50:#F0F3F6;
+  --glacier-600:#3D8691; --glacier-500:#4DA8B5; --glacier-400:#5BBFCB; --glacier-300:#81CFD8;
+  --glacier-200:#ABDFE5; --glacier-100:#D5EFF2; --glacier-50:#EEF8F9;
+  --cream-50:#FAFAF8; --cream-100:#F5F4F0; --cream-200:#ECEAE4; --cream-300:#DFDBCF; --cream-400:#C8C3B5;
+  --clay:#C8553D; --clay-soft:#FBF0ED; --clay-line:#E8C4BA; --clay-deep:#A33F28;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--navy-900);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.deck{display:flex;flex-direction:column;align-items:center;gap:28px;padding:40px 20px 80px}
+
+.slide{position:relative;width:1280px;height:720px;flex:0 0 auto;overflow:hidden;
+  background:var(--cream-50);color:var(--navy-900);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.slide--dark{background:var(--navy-900);color:var(--cream-50)}
+.slide__pad{position:absolute;inset:0;padding:56px 80px 62px;display:flex;flex-direction:column}
+
+/* ---------- typographie ---------- */
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--glacier-600)}
+.slide--dark .eyebrow{color:var(--glacier-400)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:76px;font-weight:700;line-height:1.04;letter-spacing:-.025em}
+h2{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-top:12px}
+h3{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.lede{font-size:21px;line-height:1.55;color:var(--navy-600);max-width:62ch}
+.slide--dark .lede{color:var(--navy-200)}
+.tiny{font-size:13px;line-height:1.5;color:var(--navy-400)}
+.accent{color:var(--glacier-600)}
+.slide--dark .accent{color:var(--glacier-400)}
+.uline{position:relative;display:inline-block}
+.uline svg{position:absolute;left:0;bottom:-14px;width:100%;height:14px;overflow:visible}
+.uline path{fill:none;stroke:var(--glacier-400);stroke-width:4;stroke-linecap:round}
+
+/* ---------- décor ---------- */
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.1;pointer-events:none}
+.blob-a{width:520px;height:520px;background:var(--glacier-500);top:-160px;right:-140px}
+.blob-b{width:420px;height:420px;background:var(--navy-600);bottom:-140px;left:-120px}
+.slide--dark .blob{opacity:.22}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(var(--cream-300) 1px,transparent 1px);background-size:22px 22px}
+.slide--dark .grain{background-image:radial-gradient(rgba(91,191,203,.16) 1px,transparent 1px);opacity:.6}
+
+.pill{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;padding:8px 17px 8px 13px;border-radius:999px;
+  background:var(--glacier-50);border:1px solid var(--glacier-200);
+  font-size:14px;font-weight:600;color:var(--glacier-600)}
+.slide--dark .pill{background:rgba(77,168,181,.12);border-color:rgba(91,191,203,.3);color:var(--glacier-300)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--glacier-500);flex:0 0 auto}
+
+.foot{position:absolute;left:80px;right:80px;bottom:26px;display:flex;justify-content:space-between;
+  align-items:center;font-size:12px;color:var(--navy-300);letter-spacing:.04em}
+.slide--dark .foot{color:var(--navy-400)}
+.foot__num{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--navy-400)}
+.slide--dark .foot__num{color:var(--navy-300)}
+
+.section-num{font-family:'Space Grotesk',sans-serif;font-size:190px;font-weight:700;line-height:.8;
+  color:rgba(91,191,203,.18);letter-spacing:-.04em}
+
+/* ---------- sommaire ---------- */
+.toc{display:flex;flex-direction:column;margin-top:34px}
+.toc__row{display:grid;grid-template-columns:78px 1fr 360px;gap:28px;align-items:baseline;
+  padding:26px 0;border-top:1px solid var(--cream-300)}
+.toc__row:last-child{border-bottom:1px solid var(--cream-300)}
+.toc__n{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--glacier-500);letter-spacing:.1em}
+.toc__t{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:600;letter-spacing:-.015em}
+.toc__d{font-size:16px;line-height:1.5;color:var(--navy-400)}
+
+/* ---------- anatomie ---------- */
+.anat{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:center;flex:1;margin-top:14px}
+.anat__fig{display:flex;justify-content:center;align-items:center;height:100%}
+.anat__fig svg{height:520px;width:auto;overflow:visible}
+.body-fill{fill:#DDE4EB}
+.body-line{fill:none;stroke:#DDE4EB;stroke-width:18;stroke-linecap:round}
+.organ{fill:var(--glacier-400)}
+.organ-soft{fill:var(--glacier-200)}
+.organ-line{fill:none;stroke:var(--glacier-500);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.organ-hair{fill:none;stroke:var(--glacier-400);stroke-width:1.6;stroke-linecap:round}
+.mk circle{fill:var(--glacier-600);stroke:#FAFAF8;stroke-width:3}
+.mk text{fill:#fff;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;text-anchor:middle}
+.lead-line{fill:none;stroke:var(--navy-200);stroke-width:1.5;stroke-dasharray:3 4}
+.lead-dot{fill:var(--glacier-600)}
+
+.notes{display:flex;flex-direction:column}
+.note{display:grid;grid-template-columns:32px 1fr;gap:15px;align-items:start;
+  padding:11px 0;border-bottom:1px solid var(--cream-200)}
+.note:last-child{border-bottom:none}
+.note__n{width:25px;height:25px;border-radius:50%;background:var(--glacier-600);color:#fff;
+  font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;flex:0 0 auto}
+.note--plain{grid-template-columns:18px 1fr;gap:14px}
+.note--plain .note__b{width:9px;height:9px;border-radius:3px;background:var(--glacier-400);margin-top:8px;flex:0 0 auto}
+.note__t{font-size:16.5px;font-weight:600;line-height:1.35}
+.note__s{font-size:14.5px;line-height:1.45;color:var(--navy-400);margin-top:2px}
+
+.bigstat{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.bigstat__n{font-family:'Space Grotesk',sans-serif;font-size:62px;font-weight:700;line-height:1;
+  letter-spacing:-.03em;color:var(--navy-900);white-space:nowrap}
+.bigstat__u{font-size:24px;font-weight:500;color:var(--navy-400);white-space:nowrap}
+
+/* ---------- cartes ---------- */
+.cards{display:grid;gap:22px;flex:1;margin-top:28px}
+.cards--3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--cream-300);border-radius:18px;padding:30px 28px;
+  display:flex;flex-direction:column;box-shadow:0 2px 14px rgba(11,29,46,.05)}
+.card__ico{width:46px;height:46px;border-radius:13px;background:var(--glacier-50);
+  border:1px solid var(--glacier-200);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.card__k{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--glacier-600);margin-bottom:8px}
+.card h3{margin-bottom:12px}
+.card p{font-size:16px;line-height:1.55;color:var(--navy-500)}
+.card__tag{margin-top:auto;padding-top:18px;font-size:13.5px;font-weight:600;color:var(--navy-400)}
+
+/* ---------- flux ---------- */
+.flow{flex:1;display:flex;align-items:center;justify-content:center}
+.flow svg{width:100%;max-width:1060px;height:auto;overflow:visible}
+.fl-t{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;text-anchor:middle}
+.fl-s{font-family:'DM Sans',sans-serif;font-size:13.5px;text-anchor:middle}
+.fl-arrow{fill:none;stroke:var(--navy-300);stroke-width:2;marker-end:url(#arw)}
+
+/* ---------- tableau ---------- */
+.tblwrap{flex:1;display:flex;flex-direction:column;justify-content:center;margin-top:10px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th,.tbl td{padding:13px 10px;text-align:center;border-bottom:1px solid var(--cream-200)}
+.tbl thead th{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--navy-900);
+  border-bottom:2px solid var(--navy-900);vertical-align:bottom;padding-bottom:13px;line-height:1.2}
+.tbl thead th .sub{display:block;font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:400;
+  color:var(--navy-400);margin-top:6px;line-height:1.35}
+.tbl thead th:first-child{border-bottom-color:transparent}
+.tbl tbody th{text-align:left;font-weight:500;color:var(--navy-500);font-size:13.5px;white-space:nowrap}
+.tbl td{color:var(--navy-700);font-variant-numeric:tabular-nums}
+.tbl .hi{background:var(--glacier-50);font-weight:600;color:var(--navy-900)}
+.tbl tr.price th,.tbl tr.price td{border-bottom:none;padding-top:14px}
+.tbl tr.price td{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:var(--navy-900)}
+.tbl .yes{color:var(--glacier-600);font-weight:700}
+.tbl .no{color:var(--cream-400)}
+
+/* ---------- panneaux ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;margin-top:26px}
+.panel{border-radius:18px;padding:30px;display:flex;flex-direction:column}
+.panel--ok{background:var(--glacier-50);border:1px solid var(--glacier-200)}
+.panel--warn{background:var(--cream-100);border:1px solid var(--cream-300)}
+.panel__h{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.panel ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.panel li{font-size:15px;line-height:1.45;color:var(--navy-600);padding-left:19px;position:relative}
+.panel li::before{content:'';position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:2px;background:var(--glacier-400)}
+.panel--warn li::before{background:var(--cream-400)}
+.panel__f{margin-top:auto;padding-top:18px;font-size:14px;line-height:1.5;color:var(--navy-500);font-weight:500}
+
+.duo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px;flex:1;margin-bottom:24px}
+.step{background:#fff;border:1px solid var(--cream-300);border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:center}
+.step__n{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.12em;
+  color:var(--glacier-500);margin-bottom:13px}
+.step h3{font-size:19px;margin-bottom:10px}
+.step p{font-size:15px;line-height:1.5;color:var(--navy-500)}
+.warnbar{margin-top:auto;background:var(--navy-900);color:var(--cream-50);border-radius:16px;
+  padding:22px 28px;display:flex;gap:20px;align-items:center}
+.warnbar__i{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(91,191,203,.18);
+  display:flex;align-items:center;justify-content:center}
+.warnbar__t{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;margin-bottom:3px}
+.warnbar__s{font-size:15px;line-height:1.45;color:var(--navy-200)}
+
+/* ---------- couverture ---------- */
+.cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 80px}
+.cover__meta{display:flex;align-items:center;gap:20px;margin-top:44px;font-size:15px;color:var(--navy-200)}
+.cover__sep{width:1px;height:17px;background:rgba(255,255,255,.22)}
+.cover__logos{position:absolute;right:80px;bottom:56px;display:flex;align-items:center;gap:26px}
+.cover__logos img{height:38px;width:auto;filter:brightness(0) invert(1);opacity:.85}
+
+/* ---------- citation ---------- */
+.quote{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:24ch}
+.quote__mark{font-family:'Space Grotesk',sans-serif;font-size:90px;line-height:.6;color:var(--glacier-400);opacity:.5}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  body{background:#fff}
+  .deck{gap:0;padding:0}
+  .slide{box-shadow:none;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- silhouette réutilisable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="silhouette">
+    <circle class="body-fill" cx="100" cy="42" r="32"/>
+    <path class="body-line" d="M47 136 C36 162 29 196 27 230 C26 250 28 262 32 272"/>
+    <path class="body-line" d="M153 136 C164 162 171 196 173 230 C174 250 172 262 168 272"/>
+    <path class="body-fill" d="M100 70 C90 70 86 76 86 84 C86 88 84 90 78 93 C62 100 50 114 47 136 C44 162 45 189 48 216 C50 236 52 248 54 260 C53 292 56 324 60 356 C63 396 65 432 66 462 L92 462 C93 428 95 392 97 356 C98 344 99 336 100 326 C101 336 102 344 103 356 C105 392 107 428 108 462 L134 462 C135 432 137 396 140 356 C144 324 147 292 146 260 C148 248 150 236 152 216 C155 189 156 162 153 136 C150 114 138 100 122 93 C116 90 114 88 114 84 C114 76 110 70 100 70 Z"/>
+  </g>
+  <g id="brain">
+    <path class="organ-soft" d="M74 40 C74 22 85 13 100 13 C115 13 126 22 126 40 C126 51 116 58 100 58 C84 58 74 51 74 40 Z"/>
+    <path class="organ-hair" d="M100 15 L100 57 M82 24 C91 28 95 33 95 42 M118 24 C109 28 105 33 105 42 M77 45 C85 45 90 48 92 54 M123 45 C115 45 110 48 108 54"/>
+  </g>
+  <g id="heart"><path class="organ" d="M86 132 C86 122 98 118 101 127 C104 118 116 122 116 132 C116 143 101 154 101 154 C101 154 86 143 86 132 Z"/></g>
+  <g id="liver"><path class="organ-soft" d="M74 168 C90 162 110 165 118 173 C120 184 111 194 97 195 C84 196 74 188 72 178 Z"/></g>
+  <g id="eyes">
+    <circle class="organ" cx="87" cy="58" r="7"/><circle class="organ" cx="113" cy="58" r="7"/>
+    <circle cx="87" cy="58" r="2.6" fill="#0B1D2E"/><circle cx="113" cy="58" r="2.6" fill="#0B1D2E"/>
+  </g>
+</defs></svg>
+
+<div class="deck">
+
+<!-- ===== 01 COUVERTURE ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="cover">
+    <div class="pill"><span class="dot"></span>Webinaire Eqology</div>
+    <h1 style="margin-top:30px">Les oméga-3,<br>de la cellule<br>au <span class="uline">cabinet<svg viewBox="0 0 220 14" preserveAspectRatio="none"><path d="M3 9 C 58 2, 150 2, 217 7"/></svg></span></h1>
+    <p class="lede" style="margin-top:46px;max-width:54ch">Ce que la recherche documente, ce que l'EFSA autorise, et ce que vous pouvez proposer en consultation.</p>
+    <div class="cover__meta">
+      <span>Yves Coignard</span><span class="cover__sep"></span>
+      <span>YAC, distributeur Eqology</span><span class="cover__sep"></span>
+      <span>Lundi 5 octobre 2026</span>
+    </div>
+  </div>
+  <div class="cover__logos"><img src="../assets/images/eqology-logo.png" alt="Eqology"></div>
+</section>
+
+<!-- ===== 02 SOMMAIRE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Le déroulé</div>
+    <h2>Trois niveaux de lecture</h2>
+    <div class="toc">
+      <div class="toc__row"><div class="toc__n">01</div><div class="toc__t">La cellule</div>
+        <div class="toc__d">Pourquoi les oméga-3 sont un matériau de construction avant d'être un complément.</div></div>
+      <div class="toc__row"><div class="toc__n">02</div><div class="toc__t">Les systèmes</div>
+        <div class="toc__d">Ce que la littérature observe, organe par organe, et où s'arrête le cadre réglementaire.</div></div>
+      <div class="toc__row"><div class="toc__n">03</div><div class="toc__t">La pratique</div>
+        <div class="toc__d">Eqology, la gamme Pure Arctic Oil, et la façon dont elle se distribue.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Les oméga-3, de la cellule au cabinet</span><span class="foot__num">02</span></div>
+</section>
+
+<!-- ===== 03 SECTION 1 ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="slide__pad" style="justify-content:center">
+    <div class="section-num">01</div>
+    <div class="eyebrow" style="margin-top:24px">Première partie</div>
+    <h2 style="font-size:62px">La cellule</h2>
+    <p class="lede" style="margin-top:24px;max-width:56ch">Chaque cellule du corps est enveloppée d'une membrane faite de lipides. La composition de ces lipides dépend de ce que la personne mange.</p>
+  </div>
+  <div class="foot"><span>01 La cellule</span><span class="foot__num">03</span></div>
+</section>
+
+<!-- ===== 04 SCHEMA 1 ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 1</div>
+    <h2>L'ordre de grandeur</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 262 480">
+          <use href="#silhouette"/>
+          <use href="#brain"/><use href="#heart"/><use href="#liver"/>
+          <g class="organ-soft">
+            <circle cx="66" cy="215" r="3.6"/><circle cx="78" cy="234" r="3.6"/><circle cx="124" cy="220" r="3.6"/>
+            <circle cx="136" cy="242" r="3.6"/><circle cx="72" cy="308" r="3.6"/><circle cx="130" cy="302" r="3.6"/>
+            <circle cx="68" cy="386" r="3.6"/><circle cx="134" cy="380" r="3.6"/><circle cx="90" cy="258" r="3.6"/>
+            <circle cx="114" cy="270" r="3.6"/><circle cx="62" cy="440" r="3.6"/><circle cx="138" cy="434" r="3.6"/>
+          </g>
+          <g class="mk">
+            <path class="lead-line" d="M124 30 L208 40"/><circle cx="224" cy="40" r="13"/><text x="224" y="45">1</text>
+            <path class="lead-line" d="M116 134 L208 120"/><circle cx="224" cy="120" r="13"/><text x="224" y="125">2</text>
+            <path class="lead-line" d="M119 178 L208 200"/><circle cx="224" cy="200" r="13"/><text x="224" y="205">3</text>
+            <path class="lead-line" d="M137 242 L208 280"/><circle cx="224" cy="280" r="13"/><text x="224" y="285">4</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="bigstat"><span class="bigstat__n">30 000 à 36 000</span><span class="bigstat__u">milliards de cellules</span></div>
+        <p class="tiny" style="margin-top:8px">Nombre total estimé dans un corps humain adulte.</p>
+        <div class="notes" style="margin-top:22px">
+          <div class="note"><div class="note__n">1</div><div><div class="note__t">Cerveau</div>
+            <div class="note__s">86 milliards de neurones, et un nombre équivalent de cellules auxiliaires, organisés en un réseau de connexions d'une complexité extrême.</div></div></div>
+          <div class="note"><div class="note__n">2</div><div><div class="note__t">Cœur</div>
+            <div class="note__s">Plusieurs milliards de cellules, renouvelées très lentement.</div></div></div>
+          <div class="note"><div class="note__n">3</div><div><div class="note__t">Foie</div>
+            <div class="note__s">500 milliards de cellules.</div></div></div>
+          <div class="note"><div class="note__n">4</div><div><div class="note__t">Globules rouges</div>
+            <div class="note__s">26 000 milliards. Ils représentent à eux seuls la majorité des cellules du corps.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>01 La cellule</span><span class="foot__num">04</span></div>
+</section>
+
+<!-- ===== 05 SCHEMA 2 ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 2</div>
+    <h2>Où se logent l'EPA et le DHA</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 262 480">
+          <use href="#silhouette"/>
+          <use href="#brain"/><use href="#eyes"/><use href="#heart"/><use href="#liver"/>
+          <ellipse class="organ-soft" cx="92" cy="282" rx="8" ry="10"/><ellipse class="organ-soft" cx="108" cy="282" rx="8" ry="10"/>
+          <path class="organ-soft" d="M72 330 C69 366 69 402 72 434 L84 434 C81 402 81 366 84 330 Z"/>
+          <path class="organ-soft" d="M128 330 C131 366 131 402 128 434 L116 434 C119 402 119 366 116 330 Z"/>
+          <path class="organ-soft" d="M42 160 C34 190 30 218 30 240 L41 242 C41 218 45 190 52 162 Z"/>
+          <path class="organ-soft" d="M158 160 C166 190 170 218 170 240 L159 242 C159 218 155 190 148 162 Z"/>
+          <g class="mk">
+            <path class="lead-line" d="M124 28 L208 26"/><circle cx="224" cy="26" r="13"/><text x="224" y="31">1</text>
+            <path class="lead-line" d="M120 58 L208 84"/><circle cx="224" cy="84" r="13"/><text x="224" y="89">2</text>
+            <path class="lead-line" d="M116 134 L208 142"/><circle cx="224" cy="142" r="13"/><text x="224" y="147">3</text>
+            <path class="lead-line" d="M119 178 L208 200"/><circle cx="224" cy="200" r="13"/><text x="224" y="205">4</text>
+            <path class="lead-line" d="M116 282 L208 282"/><circle cx="224" cy="282" r="13"/><text x="224" y="287">5</text>
+            <path class="lead-line" d="M131 380 L208 380"/><circle cx="224" cy="380" r="13"/><text x="224" y="385">6</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="notes">
+          <div class="note"><div class="note__n">1</div><div><div class="note__t">Cerveau</div><div class="note__s">Riche en DHA.</div></div></div>
+          <div class="note"><div class="note__n">2</div><div><div class="note__t">Rétine</div><div class="note__s">Très riche en DHA. C'est le tissu où sa concentration est la plus élevée.</div></div></div>
+          <div class="note"><div class="note__n">3</div><div><div class="note__t">Cœur</div><div class="note__s">Riche en DHA.</div></div></div>
+          <div class="note"><div class="note__n">4</div><div><div class="note__t">Foie</div><div class="note__s">Modérément riche en DHA.</div></div></div>
+          <div class="note"><div class="note__n">5</div><div><div class="note__t">Testicules</div><div class="note__s">Riches en DHA.</div></div></div>
+          <div class="note"><div class="note__n">6</div><div><div class="note__t">Muscle squelettique</div><div class="note__s">Modérément riche en DHA.</div></div></div>
+        </div>
+        <div class="pill" style="margin-top:20px"><span class="dot"></span>L'EPA, lui, circule partout : dans le sang et dans toutes les cellules.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>01 La cellule</span><span class="foot__num">05</span></div>
+</section>
+
+<!-- ===== 06 EPA / DHA / ALA ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Trois molécules, trois comportements</div>
+    <h2>EPA, DHA, ALA</h2>
+    <div class="cards cards--3">
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-6 3.5 12L15 8l2 4h5"/></svg></div>
+        <div class="card__k">EPA</div><h3>Il circule</h3>
+        <p>Présent dans le sang et dans toutes les cellules du corps. Il reste disponible plutôt que de se fixer dans un tissu précis.</p>
+        <div class="card__tag accent">Acide eicosapentaénoïque</div>
+      </div>
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.4"/></svg></div>
+        <div class="card__k">DHA</div><h3>Il se structure</h3>
+        <p>Il s'installe durablement dans des tissus précis : cerveau, rétine, cœur. C'est un matériau de construction des membranes.</p>
+        <div class="card__tag accent">Acide docosahexaénoïque</div>
+      </div>
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6 3-10.5 8.5-12.5C19.5 16 16 20 12 21Z"/><path d="M12 21c0-5-2.5-8.5-7.5-10 1 6 4 9.3 7.5 10Z"/></svg></div>
+        <div class="card__k">ALA</div><h3>Il sert de carburant</h3>
+        <p>Le corps ne le stocke pas dans ses structures. Il le brûle comme source d'énergie, ou le convertit en EPA et DHA avec un rendement faible.</p>
+        <div class="card__tag accent">Origine végétale</div>
+      </div>
+    </div>
+    <p class="tiny" style="margin-top:20px">Couvrir ses besoins en DHA par les seules sources végétales revient à parier sur une conversion que le corps réalise mal.</p>
+  </div>
+  <div class="foot"><span>01 La cellule</span><span class="foot__num">06</span></div>
+</section>
+
+<!-- ===== 07 SCHEMA 3 ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 3</div>
+    <h2>Oméga-6 et oméga-3 empruntent la même voie</h2>
+    <div class="flow">
+      <svg viewBox="0 0 1000 420">
+        <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#8DA2BA"/></marker></defs>
+
+        <text class="fl-s" x="500" y="14" fill="#6783A3">Membrane cellulaire</text>
+        <g stroke="#D9E0E8" stroke-width="3" stroke-linecap="round">
+          <line x1="186" y1="34" x2="186" y2="94"/><line x1="216" y1="34" x2="216" y2="94"/>
+          <line x1="784" y1="34" x2="784" y2="94"/><line x1="814" y1="34" x2="814" y2="94"/>
+        </g>
+        <g fill="#D9E0E8"><circle cx="186" cy="30" r="6"/><circle cx="216" cy="30" r="6"/><circle cx="784" cy="30" r="6"/><circle cx="814" cy="30" r="6"/></g>
+        <g stroke="#B3C1D1" stroke-width="3" fill="none">
+          <path d="M330 38 C316 55 316 73 330 90"/><path d="M330 38 C344 55 344 73 330 90"/>
+          <path d="M670 38 C656 55 656 73 670 90"/><path d="M670 38 C684 55 684 73 670 90"/>
+        </g>
+        <circle cx="330" cy="34" r="8" fill="#C8553D"/><circle cx="330" cy="94" r="8" fill="#C8553D"/>
+        <circle cx="670" cy="34" r="8" fill="#3D8691"/><circle cx="670" cy="94" r="8" fill="#3D8691"/>
+        <text class="fl-s" x="330" y="118" fill="#C8553D" style="font-weight:600">oméga-6</text>
+        <text class="fl-s" x="670" y="118" fill="#3D8691" style="font-weight:600">oméga-3</text>
+        <text class="fl-s" x="500" y="118" fill="#8DA2BA">libérés par la phospholipase A2</text>
+
+        <path class="fl-arrow" d="M330 128 L330 152"/><path class="fl-arrow" d="M670 128 L670 152"/>
+
+        <rect x="180" y="160" width="300" height="66" rx="13" fill="#FBF0ED" stroke="#E8C4BA"/>
+        <text class="fl-t" x="330" y="187" fill="#A33F28">AA (acide arachidonique)</text>
+        <text class="fl-s" x="330" y="208" fill="#B5705C">libéré de la membrane</text>
+        <rect x="520" y="160" width="300" height="66" rx="13" fill="#EEF8F9" stroke="#ABDFE5"/>
+        <text class="fl-t" x="670" y="187" fill="#2E656D">EPA et DHA</text>
+        <text class="fl-s" x="670" y="208" fill="#3D8691">libérés de la membrane</text>
+
+        <path class="fl-arrow" d="M330 232 L440 268"/><path class="fl-arrow" d="M670 232 L560 268"/>
+
+        <rect x="390" y="276" width="220" height="66" rx="13" fill="#F0F3F6" stroke="#D9E0E8"/>
+        <text class="fl-t" x="500" y="303" fill="#0B1D2E">COX / LOX</text>
+        <text class="fl-s" x="500" y="324" fill="#6783A3">enzymes partagées</text>
+
+        <path class="fl-arrow" d="M430 348 L340 380"/><path class="fl-arrow" d="M570 348 L660 380"/>
+
+        <rect x="150" y="386" width="360" height="34" rx="17" fill="#FBF0ED"/>
+        <text class="fl-t" x="330" y="408" fill="#A33F28" style="font-size:15.5px">Prostaglandines pro-inflammatoires</text>
+        <rect x="490" y="386" width="360" height="34" rx="17" fill="#EEF8F9"/>
+        <text class="fl-t" x="670" y="408" fill="#2E656D" style="font-size:15.5px">Résolvines, protectines anti-inflammatoires</text>
+      </svg>
+    </div>
+    <p class="tiny" style="margin-top:6px">Schéma pédagogique simplifié. Les deux familles se partagent la même voie enzymatique : la proportion d'apport oriente le produit final.</p>
+  </div>
+  <div class="foot"><span>01 La cellule</span><span class="foot__num">07</span></div>
+</section>
+
+<!-- ===== 08 SECTION 2 ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="slide__pad" style="justify-content:center">
+    <div class="section-num">02</div>
+    <div class="eyebrow" style="margin-top:24px">Deuxième partie</div>
+    <h2 style="font-size:62px">Les systèmes</h2>
+    <p class="lede" style="margin-top:24px;max-width:56ch">Cinq systèmes, et ce que la littérature observe sur chacun. La slide 14 distingue ce qui relève d'une allégation autorisée et ce qui relève de la recherche en cours.</p>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">08</span></div>
+</section>
+
+<!-- ===== 09 CARDIOVASCULAIRE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Système cardiovasculaire</div>
+    <h2>Le cœur et les vaisseaux</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 220 480">
+          <use href="#silhouette"/>
+          <path class="organ-hair" d="M100 100 C96 112 94 122 94 132 M100 100 C104 112 106 122 106 132
+            M92 118 C84 122 76 130 72 142 M108 118 C116 122 124 130 128 142
+            M88 156 C82 176 78 200 76 224 C74 250 74 280 76 310 C78 356 80 400 80 440
+            M112 156 C118 176 122 200 124 224 C126 250 126 280 124 310 C122 356 120 400 120 440
+            M78 200 C68 210 60 226 58 244 M122 200 C132 210 140 226 142 244
+            M80 300 C72 320 68 350 68 380 M120 300 C128 320 132 350 132 380"/>
+          <use href="#heart"/>
+          <path class="organ-hair" d="M62 148 C52 160 46 178 44 198 M138 148 C148 160 154 178 156 198"/>
+        </svg>
+      </div>
+      <div>
+        <div class="notes">
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Événements coronariens</div>
+            <div class="note__s">Réduction de 19 % des événements coronariens et de 32 % des événements totaux.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Mortalité et hospitalisation</div>
+            <div class="note__s">45 % de mort subite en moins, et un risque d'insuffisance cardiaque, de décès et d'hospitalisation abaissé.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Tension et rythme</div>
+            <div class="note__s">Prévalence de l'hypertension réduite, fréquence cardiaque abaissée.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Profil lipidique</div>
+            <div class="note__s">Cholestérol total et triglycérides en baisse.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Voies respiratoires</div>
+            <div class="note__s">Rôle préventif chez les enfants non asthmatiques, protecteur chez ceux qui le sont déjà. Bronchoconstriction et recours aux bronchodilatateurs diminués.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">09</span></div>
+</section>
+
+<!-- ===== 10 NERVEUX ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Système nerveux</div>
+    <h2>Le cerveau et les nerfs</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 220 480">
+          <use href="#silhouette"/>
+          <path class="organ-hair" d="M100 96 L100 300
+            M100 130 C88 136 78 146 72 160 M100 130 C112 136 122 146 128 160
+            M100 160 C86 168 74 180 68 196 M100 160 C114 168 126 180 132 196
+            M100 192 C86 200 74 214 68 232 M100 192 C114 200 126 214 132 232
+            M100 224 C88 232 78 246 74 262 M100 224 C112 232 122 246 126 262
+            M100 260 C90 272 82 288 78 306 M100 260 C110 272 118 288 122 306
+            M100 300 C92 330 86 370 84 412 M100 300 C108 330 114 370 116 412
+            M72 160 C58 172 48 190 44 210 M128 160 C142 172 152 190 156 210"/>
+          <use href="#brain"/>
+        </svg>
+      </div>
+      <div>
+        <div class="notes">
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Humeur</div>
+            <div class="note__s">Effet antidépresseur global, y compris dans la dépression périnatale. Scores de dépression et syndromes anxieux en baisse.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Mémoire et cognition</div>
+            <div class="note__s">49 % de diminution du risque de démence, mémoire et cognition améliorées. Risque d'Alzheimer abaissé.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Pathologies neurologiques</div>
+            <div class="note__s">Symptômes améliorés dans la maladie de Parkinson. Dans la sclérose en plaques, taux de rechute abaissé et qualité de vie améliorée.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Céphalées</div>
+            <div class="note__s">Fréquence des céphalées et durée des migraines réduites.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Enfant et fatigue</div>
+            <div class="note__s">Efficacité observée dans le TDAH chez l'enfant. Symptômes de la fatigue chronique diminués.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">10</span></div>
+</section>
+
+<!-- ===== 11 OSSEUX ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Système osseux</div>
+    <h2>Os, dents, articulations</h2>
+    <div class="cards cards--3">
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c-2 0-3 1.4-3 3 0 1 .4 1.8 1 2.4L14.6 20c.6.6 1.4 1 2.4 1 1.6 0 3-1.4 3-3 0-1-.4-1.8-1-2.4L9.4 5C8.8 4.4 8 4 7 4Z"/><path d="M4.6 9.4C3.6 9.9 3 11 3 12c0 1.6 1.4 3 3 3 .6 0 1-.1 1.4-.3"/><path d="M19.4 14.6c1-.5 1.6-1.6 1.6-2.6 0-1.6-1.4-3-3-3-.6 0-1 .1-1.4.3"/></svg></div>
+        <div class="card__k">Densité</div><h3>Santé osseuse</h3>
+        <p>Les oméga-3 favorisent le maintien d'une bonne santé osseuse.</p>
+        <div class="card__tag accent">Recherche en cours</div>
+      </div>
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-1.2-3-1.6-5.2C10 13.4 8.6 13 7.4 13.6 5.6 14.5 4 13.2 4 10.4 4 6.6 6.4 4 9.4 4c1.2 0 2 .4 2.6.4s1.4-.4 2.6-.4C17.6 4 20 6.6 20 10.4c0 2.8-1.6 4.1-3.4 3.2-1.2-.6-2.6-.2-3 2.2C13.2 18 12 21 12 21Z"/></svg></div>
+        <div class="card__k">Gencive</div><h3>Parodontose</h3>
+        <p>Amélioration observée de la parodontose.</p>
+        <div class="card__tag accent">Recherche en cours</div>
+      </div>
+      <div class="card">
+        <div class="card__ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M4 14h6a4 4 0 0 0 4-4V4"/><path d="M14 10h6M17 7l3 3-3 3"/></svg></div>
+        <div class="card__k">Vieillissement</div><h3>Ostéoporose</h3>
+        <p>Les oméga-3 freinent la progression de l'ostéoporose.</p>
+        <div class="card__tag accent">Recherche en cours</div>
+      </div>
+    </div>
+    <p class="tiny" style="margin-top:20px">Sur l'os, l'effet passe aussi par le duo vitamine D3 et K2, abordé en slide 18.</p>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">11</span></div>
+</section>
+
+<!-- ===== 12 MUSCULAIRE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Système musculaire</div>
+    <h2>Force, volume, récupération</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 220 480">
+          <use href="#silhouette"/>
+          <path class="organ-soft" d="M62 112 C54 126 52 142 54 156 C68 150 82 142 90 132 C82 120 72 113 62 112 Z"/>
+          <path class="organ-soft" d="M138 112 C146 126 148 142 146 156 C132 150 118 142 110 132 C118 120 128 113 138 112 Z"/>
+          <path class="organ-soft" d="M70 172 C68 192 70 212 74 228 L96 228 C94 208 92 190 92 172 Z"/>
+          <path class="organ-soft" d="M130 172 C132 192 130 212 126 228 L104 228 C106 208 108 190 108 172 Z"/>
+          <path class="organ-soft" d="M40 162 C33 190 29 216 29 238 L42 240 C42 216 46 190 52 164 Z"/>
+          <path class="organ-soft" d="M160 162 C167 190 171 216 171 238 L158 240 C158 216 154 190 148 164 Z"/>
+          <path class="organ-soft" d="M66 320 C63 352 63 384 66 412 L88 412 C85 384 85 352 88 320 Z"/>
+          <path class="organ-soft" d="M134 320 C137 352 137 384 134 412 L112 412 C115 384 115 352 112 320 Z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="notes">
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Raideur</div>
+            <div class="note__s">La raideur musculaire diminue.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Synthèse protéique</div>
+            <div class="note__s">La synthèse des protéines musculaires augmente.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Force et amplitude</div>
+            <div class="note__s">Force et amplitude s'améliorent après un exercice physique. La force de préhension progresse.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Volume musculaire</div>
+            <div class="note__s">Volume musculaire de la cuisse amélioré, perte de volume ralentie.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Récupération</div>
+            <div class="note__s">Les courbatures se réduisent.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">12</span></div>
+</section>
+
+<!-- ===== 13 DIGESTIF ET METABOLIQUE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Systèmes digestif et métabolique</div>
+    <h2>Foie, intestin, peau</h2>
+    <div class="anat">
+      <div class="anat__fig">
+        <svg viewBox="-10 0 220 480">
+          <use href="#silhouette"/>
+          <path class="organ-hair" d="M100 78 L100 150"/>
+          <path class="organ-soft" d="M100 150 C114 148 126 156 128 168 C130 182 120 192 106 190 C96 189 92 180 94 170 Z"/>
+          <use href="#liver"/>
+          <path class="organ-hair" d="M84 206 C72 206 68 216 74 224 C82 234 118 228 122 238 C126 250 108 254 92 250
+            C78 246 70 252 72 262 C74 274 96 278 112 272 C124 268 130 274 128 284 C126 294 108 298 94 294"/>
+          <ellipse class="organ-soft" cx="97" cy="250" rx="34" ry="52" opacity=".28"/>
+          <path class="organ-hair" d="M40 300 C44 306 50 308 56 306 M40 316 C46 320 52 320 58 316 M42 332 C48 336 54 336 60 332"/>
+        </svg>
+      </div>
+      <div>
+        <div class="notes">
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Foie</div>
+            <div class="note__s">Triglycérides hépatiques en baisse, profil lipidique amélioré. Indicateurs de destruction cellulaire (ALT et AST) abaissés.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Rein</div>
+            <div class="note__s">Réduction de la protéinurie.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Dénutrition</div>
+            <div class="note__s">Chez les patients dénutris : poids, IMC, globules blancs et neutrophiles remontent.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Peau</div>
+            <div class="note__s">Effet protecteur sur certaines formes d'eczéma, symptômes du psoriasis améliorés.</div></div></div>
+          <div class="note note--plain"><div class="note__b"></div><div><div class="note__t">Articulations et fertilité</div>
+            <div class="note__s">Douleurs liées à l'arthrose réduites. Fertilité améliorée.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">13</span></div>
+</section>
+
+<!-- ===== 14 LE CADRE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Cadre réglementaire</div>
+    <h2>Ce qu'on peut affirmer, ce qu'on doit nuancer</h2>
+    <div class="split">
+      <div class="panel panel--ok">
+        <div class="panel__h">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D8691" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <h3>Allégations autorisées par l'EFSA</h3>
+        </div>
+        <ul>
+          <li><strong>250 mg/jour d'EPA et DHA</strong> contribuent à une fonction cardiaque normale.</li>
+          <li><strong>250 mg/jour de DHA</strong> contribuent au maintien d'une fonction cérébrale normale et d'une vision normale.</li>
+          <li><strong>Le DHA maternel</strong> contribue au développement normal du cerveau et des yeux du fœtus et du nourrisson allaité.</li>
+          <li><strong>2 g/jour d'EPA et DHA</strong> contribuent au maintien d'une triglycéridémie normale.</li>
+          <li><strong>3 g/jour d'EPA et DHA</strong> contribuent au maintien d'une pression artérielle normale.</li>
+        </ul>
+        <div class="panel__f">Ces formulations se prononcent telles quelles devant un public et dans un support écrit.</div>
+      </div>
+      <div class="panel panel--warn">
+        <div class="panel__h">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8DA2BA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+          <h3>Recherche émergente</h3>
+        </div>
+        <ul>
+          <li>Humeur, dépression, anxiété.</li>
+          <li>Démence, Alzheimer, Parkinson, sclérose en plaques.</li>
+          <li>TDAH chez l'enfant.</li>
+          <li>Arthrose, psoriasis, eczéma, parodontose.</li>
+          <li>Masse et force musculaires, ostéoporose.</li>
+          <li>Fertilité, protéinurie, marqueurs hépatiques.</li>
+        </ul>
+        <div class="panel__f">Sur ces sujets, la formulation reste au conditionnel : « des travaux montrent que », « la recherche observe ». Aucune promesse de résultat, aucune allusion à un traitement.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>02 Les systèmes</span><span class="foot__num">14</span></div>
+</section>
+
+<!-- ===== 15 SECTION 3 ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="slide__pad" style="justify-content:center">
+    <div class="section-num">03</div>
+    <div class="eyebrow" style="margin-top:24px">Troisième partie</div>
+    <h2 style="font-size:62px">La pratique</h2>
+    <p class="lede" style="margin-top:24px;max-width:56ch">Un apport en oméga-3 vaut ce que vaut son huile. Origine, fraîcheur, dosage et forme de distribution.</p>
+  </div>
+  <div class="foot"><span>03 La pratique</span><span class="foot__num">15</span></div>
+</section>
+
+<!-- ===== 16 EQOLOGY ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Qui est Eqology</div>
+    <h2>La rigueur norvégienne au service de la santé</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;margin-top:32px;align-items:center">
+      <div>
+        <p class="lede" style="font-size:19px">Eqology est une entreprise norvégienne pionnière dans les compléments nutritionnels à base d'oméga-3. Née dans un pays réputé pour la pureté de ses eaux et son savoir-faire ancestral en produits marins, elle a transformé cet héritage nordique en une référence de qualité reconnue à l'échelle européenne.</p>
+        <div class="quote" style="margin-top:36px;max-width:none;flex:none">
+          <div class="quote__mark">&ldquo;</div>
+          <p style="font-family:'Space Grotesk',sans-serif;font-size:24px;line-height:1.35;font-weight:500;margin-top:6px">Un accompagnement de santé sur le moyen terme, plutôt qu'un produit qu'on achète.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 28px">
+          <div class="card__k" style="color:var(--glacier-400)">Le produit</div>
+          <h3 style="margin:6px 0 10px">Pure Arctic Oil</h3>
+          <p style="font-size:16px;line-height:1.55;color:var(--navy-200)">Un oméga-3 liquide d'une pureté exceptionnelle, issu des eaux arctiques.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 28px">
+          <div class="card__k" style="color:var(--glacier-400)">La distribution</div>
+          <h3 style="margin:6px 0 10px">Jamais en libre-service</h3>
+          <p style="font-size:16px;line-height:1.55;color:var(--navy-200)">Eqology a fait le choix de ne vendre qu'à travers des distributeurs formés, capables d'expliquer, d'accompagner et de faire la différence dans la durée.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>03 La pratique</span><span class="foot__num">16</span></div>
+</section>
+
+<!-- ===== 17 LA GAMME ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 4</div>
+    <h2>La gamme Pure Arctic Oil</h2>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr>
+        <th></th>
+        <th>For Kids<span class="sub">Enfant, concentration, périodes scolaires intenses</span></th>
+        <th>Lemon / Orange<span class="sub">Tout public, aromatisé</span></th>
+        <th>Natural<span class="sub">Tout public, sans arôme</span></th>
+        <th>Heart &amp; Energy<span class="sub">Cardiovasculaire, fatigue, sportifs, sommeil</span></th>
+        <th>Gold<span class="sub">Neurologique, mémoire, peau, sommeil</span></th>
+        <th>Vegan Oil<span class="sub">Régime végétalien, confort visuel</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>Oméga-3 DHA + EPA</th><td class="hi">1800 mg</td><td>1420 mg</td><td>1500 mg</td><td>1420 mg</td><td class="hi">2000 mg</td><td>1500 mg</td></tr>
+        <tr><th>Vitamine A</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="no">&ndash;</td><td>400 mcg</td><td class="no">&ndash;</td></tr>
+        <tr><th>Lutéine</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="no">&ndash;</td><td>10 mg</td><td>10 mg</td></tr>
+        <tr><th>Coenzyme Q10</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="no">&ndash;</td><td>50 mg</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+        <tr><th>Vitamine D</th><td>32 mcg</td><td>20 mcg</td><td>20 mcg</td><td>20 mcg</td><td>20 mcg</td><td>20 mcg</td></tr>
+        <tr><th>Bouteille en verre</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="yes">oui</td><td class="yes">oui</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr class="price"><th>Prix</th><td>30 €</td><td>41 €</td><td>43 €</td><td>65 €</td><td>65 €</td><td>66 €</td></tr>
+      </tbody>
+    </table>
+    <p class="tiny" style="margin-top:18px">Dosages exprimés par dose journalière.</p></div>
+  </div>
+  <div class="foot"><span>03 La pratique</span><span class="foot__num">17</span></div>
+</section>
+
+<!-- ===== 18 D3 + K2 ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 5</div>
+    <h2>Vitamines D3 et K2 : le duo</h2>
+    <div class="duo">
+      <div class="step">
+        <div class="step__n">01</div><h3>Santé osseuse</h3>
+        <p>La D3 commande l'absorption intestinale du calcium. La K2 guide ce calcium vers les os et les dents.</p>
+      </div>
+      <div class="step">
+        <div class="step__n">02</div><h3>Protection cardiovasculaire</h3>
+        <p>La K2 active la protéine MGP, qui bloque les dépôts calciques dans les vaisseaux et prévient la calcification artérielle.</p>
+      </div>
+      <div class="step">
+        <div class="step__n">03</div><h3>Soutien global</h3>
+        <p>Système immunitaire renforcé, fonction musculaire soutenue, équilibre cellulaire calcique maintenu.</p>
+      </div>
+    </div>
+    <div class="warnbar">
+      <div class="warnbar__i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5BBFCB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <div>
+        <div class="warnbar__t">La D3 seule pose problème</div>
+        <div class="warnbar__s">Prise sans K2, elle augmente l'absorption du calcium sans en diriger la destination. Ce calcium mal orienté se dépose dans les artères et les rigidifie.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>03 La pratique</span><span class="foot__num">18</span></div>
+</section>
+
+<!-- ===== 19 COLLAGENE ===== -->
+<section class="slide">
+  <div class="blob blob-a"></div>
+  <div class="slide__pad">
+    <div class="eyebrow">Schéma 6</div>
+    <h2>Le collagène : trois niveaux de formule</h2>
+    <div class="tblwrap"><table class="tbl" style="font-size:14.5px">
+      <thead><tr>
+        <th style="width:44%"></th>
+        <th>Formule 1<span class="sub">à compléter</span></th>
+        <th>Formule 2<span class="sub">à compléter</span></th>
+        <th>Formule 3<span class="sub">à compléter</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><th>Stimule la production de collagène pour la peau, les muscles et les articulations</th><td class="yes">oui</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr><th>Hydrate la peau</th><td class="yes">oui</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr><th>Collagène marin certifié MSC</th><td class="no">&ndash;</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr><th>Cuivre, zinc et autres minéraux</th><td class="no">&ndash;</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr><th>Enzymes ajoutées</th><td class="no">&ndash;</td><td class="yes">oui</td><td class="yes">oui</td></tr>
+        <tr><th>Acide hyaluronique</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="yes">oui</td></tr>
+        <tr><th>Astaxanthine</th><td class="no">&ndash;</td><td class="no">&ndash;</td><td class="yes">oui</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="foot"><span>03 La pratique</span><span class="foot__num">19</span></div>
+</section>
+
+<!-- ===== 20 QUESTIONS ===== -->
+<section class="slide slide--dark">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="slide__pad" style="justify-content:center">
+    <div class="pill"><span class="dot"></span>À vous</div>
+    <h1 style="margin-top:28px;font-size:68px">Vos questions</h1>
+    <p class="lede" style="margin-top:28px;max-width:52ch">Posez-les dans le chat, j'y réponds en direct.</p>
+    <div class="cover__meta" style="margin-top:40px">
+      <span>Yves Coignard</span><span class="cover__sep"></span>
+      <span>contact@exemple.fr</span><span class="cover__sep"></span>
+      <span>eqology.com</span>
+    </div>
+  </div>
+  <div class="cover__logos"><img src="../assets/images/eqology-logo.png" alt="Eqology"></div>
+</section>
+
+</div>
+</body>
+</html>
