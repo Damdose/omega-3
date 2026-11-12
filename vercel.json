@@ -1,5 +1,22 @@
 {
+  "redirects": [
+    {
+      "source": "/webinaire",
+      "has": [{ "type": "host", "value": "fena-eqology.vercel.app" }],
+      "destination": "https://eqology-omega3.vercel.app/rendez-vous?source=qr",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fena-eqology.vercel.app" }],
+      "destination": "https://eqology-omega3.vercel.app/:path*",
+      "permanent": false
+    },
+    { "source": "/webinaire-fena.html", "destination": "/webinaire", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" }
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/rendez-vous", "destination": "/candidature.html" },
+    { "source": "/webinaire", "destination": "/webinaire.html" }
   ]
 }

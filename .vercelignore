@@ -1,0 +1,10 @@
+# Documents internes : deck, notes d'organisation, PDF (jamais publics)
+webinaire/
+generate-images.js
+test
+
+# Configuration et notes locales (jamais publiques)
+.claude/
+.env
+.env*
+netlify.toml

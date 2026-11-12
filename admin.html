@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Admin &mdash; Leads EQOLOGY &times; FENA</title>
+  <title>Admin &mdash; Leads EQOLOGY</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
   <div id="login" class="min-h-screen flex items-center justify-center px-4">
     <div class="w-full max-w-sm bg-white rounded-3xl shadow-xl shadow-navy-900/10 p-8 border border-cream-200">
       <h1 class="font-serif text-2xl font-bold mb-1">Espace admin</h1>
-      <p class="text-navy-800/50 text-sm mb-6">Leads EQOLOGY &times; FENA</p>
+      <p class="text-navy-800/50 text-sm mb-6">Leads EQOLOGY</p>
       <form id="login-form">
         <label class="block text-sm font-medium text-navy-800/70 mb-2">Mot de passe</label>
         <input id="pwd" type="password" autocomplete="current-password" required
@@ -79,6 +79,7 @@
           <thead class="bg-cream-100 text-navy-800/60 text-xs uppercase tracking-wider">
             <tr>
               <th class="text-left font-semibold px-4 py-3">Date</th>
+              <th class="text-left font-semibold px-4 py-3">Origine</th>
               <th class="text-left font-semibold px-4 py-3">Nom</th>
               <th class="text-left font-semibold px-4 py-3">Email</th>
               <th class="text-left font-semibold px-4 py-3">T&eacute;l&eacute;phone</th>
@@ -147,6 +148,7 @@
       rowsEl.innerHTML = leads.map(function (l) {
         return '<tr class="hover:bg-cream-50 transition-colors">' +
           '<td class="px-4 py-3 text-navy-800/50 whitespace-nowrap">' + fmtDate(l.date) + '</td>' +
+          '<td class="px-4 py-3">' + sourceBadge(l.source) + '</td>' +
           '<td class="px-4 py-3 font-medium">' + (esc(l.name) || '—') + '</td>' +
           '<td class="px-4 py-3">' + (l.email ? '<a class="text-glacier-600 hover:underline" href="mailto:' + esc(l.email) + '">' + esc(l.email) + '</a>' : '—') + '</td>' +
           '<td class="px-4 py-3 whitespace-nowrap">' + (l.phone ? '<a class="text-glacier-600 hover:underline" href="tel:' + esc(l.phone.replace(/\s/g, '')) + '">' + esc(l.phone) + '</a>' : '—') + '</td>' +
@@ -159,20 +161,30 @@
       }).join('');
     }
 
+    function sourceBadge(src) {
+      if (!src) return '<span class="text-navy-800/35">Site</span>';
+      var webinaire = /webinaire/i.test(src);
+      var cls = webinaire
+        ? 'bg-glacier-100 text-glacier-700'
+        : 'bg-cream-200 text-navy-800/70';
+      var texte = webinaire ? 'Webinaire' : 'Site';
+      return '<span class="inline-block px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap ' + cls + '" title="' + esc(src) + '">' + texte + '</span>';
+    }
+
     function applySearch() {
       var q = searchEl.value.trim().toLowerCase();
       if (!q) { render(allLeads); return; }
       render(allLeads.filter(function (l) {
-        return [l.name, l.email, l.phone, l.city].join(' ').toLowerCase().indexOf(q) !== -1;
+        return [l.name, l.email, l.phone, l.city, l.source].join(' ').toLowerCase().indexOf(q) !== -1;
       }));
     }
 
     function exportCsv() {
-      var headers = ['Date', 'Nom', 'Email', 'Téléphone', 'Ville', 'Ancienneté', 'Consultants/mois', 'Défi', 'Recommande déjà'];
+      var headers = ['Date', 'Origine', 'Nom', 'Email', 'Téléphone', 'Ville', 'Ancienneté', 'Consultants/mois', 'Défi', 'Recommande déjà'];
       var lines = [headers.join(';')];
       allLeads.forEach(function (l) {
         var row = [
-          fmtDate(l.date), l.name, l.email, l.phone, l.city,
+          fmtDate(l.date), (l.source || 'Site'), l.name, l.email, l.phone, l.city,
           (LABELS.anciennete[l.anciennete] || l.anciennete || ''),
           (LABELS.consultants[l.consultants] || l.consultants || ''),
           (LABELS.defi[l.defi] || l.defi || ''),
@@ -183,7 +195,7 @@
       var blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'leads-fena.csv';
+      a.download = 'leads-eqology.csv';
       a.click();
     }
 

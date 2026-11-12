@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prendre rendez-vous &mdash; EQOLOGY &times; FENA</title>
-  <meta name="description" content="Rejoignez le programme EQOLOGY &times; FENA. R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h.">
+  <title>Prendre rendez-vous &mdash; EQOLOGY</title>
+  <meta name="description" content="Rejoignez le programme EQOLOGY. R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,9 +88,7 @@
   <!-- Top bar -->
   <header class="relative z-10 px-4 sm:px-6 lg:px-8 pt-6 pb-4">
     <div class="max-w-2xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="font-serif text-xl font-bold tracking-tight text-white/90 hover:text-white transition-colors">
-        FENA <span class="text-glacier-400">&times;</span> <span class="text-sm font-semibold tracking-widest uppercase font-sans">eqology</span>
-      </a>
+      <a href="index.html" class="inline-flex items-center opacity-90 hover:opacity-100 transition-opacity" aria-label="Eqology"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:20px;width:auto;display:inline-block;filter:brightness(0) invert(1);"></a>
       <a href="index.html" class="text-sm text-glacier-300/50 hover:text-glacier-200 transition-colors inline-flex items-center gap-1.5">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         Fermer
@@ -484,6 +482,11 @@
       answers.email = email;
       answers.phone = phone;
       answers.city = city;
+
+      // Provenance : ?source=... (ex. lien depuis la page du webinaire)
+      var srcParam = new URLSearchParams(window.location.search).get('source');
+      var SOURCES = { webinaire: 'Webinaire du 5 octobre 2026', qr: 'QR code' };
+      if (srcParam) answers.source = SOURCES[srcParam] || srcParam.slice(0, 120);
 
       // Disable submit button during send
       var submitBtn = document.getElementById('form-submit');

@@ -33,7 +33,8 @@ module.exports = async (req, res) => {
       anciennete: clean(body.step1, 40),
       consultants: clean(body.step2, 40),
       defi: clean(body.step3, 60),
-      complements: clean(body.step4, 60)
+      complements: clean(body.step4, 60),
+      source: clean(body.source, 120) || 'Site (candidature)'
     };
 
     if (!record.name && !record.email && !record.phone) {
@@ -95,19 +96,20 @@ async function sendLeadEmail(r) {
     ['Consultants / mois', r.consultants],
     ['Défi principal', r.defi],
     ['Compléments', r.complements],
+    ['Origine', r.source],
     ['Date', dateFr],
     ['Réf.', r.id]
   ].filter(([, v]) => v);
 
   const trs = rows.map(([k, v]) =>
     `<tr><td style="padding:8px 14px;border-bottom:1px solid #eceae4;color:#6b7280;font-size:13px;white-space:nowrap">${esc(k)}</td>` +
-    `<td style="padding:8px 14px;border-bottom:1px solid #eceae4;color:#0B1D2E;font-size:14px;font-weight:500">${esc(v)}</td></tr>`
+    `<td style="padding:8px 14px;border-bottom:1px solid #eceae4;color:#0B1D2E;font-size:14px;font-weight:500">${esc(v).replace(/\n/g, '<br>')}</td></tr>`
   ).join('');
 
   const html =
     `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto">
       <h2 style="color:#0B1D2E;font-size:18px">Nouvelle candidature — FENA × Eqology</h2>
-      <p style="color:#6b7280;font-size:14px">Un naturopathe a rempli le formulaire de rendez-vous sur le site.</p>
+      <p style="color:#6b7280;font-size:14px">Origine : ${esc(r.source || 'Site')}</p>
       <table style="border-collapse:collapse;width:100%;border:1px solid #eceae4;border-radius:8px;overflow:hidden">${trs}</table>
     </div>`;
 
@@ -116,7 +118,7 @@ async function sendLeadEmail(r) {
   const payload = {
     from,
     to,
-    subject: `Nouvelle candidature — ${r.name || r.email || 'sans nom'}`,
+    subject: `Nouvelle candidature — ${r.name || r.email || 'sans nom'}${/webinaire/i.test(r.source || '') ? ' (webinaire)' : ''}`,
     html,
     text
   };
