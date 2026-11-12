@@ -8,7 +8,7 @@
           "value": "fena-eqology.vercel.app"
         }
       ],
-      "destination": "https://eqology-omega3.vercel.app/rendez-vous?source=qr",
+      "destination": "https://eqology-omega3.vercel.app/",
       "permanent": false
     },
     {
