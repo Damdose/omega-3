@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Bannières webinaire Eqology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0B1D2E; --navy-600:#335075; --navy-300:#8DA2BA; --navy-200:#B3C1D1;
+  --glacier-500:#4DA8B5; --glacier-400:#5BBFCB; --glacier-300:#81CFD8;
+  --cream-50:#FAFAF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1a1a;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+
+.ban{position:relative;overflow:hidden;background:var(--navy-900);color:var(--cream-50);flex:0 0 auto}
+.ban--social{width:1200px;height:630px}
+.ban--email{width:1200px;height:400px}
+
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.24;pointer-events:none}
+.blob-a{width:560px;height:560px;background:var(--glacier-500);top:-180px;right:-150px}
+.blob-b{width:420px;height:420px;background:var(--navy-600);bottom:-150px;left:-130px}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.6;
+  background-image:radial-gradient(rgba(91,191,203,.16) 1px,transparent 1px);background-size:22px 22px}
+
+.pad{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center}
+.ban--social .pad{padding:0 72px}
+.ban--email .pad{padding:0 60px}
+
+.pill{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;
+  padding:9px 19px 9px 14px;border-radius:999px;
+  background:rgba(77,168,181,.14);border:1px solid rgba(91,191,203,.32);
+  font-size:15px;font-weight:600;color:var(--glacier-300);letter-spacing:.01em}
+.ban--email .pill{font-size:13.5px;padding:7px 16px 7px 12px}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--glacier-400);flex:0 0 auto}
+
+h1{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.025em;line-height:1.05}
+.ban--social h1{font-size:68px;margin-top:30px}
+.ban--email h1{font-size:40px;margin-top:18px}
+
+.uline{position:relative;display:inline-block}
+.uline svg{position:absolute;left:0;bottom:-13px;width:100%;height:14px;overflow:visible}
+.uline path{fill:none;stroke:var(--glacier-400);stroke-width:4;stroke-linecap:round}
+
+.sub{color:var(--navy-200);line-height:1.5;max-width:46ch}
+.ban--social .sub{font-size:20px;margin-top:40px}
+.ban--email .sub{font-size:16px;margin-top:24px;max-width:52ch}
+
+.meta{display:flex;align-items:center;flex-wrap:wrap;gap:18px;color:var(--navy-200)}
+.ban--social .meta{font-size:17px;margin-top:34px}
+.ban--email .meta{font-size:14.5px;margin-top:20px}
+.meta b{font-weight:600;color:var(--glacier-300)}
+.sep{width:1px;height:16px;background:rgba(255,255,255,.22)}
+
+.logo{position:absolute;opacity:.85}
+.ban--social .logo{right:72px;bottom:56px;height:36px}
+.ban--email .logo{right:60px;top:50%;transform:translateY(-50%);height:30px}
+.logo img{height:100%;width:auto;filter:brightness(0) invert(1)}
+
+.tag{position:absolute;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:#8DA2BA;left:40px;top:-26px}
+</style>
+</head>
+<body>
+
+<!-- 1200 x 630 : vignette, carte sociale, visuel principal -->
+<div class="ban ban--social" id="social">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="pad">
+    <div class="pill"><span class="dot"></span>Webinaire pour les naturopathes &middot; 30 minutes</div>
+    <h1>Les oméga-3,<br>un bienfait global<br>pour votre <span class="uline">santé<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 9 C 54 2, 138 2, 197 7"/></svg></span></h1>
+    <p class="sub">Ce que la recherche documente, et ce que vous pouvez proposer en consultation.</p>
+    <div class="meta">
+      <span><b>Lundi 5 octobre 2026</b></span><span class="sep"></span>
+      <span>Yves Coignard</span>
+    </div>
+  </div>
+  <div class="logo"><img src="../assets/images/eqology-logo.png" alt="Eqology"></div>
+</div>
+
+<!-- 1200 x 400 : en-tete d'e-mail -->
+<div class="ban ban--email" id="email">
+  <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="grain"></div>
+  <div class="pad">
+    <div class="pill"><span class="dot"></span>Webinaire pour les naturopathes &middot; 30 minutes</div>
+    <h1>Les oméga-3, un bienfait global<br>pour votre <span class="uline">santé<svg viewBox="0 0 160 14" preserveAspectRatio="none"><path d="M3 9 C 44 2, 110 2, 157 7"/></svg></span></h1>
+    <div class="meta">
+      <span><b>Lundi 5 octobre 2026</b></span><span class="sep"></span>
+      <span>Yves Coignard</span><span class="sep"></span>
+      <span>Ce que la recherche documente sur les oméga-3</span>
+    </div>
+  </div>
+  <div class="logo"><img src="../assets/images/eqology-logo.png" alt="Eqology"></div>
+</div>
+
+</body>
+</html>

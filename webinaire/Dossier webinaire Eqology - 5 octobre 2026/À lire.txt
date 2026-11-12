@@ -1,0 +1,16 @@
+Webinaire Eqology
+Les oméga-3, un bienfait global pour votre santé
+Lundi 5 octobre 2026, 30 minutes questions comprises, Yves Coignard
+
+Prise de rendez-vous : https://eqology-omega3.vercel.app/rendez-vous
+
+1 - Présentation
+  Le deck complet en PDF, 16 pages au format 16:9.
+  Page 13 : les montants de rémunération sont provisoires
+  (étiquette « Chiffres provisoires » en haut à droite).
+  La page 16 est une slide de réserve, non projetée.
+
+2 - Communication
+  Bannière e-mail 1200x400          en-tête de vos e-mails
+  QR code prise de rendez-vous      mène à la prise de rendez-vous
+  (SVG)                             (le SVG reste net à toutes les tailles, pour l'impression)

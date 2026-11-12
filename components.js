@@ -20,10 +20,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
       <div class="bg-white/80 backdrop-blur-xl rounded-2xl border border-glacier-100/50 shadow-sm px-6 py-3">
         <div class="flex items-center justify-between">
-          <a href="index.html" class="inline-flex items-center gap-1.5" aria-label="FENA × Eqology">
-            <span style="display:inline-block;width:52px;height:58px;background-color:#172847;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
-            <span class="text-glacier-400 text-xl font-light">&times;</span>
-            <span style="display:inline-block;width:125px;height:37px;background-color:#172847;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
+          <a href="index.html" class="inline-flex items-center gap-1.5" aria-label="Eqology">
+            <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:28px;width:auto;display:inline-block;">
           </a>
           <div class="hidden md:flex items-center gap-1">
             <a href="index.html" class="${isActive('index.html') ? activeClass : inactiveClass}">Accueil</a>
@@ -39,11 +37,12 @@
                 </div>
               </div>
             </div>
+            <a href="science-omega3.html" class="${isActive('science-omega3.html') ? activeClass : inactiveClass}">La science</a>
             <a href="a-propos.html" class="${isActive('a-propos.html') ? activeClass : inactiveClass}">À propos</a>
             <a href="blog.html" class="${isActive('blog.html') ? activeClass : inactiveClass}">Blog</a>
           </div>
-          <a href="candidature.html" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-sm shadow-navy-700/20">
-            Rejoindre le programme
+          <a href="contact.html" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-medium rounded-xl hover:bg-navy-800 transition-all duration-300 cursor-pointer shadow-sm shadow-navy-700/20">
+            Nous contacter
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
           <button id="mobile-menu-btn" class="md:hidden p-2 text-navy-800 cursor-pointer" aria-label="Menu">
@@ -57,9 +56,10 @@
         <a href="index.html" class="${isActive('index.html') ? mobileActiveClass : mobileInactiveClass}">Accueil</a>
         <a href="omega-de-confiance.html" class="${isActive('omega-de-confiance.html') ? mobileActiveClass : mobileInactiveClass}">Oméga-3 de confiance</a>
         <a href="produit-omega3.html" class="${isActive('produit-omega3.html') ? mobileActiveClass : mobileInactiveClass}">Oméga 3 supérieur</a>
+        <a href="science-omega3.html" class="${isActive('science-omega3.html') ? mobileActiveClass : mobileInactiveClass}">La science</a>
         <a href="a-propos.html" class="${isActive('a-propos.html') ? mobileActiveClass : mobileInactiveClass}">À propos</a>
         <a href="blog.html" class="${isActive('blog.html') ? mobileActiveClass : mobileInactiveClass}">Blog</a>
-        <a href="candidature.html" class="block px-4 py-3 text-sm font-medium text-center bg-navy-700 text-white rounded-xl mt-2">Rejoindre le programme</a>
+        <a href="contact.html" class="block px-4 py-3 text-sm font-medium text-center bg-navy-700 text-white rounded-xl mt-2">Nous contacter</a>
       </div>
     </div>`;
   }
@@ -69,12 +69,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <a href="index.html" class="inline-flex items-center gap-2" aria-label="FENA × Eqology">
-            <span style="display:inline-block;width:74px;height:82px;background-color:#ffffff;-webkit-mask:url(assets/images/fena-logo.png) center/contain no-repeat;mask:url(assets/images/fena-logo.png) center/contain no-repeat;"></span>
-            <span class="text-glacier-400 text-2xl font-light">&times;</span>
-            <span style="display:inline-block;width:176px;height:52px;background-color:#ffffff;-webkit-mask:url(assets/images/eqology-logo.png) center/contain no-repeat;mask:url(assets/images/eqology-logo.png) center/contain no-repeat;"></span>
+          <a href="index.html" class="inline-flex items-center gap-2" aria-label="Eqology">
+            <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:30px;width:auto;display:inline-block;">
           </a>
-          <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.<br>Partenaire officiel FENA.</p>
+          <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.</p>
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Produits</h4>
@@ -82,7 +80,7 @@
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Ressources</h4>
-          <ul class="space-y-3 text-sm"><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li><li><a href="index.html#faq" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">FAQ</a></li></ul>
+          <ul class="space-y-3 text-sm"><li><a href="science-omega3.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">La science des oméga-3</a></li><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li><li><a href="index.html#faq" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">FAQ</a></li></ul>
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Contact</h4>
@@ -90,11 +88,11 @@
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-cream-400/60 text-sm">&copy; 2025 YAC — EQOLOGY. Tous droits réservés.</p>
+        <p class="text-cream-400/60 text-sm">&copy; 2026 YAC — EQOLOGY. Tous droits réservés.</p>
         <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-6 text-sm text-cream-400/60">
-          <a href="mentions-legales.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Mentions légales</a>
-          <a href="confidentialite.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Confidentialité</a>
-          <a href="conditions.html" class="hover:text-white transition-colors duration-300 cursor-pointer">Conditions</a>
+          <span class="cursor-default select-none">Mentions légales</span>
+          <span class="cursor-default select-none">Confidentialité</span>
+          <span class="cursor-default select-none">Conditions</span>
         </div>
       </div>
     </div>`;

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oméga-3 et cerveau — EQOLOGY</title>
+  <meta name="description" content="Le DHA, acide gras essentiel, est un constituant structurel majeur du cerveau. Allégations EFSA établies et pistes de recherche sur le vieillissement cognitif, documentées avec prudence.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
+            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+
+          },
+          fontFamily: {
+            serif: ['Space Grotesk', 'Georgia', 'serif'],
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAFAF8; overflow-x: hidden; max-width: 100vw; }
+    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-answer.open { max-height: 500px; }
+    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-chevron.open { transform: rotate(180deg); }
+    .stat-number { font-variant-numeric: tabular-nums; }
+    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-6px); }
+    .prose p { margin-bottom: 1.5em; line-height: 1.85; color: rgba(28, 28, 28, 0.65); }
+    .prose h2 { font-family: 'Space Grotesk', Georgia, serif; margin-top: 2.5em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
+    .prose h3 { font-family: 'Space Grotesk', Georgia, serif; margin-top: 2em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
+    .prose ul { margin: 1.5em 0; padding-left: 1.25em; }
+    .prose ul li { margin-bottom: 0.5em; color: rgba(28, 28, 28, 0.65); line-height: 1.75; }
+    .prose blockquote { border-left: 3px solid #4DA8B5; padding-left: 1.5em; margin: 2em 0; font-style: italic; color: rgba(28, 28, 28, 0.55); }
+    .prose strong { color: #0B1D2E; }
+    .src { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="antialiased text-navy-900 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50"></nav>
+
+  <!-- Article -->
+  <article class="pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-sm text-navy-800/40 mb-10">
+        <a href="blog.html" class="hover:text-glacier-600 transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-navy-800/70">Article</span>
+      </nav>
+
+      <!-- Meta -->
+      <div class="flex items-center gap-3 mb-6">
+        <span class="px-3 py-1 bg-glacier-50 text-navy-700 text-xs font-medium rounded-lg">Recherche</span>
+        <span class="text-navy-800/30 text-xs">6 min de lecture</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 leading-[1.15] mb-8">
+        Oméga-3 et cerveau : le DHA, pilier du système nerveux
+      </h1>
+
+      <!-- Author -->
+      <div class="flex items-center gap-4 mb-12 pb-10 border-b border-cream-200">
+        <div class="w-10 h-10 bg-glacier-100 rounded-full flex items-center justify-center">
+          <span class="font-serif font-bold text-navy-700 text-sm">FE</span>
+        </div>
+        <div>
+          <p class="font-medium text-navy-900 text-sm">Équipe YAC, distributeur EQOLOGY</p>
+          <p class="text-navy-800/40 text-xs">5 juin 2026</p>
+        </div>
+      </div>
+
+      <!-- Featured image -->
+      <img src="assets/images/generated/15_blog_cerveau.png" alt="Oméga-3 et cerveau — le DHA, constituant structurel du système nerveux" class="w-full rounded-2xl sm:rounded-[2rem] aspect-[16/9] object-cover mb-10 sm:mb-14">
+
+      <!-- Article body -->
+      <div class="prose max-w-none text-lg">
+        <p>Parmi les acides gras oméga-3, l'<strong>acide docosahexaénoïque (DHA)</strong> occupe une place à part dans le système nerveux. Il constitue une part majeure des lipides structurels du cerveau et de la rétine, où il s'intègre aux membranes des neurones et participe à leur fluidité. C'est un acide gras dit <em>essentiel</em> : l'organisme ne le synthétise qu'en très faible quantité et doit le puiser dans l'alimentation, principalement les poissons gras et certaines micro-algues. Cette dépendance alimentaire explique pourquoi le statut en DHA fait l'objet d'une attention particulière.</p>
+        <p>Cette localisation n'est pas anecdotique. En s'intégrant aux membranes, le DHA influence la manière dont les cellules nerveuses communiquent et la souplesse avec laquelle ces membranes fonctionnent. C'est ce double ancrage — à la fois structurel et fonctionnel — qui a motivé un volume considérable de travaux, dont il faut distinguer soigneusement ce qui est établi de ce qui reste à explorer.</p>
+
+        <h2 class="text-2xl">Ce que la réglementation valide</h2>
+        <p>Toutes les affirmations sur les oméga-3 ne se valent pas. En Europe, certaines sont validées par l'<strong>Autorité européenne de sécurité des aliments (EFSA)</strong> et inscrites au règlement (UE) n°432/2012 : ce sont des faits établis, juridiquement encadrés. Pour le cerveau, l'EFSA reconnaît que <strong>le DHA contribue au fonctionnement normal du cerveau</strong>, à partir d'un apport de 250&nbsp;mg par jour. Il s'agit du socle sur lequel s'appuyer sans réserve.</p>
+        <p>Une seconde allégation concerne les premiers stades de la vie : <strong>l'apport de DHA par la mère contribue au développement normal du cerveau du fœtus et de l'enfant allaité</strong>. Là encore, il s'agit d'une allégation autorisée par l'EFSA, valable dans les conditions d'apport qu'elle définit. Ces deux repères réglementaires dessinent le rôle structurel et fonctionnel reconnu du DHA dans le système nerveux.</p>
+
+        <h2 class="text-2xl">Vieillissement cognitif : ce que suggèrent les cohortes</h2>
+        <p>Au-delà de ces allégations, la recherche s'est intéressée au lien entre statut en DHA et vieillissement du cerveau. L'étude de cohorte de <strong>Framingham</strong> est l'une des plus citées sur ce point. En suivant une large population, ses auteurs ont observé que les personnes présentant les <strong>taux plasmatiques de DHA les plus élevés</strong> avaient un risque de démence réduit d'environ <strong>47&nbsp;%</strong> par rapport à celles dont les taux étaient les plus bas.</p>
+        <p>Ce chiffre mérite d'être lu avec prudence. Il provient d'une étude <strong>observationnelle</strong> : elle mesure une association entre un taux de DHA et la survenue d'une démence, mais ne démontre pas à elle seule que le DHA en soit la cause. D'autres facteurs de mode de vie peuvent contribuer au résultat. Ce type de travail suggère un lien digne d'intérêt et oriente la recherche, sans permettre d'affirmer qu'une supplémentation préviendrait le déclin cognitif.</p>
+        <blockquote>
+          Une étude de cohorte décrit ce que l'on observe dans une population suivie dans le temps. Elle suggère des pistes ; elle n'établit pas, à elle seule, un rapport de cause à effet.
+        </blockquote>
+
+        <h2 class="text-2xl">Pistes en cours : inflammation et neurologie</h2>
+        <p>Un troisième champ, plus exploratoire, porte sur la capacité des oméga-3 à moduler l'inflammation. Certaines affections neurologiques comportent une composante neuro-inflammatoire — c'est le cas, notamment, de la sclérose en plaques. Des travaux étudient si les oméga-3 pourraient y jouer un rôle de modulation.</p>
+        <p>Il faut être clair sur le statut de ces recherches : elles relèvent de la <strong>recherche émergente</strong>. Les résultats sont préliminaires et ne permettent, à ce stade, <strong>aucune conclusion thérapeutique</strong>. Les oméga-3 ne sont ni un traitement ni un remède de ces affections, et rien ne justifie de les présenter comme tels. Ces pistes sont à évoquer au conditionnel, comme un terrain d'investigation ouvert, non comme une promesse.</p>
+        <p>Pour un professionnel de l'accompagnement, la posture juste consiste donc à rester attentif à ces travaux tout en s'abstenant d'en tirer des affirmations. Signaler qu'un sujet est étudié n'a pas la même valeur que rapporter un effet démontré : c'est cette nuance qui distingue un discours documenté d'une promesse infondée.</p>
+
+        <h2 class="text-2xl">En résumé</h2>
+        <p>Le DHA est un constituant structurel majeur du cerveau et de la rétine, apporté par l'alimentation. Son rôle dans le fonctionnement normal du cerveau, comme dans le développement cérébral du fœtus et du nourrisson via l'apport maternel, est reconnu par l'EFSA : ce sont les points fermes. Sur le vieillissement cognitif, les études de cohorte comme celle de Framingham suggèrent une association intéressante, sans en établir la causalité. Les pistes neuro-inflammatoires, elles, restent au stade de la recherche. Distinguer ces trois niveaux — allégation établie, observation, recherche émergente — est la meilleure garantie d'un discours juste.</p>
+        <p><a href="science-omega3.html" class="text-glacier-600 font-medium underline decoration-glacier-300 underline-offset-2 hover:text-glacier-700 transition-colors">Voir le dossier complet : La science des oméga-3</a></p>
+      </div>
+
+      <!-- Avertissement -->
+      <div class="mt-14 bg-cream-100 border border-cream-300 rounded-2xl p-6 sm:p-8">
+        <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-3">Avertissement</p>
+        <p class="text-sm text-navy-800/60 leading-relaxed">Les informations de cette page sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seules les allégations signalées comme autorisées par l'EFSA constituent des allégations de santé validées ; les autres éléments relèvent de la recherche scientifique et ne sont pas des allégations de santé.</p>
+      </div>
+
+      <!-- Sources -->
+      <div class="mt-8">
+        <details class="group bg-white border border-cream-200 rounded-2xl overflow-hidden">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
+            <span class="font-serif font-bold text-navy-900">Sources &amp; références</span>
+            <svg class="w-5 h-5 text-navy-800/40 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 pb-6 space-y-2.5 text-sm text-navy-800/55 leading-relaxed src">
+            <p>· Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (DHA : fonctionnement normal du cerveau ; apport maternel et développement normal du cerveau du fœtus et de l'enfant allaité).</p>
+            <p>· Schaefer E.J. et al. « Plasma phosphatidylcholine docosahexaenoic acid content and risk of dementia and Alzheimer disease ». <em>Archives of Neurology</em>, 2006 (cohorte de Framingham).</p>
+            <p class="text-navy-800/40 pt-2">Les références sont indiquées à titre documentaire. Les pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="bg-navy-900 text-white py-20"></footer>
+
+  <script src="components.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
