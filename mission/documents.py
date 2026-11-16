@@ -8,8 +8,11 @@ import os, subprocess, tempfile, base64
 
 DATE = '16/11/2026'
 VALIDITE = '16/12/2026'
-DEVIS = 'PROP-2026-1116-ZENCO'
-FACTURE = '1004'          # suite de la numérotation TAM LABS (1001, 1002, 1003 en base le 16/11)
+DEVIS = 'PROP-2026-1116-ZENCO-V2'   # V2 : SIREN et TVA du client ajoutés (le V1 est parti le 16/11 à 22h24 sans SIREN)
+DEVIS_V1 = 'PROP-2026-1116-ZENCO'
+FACTURE_ANNULEE = '1004'  # émise le 16/11 (mail de 22h24) sans le SIREN du client : annulée par l'avoir 1005 (partie 3)
+AVOIR = '1005'
+FACTURE = '1006'          # nouvelle facture d'acompte, avec le SIREN
 ACOMPTE_PCT = 50
 
 ASSETS = os.path.expanduser('~/Documents/crm-heyfuture/public/assets')
@@ -18,7 +21,7 @@ LOGO_CLAIR = 'data:image/svg+xml;base64,' + base64.b64encode(open(f'{ASSETS}/hey
 
 EMETTEUR = ['SASU au capital de 1 000 €', '138 avenue Victor Hugo, 75116 Paris', 'RCS Paris 131 975 054',
             'SIRET 131 975 054 00019 · NAF 6201Z', 'TVA FR80131975054']
-CLIENT = ['29 boulevard de la Muette', '95140 Garges-lès-Gonesse', '<span class="manque">SIREN à compléter</span>',
+CLIENT = ['29 boulevard de la Muette', '95140 Garges-lès-Gonesse', 'SIREN 504 495 946', 'TVA FR51504495946',
           'À l’attention de M. Yves Coignard, co-président']
 
 LIGNES = [
@@ -154,8 +157,31 @@ def facture():
     return doc(f'Facture {FACTURE}', c)
 
 
+def avoir():
+    ht = -ACOMPTE_HT; tva = round(ht * 0.2, 2); ttc = ht + tva
+    c = '<div class="page">'
+    c += (f'<div class="tete"><div><img class="logo" src="{LOGO}" alt="heyfuture"><div class="contact">heyfuture.fr · 07 60 55 40 00<br>damien.tamazout@gmail.com</div></div>'
+          '<h1>Avoir</h1></div>')
+    c += (f'<div class="carte meta meta--4"><div><div class="k">N° d’avoir</div><div class="v">{AVOIR}</div></div>'
+          f'<div><div class="k">Émis le</div><div class="v">{DATE}</div></div><div><div class="k">Facture annulée</div><div class="v">{FACTURE_ANNULEE}</div></div>'
+          f'<div><div class="k">Devis</div><div class="v">{DEVIS_V1}</div></div></div>')
+    c += parties('Facturé à', president=True)
+    c += ('<div class="carte carte--tab"><table><thead><tr><th>Désignation</th><th class="n">Qté</th><th class="n">P.U. HT</th><th class="n">TVA</th><th class="n">Total HT</th></tr></thead><tbody>'
+          f'<tr><td><span class="t">Annulation de la facture d’acompte n° {FACTURE_ANNULEE} du {DATE}</span>'
+          f'<span class="d">Acompte de {ACOMPTE_PCT} % : solution agent Ads Meta et site e-commerce, devis n° {DEVIS_V1}.</span></td>'
+          f'<td class="n">1</td><td class="n">{euros(ht, True)}</td><td class="n">20 %</td><td class="n">{euros(ht, True)}</td></tr></tbody></table></div>')
+    c += ('<div class="bas"><div></div>'
+          f'<div class="total"><div><span>Total HT</span><span>{euros(ht, True)}</span></div><div><span>TVA 20 %</span><span>{euros(tva, True)}</span></div>'
+          f'<div class="ttc"><span>Total TTC</span><span>{euros(ttc, True)}</span></div></div></div>')
+    c += (f'<p class="note">Période de la prestation : {PERIODE} · Catégorie de l’opération : prestation de services.<br>'
+          f'Avoir annulant la facture d’acompte n° {FACTURE_ANNULEE}, émise sans le SIREN du client. Elle est remplacée par la facture n° {FACTURE}. Aucun montant n’est à régler au titre de cet avoir.</p>')
+    c += f'<div class="pied">{PIED_TXT}</div></div>'
+    return doc(f'Avoir {AVOIR}', c)
+
+
 DOCUMENTS = [
     (f'Devis {DEVIS} TAM LABS ZENCO.pdf', devis()),
+    (f'Avoir {AVOIR} TAM LABS ZENCO (annule la facture {FACTURE_ANNULEE}).pdf', avoir()),
     (f'Facture {FACTURE} TAM LABS ZENCO (acompte).pdf', facture()),
 ]
 
