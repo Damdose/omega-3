@@ -8,7 +8,7 @@ import fabriquer as F
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 F.TITRE = 'Recruter des partenaires Eqology'
-F.DATE = '16 novembre 2026 · Yves Coignard'
+F.DATE = 'Yves Coignard · 16 novembre 2026 · préparé par Heyfuture'
 
 # ——— Bloc « captures » ajouté ici (le moteur partagé fabriquer.py n'est pas modifié)
 import base64, io
@@ -131,7 +131,7 @@ onglet('Le parcours', 'funnel',
        [dict(type='etapes', titre='Les six étapes', etapes=[
            dict(titre='Publicité', texte='Une story ou une publication sur Instagram et Facebook.'),
            dict(titre='Page « Rejoindre l’équipe »', texte='Votre histoire, l’activité, à qui elle s’adresse, comment on démarre.'),
-           dict(titre='Formulaire', texte='Nom, téléphone, profil (particulier ou professionnel), créneau de rappel.'),
+           dict(titre='Formulaire ou rendez-vous', texte='Le visiteur laisse ses coordonnées, ou réserve directement un créneau dans votre agenda, comme chez Boost Your Health.'),
            dict(titre='Votre appel', texte='Sous 48 heures, par téléphone. Vous recevez le contact par SMS ou WhatsApp.'),
            dict(titre='Visio de présentation', texte='Assurée par Eqology ou par votre parrain. Vous n’avez rien à préparer.'),
            dict(titre='Démarrage', texte='Le nouveau partenaire choisit son Business Kit et rejoint votre équipe.')]),
@@ -161,20 +161,80 @@ onglet('Dispositif Meta', 'megaphone',
             dict(titre='Pas de promesse de revenu', texte='On parle d’activité et de complément de revenu, jamais d’un montant gagné.'),
             dict(titre='Transparence', texte='La mention « distributeur indépendant Eqology » apparaît sur le site et dans les publicités.')])])
 
-onglet('Le site', 'layers',
-       'À quoi sert le nouveau site ?',
-       'Il a deux portes : « Rejoindre l’équipe », où mènent les publicités, et une boutique qui présente toute la gamme Eqology à votre nom.',
-       ['La page « Rejoindre l’équipe » est la page d’arrivée des publicités.',
-        'La boutique rassure et permet de commander : chaque bouton « Commander » ouvre Eqology avec votre identifiant de partenaire.',
-        'Eqology encaisse, livre et assure le service client : vous n’avez ni stock ni colis.',
-        'En ligne le lundi 23 novembre.'],
-       [dict(type='tableau', titre='Ce que contient le site', colonnes=['Partie', 'Contenu', 'Rôle'], lignes=[
-           ['Rejoindre l’équipe', 'Votre histoire, l’activité, à qui elle s’adresse, les étapes, le formulaire et la prise de rendez-vous', 'Recrutement, page d’arrivée des publicités'],
-           ['Boutique', 'La gamme Eqology présentée en français : oméga-3, packs, vitamines, test', 'Rassurer et permettre la commande'],
-           ['Bouton « Commander »', 'Ouvre la fiche du produit sur le site Eqology avec votre identifiant', 'Chaque commande vous est attribuée'],
-           ['Mentions et confidentialité', 'Mentions légales, politique de confidentialité, consentement au formulaire', 'Conformité']]),
-        dict(type='texte', titre='Pourquoi les prix restent chez Eqology', paragraphes=[
-            'Les prix sont affichés sur le site Eqology au moment de la commande. Le site n’a donc jamais de prix faux quand Eqology les change.'])])
+onglet('La page de recrutement', 'star',
+       'Que trouve un futur partenaire sur la page « Rejoindre l’équipe », et que lui dites-vous au téléphone ?',
+       'Une page qui raconte votre histoire, explique l’activité sans jargon et se termine par un formulaire. Ensuite, votre appel suit une trame simple en cinq temps.',
+       ['C’est la page d’arrivée de toutes les publicités de recrutement.',
+        'Elle répond aux questions avant qu’on les pose : stock, coût de départ, temps nécessaire, façon d’être payé.',
+        'Aucun montant de revenu n’est promis : on explique le fonctionnement, pas un chiffre.',
+        'Votre appel dure 10 à 15 minutes et se termine par une invitation à la visio.'],
+       [dict(type='etapes', titre='Les sections de la page', etapes=[
+           dict(titre='L’accroche et votre vidéo', texte='« Santé et complément de revenu : je vous explique comment je fais, à 75 ans. » Votre vidéo de 30 secondes juste en dessous.'),
+           dict(titre='Votre histoire', texte='Qui vous êtes, pourquoi vous avez choisi Eqology, ce que l’activité vous apporte.'),
+           dict(titre='L’activité, en clair', texte='Recommander des produits que l’on utilise soi-même, avec un test qui montre le résultat. Quelques heures par semaine, depuis chez soi.'),
+           dict(titre='Comment on est payé', texte='Une commission sur ses propres ventes, puis une part sur les ventes de l’équipe que l’on accompagne. Sans montant promis.'),
+           dict(titre='Pour qui', texte='Les personnes qui cherchent un revenu d’appoint, et les professionnels qui veulent proposer le test à leurs clients.'),
+           dict(titre='Comment on démarre', texte='Formulaire, puis votre appel, puis la visio de présentation, puis le Business Kit.'),
+           dict(titre='Les questions fréquentes', texte='Stock, coût de départ, temps nécessaire, accompagnement : les réponses avant le formulaire.'),
+           dict(titre='Le formulaire', texte='En bas de page et rappelé en haut : cinq champs, moins d’une minute.')]),
+        dict(type='tableau', titre='Le formulaire', colonnes=['Champ', 'Pourquoi'], lignes=[
+            ['Prénom et nom', 'Savoir qui vous rappelez'],
+            ['Téléphone', 'Vous rappelez par téléphone, pas par e-mail'],
+            ['Profil', 'Particulier ou professionnel, et le métier : vous adaptez votre discours'],
+            ['Créneau de rappel', 'Matin, après-midi ou soir : vous appelez au bon moment'],
+            ['Consentement', 'Accord pour être rappelé et recevoir les e-mails, obligatoire']]),
+        dict(type='etapes', titre='Votre appel, en cinq temps', etapes=[
+            dict(titre='Vous présenter', texte='« Bonjour, Yves Coignard, vous avez demandé des informations sur l’activité Eqology. Vous avez quelques minutes ? »'),
+            dict(titre='Écouter', texte='« Qu’est-ce qui vous a donné envie de cliquer ? » Revenu, santé, ses propres clients : la réponse oriente la suite.'),
+            dict(titre='Expliquer simplement', texte='Les produits, le test, la façon d’être payé, le temps nécessaire. Votre propre expérience vaut mieux qu’un argumentaire.'),
+            dict(titre='Inviter', texte='À la prochaine visio, avec la date. Pour un professionnel : lui proposer d’abord de faire le test lui-même.'),
+            dict(titre='Confirmer', texte='Un SMS avec la date et le lien de la visio. La personne reçoit aussi les e-mails automatiques.')]),
+        dict(type='cartes', titre='Les questions qu’on vous posera', colonnes=2, cartes=[
+            dict(titre='« Faut-il acheter du stock ? »', texte='Non. Les clients commandent directement chez Eqology, qui livre. Il n’y a ni stock ni colis.'),
+            dict(titre='« Combien coûte le démarrage ? »', texte='Le Business Kit, dont le montant dépend du kit choisi. Votre parrain et vous présentez les options pendant la visio.'),
+            dict(titre='« Combien peut-on gagner ? »', texte='Cela dépend du temps consacré et de l’équipe accompagnée. On ne promet pas de chiffre : on explique comment la rémunération fonctionne.'),
+            dict(titre='« Je ne sais pas vendre. »', texte='On commence par un produit que l’on utilise soi-même, avec un test qui montre le résultat. On est accompagné par son parrain et par la formation Eqology.')])])
+
+onglet('La boutique en ligne', 'payment',
+       'Comment fonctionne la boutique en ligne ?',
+       'Une vitrine en français de toute la gamme Eqology. Le client choisit, clique sur « Commander » et finalise sa commande sur le site Eqology, à votre nom. Vous touchez votre commission, sans stock ni colis.',
+       ['La boutique présente les produits en français : bienfaits autorisés, mode d’emploi, test.',
+        'Chaque bouton « Commander » ouvre la fiche Eqology avec votre identifiant : la commande vous est attribuée.',
+        'Eqology encaisse, livre, gère les retours et le service client. Les prix restent toujours à jour.',
+        'Elle travaille pour vous jour et nuit : vos clients commandent seuls, reviennent chaque mois, et chaque commande vous revient.'],
+       [dict(type='etapes', titre='Le parcours d’achat d’un client', etapes=[
+           dict(titre='Il arrive sur la boutique', texte='Depuis votre site, un lien envoyé après votre appel, ou le lien en bio de votre compte Instagram.'),
+           dict(titre='Il choisit', texte='Un produit, un pack ou le test, grâce à une fiche claire en français.'),
+           dict(titre='Il clique sur « Commander »', texte='La fiche du produit s’ouvre sur eqology.com, avec votre identifiant de partenaire.'),
+           dict(titre='Il paie chez Eqology', texte='Paiement sécurisé par carte sur le site Eqology, qui prépare et expédie le colis.'),
+           dict(titre='La vente vous revient', texte='La commande apparaît dans votre compte Eqology, avec votre commission.')]),
+        dict(type='tableau', titre='Ce que contient la boutique', colonnes=['Rubrique', 'Produits présentés'], lignes=[
+            ['Oméga-3', 'Pure Arctic Oil, Gold, Heart & Energy, Vegan Oil, Kids'],
+            ['Packs', 'Les packs avantage qui associent l’huile, les vitamines et le test'],
+            ['Le test oméga-3', 'Comment il se fait à la maison, ce qu’il mesure, pourquoi le refaire après quelques mois'],
+            ['Vitamines et minéraux', 'Vitamine K2 + D3, D3 en gouttes, Nordic Energy Booster, Essential'],
+            ['Beauté et forme', 'Collagène marin, Collagen Booster, soins Ocean Miracle, shakes protéinés']],
+            lire='La liste exacte suit le catalogue Eqology France au moment de la mise en ligne.'),
+        dict(type='cartes', titre='Une fiche produit', colonnes=3, cartes=[
+            dict(titre='Ce que c’est', texte='Le produit, sa composition et son origine (poissons sauvages de l’Arctique, huile d’olive, vitamine D3).'),
+            dict(titre='Ce qu’il apporte', texte='Uniquement les bienfaits autorisés par l’Union européenne, par exemple : « l’EPA et le DHA contribuent à une fonction cardiaque normale ».'),
+            dict(titre='Comment le prendre', texte='La dose, le moment, la durée conseillée, et le test à faire avant puis après.')]),
+        dict(type='cartes', titre='Qui fait quoi dans la vente', colonnes=2, cartes=[
+            dict(titre='Eqology', puces=['Le paiement et la facture au client', 'La préparation et la livraison', 'Les retours et le service client', 'Les prix, toujours à jour']),
+            dict(titre='Votre boutique', puces=['La présentation en français, simple et claire', 'Votre nom et votre histoire, qui rassurent', 'Le lien que vous envoyez après chaque appel', 'La preuve de sérieux pour un futur partenaire'])]),
+        dict(type='cartes', titre='Ce que la boutique vous apporte', colonnes=3, cartes=[
+            dict(etiquette='Ventes', titre='Une boutique ouverte jour et nuit', texte='Vos clients commandent seuls, à toute heure, sans vous appeler. Chaque commande est enregistrée à votre nom.'),
+            dict(etiquette='Fidélité', titre='Des clients qui reviennent', texte='Les oméga-3 se prennent tous les jours : un client satisfait recommande chaque mois par votre lien, et votre commission tombe à chaque fois.'),
+            dict(etiquette='Différence', titre='Votre vitrine, à votre image', texte='Les autres partenaires n’ont que la page Eqology standard. Vous avez une vraie boutique en français, avec votre histoire et vos conseils.'),
+            dict(etiquette='Recrutement', titre='La preuve de votre sérieux', texte='Un futur partenaire voit une gamme claire, un site professionnel et un distributeur installé : il vous fait confiance plus vite.'),
+            dict(etiquette='Appels', titre='Le lien de fin d’appel', texte='Après chaque conversation, vous envoyez le lien de la boutique par SMS. La personne commande quand elle est prête.'),
+            dict(etiquette='Avenir', titre='Prête pour la suite', texte='Quand les ventes suivront, la boutique pourra recevoir ses propres publicités, sans rien reconstruire.')]),
+        dict(type='tableau', titre='D’où viennent les visiteurs de la boutique', colonnes=['Source', 'Comment'], lignes=[
+            ['Votre site', 'La porte « Ma santé » de la page d’accueil'],
+            ['Votre compte Instagram', 'Le lien en bio, comme le Linktree de Boost Your Health'],
+            ['Vos appels', 'Le lien envoyé par SMS après chaque conversation'],
+            ['La visio de présentation', 'Le lien partagé à la fin de chaque séance'],
+            ['Vos documents', 'Le QR code de vos présentations et de vos cartes']])])
 
 onglet('Suivi et mesure', 'chart',
        'Comment suit-on les contacts et les résultats ?',
@@ -256,6 +316,48 @@ onglet('Ce qu’il nous faut', 'check',
            ['10 minutes pour la vidéo', 'Première publicité', '20 novembre'],
            ['Le numéro SIREN de ZENCO', 'Compléter le devis et les factures', '18 novembre']])])
 
+onglet('Vos demandes', 'mail',
+       'Qu’avez-vous demandé, et où y répondons-nous ?',
+       'Chacune de vos demandes est reprise dans ce dossier : la prise de rendez-vous, la boutique, les stories chaque jour, les distributeurs qui marchent, le calendrier.',
+       ['Votre modèle, Boost Your Health, est repris : « Rejoindre l’équipe » avec prise de rendez-vous en ligne.',
+        'La boutique permet d’acheter directement, comme dans la publicité IM8 que vous avez repérée.',
+        'Les stories sponsorisées tournent tous les jours, avec un budget de 30 € par jour.',
+        'Le site est en ligne le lundi 23 novembre.'],
+       [dict(type='tableau', titre='Vos messages, un par un', colonnes=['Votre demande', 'Date', 'Notre réponse', 'Où dans le dossier'], lignes=[
+           ['« Il faudrait retirer la mention FENA du QR code »', '08/11', 'Fait : le QR mène à la page d’accueil, sans FENA', 'Déjà livré'],
+           ['« Le hollandais il a un calendrier pour prendre rendez-vous »', '13/11', 'Prise de rendez-vous en ligne sur votre page « Rejoindre l’équipe », reliée à votre agenda', 'Le site : rejoindre l’équipe'],
+           ['« Direct tu achètes » (la publicité IM8)', '13/11', 'Une boutique où l’on commande directement, à votre nom', 'Le site : la boutique'],
+           ['« Il met Join the team avec un calendrier où les gens peuvent prendre rendez-vous »', '14/11', 'Votre page « Rejoindre l’équipe », sur le modèle de Boost Your Health', 'Le site : rejoindre l’équipe'],
+           ['« Maintenant faut les mettre sur Instagram »', '14/11', 'Stories et publications sponsorisées chaque jour sur Instagram et Facebook', 'Dispositif Meta'],
+           ['« … et LinkedIn »', '14/11', 'Prévu dans un second temps pour aborder les professionnels, hors de ce devis', 'Cibles et messages'],
+           ['« Des Eqology qui marchent fort »', '14/11', 'Chaque compte analysé : site, Instagram, publicités, et ce que nous reprenons', 'Vos références'],
+           ['« En quoi consistent les 30 € par jour ? Avec des stories ? »', '13/11', 'Le budget payé à Meta pour diffuser vos stories chaque jour', 'Budget et règlement'],
+           ['« Quelle fréquence pour les stories ? »', '13/11', 'Tous les jours, avec des créations renouvelées', 'Dispositif Meta'],
+           ['« Quel est ton timing pour le site ? »', '15/11', 'Site en ligne le lundi 23/11, publicités le mercredi 25/11', 'Calendrier']])])
+
+onglet('Le site : plan général', 'layers',
+       'Comment est organisé votre nouveau site ?',
+       'Un site neuf, pensé pour le téléphone, avec deux portes dès l’accueil : « Rejoindre l’équipe » et « Ma santé », qui mène à la boutique.',
+       ['L’accueil demande « Par où voulez-vous commencer ? », comme chez Boost Your Health.',
+        'La partie recrutement et la boutique partagent le même site, la même adresse et votre image.',
+        'Chaque page est pensée pour le téléphone, là où arrivent les visiteurs d’Instagram.',
+        'Formulaire, prise de rendez-vous, alertes et suivi sont reliés dès la mise en ligne.'],
+       [dict(type='tableau', titre='Les pages du site', colonnes=['Page', 'Ce qu’on y trouve', 'À quoi elle sert'], lignes=[
+           ['Accueil', 'Votre photo, une phrase d’accroche, les deux portes « Rejoindre l’équipe » et « Ma santé »', 'Orienter chaque visiteur en une seconde'],
+           ['Rejoindre l’équipe', 'Votre histoire, l’activité, comment on démarre, le formulaire et la prise de rendez-vous', 'Recruter des partenaires'],
+           ['Boutique', 'Les familles de produits, les packs, le test', 'Vendre à votre nom'],
+           ['Fiches produits', 'Composition, bienfaits autorisés, mode d’emploi, bouton « Commander »', 'Convaincre et faire commander'],
+           ['Le test oméga-3', 'Comment il se fait, ce qu’il mesure, pourquoi le refaire', 'La porte d’entrée santé, comme chez vos références'],
+           ['Qui suis-je', 'Votre parcours, pourquoi Eqology, vos engagements', 'Créer la confiance'],
+           ['Contact et mentions', 'Téléphone, formulaire, mentions légales, confidentialité', 'Rassurer et rester en règle']]),
+        dict(type='cartes', titre='Ce qui est compris', colonnes=3, cartes=[
+            dict(titre='Pensé pour le téléphone', texte='Lisible et rapide sur mobile, là où arrivent les visiteurs des publicités.'),
+            dict(titre='Votre image', texte='Votre logo, vos couleurs, vos photos et votre vidéo, sur toutes les pages.'),
+            dict(titre='La prise de rendez-vous', texte='Un calendrier en ligne relié à votre agenda : les rendez-vous apparaissent sur votre téléphone.'),
+            dict(titre='Les alertes', texte='Chaque contact vous arrive par SMS ou WhatsApp, avec une copie chez Heyfuture.'),
+            dict(titre='Le suivi', texte='Le pixel Meta et l’API de conversions, pour que les publicités apprennent qui s’inscrit.'),
+            dict(titre='Hébergement et sécurité', texte='Hébergement de 12 mois, certificat de sécurité (cadenas), sauvegardes.')])])
+
 # ——— Les captures de l'analyse
 def ajoute(titre_onglet, position, bloc):
     o = next(x for x in O if x['titre'] == titre_onglet)
@@ -302,11 +404,26 @@ ajoute('Le parcours', 1, dict(type='captures', titre='Deux exemples de parcours 
     images=[
         dict(src=W + '13 at 15.18.01.jpeg', titre='L’appel découverte', texte='Chez Boost Your Health, tout mène à 15 minutes en visio. Pour vous, ce sera un appel téléphonique.', source='Calendly de Boost Your Health'),
         dict(src='pubs/lang-gesund.jpg', titre='Le formulaire au bout de la publicité', texte='La publicité mène à une candidature : nom, coordonnées, motivation. C’est le principe de notre page « Rejoindre l’équipe ».', source='Bibliothèque Meta')]))
-ajoute('Le site', 1, dict(type='captures', titre='Les modèles du nouveau site', colonnes=3,
+ajoute('La page de recrutement', 1, dict(type='captures', titre='Les modèles observés', colonnes=2,
     images=[
-        dict(src='boost/2-deux-portes.jpg', titre='Les deux portes', texte='Le principe repris pour votre page d’accueil.', source='boostyourhealth.eu'),
+        dict(src='boost/3-famille.jpg', titre='Raconter son histoire', texte='Boost Your Health vend d’abord leur parcours et leur accompagnement.', source='boostyourhealth.eu'),
+        dict(src='boost/4-temoignages.jpg', titre='Montrer des partenaires', texte='Des professionnels qui racontent comment ils ont démarré.', source='boostyourhealth.eu')]))
+ajoute('La boutique en ligne', 1, dict(type='captures', titre='Les modèles de la boutique', colonnes=3,
+    images=[
+        dict(src='boost/2-deux-portes.jpg', titre='Les deux portes', texte='« Ma santé » mène à la boutique, « entreprendre » à la page de recrutement.', source='boostyourhealth.eu'),
         dict(src='boost/6-linktree.jpg', titre='Le catalogue codé', texte='Chaque produit mène à Eqology avec le code du partenaire.', source='linktr.ee/boostyourhealth.eu'),
         dict(src=W + '14 at 13.18.22 (3).jpeg', titre='La page partenaire', texte='La boutique Eqology au nom du partenaire, vers laquelle mènent les boutons « Commander ».', source='partner.eqology.com/omegarob')]))
+
+NOMS = {'La page de recrutement': 'Le site : rejoindre l’équipe', 'La boutique en ligne': 'Le site : la boutique'}
+for o in O:
+    if o['titre'] in NOMS:
+        o['titre'] = NOMS[o['titre']]; o['id'] = F.slug(o['titre'])
+ORDRE = ['Synthèse', 'Vos demandes', 'Vos références', 'Cibles et messages', 'Le parcours', 'Le site : plan général',
+         'Le site : rejoindre l’équipe', 'Le site : la boutique', 'Dispositif Meta', 'Suivi et mesure', 'Qui fait quoi',
+         'Calendrier', 'Budget et règlement', 'Ce qu’il nous faut']
+O.sort(key=lambda o: ORDRE.index(o['titre']))
+bq = next(o for o in O if o['titre'] == 'Le site : la boutique')
+bq['blocs'].sort(key=lambda b: 0 if b.get('titre') == 'Ce que la boutique vous apporte' else 1)
 
 for i, o in enumerate(O):
     o['numero'] = f'{i:02d}'
@@ -318,7 +435,13 @@ try:
     police = json.load(open(F.CHARTE, encoding='utf-8'))['polices']['embarque'][0]
 except Exception as ex:  # noqa: BLE001
     print(f'! police non embarquée ({ex})', file=sys.stderr)
-html = F.page(O, police).replace('</style>', CSS_CAPTURES + '</style>', 1)
+CHARTE_YVES = (':root{--fond:#FAFAF8;--relief:#F5F4F0;--pale:#E8F4F4;--nuit:#0B1D2E;--nuit-2:#172847;'
+               '--accent:#4DA8B5;--accent-fonce:#2E656D;--accent-fond:#EEF8F9;--n1:#EEF8F9;--n2:#D5EFF2;--n3:#ABDFE5;--n4:#81CFD8;--n5:#4DA8B5}'
+               '.marque-logo{display:inline-flex;background:#fff;border-radius:10px;padding:7px 12px}.marque-logo img{height:20px;width:auto;display:block}'
+               '.lat__tete .marque-logo img{height:24px}.couverture .marque-logo img{height:34px}')
+LOGO_YVES = 'data:image/webp;base64,' + base64.b64encode(open(os.path.join(os.path.dirname(ICI), 'assets/images/eqology-logo.png'), 'rb').read()).decode()
+html = F.page(O, police).replace('</style>', CSS_CAPTURES + CHARTE_YVES + '</style>', 1)
+html = html.replace('<span class="marque">heyfuture</span>', f'<span class="marque-logo"><img src="{LOGO_YVES}" alt="Eqology"></span>')
 sortie = os.path.join(ICI, 'dossier-yves.html')
 open(sortie, 'w', encoding='utf-8').write(html)
 print(sortie, len(html) // 1024, 'Ko')
