@@ -1,0 +1,226 @@
+# -*- coding: utf-8 -*-
+"""Dossier de stratégie pour Yves Coignard, au format des dossiers Heyfuture (moteur fabriquer.py des « Fondations »).
+Damien, 16/11/2026 : « format horizontal, en mode comme un audit ».
+Usage : python3 mission/dossier_yves.py  →  mission/dossier-yves.html"""
+import os, sys, json
+sys.path.insert(0, os.path.expanduser('~/Documents/audits-heyfuture/clients/heyfuture-strategie'))
+import fabriquer as F
+
+ICI = os.path.dirname(os.path.abspath(__file__))
+F.TITRE = 'Recruter des partenaires Eqology'
+F.DATE = '16 novembre 2026 · Yves Coignard'
+
+O = []
+
+
+def onglet(titre, icone, question, reponse, en_bref, blocs):
+    O.append(dict(id=F.slug(titre), titre=titre, icone=icone, question=question, reponse=reponse, enBref=en_bref, blocs=blocs))
+
+
+onglet('Synthèse', 'compass',
+       'Comment trouver des partenaires Eqology avec Instagram et Facebook ?',
+       'En recrutant d’abord des personnes qui ont déjà une clientèle. Des publicités quotidiennes les invitent à une visio et à un appel avec vous. '
+       'Le site est en ligne lundi 23 novembre, les publicités démarrent mercredi 25 novembre.',
+       ['Le chiffre d’un distributeur Eqology vient de son équipe : l’objectif principal est de recruter des business partners, la boutique vient en soutien.',
+        'Vos références qui réussissent mènent toutes à une conversation (appel, visio, soirée). Les publicités « promotion » vers une boutique s’arrêtent vite.',
+        'Deux cibles : le grand public qui cherche un complément de revenu, et les professionnels qui ont déjà des clients (coachs, salles de sport, diététiciennes).',
+        'Votre seul rôle : rappeler les personnes intéressées. Le site, les publicités, les relances et le suivi sont pris en charge.',
+        'Calendrier : signature et règlement de 2 700 € TTC d’ici vendredi 20/11, site lundi 23/11, publicités mercredi 25/11, bilan fin décembre.'],
+       [dict(type='cartes', titre='Le dispositif en quatre repères', colonnes=4, cartes=[
+           dict(etiquette='Cible', titre='Des partenaires', texte='Des personnes qui feront à leur tour la promotion des produits, en priorité des professionnels qui ont déjà une clientèle.'),
+           dict(etiquette='Canal', titre='Instagram et Facebook', texte='Des stories et publications sponsorisées, chaque jour, avec un budget de 30 € par jour payé à Meta.'),
+           dict(etiquette='Conversion', titre='Votre appel', texte='Chaque inscrit vous arrive par SMS ou WhatsApp. Vous le rappelez sous 48 heures, puis il assiste à une visio.'),
+           dict(etiquette='Mesure', titre='Un bilan chiffré', texte='Coût par inscrit, taux de rappel, présents à la visio, nouveaux partenaires : premier bilan fin décembre.')]),
+        dict(type='texte', titre='Pourquoi recruter plutôt que vendre', paragraphes=[
+            'Vendre un flacon à la fois rapporte une commission. Recruter une coach qui met trente clients sous oméga-3 rapporte chaque mois, sur toute son activité.',
+            'C’est ce que font les distributeurs que vous nous avez envoyés : leurs comptes Instagram comptent entre 50 et 5 000 abonnés seulement. Leur chiffre ne vient pas de leur audience, il vient de leur équipe.'])])
+
+onglet('Vos références', 'search',
+       'Que font les distributeurs que vous nous avez envoyés ?',
+       'Ils recrutent des gens qui ont déjà des clients, et tout leur parcours mène à une conversation. Aucun ne vend l’huile flacon par flacon avec de la publicité.',
+       ['Boost Your Health (Pays-Bas) : un site à deux portes, un appel gratuit de 15 minutes, des coachs et thérapeutes recrutés.',
+        'L’équipe Eqology de Sicile : 31 publicités sur 7 mois pour remplir des soirées d’information.',
+        'Sur 320 publicités Meta qui citent Eqology en Europe, celles qui durent mènent à un échange ; celles qui promettent -25 % s’arrêtent en cinq semaines.',
+        'En France, aucun distributeur Eqology ne fait de publicité Meta qui cite la marque : la place est libre.'],
+       [dict(type='tableau', titre='Vos références, une par une', colonnes=['Référence', 'Leur méthode', 'Ce que nous reprenons'], lignes=[
+           ['Boost Your Health (Pays-Bas)', 'Site à deux portes (« ma santé » / « entreprendre »), appel découverte de 15 minutes, témoignages de professionnels recrutés, Instagram centré sur leur vie de famille', 'Les deux portes, l’appel, la cible des professionnels'],
+           ['Eqology Business Partners Sicilia', 'Soirées de présentation avec des responsables Eqology, remplies par des publicités régulières', 'La publicité qui remplit une réunion'],
+           ['Robert Kontriner', 'Page partenaire Eqology à son nom, chaque lien porte son identifiant', 'La boutique à votre nom, sans stock'],
+           ['Falko Krismayr', 'Recrutement en face à face, Instagram et presse pour la crédibilité', 'Le contact humain au bout du parcours'],
+           ['Livre « Oméga-3, le verdict de la science »', 'Approche des professionnels de santé par la science, sans parler de produit', 'Parler science aux pros, l’activité ensuite'],
+           ['Norway Omega, IM8', 'Marques en ligne, stories sponsorisées soignées, offre de bienvenue', 'Le format story et la qualité des visuels']]),
+        dict(type='tableau', titre='Ce que montrent les publicités Meta', colonnes=['Annonceur', 'Durée de diffusion', 'Où mène la publicité', 'Lecture'], lignes=[
+            ['Eqology Business Partners Sicilia', '7 mois, 31 publicités', 'Soirées d’information', 'Ça marche'],
+            ['Pure Omega3 (Roumanie)', '7 mois, 31 publicités', 'Message privé', 'Ça marche'],
+            ['Diététicienne (Pologne)', '10 mois, 17 publicités', 'Instagram puis échange', 'Ça marche'],
+            ['Kiné-diététicienne (Bulgarie)', '6 mois, 11 publicités', 'Page partenaire', 'Ça marche'],
+            ['Gradina Health (Bulgarie)', '5 semaines, 38 publicités', 'Boutique avec -25 %', 'Arrêté'],
+            ['Recrutement frontal (Pays-Bas)', 'Une seule diffusion', '« Rejoins mon équipe »', 'Pas de preuve']],
+            lire='Personne ne paie des mois de publicité qui ne rapporte rien : la durée de diffusion est le meilleur indice disponible. Source : Bibliothèque publicitaire Meta, 16/11/2026.')])
+
+onglet('Cibles et messages', 'target',
+       'Qui allons-nous chercher, et avec quel message ?',
+       'Deux publics, deux messages, une même destination : votre appel.',
+       ['Le grand public : 35 à 70 ans, intéressé par la santé, qui cherche un complément de revenu.',
+        'Les professionnels : coachs sportifs, salles de sport, diététiciennes, kinés, esthéticiennes. Une recrue peut amener des dizaines de clients.',
+        'Votre histoire sert de preuve : à 75 ans, en forme et partenaire Eqology. Une courte vidéo de vous sera la première publicité testée.',
+        'Les naturopathes viendront plus tard, avec une approche par la science et le test.'],
+       [dict(type='cartes', titre='Les deux cibles', colonnes=2, cartes=[
+           dict(etiquette='Cible 1', titre='Le grand public', sousTitre='Retraités et actifs, 35 à 70 ans', texte='Ils ont du temps, un entourage et l’envie d’un revenu d’appoint.',
+                puces=['Message : « Santé et complément de revenu : 45 minutes pour tout comprendre. »', 'Destination : inscription à la visio d’information']),
+           dict(etiquette='Cible 2', titre='Les professionnels', sousTitre='Ils ont déjà une clientèle', texte='Coachs sportifs, salles de sport, diététiciennes, kinés, esthéticiennes.',
+                puces=['Message : « Proposez le test oméga-3 à vos clients et ajoutez une source de revenu à votre activité. »', 'Destination : échange découverte avec vous'])]),
+        dict(type='cartes', titre='Trois premières publicités', colonnes=3, cartes=[
+            dict(etiquette='Vidéo', titre='Votre histoire', texte='« J’ai 75 ans, je prends mes oméga-3 chaque matin et j’accompagne des partenaires. » Vous face caméra, 30 secondes, sous-titrée.'),
+            dict(etiquette='Visuel', titre='Le test oméga-3', texte='Le test à faire chez soi, le résultat, puis l’invitation à la visio. Pour le grand public.'),
+            dict(etiquette='Message', titre='Pour les pros', texte='« Coach ou thérapeute ? Proposez le test à vos clients. » Pour les professionnels.')])])
+
+onglet('Le parcours', 'funnel',
+       'Comment une personne devient-elle partenaire ?',
+       'Elle voit une publicité, s’inscrit en laissant son téléphone, vous l’appelez, puis elle assiste à une présentation.',
+       ['Six étapes, de la publicité au démarrage.',
+        'Entre l’inscription et la visio, des e-mails automatiques présentent Eqology et l’activité.',
+        'Quand vous appelez, la personne a déjà reçu l’essentiel.',
+        'Ceux qui veulent seulement acheter passent par la boutique.'],
+       [dict(type='etapes', titre='Les six étapes', etapes=[
+           dict(titre='Publicité', texte='Une story ou une publication sur Instagram et Facebook.'),
+           dict(titre='Page « Rejoindre l’équipe »', texte='Votre histoire, l’activité, à qui elle s’adresse, comment on démarre.'),
+           dict(titre='Formulaire', texte='Nom, téléphone, profil (particulier ou professionnel), créneau de rappel.'),
+           dict(titre='Votre appel', texte='Sous 48 heures, par téléphone. Vous recevez le contact par SMS ou WhatsApp.'),
+           dict(titre='Visio de présentation', texte='Assurée par Eqology ou par votre parrain. Vous n’avez rien à préparer.'),
+           dict(titre='Démarrage', texte='Le nouveau partenaire choisit son Business Kit et rejoint votre équipe.')]),
+        dict(type='tableau', titre='Les e-mails automatiques', colonnes=['Quand', 'Contenu'], lignes=[
+            ['Juste après l’inscription', 'Confirmation, qui vous êtes, la date de la prochaine visio'],
+            ['Deux jours après', 'Pourquoi Eqology : le test, les produits, la Norvège'],
+            ['Cinq jours après', 'Un témoignage de partenaire'],
+            ['La veille de la visio', 'Le rappel et le lien de connexion']])])
+
+onglet('Dispositif Meta', 'megaphone',
+       'Comment les publicités sont-elles organisées ?',
+       'Deux campagnes, 30 € par jour au total, trois créations chacune, optimisées en continu.',
+       ['Un portefeuille Meta Business au nom de ZENCO, une page Facebook et un compte Instagram dédiés.',
+        'Le budget est payé directement à Meta par votre carte bancaire.',
+        'Campagne « visio » à 20 € par jour, campagne « professionnels » à 10 € par jour, puis réallocation après deux semaines.',
+        'Seuls les bienfaits des oméga-3 autorisés par l’Union européenne sont utilisés, sans promesse de revenu chiffrée.'],
+       [dict(type='cartes', titre='Les comptes', colonnes=3, cartes=[
+           dict(titre='Meta Business', texte='Le portefeuille qui regroupe la page, le compte Instagram et le compte publicitaire, au nom de ZENCO.'),
+           dict(titre='Compte publicitaire', texte='Réglé par votre carte bancaire : vous payez Meta directement, sans intermédiaire.'),
+           dict(titre='Compte Instagram', texte='6 à 9 publications de base (qui vous êtes, l’activité, le test, des témoignages). Il sert de vitrine, sans animation de communauté.')]),
+        dict(type='tableau', titre='Les campagnes', colonnes=['Campagne', 'Ciblage', 'Budget de départ', 'Objectif mesuré'], lignes=[
+            ['Visio d’information', 'France, 35-70 ans, intérêts santé, bien-être, revenu complémentaire', '20 € par jour', 'Inscriptions au formulaire'],
+            ['Professionnels', 'France, métiers et intérêts : coaching sportif, fitness, nutrition, kinésithérapie, esthétique', '10 € par jour', 'Demandes d’échange']],
+            lire='Après deux semaines, le budget passe sur la campagne qui obtient les inscriptions les moins chères.'),
+        dict(type='cartes', titre='Les règles', colonnes=3, cartes=[
+            dict(titre='Allégations autorisées', texte='Uniquement les bienfaits validés par l’Europe, par exemple : « le DHA contribue au fonctionnement normal du cerveau ».'),
+            dict(titre='Pas de promesse de revenu', texte='On parle d’activité et de complément de revenu, jamais d’un montant gagné.'),
+            dict(titre='Transparence', texte='La mention « distributeur indépendant Eqology » apparaît sur le site et dans les publicités.')])])
+
+onglet('Le site', 'layers',
+       'À quoi sert le nouveau site ?',
+       'Il a deux portes : « Rejoindre l’équipe », où mènent les publicités, et une boutique qui présente toute la gamme Eqology à votre nom.',
+       ['La page « Rejoindre l’équipe » est la page d’arrivée des publicités.',
+        'La boutique rassure et permet de commander : chaque bouton « Commander » ouvre Eqology avec votre identifiant de partenaire.',
+        'Eqology encaisse, livre et assure le service client : vous n’avez ni stock ni colis.',
+        'En ligne le lundi 23 novembre.'],
+       [dict(type='tableau', titre='Ce que contient le site', colonnes=['Partie', 'Contenu', 'Rôle'], lignes=[
+           ['Rejoindre l’équipe', 'Votre histoire, l’activité, à qui elle s’adresse, les étapes, le formulaire et la prise de rendez-vous', 'Recrutement, page d’arrivée des publicités'],
+           ['Boutique', 'La gamme Eqology présentée en français : oméga-3, packs, vitamines, test', 'Rassurer et permettre la commande'],
+           ['Bouton « Commander »', 'Ouvre la fiche du produit sur le site Eqology avec votre identifiant', 'Chaque commande vous est attribuée'],
+           ['Mentions et confidentialité', 'Mentions légales, politique de confidentialité, consentement au formulaire', 'Conformité']]),
+        dict(type='texte', titre='Pourquoi les prix restent chez Eqology', paragraphes=[
+            'Les prix sont affichés sur le site Eqology au moment de la commande. Le site n’a donc jamais de prix faux quand Eqology les change.'])])
+
+onglet('Suivi et mesure', 'chart',
+       'Comment suit-on les contacts et les résultats ?',
+       'Chaque inscription vous arrive sur le téléphone, part en relance automatique et remonte dans les chiffres de la campagne.',
+       ['Chaque formulaire vous parvient immédiatement par SMS ou WhatsApp.',
+        'Une copie arrive chez Heyfuture pour suivre les relances et vous prévenir si un contact n’a pas été rappelé.',
+        'Le site envoie un signal à Meta à chaque inscription : Meta apprend à montrer les publicités aux bonnes personnes.',
+        'Cinq indicateurs, suivis chaque semaine.'],
+       [dict(type='tableau', titre='Les indicateurs', colonnes=['Indicateur', 'Ce qu’il dit', 'Source'], lignes=[
+           ['Coût par inscrit', 'Combien coûte un nouveau contact', 'Meta, événement « inscription » envoyé par le site'],
+           ['Taux de rappel', 'Part des inscrits que vous avez joints', 'Suivi des contacts'],
+           ['Présents à la visio', 'Intérêt réel des contacts', 'Liste de la visio'],
+           ['Nouveaux partenaires', 'Le résultat final', 'Votre compte Eqology'],
+           ['Commandes boutique', 'Les ventes attribuées à votre compte', 'Votre compte Eqology']]),
+        dict(type='texte', titre='Le suivi technique', paragraphes=[
+            'Le site est équipé du pixel Meta et de l’API de conversions : à chaque inscription, Meta reçoit l’information, même si le visiteur bloque les cookies du navigateur.',
+            'Chaque campagne porte ses propres paramètres de suivi, pour savoir quelle publicité a amené quel contact.'])])
+
+onglet('Qui fait quoi', 'users',
+       'Qu’aurez-vous à faire, concrètement ?',
+       'Rappeler les personnes intéressées et les inviter à la visio. Tout le reste est pris en charge.',
+       ['Vous n’avez aucun outil à manipuler : les contacts arrivent tout prêts sur votre téléphone.',
+        'Vous validez les premières publicités une fois.',
+        'Dix minutes de tournage au téléphone suffisent pour la vidéo.'],
+       [dict(type='tableau', titre='La répartition des tâches', colonnes=['Tâche', 'Yves', 'Heyfuture'], lignes=[
+           ['Comptes Meta et Instagram', 'Ajoute sa carte au compte publicitaire', 'Crée et configure'],
+           ['Vidéo de présentation', '10 minutes de tournage au téléphone', 'Script, montage, sous-titres'],
+           ['Site et boutique', 'Relit sa présentation', 'Conçoit, développe, met en ligne'],
+           ['Publicités', 'Valide les premières créations', 'Crée, diffuse, optimise chaque jour'],
+           ['Contacts', 'Rappelle sous 48 heures', 'Alertes, relances e-mail, suivi'],
+           ['Visio de présentation', 'Invite ses contacts', 'Organisation avec le parrain si besoin'],
+           ['Bilan', 'Partage le nombre de partenaires signés', 'Prépare le bilan chiffré']])])
+
+onglet('Calendrier', 'rocket',
+       'Quand lance-t-on ?',
+       'Site en ligne le lundi 23 novembre, publicités le mercredi 25 novembre, premier bilan fin décembre.',
+       ['Ces dates supposent le devis signé et les deux premières factures réglées d’ici vendredi 20 novembre.',
+        'Point à deux semaines le mercredi 9 décembre.',
+        'Bilan du premier mois fin décembre, décision pour janvier.'],
+       [dict(type='tableau', titre='Les dates', colonnes=['Date', 'Étape'], lignes=[
+           ['Lundi 16 novembre', 'Stratégie, devis et factures'],
+           ['Vendredi 20 novembre au plus tard', 'Devis signé, factures 1004 et 1005 réglées (2 700 € TTC)'],
+           ['Du 18 au 20 novembre', 'Création des comptes Meta et Instagram, tournage de la vidéo'],
+           ['Lundi 23 novembre', 'Site en ligne : page « Rejoindre l’équipe » et boutique'],
+           ['Mardi 24 novembre', 'Validation des premières publicités'],
+           ['Mercredi 25 novembre', 'Lancement des publicités'],
+           ['Mercredi 9 décembre', 'Point à deux semaines : budget réorienté vers la meilleure campagne'],
+           ['Fin décembre', 'Bilan du premier mois et décision pour janvier']])])
+
+onglet('Budget et règlement', 'payment',
+       'Combien, et comment se passe le règlement ?',
+       '3 000 € HT (3 600 € TTC) au total : 2 700 € TTC à la signature, 900 € TTC à la mise en ligne du site. Le budget publicitaire se paie à part, directement à Meta.',
+       ['Le lancement des publicités est payé d’avance (facture 1004, 1 800 € TTC).',
+        'Le site fait l’objet d’un acompte de 50 % (facture 1005, 900 € TTC) et d’un solde à la mise en ligne (900 € TTC).',
+        'Le site e-commerce vaut 3 000 € HT ; la première version ayant été réglée, il est facturé 1 500 € HT.',
+        'Budget publicitaire : 30 € par jour payés à Meta, environ 900 € par mois. Pilotage à partir du deuxième mois : 500 € HT par mois, en option.'],
+       [dict(type='tableau', titre='L’échéancier', colonnes=['Échéance', 'Document', 'HT', 'TTC'], lignes=[
+           ['À la signature', 'Facture 1004 : lancement des publicités Meta, payé d’avance', '1 500 €', '1 800 €'],
+           ['À la signature', 'Facture 1005 : acompte de 50 % sur le site', '750 €', '900 €'],
+           ['Lundi 23 novembre', 'Solde de 50 % sur le site', '750 €', '900 €'],
+           ['Total', 'Devis PROP-2026-1116-ZENCO', '3 000 €', '3 600 €']],
+            lire='Règlement par virement à TAM LABS, la société qui porte Heyfuture. Les coordonnées bancaires figurent sur chaque facture.'),
+        dict(type='cartes', titre='Ce qui n’est pas dans le devis', colonnes=2, cartes=[
+            dict(titre='Le budget publicitaire', texte='30 € par jour, payés directement à Meta par carte. Un mois minimum avant le bilan, deux mois de préférence.'),
+            dict(titre='Le pilotage après le premier mois', texte='En option : 500 € HT par mois, sans engagement, pour continuer à créer et optimiser les publicités.')])])
+
+onglet('Ce qu’il nous faut', 'check',
+       'De quoi avons-nous besoin pour démarrer ?',
+       'Six éléments, à transmettre entre le 18 et le 20 novembre.',
+       ['Votre identifiant de partenaire Eqology, pour coder les boutons « Commander ».',
+        'Le nom de votre parrain et ses dates de visio.',
+        'Votre choix entre SMS et WhatsApp pour recevoir les contacts.',
+        'Dix minutes pour la vidéo, et le SIREN de ZENCO pour les documents.'],
+       [dict(type='tableau', titre='La liste', colonnes=['Élément', 'Pourquoi', 'Pour quand'], lignes=[
+           ['Votre identifiant de partenaire Eqology', 'Coder chaque bouton « Commander » à votre nom', '18 novembre'],
+           ['Le nom de votre parrain et ses dates de visio', 'Organiser la présentation des nouveaux contacts', '20 novembre'],
+           ['SMS ou WhatsApp', 'Vous prévenir de chaque nouveau contact', '18 novembre'],
+           ['Accès à votre compte Facebook', 'Créer la page et le compte publicitaire', '19 novembre'],
+           ['10 minutes pour la vidéo', 'Première publicité', '20 novembre'],
+           ['Le numéro SIREN de ZENCO', 'Compléter le devis et les factures', '18 novembre']])])
+
+for i, o in enumerate(O):
+    o['numero'] = f'{i:02d}'
+    o['_fichier'] = o['id']
+    o['blocs'] = [b for b in o['blocs'] if b.get('type') in F.RENDUS]
+
+police = None
+try:
+    police = json.load(open(F.CHARTE, encoding='utf-8'))['polices']['embarque'][0]
+except Exception as ex:  # noqa: BLE001
+    print(f'! police non embarquée ({ex})', file=sys.stderr)
+html = F.page(O, police)
+sortie = os.path.join(ICI, 'dossier-yves.html')
+open(sortie, 'w', encoding='utf-8').write(html)
+print(sortie, len(html) // 1024, 'Ko')
