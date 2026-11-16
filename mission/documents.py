@@ -10,9 +10,9 @@ DATE = '16/11/2026'
 VALIDITE = '16/12/2026'
 DEVIS = 'PROP-2026-1116-ZENCO-V2'   # V2 : SIREN et TVA du client ajoutés (le V1 est parti le 16/11 à 22h24 sans SIREN)
 DEVIS_V1 = 'PROP-2026-1116-ZENCO'
-FACTURE_ANNULEE = '1004'  # émise le 16/11 (mail de 22h24) sans le SIREN du client : annulée par l'avoir 1005 (partie 3)
+FACTURE = '1004'          # Damien, 16/11 soir : on garde le n° 1004, corrigé avec le SIREN (pas d'avoir)
+FACTURE_ANNULEE = '1004'  # conservé pour avoir() si le cabinet demande la voie de l'avoir
 AVOIR = '1005'
-FACTURE = '1006'          # nouvelle facture d'acompte, avec le SIREN
 ACOMPTE_PCT = 50
 
 ASSETS = os.path.expanduser('~/Documents/crm-heyfuture/public/assets')
@@ -181,7 +181,6 @@ def avoir():
 
 DOCUMENTS = [
     (f'Devis {DEVIS} TAM LABS ZENCO.pdf', devis()),
-    (f'Avoir {AVOIR} TAM LABS ZENCO (annule la facture {FACTURE_ANNULEE}).pdf', avoir()),
     (f'Facture {FACTURE} TAM LABS ZENCO (acompte).pdf', facture()),
 ]
 
