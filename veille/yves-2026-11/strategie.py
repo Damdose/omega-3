@@ -37,6 +37,31 @@ cfg = dict(
             donc='le site d’Yves a deux missions : faire acheter via ses liens codés et faire entrer des business partners dans son équipe. Toutes ses références jouent sur l’une ou l’autre.',
         ),
         dict(
+            court='Les vrais chiffres',
+            etiquette='Vérification',
+            titre='Leurs audiences Instagram sont petites : le chiffre vient de l’équipe, pas des abonnés',
+            intro=['Yves dit que ses références « font plein de chiffres grâce à Instagram ». Nous avons relevé leurs comptes le 16/11/2026. '
+                   'Leur chiffre d’affaires n’est pas public, donc on ne peut pas le vérifier. En revanche, leurs audiences, elles, se mesurent.'],
+            comparatif=dict(
+                colonnes=['Abonnés', 'J’aime par publication', 'Ce qui recrute vraiment'],
+                lignes=[
+                    ('Falko Krismayr', '5 123', '—', ('Les rencontres en face à face (il le dit dans la presse)', '')),
+                    ('eqologybusiness (officiel)', '3 573', '—', ('Kick Off, Convention : les événements Eqology', '')),
+                    ('Boost Your Health', '1 876', '14 à 79 (une vidéo de leur chat : 21 000)', ('Le site, l’appel de 15 min, les pros recrutés', 'ok')),
+                    ('Robert Kontriner', '657', '2 à 36', ('Rien de visible en ligne', 'mal')),
+                    ('Eqology Sicilia', '51', '—', ('Les soirées en présentiel', '')),
+                    ('eqologywithaga', '4', '0 publication', ('Rien pour l’instant', 'mal')),
+                ]),
+            points=[
+                dict(titre='Comment on fait du chiffre avec 1 800 abonnés', ton='ok',
+                     texte='En vente en réseau, le volume se fait dans l’équipe. Boost Your Health ne vend pas seulement à ses abonnés : '
+                           'ils recrutent des professionnels qui ont déjà leur clientèle (coach, thérapeute, salle de sport). Chacun revend à ses propres clients, '
+                           'puis recrute à son tour. Instagram sert de vitrine et de preuve de vie. Le recrutement se fait en message privé, en rendez-vous et en soirée.',
+                     exemple='La thérapeute de Poepgoed.nl raconte qu’elle a d’abord proposé Eqology à ses clients, puis l’a ouvert à ses propres thérapeutes. Une recrue amène toute une équipe.'),
+            ],
+            donc='Yves a raison sur le principe, mais pas sur le mécanisme. Ces partenaires ne gagnent pas grâce à leur audience Instagram : ils gagnent en recrutant des gens qui ont déjà des clients. C’est ce profil que le site et les pubs doivent aller chercher.',
+        ),
+        dict(
             court='Recruter',
             etiquette='Objectif 1 · Trouver des business partners',
             titre='Pour recruter, chaque référence a sa méthode, et aucune n’utilise la publicité',
