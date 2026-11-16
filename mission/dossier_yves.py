@@ -10,6 +10,52 @@ ICI = os.path.dirname(os.path.abspath(__file__))
 F.TITRE = 'Recruter des partenaires Eqology'
 F.DATE = '16 novembre 2026 · Yves Coignard'
 
+# ——— Bloc « captures » ajouté ici (le moteur partagé fabriquer.py n'est pas modifié)
+import base64, io
+from PIL import Image
+VEILLE = os.path.join(os.path.dirname(ICI), 'veille', 'yves-2026-11')
+
+
+def img_uri(chemin, largeur=900):
+    im = Image.open(os.path.join(VEILLE, chemin)).convert('RGB')
+    if im.width > largeur:
+        im = im.resize((largeur, round(im.height * largeur / im.width)))
+    buf = io.BytesIO(); im.save(buf, 'JPEG', quality=78)
+    return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
+
+
+def b_captures(b, ctx):
+    figs = ''
+    for c in b.get('images', []):
+        cls = 'cap cap--large' if c.get('large') else 'cap'
+        figs += (f'<figure class="{cls}"><div class="cap__img"><img src="{img_uri(c["src"])}" alt="{F.e(c.get("titre"))}" loading="eager"></div>'
+                 f'<figcaption><b>{F.e(c.get("titre"))}</b>{F.e(c.get("texte"))}'
+                 + (f'<span class="cap__src">{F.e(c["source"])}</span>' if c.get('source') else '') + '</figcaption></figure>')
+    return (f'<h2 class="bloc__titre">{F.e(b.get("titre"))}</h2>' * bool(b.get('titre'))
+            + (f'<p class="cap__intro">{F.e(b["intro"])}</p>' if b.get('intro') else '')
+            + f'<div class="caps caps--{b.get("colonnes", 3)}">{figs}</div>')
+
+
+F.RENDUS['captures'] = b_captures
+F.TYPES['captures'] = 'Captures'
+CSS_CAPTURES = '''
+.cap__intro{font-size:15.5px;line-height:1.6;color:var(--encre-2);max-width:76ch;margin:0 0 18px}
+.caps{display:grid;gap:18px;align-items:start}
+.caps--2{grid-template-columns:repeat(2,minmax(0,1fr))}.caps--3{grid-template-columns:repeat(3,minmax(0,1fr))}.caps--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cap{margin:0;display:flex;flex-direction:column;gap:10px;background:var(--carte);border:1px solid var(--trait);border-radius:var(--r);padding:12px;box-shadow:var(--ombre)}
+.cap--large{grid-column:1/-1}
+.cap__img{background:var(--relief);border-radius:10px;overflow:hidden;display:flex;justify-content:center;max-height:560px}
+.cap__img img{display:block;max-width:100%;height:auto;object-fit:contain;object-position:top}
+.cap--large .cap__img{max-height:none}
+.cap figcaption{font-size:14px;line-height:1.5;color:var(--encre-2)}
+.cap figcaption b{display:block;color:var(--encre);font-size:15px;margin-bottom:2px}
+.cap__src{display:block;margin-top:6px;font-size:12px;color:var(--encre-3)}
+@media (max-width:900px){.caps--3,.caps--4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.caps--2,.caps--3,.caps--4{grid-template-columns:1fr}}
+@media print{.cap{break-inside:avoid}}
+'''
+W = 'medias/WhatsApp Image 2026-11-'
+
 O = []
 
 
@@ -210,6 +256,58 @@ onglet('Ce qu’il nous faut', 'check',
            ['10 minutes pour la vidéo', 'Première publicité', '20 novembre'],
            ['Le numéro SIREN de ZENCO', 'Compléter le devis et les factures', '18 novembre']])])
 
+# ——— Les captures de l'analyse
+def ajoute(titre_onglet, position, bloc):
+    o = next(x for x in O if x['titre'] == titre_onglet)
+    o['blocs'].insert(position, bloc)
+
+
+ajoute('Vos références', 1, dict(type='captures', titre='Ce que vous nous avez envoyé : les distributeurs', colonnes=3,
+    intro='Les captures transmises le 13 et le 14 novembre. Chacune a été ouverte et analysée : site, compte Instagram, liens, publicités.',
+    images=[
+        dict(src=W + '14 at 13.18.22.jpeg', titre='Boost Your Health', texte='1 876 abonnés. Leur vie de famille, et « Travailler où tu veux ? Rejoins l’équipe » dans la bio.', source='Instagram @boostyourhealth.eu'),
+        dict(src=W + '13 at 15.18.01.jpeg', titre='Leur prise de rendez-vous', texte='« Échange découverte sans engagement », 15 minutes en visio : c’est la seule vraie conversion de leur site.', source='Calendly de Boost Your Health'),
+        dict(src=W + '13 at 15.18.44.jpeg', titre='Eqology Business Partners Sicilia', texte='Soirée de présentation à Catane avec des responsables Eqology : « Transforme ta passion pour le bien-être en une nouvelle profession ».', source='Instagram @ecologybusinesspartnersicilia'),
+        dict(src=W + '14 at 13.18.22 (3).jpeg', titre='La page partenaire de Robert Kontriner', texte='Le site Eqology à son nom : tous les liens portent son identifiant, chaque commande lui revient.', source='partner.eqology.com/omegarob'),
+        dict(src=W + '14 at 13.18.22 (5).jpeg', titre='Falko Krismayr', texte='Ancien coach olympique devenu mentor. Il recrute en face à face ; Instagram et la presse servent sa crédibilité.', source='Instagram @falko_krismayr'),
+        dict(src=W + '14 at 13.18.22 (6).jpeg', titre='eqologywithaga', texte='Un compte qui démarre : 4 abonnés, aucune publication. Le minimum fourni par Eqology ne suffit pas à recruter.', source='Instagram @eqologywithaga')]))
+ajoute('Vos références', 2, dict(type='captures', titre='Le compte officiel et les marques', colonnes=4,
+    images=[
+        dict(src=W + '14 at 13.18.22 (1).jpeg', titre='Eqology Business', texte='Le compte officiel : stories Products, Kick Off, Opportunity, Convention, que les partenaires reprennent.', source='Instagram @eqologybusiness'),
+        dict(src=W + '14 at 13.18.22 (2).jpeg', titre='Une cliente qui déballe', texte='Eqology reposte les déballages de ses clientes : la preuve vient des utilisateurs.', source='Story @eqology'),
+        dict(src=W + '13 at 15.17.24.jpeg', titre='Norway Omega', texte='Story sponsorisée : produit dans la glace, 20 € offerts avec le code OCEANDEEP.', source='Publicité Instagram'),
+        dict(src=W + '13 at 15.17.32.jpeg', titre='IM8 Health', texte='Story sponsorisée diffusée au nom d’un média, qui mène à une page dédiée à un médecin.', source='Publicité Instagram')]))
+ajoute('Vos références', 3, dict(type='captures', titre='Boost Your Health, étape par étape', colonnes=2,
+    intro='La référence la plus complète. Leur site ne vend presque rien directement : il remplit l’agenda de Dennis.',
+    images=[
+        dict(src='boost/1-accueil.jpg', titre='L’accueil', texte='« Boost health, Grow wealth » : l’argent est annoncé dès la première seconde.', source='boostyourhealth.eu', large=True),
+        dict(src='boost/2-deux-portes.jpg', titre='Les deux portes', texte='« Où veux-tu commencer ? » : améliorer sa santé, ou entreprendre dans la santé. Puis les chiffres d’Eqology.', source='boostyourhealth.eu'),
+        dict(src='boost/3-famille.jpg', titre='Leur offre', texte='Ils vendent leur accompagnement et leur liberté : « Je travaille quand et où je veux ».', source='boostyourhealth.eu'),
+        dict(src='boost/4-temoignages.jpg', titre='Des professionnels recrutés', texte='Coach en nutrition, thérapeute, salle de sport : chacun a d’abord proposé Eqology à ses clients, puis monté son équipe.', source='boostyourhealth.eu'),
+        dict(src='boost/6-linktree.jpg', titre='Le lien en bio, une boutique', texte='22 produits, chacun avec leur code partenaire : le client paie chez Eqology, la vente leur revient.', source='linktr.ee/boostyourhealth.eu')]))
+ajoute('Vos références', 5, dict(type='captures', titre='Les publicités relevées', colonnes=3,
+    intro='Captures de la Bibliothèque publicitaire Meta, le registre public de toutes les publicités Facebook et Instagram.',
+    images=[
+        dict(src='pubs/sicilia.jpg', titre='Sicile : remplir les soirées', texte='31 publicités sur 7 mois, sur la santé, pour faire venir du monde aux présentations. Ça marche.', source='Bibliothèque Meta, 12/04 au 06/05/2026'),
+        dict(src='pubs/pure-omega3.jpg', titre='Roumanie : la conversation privée', texte='Pas de prix affiché, tout se conclut en message privé. 31 publicités sur 7 mois.', source='Bibliothèque Meta, juin 2026'),
+        dict(src='pubs/lang-gesund.jpg', titre='Allemagne : « 3 participants recherchés »', texte='8 semaines d’huile et 2 tests offerts, candidature par formulaire : une prise de contacts déguisée en projet.', source='Bibliothèque Meta, active depuis le 13/11/2026'),
+        dict(src='pubs/gesundezelle.jpg', titre='Allemagne : les coffrets de Noël', texte='Coffrets à 109 € et 189 € avec test sanguin. On commente « SMALL » ou « LARGE », la vente se fait en privé.', source='Bibliothèque Meta, active depuis le 12/11/2026'),
+        dict(src='pubs/gradina.jpg', titre='Bulgarie : la promotion vers la boutique', texte='-25 % et renvoi direct vers la boutique. 38 publicités en cinq semaines, puis arrêt : ça n’a pas marché.', source='Bibliothèque Meta, 02 au 09/03/2026'),
+        dict(src='pubs/marloes.jpg', titre='Pays-Bas : recruter les coachs', texte='« Tu es coach ou thérapeute ? Rejoins mon équipe Eqology. » Diffusée une seule fois : pas encore de preuve.', source='Bibliothèque Meta, 04 au 10/02/2026')]))
+ajoute('Cibles et messages', 1, dict(type='captures', titre='Ce que font déjà d’autres distributeurs', colonnes=2,
+    images=[
+        dict(src='pubs/marloes.jpg', titre='Pour les professionnels', texte='Une distributrice néerlandaise vise directement les coachs et thérapeutes.', source='Bibliothèque Meta'),
+        dict(src='pubs/soiree-pologne.jpg', titre='Pour le grand public', texte='Un distributeur polonais invite à une soirée « Business Opportunity » : « Je n’invite pas tout le monde ».', source='Bibliothèque Meta, juin 2026')]))
+ajoute('Le parcours', 1, dict(type='captures', titre='Deux exemples de parcours observés', colonnes=2,
+    images=[
+        dict(src=W + '13 at 15.18.01.jpeg', titre='L’appel découverte', texte='Chez Boost Your Health, tout mène à 15 minutes en visio. Pour vous, ce sera un appel téléphonique.', source='Calendly de Boost Your Health'),
+        dict(src='pubs/lang-gesund.jpg', titre='Le formulaire au bout de la publicité', texte='La publicité mène à une candidature : nom, coordonnées, motivation. C’est le principe de notre page « Rejoindre l’équipe ».', source='Bibliothèque Meta')]))
+ajoute('Le site', 1, dict(type='captures', titre='Les modèles du nouveau site', colonnes=3,
+    images=[
+        dict(src='boost/2-deux-portes.jpg', titre='Les deux portes', texte='Le principe repris pour votre page d’accueil.', source='boostyourhealth.eu'),
+        dict(src='boost/6-linktree.jpg', titre='Le catalogue codé', texte='Chaque produit mène à Eqology avec le code du partenaire.', source='linktr.ee/boostyourhealth.eu'),
+        dict(src=W + '14 at 13.18.22 (3).jpeg', titre='La page partenaire', texte='La boutique Eqology au nom du partenaire, vers laquelle mènent les boutons « Commander ».', source='partner.eqology.com/omegarob')]))
+
 for i, o in enumerate(O):
     o['numero'] = f'{i:02d}'
     o['_fichier'] = o['id']
@@ -220,7 +318,7 @@ try:
     police = json.load(open(F.CHARTE, encoding='utf-8'))['polices']['embarque'][0]
 except Exception as ex:  # noqa: BLE001
     print(f'! police non embarquée ({ex})', file=sys.stderr)
-html = F.page(O, police)
+html = F.page(O, police).replace('</style>', CSS_CAPTURES + '</style>', 1)
 sortie = os.path.join(ICI, 'dossier-yves.html')
 open(sortie, 'w', encoding='utf-8').write(html)
 print(sortie, len(html) // 1024, 'Ko')
