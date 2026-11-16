@@ -14,3 +14,6 @@ veille/
 
 # Captures et journaux Playwright
 .playwright-mcp/
+
+# Documents de mission (devis, factures)
+mission/
