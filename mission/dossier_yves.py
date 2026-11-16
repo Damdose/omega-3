@@ -69,7 +69,7 @@ onglet('Synthèse', 'compass',
        'Le site est en ligne lundi 23 novembre, les publicités démarrent mercredi 25 novembre.',
        ['Le chiffre d’un distributeur Eqology vient de son équipe : l’objectif principal est de recruter des business partners, la boutique vient en soutien.',
         'Vos références qui réussissent mènent toutes à une conversation (appel, visio, soirée). Les publicités « promotion » vers une boutique s’arrêtent vite.',
-        'Deux cibles : le grand public qui cherche un complément de revenu, et les professionnels qui ont déjà des clients (coachs, salles de sport, diététiciennes).',
+        'Deux cibles : le grand public qui cherche un complément de revenu, et les praticiens de santé qui ont déjà une patientèle, en commençant par les naturopathes.',
         'Votre seul rôle : rappeler les personnes intéressées. Le site, les publicités, les relances et le suivi sont pris en charge.',
         'Calendrier : signature et règlement de 2 700 € TTC d’ici vendredi 20/11, site lundi 23/11, publicités mercredi 25/11, bilan fin décembre.'],
        [dict(type='cartes', titre='Le dispositif en quatre repères', colonnes=4, cartes=[
@@ -78,7 +78,7 @@ onglet('Synthèse', 'compass',
            dict(etiquette='Conversion', titre='Votre appel', texte='Chaque inscrit vous arrive par SMS ou WhatsApp. Vous le rappelez sous 48 heures, puis il assiste à une visio.'),
            dict(etiquette='Mesure', titre='Un bilan chiffré', texte='Coût par inscrit, taux de rappel, présents à la visio, nouveaux partenaires : premier bilan fin décembre.')]),
         dict(type='texte', titre='Pourquoi recruter plutôt que vendre', paragraphes=[
-            'Vendre un flacon à la fois rapporte une commission. Recruter une coach qui met trente clients sous oméga-3 rapporte chaque mois, sur toute son activité.',
+            'Vendre un flacon à la fois rapporte une commission. Recruter une naturopathe qui met trente patients sous oméga-3 rapporte chaque mois, sur toute son activité.',
             'C’est ce que font les distributeurs que vous nous avez envoyés : leurs comptes Instagram comptent entre 50 et 5 000 abonnés seulement. Leur chiffre ne vient pas de leur audience, il vient de leur équipe.'])])
 
 onglet('Vos références', 'search',
@@ -108,18 +108,18 @@ onglet('Cibles et messages', 'target',
        'Qui allons-nous chercher, et avec quel message ?',
        'Deux publics, deux messages, une même destination : votre appel.',
        ['Le grand public : 35 à 70 ans, intéressé par la santé, qui cherche un complément de revenu.',
-        'Les professionnels : coachs sportifs, salles de sport, diététiciennes, kinés, esthéticiennes. Une recrue peut amener des dizaines de clients.',
+        'Les praticiens de santé en premier : naturopathes, micronutritionnistes, diététiciens-nutritionnistes, puis kinés et ostéopathes. Une recrue peut amener des dizaines de patients.',
         'Votre histoire sert de preuve : à 75 ans, en forme et partenaire Eqology. Une courte vidéo de vous sera la première publicité testée.',
-        'Les naturopathes viendront plus tard, avec une approche par la science et le test.'],
+        'Avec eux, on parle d’abord science et test ; l’activité vient ensuite. C’est l’approche de votre livre « Oméga-3, le verdict de la science ».'],
        [dict(type='cartes', titre='Les deux cibles', colonnes=2, cartes=[
            dict(etiquette='Cible 1', titre='Le grand public', sousTitre='Retraités et actifs, 35 à 70 ans', texte='Ils ont du temps, un entourage et l’envie d’un revenu d’appoint.',
                 puces=['Message : « Santé et complément de revenu : 45 minutes pour tout comprendre. »', 'Destination : inscription à la visio d’information']),
-           dict(etiquette='Cible 2', titre='Les professionnels', sousTitre='Ils ont déjà une clientèle', texte='Coachs sportifs, salles de sport, diététiciennes, kinés, esthéticiennes.',
-                puces=['Message : « Proposez le test oméga-3 à vos clients et ajoutez une source de revenu à votre activité. »', 'Destination : échange découverte avec vous'])]),
+           dict(etiquette='Cible 2, en premier', titre='Les praticiens de santé', sousTitre='Naturopathes et voie médicale', texte='Naturopathes, micronutritionnistes, diététiciens-nutritionnistes, puis kinés, ostéopathes et autres praticiens. Ils ont une patientèle qui leur fait confiance.',
+                puces=['Message : « Mesurez l’équilibre oméga-6 / oméga-3 de vos patients avec un test sanguin à domicile, analysé par un laboratoire indépendant. »', 'Destination : un échange avec vous, puis le test pour le praticien lui-même'])]),
         dict(type='cartes', titre='Trois premières publicités', colonnes=3, cartes=[
             dict(etiquette='Vidéo', titre='Votre histoire', texte='« J’ai 75 ans, je prends mes oméga-3 chaque matin et j’accompagne des partenaires. » Vous face caméra, 30 secondes, sous-titrée.'),
             dict(etiquette='Visuel', titre='Le test oméga-3', texte='Le test à faire chez soi, le résultat, puis l’invitation à la visio. Pour le grand public.'),
-            dict(etiquette='Message', titre='Pour les pros', texte='« Coach ou thérapeute ? Proposez le test à vos clients. » Pour les professionnels.')])])
+            dict(etiquette='Science', titre='Pour les praticiens de santé', texte='« Naturopathe ou praticien de santé ? Le test oméga-3 pour vos patients, et les études qui l’accompagnent. »')])])
 
 onglet('Le parcours', 'funnel',
        'Comment une personne devient-elle partenaire ?',
@@ -146,7 +146,7 @@ onglet('Dispositif Meta', 'megaphone',
        'Deux campagnes, 30 € par jour au total, trois créations chacune, optimisées en continu.',
        ['Un portefeuille Meta Business au nom de ZENCO, une page Facebook et un compte Instagram dédiés.',
         'Le budget est payé directement à Meta par votre carte bancaire.',
-        'Campagne « visio » à 20 € par jour, campagne « professionnels » à 10 € par jour, puis réallocation après deux semaines.',
+        'Campagne « visio » à 20 € par jour, campagne « praticiens de santé » à 10 € par jour, puis réallocation après deux semaines.',
         'Seuls les bienfaits des oméga-3 autorisés par l’Union européenne sont utilisés, sans promesse de revenu chiffrée.'],
        [dict(type='cartes', titre='Les comptes', colonnes=3, cartes=[
            dict(titre='Meta Business', texte='Le portefeuille qui regroupe la page, le compte Instagram et le compte publicitaire, au nom de ZENCO.'),
@@ -154,7 +154,7 @@ onglet('Dispositif Meta', 'megaphone',
            dict(titre='Compte Instagram', texte='6 à 9 publications de base (qui vous êtes, l’activité, le test, des témoignages). Il sert de vitrine, sans animation de communauté.')]),
         dict(type='tableau', titre='Les campagnes', colonnes=['Campagne', 'Ciblage', 'Budget de départ', 'Objectif mesuré'], lignes=[
             ['Visio d’information', 'France, 35-70 ans, intérêts santé, bien-être, revenu complémentaire', '20 € par jour', 'Inscriptions au formulaire'],
-            ['Professionnels', 'France, métiers et intérêts : coaching sportif, fitness, nutrition, kinésithérapie, esthétique', '10 € par jour', 'Demandes d’échange']],
+            ['Praticiens de santé', 'France, métiers et intérêts : naturopathie, micronutrition, diététique, ostéopathie, kinésithérapie', '10 € par jour', 'Demandes d’échange']],
             lire='Après deux semaines, le budget passe sur la campagne qui obtient les inscriptions les moins chères.'),
         dict(type='cartes', titre='Les règles', colonnes=3, cartes=[
             dict(titre='Allégations autorisées', texte='Uniquement les bienfaits validés par l’Europe, par exemple : « le DHA contribue au fonctionnement normal du cerveau ».'),
@@ -173,7 +173,7 @@ onglet('La page de recrutement', 'star',
            dict(titre='Votre histoire', texte='Qui vous êtes, pourquoi vous avez choisi Eqology, ce que l’activité vous apporte.'),
            dict(titre='L’activité, en clair', texte='Recommander des produits que l’on utilise soi-même, avec un test qui montre le résultat. Quelques heures par semaine, depuis chez soi.'),
            dict(titre='Comment on est payé', texte='Une commission sur ses propres ventes, puis une part sur les ventes de l’équipe que l’on accompagne. Sans montant promis.'),
-           dict(titre='Pour qui', texte='Les personnes qui cherchent un revenu d’appoint, et les professionnels qui veulent proposer le test à leurs clients.'),
+           dict(titre='Pour qui', texte='Les praticiens de santé qui veulent proposer le test à leurs patients, et les personnes qui cherchent un revenu d’appoint.'),
            dict(titre='Comment on démarre', texte='Formulaire, puis votre appel, puis la visio de présentation, puis le Business Kit.'),
            dict(titre='Les questions fréquentes', texte='Stock, coût de départ, temps nécessaire, accompagnement : les réponses avant le formulaire.'),
            dict(titre='Le formulaire', texte='En bas de page et rappelé en haut : cinq champs, moins d’une minute.')]),
@@ -187,7 +187,7 @@ onglet('La page de recrutement', 'star',
             dict(titre='Vous présenter', texte='« Bonjour, Yves Coignard, vous avez demandé des informations sur l’activité Eqology. Vous avez quelques minutes ? »'),
             dict(titre='Écouter', texte='« Qu’est-ce qui vous a donné envie de cliquer ? » Revenu, santé, ses propres clients : la réponse oriente la suite.'),
             dict(titre='Expliquer simplement', texte='Les produits, le test, la façon d’être payé, le temps nécessaire. Votre propre expérience vaut mieux qu’un argumentaire.'),
-            dict(titre='Inviter', texte='À la prochaine visio, avec la date. Pour un professionnel : lui proposer d’abord de faire le test lui-même.'),
+            dict(titre='Inviter', texte='À la prochaine visio, avec la date. Pour un praticien de santé : lui proposer d’abord de faire le test lui-même et de lire les études.'),
             dict(titre='Confirmer', texte='Un SMS avec la date et le lien de la visio. La personne reçoit aussi les e-mails automatiques.')]),
         dict(type='cartes', titre='Les questions qu’on vous posera', colonnes=2, cartes=[
             dict(titre='« Faut-il acheter du stock ? »', texte='Non. Les clients commandent directement chez Eqology, qui livre. Il n’y a ni stock ni colis.'),
@@ -396,7 +396,16 @@ ajoute('Vos références', 5, dict(type='captures', titre='Les publicités relev
         dict(src='pubs/gesundezelle.jpg', titre='Allemagne : les coffrets de Noël', texte='Coffrets à 109 € et 189 € avec test sanguin. On commente « SMALL » ou « LARGE », la vente se fait en privé.', source='Bibliothèque Meta, active depuis le 12/11/2026'),
         dict(src='pubs/gradina.jpg', titre='Bulgarie : la promotion vers la boutique', texte='-25 % et renvoi direct vers la boutique. 38 publicités en cinq semaines, puis arrêt : ça n’a pas marché.', source='Bibliothèque Meta, 02 au 09/03/2026'),
         dict(src='pubs/marloes.jpg', titre='Pays-Bas : recruter les coachs', texte='« Tu es coach ou thérapeute ? Rejoins mon équipe Eqology. » Diffusée une seule fois : pas encore de preuve.', source='Bibliothèque Meta, 04 au 10/02/2026')]))
-ajoute('Cibles et messages', 1, dict(type='captures', titre='Ce que font déjà d’autres distributeurs', colonnes=2,
+ajoute('Cibles et messages', 1, dict(type='cartes', titre='Avec les praticiens de santé : la science d’abord', colonnes=3, cartes=[
+    dict(titre='Le test et les études avant l’activité', texte='Une approche trop commerciale fait fuir les praticiens. On leur présente d’abord le test, les résultats de leurs patients et les études ; l’activité vient dans un second temps.'),
+    dict(titre='Les médecins à part', texte='Un médecin ne vend pas de compléments à ses patients. Avec eux, on parle uniquement du test et de la science, sans proposer l’activité.'),
+    dict(titre='Des allégations irréprochables', texte='Uniquement les bienfaits autorisés par l’Union européenne, avec les sources citées. C’est ce qui crédibilise un distributeur face à un professionnel de santé.')]))
+ajoute('Cibles et messages', 2, dict(type='captures', titre='La voie santé, déjà ouverte par d’autres distributeurs', colonnes=3,
+    images=[
+        dict(src='pubs/dieteticienne-pologne.jpg', titre='Une diététicienne (Pologne)', texte='Des publicités sur la santé, relancées pendant 10 mois : la plus longue diffusion relevée.', source='Bibliothèque Meta, 2025-2026'),
+        dict(src='pubs/kine-bulgarie.jpg', titre='Une kiné-diététicienne (Bulgarie)', texte='Une tournée santé nationale, et sa page partenaire Eqology en lien. 11 publicités sur 6 mois.', source='Bibliothèque Meta, 2026'),
+        dict(src='pubs/livre-linkedin.jpg', titre='Votre livre, sur LinkedIn', texte='« Mes chers confrères » : l’approche par la science, sans produit, puis la porte vers l’activité. Le bon ton pour les praticiens.', source='Votre document « Réseau LinkedIn »')]))
+ajoute('Cibles et messages', 3, dict(type='captures', titre='Ce que font déjà d’autres distributeurs', colonnes=2,
     images=[
         dict(src='pubs/marloes.jpg', titre='Pour les professionnels', texte='Une distributrice néerlandaise vise directement les coachs et thérapeutes.', source='Bibliothèque Meta'),
         dict(src='pubs/soiree-pologne.jpg', titre='Pour le grand public', texte='Un distributeur polonais invite à une soirée « Business Opportunity » : « Je n’invite pas tout le monde ».', source='Bibliothèque Meta, juin 2026')]))
