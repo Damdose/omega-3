@@ -8,3 +8,6 @@ test
 .env
 .env*
 netlify.toml
+
+# Veille client (captures, PDF, notes)
+veille/
