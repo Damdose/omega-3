@@ -22,9 +22,9 @@ CLIENT = ['29 boulevard de la Muette', '95140 Garges-lès-Gonesse', '<span class
           'À l’attention de M. Yves Coignard, co-président']
 
 LIGNES = [
-    ('1. Lancement des publicités Instagram et Facebook (Meta)',
+    ('1. Développement de l’agent Ads Meta (Instagram et Facebook)',
      'Configuration du compte publicitaire, de la page et du compte Instagram, stratégie de recrutement, '
-     'créations des stories et publications sponsorisées, pilotage du premier mois.', 1500),
+     'créations des stories et publications, mise en place du suivi des inscriptions, réglages de l’agent le premier mois.', 1500),
     ('2. Site e-commerce simplifié Eqology',
      'Page « Rejoindre l’équipe » avec formulaire et prise de rendez-vous, boutique en français avec liens partenaire, '
      'alertes des contacts, relances e-mail, hébergement 12 mois.', 3000),
@@ -117,12 +117,12 @@ def devis():
           f'<div><span>TVA 20 %</span><span>{euros(tva)}</span></div><div class="ttc"><span>Total TTC</span><span>{euros(TOTAL_HT + tva)}</span></div></div></div>')
     c += ('<div class="carte carte--tab"><table><thead><tr><th>Échéancier</th><th>Quoi</th><th class="n">HT</th><th class="n">TTC</th></tr></thead><tbody>'
           f'<tr><td>À la signature</td><td>Acompte de {ACOMPTE_PCT} % (facture {FACTURE})</td><td class="n">{euros(ACOMPTE_HT)}</td><td class="n">{euros(ACOMPTE_HT * 1.2)}</td></tr>'
-          f'<tr><td>À la mise en ligne du site et des publicités</td><td>Solde de {100 - ACOMPTE_PCT} %</td><td class="n">{euros(TOTAL_HT - ACOMPTE_HT)}</td><td class="n">{euros((TOTAL_HT - ACOMPTE_HT) * 1.2)}</td></tr>'
+          f'<tr><td>À la mise en ligne du site et de l’agent Ads</td><td>Solde de {100 - ACOMPTE_PCT} %</td><td class="n">{euros(TOTAL_HT - ACOMPTE_HT)}</td><td class="n">{euros((TOTAL_HT - ACOMPTE_HT) * 1.2)}</td></tr>'
           '</tbody></table></div>')
     c += ('<div class="carte rib"><div class="k">RIB, règlement par virement</div><p>Titulaire : TAM LABS · Banque : Qonto<br>'
           'IBAN : <b>FR76 1695 8000 0152 9635 4169 030</b> · BIC : <b>QNTOFRP1XXX</b></p></div>')
     c += ('<p class="note">Le budget publicitaire (30 € par jour, environ 900 € par mois) se paie directement à Meta. '
-          'Après le premier mois, le pilotage des publicités est proposé en option à 500 € HT par mois, sans engagement.</p>')
+          'Après le premier mois, le suivi de l’agent Ads est proposé en option à 500 € HT par mois, sans engagement.</p>')
     c += ('<div class="signature"><div class="carte">Pour TAM LABS<br>Damien Tamazout, président</div>'
           '<div class="carte">Pour ZENCO SAS<br>Date, signature et mention « Bon pour accord »</div></div>')
     c += f'<div class="pied">{PIED_TXT}</div></div>'
@@ -139,15 +139,15 @@ def facture():
           f'<div><div class="k">Devis</div><div class="v">{DEVIS}</div></div></div>')
     c += parties('Facturée à', president=True)
     c += ('<div class="carte carte--tab"><table><thead><tr><th>Désignation</th><th class="n">Qté</th><th class="n">P.U. HT</th><th class="n">TVA</th><th class="n">Total HT</th></tr></thead><tbody>'
-          f'<tr><td><span class="t">Acompte de {ACOMPTE_PCT} % sur le lancement des publicités et le site</span>'
-          f'<span class="d">Lancement des publicités Instagram et Facebook (1 500 € HT) et site e-commerce simplifié Eqology (1 500 € HT après remise fidélité), '
+          f'<tr><td><span class="t">Acompte de {ACOMPTE_PCT} % sur l’agent Ads Meta et le site</span>'
+          f'<span class="d">Développement de l’agent Ads Meta (1 500 € HT) et site e-commerce simplifié Eqology (1 500 € HT après remise fidélité), '
           f'devis n° {DEVIS}.</span></td><td class="n">1</td><td class="n">{euros(ht, True)}</td><td class="n">20 %</td><td class="n">{euros(ht, True)}</td></tr>'
           '</tbody></table></div>')
     c += ('<div class="bas"><div class="carte rib"><div class="k">Règlement par virement</div><p>Titulaire : TAM LABS<br>Banque : Qonto<br>'
           'IBAN : <b>FR76 1695 8000 0152 9635 4169 030</b><br>BIC : <b>QNTOFRP1XXX</b></p></div>'
           f'<div class="total"><div><span>Total HT</span><span>{euros(ht, True)}</span></div><div><span>TVA 20 %</span><span>{euros(tva, True)}</span></div>'
           f'<div class="ttc"><span>Total TTC</span><span>{euros(ttc, True)}</span></div></div></div>')
-    c += f'<p class="note">Solde de {euros(TOTAL_HT - ht)} HT à la mise en ligne du site et des publicités.</p>'
+    c += f'<p class="note">Solde de {euros(TOTAL_HT - ht)} HT à la mise en ligne du site et de l’agent Ads.</p>'
     c += f'<div class="pied">{PIED_TXT}</div></div>'
     return doc(f'Facture {FACTURE}', c)
 

@@ -263,7 +263,7 @@ onglet('Qui fait quoi', 'users',
            ['Comptes Meta et Instagram', 'Ajoute sa carte au compte publicitaire', 'Crée et configure'],
            ['Vidéo de présentation', '10 minutes de tournage au téléphone', 'Script, montage, sous-titres'],
            ['Site et boutique', 'Relit sa présentation', 'Conçoit, développe, met en ligne'],
-           ['Publicités', 'Valide les premières créations', 'Crée, diffuse, optimise chaque jour'],
+           ['Agent Ads', 'Valide les premières créations', 'Développe l’agent Ads, qui teste et ajuste les campagnes chaque jour'],
            ['Contacts', 'Rappelle sous 48 heures', 'Alertes, relances e-mail, suivi'],
            ['Visio de présentation', 'Invite ses contacts', 'Organisation avec le parrain si besoin'],
            ['Bilan', 'Partage le nombre de partenaires signés', 'Prépare le bilan chiffré']])])
@@ -280,29 +280,29 @@ onglet('Calendrier', 'rocket',
            ['Du 18 au 20 novembre', 'Création des comptes Meta et Instagram, tournage de la vidéo'],
            ['Lundi 23 novembre', 'Site en ligne : page « Rejoindre l’équipe » et boutique'],
            ['Mardi 24 novembre', 'Validation des premières publicités'],
-           ['Mercredi 25 novembre', 'Lancement des publicités'],
+           ['Mercredi 25 novembre', 'Mise en route de l’agent Ads : les publicités démarrent'],
            ['Mercredi 9 décembre', 'Point à deux semaines : budget réorienté vers la meilleure campagne'],
            ['Fin décembre', 'Bilan du premier mois et décision pour janvier']])])
 
 onglet('Budget et règlement', 'payment',
        'Combien, et comment se passe le règlement ?',
-       '3 000 € HT (3 600 € TTC) au total, réglés en deux fois : 50 % à la signature, 50 % à la mise en ligne du site et des publicités. Le budget publicitaire se paie à part, directement à Meta.',
+       '3 000 € HT (3 600 € TTC) au total, réglés en deux fois : 50 % à la signature, 50 % à la mise en ligne du site et de l’agent Ads. Le budget publicitaire se paie à part, directement à Meta.',
        ['Acompte de 50 % à la signature : facture 1004, 1 800 € TTC.',
-        'Solde de 50 % à la mise en ligne du site et des publicités : 1 800 € TTC.',
+        'Solde de 50 % à la mise en ligne du site et de l’agent Ads : 1 800 € TTC.',
         'Le site e-commerce vaut 3 000 € HT ; la première version ayant été réglée, il est facturé 1 500 € HT.',
-        'Budget publicitaire : 30 € par jour payés à Meta, environ 900 € par mois. Pilotage à partir du deuxième mois : 500 € HT par mois, en option.'],
+        'Budget publicitaire : 30 € par jour payés à Meta, environ 900 € par mois. Suivi de l’agent Ads à partir du deuxième mois : 500 € HT par mois, en option.'],
        [dict(type='tableau', titre='Le devis', colonnes=['Prestation', 'Contenu', 'HT'], lignes=[
-           ['Lancement des publicités Meta', 'Comptes, stratégie, stories et publications, vidéo, suivi, pilotage du premier mois', '1 500 €'],
+           ['Développement de l’agent Ads Meta', 'Comptes, stratégie, stories et publications, vidéo, suivi des inscriptions, réglages de l’agent le premier mois', '1 500 €'],
            ['Site e-commerce simplifié', 'Page « Rejoindre l’équipe », prise de rendez-vous, boutique, alertes, relances, hébergement 12 mois', '3 000 €'],
            ['Remise fidélité', 'Première version du site déjà réglée', '-1 500 €'],
            ['Total', 'Devis PROP-2026-1116-ZENCO', '3 000 € HT, soit 3 600 € TTC']]),
         dict(type='tableau', titre='L’échéancier', colonnes=['Échéance', 'Document', 'HT', 'TTC'], lignes=[
            ['À la signature', 'Facture d’acompte 1004 : 50 %', '1 500 €', '1 800 €'],
-           ['Mise en ligne du site et des publicités', 'Facture de solde : 50 %', '1 500 €', '1 800 €']],
+           ['Mise en ligne du site et de l’agent Ads', 'Facture de solde : 50 %', '1 500 €', '1 800 €']],
             lire='Règlement par virement à TAM LABS, la société qui porte Heyfuture. Les coordonnées bancaires figurent sur la facture.'),
         dict(type='cartes', titre='Ce qui n’est pas dans le devis', colonnes=2, cartes=[
             dict(titre='Le budget publicitaire', texte='30 € par jour, payés directement à Meta par carte. Un mois minimum avant le bilan, deux mois de préférence.'),
-            dict(titre='Le pilotage après le premier mois', texte='En option : 500 € HT par mois, sans engagement, pour continuer à créer et optimiser les publicités.')])])
+            dict(titre='Le suivi de l’agent Ads après le premier mois', texte='En option : 500 € HT par mois, sans engagement, pour que l’agent continue à produire de nouvelles créations et à ajuster les campagnes.')])])
 
 onglet('Ce qu’il nous faut', 'check',
        'De quoi avons-nous besoin pour démarrer ?',
