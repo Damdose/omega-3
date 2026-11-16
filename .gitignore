@@ -7,3 +7,6 @@ __pycache__/
 .vercel
 .env*
 .env.local
+
+# Captures et journaux Playwright
+.playwright-mcp/

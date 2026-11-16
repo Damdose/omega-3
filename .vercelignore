@@ -11,3 +11,6 @@ netlify.toml
 
 # Veille client (captures, PDF, notes)
 veille/
+
+# Captures et journaux Playwright
+.playwright-mcp/
