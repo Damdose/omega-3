@@ -22,14 +22,15 @@ CLIENT = ['29 boulevard de la Muette', '95140 Garges-lès-Gonesse', '<span class
           'À l’attention de M. Yves Coignard, co-président']
 
 LIGNES = [
-    ('1. Développement de l’agent Ads Meta (Instagram et Facebook)',
-     'Configuration du compte publicitaire, de la page et du compte Instagram, stratégie de recrutement, '
-     'créations des stories et publications, mise en place du suivi des inscriptions, réglages de l’agent le premier mois.', 1500),
-    ('2. Site e-commerce simplifié Eqology',
-     'Page « Rejoindre l’équipe » avec formulaire et prise de rendez-vous, boutique en français avec liens partenaire, '
-     'alertes des contacts, relances e-mail, hébergement 12 mois.', 3000),
-    ('3. Remise fidélité', 'La première version du site a déjà été réglée : le site est facturé 1 500 € HT au lieu de 3 000 € HT.', -1500),
+    ('1. Solution agent Ads Meta : développement, paramétrage et mise en service',
+     'Développement et paramétrage de l’agent logiciel pour ZENCO, connexion technique au compte publicitaire Meta, '
+     'au site et au suivi des conversions (pixel et API de conversions), mise en service.', 1500),
+    ('2. Conception et développement du site e-commerce',
+     'Page « Rejoindre l’équipe » avec formulaire et prise de rendez-vous en ligne, catalogue produits avec liens partenaire, '
+     'alertes automatiques des contacts, relances e-mail automatiques, hébergement 12 mois.', 3000),
+    ('3. Remise commerciale', 'Remise accordée sur la conception du site.', -1500),
 ]
+PERIODE = 'du 16/11/2026 au 25/11/2026 (mise en service)'
 TOTAL_HT = sum(l[2] for l in LIGNES)
 ACOMPTE_HT = TOTAL_HT * ACOMPTE_PCT / 100
 
@@ -39,13 +40,13 @@ CSS = '''
 html,body{margin:0;background:#F4F2EE}
 body{font:9.4pt/1.45 "Plus Jakarta Sans",Arial,sans-serif;color:#1A1A1A;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:210mm;height:296mm;overflow:hidden;padding:13mm 13mm 0;position:relative;display:flex;flex-direction:column;gap:3.4mm}
-.page--devis{padding-top:0;gap:2.8mm}
+.page--devis{padding-top:0;gap:2.2mm}
 b,strong{font-weight:700}
 .logo{height:17px;display:block}
 .contact{font-size:8pt;color:#5E5B55;margin-top:9px;line-height:1.55}
 .tete{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:9mm;border-bottom:1px solid #DDD9D1;margin-bottom:2mm}
 .tete h1{font-family:Sora,Arial,sans-serif;font-weight:700;font-size:21pt;letter-spacing:-.02em;margin:0}
-.bandeau{background:#0F2E24;color:#F4F2EE;margin:0 -13mm 3mm;padding:9mm 13mm 7mm;display:flex;justify-content:space-between;align-items:center}
+.bandeau{background:#0F2E24;color:#F4F2EE;margin:0 -13mm 3mm;padding:8mm 13mm 6mm;display:flex;justify-content:space-between;align-items:center}
 .bandeau .contact{color:#C9D6CF}
 .pastille{background:#E4F73B;color:#1A1A1A;font-family:Sora,Arial,sans-serif;font-weight:700;font-size:20pt;padding:4px 16px;border-radius:9px;transform:rotate(-4deg);box-shadow:3px 3px 0 #1A1A1A}
 .carte{background:#fff;border:1px solid #E5E2DB;border-radius:10px;padding:10px 12px}
@@ -58,8 +59,8 @@ b,strong{font-weight:700}
 .deux p b{font-family:Sora,Arial,sans-serif;font-size:9.6pt;display:block;margin-bottom:1px}
 table{width:100%;border-collapse:collapse}
 .carte--tab{padding:0;overflow:hidden}
-th{font-family:Sora,Arial,sans-serif;font-weight:700;font-size:6.6pt;letter-spacing:.14em;text-transform:uppercase;color:#5E5B55;text-align:left;padding:9px 12px;border-bottom:1px solid #E5E2DB}
-td{padding:9px 12px;vertical-align:top;border-bottom:1px solid #EFECE6;font-size:8.8pt}
+th{font-family:Sora,Arial,sans-serif;font-weight:700;font-size:6.6pt;letter-spacing:.14em;text-transform:uppercase;color:#5E5B55;text-align:left;padding:7px 12px;border-bottom:1px solid #E5E2DB}
+td{padding:6px 12px;vertical-align:top;border-bottom:1px solid #EFECE6;font-size:8.8pt}
 tr:last-child td{border-bottom:0}
 .n{text-align:right;white-space:nowrap}
 td .t{font-family:Sora,Arial,sans-serif;font-weight:700;font-size:9pt;display:block}
@@ -71,10 +72,10 @@ td .d{display:block;font-size:7.8pt;color:#5E5B55;margin-top:2px;line-height:1.4
 .total div{display:flex;justify-content:space-between}
 .total .ttc{border-top:1px solid rgba(255,255,255,.3);margin-top:6px;padding-top:9px;font-family:Sora,Arial,sans-serif;font-weight:700;font-size:15pt}
 .note{font-size:8pt;color:#3D3B37;margin:1mm 0 0}
-.pied{margin-top:auto;padding:6mm 0 7mm;font-size:6.9pt;color:#6E6B65;line-height:1.55}
+.pied{margin-top:auto;padding:4mm 0 6mm;font-size:6.9pt;color:#6E6B65;line-height:1.55}
 .manque{color:#C2410C;font-weight:700}
 .signature{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
-.signature .carte{height:17mm;font-size:7.8pt;color:#5E5B55}
+.signature .carte{height:14mm;font-size:7.8pt;color:#5E5B55}
 '''
 
 FONTS = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -117,12 +118,13 @@ def devis():
           f'<div><span>TVA 20 %</span><span>{euros(tva)}</span></div><div class="ttc"><span>Total TTC</span><span>{euros(TOTAL_HT + tva)}</span></div></div></div>')
     c += ('<div class="carte carte--tab"><table><thead><tr><th>Échéancier</th><th>Quoi</th><th class="n">HT</th><th class="n">TTC</th></tr></thead><tbody>'
           f'<tr><td>À la signature</td><td>Acompte de {ACOMPTE_PCT} % (facture {FACTURE})</td><td class="n">{euros(ACOMPTE_HT)}</td><td class="n">{euros(ACOMPTE_HT * 1.2)}</td></tr>'
-          f'<tr><td>À la mise en ligne du site et de l’agent Ads</td><td>Solde de {100 - ACOMPTE_PCT} %</td><td class="n">{euros(TOTAL_HT - ACOMPTE_HT)}</td><td class="n">{euros((TOTAL_HT - ACOMPTE_HT) * 1.2)}</td></tr>'
+          f'<tr><td>À la mise en service du site et de l’agent Ads</td><td>Solde de {100 - ACOMPTE_PCT} %</td><td class="n">{euros(TOTAL_HT - ACOMPTE_HT)}</td><td class="n">{euros((TOTAL_HT - ACOMPTE_HT) * 1.2)}</td></tr>'
           '</tbody></table></div>')
     c += ('<div class="carte rib"><div class="k">RIB, règlement par virement</div><p>Titulaire : TAM LABS · Banque : Qonto<br>'
           'IBAN : <b>FR76 1695 8000 0152 9635 4169 030</b> · BIC : <b>QNTOFRP1XXX</b></p></div>')
-    c += ('<p class="note">Le budget publicitaire (30 € par jour, environ 900 € par mois) se paie directement à Meta. '
-          'Après le premier mois, le suivi de l’agent Ads est proposé en option à 500 € HT par mois, sans engagement.</p>')
+    c += (f'<p class="note">Période de la prestation : {PERIODE} · Catégorie de l’opération : prestation de services.<br>'
+          'Le budget publicitaire se paie directement à Meta par le client : il n’est pas facturé par Tam Labs. '
+          'À partir du deuxième mois, en option : abonnement solution agent Ads (licence, hébergement, maintenance), 500 € HT par mois, sans engagement.</p>')
     c += ('<div class="signature"><div class="carte">Pour TAM LABS<br>Damien Tamazout, président</div>'
           '<div class="carte">Pour ZENCO SAS<br>Date, signature et mention « Bon pour accord »</div></div>')
     c += f'<div class="pied">{PIED_TXT}</div></div>'
@@ -139,15 +141,15 @@ def facture():
           f'<div><div class="k">Devis</div><div class="v">{DEVIS}</div></div></div>')
     c += parties('Facturée à', president=True)
     c += ('<div class="carte carte--tab"><table><thead><tr><th>Désignation</th><th class="n">Qté</th><th class="n">P.U. HT</th><th class="n">TVA</th><th class="n">Total HT</th></tr></thead><tbody>'
-          f'<tr><td><span class="t">Acompte de {ACOMPTE_PCT} % sur l’agent Ads Meta et le site</span>'
-          f'<span class="d">Développement de l’agent Ads Meta (1 500 € HT) et site e-commerce simplifié Eqology (1 500 € HT après remise fidélité), '
+          f'<tr><td><span class="t">Acompte de {ACOMPTE_PCT} % : solution agent Ads Meta et site e-commerce</span>'
+          f'<span class="d">Solution agent Ads Meta, développement, paramétrage et mise en service (1 500 € HT), et conception du site e-commerce (1 500 € HT après remise commerciale), '
           f'devis n° {DEVIS}.</span></td><td class="n">1</td><td class="n">{euros(ht, True)}</td><td class="n">20 %</td><td class="n">{euros(ht, True)}</td></tr>'
           '</tbody></table></div>')
     c += ('<div class="bas"><div class="carte rib"><div class="k">Règlement par virement</div><p>Titulaire : TAM LABS<br>Banque : Qonto<br>'
           'IBAN : <b>FR76 1695 8000 0152 9635 4169 030</b><br>BIC : <b>QNTOFRP1XXX</b></p></div>'
           f'<div class="total"><div><span>Total HT</span><span>{euros(ht, True)}</span></div><div><span>TVA 20 %</span><span>{euros(tva, True)}</span></div>'
           f'<div class="ttc"><span>Total TTC</span><span>{euros(ttc, True)}</span></div></div></div>')
-    c += f'<p class="note">Solde de {euros(TOTAL_HT - ht)} HT à la mise en ligne du site et de l’agent Ads.</p>'
+    c += f'<p class="note">Période de la prestation : {PERIODE} · Catégorie de l’opération : prestation de services.<br>Solde de {euros(TOTAL_HT - ht)} HT à la mise en service du site et de l’agent Ads.</p>'
     c += f'<div class="pied">{PIED_TXT}</div></div>'
     return doc(f'Facture {FACTURE}', c)
 
