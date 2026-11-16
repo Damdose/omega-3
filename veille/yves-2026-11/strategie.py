@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Synthèse « stratégie des concurrents » pour Yves, format EXPLICATION. Usage : python3 strategie.py"""
+"""Les références d'Yves décortiquées : recruter des business partners et vendre en ligne. Format EXPLICATION.
+Usage : python3 strategie.py"""
 import os, sys
 sys.path.insert(0, os.path.expanduser('~/Documents/crm-heyfuture/docs/chantier-skills/formats'))
 import explication as X
@@ -9,11 +10,11 @@ RACINE = os.path.dirname(os.path.dirname(ICI))
 
 cfg = dict(
     onglet='Concurrents oméga-3',
-    oeil='Veille Eqology · 16 novembre 2026',
-    titre='Comment vendent les concurrents d’Yves, et ce qu’on en reprend',
-    chapo=('Nous avons passé au crible les 9 comptes envoyés par Yves, 22 autres distributeurs Eqology en Europe '
-           'et toutes les publicités Meta qui parlent d’Eqology, de Zinzino et d’oméga-3 en France. '
-           'Ce document résume leur méthode, ce qu’il y a au bout de chaque publicité, puis le modèle à suivre pour le nouveau site.'),
+    oeil='Les références envoyées par Yves · 16 novembre 2026',
+    titre='Comment ses références recrutent des business partners et vendent en ligne',
+    chapo=('Yves nous a envoyé neuf références sur WhatsApp. Nous avons ouvert chacune : site, Instagram, publications, liens en bio, '
+           'pages partenaires et boutiques. Voici, référence par référence, comment elles trouvent des business partners et comment elles vendent, '
+           'puis ce qu’on reprend pour son nouveau site.'),
     logo=os.path.join(RACINE, 'assets/images/eqology-logo.png'),
     polices=dict(titre='Space Grotesk', texte='DM Sans',
                  lien='https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap'),
@@ -23,188 +24,124 @@ cfg = dict(
         dict(
             court='Le principe',
             etiquette='Comprendre',
-            titre='Tous vendent le test avant l’huile',
-            intro=['Qu’ils soient distributeurs Eqology, Zinzino ou marques indépendantes (NORSAN), les acteurs qui marchent ouvrent la conversation '
-                   'par un test sanguin à faire chez soi : quelques gouttes de sang mesurent l’équilibre entre oméga-6 et oméga-3. '
-                   'Le résultat est presque toujours mauvais, et c’est lui qui vend l’huile.',
-                   'Chez Eqology, le test est souvent « offert » dans un abonnement de 6 mois, avec un second test à la fin pour montrer le progrès. '
-                   'Ensuite vient l’offre « 3 for free » : le client qui fait commander trois proches reçoit ses produits gratuitement. '
-                   'Une partie de ces clients devient partenaire à son tour.'],
-            schema=X.flux([('Pub', 'ou message', 'note'), ('Test', 'oméga-6/3', 'ok'),
-                           ('Résultat', 'souvent bas', 'mal'), ('Huile', '6 mois, 2 tests', 'ok'),
-                           ('Partenaire', '3 for free', 'note')],
-                          legende='Le parcours type, du premier contact au recrutement'),
-            donc='le nouveau site d’Yves doit ouvrir sur le test. C’est le point d’entrée de toute la concurrence.',
+            titre='Un distributeur Eqology gagne sur deux tableaux : ses ventes et son équipe',
+            intro=['Eqology le dit sur sa page « Devenir Business Partner » : on peut se contenter de vendre à son réseau, '
+                   'mais « les avantages financiers sont encore plus importants » quand on monte une équipe de partenaires qui vendent à leur tour.',
+                   'Côté vente, le distributeur n’a ni stock ni panier. Chaque lien vers la boutique Eqology porte son code de partenaire, '
+                   'et toute commande passée par ce lien lui revient. Côté recrutement, le nouveau partenaire achète un Business Kit, '
+                   'suit la formation d’Eqology et rejoint l’équipe de celui qui l’a fait entrer.'],
+            schema=X.flux([('Site d’Yves', 'vitrine', 'note'), ('Lien codé', 'son code', 'ok'),
+                           ('Eqology', 'panier, envoi', 'neutre'), ('Commission', 'pour Yves', 'ok'),
+                           ('Équipe', 'ses recrues', 'note')],
+                          legende='Le site vend avec des liens codés et recrute pour l’équipe'),
+            donc='le site d’Yves a deux missions : faire acheter via ses liens codés et faire entrer des business partners dans son équipe. Toutes ses références jouent sur l’une ou l’autre.',
         ),
         dict(
-            court='Les familles',
-            etiquette='Le paysage',
-            titre='Trois familles d’acteurs, trois façons de vendre',
+            court='Recruter',
+            etiquette='Objectif 1 · Trouver des business partners',
+            titre='Pour recruter, chaque référence a sa méthode, et aucune n’utilise la publicité',
             points=[
-                dict(titre='Les distributeurs Eqology vendent par la conversation',
-                     texte='Ce sont surtout des praticiens (massage, esthétique, nutrition) ou des familles qui vendent leur mode de vie. '
-                           'Ils renvoient la commande vers la boutique officielle d’Eqology avec leur identifiant de partenaire (EQ ID). '
-                           'Très peu achètent de la publicité : on compte 12 publicités actives qui citent « eqology » dans le monde.',
-                     exemple='Boost Your Health (Pays-Bas) : une famille qui vit « où elle veut », un rendez-vous Calendly gratuit de 15 minutes, et « JOIN THE TEAM » dans la bio.'),
-                dict(titre='Les distributeurs Zinzino font la même chose, avec plus de sites en français',
-                     texte='Zinzino est le concurrent direct d’Eqology : même modèle de vente en réseau, même test sanguin. '
-                           'Ses distributeurs français ont déjà des mini-sites et 9 publicités actives en France.',
-                     exemple='L’Équilibre, d’Astrid et Bertrand (equilibre-sante.vercel.app) : « La plupart des compléments commencent par une promesse. Zinzino commence par un test. »'),
-                dict(titre='Les marques achètent du volume avec une offre d’appel',
-                     texte='Norway Omega, IM8, NORSAN ou Frøya vendent sur leur propre boutique. Elles diffusent des dizaines de publicités en même temps '
-                           'et attirent le premier achat avec une remise ou un cadeau.',
-                     exemple='Norway Omega : « 20 € offerts sur votre première commande avec le code OCEANDEEP ».'),
+                dict(titre='Boost Your Health (Dennis & Anne Sied, Pays-Bas) : la référence la plus complète', ton='ok',
+                     texte='Leur site boostyourhealth.eu demande dès l’accueil « Où veux-tu commencer ? » avec deux portes : « Améliorer ma santé » et « Entreprendre dans la santé ». '
+                           'Tout mène à un appel découverte gratuit de 15 minutes sur Calendly. Ils recrutent surtout des professionnels qui intègrent Eqology à leur activité : '
+                           'une coach en nutrition, une thérapeute de l’eczéma, une spécialiste des intestins, une salle de sport. '
+                           'Leurs témoignages racontent tous la même chose : « J’ai d’abord proposé les produits à mes clients, puis j’ai monté une équipe. » '
+                           'Sur Instagram, ils montrent leur vie (sport, école à la maison, voyages, leur chat) et glissent une publication épinglée : '
+                           '« Et si une seule décision te donnait plus de liberté que tu ne l’imaginais ? »',
+                     exemple='Leur vidéo d’accueil s’intitule « Eqology First Look ». Leur page « Test don’t guess » explique le test avant/après 120 jours, puis renvoie vers le rendez-vous.'),
+                dict(titre='Eqology Business Partner Sicilia : des soirées de recrutement en présentiel',
+                     texte='Leur compte Instagram est petit (51 abonnés) et sert à annoncer des soirées. Celle du 4 novembre à Catane, de 19 h à 21 h, '
+                           'promettait « Transforme ta passion pour le bien-être en une nouvelle profession », avec des dirigeants d’Eqology et des « présidentes » du réseau au micro.',
+                     exemple='Leur bio : « Le plus beau cadeau pour toi et ta famille, c’est ta santé. Des opportunités de business éthiques avec Eqology. »'),
+                dict(titre='Falko Krismayr : le recrutement par l’autorité, entièrement hors ligne',
+                     texte='Ancien coach olympique devenu « mentor business » (5 100 abonnés, compte certifié). Sa bio promet un cours gratuit. '
+                           'L’article de presse en lien dans sa bio (The UBJ, 28/09/2026) explique que lui et Esther Wilhelm ont bâti leur organisation « uniquement hors ligne » : '
+                           'Instagram sert leur image, les rencontres en face à face font le recrutement.',
+                     exemple='Ses stories à la une : Expertise, Testimonials, Pro Sport, About Me. Il vend un parcours avant de vendre une opportunité.'),
+                dict(titre='Le livre « Oméga-3, le verdict de la science » : l’approche des professionnels par LinkedIn',
+                     texte='Un distributeur Eqology écrit à ses « chers confrères » et leur offre les pages de synthèse de son livre, vendu sur Amazon, qui « ne cite aucun produit ». '
+                           'Une fois la confiance installée, un QR code propose « une autre orientation professionnelle, un complément de revenu ».',
+                     exemple='Attention : le livre promet « -45 % de mort subite » et « -49 % de démence ». On garde l’approche, pas ces promesses, interdites en publicité.'),
+                dict(titre='Robert Kontriner : la page partenaire et un Instagram personnel',
+                     texte='Il n’a que la page partenaire fournie par Eqology et un compte Instagram de 657 abonnés, où ses publications font de 2 à 36 j’aime. '
+                           'Sa publication épinglée répond à l’objection qu’on lui fait : « On croit que je fais ce nouveau projet seulement pour gagner de l’argent. »',
+                     exemple='C’est le niveau zéro du recrutement en ligne : pas de site, pas de rendez-vous, pas de formulaire.'),
+                dict(titre='eqologywithaga : un compte qui démarre',
+                     texte='Quatre abonnés, aucune publication, une bio courte et un lien d’inscription client Eqology. On voit ici ce qu’Eqology fournit de base à un nouveau partenaire, et la limite de ce minimum.'),
+                dict(titre='Le compte officiel eqologybusiness : le matériel prêt à partager',
+                     texte='Eqology anime son propre compte « business » (Oslo, 3 573 abonnés) avec des stories Products, Kick Off, Opportunity et Convention, '
+                           'et reposte les déballages de ses clientes. Les partenaires reprennent ce matériel pour recruter.'),
             ],
-            donc='Yves est un distributeur : il ne peut pas jouer les remises comme une marque. En revanche, il peut faire de la publicité, ce que presque aucun distributeur ne fait.',
+            donc='les recrutements qui marchent passent par une histoire de vie, un rendez-vous et des soirées ou des visios. Aucune référence d’Yves ne recrute avec la publicité Meta : c’est la place à prendre.',
         ),
         dict(
-            court='Les distributeurs',
-            etiquette='Distributeur par distributeur',
-            titre='Les meilleurs distributeurs ont chacun un levier, aucun n’a tout',
+            court='Vendre en ligne',
+            etiquette='Objectif 2 · L’e-commerce',
+            titre='Un distributeur fait de l’e-commerce avec des liens codés vers la boutique Eqology',
             points=[
-                dict(titre='omega3-test.net (Allemagne, site en 5 langues dont le français)',
-                     texte='Le modèle le plus abouti. Le site informe avant de vendre : outils gratuits (bilan oméga-3, calculateurs), comparatifs Eqology contre NORSAN, Zinzino ou Nutri&amp;Co, '
-                           'et uniquement les allégations santé autorisées par l’EFSA. Le bouton « Commander le test » mène à Eqology, avec un rendez-vous gratuit de 15 minutes à côté.',
-                     exemple='Il affiche « Financement transparent : partenaire Eqology ». La confiance passe par l’honnêteté sur le modèle.'),
-                dict(titre='Pure Arctic Omega 3 (purearcticomega3.com)',
-                     texte='Le seul vrai tunnel de recrutement trouvé. Une page explique pourquoi Eqology, les 4 étapes pour démarrer, le kit de démarrage et la formation. '
-                           'Un formulaire déclenche une série d’e-mails, puis une invitation à une présentation de groupe en ligne.',
-                     exemple='La page /join/ ne propose aucun produit : elle ne parle qu’à ceux qui cherchent une activité.'),
-                dict(titre='Boost Your Health (Dennis &amp; Anne Sied, Pays-Bas)',
-                     texte='Le recrutement par le mode de vie : travail à distance, école à la maison, sport, cuisine. Le site boostyourhealth.eu titre « Boost Your Health, Grow Wealth » '
-                           'et tout mène à un appel découverte gratuit sur Calendly.',
-                     exemple='Leurs stories à la une s’appellent Workouts, Work remote, Home schooling et Food. On achète leur vie avant leur huile.'),
-                dict(titre='Gradina Health (Denislav, Bulgarie)',
-                     texte='Le seul distributeur qui fait de la publicité en volume vers la France : une vingtaine de variantes testées en une semaine, '
-                           '« Testez votre ratio oméga-3 » et « -25 % jusqu’au 10 mars ». Tout mène à sa page partenaire partner.eqology.com.',
-                     exemple='Il se présente simplement : « Je m’entraîne régulièrement et je suis informaticien. » Un profil ordinaire rassure.'),
-                dict(titre='Lang gesund (Allemagne)',
-                     texte='Une publicité qui « recrute 3 participants pour un projet expérience oméga-3 » : 8 semaines d’huile offertes, un test au début et un à la fin, un suivi personnel. '
-                           'La candidature se fait sur un formulaire Google.',
-                     exemple='En réalité, c’est une prise de contacts. Les 3 places créent l’urgence, et chaque candidat devient un client ou un futur partenaire.'),
-                dict(titre='gesundezelle (Allemagne)',
-                     texte='Des coffrets de Noël à 109 € et 189 €, test sanguin inclus, sans abonnement. Pour commander, on écrit « SMALL » ou « LARGE » en commentaire, '
-                           'puis la vente se fait en message privé.',
-                     exemple='« Ce n’est pas une IA qui vous répond, c’est moi. » Le contact humain sert d’argument de vente.'),
-                dict(titre='Robert Kontriner, Totaliz, Balz ImPuls : la page partenaire seule',
-                     texte='Pas de site à eux, ou une simple page qui renvoie vers la page partenaire officielle d’Eqology. C’est gratuit et rapide à mettre en place, '
-                           'mais toutes ces pages se ressemblent et ne gardent aucun contact.',
-                     exemple='partner.eqology.com/omegarob : le nom du partenaire en haut, puis le site Eqology standard.'),
-                dict(titre='Falko Krismayr et l’auteur du livre « Oméga-3, le verdict de la science »',
-                     texte='Le recrutement par l’autorité. Falko se présente comme ancien coach olympique et mentor, et offre un cours gratuit. '
-                           'Le livre, lui, sert à aborder des « confrères » sur LinkedIn sans parler de produit, puis glisse « une autre orientation professionnelle, un complément de revenu ».',
-                     exemple='Attention : le livre promet « -45 % de mort subite » et « -49 % de démence ». Ces promesses sont interdites en publicité.'),
+                dict(titre='Le Linktree de Boost Your Health est un catalogue complet', ton='ok',
+                     texte='linktr.ee/boostyourhealth.eu liste 22 produits rangés par familles : oméga-3, packs avantage, vitamines et minéraux, beauté. '
+                           'Chaque lien ouvre la fiche Eqology avec leur code partenaire dans l’adresse (eqology.com/nl/__s31ef49s__/produit). '
+                           'Le client paie chez Eqology, la vente leur revient.',
+                     exemple='« Omega 3 + vit K2/D3 + Multivitaminen » mène directement au pack Pure Nordic Health, avec leur code.'),
+                dict(titre='La page partenaire de Robert Kontriner est une mini-boutique',
+                     texte='partner.eqology.com/omegarob affiche son nom, ses produits conseillés, ses articles et ses vidéos. '
+                           'Tous les liens vers le catalogue portent son identifiant (?sid=…) : le panier, le compte client et même la page « Devenir Business Partner ».'),
+                dict(titre='Norway Omega : le modèle de la boutique de marque',
+                     texte='Une boutique Shopify de 12 produits seulement, avec des formules à l’année (jusqu’à 1 755 €) et un « Team Pack » de 30 flacons pour les clubs sportifs. '
+                           'Leurs ambassadeurs sont des sportifs de haut niveau (Tarjei Bø en biathlon, Barnabé Delarze en aviron). La publicité offre 20 € sur la première commande (code OCEANDEEP).'),
+                dict(titre='IM8 : le modèle de la fiche produit pensée pour l’abonnement',
+                     texte='La pub vue par Yves mène à une page « Dr James » qui renvoie vers la fiche produit, avec l’abonnement de 90 jours présélectionné. '
+                           'Elle met en avant -30 %, un kit de bienvenue offert, la garantie « satisfait ou remboursé » de 90 jours, 22 104 avis, un essai clinique, '
+                           'et un programme de masterclasses avec des experts réservé aux abonnés.',
+                     exemple='Le prix est affiché « par jour » (3,03 € par portion) plutôt que par mois.'),
             ],
-            donc='aucun distributeur ne réunit le contenu sérieux d’omega3-test.net, le tunnel de recrutement de Pure Arctic Omega 3 et la publicité de Gradina. C’est la place à prendre.',
+            donc='Yves peut avoir un vrai site e-commerce, avec catalogue, fiches produits, packs et abonnement mis en avant comme chez IM8, dont chaque bouton « Acheter » ouvre le panier Eqology avec son code. Paiement, livraison et service client restent chez Eqology.',
         ),
         dict(
-            court='Les marques',
-            etiquette='Le modèle e-commerce',
-            titre='Les marques gagnent sur la pureté, la preuve et l’offre de bienvenue',
-            points=[
-                dict(titre='Norway Omega (norwayomega.com)',
-                     texte='Des publicités sur la pureté : distillation moléculaire, triglycérides naturels, indices d’oxydation. Une boutique multipays et une page « Ambassadors ».',
-                     exemple='Story sponsorisée : un flacon dans la glace, « From 62° North », bouton « Start shopping today » et code OCEANDEEP.'),
-                dict(titre='IM8 Health (im8health.com)',
-                     texte='La preuve par les experts : la marque se présente comme « cofondée par David Beckham avec des experts de la Mayo Clinic et de la NASA ». '
-                           'Ses publicités passent par des médias (Sports Illustrated, The Dodo) et chacune mène à une page dédiée à un médecin.',
-                     exemple='La pub vue par Yves mène à im8health.com/pages/drjames : une landing par expert.'),
-                dict(titre='NORSAN (norsan.fr)',
-                     texte='Le vrai concurrent e-commerce en France : « Votre spécialiste en oméga-3 de Norvège ». Test d’index oméga-3 vendu en ligne, '
-                           'livraison offerte dès 49 €, -10 % à l’inscription, et un espace pour les professionnels de santé.',
-                     exemple='Leur menu « Apprendre » (bienfaits, index oméga-3, webinaires) fait le travail de conviction avant la boutique.'),
-                dict(titre='Frøya Organics (froyaorganics.com)',
-                     texte='La machine publicitaire : plus de 80 publicités actives, dont beaucoup sont publiées par de fausses pages éditoriales (« Anne’s Skincare Blog », « Nordic Wellness Secrets ») '
-                           'ou par des créatrices en partenariat. Promesse de -50 % et garantie de 60 jours.',
-                     exemple='Un format à connaître sans le copier : les pages « blog » déguisées posent un vrai risque de confiance.'),
-            ],
-            donc='des marques, on garde la preuve de pureté, la page par expert et l’idée d’une offre de bienvenue. On laisse de côté les remises et les faux blogs.',
-        ),
-        dict(
-            court='Le bout du tunnel',
-            etiquette='Après le clic',
-            titre='Au bout de la publicité, cinq destinations possibles',
-            intro=['C’est la question d’Yves : « qu’est-ce qu’il y a au bout ? ». Voici ce que nous avons trouvé, de la plus simple à la plus travaillée.'],
-            comparatif=dict(
-                colonnes=['Qui le fait', 'Ce que ça donne'],
-                lignes=[
-                    ('Page partenaire Eqology (achat direct)', 'Gradina, Kontriner, Balz ImPuls', ('Simple, mais aucun contact gardé', 'mal')),
-                    ('Message privé ou WhatsApp', 'gesundezelle, Pure Omega3, Zinzino FR', ('Bon taux de vente, impossible à grande échelle', '')),
-                    ('Formulaire de candidature', 'Lang gesund, Pure Arctic Omega 3', ('Garde le contact, crée l’urgence', 'ok')),
-                    ('Rendez-vous gratuit (Calendly)', 'Boost Your Health, omega3-test.net', ('Convertit bien, demande du temps', 'ok')),
-                    ('Mini-site test d’abord, puis boutique', 'L’Équilibre, omega3-test.net, NORSAN', ('Informe, rassure et vend, le plus complet', 'ok')),
-                ]),
-            donc='le meilleur bout de tunnel combine un mini-site qui commence par le test, un formulaire pour garder le contact et un rendez-vous pour ceux qui hésitent.',
-        ),
-        dict(
-            court='La France',
-            etiquette='L’opportunité',
-            titre='En France, aucun distributeur Eqology n’occupe le terrain',
-            deux=[
-                dict(titre='Ce qui existe', ton='mal',
-                     texte='Aucun site de distributeur Eqology en France : sur Google France, le seul qui sort est l’ancien site d’Yves. '
-                           'Sur Meta, les 80 publicités Eqology diffusées en France viennent du siège (en anglais) et d’un distributeur bulgare. '
-                           'Zinzino n’a que 9 publicités actives.'),
-                dict(titre='Ce que ça permet', ton='ok',
-                     texte='Yves peut devenir la référence Eqology en français, en ligne comme en publicité. '
-                           'Sa concurrence publicitaire réelle se limite aux marques e-commerce (NORSAN, Nutri&amp;Co, Novoma), qui se battent sur la pureté et le prix.'),
-            ],
-            donc='le moment est bon : le premier distributeur qui investit sérieusement le français prend une place que personne ne lui dispute.',
-        ),
-        dict(
-            court='Le modèle à suivre',
+            court='Ce qu’on reprend',
             etiquette='Recommandation',
-            titre='Pour Yves, un site qui commence par le test, avec deux portes',
-            intro=['Trois modèles sont possibles. Nous recommandons le premier.'],
-            options=[
-                dict(nom='A · Site « test d’abord » avec deux portes', reco=True,
-                     resume='Un mini-site éditorial en français, sur le modèle d’omega3-test.net et de L’Équilibre, avec deux parcours : « Je veux le produit » et « Je veux l’activité ».',
-                     comment=['La page d’accueil présente le test oméga-6/3 et un petit quiz.',
-                              'La porte « produit » mène au test puis à la commande sur la boutique Eqology, avec l’EQ ID d’Yves.',
-                              'La porte « activité » mène à une page de recrutement, un formulaire, puis un rendez-vous ou une présentation en ligne.',
-                              'Des publicités Meta séparées alimentent chaque porte.'],
-                     change='Yves garde tous les contacts (clients et candidats), et la publicité mesure ce qui marche porte par porte.',
-                     avantages=[('Seul sur le terrain', 'aucun distributeur Eqology ne fait ça en français'),
-                                ('Garde les contacts', 'chaque visiteur intéressé laisse ses coordonnées'),
-                                ('Conforme', 'contenu limité aux allégations autorisées, comme omega3-test.net')],
-                     inconvenients=[('Plus de travail au départ', 'contenus, quiz et deux tunnels à construire'),
-                                    ('Le panier reste chez Eqology', 'sauf si le contrat d’Yves autorise une boutique à lui')],
-                     quand='Si Yves veut à la fois vendre et recruter avec la publicité Meta, ce qui est son objectif.'),
-                dict(nom='B · Boutique en ligne façon marque', verdict='deconseille',
-                     resume='Une vraie boutique avec panier, remise de bienvenue et publicités en volume, comme Norway Omega ou NORSAN.',
-                     comment=['Yves achète les produits et les revend sur sa boutique.',
-                              'Une remise de bienvenue attire le premier achat.'],
-                     change='Yves deviendrait commerçant, avec du stock et un service client.',
-                     avantages=[('Parcours d’achat court', 'le client paie sans quitter le site')],
-                     inconvenients=[('Probablement contraire au contrat', 'Eqology encadre les prix et la revente, à vérifier'),
-                                    ('Pas de remise possible', 'l’offre d’appel des marques ne se copie pas'),
-                                    ('Rien pour le recrutement', 'une boutique ne recrute pas de partenaires')],
-                     quand='Seulement si Eqology l’autorise par écrit, comme pour les quelques praticiens belges, néerlandais et polonais qui ont leur propre panier.'),
-                dict(nom='C · Page partenaire Eqology seule', verdict='possible',
-                     resume='On fait pointer les publicités directement vers la page partenaire officielle, comme Gradina ou Kontriner.',
-                     comment=['La publicité mène à partner.eqology.com au nom d’Yves.',
-                              'La vente se fait sur le site Eqology standard.'],
-                     change='Rien à construire, mais aucun contact gardé et aucune différence avec les autres partenaires.',
-                     avantages=[('Immédiat et gratuit', 'la page existe déjà')],
-                     inconvenients=[('Aucune donnée', 'on ne sait pas qui a cliqué sans acheter'),
-                                    ('Aucun recrutement', 'rien ne parle de l’activité'),
-                                    ('Aucune différence', 'toutes ces pages se ressemblent')],
-                     quand='Pour tester un premier budget publicitaire pendant que le site A se construit.'),
+            titre='Le nouveau site : la structure de Boost Your Health, les fiches d’IM8, le recrutement par rendez-vous',
+            intro=['Pour chaque brique du site, voici la référence d’Yves dont elle s’inspire.'],
+            comparatif=dict(
+                colonnes=['On le prend chez', 'Sur le site d’Yves'],
+                lignes=[
+                    ('Deux portes dès l’accueil', 'Boost Your Health', ('« Je veux le produit » / « Je veux l’activité »', 'ok')),
+                    ('Catalogue avec liens codés', 'Linktree Boost, page Kontriner', ('Toute la gamme, chaque bouton vers Eqology avec son code', 'ok')),
+                    ('Fiches produits et abonnement', 'IM8', ('Prix par jour, garantie, avis, test avant/après', 'ok')),
+                    ('Packs et formules à l’année', 'Norway Omega', ('Packs Eqology mis en avant, offre pour les clubs et cabinets', 'ok')),
+                    ('Témoignages de professionnels', 'Boost Your Health', ('Praticiens et sportifs qui utilisent Eqology', 'ok')),
+                    ('Recrutement', 'Boost, Sicilia, Falko', ('Formulaire, appel de 15 min, puis visio de groupe', 'ok')),
+                    ('Porte d’entrée pour les pros de santé', 'Le livre (LinkedIn)', ('Un guide gratuit sourcé, sans promesse interdite', 'ok')),
+                    ('Publicité Meta par porte', 'Aucune référence ne le fait', ('Une campagne « produit » et une campagne « activité »', 'ok')),
+                ]),
+            donc='on construit un seul site qui vend toute la gamme avec les liens codés d’Yves et qui recrute avec un rendez-vous. Chaque porte a sa propre campagne Meta.',
+        ),
+        dict(
+            court='À vérifier',
+            etiquette='Avant de commencer',
+            titre='Deux points à vérifier avec Yves avant de construire',
+            deux=[
+                dict(titre='Son code partenaire', ton='ok',
+                     texte='Il nous faut son identifiant Eqology (EQ ID ou lien de page partenaire) pour coder chaque bouton « Acheter », comme Boost Your Health le fait sur ses 22 produits.'),
+                dict(titre='Les règles d’Eqology', ton='mal',
+                     texte='Nous n’avons trouvé aucun règlement public d’Eqology sur les sites et la publicité de ses partenaires. '
+                           'Yves doit vérifier son contrat : usage du nom Eqology, des photos produits, et pubs Meta qui citent la marque.'),
             ],
-            donc='on construit A, et on peut lancer C dès maintenant pour tester les premières publicités.',
+            donc='avec ces deux réponses, on peut lancer la maquette du site.',
         ),
     ],
     glossaire=[
-        ('Bibliothèque publicitaire Meta', 'Le registre public de toutes les publicités Facebook et Instagram. On y voit qui diffuse quoi, depuis quand, et où mène chaque publicité.'),
-        ('EQ ID', 'L’identifiant de partenaire Eqology. Placé dans un lien, il attribue la vente au partenaire.'),
-        ('Page partenaire', 'La copie du site Eqology au nom d’un partenaire (partner.eqology.com/nom).'),
-        ('Tunnel', 'Le parcours d’un visiteur, de la publicité jusqu’à l’achat ou l’inscription.'),
-        ('Allégation santé', 'Une phrase sur l’effet d’un produit. Seules celles autorisées par l’EFSA (l’autorité européenne) sont permises, par exemple « le DHA contribue au fonctionnement normal du cerveau ».'),
-        ('Landing', 'Une page faite pour une seule publicité ou une seule offre.'),
+        ('Business Partner', 'Un distributeur indépendant Eqology. Il touche une commission sur ses ventes et sur celles de l’équipe qu’il recrute.'),
+        ('Business Kit', 'Le pack de démarrage qu’achète un nouveau partenaire : produits et outils de vente.'),
+        ('Lien codé', 'Un lien vers la boutique Eqology qui contient l’identifiant du partenaire (?sid=… ou __code__ dans l’adresse). La commande lui est attribuée.'),
+        ('Page partenaire', 'La copie du site Eqology au nom d’un partenaire (partner.eqology.com/nom), avec ses produits conseillés.'),
+        ('Linktree', 'Une page de liens qu’on met en bio Instagram. Boost Your Health s’en sert comme catalogue.'),
+        ('Calendly', 'Un outil de prise de rendez-vous en ligne.'),
     ],
-    decision='On part sur l’option A, un site « test d’abord » avec deux portes, en lançant l’option C en attendant : oui ou non ? '
-             'Avant de commencer, il faut savoir si le contrat d’Yves l’autorise à avoir sa propre boutique.',
-    pied='Sources : captures WhatsApp d’Yves (08 au 15/11/2026), Bibliothèque publicitaire Meta et sites consultés le 16/11/2026. Détail dans veille/yves-2026-11/.',
+    decision='On construit le nouveau site sur ce modèle (deux portes, catalogue avec liens codés, recrutement par rendez-vous et visio) : oui ou non ? '
+             'Si oui, il nous faut le code partenaire d’Yves.',
+    pied='Sources : captures WhatsApp d’Yves (08 au 15/11/2026), sites, Instagram et Linktree consultés le 16/11/2026. Détail dans veille/yves-2026-11/.',
 )
 
 with open(os.path.join(ICI, 'strategie-concurrents.html'), 'w') as f:
