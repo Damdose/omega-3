@@ -34,6 +34,10 @@ module.exports = async (req, res) => {
       consultants: clean(body.step2, 40),
       defi: clean(body.step3, 60),
       complements: clean(body.step4, 60),
+      profil: clean(body.profil, 60),
+      metier: clean(body.metier, 80),
+      creneau: clean(body.creneau, 80),
+      utm: clean(body.utm, 300),
       source: clean(body.source, 120) || 'Site (candidature)'
     };
 
@@ -78,7 +82,7 @@ async function sendLeadEmail(r) {
   const key = process.env.RESEND_API_KEY;
   if (!key) return 'skipped (no RESEND_API_KEY)';
 
-  const from = process.env.LEAD_EMAIL_FROM || 'FENA x Eqology <zenco@heyfuture.fr>';
+  const from = process.env.LEAD_EMAIL_FROM || 'Équipe Eqology <zenco@heyfuture.fr>';
   const to = (process.env.LEAD_EMAIL_TO || 'zenco.coignard@gmail.com')
     .split(',').map(s => s.trim()).filter(Boolean);
 
@@ -92,11 +96,15 @@ async function sendLeadEmail(r) {
     ['Email', r.email],
     ['Téléphone', r.phone],
     ['Ville', r.city],
+    ['Profil', r.profil],
+    ['Métier', r.metier],
+    ['À rappeler', r.creneau],
     ['Ancienneté', r.anciennete],
     ['Consultants / mois', r.consultants],
     ['Défi principal', r.defi],
     ['Compléments', r.complements],
     ['Origine', r.source],
+    ['Publicité', r.utm],
     ['Date', dateFr],
     ['Réf.', r.id]
   ].filter(([, v]) => v);
@@ -108,7 +116,7 @@ async function sendLeadEmail(r) {
 
   const html =
     `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto">
-      <h2 style="color:#0B1D2E;font-size:18px">Nouvelle candidature — FENA × Eqology</h2>
+      <h2 style="color:#0B1D2E;font-size:18px">${r.profil ? 'Nouveau contact à rappeler' : 'Nouvelle candidature'}</h2>
       <p style="color:#6b7280;font-size:14px">Origine : ${esc(r.source || 'Site')}</p>
       <table style="border-collapse:collapse;width:100%;border:1px solid #eceae4;border-radius:8px;overflow:hidden">${trs}</table>
     </div>`;
@@ -118,7 +126,7 @@ async function sendLeadEmail(r) {
   const payload = {
     from,
     to,
-    subject: `Nouvelle candidature — ${r.name || r.email || 'sans nom'}${/webinaire/i.test(r.source || '') ? ' (webinaire)' : ''}`,
+    subject: `${r.profil ? 'À rappeler' : 'Nouvelle candidature'} — ${r.name || r.phone || r.email || 'sans nom'}${r.creneau ? ' · ' + r.creneau : ''}${/webinaire/i.test(r.source || '') ? ' (webinaire)' : ''}`,
     html,
     text
   };

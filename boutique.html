@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique · Oméga-3, vitamines et test Eqology</title>
+  <meta name="description" content="Les oméga-3 Pure Arctic Oil, la version végane, les vitamines et le test oméga-3 à domicile. Commande et livraison assurées par Eqology.">
+  <link rel="canonical" href="https://eqology-omega3.vercel.app/boutique.html">
+  <meta property="og:title" content="La boutique Eqology d'Yves Coignard">
+  <meta property="og:description" content="Oméga-3 de Norvège, version végane, vitamines et test à domicile.">
+  <meta property="og:image" content="https://eqology-omega3.vercel.app/assets/v2/gamme.webp">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tw-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="site-config.js"></script>
+</head>
+<body>
+  <nav class="fixed top-0 inset-x-0 z-40"></nav>
+
+  <main>
+    <header class="bg-cream-50">
+      <div class="wrap pt-32 sm:pt-40">
+        <p class="oeil">Boutique</p>
+        <div class="mt-5 grid gap-6 lg:grid-cols-[1.2fr_1fr] items-end">
+          <h1 class="titre text-[2.5rem] sm:text-6xl max-w-[14ch]">Les produits, commandés chez Eqology.</h1>
+          <p class="lead">Choisissez ici, commandez sur la boutique officielle d'Eqology : paiement sécurisé, livraison à domicile et service client sont assurés par la marque. Les prix affichés chez Eqology font foi.</p>
+        </div>
+        <img src="assets/v2/gamme.webp" alt="La gamme d'huiles Pure Arctic Oil d'Eqology" class="mt-12 w-full aspect-[16/7] sm:aspect-[16/6] object-cover rounded-[28px]" width="1600" height="642" fetchpriority="high">
+      </div>
+      <!-- Raccourcis vers les familles -->
+      <div class="wrap pt-8 pb-4">
+        <ul class="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 text-sm font-medium">
+          <li><a href="#omega3" class="inline-flex items-center h-11 px-5 rounded-full bg-navy-900 text-white whitespace-nowrap">Oméga-3</a></li>
+          <li><a href="#test" class="inline-flex items-center h-11 px-5 rounded-full border border-cream-300 bg-white whitespace-nowrap hover:border-navy-900">Le test</a></li>
+          <li><a href="#vitamines" class="inline-flex items-center h-11 px-5 rounded-full border border-cream-300 bg-white whitespace-nowrap hover:border-navy-900">Vitamines et beauté</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Oméga-3 -->
+    <section id="omega3" class="sec bg-cream-50 scroll-mt-20" style="padding-top: calc(var(--sec) / 2)">
+      <div class="wrap">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <h2 class="titre text-3xl sm:text-4xl">Les huiles oméga-3</h2>
+          <p class="text-navy-500 max-w-[48ch]">Une cuillère à café par jour, au réfrigérateur après ouverture.</p>
+        </div>
+        <ul class="mt-10 grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-3">
+          <!-- Une carte par produit -->
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-natural.webp" alt="Flacon Pure Arctic Oil, goût naturel" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Le classique</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Arctic Oil</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">Huile de poisson pêché en Arctique, riche en EPA et DHA. Le flacon de référence de la gamme.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-citron.webp" alt="Flacon Pure Arctic Oil, goût citron" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Le plus doux</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Arctic Oil, citron</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">La même formule, avec un goût citronné pour celles et ceux qui redoutent le poisson.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-gold.webp" alt="Flacon Pure Arctic Oil Gold" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Cerveau et vision</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Arctic Oil Gold</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">La « Norwegian Brain Formula » d'Eqology. Le DHA contribue au fonctionnement normal du cerveau et au maintien d'une vision normale.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-heart.webp" alt="Flacon Pure Arctic Oil Heart and Energy" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Cœur</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Arctic Oil Heart &amp; Energy</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">L'EPA et le DHA contribuent à une fonction cardiaque normale, avec une prise quotidienne de 250 mg.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-vegan.webp" alt="Flacon Pure Vegan Oil" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Sans poisson</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Vegan Oil</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">Des oméga-3 issus d'algues marines, pour les personnes végétariennes ou véganes.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+          <li class="monte group rounded-3xl bg-white border border-cream-200 overflow-hidden flex flex-col">
+            <div class="bg-gradient-to-b from-cream-100 to-white aspect-[4/3] flex items-end justify-center"><img src="assets/v2/pao-kids.webp" alt="Flacon Pure Arctic Oil For Kids" class="h-[92%] w-auto object-contain group-hover:-translate-y-1 transition-transform duration-500" width="540" height="675"></div>
+            <div class="p-4 sm:p-6 flex flex-col flex-1">
+              <span class="oeil !text-navy-400 !text-[10px] sm:!text-xs">Enfants</span>
+              <h3 class="font-serif font-semibold text-base sm:text-xl mt-2 leading-snug">Pure Arctic Oil For Kids</h3>
+              <p class="text-navy-600 mt-2 text-sm sm:text-[15px] leading-relaxed">Un flacon de 150 ml au goût adapté aux plus jeunes.</p>
+              <a data-boutique href="#" class="btn btn-plein !mt-5 w-full mt-auto !px-3">Commander<span class="hidden sm:inline">&nbsp;chez Eqology</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Le test -->
+    <section id="test" class="sec bg-navy-900 text-white scroll-mt-20">
+      <div class="wrap grid gap-10 lg:grid-cols-2 items-center">
+        <img src="assets/v2/testkit-detail.webp" alt="Le kit de test oméga-3 à domicile" class="monte w-full aspect-[4/3] object-cover rounded-[28px]" width="1000" height="1000">
+        <div class="monte">
+          <p class="oeil !text-glacier-300">Le test oméga-3</p>
+          <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[14ch]">Commencez par savoir où vous en êtes.</h2>
+          <p class="text-cream-200 text-lg leading-relaxed mt-5 max-w-[50ch]">Le test à domicile mesure votre équilibre oméga-6 / oméga-3. Pris avec une huile, il permet de comparer avant et après.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a data-boutique href="#" class="btn btn-glacier">Commander le test</a>
+            <a href="le-test.html" class="btn btn-clair">Comment il fonctionne</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vitamines et beauté -->
+    <section id="vitamines" class="sec bg-white scroll-mt-20">
+      <div class="wrap">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <h2 class="titre text-3xl sm:text-4xl">Vitamines et beauté</h2>
+          <p class="text-navy-500 max-w-[48ch]">Le reste de la gamme, à retrouver sur la boutique Eqology.</p>
+        </div>
+        <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="monte rounded-2xl border border-cream-200 bg-cream-50 p-6"><p class="font-serif font-semibold text-lg">Vitamine K2 + D3</p><p class="text-sm text-navy-600 mt-2">La vitamine D contribue au maintien d'une ossature normale.</p></li>
+          <li class="monte rounded-2xl border border-cream-200 bg-cream-50 p-6"><p class="font-serif font-semibold text-lg">Vitamine D3 en gouttes</p><p class="text-sm text-navy-600 mt-2">La vitamine D contribue au fonctionnement normal du système immunitaire.</p></li>
+          <li class="monte rounded-2xl border border-cream-200 bg-cream-50 p-6"><p class="font-serif font-semibold text-lg">Nordic Energy Booster</p><p class="text-sm text-navy-600 mt-2">Un complément pour les journées chargées.</p></li>
+          <li class="monte rounded-2xl border border-cream-200 bg-cream-50 p-6"><p class="font-serif font-semibold text-lg">Collagène et Ocean Miracle</p><p class="text-sm text-navy-600 mt-2">La ligne beauté d'Eqology.</p></li>
+        </ul>
+        <a data-boutique href="#" class="btn btn-ligne mt-8">Voir toute la gamme chez Eqology</a>
+      </div>
+    </section>
+
+    <!-- Pont vers l'équipe -->
+    <section class="sec bg-cream-100">
+      <div class="wrap">
+        <div class="monte rounded-[32px] bg-white border border-cream-200 p-8 sm:p-12 grid gap-6 lg:grid-cols-[1.4fr_1fr] items-center">
+          <div>
+            <p class="oeil">Vous aimez ces produits ?</p>
+            <h2 class="titre text-3xl sm:text-4xl mt-3">Recommandez-les, et faites-en une activité.</h2>
+          </div>
+          <a href="rejoindre-l-equipe.html" class="btn btn-plein lg:justify-self-end">Découvrir l'équipe</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
+  <script src="components.js"></script>
+</body>
+</html>
