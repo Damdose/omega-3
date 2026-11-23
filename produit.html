@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produit · la boutique Eqology d'Yves Coignard</title>
+  <meta name="description" content="Fiche produit Eqology : composition, utilisation et commande sur la boutique officielle.">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tw-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="site-config.js"></script>
+  <script src="catalogue.js"></script>
+</head>
+<body>
+  <nav id="entete" class="sticky top-0 z-40"></nav>
+
+  <main>
+    <section class="bg-cream-50 pb-[var(--sec)]">
+      <div class="wrap pt-6 sm:pt-8">
+        <nav id="ariane" class="text-sm text-navy-500" aria-label="Fil d'Ariane"></nav>
+        <div class="mt-5 grid gap-8 lg:gap-14 lg:grid-cols-[1.1fr_1fr] items-start">
+          <!-- Visuel -->
+          <div class="lg:sticky lg:top-[140px]">
+            <div class="relative rounded-[28px] bg-gradient-to-b from-white to-cream-100 border border-cream-200 aspect-square overflow-hidden">
+              <span id="badge" class="hidden absolute top-5 left-5 z-[1] text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full bg-navy-900 text-white"></span>
+              <img id="visuel" src="" alt="" class="absolute inset-0 w-full h-full object-contain p-8 sm:p-14" width="720" height="720">
+            </div>
+            <ul class="mt-3 grid grid-cols-3 gap-3 text-[13px] text-navy-600">
+              <li class="rounded-xl bg-white border border-cream-200 p-3 text-center">Livré par Eqology</li>
+              <li class="rounded-xl bg-white border border-cream-200 p-3 text-center">Paiement sécurisé</li>
+              <li class="rounded-xl bg-white border border-cream-200 p-3 text-center">Conseil d'Yves</li>
+            </ul>
+          </div>
+
+          <!-- Achat -->
+          <div>
+            <p id="categorie" class="oeil"></p>
+            <h1 id="nom" class="titre text-4xl sm:text-5xl mt-3"></h1>
+            <p id="detail" class="mt-2 text-navy-500"></p>
+            <p id="prix" class="mt-6 font-serif font-semibold text-4xl"></p>
+            <p id="prix-note" class="mt-1 text-sm text-navy-500"></p>
+            <p id="texte" class="mt-6 text-lg leading-relaxed text-navy-700"></p>
+
+            <div class="mt-8 grid gap-3">
+              <a id="commander" href="#" target="_blank" rel="noopener" class="btn btn-plein !min-h-[58px] text-base w-full">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                Commander chez Eqology
+              </a>
+              <a href="rejoindre-l-equipe.html#rappel" class="btn btn-ligne w-full">Une question ? Être rappelé par Yves</a>
+            </div>
+            <p class="mt-3 text-xs text-navy-400">Vous êtes redirigé vers la boutique officielle Eqology pour le paiement et la livraison. Livraison offerte par Eqology dès deux produits de plus de 60 €.</p>
+
+            <div class="mt-10 divide-y divide-cream-300 border-y border-cream-300">
+              <details open class="py-2">
+                <summary class="flex items-center justify-between py-4 font-serif font-semibold text-lg">Ce qu'il contient<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary>
+                <ul id="points" class="pb-5 space-y-2.5 text-navy-700"></ul>
+              </details>
+              <details class="py-2">
+                <summary class="flex items-center justify-between py-4 font-serif font-semibold text-lg">Comment le prendre<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary>
+                <p id="usage" class="pb-5 text-navy-700 leading-relaxed"></p>
+              </details>
+              <details class="py-2">
+                <summary class="flex items-center justify-between py-4 font-serif font-semibold text-lg">Livraison et paiement<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary>
+                <p class="pb-5 text-navy-700 leading-relaxed">La commande se passe sur la boutique officielle Eqology : paiement sécurisé, expédition et service client sont assurés par la marque. Le prix affiché au moment de la commande fait foi.</p>
+              </details>
+            </div>
+            <p class="mt-5 text-xs text-navy-400">Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Associés -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <h2 class="titre text-3xl sm:text-4xl">Souvent commandés avec</h2>
+        <div id="associes" class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
+  <script src="components.js"></script>
+  <script>
+  (function () {
+    const P = window.PRODUITS, C = window.CATEGORIES;
+    const p = window.produit(new URLSearchParams(location.search).get('p')) || window.produit('pure-arctic-oil');
+    const c = C.find((x) => x.id === p.cat);
+    document.title = p.nom + ' · la boutique Eqology d\'Yves Coignard';
+    document.querySelector('meta[name="description"]').content = p.texte;
+    document.getElementById('ariane').innerHTML = `<a href="index.html" class="hover:text-navy-900">Accueil</a> <span class="mx-1.5">/</span> <a href="boutique.html?cat=${c.id}" class="hover:text-navy-900">${c.nom}</a> <span class="mx-1.5">/</span> <span class="text-navy-900">${p.nom}</span>`;
+    const v = document.getElementById('visuel'); v.src = 'assets/v2/produits/' + p.slug + '.webp'; v.alt = p.nom;
+    if (p.badge) { const b = document.getElementById('badge'); b.textContent = p.badge; b.classList.remove('hidden'); if (p.badge === 'Noël') b.style.background = '#B3261E'; }
+    document.getElementById('categorie').textContent = c.nom;
+    document.getElementById('nom').textContent = p.nom;
+    document.getElementById('detail').textContent = p.detail;
+    document.getElementById('prix').textContent = window.prixTexte(p);
+    document.getElementById('prix-note').textContent = p.prix ? 'Prix TTC Eqology, achat unique' : (p.parMois ? 'Programme sur abonnement Eqology' : 'Prix indiqué sur la page de commande Eqology');
+    document.getElementById('texte').textContent = p.texte;
+    document.getElementById('points').innerHTML = p.points.map((x) => `<li class="flex gap-3"><svg class="w-5 h-5 text-glacier-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>${x}</li>`).join('');
+    document.getElementById('usage').textContent = p.usage;
+    document.getElementById('commander').href = window.lienEqology(p);
+    // Produits associés : le test d'abord, puis la même catégorie
+    const assoc = [];
+    if (p.slug !== 'omega-3-test-kit' && p.cat !== 'coffrets') assoc.push(window.produit('omega-3-test-kit'));
+    P.filter((x) => x.cat === p.cat && x.slug !== p.slug).forEach((x) => assoc.push(x));
+    P.filter((x) => x.top && !assoc.includes(x) && x.slug !== p.slug).forEach((x) => assoc.push(x));
+    document.getElementById('associes').innerHTML = assoc.slice(0, 4).map(window.carteProduit).join('');
+    // Données structurées produit
+    const ld = { '@context': 'https://schema.org', '@type': 'Product', name: p.nom, description: p.texte, brand: { '@type': 'Brand', name: 'Eqology' }, image: location.origin + '/assets/v2/produits/' + p.slug + '.webp' };
+    if (p.prix) ld.offers = { '@type': 'Offer', price: p.prix, priceCurrency: 'EUR', url: window.lienEqology(p), availability: 'https://schema.org/InStock' };
+    const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+  })();
+  </script>
+</body>
+</html>

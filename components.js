@@ -8,41 +8,72 @@
     return currentPage === page;
   }
 
-  const LIENS = [
-    ['index.html', 'Accueil'],
-    ['rejoindre-l-equipe.html', "Rejoindre l'équipe"],
-    ['boutique.html', 'Boutique'],
-    ['le-test.html', 'Le test'],
-    ['index.html#yves', 'Qui suis-je'],
+  const CATS = [
+    ['boutique.html?cat=omega3', 'Oméga-3'],
+    ['boutique.html?cat=tests', 'Tests à domicile'],
+    ['boutique.html?cat=programmes', 'Programmes'],
+    ['boutique.html?cat=vitamines', 'Vitamines et forme'],
+    ['boutique.html?cat=beaute', 'Beauté'],
+    ['boutique.html?cat=coffrets', 'Coffrets de Noël'],
   ];
-  const on = (href) => href === currentPage;
-  const cl = (href) => on(href)
-    ? 'px-3.5 py-2 text-[15px] font-medium text-navy-900 bg-glacier-50 rounded-xl'
-    : 'px-3.5 py-2 text-[15px] font-medium text-navy-700 hover:text-navy-900 hover:bg-cream-100 rounded-xl transition-colors';
+  const catActive = new URLSearchParams(location.search).get('cat');
+  const ico = {
+    loupe: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>',
+    sac: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+    equipe: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path stroke-linecap="round" d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path stroke-linecap="round" d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg>',
+  };
+
+  function getBandeau() {
+    return `<div class="bg-navy-900 text-cream-100 text-[13px]">
+      <div class="wrap h-9 flex items-center justify-center sm:justify-between gap-6">
+        <p class="truncate"><span class="text-glacier-300 font-semibold">Coffrets de Noël</span> disponibles · Livraison offerte par Eqology dès deux produits de plus de 60 €</p>
+        <a href="rejoindre-l-equipe.html" class="hidden sm:inline text-cream-300 hover:text-white whitespace-nowrap">Devenir partenaire →</a>
+      </div>
+    </div>`;
+  }
 
   function getNav() {
     return `
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-3">
-      <div class="bg-white/85 backdrop-blur-xl rounded-2xl border border-cream-200 shadow-sm pl-4 pr-2 sm:px-5 py-2">
-        <div class="flex items-center justify-between gap-3">
-          <a href="index.html" class="inline-flex items-center gap-2.5 min-h-[44px]" aria-label="Accueil">
-            <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:26px;width:auto">
-            <span class="hidden sm:inline text-[13px] leading-tight text-navy-600 border-l border-cream-300 pl-2.5">Yves Coignard<br><span class="text-navy-400">distributeur indépendant</span></span>
-          </a>
-          <div class="hidden lg:flex items-center gap-0.5">
-            ${LIENS.map(([h, t]) => `<a href="${h}" class="${cl(h)}"${on(h) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
-          </div>
-          <a href="rejoindre-l-equipe.html#rappel" class="hidden lg:inline-flex btn btn-plein !min-h-[44px] !text-sm">Être rappelé</a>
-          <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 inline-flex items-center justify-center text-navy-900 rounded-xl hover:bg-cream-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
-          </button>
+    <div class="bg-white/95 backdrop-blur border-b border-cream-200">
+      <div class="wrap h-16 lg:h-[72px] flex items-center gap-3 lg:gap-8">
+        <button id="mobile-menu-btn" class="lg:hidden -ml-2 w-11 h-11 inline-flex items-center justify-center text-navy-900 rounded-xl hover:bg-cream-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a href="index.html" class="inline-flex items-center gap-2.5 shrink-0" aria-label="Accueil">
+          <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:26px;width:auto">
+          <span class="hidden sm:inline text-[12px] leading-tight text-navy-600 border-l border-cream-300 pl-2.5">Yves Coignard<br><span class="text-navy-400">distributeur indépendant</span></span>
+        </a>
+        <form action="boutique.html" class="hidden md:flex flex-1 max-w-xl items-center gap-2 h-11 px-4 rounded-full bg-cream-100 border border-transparent focus-within:border-glacier-500 focus-within:bg-white transition-colors" role="search">
+          <span class="text-navy-400">${ico.loupe}</span>
+          <input name="q" type="search" placeholder="Rechercher un produit : oméga-3, vitamine D, test…" class="flex-1 bg-transparent outline-none text-[15px] placeholder:text-navy-400" aria-label="Rechercher un produit">
+        </form>
+        <div class="ml-auto flex items-center gap-1 sm:gap-2">
+          <a href="rejoindre-l-equipe.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-4 rounded-full text-[15px] font-medium text-navy-800 hover:bg-cream-100">${ico.equipe}Devenir partenaire</a>
+          <a href="boutique.html" class="md:hidden w-11 h-11 inline-flex items-center justify-center rounded-full hover:bg-cream-100" aria-label="Rechercher">${ico.loupe}</a>
+          <a href="boutique.html" class="inline-flex items-center gap-2 h-11 px-4 sm:px-5 rounded-full bg-navy-900 text-white text-[15px] font-semibold hover:bg-navy-700">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
+        </div>
+      </div>
+      <div class="hidden lg:block border-t border-cream-200">
+        <div class="wrap h-11 flex items-center gap-1 text-[14px] font-medium">
+          ${CATS.map(([h, t]) => { const on = h.endsWith('=' + catActive); const noel = t.startsWith('Coffrets');
+            return `<a href="${h}" class="px-3 py-1.5 rounded-full ${on ? 'bg-navy-900 text-white' : noel ? 'text-[#B3261E] hover:bg-red-50' : 'text-navy-700 hover:bg-cream-100'}">${t}</a>`; }).join('')}
+          <span class="mx-2 h-4 w-px bg-cream-300"></span>
+          <a href="le-test.html" class="px-3 py-1.5 rounded-full ${currentPage === 'le-test.html' ? 'bg-navy-900 text-white' : 'text-navy-700 hover:bg-cream-100'}">Comprendre le test</a>
+          <a href="index.html#yves" class="px-3 py-1.5 rounded-full text-navy-700 hover:bg-cream-100">Qui suis-je</a>
         </div>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden lg:hidden px-3 pt-2">
-      <div class="bg-white rounded-2xl border border-cream-200 shadow-lg p-3 space-y-1">
-        ${LIENS.map(([h, t]) => `<a href="${h}" class="block px-4 py-3.5 text-base font-medium rounded-xl ${on(h) ? 'bg-glacier-50 text-navy-900' : 'text-navy-700 hover:bg-cream-100'}">${t}</a>`).join('')}
-        <a href="rejoindre-l-equipe.html#rappel" class="btn btn-plein w-full mt-2">Être rappelé par Yves</a>
+    <div id="mobile-menu" class="hidden lg:hidden absolute inset-x-0 top-full bg-white border-b border-cream-200 shadow-xl max-h-[80vh] overflow-y-auto">
+      <div class="wrap py-4">
+        <form action="boutique.html" class="flex items-center gap-2 h-12 px-4 rounded-full bg-cream-100 mb-3" role="search">
+          <span class="text-navy-400">${ico.loupe}</span>
+          <input name="q" type="search" placeholder="Rechercher un produit" class="flex-1 bg-transparent outline-none text-base" aria-label="Rechercher un produit">
+        </form>
+        <p class="oeil px-2 mt-4 mb-1">La boutique</p>
+        ${CATS.map(([h, t]) => `<a href="${h}" class="block px-2 py-3 text-base font-medium border-b border-cream-100 ${t.startsWith('Coffrets') ? 'text-[#B3261E]' : 'text-navy-800'}">${t}</a>`).join('')}
+        <a href="le-test.html" class="block px-2 py-3 text-base font-medium border-b border-cream-100 text-navy-800">Comprendre le test</a>
+        <a href="index.html#yves" class="block px-2 py-3 text-base font-medium text-navy-800">Qui suis-je</a>
+        <a href="rejoindre-l-equipe.html" class="btn btn-plein w-full mt-4">${ico.equipe}Devenir partenaire</a>
       </div>
     </div>`;
   }
@@ -54,7 +85,7 @@
       <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 mb-14">
         <div>
           <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:28px;width:auto;filter:brightness(0) invert(1)">
-          <p class="text-cream-300 text-sm leading-relaxed mt-4 max-w-[30ch]">Yves Coignard, distributeur indépendant Eqology. Les produits sont vendus et livrés par Eqology.</p>
+          <p class="text-cream-300 text-sm leading-relaxed mt-4 max-w-[30ch]">Yves Coignard, distributeur indépendant Eqology. Les commandes, le paiement et la livraison sont assurés par Eqology.</p>
         </div>
         <div>
           <p class="font-serif font-semibold text-sm mb-4 text-white">L'équipe</p>
@@ -65,18 +96,18 @@
           </ul>
         </div>
         <div>
-          <p class="font-serif font-semibold text-sm mb-4 text-white">Santé</p>
+          <p class="font-serif font-semibold text-sm mb-4 text-white">La boutique</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="boutique.html" class="${l}">Boutique</a></li>
-            <li><a href="le-test.html" class="${l}">Le test oméga-3</a></li>
-            <li><a href="science-omega3.html" class="${l}">La science des oméga-3</a></li>
-            <li><a href="blog.html" class="${l}">Articles</a></li>
+            ${CATS.map(([h, t]) => `<li><a href="${h}" class="${l}">${t}</a></li>`).join('')}
+            <li><a href="le-test.html" class="${l}">Comprendre le test</a></li>
           </ul>
         </div>
         <div>
           <p class="font-serif font-semibold text-sm mb-4 text-white">Contact</p>
           <ul class="space-y-3 text-sm">
             <li><a href="contact.html" class="${l}">Écrire à Yves</a></li>
+            <li><a href="science-omega3.html" class="${l}">La science des oméga-3</a></li>
+            <li><a href="blog.html" class="${l}">Articles</a></li>
             <li><a data-trustpilot href="#" class="${l}" target="_blank" rel="noopener">Avis clients sur Trustpilot</a></li>
           </ul>
         </div>
@@ -93,8 +124,11 @@
   }
 
   // Inject nav and footer
-  const nav = document.querySelector('nav.fixed');
-  if (nav) nav.innerHTML = getNav();
+  const nav = document.querySelector('nav#entete') || document.querySelector('nav.fixed');
+  if (nav) {
+    nav.innerHTML = getNav();
+    if (nav.id === 'entete') nav.insertAdjacentHTML('beforebegin', getBandeau());
+  }
 
   const footer = document.querySelector('footer');
   if (footer) footer.innerHTML = getFooter();

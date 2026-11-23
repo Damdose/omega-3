@@ -6,11 +6,22 @@ window.SITE = {
   // À FOURNIR par Yves avant la mise en ligne : sans lui, les ventes ne lui sont pas attribuées.
   lienBoutique: '',
   // Repli tant que le lien partenaire n'est pas renseigné
-  boutiqueParDefaut: 'https://www.eqology.com/fr',
+  boutiqueParDefaut: 'https://eqology.com/fr/our-products',
+  // Comment ajouter l'identifiant partenaire à un lien produit Eqology.
+  // {url} = page produit, {code} = identifiant. À ajuster quand Yves aura donné son lien.
+  codePartenaire: '',
+  modeleLienProduit: '{url}',
   // Identifiant du pixel Meta (vide = pas de pixel chargé)
   pixelMeta: '',
   // Page Trustpilot d'Eqology (avis publics, sans note affichée)
   trustpilot: 'https://fr.trustpilot.com/review/eqology.com',
+};
+
+// Lien de commande d'un produit (avec l'identifiant partenaire quand il sera connu)
+window.lienCommande = function (url) {
+  var S = window.SITE;
+  if (!S.codePartenaire) return url;
+  return S.modeleLienProduit.replace('{url}', url).replace('{code}', S.codePartenaire);
 };
 
 (function () {

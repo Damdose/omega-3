@@ -4,7 +4,7 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: 'DM Sans', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* Espace des sections : une seule valeur, en haut comme en bas */
-:root { --sec: clamp(72px, 9vw, 120px); }
+:root { --sec: clamp(56px, 7vw, 88px); }
 .sec { padding-block: var(--sec); }
 /* Deux sections de même fond qui se suivent : espace réduit entre elles */
 .sec.suite { padding-top: 0; }
@@ -42,3 +42,7 @@ details[open] .plus { transform: rotate(45deg); }
 .plus { transition: transform .25s; }
 
 input, select, textarea { font-size: 16px; }
+
+/* Barres de filtres qui défilent sans barre visible */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
