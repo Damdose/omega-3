@@ -10,8 +10,8 @@ L = 'http://127.0.0.1:8140/'
 cfg = dict(
     onglet='Plan du site V2 · Yves',
     oeil='Yves Coignard · site V2 · 23 novembre 2026',
-    titre='Le nouveau site recrute d’abord, vend ensuite',
-    chapo='Les directives du nouveau site, ce que la variante contient déjà, et les cinq éléments à obtenir d’Yves avant la mise en ligne.',
+    titre='Une vraie boutique en vitrine, le recrutement en coulisses',
+    chapo='Le site a l’allure d’un e-commerce (24 produits, prix, fiches, coffrets de Noël) ; les pubs, elles, envoient sur « Rejoindre l’équipe ». Ce qui est fait, et les cinq éléments à obtenir d’Yves.',
     logo=os.path.join(ICI, '..', 'assets', 'images', 'eqology-eq.png'),
     polices=dict(titre='Space Grotesk', texte='DM Sans',
                  lien='https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap'),
@@ -33,7 +33,7 @@ cfg = dict(
             court='Directives',
             points=[
                 dict(titre='Deux publics, dans cet ordre', texte='D’abord les praticiens de santé (naturopathes, micronutritionnistes, diététiciens, kinés, ostéos), ensuite les particuliers de 35 à 70 ans qui cherchent un complément de revenu. Les médecins ne voient que le test et la science.'),
-                dict(titre='Cinq pages', texte='Accueil à deux portes · Rejoindre l’équipe · Boutique · Le test · Qui suis-je (section de l’accueil pour l’instant). Les pages science et blog restent, reliées dans le pied de page.'),
+                dict(titre='Une boutique complète', texte='Accueil en vitrine (bannières, catégories illustrées, meilleures ventes, coffrets de Noël) · boutique filtrable par rayon · une fiche par produit avec prix et bouton « Commander chez Eqology » · Le test · Rejoindre l’équipe. Le paiement et la livraison restent chez Eqology.'),
                 dict(titre='Ce qui est interdit', texte='Plus de FENA, pas d’IFOS, pas de note Trustpilot affichée, aucun témoignage inventé, aucun montant de revenu. Toujours « distributeur indépendant Eqology ».'),
                 dict(titre='La charte reste', texte='Bleu nuit, bleu glacier, crème, Space Grotesk et DM Sans. Même espace en haut et en bas de chaque section, réglé une seule fois dans site.css.'),
                 dict(titre='Zéro technique pour Yves', texte='Il reçoit un e-mail par contact (bientôt un SMS ou WhatsApp) et rappelle. Le lien partenaire et le pixel se règlent dans un seul fichier, site-config.js.'),
@@ -41,10 +41,10 @@ cfg = dict(
             donc='tout ce qui touche à l’argent se dit pendant la visio, avec le plan officiel d’Eqology, jamais sur le site.',
         ),
         dict(
-            titre='La variante est construite, quatre pages sur cinq',
+            titre='La boutique est construite et vérifiée sur mobile et ordinateur',
             court='Fait',
-            intro=[f'Elle vit sur une branche à part (site-v2) : le site en ligne n’a pas bougé. Pages à ouvrir : <a href="{L}index.html">accueil</a>, <a href="{L}rejoindre-l-equipe.html">rejoindre l’équipe</a>, <a href="{L}boutique.html">boutique</a>, <a href="{L}le-test.html">le test</a>.'],
-            deux=[dict(titre='Fait, vérifié à 390 et 1440 px', texte='Accueil à deux portes · page « Rejoindre l’équipe » et son formulaire · boutique en liens partenaires · page du test · formulaire relié à /api/lead (profil, métier, créneau, origine de la pub).'),
+            intro=[f'Elle vit sur une branche à part (site-v2) : le site en ligne n’a pas bougé. Pages à ouvrir : <a href="{L}index.html">accueil</a>, <a href="{L}boutique.html">boutique</a>, <a href="{L}produit.html?p=pure-arctic-oil-gold">une fiche produit</a>, <a href="{L}rejoindre-l-equipe.html">rejoindre l’équipe</a>, <a href="{L}le-test.html">le test</a>.'],
+            deux=[dict(titre='Fait, vérifié à 390 et 1440 px', texte='24 produits Eqology avec photo officielle et prix relevé le 23/11 · accueil vitrine · rayons filtrables et recherche · fiches produit · page « Rejoindre l’équipe » et son formulaire relié à /api/lead · les 24 liens « Commander » vérifiés.'),
                   dict(titre='En attente', ton='mal', texte='Photo et vidéo d’Yves · lien partenaire Eqology · pixel Meta · alerte SMS ou WhatsApp · relances e-mail à J0, J2 et J5.')],
             donc='le squelette et les textes sont prêts ; ce qui manque dépend d’Yves ou des accès Meta.',
         ),
