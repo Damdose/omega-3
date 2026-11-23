@@ -23,11 +23,24 @@
     equipe: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path stroke-linecap="round" d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path stroke-linecap="round" d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg>',
   };
 
+  const isShop = currentPage === 'boutique.html' || currentPage === 'produit.html';
+  const MENU = [
+    ['index.html', 'Eqology'],
+    ['rejoindre-l-equipe.html', 'Le partenariat'],
+    ['le-test.html', 'Le test'],
+    ['boutique.html', 'La boutique'],
+    ['index.html#yves', 'Qui suis-je'],
+  ];
+  const menuOn = (h) => h === currentPage || (h === 'boutique.html' && isShop);
+
   function getBandeau() {
+    const txt = isShop
+      ? `<span class="text-glacier-300 font-semibold">Coffrets de Noël</span> disponibles · Livraison offerte par Eqology dès deux produits de plus de 60 €`
+      : `Yves Coignard, distributeur indépendant <span class="text-glacier-300 font-semibold">Eqology</span> en France`;
     return `<div class="bg-navy-900 text-cream-100 text-[13px]">
       <div class="wrap h-9 flex items-center justify-center sm:justify-between gap-6">
-        <p class="truncate"><span class="text-glacier-300 font-semibold">Coffrets de Noël</span> disponibles · Livraison offerte par Eqology dès deux produits de plus de 60 €</p>
-        <a href="rejoindre-l-equipe.html" class="hidden sm:inline text-cream-300 hover:text-white whitespace-nowrap">Devenir partenaire →</a>
+        <p class="truncate">${txt}</p>
+        <a href="rejoindre-l-equipe.html#rappel" class="hidden sm:inline text-cream-300 hover:text-white whitespace-nowrap">Être rappelé par Yves →</a>
       </div>
     </div>`;
   }
@@ -35,7 +48,7 @@
   function getNav() {
     return `
     <div class="bg-white/95 backdrop-blur border-b border-cream-200">
-      <div class="wrap h-16 lg:h-[72px] flex items-center gap-3 lg:gap-8">
+      <div class="wrap h-16 lg:h-[72px] flex items-center gap-3 lg:gap-6">
         <button id="mobile-menu-btn" class="lg:hidden -ml-2 w-11 h-11 inline-flex items-center justify-center text-navy-900 rounded-xl hover:bg-cream-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -43,37 +56,31 @@
           <img src="assets/images/eqology-eq.png" alt="Eqology" style="height:26px;width:auto">
           <span class="hidden sm:inline text-[12px] leading-tight text-navy-600 border-l border-cream-300 pl-2.5">Yves Coignard<br><span class="text-navy-400">distributeur indépendant</span></span>
         </a>
-        <form action="boutique.html" class="hidden md:flex flex-1 max-w-xl items-center gap-2 h-11 px-4 rounded-full bg-cream-100 border border-transparent focus-within:border-glacier-500 focus-within:bg-white transition-colors" role="search">
+        <div class="hidden lg:flex items-center gap-0.5 ${isShop ? '' : 'mx-auto'}">
+          ${MENU.map(([h, t]) => `<a href="${h}" class="px-3.5 py-2 rounded-full text-[15px] font-medium ${menuOn(h) ? 'bg-navy-900 text-white' : 'text-navy-700 hover:bg-cream-100'}"${menuOn(h) ? ' aria-current="page"' : ''}>${t}</a>`).join('')}
+        </div>
+        ${isShop ? `<form action="boutique.html" class="hidden md:flex flex-1 max-w-sm items-center gap-2 h-11 px-4 rounded-full bg-cream-100 border border-transparent focus-within:border-glacier-500 focus-within:bg-white transition-colors" role="search">
           <span class="text-navy-400">${ico.loupe}</span>
-          <input name="q" type="search" placeholder="Rechercher un produit : oméga-3, vitamine D, test…" class="flex-1 bg-transparent outline-none text-[15px] placeholder:text-navy-400" aria-label="Rechercher un produit">
-        </form>
-        <div class="ml-auto flex items-center gap-1 sm:gap-2">
-          <a href="rejoindre-l-equipe.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-4 rounded-full text-[15px] font-medium text-navy-800 hover:bg-cream-100">${ico.equipe}Devenir partenaire</a>
-          <a href="boutique.html" class="md:hidden w-11 h-11 inline-flex items-center justify-center rounded-full hover:bg-cream-100" aria-label="Rechercher">${ico.loupe}</a>
-          <a href="boutique.html" class="inline-flex items-center gap-2 h-11 px-4 sm:px-5 rounded-full bg-navy-900 text-white text-[15px] font-semibold hover:bg-navy-700">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
+          <input name="q" type="search" placeholder="Rechercher un produit" class="flex-1 min-w-0 bg-transparent outline-none text-[15px] placeholder:text-navy-400" aria-label="Rechercher un produit">
+        </form>` : ''}
+        <div class="ml-auto lg:ml-0 flex items-center gap-2">
+          <a href="boutique.html" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-full hover:bg-cream-100" aria-label="La boutique">${ico.sac}</a>
+          <a href="rejoindre-l-equipe.html" class="inline-flex items-center gap-2 h-11 px-4 sm:px-5 rounded-full bg-navy-900 text-white text-[15px] font-semibold hover:bg-navy-700">${ico.equipe}<span class="hidden sm:inline">Devenir partenaire</span><span class="sm:hidden">Partenaire</span></a>
         </div>
       </div>
-      <div class="hidden lg:block border-t border-cream-200">
+      ${isShop ? `<div class="hidden lg:block border-t border-cream-200">
         <div class="wrap h-11 flex items-center gap-1 text-[14px] font-medium">
           ${CATS.map(([h, t]) => { const on = h.endsWith('=' + catActive); const noel = t.startsWith('Coffrets');
             return `<a href="${h}" class="px-3 py-1.5 rounded-full ${on ? 'bg-navy-900 text-white' : noel ? 'text-[#B3261E] hover:bg-red-50' : 'text-navy-700 hover:bg-cream-100'}">${t}</a>`; }).join('')}
-          <span class="mx-2 h-4 w-px bg-cream-300"></span>
-          <a href="le-test.html" class="px-3 py-1.5 rounded-full ${currentPage === 'le-test.html' ? 'bg-navy-900 text-white' : 'text-navy-700 hover:bg-cream-100'}">Comprendre le test</a>
-          <a href="index.html#yves" class="px-3 py-1.5 rounded-full text-navy-700 hover:bg-cream-100">Qui suis-je</a>
         </div>
-      </div>
+      </div>` : ''}
     </div>
     <div id="mobile-menu" class="hidden lg:hidden absolute inset-x-0 top-full bg-white border-b border-cream-200 shadow-xl max-h-[80vh] overflow-y-auto">
       <div class="wrap py-4">
-        <form action="boutique.html" class="flex items-center gap-2 h-12 px-4 rounded-full bg-cream-100 mb-3" role="search">
-          <span class="text-navy-400">${ico.loupe}</span>
-          <input name="q" type="search" placeholder="Rechercher un produit" class="flex-1 bg-transparent outline-none text-base" aria-label="Rechercher un produit">
-        </form>
-        <p class="oeil px-2 mt-4 mb-1">La boutique</p>
-        ${CATS.map(([h, t]) => `<a href="${h}" class="block px-2 py-3 text-base font-medium border-b border-cream-100 ${t.startsWith('Coffrets') ? 'text-[#B3261E]' : 'text-navy-800'}">${t}</a>`).join('')}
-        <a href="le-test.html" class="block px-2 py-3 text-base font-medium border-b border-cream-100 text-navy-800">Comprendre le test</a>
-        <a href="index.html#yves" class="block px-2 py-3 text-base font-medium text-navy-800">Qui suis-je</a>
-        <a href="rejoindre-l-equipe.html" class="btn btn-plein w-full mt-4">${ico.equipe}Devenir partenaire</a>
+        ${MENU.map(([h, t]) => `<a href="${h}" class="block px-2 py-3.5 text-base font-semibold border-b border-cream-100 ${menuOn(h) ? 'text-glacier-700' : 'text-navy-900'}">${t}</a>`).join('')}
+        <p class="oeil px-2 mt-5 mb-1">Rayons de la boutique</p>
+        ${CATS.map(([h, t]) => `<a href="${h}" class="block px-2 py-2.5 text-[15px] ${t.startsWith('Coffrets') ? 'text-[#B3261E]' : 'text-navy-700'}">${t}</a>`).join('')}
+        <a href="rejoindre-l-equipe.html#rappel" class="btn btn-plein w-full mt-4">Être rappelé par Yves</a>
       </div>
     </div>`;
   }
@@ -88,9 +95,10 @@
           <p class="text-cream-300 text-sm leading-relaxed mt-4 max-w-[30ch]">Yves Coignard, distributeur indépendant Eqology. Les commandes, le paiement et la livraison sont assurés par Eqology.</p>
         </div>
         <div>
-          <p class="font-serif font-semibold text-sm mb-4 text-white">L'équipe</p>
+          <p class="font-serif font-semibold text-sm mb-4 text-white">Le partenariat</p>
           <ul class="space-y-3 text-sm">
-            <li><a href="rejoindre-l-equipe.html" class="${l}">Rejoindre l'équipe</a></li>
+            <li><a href="index.html#eqology" class="${l}">Qui est Eqology</a></li>
+            <li><a href="rejoindre-l-equipe.html" class="${l}">Devenir partenaire</a></li>
             <li><a href="rejoindre-l-equipe.html#questions" class="${l}">Questions fréquentes</a></li>
             <li><a href="rejoindre-l-equipe.html#rappel" class="${l}">Être rappelé</a></li>
           </ul>
@@ -130,7 +138,7 @@
     if (nav.id === 'entete') nav.insertAdjacentHTML('beforebegin', getBandeau());
   }
 
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector('body > footer');
   if (footer) footer.innerHTML = getFooter();
 
   // Cookie consent banner
