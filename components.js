@@ -150,6 +150,17 @@
   }, 100);
 
   // Reveal animations (IntersectionObserver)
+  // Les blocs des sections apparaissent en douceur, en cascade (sauf l'écran d'ouverture et les formulaires)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const cibles = 'main > section .filet, main > section ol > li, main > section .grid > a, main > section .grid > div, main > section .grid > li, main > section #ventes > *, main > section .rounded-xl.overflow-hidden, main > section ul.grid > li';
+    document.querySelectorAll(cibles).forEach(el => {
+      if (el.closest('form') || el.closest('header') || el.classList.contains('monte')) return;
+      if (el.querySelector('form') || el.getBoundingClientRect().top < window.innerHeight * 0.85) return;
+      const freres = Array.from(el.parentElement.children);
+      el.classList.add('monte');
+      el.style.transitionDelay = Math.min(freres.indexOf(el), 5) * 90 + 'ms';
+    });
+  }
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .monte');
   if (revealElements.length) {
     const observer = new IntersectionObserver((entries) => {

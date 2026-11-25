@@ -139,3 +139,39 @@ input, select, textarea { font-size: 16px; }
   .actif .progres > i { animation: none; width: 100%; }
   .monte { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============ Vie commune : survols et confiance ============ */
+.carte, .carte-claire { transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s, border-color .35s, background-color .35s; }
+a.carte:hover, a > .carte:hover, #ventes > a:hover, .lift:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -22px rgba(0,0,0,.55); }
+main img.object-cover { transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+main .rounded-xl.overflow-hidden:hover > img.object-cover, main a:hover img.object-cover { transform: scale(1.04); }
+.badge-confiance { display: inline-flex; align-items: center; gap: .55rem; height: 40px; padding: 0 .9rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); font-size: 15px; }
+.badge-confiance svg { width: 18px; height: 18px; color: #81CFD8; }
+
+/* ============ Variante A · Clair-obscur : les sections « fond-2 » passent en crème ============ */
+[data-ambiance="clair"] .sec.fond-2 { background: #F5F4F0; color: #0B1D2E; }
+[data-ambiance="clair"] .fond-2 :is(.text-white\/50, .text-white\/60, .text-white\/65, .text-white\/70, .text-white\/75, .text-white\/85, .lead):not(.carte *) { color: rgba(11,29,46,.72); }
+[data-ambiance="clair"] .fond-2 :is(.text-glacier-300):not(.carte *) { color: #2E656D; }
+[data-ambiance="clair"] .fond-2 .points { color: #3D8691; }
+[data-ambiance="clair"] .fond-2 :is(.filet, .border-t, .border-b, .border-y, .md\:border-r, .lg\:border-r, .border-white\/12):not(.carte *) { border-color: rgba(11,29,46,.14); }
+[data-ambiance="clair"] .fond-2 .oeil { background: #0B1D2E; color: #fff !important; }
+[data-ambiance="clair"] .fond-2 .oeil::before { background: #fff; }
+[data-ambiance="clair"] .fond-2 .lien-fleche { color: #0B1D2E; }
+[data-ambiance="clair"] .fond-2 .carte { box-shadow: 0 24px 48px -28px rgba(11,29,46,.45); }
+[data-ambiance="clair"] .fond-2 .bg-nuit { background: #F5F4F0; }
+[data-ambiance="clair"] .fond-2 .badge-confiance { border-color: rgba(11,29,46,.2); }
+[data-ambiance="clair"] .fond-2 .badge-confiance svg { color: #3D8691; }
+
+/* ============ Variante B · Aurore : lueurs nordiques et cartes qui s'éclairent ============ */
+[data-ambiance="aurore"] .sec { position: relative; isolation: isolate; overflow-x: clip; }
+[data-ambiance="aurore"] .sec::before { content: ''; position: absolute; z-index: -1; pointer-events: none; width: min(70vw, 900px); aspect-ratio: 1; top: 8%; right: -18%; background: radial-gradient(closest-side, rgba(77,168,181,.16), rgba(77,168,181,0)); animation: lueur 18s ease-in-out infinite alternate; }
+[data-ambiance="aurore"] .sec:nth-of-type(even)::before { right: auto; left: -22%; top: 30%; background: radial-gradient(closest-side, rgba(129,207,216,.12), rgba(129,207,216,0)); animation-duration: 22s; }
+@keyframes lueur { to { transform: translate3d(-6%, 8%, 0) scale(1.12); } }
+[data-ambiance="aurore"] .hero::after { content: ''; position: absolute; left: -10%; right: -10%; bottom: -30%; height: 60%; z-index: 0; pointer-events: none; background: radial-gradient(60% 50% at 30% 60%, rgba(91,191,203,.28), transparent 70%), radial-gradient(50% 45% at 75% 55%, rgba(120,210,170,.18), transparent 70%); filter: blur(30px); animation: aurore 14s ease-in-out infinite alternate; }
+[data-ambiance="aurore"] .hero > .relative { z-index: 1; }
+@keyframes aurore { to { transform: translateX(6%) scaleY(1.15); opacity: .8; } }
+[data-ambiance="aurore"] .carte { background: linear-gradient(160deg, rgba(23,40,71,.95), rgba(11,29,46,.95)); border-color: rgba(129,207,216,.16); }
+[data-ambiance="aurore"] .carte:hover { border-color: rgba(129,207,216,.5); box-shadow: 0 0 0 1px rgba(129,207,216,.15), 0 24px 60px -24px rgba(77,168,181,.45); }
+[data-ambiance="aurore"] .filet { border-image: linear-gradient(90deg, rgba(129,207,216,.6), rgba(255,255,255,.08) 40%) 1; }
+[data-ambiance="aurore"] .h2 .points, [data-ambiance="aurore"] .geant .points { background: linear-gradient(90deg, #81CFD8, #5BBFCB 40%, #9BE3C9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (prefers-reduced-motion: reduce) { [data-ambiance="aurore"] .sec::before, [data-ambiance="aurore"] .hero::after { animation: none; } }

@@ -64,3 +64,13 @@ window.lienCommande = function (url) {
     if (a) window.suivre('ClicCommander', { lien: a.href }, true);
   });
 })();
+
+// Variante d'ambiance à comparer : ?ambiance=clair ou ?ambiance=aurore (gardée pendant la visite, ?ambiance=aucune pour revenir)
+(function () {
+  try {
+    var a = new URLSearchParams(location.search).get('ambiance');
+    if (a) sessionStorage.setItem('ambiance', a === 'aucune' ? '' : a);
+    a = sessionStorage.getItem('ambiance');
+    if (a) document.documentElement.setAttribute('data-ambiance', a);
+  } catch (e) {}
+})();
