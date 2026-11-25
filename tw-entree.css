@@ -175,3 +175,7 @@ main .rounded-xl.overflow-hidden:hover > img.object-cover, main a:hover img.obje
 [data-ambiance="aurore"] .filet { border-image: linear-gradient(90deg, rgba(129,207,216,.6), rgba(255,255,255,.08) 40%) 1; }
 [data-ambiance="aurore"] .h2 .points, [data-ambiance="aurore"] .geant .points { background: linear-gradient(90deg, #81CFD8, #5BBFCB 40%, #9BE3C9); -webkit-background-clip: text; background-clip: text; color: transparent; }
 @media (prefers-reduced-motion: reduce) { [data-ambiance="aurore"] .sec::before, [data-ambiance="aurore"] .hero::after { animation: none; } }
+
+/* Sections à fond propre (blanc, crème, marine) : toujours l'espace complet en haut */
+.sec + .sec.sec-fond, .sec.sec-fond + .sec { padding-top: var(--sec); }
+.clair .lead { color: rgba(11,29,46,.72); }

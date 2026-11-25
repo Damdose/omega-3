@@ -62,6 +62,59 @@
     </div>`;
   }
 
+
+  // En-tête « boutique » (bandeau, recherche, rayons) : pages en <body data-entete="boutique">
+  function getNavBoutique() {
+    const ancreYves = document.getElementById('yves') ? '#yves' : 'index.html#yves';
+    const rayon = ([h, t]) => { const on = h.endsWith('=' + catActive); const noel = t.startsWith('Coffrets');
+      return `<a href="${h}" class="px-3 py-1.5 rounded-[8.5px] transition-colors ${on ? 'bg-nuit text-white' : noel ? 'text-[#A3342C] hover:bg-[#F6EEE9]' : 'text-nuit/80 hover:bg-sable'}">${t}</a>`; };
+    return `
+    <div class="bg-nuit text-white/85 text-[13px]">
+      <div class="wrap h-9 flex items-center justify-between gap-4">
+        <p class="truncate"><a href="boutique.html?cat=coffrets" class="text-glacier-300 hover:underline">Coffrets de Noël disponibles</a><span class="hidden sm:inline"> · Livraison offerte par Eqology dès deux produits de plus de 60&nbsp;€</span></p>
+        <a href="partenaire.html" class="shrink-0 hover:text-white">Devenir partenaire →</a>
+      </div>
+    </div>
+    <div class="bg-white text-nuit border-b border-nuit/10">
+      <div class="wrap h-16 lg:h-[76px] flex items-center gap-3 lg:gap-8">
+        <button id="mobile-menu-btn" class="lg:hidden -ml-2 w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
+        </button>
+        ${marque('index.html')}
+        <form action="boutique.html" class="hidden md:flex flex-1 max-w-xl items-center gap-2 h-11 px-4 rounded-[8.5px] bg-sable border border-transparent focus-within:border-glacier-500 focus-within:bg-white transition-colors" role="search">
+          <span class="text-nuit/50">${ico.loupe}</span>
+          <input name="q" type="search" placeholder="Rechercher un produit : oméga-3, vitamine D, test…" class="flex-1 bg-transparent outline-none text-[15px] placeholder:text-nuit/50" aria-label="Rechercher un produit">
+        </form>
+        <div class="ml-auto flex items-center gap-1 sm:gap-2">
+          <a href="partenaire.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-3 text-[15px] hover:opacity-70">${ico.equipe}Devenir partenaire</a>
+          <a href="boutique.html" class="md:hidden w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Rechercher">${ico.loupe}</a>
+          <a href="boutique.html" class="btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
+        </div>
+      </div>
+      <div class="hidden lg:block border-t border-nuit/10">
+        <div class="wrap h-12 flex items-center gap-1 text-[15px]">
+          ${CATS.map(rayon).join('')}
+          <span class="mx-2 h-4 w-px bg-nuit/15"></span>
+          <a href="le-test.html" class="px-3 py-1.5 rounded-[8.5px] text-nuit/80 hover:bg-sable">Comprendre le test</a>
+          <a href="${ancreYves}" class="px-3 py-1.5 rounded-[8.5px] text-nuit/80 hover:bg-sable">Qui suis-je</a>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden absolute inset-x-0 top-full bg-white text-nuit border-b border-nuit/10 shadow-xl max-h-[80vh] overflow-y-auto">
+      <div class="wrap py-4">
+        <form action="boutique.html" class="flex items-center gap-2 h-12 px-4 rounded-[8.5px] bg-sable mb-3" role="search">
+          <span class="text-nuit/50">${ico.loupe}</span>
+          <input name="q" type="search" placeholder="Rechercher un produit" class="flex-1 bg-transparent outline-none text-base" aria-label="Rechercher un produit">
+        </form>
+        <p class="mono text-nuit/60 px-2 mt-4 mb-1">La boutique</p>
+        ${CATS.map(([h, t]) => `<a href="${h}" class="block px-2 py-3 text-base border-b border-nuit/5 ${t.startsWith('Coffrets') ? 'text-[#A3342C]' : ''}">${t}</a>`).join('')}
+        <a href="le-test.html" class="block px-2 py-3 text-base border-b border-nuit/5">Comprendre le test</a>
+        <a href="${ancreYves}" class="block px-2 py-3 text-base">Qui suis-je</a>
+        <a href="partenaire.html" class="btn btn-plein w-full mt-4 !min-h-[48px]">Devenir partenaire</a>
+      </div>
+    </div>`;
+  }
+
   function getFooterLP() {
     return `<div class="wrap py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-cream-400">
       <p>© 2026 ZENCO SAS · Yves Coignard, distributeur indépendant Eqology</p>
@@ -93,11 +146,12 @@
   // Inject nav and footer
   const nav = document.querySelector('nav#entete') || document.querySelector('nav.fixed');
   if (nav) {
-    nav.innerHTML = getNav();
-    nav.className = 'fixed top-0 inset-x-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5';
+    const enteteBoutique = document.body.dataset.entete === 'boutique';
+    nav.innerHTML = enteteBoutique ? getNavBoutique() : getNav();
+    nav.className = enteteBoutique ? 'sticky top-0 z-50' : 'fixed top-0 inset-x-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5';
     if (nav.id === 'entete') {
       const main = document.querySelector('main');
-      if (main && !document.querySelector('[data-plein]')) main.style.paddingTop = '88px';
+      if (main && !document.querySelector('[data-plein]') && document.body.dataset.entete !== 'boutique') main.style.paddingTop = '88px';
     }
   }
 
