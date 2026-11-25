@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Feuille commune (copie de site.css, pour une seule requête) */
+/* Feuille commune de la version 2 */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* Espace des sections : une seule valeur, en haut comme en bas */
+:root { --sec: clamp(56px, 7vw, 88px); }
+.sec { padding-block: var(--sec); }
+/* Deux sections de même fond qui se suivent : espace réduit entre elles */
+.sec.suite { padding-top: 0; }
+
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 640px) { .wrap { padding-inline: 32px; } }
+
+.oeil { font: 600 12px/1 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3d8691; }
+.titre { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -.025em; line-height: 1.05; text-wrap: balance; }
+.lead { font-size: 1.125rem; line-height: 1.65; color: #335075; max-width: 60ch; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 52px; padding: 0 1.5rem; border-radius: 14px; font-weight: 600; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
+.btn:active { transform: translateY(1px); }
+.btn-plein { background: #0B1D2E; color: #fff; }
+.btn-plein:hover { background: #253c5e; }
+.btn-glacier { background: #4DA8B5; color: #0B1D2E; }
+.btn-glacier:hover { background: #81cfd8; }
+.btn-ligne { border: 1.5px solid #b3c1d1; color: #0B1D2E; background: transparent; }
+.btn-ligne:hover { border-color: #0B1D2E; }
+.btn-clair { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+.btn-clair:hover { border-color: #fff; }
+:focus-visible { outline: 3px solid #4DA8B5; outline-offset: 3px; border-radius: 6px; }
+
+/* Placeholder visible pour ce qui reste à fournir */
+.a-fournir { border: 2px dashed #C4A97D; background: repeating-linear-gradient(135deg, #F5F4F0 0 14px, #ECEAE4 14px 28px); color: #6b5a3a; }
+
+/* Apparition douce */
+.monte { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.monte.vu { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .monte { opacity: 1; transform: none; transition: none; } }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .plus { transform: rotate(45deg); }
+.plus { transition: transform .25s; }
+
+input, select, textarea { font-size: 16px; }
+
+/* Barres de filtres qui défilent sans barre visible */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
