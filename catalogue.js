@@ -143,3 +143,7 @@ window.carteProduit = (p) => `
       </div>
     </div>
   </article>`;
+
+// Pas de coffrets de Noël sur le site (décision du 25/11) : rayon et produits retirés partout
+window.CATEGORIES = window.CATEGORIES.filter(function (c) { return c.id !== 'coffrets'; });
+window.PRODUITS = window.PRODUITS.filter(function (p) { return p.cat !== 'coffrets'; });

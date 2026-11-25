@@ -14,7 +14,6 @@
     ['boutique.html?cat=programmes', 'Programmes'],
     ['boutique.html?cat=vitamines', 'Vitamines et forme'],
     ['boutique.html?cat=beaute', 'Beauté'],
-    ['boutique.html?cat=coffrets', 'Coffrets de Noël'],
   ];
   const catActive = new URLSearchParams(location.search).get('cat');
   const ico = {
@@ -29,7 +28,7 @@
   function getBandeau() { return ''; }
 
   const fleche = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0" aria-label="Accueil"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="block text-[11px] sm:text-[12.5px] leading-tight text-nuit/60 border-l border-nuit/15 pl-2 sm:pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
+  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0" aria-label="Accueil"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="block text-[11px] sm:text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2 sm:pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
 
   function getNavLP() {
     return `<div class="max-w-[1400px] mx-auto"><div class="bg-white rounded-lg shadow-[0_8px_30px_rgba(11,29,46,.12)] h-14 sm:h-[58px] flex items-center justify-between pl-4 pr-2 sm:pl-5 sm:pr-3">
@@ -71,7 +70,7 @@
     return `
     <div class="bg-nuit text-white/85 text-[13px]">
       <div class="wrap h-9 flex items-center justify-between gap-4">
-        <p class="truncate"><a href="boutique.html?cat=coffrets" class="text-glacier-300 hover:underline">Coffrets de Noël disponibles</a><span class="hidden sm:inline"> · Livraison offerte par Eqology dès deux produits de plus de 60&nbsp;€</span></p>
+        <p class="truncate"><span class="text-glacier-300">Livraison offerte par Eqology</span> dès deux produits de plus de 60&nbsp;€<span class="hidden sm:inline"> · Paiement sécurisé sur la boutique officielle</span></p>
         <a href="partenaire.html" class="shrink-0 hover:text-white">Devenir partenaire →</a>
       </div>
     </div>
@@ -88,7 +87,7 @@
         <div class="ml-auto flex items-center gap-1 sm:gap-2">
           <a href="partenaire.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-3 text-[15px] hover:opacity-70">${ico.equipe}Devenir partenaire</a>
           <a href="boutique.html" class="md:hidden w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Rechercher">${ico.loupe}</a>
-          <a href="boutique.html" class="btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
+          <a href="boutique.html" aria-label="La boutique" class="btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
         </div>
       </div>
       <div class="hidden lg:block border-t border-nuit/10">

@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutique · Oméga-3, tests, vitamines et coffrets Eqology</title>
-  <meta name="description" content="Toute la gamme Eqology : huiles oméga-3, tests à domicile, programmes, vitamines, beauté et coffrets de Noël. Commande et livraison assurées par Eqology.">
+  <title>Boutique · Oméga-3, tests et vitamines Eqology</title>
+  <meta name="description" content="Toute la gamme Eqology : huiles oméga-3, tests à domicile, programmes, vitamines et beauté. Commande et livraison assurées par Eqology.">
   <link rel="canonical" href="https://eqology-france.vercel.app/boutique.html">
   <meta property="og:title" content="La boutique Eqology d'Yves Coignard">
-  <meta property="og:description" content="Oméga-3, tests à domicile, vitamines, beauté et coffrets de Noël.">
+  <meta property="og:description" content="Oméga-3, tests à domicile, vitamines et beauté.">
   <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/og-accueil.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611252130">
-  <script src="site-config.js?v=202611252130"></script>
-  <script src="catalogue.js?v=202611252130"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611252340">
+  <script src="site-config.js?v=202611252340"></script>
+  <script src="catalogue.js?v=202611252340"></script>
 </head>
-<body>
+<body class="clair" data-entete="boutique">
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
@@ -35,19 +35,19 @@
             <p class="mt-3 text-white/60">Vous choisissez ici, vous payez sur la boutique officielle Eqology, qui vous livre à domicile.</p>
           </div>
         </div>
-        <div class="hero-bas"><div class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap"><span>Oméga-3</span><span>Tests à domicile</span><span>Programmes</span><span>Vitamines et forme</span><span>Beauté</span><span>Coffrets de Noël</span><span aria-hidden="true">Oméga-3</span><span aria-hidden="true">Tests à domicile</span><span aria-hidden="true">Programmes</span><span aria-hidden="true">Vitamines et forme</span><span aria-hidden="true">Beauté</span><span aria-hidden="true">Coffrets de Noël</span></div></div>
+        <div class="hero-bas"><div class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap"><span>Oméga-3</span><span>Tests à domicile</span><span>Programmes</span><span>Vitamines et forme</span><span>Beauté</span><span aria-hidden="true">Oméga-3</span><span aria-hidden="true">Tests à domicile</span><span aria-hidden="true">Programmes</span><span aria-hidden="true">Vitamines et forme</span><span aria-hidden="true">Beauté</span></div></div>
       </div>
     </header>
 
     <section class="pb-[var(--sec)] pt-6">
       <div class="wrap">
         <!-- Filtres -->
-        <div class="sticky top-[76px] sm:top-[86px] z-30 -mx-5 px-5 md:mx-0 md:px-0 py-3 bg-nuit/95 backdrop-blur border-y border-white/10 flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+        <div class="sticky top-[108px] lg:top-[168px] z-30 verre rounded-[14px] px-3 sm:px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
           <div id="filtres" class="flex gap-2 overflow-x-auto no-scrollbar -mx-1 px-1" role="tablist" aria-label="Catégories"></div>
           <div class="flex items-center gap-3 shrink-0">
             <p id="compte" class="text-sm text-white/55 whitespace-nowrap"></p>
             <label class="sr-only" for="tri">Trier</label>
-            <select id="tri" class="h-10 rounded-md border border-white/25 bg-nuit text-white px-3 text-sm">
+            <select id="tri" class="h-10 rounded-full border border-nuit/15 bg-white text-nuit px-3 text-sm">
               <option value="">Pertinence</option>
               <option value="asc">Prix croissant</option>
               <option value="desc">Prix décroissant</option>
@@ -56,6 +56,7 @@
         </div>
         <p id="recherche-info" class="hidden mt-3 text-sm text-white/65"></p>
 
+        <h2 class="sr-only">Les produits</h2>
         <div id="grille" class="mt-6 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4"></div>
         <p id="vide" class="hidden mt-10 text-center text-white/60">Aucun produit ne correspond. <a href="boutique.html" class="underline">Voir toute la boutique</a></p>
 
@@ -99,7 +100,7 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611252130"></script>
+  <script src="components.js?v=202611252340"></script>
   <script>
   (function () {
     const C = window.CATEGORIES, P = window.PRODUITS;
@@ -111,7 +112,7 @@
     function filtres() {
       const items = [['', 'Tout'], ...C.map((c) => [c.id, c.nom])];
       document.getElementById('filtres').innerHTML = items.map(([id, nom]) =>
-        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-md text-sm border transition-colors ${id === cat ? 'bg-white text-nuit border-white' : 'border-white/25 text-white hover:border-white'}">${nom}</button>`).join('');
+        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-full text-sm border transition-colors ${id === cat ? 'bg-nuit text-white border-nuit' : 'bg-white/70 border-nuit/15 text-nuit hover:border-nuit'}">${nom}</button>`).join('');
       document.querySelectorAll('#filtres button').forEach((b) => b.onclick = () => { cat = b.dataset.cat; maj(true); });
     }
 

@@ -178,7 +178,6 @@ main .rounded-xl.overflow-hidden:hover > img.object-cover, main a:hover img.obje
 
 /* Sections à fond propre (blanc, crème, marine) : toujours l'espace complet en haut */
 .sec + .sec.sec-fond, .sec.sec-fond + .sec { padding-top: var(--sec); }
-.clair .lead { color: rgba(11,29,46,.72); }
 
 /* ============ Liquid glass : verre dépoli, reflet en haut, liseré lumineux ============ */
 .verre, .verre-nuit { position: relative; -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%); isolation: isolate; }
@@ -192,3 +191,74 @@ a.verre:hover { background: rgba(255,255,255,.75); }
 /* En-tête boutique en verre : la page défile dessous */
 .entete-verre { background: rgba(255,255,255,.62); -webkit-backdrop-filter: blur(22px) saturate(180%); backdrop-filter: blur(22px) saturate(180%); box-shadow: inset 0 -1px 0 rgba(11,29,46,.08), 0 6px 24px -18px rgba(11,29,46,.35); }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .verre, .entete-verre { background: rgba(255,255,255,.94); } .verre-nuit { background: rgba(11,29,46,.85); } }
+
+
+/* ================= Thème clair « boutique » : toutes les pages en <body class="clair"> ================= */
+body.clair { background: #F5F4F0; color: #0B1D2E; }
+/* Écran d'ouverture : une grande case marine arrondie, comme la vitrine de l'accueil */
+body.clair main > .hero { margin: 20px max(20px, calc((100vw - 1400px) / 2 + 34px)) 0; border-radius: 14px; min-height: min(80svh, 760px); color: #fff; }
+body.clair main > .hero-court { min-height: min(62svh, 560px); }
+@media (min-width: 768px) { body.clair main > .hero { margin-inline: max(34px, calc((100vw - 1400px) / 2 + 34px)); } }
+body.clair main > .hero > .relative.wrap { padding-top: clamp(40px, 6vw, 72px); padding-inline: clamp(20px, 4vw, 52px); max-width: none; }
+body.clair main > .hero .hero-voile { background: linear-gradient(100deg, rgba(11,29,46,.9) 0%, rgba(11,29,46,.72) 45%, rgba(11,29,46,.45) 100%), linear-gradient(to bottom, transparent 55%, rgba(11,29,46,.9)); }
+/* Sections claires : crème, et blanc pour celles qui étaient en panneau */
+body.clair main > section:not(.hero).fond-2, body.clair main > section:not(.hero).bg-navy-900, body.clair main > section:not(.hero).bg-nuit { background: #fff; }
+body.clair main > section:not(.hero) { color: #0B1D2E; }
+body.clair main > section:not(.hero) :is(.text-white, .text-white\/95, .text-white\/90, .text-white\/85):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: #0B1D2E; }
+body.clair main > section:not(.hero) :is(.text-white\/80, .text-white\/75, .text-white\/70, .text-white\/65):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: rgba(11,29,46,.72); }
+body.clair main > section:not(.hero) :is(.text-white\/60, .text-white\/55, .text-white\/50, .text-white\/45, .text-white\/40):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: rgba(11,29,46,.66); }
+body.clair main > section:not(.hero) :is(.text-glacier-300, .text-glacier-200):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: #2E656D; }
+body.clair main > section:not(.hero) .lead:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: rgba(11,29,46,.72); }
+body.clair main > section:not(.hero) .points:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { color: #3D8691; }
+body.clair main > section:not(.hero) :is(.filet, .border-white\/10, .border-white\/12, .border-white\/15, .border-white\/20, .border-white\/30, .border-t, .border-b, .border-y, .md\:border-r, .lg\:border-r):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { border-color: rgba(11,29,46,.12); }
+body.clair main > section:not(.hero) :is(.divide-white\/12, .divide-white\/10):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) > * + * { border-color: rgba(11,29,46,.12); }
+body.clair main > section:not(.hero) .bg-white\/12:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { background-color: rgba(11,29,46,.1); }
+body.clair main > section:not(.hero) .oeil { background: #0B1D2E; color: #fff !important; }
+body.clair main > section:not(.hero) .oeil::before { background: #fff; }
+body.clair main > section:not(.hero) :is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .carte-claire) .oeil { background: rgba(255,255,255,.92); color: #0B1D2E !important; }
+body.clair main > section:not(.hero) :is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .carte-claire) .oeil::before { background: #0B1D2E; }
+body.clair main > section:not(.hero) :is(.btn-clair, .btn-ligne):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { border-color: #0B1D2E; color: #0B1D2E; }
+body.clair main > section:not(.hero) :is(.btn-clair, .btn-ligne):not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)):hover { background: #0B1D2E; color: #fff; }
+body.clair main > section:not(.hero) .badge-confiance:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { border-color: rgba(11,29,46,.2); }
+body.clair main > section:not(.hero) .badge-confiance svg { color: #3D8691; }
+/* Cartes : blanches avec un liseré ; la carte « claire » devient la carte marine pour garder le contraste */
+body.clair main > section:not(.hero) .carte:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { background: #fff; border-color: rgba(11,29,46,.1); box-shadow: 0 1px 2px rgba(11,29,46,.04), 0 18px 40px -30px rgba(11,29,46,.35); }
+body.clair main > section:not(.hero).fond-2 .carte:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)), body.clair main > section:not(.hero).bg-navy-900 .carte:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { background: #F5F4F0; }
+body.clair main > section:not(.hero) .carte-claire { background: #0B1D2E; color: #fff; }
+body.clair main > section:not(.hero) .carte-claire :is(.text-nuit\/75, .text-nuit\/70, .text-nuit\/60, .text-nuit\/50) { color: rgba(255,255,255,.75); }
+body.clair main > section:not(.hero) li.bg-nuit:not(:is(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-navy-800, .bg-glacier-900):not(section), .carte-claire, .verre-nuit, .bg-rouge, form) *):not(:is(.btn, .bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900, .bg-rouge, .bg-glacier-500)) { background: transparent; }
+body.clair article.bg-sable { background: #fff; box-shadow: 0 0 0 1px rgba(11,29,46,.08); }
+body.clair main > section:not(.hero).bg-sable article.bg-sable, body.clair main > section:not(.hero):not(.fond-2):not(.bg-navy-900) article.bg-sable { background: #fff; }
+/* Textes longs (articles, mentions) en clair */
+body.clair .texte-long { color: rgba(11,29,46,.8); }
+body.clair .texte-long :is(h2, h3, strong, a, blockquote, th) { color: #0B1D2E; }
+body.clair .texte-long ul li::before { color: rgba(11,29,46,.4); }
+body.clair .texte-long :is(th, td) { border-color: rgba(11,29,46,.12); }
+body.clair .texte-long blockquote { border-color: #3D8691; }
+body.clair .ariane { color: rgba(255,255,255,.7); }
+body.clair main > section:not(.hero) .ariane { color: rgba(11,29,46,.6); }
+body.clair main > section:not(.hero) .ariane span[aria-current] { color: #0B1D2E; }
+/* Boutons pleins en pilule, comme sur l'accueil */
+body.clair .btn { border-radius: 999px; padding-inline: 1.05rem; min-height: 42px; }
+body.clair .champ, body.clair form .btn { border-radius: 10px; }
+body.clair form .btn { border-radius: 999px; }
+
+/* Espace régulier sous l'ecran d'ouverture */
+body.clair main > .hero + section { margin-top: 0 !important; padding-top: clamp(40px, 5vw, 72px) !important; }
+
+/* Place de l'en-tête boutique réservée avant son injection : aucun saut au chargement */
+body[data-entete="boutique"] > nav#entete { min-height: 100px; }
+@media (min-width: 1024px) { body[data-entete="boutique"] > nav#entete { min-height: 160px; } }
+
+/* Éléments sombres posés sur une section claire : texte blanc */
+body.clair main > section:not(.hero) :is(.bg-nuit, .bg-nuit-2, .bg-navy-900, .bg-glacier-900):not(section) { color: #fff; }
+/* Contenu qui suit directement l'écran d'ouverture (articles) : même respiration */
+body.clair main > .hero + :not(section) { margin-top: clamp(40px, 5vw, 72px); }
+/* Étiquettes de source des articles, lisibles sur fond clair */
+body.clair main :is(article, section, div) > * .text-glacier-200:not(:is(.bg-nuit, .bg-nuit-2, .bg-navy-900, aside) *) { color: #2E656D; }
+body.clair .texte-long .text-white\/80 { color: rgba(11,29,46,.75); }
+body.clair .texte-long .bg-white\/10 { background-color: rgba(11,29,46,.06); }
+body.clair .texte-long .border-white\/15 { border-color: rgba(11,29,46,.15); }
+body.clair .texte-long .text-amber-200 { color: #8A5A00; }
+body.clair main > :not(.hero) .text-amber-200:not(:is(.bg-nuit, .bg-nuit-2, aside) *) { color: #8A5A00; }
+body.clair main > :not(.hero) .border-amber-300\/30 { border-color: rgba(138,90,0,.3); }
