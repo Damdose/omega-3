@@ -75,13 +75,13 @@
         <a href="partenaire.html" class="shrink-0 hover:text-white">Devenir partenaire →</a>
       </div>
     </div>
-    <div class="bg-white text-nuit border-b border-nuit/10">
+    <div class="entete-verre text-nuit">
       <div class="wrap h-16 lg:h-[76px] flex items-center gap-3 lg:gap-8">
         <button id="mobile-menu-btn" class="lg:hidden -ml-2 w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
         </button>
         ${marque('index.html')}
-        <form action="boutique.html" class="hidden md:flex flex-1 max-w-xl items-center gap-2 h-11 px-4 rounded-[8.5px] bg-sable border border-transparent focus-within:border-glacier-500 focus-within:bg-white transition-colors" role="search">
+        <form action="boutique.html" class="hidden md:flex flex-1 max-w-xl items-center gap-2 h-11 px-4 rounded-full verre focus-within:!border-glacier-500" role="search">
           <span class="text-nuit/50">${ico.loupe}</span>
           <input name="q" type="search" placeholder="Rechercher un produit : oméga-3, vitamine D, test…" class="flex-1 bg-transparent outline-none text-[15px] placeholder:text-nuit/50" aria-label="Rechercher un produit">
         </form>
@@ -100,9 +100,9 @@
         </div>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden lg:hidden absolute inset-x-0 top-full bg-white text-nuit border-b border-nuit/10 shadow-xl max-h-[80vh] overflow-y-auto">
+    <div id="mobile-menu" class="hidden lg:hidden absolute inset-x-2 top-full mt-2 verre !bg-white/80 rounded-[14px] text-nuit max-h-[78vh] overflow-y-auto">
       <div class="wrap py-4">
-        <form action="boutique.html" class="flex items-center gap-2 h-12 px-4 rounded-[8.5px] bg-sable mb-3" role="search">
+        <form action="boutique.html" class="flex items-center gap-2 h-12 px-4 rounded-full verre mb-3" role="search">
           <span class="text-nuit/50">${ico.loupe}</span>
           <input name="q" type="search" placeholder="Rechercher un produit" class="flex-1 bg-transparent outline-none text-base" aria-label="Rechercher un produit">
         </form>
