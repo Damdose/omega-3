@@ -26,7 +26,7 @@
   const isShop = currentPage === 'boutique.html' || currentPage === 'produit.html';
   const MENU = [
     ['index.html', 'Eqology'],
-    ['rejoindre-l-equipe.html', 'Le partenariat'],
+    ['partenaire.html', 'Le partenariat'],
     ['le-test.html', 'Le test'],
     ['boutique.html', 'La boutique'],
     ['index.html#yves', 'Qui suis-je'],
@@ -40,7 +40,7 @@
     return `<div class="bg-navy-900 text-cream-100 text-[13px]">
       <div class="wrap h-9 flex items-center justify-center sm:justify-between gap-6">
         <p class="truncate">${txt}</p>
-        <a href="rejoindre-l-equipe.html#rappel" class="hidden sm:inline text-cream-300 hover:text-white whitespace-nowrap">Être rappelé par Yves →</a>
+        <a href="partenaire.html#rappel" class="hidden sm:inline text-cream-300 hover:text-white whitespace-nowrap">Être rappelé par Yves →</a>
       </div>
     </div>`;
   }
@@ -65,7 +65,7 @@
         </form>` : ''}
         <div class="ml-auto lg:ml-0 flex items-center gap-2">
           <a href="boutique.html" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-full hover:bg-cream-100" aria-label="La boutique">${ico.sac}</a>
-          <a href="rejoindre-l-equipe.html" class="inline-flex items-center gap-2 h-11 px-4 sm:px-5 rounded-full bg-navy-900 text-white text-[15px] font-semibold hover:bg-navy-700">${ico.equipe}<span class="hidden sm:inline">Devenir partenaire</span><span class="sm:hidden">Partenaire</span></a>
+          <a href="partenaire.html" class="inline-flex items-center gap-2 h-11 px-4 sm:px-5 rounded-full bg-navy-900 text-white text-[15px] font-semibold hover:bg-navy-700">${ico.equipe}<span class="hidden sm:inline">Devenir partenaire</span><span class="sm:hidden">Partenaire</span></a>
         </div>
       </div>
       ${isShop ? `<div class="hidden lg:block border-t border-cream-200">
@@ -80,7 +80,7 @@
         ${MENU.map(([h, t]) => `<a href="${h}" class="block px-2 py-3.5 text-base font-semibold border-b border-cream-100 ${menuOn(h) ? 'text-glacier-700' : 'text-navy-900'}">${t}</a>`).join('')}
         <p class="oeil px-2 mt-5 mb-1">Rayons de la boutique</p>
         ${CATS.map(([h, t]) => `<a href="${h}" class="block px-2 py-2.5 text-[15px] ${t.startsWith('Coffrets') ? 'text-[#B3261E]' : 'text-navy-700'}">${t}</a>`).join('')}
-        <a href="rejoindre-l-equipe.html#rappel" class="btn btn-plein w-full mt-4">Être rappelé par Yves</a>
+        <a href="partenaire.html#rappel" class="btn btn-plein w-full mt-4">Être rappelé par Yves</a>
       </div>
     </div>`;
   }
@@ -98,9 +98,9 @@
           <p class="font-serif font-semibold text-sm mb-4 text-white">Le partenariat</p>
           <ul class="space-y-3 text-sm">
             <li><a href="index.html#eqology" class="${l}">Qui est Eqology</a></li>
-            <li><a href="rejoindre-l-equipe.html" class="${l}">Devenir partenaire</a></li>
-            <li><a href="rejoindre-l-equipe.html#questions" class="${l}">Questions fréquentes</a></li>
-            <li><a href="rejoindre-l-equipe.html#rappel" class="${l}">Être rappelé</a></li>
+            <li><a href="partenaire.html" class="${l}">Devenir partenaire</a></li>
+            <li><a href="partenaire.html#questions" class="${l}">Questions fréquentes</a></li>
+            <li><a href="partenaire.html#rappel" class="${l}">Être rappelé</a></li>
           </ul>
         </div>
         <div>
@@ -176,9 +176,9 @@
   }
 
   // Floating contact button
-  if (currentPage !== 'contact.html' && currentPage !== 'rejoindre-l-equipe.html') {
+  if (currentPage !== 'contact.html' && currentPage !== 'partenaire.html') {
     const fab = document.createElement('a');
-    fab.href = 'rejoindre-l-equipe.html#rappel';
+    fab.href = 'partenaire.html#rappel';
     fab.setAttribute('aria-label', 'Être rappelé par Yves');
     fab.className = 'fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 bg-glacier-600 hover:bg-glacier-700 text-white p-3.5 sm:pl-5 sm:pr-6 sm:py-3.5 rounded-full shadow-lg shadow-glacier-600/30 hover:shadow-xl hover:shadow-glacier-600/40 transition-all duration-300 hover:scale-105 group cursor-pointer';
     fab.innerHTML = `
