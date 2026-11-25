@@ -70,7 +70,7 @@ cfg = dict(
                 dict(titre='3. Le compte Instagram relié (Yves)', texte='Plus 6 à 9 publications de base, que je prépare.'),
                 dict(titre='4. Le lien partenaire Eqology (Yves)', texte='Il conditionne la mise en ligne de la V2 : sans lui, les commandes de la boutique ne lui sont pas attribuées.'),
                 dict(titre='5. Le pixel et le signal Lead (toi, puis moi)', texte='Claude in Chrome le crée, je le pose dans site-config.js et j’ajoute l’envoi des UTM par le formulaire, qui manque aujourd’hui.'),
-                dict(titre='6. La page d’arrivée en ligne (toi)', texte='« Rejoindre l’équipe » n’existe que sur la V2. Elle part en ligne à ton feu vert sur eqology-omega3.vercel.app, en attendant un vrai domaine.'),
+                dict(titre='6. La page d’arrivée en ligne (toi)', texte='« Rejoindre l’équipe » n’existe que sur la V2. Elle part en ligne à ton feu vert sur eqology-france.vercel.app (en ligne depuis le 25/11), en attendant un vrai domaine.'),
             ],
             donc_ton='mal', donc_mot='Attention',
             donc='la date du 25/11 annoncée à Yves ne tient plus. Il faut lui envoyer une nouvelle date dès que les points 1 à 3 sont réglés.',
@@ -85,7 +85,7 @@ cfg = dict(
             points=[dict(titre='Les allégations santé', texte='Seuls les bienfaits autorisés par l’Union européenne. Jamais « vous êtes fatigué ? » : Meta refuse qu’une pub suppose l’état de santé de la personne.')],
         ),
     ],
-    decision='Domaine tranché le 25/11 : on lance sur eqology-omega3.vercel.app, puis on bascule sur un vrai domaine au nom d’Yves (redirection, le pixel garde son historique). Reste à trancher : <b>A · un minimum de 10 € par jour pour les praticiens</b> (recommandée : ils restent la cible prioritaire), ou <b>B · Meta répartit librement</b> les 30 €. Réponds d’un mot : A ou B.',
+    decision='Domaine tranché le 25/11 : on lance sur eqology-france.vercel.app, puis on bascule sur un vrai domaine au nom d’Yves (redirection, le pixel garde son historique). Reste à trancher : <b>A · un minimum de 10 € par jour pour les praticiens</b> (recommandée : ils restent la cible prioritaire), ou <b>B · Meta répartit librement</b> les 30 €. Réponds d’un mot : A ou B.',
     pied='Sources : dossier de stratégie d’Yves du 16/11 (onglets 08 et 09), veille Meta Ads du 16/11 (veille/yves-2026-11/META-ADS.md), rapport Claude in Chrome sur le portefeuille YAC du 25/11.',
 )
 
