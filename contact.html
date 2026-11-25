@@ -11,18 +11,16 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251800">
-  <script src="site-config.js?v=202611251800"></script>
+  <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251845">
+  <script src="site-config.js?v=202611251845"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <header data-plein class="hero hero-court">
-      <img src="assets/v2/sante-immunite.webp" alt="" class="hero-img" fetchpriority="high">
+      <img src="assets/v2/echange.webp" srcset="assets/v2/echange-800.webp 800w, assets/v2/echange.webp 1536w" sizes="100vw" alt="" class="hero-img" fetchpriority="high">
       <div class="hero-voile"></div>
       <div class="relative wrap w-full pt-32 pb-10">
         <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5" aria-hidden="true">/</span> <span aria-current="page">Contact</span></nav>
@@ -74,7 +72,7 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251800"></script>
+  <script src="components.js?v=202611251845"></script>
   <script>
   (function () {
     var f = document.getElementById('form-contact'), err = document.getElementById('c-erreur');

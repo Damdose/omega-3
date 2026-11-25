@@ -13,8 +13,8 @@ module.exports = {
         sable: '#F5F4F0',
       },
       fontFamily: {
-        sans: ['Albert Sans', 'system-ui', 'sans-serif'],
-        serif: ['Albert Sans', 'system-ui', 'sans-serif'],
+        sans: ['Albert Sans', 'Albert Fallback', 'system-ui', 'sans-serif'],
+        serif: ['Albert Sans', 'Albert Fallback', 'system-ui', 'sans-serif'],
         mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
       },
     },

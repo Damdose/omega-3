@@ -13,12 +13,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251800">
-  <script src="site-config.js?v=202611251800"></script>
-  <script src="catalogue.js?v=202611251800"></script>
+  <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251845">
+  <script src="site-config.js?v=202611251845"></script>
+  <script src="catalogue.js?v=202611251845"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -66,65 +64,41 @@
             <a href="contact.html" class="lien-fleche mt-8">Écrire à Yves</a>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
-            <div class="carte-claire p-7"><p class="mono text-nuit/60">Eqology</p><h3 class="h3 mt-4">La marque</h3><ul class="mt-5 space-y-2.5 text-nuit/75 leading-snug"><li>✓ Fabrique et contrôle les produits</li><li>✓ Encaisse le paiement</li><li>✓ Livre chez vous</li><li>✓ Gère le service client</li></ul></div>
+            <div class="carte-claire p-7"><p class="mono text-nuit/75">Eqology</p><h3 class="h3 mt-4">La marque</h3><ul class="mt-5 space-y-2.5 text-nuit/75 leading-snug"><li>✓ Fabrique et contrôle les produits</li><li>✓ Encaisse le paiement</li><li>✓ Livre chez vous</li><li>✓ Gère le service client</li></ul></div>
             <div class="carte p-7"><p class="mono text-glacier-300">Yves</p><h3 class="h3 mt-4">Le conseil</h3><ul class="mt-5 space-y-2.5 text-white/75 leading-snug"><li>→ Vous aide à choisir</li><li>→ Vous explique le test</li><li>→ Lit le résultat avec vous</li><li>→ Vous rappelle si vous le souhaitez</li></ul></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Ce que vend Eqology -->
-    <section id="produits" class="sec scroll-mt-24">
+    <!-- 3. La boutique -->
+    <section id="boutique" class="sec scroll-mt-24">
       <div class="wrap">
         <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span class="oeil">Ce que vend Eqology</span>
-            <h2 class="h2 mt-10 max-w-[18ch]">Ce que vous trouverez dans la boutique.</h2>
+            <span class="oeil">La boutique</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Commandez vos produits Eqology ici.</h2>
+            <p class="lead mt-5">Toute la gamme, avec les prix. Vous choisissez sur ce site, vous payez sur la boutique officielle Eqology, et le colis arrive chez vous.</p>
           </div>
           <a href="boutique.html" class="btn btn-plein shrink-0">Voir toute la boutique</a>
         </div>
-        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <a href="boutique.html?cat=omega3" class="group block">
-            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-nuit-2"><img src="assets/v2/pao-citron.webp" alt="Flacon de Pure Arctic Oil" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
-            <h3 class="h3 mt-5">Les huiles oméga&#8209;3</h3>
-            <p class="text-white/65 mt-2 leading-relaxed">Cabillaud sauvage de l'Arctique et huile d'olive, en flacon de verre. Il existe une version végane, à base d'algues.</p>
-          </a>
-          <a href="le-test.html" class="group block">
-            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-nuit-2"><img src="assets/v2/testkit.webp" alt="Kit du test oméga-3 à domicile" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
-            <h3 class="h3 mt-5">Le test à domicile</h3>
-            <p class="text-white/65 mt-2 leading-relaxed">Une goutte de sang, un laboratoire indépendant et un résultat en ligne pour savoir d'où vous partez.</p>
-          </a>
-          <a href="boutique.html?cat=vitamines" class="group block">
-            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-nuit-2"><img src="assets/v2/sante-immunite.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
-            <h3 class="h3 mt-5">Vitamines et beauté</h3>
-            <p class="text-white/65 mt-2 leading-relaxed">Les vitamines K2 et D3, le Nordic Energy Booster et Ocean Miracle, une ligne de soins pour la peau.</p>
-          </a>
-          <a href="boutique.html?cat=coffrets" class="group block">
-            <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-sable"><img src="assets/v2/produits/christmas-pack-large.webp" alt="Coffret de Noël Eqology" class="absolute inset-0 w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
-            <h3 class="h3 mt-5">Programmes et coffrets</h3>
-            <p class="text-white/65 mt-2 leading-relaxed">L'huile et le test réunis sur plusieurs mois, et des coffrets prêts à offrir pour Noël.</p>
-          </a>
-        </div>
+        <ul id="rayons" class="mt-10 flex flex-wrap gap-2"></ul>
+        <div id="ventes" class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
       </div>
     </section>
 
     <!-- 4. Ce qui distingue Eqology -->
     <section id="difference" class="sec scroll-mt-24">
       <div class="wrap">
-        <div class="filet grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div>
-            <span class="oeil">Ce qui la distingue</span>
-            <h2 class="h2 mt-10 max-w-[16ch]">Ce qu'Eqology fait autrement.</h2>
-            <div class="relative mt-10 rounded-xl overflow-hidden aspect-[4/3]">
-              <img src="assets/v2/huile.webp" alt="Huile d'olive versée dans une cuillère" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-            </div>
-          </div>
-          <ol class="grid gap-px bg-white/12 border-y border-white/12">
-            <li class="bg-nuit py-7"><p class="mono text-glacier-300">01</p><h3 class="h3 mt-3">Une pêche qu'on peut suivre</h3><p class="text-white/65 mt-2 leading-relaxed">Le cabillaud est pêché à l'état sauvage dans l'Arctique par des pêcheries certifiées MSC, le label de la pêche durable.</p></li>
-            <li class="bg-nuit py-7"><p class="mono text-glacier-300">02</p><h3 class="h3 mt-3">Une huile d'olive dans le flacon</h3><p class="text-white/65 mt-2 leading-relaxed">Les oméga&#8209;3 sont mélangés à de l'huile d'olive vierge extra de Crète, bio et pressée à froid, avec de la vitamine D3.</p></li>
-            <li class="bg-nuit py-7"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Un goût primé</h3><p class="text-white/65 mt-2 leading-relaxed">Pure Arctic Oil a reçu le Superior Taste Award. Parfumée au citron ou à l'orange, elle se prend à la cuillère.</p></li>
-          </ol>
+        <div class="filet">
+          <span class="oeil">Pourquoi Eqology</span>
+          <h2 class="h2 mt-10 max-w-[18ch]">Trois raisons de choisir ces oméga&#8209;3.</h2>
         </div>
+        <ol class="mt-12 grid gap-4 md:grid-cols-3">
+          <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/bateau.webp" srcset="assets/v2/bateau-800.webp 800w, assets/v2/bateau.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Bateau de pêche dans un fjord norvégien" class="absolute inset-0 w-full h-full object-cover " loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-300">01</p><h3 class="h3 mt-3">Une pêche qu'on peut suivre</h3><p class="text-white/65 mt-2 leading-relaxed">Le cabillaud est pêché à l'état sauvage dans l'Arctique, par des pêcheries certifiées MSC, le label de la pêche durable.</p></div></li>
+          <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/olive.webp" srcset="assets/v2/olive-800.webp 800w, assets/v2/olive.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Flacon Pure Arctic Oil entre des branches d'olivier" class="absolute inset-0 w-full h-full object-cover " loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-300">02</p><h3 class="h3 mt-3">De l'huile d'olive dans le flacon</h3><p class="text-white/65 mt-2 leading-relaxed">Les oméga&#8209;3 sont mélangés à de l'huile d'olive vierge extra de Crète, bio et pressée à froid, avec de la vitamine D3.</p></div></li>
+          <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/orange.webp" srcset="assets/v2/orange-800.webp 800w, assets/v2/orange.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Flacon Pure Arctic Oil et une orange" class="absolute inset-0 w-full h-full object-cover " loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Un goût primé</h3><p class="text-white/65 mt-2 leading-relaxed">Pure Arctic Oil a reçu le Superior Taste Award. Parfumée au citron ou à l'orange, elle se prend à la cuillère.</p></div></li>
+        </ol>
       </div>
     </section>
 
@@ -138,11 +112,14 @@
           </div>
           <a href="le-test.html" class="lien-fleche shrink-0">Tout sur le test</a>
         </div>
-        <ol class="mt-12 grid md:grid-cols-3 border-t border-white/12">
-          <li class="py-8 md:pr-8 md:border-r border-white/12"><p class="geant !text-6xl text-glacier-300">1</p><h3 class="h3 mt-6">Vous mesurez</h3><p class="text-white/65 mt-2 leading-relaxed">Une piqûre au bout du doigt, une goutte sur un buvard, une enveloppe à poster. Le résultat arrive en ligne.</p></li>
-          <li class="py-8 md:px-8 md:border-r border-white/12"><p class="geant !text-6xl text-glacier-300">2</p><h3 class="h3 mt-6">Vous complétez</h3><p class="text-white/65 mt-2 leading-relaxed">Une cuillère d'huile chaque jour, choisie selon votre résultat. Yves vous aide à le lire.</p></li>
-          <li class="py-8 md:pl-8"><p class="geant !text-6xl text-glacier-300">3</p><h3 class="h3 mt-6">Vous mesurez à nouveau</h3><p class="text-white/65 mt-2 leading-relaxed">Quatre mois plus tard, le temps que les globules rouges se renouvellent, le second test montre le chemin parcouru.</p></li>
+        <div class="mt-12 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div class="relative rounded-xl overflow-hidden aspect-square"><img src="assets/v2/flacon-kit.webp" srcset="assets/v2/flacon-kit-800.webp 800w, assets/v2/flacon-kit.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Flacon Pure Arctic Oil et kit de test sur un rocher, face aux montagnes" class="absolute inset-0 w-full h-full object-cover " loading="lazy"></div>
+          <ol class="border-t border-white/12">
+          <li class="py-7 border-b border-white/12 grid grid-cols-[56px_1fr] gap-4"><p class="geant !text-5xl text-glacier-300">1</p><div><h3 class="h3">Vous mesurez</h3><p class="text-white/65 mt-2 leading-relaxed">Une piqûre au bout du doigt, une goutte sur un buvard, une enveloppe à poster. Le résultat arrive en ligne.</p></div></li>
+          <li class="py-7 border-b border-white/12 grid grid-cols-[56px_1fr] gap-4"><p class="geant !text-5xl text-glacier-300">2</p><div><h3 class="h3">Vous complétez</h3><p class="text-white/65 mt-2 leading-relaxed">Une cuillère d'huile chaque jour, choisie selon votre résultat. Yves vous aide à le lire.</p></div></li>
+          <li class="py-7 border-b border-white/12 grid grid-cols-[56px_1fr] gap-4"><p class="geant !text-5xl text-glacier-300">3</p><div><h3 class="h3">Vous mesurez à nouveau</h3><p class="text-white/65 mt-2 leading-relaxed">Quatre mois plus tard, le temps que les globules rouges se renouvellent, le second test montre le chemin parcouru.</p></div></li>
         </ol>
+        </div>
         <a href="le-test.html" class="btn btn-plein mt-8">Découvrir le test</a>
       </div>
     </section>
@@ -158,7 +135,7 @@
             <a href="partenaire.html" class="btn btn-plein mt-7">Comprendre le partenariat</a>
           </div>
           <div class="relative min-h-[260px] md:min-h-[420px]">
-            <img src="assets/v2/sante-coeur.webp" alt="Deux personnes montent un escalier au-dessus d'une ville norvégienne" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+            <img src="assets/v2/activite.webp" srcset="assets/v2/activite-800.webp 800w, assets/v2/activite.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Une praticienne souriante devant son ordinateur, dans son cabinet" class="absolute inset-0 w-full h-full object-cover " loading="lazy">
           </div>
         </div>
       </div>
@@ -183,7 +160,14 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251800"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251800"></script>
+  <script src="components.js?v=202611251845"></script>
+  <script>
+    document.getElementById('rayons').innerHTML = window.CATEGORIES.map(function (c) {
+      return '<li><a href="boutique.html?cat=' + c.id + '" class="inline-flex items-center h-10 px-4 rounded-full border border-white/20 text-[15px] hover:bg-white hover:text-nuit transition-colors">' + c.nom + '</a></li>';
+    }).join('');
+    document.getElementById('ventes').innerHTML = ['pure-arctic-oil', 'omega-3-test-kit', 'pure-arctic-oil-gold', 'christmas-pack-large']
+      .map(window.produit).filter(Boolean).map(window.carteProduit).join('');
+  </script>
+  <script src="assets/v2/mecanismes.js?v=202611251845"></script>
 </body>
 </html>

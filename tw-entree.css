@@ -2,13 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Polices hébergées sur le site (plus de Google Fonts) + police de secours calée sur Albert Sans : aucun saut au chargement */
+@font-face { font-family: 'Albert Sans'; src: url('../fonts/albertsans.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/ibmplexmono-300.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../fonts/ibmplexmono-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Albert Fallback'; src: local('Arial'), local('Helvetica'); size-adjust: 102.9%; ascent-override: 92.3%; descent-override: 24.3%; line-gap-override: 0%; }
+
 /* ============================================================
    Système du site : celui de patch.io (référence de Damien) sur fond nuit.
    Albert Sans Light (équivalent libre de Muoto), IBM Plex Mono pour les repères,
    échelle 136 / 68 / 51 / 34 / 21 / 17 / 12,75 px, boutons glacier arrondis à 8,5 px ; couleurs de l'ancien site (marine #0B1D2E, glacier #4DA8B5).
    ============================================================ */
 html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'Albert Sans', system-ui, sans-serif; font-size: 17px; font-weight: 300; line-height: 1.35; letter-spacing: -0.01em; background: #0B1D2E; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Albert Sans', 'Albert Fallback', system-ui, sans-serif; font-size: 17px; font-weight: 300; line-height: 1.35; letter-spacing: -0.01em; background: #0B1D2E; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 b, strong { font-weight: 500; }
 .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 300; font-size: 12.75px; letter-spacing: 0; text-transform: uppercase; }
 

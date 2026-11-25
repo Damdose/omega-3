@@ -12,12 +12,10 @@
   <meta property="og:type" content="website">
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251800">
-  <script src="site-config.js?v=202611251800"></script>
-  <script src="catalogue.js?v=202611251800"></script>
+  <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251845">
+  <script src="site-config.js?v=202611251845"></script>
+  <script src="catalogue.js?v=202611251845"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -44,7 +42,7 @@
               <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-11 rounded-md border border-nuit/20 px-3.5 focus:border-nuit focus:outline-none"></label>
             <p id="pp-erreur" class="hidden mt-3 text-sm text-red-700" role="alert"></p>
             <button type="submit" class="btn btn-plein w-full !min-h-[50px] mt-5" id="pp-bouton">Être rappelé par Yves</button>
-            <p class="mt-3 text-xs text-nuit/50 text-center">Encore 3 petites questions à l'étape suivante.</p>
+            <p class="mt-3 text-xs text-nuit/70 text-center">Encore 3 petites questions à l'étape suivante.</p>
           </form>
         </div>
         <div class="hero-bas" aria-label="Les bases du partenariat">
@@ -64,9 +62,9 @@
           <h2 class="h2 mt-10 max-w-[18ch]">Vous recommandez. Eqology s'occupe du reste.</h2>
         </div>
         <ol class="mt-12 grid gap-4 md:grid-cols-3">
-          <li class="carte p-7 sm:p-8"><p class="geant !text-6xl text-glacier-300">1</p><h3 class="h3 mt-6">Vous recommandez</h3><p class="text-white/70 mt-2 leading-relaxed">Vous parlez du test et des huiles à vos proches, à vos clients ou à vos patients, et vous leur donnez votre lien.</p></li>
-          <li class="carte p-7 sm:p-8"><p class="geant !text-6xl text-glacier-300">2</p><h3 class="h3 mt-6">Ils commandent chez Eqology</h3><p class="text-white/70 mt-2 leading-relaxed">Ils passent commande sur la boutique officielle avec votre lien. Eqology encaisse et livre chez eux.</p></li>
-          <li class="carte p-7 sm:p-8"><p class="geant !text-6xl text-glacier-300">3</p><h3 class="h3 mt-6">Vous touchez une commission</h3><p class="text-white/70 mt-2 leading-relaxed">Eqology vous la verse sur chaque commande, y compris sur celles qui reviennent chaque mois avec un abonnement.</p></li>
+          <li class="carte p-7 sm:p-8"><div class="flex items-center justify-between"><p class="geant !text-6xl text-glacier-300">1</p><svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h3 class="h3 mt-6">Vous recommandez</h3><p class="text-white/70 mt-2 leading-relaxed">Vous parlez du test et des huiles à vos proches, à vos clients ou à vos patients, et vous leur donnez votre lien.</p></li>
+          <li class="carte p-7 sm:p-8"><div class="flex items-center justify-between"><p class="geant !text-6xl text-glacier-300">2</p><svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11L21 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></div><h3 class="h3 mt-6">Ils commandent chez Eqology</h3><p class="text-white/70 mt-2 leading-relaxed">Ils passent commande sur la boutique officielle avec votre lien. Eqology encaisse et livre chez eux.</p></li>
+          <li class="carte p-7 sm:p-8"><div class="flex items-center justify-between"><p class="geant !text-6xl text-glacier-300">3</p><svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4 4 0 1 0 0 7M7 11h6M7 13.5h6"/></svg></div><h3 class="h3 mt-6">Vous touchez une commission</h3><p class="text-white/70 mt-2 leading-relaxed">Eqology vous la verse sur chaque commande, y compris sur celles qui reviennent chaque mois avec un abonnement.</p></li>
         </ol>
       </div>
     </section>
@@ -79,9 +77,9 @@
           <h2 class="h2 mt-10 max-w-[18ch]">C'est fait pour vous si&hellip;</h2>
         </div>
         <div class="mt-12 grid gap-4 md:grid-cols-3">
-          <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/source.webp" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous êtes praticien de santé</h3><p class="text-white/65 mt-2 leading-relaxed">Naturopathe, diététicien, micronutritionniste, kiné, ostéopathe ou coach. Le test donne une mesure à vos conseils, et vos patients commandent seuls.</p></div>
-          <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/nature.webp" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous cherchez un revenu en plus</h3><p class="text-white/65 mt-2 leading-relaxed">Actif ou retraité, vous avez quelques heures par semaine et un entourage. Vous travaillez depuis chez vous, sans horaires imposés.</p></div>
-          <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/flacon-roche.webp" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous prenez déjà les produits</h3><p class="text-white/65 mt-2 leading-relaxed">Vous en parlez autour de vous sans y penser. Beaucoup de partenaires ont commencé comme clients.</p></div>
+          <div><div class="relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[4/3] [&>img]:object-[50%_30%]"><img src="assets/v2/praticienne.webp" srcset="assets/v2/praticienne-800.webp 800w, assets/v2/praticienne.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une naturopathe présente le flacon et le kit de test Eqology" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous êtes praticien de santé</h3><p class="text-white/65 mt-2 leading-relaxed">Naturopathe, diététicien, micronutritionniste, kiné, ostéopathe ou coach. Le test donne une mesure à vos conseils, et vos patients commandent seuls.</p></div>
+          <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/chez-soi.webp" srcset="assets/v2/chez-soi-800.webp 800w, assets/v2/chez-soi.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une femme lit tranquillement chez elle" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous cherchez un revenu en plus</h3><p class="text-white/65 mt-2 leading-relaxed">Actif ou retraité, vous avez quelques heures par semaine et un entourage. Vous travaillez depuis chez vous, sans horaires imposés.</p></div>
+          <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/cliente.webp" srcset="assets/v2/cliente-800.webp 800w, assets/v2/cliente.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une femme en tenue de sport au bord de la mer" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous prenez déjà les produits</h3><p class="text-white/65 mt-2 leading-relaxed">Vous en parlez autour de vous sans y penser. Beaucoup de partenaires ont commencé comme clients.</p></div>
         </div>
       </div>
     </section>
@@ -95,7 +93,7 @@
         </div>
         <div class="mt-12 grid gap-4 md:grid-cols-2">
           <div class="carte p-7 sm:p-9"><p class="mono text-glacier-300">Vous</p><h3 class="h2-s mt-4">Ce que vous faites</h3><ul class="mt-6 space-y-3 text-white/75"><li>→ Faire connaître le test et les produits</li><li>→ Partager votre lien de commande</li><li>→ Répondre aux questions de vos clients</li><li>→ Si vous le souhaitez, former des partenaires</li></ul></div>
-          <div class="carte-claire p-7 sm:p-9"><p class="mono text-nuit/60">Eqology</p><h3 class="h2-s mt-4">Ce que fait la marque</h3><ul class="mt-6 space-y-3 text-nuit/75"><li>✓ Fabriquer et contrôler les produits</li><li>✓ Encaisser les paiements</li><li>✓ Livrer à domicile et gérer le service client</li><li>✓ Calculer et verser vos commissions</li></ul></div>
+          <div class="carte-claire p-7 sm:p-9"><p class="mono text-nuit/75">Eqology</p><h3 class="h2-s mt-4">Ce que fait la marque</h3><ul class="mt-6 space-y-3 text-nuit/75"><li>✓ Fabriquer et contrôler les produits</li><li>✓ Encaisser les paiements</li><li>✓ Livrer à domicile et gérer le service client</li><li>✓ Calculer et verser vos commissions</li></ul></div>
         </div>
       </div>
     </section>
@@ -127,6 +125,7 @@
             <span class="oeil">Pourquoi Eqology</span>
             <h2 class="h2 mt-10 max-w-[18ch]">Une marque facile à recommander.</h2>
             <a href="index.html" class="lien-fleche mt-8">Découvrir la marque</a>
+            <div class="relative mt-10 rounded-xl overflow-hidden aspect-[3/2]"><img src="assets/v2/norvege.webp" srcset="assets/v2/norvege-800.webp 800w, assets/v2/norvege.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Fjords enneigés de Norvège vus du ciel" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div>
           </div>
           <ul class="border-t border-white/12">
             <li class="py-6 border-b border-white/12"><h3 class="h3">Une entreprise solide</h3><p class="text-white/65 mt-2 leading-relaxed">Née en Norvège en 1998, Eqology vend dans la plupart des pays d'Europe.</p></li>
@@ -193,7 +192,7 @@
           </div>
           <label class="grid gap-2"><span class="text-sm font-semibold">Téléphone</span>
             <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
-          <label class="grid gap-2"><span class="text-sm font-semibold">E-mail <span class="font-normal text-navy-400">(facultatif)</span></span>
+          <label class="grid gap-2"><span class="text-sm font-semibold">E-mail <span class="font-normal text-navy-600">(facultatif)</span></span>
             <input name="email" type="email" autocomplete="email" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
 
           <fieldset class="grid gap-2">
@@ -283,8 +282,8 @@
   </script>
 
   <footer></footer>
-  <script src="components.js?v=202611251800"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251800"></script>
+  <script src="components.js?v=202611251845"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251845"></script>
   <script>
   (function () {
     var form = document.getElementById('form-rappel');
