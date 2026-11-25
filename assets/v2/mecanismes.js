@@ -26,12 +26,12 @@ window.MECA = (function () {
     pts.forEach(function (p, i) { var q = pts[(i + 2) % n]; li += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"/><line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + cx + '" y2="' + cy + '" stroke-dasharray="2 5"/>'; });
     var L = document.getElementById('liens'), N = document.getElementById('noeuds');
     if (L) L.innerHTML = li;
-    if (N) N.innerHTML = pts.map(function (p, i) { var h = p[1] < cy, lib = '0' + (i + 1) + ' · ' + E[i][0], w = Math.round(24 + lib.length * 7.4); return '<g><circle cx="' + p[0] + '" cy="' + p[1] + '" r="18" fill="#172847" stroke="rgba(129,207,216,.6)"/><rect x="' + (p[0] - w / 2) + '" y="' + (p[1] + (h ? -58 : 28)) + '" width="' + w + '" height="28" rx="6" fill="#fff"/><text x="' + p[0] + '" y="' + (p[1] + (h ? -39 : 47)) + '" text-anchor="middle" fill="#0B1D2E" font-size="13" font-family="Inter Tight, system-ui, sans-serif">' + lib + '</text></g>'; }).join('');
+    if (N) N.innerHTML = pts.map(function (p, i) { var h = p[1] < cy, lib = '0' + (i + 1) + ' · ' + E[i][0], w = Math.round(24 + lib.length * 7.4); return '<g><circle cx="' + p[0] + '" cy="' + p[1] + '" r="18" fill="#1E201C" stroke="rgba(129,207,216,.6)"/><rect x="' + (p[0] - w / 2) + '" y="' + (p[1] + (h ? -58 : 28)) + '" width="' + w + '" height="28" rx="6" fill="#fff"/><text x="' + p[0] + '" y="' + (p[1] + (h ? -39 : 47)) + '" text-anchor="middle" fill="#141613" font-size="13" font-family="Satoshi, system-ui, sans-serif">' + lib + '</text></g>'; }).join('');
     var actif = 0, t;
     function etape(i) {
       actif = i;
       ol.querySelectorAll('.etape').forEach(function (el, k) { var on = k === i; el.classList.toggle('actif', on); el.querySelector('.texte').classList.toggle('hidden', !on); el.querySelector('p').style.opacity = on ? 1 : .5; var b = el.querySelector('.progres i'); b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; });
-      if (N) N.querySelectorAll('circle').forEach(function (c, k) { c.setAttribute('fill', k === i ? '#E3262F' : '#172847'); });
+      if (N) N.querySelectorAll('circle').forEach(function (c, k) { c.setAttribute('fill', k === i ? '#EE6A2C' : '#1E201C'); });
       clearTimeout(t); if (!reduit) t = setTimeout(function () { etape((actif + 1) % n); }, opts.duree || 6000);
     }
     ol.querySelectorAll('.etape').forEach(function (el) { el.onclick = function () { etape(+el.dataset.i); }; });

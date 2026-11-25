@@ -3,15 +3,15 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+        navy: { 50: '#F4F4F1', 100: '#E6E6E1', 200: '#CCCCC5', 300: '#A6A69E', 400: '#7F8078', 500: '#5D5E57', 600: '#45463F', 700: '#30322C', 800: '#1E201C', 900: '#141613' },
         glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-        rouge: { DEFAULT: '#E3262F', fonce: '#C41E26' },
-        cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
+        rouge: { DEFAULT: '#EE6A2C', fonce: '#D85A1F' },
+        cream: { 50: '#F7F7F4', 100: '#EFEFEA', 200: '#E3E3DC', 300: '#CFCFC7', 400: '#A6A69E' },
         gold: { 300: '#DCCBA8', 400: '#C4A97D', 500: '#A88C5C' },
       },
       fontFamily: {
-        serif: ['Inter Tight', 'system-ui', 'sans-serif'],
-        sans: ['Inter Tight', 'system-ui', 'sans-serif'],
+        serif: ['Satoshi', 'system-ui', 'sans-serif'],
+        sans: ['Satoshi', 'system-ui', 'sans-serif'],
       },
     },
   },

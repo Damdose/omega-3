@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design system · le site d'Yves Coignard, distributeur Eqology</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="stylesheet" href="assets/v2/site-tw.css">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <script src="site-config.js"></script>
+  <script src="catalogue.js"></script>
+</head>
+<body class="bg-navy-900 text-white">
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
+
+  <main>
+    <!-- Ouverture -->
+    <header data-plein class="relative overflow-hidden bg-navy-900 text-white">
+      <div class="relative wrap pt-36 pb-16">
+        <span class="oeil">Design system · v1 · 25 novembre 2026</span>
+        <h1 class="geant mt-6 max-w-[12ch]">Un seul système, <span class="text-navy-300">pour vendre.</span></h1>
+        <p class="mt-6 text-lg text-cream-200 max-w-[60ch] leading-relaxed">Les règles du site d'Yves Coignard, distributeur indépendant Eqology. Inspiré des mécanismes de patch.io, pensé pour le trafic Meta : un visiteur sur mobile, qui arrive d'une story, doit comprendre la promesse et trouver le bouton en trois secondes.</p>
+      </div>
+    </header>
+
+    <!-- 1. Principes de conversion -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">1 · Principes</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[18ch]">Six règles pour le visiteur qui vient d'une pub.</h2>
+        <ol class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 border-t border-white/10">
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">01</p><p class="text-xl mt-2">La même promesse que la pub</p><p class="text-cream-300 mt-2">Le titre du premier écran reprend l'accroche de la story (page partenaire : <code>?cible=pro</code>, <code>?cible=visio</code>).</p></li>
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">02</p><p class="text-xl mt-2">Une seule action orange</p><p class="text-cream-300 mt-2">L'orange est réservé au bouton qui fait avancer : tester, commander, être rappelé. Tout le reste est en contour.</p></li>
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">03</p><p class="text-xl mt-2">L'action dès le premier écran</p><p class="text-cream-300 mt-2">Bouton ou mini-formulaire visible sans défiler, puis une barre d'action fixe sur mobile.</p></li>
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">04</p><p class="text-xl mt-2">La preuve tout de suite</p><p class="text-cream-300 mt-2">Bande qui défile sous le titre : MSC, GOED, Superior Taste Award, Oslo. Jamais de faux avis.</p></li>
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">05</p><p class="text-xl mt-2">Le prix dans le bouton</p><p class="text-cream-300 mt-2">« Commencer par le test · 88 € » : le visiteur sait ce qui l'attend avant de cliquer.</p></li>
+          <li class="py-7 pr-6 border-b border-white/10"><p class="text-navy-300 text-sm">06</p><p class="text-xl mt-2">Aucune promesse de revenu</p><p class="text-cream-300 mt-2">Règle Meta et règle Heyfuture : pas de montant, pas de « liberté financière ». Toujours « distributeur indépendant Eqology ».</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 2. Couleurs -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">2 · Couleurs</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8">Noir chaud, gris clair, orange pour l'action.</h2>
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 text-sm">
+          <div><div class="h-24 rounded-lg bg-navy-900 border border-white/20"></div><p class="mt-2">Nuit · fond</p><p class="text-navy-300">#141613 · navy-900</p></div>
+          <div><div class="h-24 rounded-lg bg-navy-800 border border-white/10"></div><p class="mt-2">Carte sombre</p><p class="text-navy-300">#1E201C · navy-800</p></div>
+          <div><div class="h-24 rounded-lg bg-white"></div><p class="mt-2">Carte claire</p><p class="text-navy-300">#FFFFFF</p></div>
+          <div><div class="h-24 rounded-lg bg-cream-100"></div><p class="mt-2">Vignette produit</p><p class="text-navy-300">#EFEFEA · cream-100</p></div>
+          <div><div class="h-24 rounded-lg bg-rouge"></div><p class="mt-2">Action</p><p class="text-navy-300">#EE6A2C · rouge</p></div>
+          <div><div class="h-24 rounded-lg bg-[#243B2E]"></div><p class="mt-2">Partenariat</p><p class="text-navy-300">#243B2E</p></div>
+          <div><div class="h-24 rounded-lg bg-navy-300"></div><p class="mt-2">Texte secondaire</p><p class="text-navy-300">#A6A69E · navy-300</p></div>
+          <div><div class="h-24 rounded-lg bg-cream-200"></div><p class="mt-2">Texte sur noir</p><p class="text-navy-300">#E3E3DC · cream-200</p></div>
+          <div><div class="h-24 rounded-lg bg-glacier-300"></div><p class="mt-2">Accent rare</p><p class="text-navy-300">#81cfd8 · glacier-300</p></div>
+        </div>
+        <p class="mt-6 text-cream-300 max-w-[70ch]">Le logo Eqology garde son rouge d'origine. L'orange ne sert qu'aux boutons d'action, aux badges « Noël » et à l'étape active des schémas.</p>
+      </div>
+    </section>
+
+    <!-- 3. Typographie -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">3 · Typographie</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8">Satoshi, une seule police.</h2>
+        <div class="mt-10 grid gap-8 border-t border-white/10 pt-8">
+          <div class="grid md:grid-cols-[200px_1fr] gap-4 items-baseline"><p class="text-sm text-navy-300">.geant · 300<br>48 → 118 px</p><p class="geant !text-[clamp(3rem,7vw,6rem)]">Mesurez-les.</p></div>
+          <div class="grid md:grid-cols-[200px_1fr] gap-4 items-baseline"><p class="text-sm text-navy-300">.titre.fin · 300<br>36 → 48 px</p><p class="titre fin text-4xl sm:text-5xl">Une mesure, pas un avis.</p></div>
+          <div class="grid md:grid-cols-[200px_1fr] gap-4 items-baseline"><p class="text-sm text-navy-300">.titre · 400<br>24 → 28 px</p><p class="titre text-2xl sm:text-[28px]">Pure Arctic Oil Gold</p></div>
+          <div class="grid md:grid-cols-[200px_1fr] gap-4 items-baseline"><p class="text-sm text-navy-300">.lead · 400<br>18 px</p><p class="lead">Un test sanguin à faire chez vous, puis une huile de Norvège traçable jusqu'au bateau.</p></div>
+          <div class="grid md:grid-cols-[200px_1fr] gap-4 items-baseline"><p class="text-sm text-navy-300">Texte · 400<br>15 → 16 px</p><p class="text-cream-300">Commandes, paiement et livraison assurés par Eqology.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Composants -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">4 · Composants</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8">Les pièces communes à toutes les pages.</h2>
+
+        <p class="mt-12 text-sm text-navy-300">Boutons · .btn + .btn-plein (action) / .btn-clair (sur noir) / .btn-ligne (sur blanc)</p>
+        <div class="mt-4 flex flex-wrap gap-3 items-center">
+          <a href="#" class="btn btn-plein">Commencer par le test · 88 €</a>
+          <a href="#" class="btn btn-clair">Voir les oméga-3</a>
+          <span class="rounded-lg bg-white p-3"><a href="#" class="btn btn-ligne">Écrire à Yves</a></span>
+        </div>
+
+        <p class="mt-12 text-sm text-navy-300">En-tête de section · .filet + .oeil + .titre.fin</p>
+        <div class="mt-4 rounded-xl border border-white/10 p-6"><div class="filet"><span class="oeil">Le point de départ</span><p class="titre fin text-4xl mt-8">Une mesure, pas un avis.</p></div></div>
+
+        <p class="mt-12 text-sm text-navy-300">Fiches produit · carteProduit() dans catalogue.js</p>
+        <div id="ds-cartes" class="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+
+        <p class="mt-12 text-sm text-navy-300">Formulaire · carte blanche, texte sombre, un seul bouton orange</p>
+        <form class="mt-4 max-w-md rounded-xl bg-white text-navy-900 p-6" onsubmit="return false">
+          <p class="titre text-2xl">Yves vous rappelle sous 48 heures</p>
+          <label class="grid gap-1.5 mt-5"><span class="text-sm font-medium">Prénom</span><input class="h-12 rounded-lg border border-cream-300 px-4"></label>
+          <button class="btn btn-plein w-full mt-5">Être rappelé par Yves</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 5. Mécanismes -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">5 · Mécanismes</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[18ch]">Ce qui guide le visiteur, dans assets/v2/mecanismes.js.</h2>
+        <ul class="mt-10 grid md:grid-cols-2 border-t border-white/10">
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Bande qui défile</p><p class="text-cream-300 mt-1">.defile, sous le premier écran : les preuves.</p></li>
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Étapes en orbite</p><p class="text-cream-300 mt-1">MECA.orbite() : la méthode ou le circuit du partenariat, qui avance seul.</p></li>
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Onglets à progression</p><p class="text-cream-300 mt-1">MECA.onglets() : trois arguments qui changent l'image.</p></li>
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Carrousel des rayons</p><p class="text-cream-300 mt-1">MECA.carrousel() + .rail, aligné sur la colonne.</p></li>
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Phrase qui s'éclaire</p><p class="text-cream-300 mt-1">MECA.eclaire() : une conviction, lue mot à mot.</p></li>
+          <li class="py-6 pr-6 border-b border-white/10"><p class="text-xl">Barre d'action mobile</p><p class="text-cream-300 mt-1">MECA.barreMobile() : apparaît après le premier écran.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Gabarits -->
+    <section class="sec bg-navy-900 text-white">
+      <div class="wrap filet">
+        <span class="oeil">6 · Gabarits de page</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8">Chaque page suit le même ordre.</h2>
+        <div class="mt-10 grid gap-4 md:grid-cols-2">
+          <div class="rounded-xl bg-navy-800 border border-white/10 p-6"><p class="text-xl">Vitrine (accueil, boutique, fiche, test)</p><p class="text-cream-300 mt-2">Image plein écran + titre géant + action orange → preuves → produits → méthode → qualité → partenariat → appel final → pied de page.</p></div>
+          <div class="rounded-xl bg-navy-800 border border-white/10 p-6"><p class="text-xl">Page partenaire (pubs Meta)</p><p class="text-cream-300 mt-2">Menu réduit, aucune fuite. Promesse + mini-formulaire → preuves → circuit → niveaux → revenu → exemple → profils → FAQ → formulaire → merci.html (Lead).</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy-900 text-white pt-16"></footer>
+  <script src="components.js"></script>
+  <script>document.getElementById('ds-cartes').innerHTML = ['pure-arctic-oil', 'omega-3-test-kit', 'pure-vegan-oil', 'christmas-pack-small'].map(function (s) { return window.carteProduit(window.produit(s)); }).join('');</script>
+</body>
+</html>

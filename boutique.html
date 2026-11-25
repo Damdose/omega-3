@@ -13,15 +13,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="stylesheet" href="assets/v2/site-tw.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjUQ-aWy5SgqoUP8C6.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjDw-aWy5SgqoUP8C6.woff2">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <script src="site-config.js"></script>
   <script src="catalogue.js"></script>
 </head>
-<body>
+<body class="bg-navy-900 text-white">
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
@@ -41,40 +39,40 @@
       </div>
     </header>
 
-    <section class="bg-white pb-[var(--sec)] pt-6">
+    <section class="bg-navy-900 text-white pb-[var(--sec)] pt-6">
       <div class="wrap">
         <!-- Filtres -->
-        <div class="sticky top-[70px] sm:top-[78px] z-30 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 bg-white/95 backdrop-blur flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+        <div class="sticky top-[70px] sm:top-[78px] z-30 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 bg-navy-900/95 backdrop-blur flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
           <div id="filtres" class="flex gap-2 overflow-x-auto no-scrollbar -mx-1 px-1" role="tablist" aria-label="Catégories"></div>
           <div class="flex items-center gap-3 shrink-0">
-            <p id="compte" class="text-sm text-navy-500 whitespace-nowrap"></p>
+            <p id="compte" class="text-sm text-navy-300 whitespace-nowrap"></p>
             <label class="sr-only" for="tri">Trier</label>
-            <select id="tri" class="h-10 rounded-lg border border-cream-300 bg-white px-3 text-sm">
+            <select id="tri" class="h-10 rounded-lg border border-white/15 bg-navy-800 px-3 text-sm">
               <option value="">Pertinence</option>
               <option value="asc">Prix croissant</option>
               <option value="desc">Prix décroissant</option>
             </select>
           </div>
         </div>
-        <p id="recherche-info" class="hidden mt-3 text-sm text-navy-600"></p>
+        <p id="recherche-info" class="hidden mt-3 text-sm text-cream-300"></p>
 
         <div id="grille" class="mt-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4"></div>
-        <p id="vide" class="hidden mt-10 text-center text-navy-500">Aucun produit ne correspond. <a href="boutique.html" class="underline">Voir toute la boutique</a></p>
+        <p id="vide" class="hidden mt-10 text-center text-navy-300">Aucun produit ne correspond. <a href="boutique.html" class="underline">Voir toute la boutique</a></p>
 
-        <p class="mt-10 text-xs text-navy-400 max-w-[70ch]">Prix TTC relevés sur eqology.com le 23 novembre 2026, pour un achat unique. Le prix affiché par Eqology au moment de la commande fait foi. Les programmes sont proposés en abonnement par Eqology : la durée d'engagement est indiquée sur la page de commande.</p>
+        <p class="mt-10 text-xs text-navy-300 max-w-[70ch]">Prix TTC relevés sur eqology.com le 23 novembre 2026, pour un achat unique. Le prix affiché par Eqology au moment de la commande fait foi. Les programmes sont proposés en abonnement par Eqology : la durée d'engagement est indiquée sur la page de commande.</p>
       </div>
     </section>
 
     <!-- Pont vers l'équipe -->
-    <section class="sec bg-white">
+    <section class="sec bg-navy-900 text-white">
       <div class="wrap grid gap-4 md:grid-cols-2">
-        <a href="le-test.html" class="group relative overflow-hidden rounded-[28px] bg-[#1F3A44] text-white p-8 min-h-[230px] flex flex-col">
+        <a href="le-test.html" class="group relative overflow-hidden rounded-xl bg-[#1F3A44] text-white p-8 min-h-[230px] flex flex-col">
           <img src="assets/v2/produits/omega-3-test-kit.webp" alt="" class="absolute -right-6 -bottom-6 w-[55%] group-hover:scale-105 transition-transform duration-500" width="720" height="720">
           <span class="relative oeil !text-glacier-300">Vous hésitez ?</span>
           <span class="relative titre text-3xl mt-3 max-w-[12ch]">Commencez par le test</span>
           <span class="relative mt-auto font-semibold">Comprendre le test →</span>
         </a>
-        <a href="partenaire.html" class="group relative overflow-hidden rounded-[28px] bg-navy-900 text-white p-8 min-h-[230px] flex flex-col">
+        <a href="partenaire.html" class="group relative overflow-hidden rounded-xl bg-navy-900 text-white p-8 min-h-[230px] flex flex-col">
           <img src="assets/v2/consultation.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-105 transition-transform duration-700">
           <div class="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-900/30"></div>
           <span class="relative oeil !text-glacier-300">Devenir partenaire</span>
@@ -98,7 +96,7 @@
     function filtres() {
       const items = [['', 'Tout'], ...C.map((c) => [c.id, c.nom])];
       document.getElementById('filtres').innerHTML = items.map(([id, nom]) =>
-        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-lg text-sm border transition-colors ${id === cat ? 'bg-navy-900 text-white border-navy-900' : 'bg-white border-cream-300 hover:border-navy-900'}">${nom}</button>`).join('');
+        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-lg text-sm border transition-colors ${id === cat ? 'bg-white text-navy-900 border-white' : 'bg-transparent text-white border-white/25 hover:border-white'}">${nom}</button>`).join('');
       document.querySelectorAll('#filtres button').forEach((b) => b.onclick = () => { cat = b.dataset.cat; maj(true); });
     }
 

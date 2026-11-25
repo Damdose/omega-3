@@ -128,7 +128,7 @@ window.prixTexte = (p) => p.prix ? p.prix.toLocaleString('fr-FR') + ' €' : (p.
 window.lienEqology = (p) => window.lienCommande('https://eqology.com/fr/eqology-' + p.slug);
 
 window.carteProduit = (p) => `
-  <article class="group relative flex flex-col rounded-lg bg-white border border-cream-200 overflow-hidden hover:shadow-xl hover:shadow-navy-900/5 hover:-translate-y-0.5 transition-all duration-300">
+  <article class="group relative flex flex-col rounded-lg bg-white text-navy-900 border border-cream-200 overflow-hidden hover:shadow-xl hover:shadow-navy-900/5 hover:-translate-y-0.5 transition-all duration-300">
     <a href="produit.html?p=${p.slug}" class="absolute inset-0 z-10" aria-label="${p.nom}"></a>
     <div class="relative aspect-square bg-gradient-to-b from-cream-100 to-cream-50">
       ${p.badge ? `<span class="absolute top-3 left-3 z-[1] text-[11.5px] font-medium px-2 py-1 rounded-md ${p.badge === 'Noël' ? 'bg-rouge text-white' : 'bg-navy-900 text-white'}">${p.badge}</span>` : ''}
