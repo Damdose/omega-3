@@ -12,11 +12,11 @@ body { font-family: 'Satoshi', system-ui, sans-serif; background: #FAFAF8; color
 .wrap { max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
 @media (min-width: 640px) { .wrap { padding-inline: 32px; } }
 
-.oeil { display: inline-flex; align-self: flex-start; width: max-content; max-width: 100%; align-items: center; gap: .5rem; font: 500 12.5px/1 'Satoshi', sans-serif; letter-spacing: .01em; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #0B1D2E; color: #fff !important; }
+.oeil { display: inline-flex; align-self: flex-start; width: max-content; max-width: 100%; align-items: center; gap: .5rem; font: 700 12.5px/1 'Satoshi', sans-serif; letter-spacing: .01em; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #0B1D2E; color: #fff !important; }
 .oeil::before { content: ''; width: 7px; height: 7px; background: currentColor; transform: rotate(45deg); flex-shrink: 0; }
 .bg-navy-900 .oeil, .bg-navy-800 .oeil, .text-white .oeil, .bg-\[\#7A1E1A\] .oeil { background: #fff; color: #0B1D2E !important; }
-.titre { font-family: 'Satoshi', sans-serif; font-weight: 400 !important; letter-spacing: -.03em; line-height: 1.04; text-wrap: balance; }
-h1.titre, h2.titre { font-weight: 300 !important; }
+.titre { font-family: 'Satoshi', sans-serif; font-weight: 700 !important; letter-spacing: -.035em; line-height: 1.02; text-wrap: balance; }
+h3.titre, p.titre { font-weight: 500 !important; letter-spacing: -.02em; }
 .lead { font-size: 1.125rem; line-height: 1.65; color: #335075; max-width: 60ch; }
 
 .btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1.25rem; border-radius: 8px; font-weight: 500; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
@@ -64,3 +64,31 @@ input, select, textarea { font-size: 16px; }
 .defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
 @keyframes defile { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .defile { animation: none; } }
+
+/* Plus de caractère : chiffres et accroches en gras, texte courant un peu plus dense */
+.chiffre { font-family: 'Satoshi', sans-serif; font-weight: 700; letter-spacing: -.04em; line-height: .9; }
+.lead { font-weight: 500; }
+
+/* ===== Composition façon patch.io (accueil, partenaire) ===== */
+.geant { font-family: 'Satoshi', sans-serif; font-weight: 700; letter-spacing: -0.04em; line-height: .96; font-size: clamp(2.9rem, 7.4vw, 6.6rem); text-wrap: balance; }
+.fin { font-weight: 700 !important; }
+.filet { border-top: 1px solid rgba(11,29,46,.13); padding-top: 1.5rem; }
+.bg-navy-900 .filet, .bg-navy-900.filet { border-color: rgba(255,255,255,.16); }
+.sec > .wrap.filet, .sec > .wrap:has(> .filet) { background-image: none; }
+.progres { height: 2px; border-radius: 2px; background: rgba(11,29,46,.12); position: relative; overflow: hidden; }
+.bg-navy-900 .progres { background: rgba(255,255,255,.18); }
+.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #4DA8B5; }
+.actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
+@keyframes remplit { to { width: 100%; } }
+.orbite { animation: tourne 70s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
+.rail { padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); scroll-padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); }
+@media (min-width: 640px) { .rail { padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); scroll-padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); } }
+.no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
+.btn-nuit { background: #0B1D2E; color: #fff; } .btn-nuit:hover { background: #253c5e; }
+@media (prefers-reduced-motion: reduce) { .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } }
+
+/* Bouton d'action sur fond sombre : glacier, toujours visible */
+.bg-navy-900 .btn-plein, .bg-navy-800 .btn-plein, .text-white .btn-plein { background: #4DA8B5; color: #0B1D2E; }
+.bg-navy-900 .btn-plein:hover, .bg-navy-800 .btn-plein:hover, .text-white .btn-plein:hover { background: #81cfd8; }
+form .btn-plein, .bg-white.rounded-xl .btn-plein { background: #0B1D2E; color: #fff; }
+form .btn-plein:hover, .bg-white.rounded-xl .btn-plein:hover { background: #253c5e; }

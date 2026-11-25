@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Devenir partenaire Eqology · un complément de revenu · Yves Coignard</title>
+  <title>Devenir partenaire Eqology · un complément de revenu, sans stock · Yves Coignard</title>
   <meta name="description" content="Comment fonctionne le partenariat Eqology : de client à Business Partner, d'où viennent les revenus, ce que fait Eqology et ce que vous faites. Sans stock, à votre rythme, avec l'équipe d'Yves Coignard. Rappel sous 48 heures.">
   <link rel="canonical" href="https://eqology-france.vercel.app/partenaire.html">
   <meta property="og:title" content="Un complément de revenu avec Eqology">
@@ -13,294 +13,244 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="image" fetchpriority="high" imagesrcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1600w" imagesizes="100vw">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251359">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251403">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script src="site-config.js?v=202611251359"></script>
-  <script src="catalogue.js?v=202611251359"></script>
+  <script src="site-config.js?v=202611251403"></script>
+  <script src="catalogue.js?v=202611251403"></script>
 </head>
-<body>
-  <nav id="entete" class="sticky top-0 z-40"></nav>
+<body class="bg-white">
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <!-- 1. Promesse + premier pas -->
-    <header class="relative overflow-hidden bg-navy-900 text-white">
-      <img src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1600w" sizes="100vw" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" fetchpriority="high">
-      <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/60"></div>
-      <div class="relative wrap pt-10 sm:pt-16 pb-12 sm:pb-16 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
-        <div>
-          <p class="oeil !text-glacier-300">Le partenariat Eqology</p>
-          <h1 id="lp-titre" class="titre text-[2.4rem] sm:text-6xl mt-5 max-w-[15ch]">Un complément de revenu en recommandant des oméga&#8209;3 de qualité.</h1>
-          <p id="lp-sous-titre" class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. Pas de stock, pas de local, à votre rythme.</p>
-          <ul class="mt-8 hidden sm:flex flex-wrap gap-2 text-sm">
-            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans stock</li>
-            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans local</li>
-            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">À temps partiel ou plein</li>
-            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Formé par l'équipe</li>
-          </ul>
+    <header data-plein class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-navy-900 text-white">
+      <img src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1200w" sizes="100vw" alt="" class="absolute inset-0 w-full h-full object-cover opacity-45" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/40 via-navy-900/70 to-navy-900"></div>
+      <div class="relative wrap w-full pt-28 sm:pt-36 pb-8">
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr] items-end">
+          <div>
+            <span id="profil-tag" class="oeil">Partenariat Eqology · distributeur indépendant</span>
+            <h1 id="lp-titre" class="geant mt-6 max-w-[11ch] !text-[clamp(2.8rem,6.6vw,6rem)]">Un complément de revenu, <span class="text-glacier-300">sans stock.</span></h1>
+            <p id="lp-sous-titre" class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vous parlez déjà santé autour de vous&nbsp;? Recommandez des oméga-3 de Norvège&nbsp;: vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. À votre rythme, avec une équipe qui vous forme.</p>
+          </div>
+          <form id="premier-pas" class="rounded-xl bg-white text-navy-900 p-6 sm:p-8 shadow-2xl shadow-black/40" novalidate>
+            <p class="titre text-2xl sm:text-[1.75rem]" id="pp-titre">Yves vous rappelle sous 48&nbsp;heures</p>
+            <p class="text-navy-600 mt-2">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
+            <label class="grid gap-1.5 mt-5"><span class="text-sm font-medium">Prénom</span>
+              <input name="pp_prenom" autocomplete="given-name" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-navy-900 focus:outline-none"></label>
+            <label class="grid gap-1.5 mt-3"><span class="text-sm font-medium">Téléphone</span>
+              <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-navy-900 focus:outline-none"></label>
+            <p id="pp-erreur" class="hidden mt-3 text-sm text-red-700" role="alert"></p>
+            <button type="submit" class="btn btn-plein w-full !min-h-[54px] text-base mt-5" id="pp-bouton">Être rappelé par Yves</button>
+            <p class="mt-3 text-xs text-navy-500 text-center">Encore 3 petites questions à l'étape suivante.</p>
+          </form>
         </div>
-        <!-- Premier pas : prénom + téléphone -->
-        <form id="premier-pas" class="rounded-xl bg-white text-navy-900 p-6 sm:p-8 shadow-2xl shadow-black/30" novalidate>
-          <p class="titre text-2xl sm:text-3xl" id="pp-titre">Yves vous rappelle sous 48 heures</p>
-          <p class="text-navy-600 mt-2">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
-          <label class="grid gap-1.5 mt-5"><span class="text-sm font-semibold">Prénom</span>
-            <input name="pp_prenom" autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
-          <label class="grid gap-1.5 mt-3"><span class="text-sm font-semibold">Téléphone</span>
-            <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
-          <p id="pp-erreur" class="hidden mt-3 text-sm text-red-700" role="alert"></p>
-          <button type="submit" class="btn btn-plein w-full !min-h-[56px] text-base mt-5" id="pp-bouton">Être rappelé par Yves</button>
-          <p class="mt-3 text-xs text-navy-500 text-center">Encore 3 petites questions à l'étape suivante.</p>
-        </form>
+        <div class="mt-10 pt-6 border-t border-white/20 overflow-hidden" aria-label="Les bases du partenariat">
+          <div class="defile text-2xl md:text-[28px] fin tracking-tight text-white/90 whitespace-nowrap">
+            <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span><span>Aucun engagement pour l'appel</span>
+            <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span><span>Aucun engagement pour l'appel</span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- Bandeau de confiance -->
+    <!-- 2. Bandeau de confiance -->
     <section class="bg-white border-b border-cream-200">
-      <div class="wrap py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-        <p><b class="block font-serif text-lg">Eqology</b><span class="text-navy-500">entreprise norvégienne, siège à Oslo</span></p>
-        <p><b class="block font-serif text-lg">Plus de 20 ans</b><span class="text-navy-500">de compléments basés sur des tests</span></p>
-        <p><b class="block font-serif text-lg">Pêche MSC</b><span class="text-navy-500">huile traçable jusqu'au bateau</span></p>
-        <p><b class="block font-serif text-lg">Rappel personnel</b><span class="text-navy-500">par Yves, distributeur indépendant</span></p>
-      </div>
+      <ul class="wrap grid grid-cols-2 lg:grid-cols-4 text-sm">
+        <li class="py-5 pr-4 lg:border-r border-cream-200"><b class="block font-medium text-base">Eqology</b><span class="text-navy-500">entreprise norvégienne, siège à Oslo</span></li>
+        <li class="py-5 lg:px-6 lg:border-r border-cream-200"><b class="block font-medium text-base">Plus de 20 ans</b><span class="text-navy-500">de compléments basés sur des tests</span></li>
+        <li class="py-5 pr-4 lg:px-6 lg:border-r border-cream-200"><b class="block font-medium text-base">Pêche certifiée MSC</b><span class="text-navy-500">huile traçable jusqu'au bateau</span></li>
+        <li class="py-5 lg:pl-6"><b class="block font-medium text-base">Rappel personnel</b><span class="text-navy-500">par Yves, distributeur indépendant</span></li>
+      </ul>
     </section>
 
-    <!-- 2. Pour qui -->
-    <section class="sec bg-cream-50">
-      <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil">Pour qui</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Vous conseillez déjà autour de vous ? C'est un bon début.</h2>
+    <!-- 3. Comment ça marche : étapes + orbite -->
+    <section id="systeme" class="sec bg-navy-900 text-white scroll-mt-24">
+      <div class="wrap filet grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div class="flex flex-col">
+          <span class="oeil self-start">Comment ça marche</span>
+          <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[14ch]">Vous parlez aux gens. Eqology fait le reste.</h2>
+          <a href="#rappel" class="btn btn-plein mt-7 self-start">Être rappelé par Yves</a>
+          <ol id="etapes" class="mt-12 lg:mt-auto"></ol>
         </div>
-        <div class="mt-10 grid gap-4 md:grid-cols-3">
-          <article class="monte rounded-xl bg-white border border-cream-200 p-7">
-            <span class="inline-flex w-12 h-12 rounded-2xl bg-glacier-50 text-glacier-700 items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg></span>
-            <h3 class="font-medium text-xl mt-5">Les praticiens de santé</h3>
-            <p class="text-navy-600 mt-2 leading-relaxed">Naturopathes, micronutritionnistes, diététiciens, kinés, ostéopathes. Vos patients vous demandent quoi prendre : le test vous donne une mesure objective, et vous n'avez rien à vendre au cabinet.</p>
-          </article>
-          <article class="monte rounded-xl bg-white border border-cream-200 p-7">
-            <span class="inline-flex w-12 h-12 rounded-2xl bg-glacier-50 text-glacier-700 items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 2"/></svg></span>
-            <h3 class="font-medium text-xl mt-5">Les actifs et les retraités</h3>
-            <p class="text-navy-600 mt-2 leading-relaxed">Vous cherchez un revenu en plus, depuis chez vous, sans horaires imposés. Quelques heures par semaine suffisent pour commencer.</p>
-          </article>
-          <article class="monte rounded-xl bg-white border border-cream-200 p-7">
-            <span class="inline-flex w-12 h-12 rounded-2xl bg-glacier-50 text-glacier-700 items-center justify-center"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path stroke-linecap="round" d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path stroke-linecap="round" d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg></span>
-            <h3 class="font-medium text-xl mt-5">Les clients convaincus</h3>
-            <p class="text-navy-600 mt-2 leading-relaxed">Vous prenez déjà les produits et vous en parlez naturellement. Les meilleurs partenaires commencent souvent comme clients.</p>
-          </article>
+        <div class="relative rounded-xl overflow-hidden min-h-[420px] md:min-h-[540px] bg-navy-800">
+          <img src="assets/v2/gamme.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-br from-navy-900/30 to-navy-900/85"></div>
+          <svg viewBox="0 0 600 600" class="relative w-full h-full max-h-[540px]" role="img" aria-label="Le circuit : vous recommandez, le client commande, Eqology livre, vous êtes rémunéré, vous formez">
+            <g class="orbite" fill="none" stroke="rgba(255,255,255,.15)"><circle cx="300" cy="300" r="230" stroke-dasharray="2 8"/><circle cx="300" cy="300" r="170"/><circle cx="300" cy="300" r="110" stroke-dasharray="3 6"/></g>
+            <g id="liens" stroke="rgba(129,207,216,.35)" stroke-width="1"></g>
+            <g id="noeuds"></g>
+            <circle cx="300" cy="300" r="48" fill="#0B1D2E" stroke="#4DA8B5" stroke-width="1.5"/>
+            <text x="300" y="306" text-anchor="middle" fill="#fff" font-size="18" font-family="Satoshi, system-ui, sans-serif">Vous</text>
+          </svg>
         </div>
       </div>
     </section>
 
-    <!-- 3. Le système en 3 niveaux -->
-    <section id="systeme" class="sec bg-white scroll-mt-24">
-      <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil">Le système</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Trois niveaux, on monte à son rythme.</h2>
-          <p class="lead mt-5">Chez Eqology, on peut rester client, faire offrir ses produits en les recommandant, ou en faire une activité. Chaque marche s'appuie sur la précédente.</p>
+    <!-- 4. Les trois niveaux -->
+    <section class="sec bg-white">
+      <div class="wrap filet">
+        <span class="oeil">Le système</span>
+        <div class="mt-8 grid gap-6 lg:grid-cols-2 items-end">
+          <h2 class="titre text-4xl sm:text-5xl fin max-w-[15ch]">Trois niveaux, on monte à son rythme.</h2>
+          <p class="lead">Rester client, faire offrir ses produits en les recommandant, ou en faire une activité. Chaque marche s'appuie sur la précédente.</p>
         </div>
         <ol class="mt-12 grid gap-4 lg:grid-cols-3 lg:items-end">
-          <li class="monte rounded-xl bg-cream-50 border border-cream-200 p-7 lg:min-h-[340px] flex flex-col">
-            <div class="flex items-center justify-between"><span class="oeil">Niveau 1</span><img src="assets/v2/produits/pure-arctic-oil.webp" alt="" class="w-16 h-16 object-contain" width="720" height="720"></div>
-            <h3 class="titre text-3xl mt-4">Client</h3>
-            <p class="text-navy-600 mt-3 leading-relaxed">Vous faites le test, vous prenez votre huile. Sur l'abonnement de 6 mois, vous payez le <b class="text-navy-900">prix client Premium</b>, environ un quart de moins que le prix unitaire, test inclus.</p>
-            <p class="mt-auto pt-5 text-sm font-semibold text-glacier-700">Vous prenez soin de vous.</p>
+          <li class="rounded-xl bg-cream-50 border border-cream-200 p-7 lg:min-h-[330px] flex flex-col">
+            <div class="flex items-center justify-between"><span class="text-sm text-navy-400">Niveau 1</span><img src="assets/v2/produits/pure-arctic-oil.webp" alt="" class="w-14 h-14 object-contain" width="720" height="720"></div>
+            <h3 class="titre text-3xl mt-6">Client</h3>
+            <p class="text-navy-600 mt-3 leading-relaxed">Vous faites le test, vous prenez votre huile. En abonnement de 6 mois, vous payez le prix client Premium, environ un quart de moins, test inclus.</p>
+            <p class="mt-auto pt-5 text-sm font-medium text-glacier-700">Vous prenez soin de vous.</p>
           </li>
-          <li class="monte rounded-xl bg-glacier-50 border border-glacier-100 p-7 lg:min-h-[400px] flex flex-col">
-            <div class="flex items-center justify-between"><span class="oeil">Niveau 2</span><span class="titre text-2xl text-glacier-700">3 = 0 €</span></div>
-            <h3 class="titre text-3xl mt-4">3 for free</h3>
-            <p class="text-navy-600 mt-3 leading-relaxed">Trois amis commandent le même produit que vous : le mois suivant, <b class="text-navy-900">le vôtre est offert</b>. Vous ne payez que les frais de gestion et de livraison (6,90 €). C'est le programme de parrainage officiel d'Eqology.</p>
-            <div class="mt-5 flex items-center gap-2" aria-hidden="true">
-              <span class="w-10 h-10 rounded-full bg-white border border-glacier-200 grid place-items-center text-sm font-semibold">Vous</span>
-              <span class="text-glacier-600">+</span>
-              <span class="w-8 h-8 rounded-full bg-glacier-500"></span><span class="w-8 h-8 rounded-full bg-glacier-500"></span><span class="w-8 h-8 rounded-full bg-glacier-500"></span>
-            </div>
-            <p class="mt-auto pt-5 text-sm font-semibold text-glacier-700">Vos produits ne vous coûtent plus rien.</p>
+          <li class="rounded-xl bg-glacier-50 border border-glacier-100 p-7 lg:min-h-[390px] flex flex-col">
+            <div class="flex items-center justify-between"><span class="text-sm text-navy-400">Niveau 2</span><span class="titre text-2xl text-glacier-700">3 = 0 €</span></div>
+            <h3 class="titre text-3xl mt-6">3 for free</h3>
+            <p class="text-navy-600 mt-3 leading-relaxed">Trois amis commandent le même produit que vous&nbsp;: le mois suivant, le vôtre est offert. Seuls restent les frais de gestion et de livraison (6,90 €). C'est le parrainage officiel d'Eqology.</p>
+            <p class="mt-auto pt-5 text-sm font-medium text-glacier-700">Vos produits ne vous coûtent plus rien.</p>
           </li>
-          <li class="monte rounded-xl bg-navy-900 text-white p-7 lg:min-h-[460px] flex flex-col">
-            <div class="flex items-center justify-between"><span class="oeil !text-glacier-300">Niveau 3</span><span class="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-glacier-500 text-navy-900">Revenu</span></div>
-            <h3 class="titre text-3xl mt-4">Business Partner</h3>
-            <p class="text-cream-200 mt-3 leading-relaxed">Vous créez votre activité indépendante. Chaque commande passée avec votre lien vous rapporte une commission, versée par Eqology. Vous pouvez aussi former une équipe de partenaires.</p>
-            <ul class="mt-5 space-y-2 text-cream-200 text-[15px]">
-              <li class="flex gap-2"><span class="text-glacier-300">✓</span>Votre lien et votre page de commande</li>
-              <li class="flex gap-2"><span class="text-glacier-300">✓</span>Un kit de démarrage : produits et supports</li>
-              <li class="flex gap-2"><span class="text-glacier-300">✓</span>Formations en ligne, séminaires, un guide pas à pas</li>
-            </ul>
-            <a href="#rappel" class="mt-auto pt-6 text-sm font-semibold text-glacier-300 hover:text-white">C'est ce qu'Yves vous présente →</a>
+          <li class="rounded-xl bg-navy-900 text-white p-7 lg:min-h-[450px] flex flex-col">
+            <div class="flex items-center justify-between"><span class="text-sm text-cream-400">Niveau 3</span><span class="text-xs font-medium px-2.5 py-1 rounded-md bg-rouge">Revenu</span></div>
+            <h3 class="titre text-3xl mt-6">Business Partner</h3>
+            <p class="text-cream-200 mt-3 leading-relaxed">Vous créez votre activité indépendante. Chaque commande passée avec votre lien vous rapporte une commission versée par Eqology. Vous pouvez aussi former une équipe.</p>
+            <ul class="mt-5 space-y-2 text-cream-200 text-[15px]"><li>— Votre lien et votre page de commande</li><li>— Un kit de démarrage : produits et supports</li><li>— Formations en ligne, séminaires, guide pas à pas</li></ul>
+            <a href="#rappel" class="btn btn-plein mt-auto self-start">C'est ce qu'Yves vous présente</a>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- 4. D'où viennent les revenus -->
+    <!-- 5. D'où vient le revenu -->
     <section class="sec bg-navy-900 text-white">
-      <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil !text-glacier-300">D'où vient le revenu</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Trois sources, toutes liées à de vraies commandes.</h2>
+      <div class="wrap filet">
+        <span class="oeil">D'où vient le revenu</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[17ch]">Trois sources, toutes liées à de vraies commandes.</h2>
+        <div class="mt-12 grid md:grid-cols-3 border-t border-white/15">
+          <div class="py-8 md:pr-8 md:border-r border-white/15"><p class="geant !text-6xl text-glacier-300">01</p><h3 class="text-xl mt-6">Vos ventes</h3><p class="text-cream-300 mt-2 leading-relaxed">Une commission sur chaque commande passée par vos clients avec votre lien.</p></div>
+          <div class="py-8 md:px-8 md:border-r border-white/15"><p class="geant !text-6xl text-glacier-300">02</p><h3 class="text-xl mt-6">Les commandes qui reviennent</h3><p class="text-cream-300 mt-2 leading-relaxed">Beaucoup de clients prennent un abonnement de 6 mois&nbsp;: leur commande repart chaque mois, et votre commission avec.</p></div>
+          <div class="py-8 md:pl-8"><p class="geant !text-6xl text-glacier-300">03</p><h3 class="text-xl mt-6">Votre équipe</h3><p class="text-cream-300 mt-2 leading-relaxed">Si vous formez à votre tour des partenaires, une part de l'activité de votre équipe vous revient.</p></div>
         </div>
-        <!-- Schéma du circuit -->
-        <div class="monte mt-12 rounded-xl bg-white/5 border border-white/10 p-6 sm:p-10">
-          <ol class="grid gap-3 md:grid-cols-4 items-stretch">
-            <li class="rounded-2xl bg-white text-navy-900 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-glacier-700">1</p><p class="font-medium text-lg mt-1">Vous recommandez</p><p class="text-sm text-navy-600 mt-1">Le test et les produits, avec votre lien.</p></li>
-            <li class="rounded-2xl bg-white text-navy-900 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-glacier-700">2</p><p class="font-medium text-lg mt-1">Le client commande</p><p class="text-sm text-navy-600 mt-1">Sur la boutique Eqology, souvent en abonnement.</p></li>
-            <li class="rounded-2xl bg-white text-navy-900 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-glacier-700">3</p><p class="font-medium text-lg mt-1">Eqology livre</p><p class="text-sm text-navy-600 mt-1">Paiement, envoi et service client : rien à gérer.</p></li>
-            <li class="rounded-2xl bg-glacier-500 text-navy-900 p-5"><p class="text-xs font-semibold uppercase tracking-wider">4</p><p class="font-medium text-lg mt-1">Vous êtes rémunéré</p><p class="text-sm mt-1">Eqology vous verse votre commission.</p></li>
-          </ol>
+        <div class="mt-4 flex flex-col md:flex-row md:items-center justify-between gap-6 rounded-xl bg-white/5 border border-white/10 p-6">
+          <p class="text-cream-200 max-w-[70ch]">Les pourcentages et les paliers sont fixés par le plan de rémunération officiel d'Eqology. Yves vous le présente en visio, ligne par ligne. Ce que vous gagnez dépend de votre activité&nbsp;: aucun revenu n'est garanti.</p>
+          <a href="#rappel" class="btn btn-plein shrink-0">Voir le plan avec Yves</a>
         </div>
-        <div class="mt-4 grid gap-4 md:grid-cols-3">
-          <div class="monte rounded-xl bg-white/5 border border-white/10 p-7">
-            <p class="titre text-5xl text-glacier-300">1</p>
-            <h3 class="font-medium text-xl mt-4">Vos ventes</h3>
-            <p class="text-cream-300 mt-2 leading-relaxed">Une commission sur chaque commande passée par vos clients avec votre lien.</p>
-          </div>
-          <div class="monte rounded-xl bg-white/5 border border-white/10 p-7">
-            <p class="titre text-5xl text-glacier-300">2</p>
-            <h3 class="font-medium text-xl mt-4">Les commandes qui reviennent</h3>
-            <p class="text-cream-300 mt-2 leading-relaxed">Beaucoup de clients prennent un abonnement de 6 mois : leur commande repart chaque mois, et votre commission avec.</p>
-          </div>
-          <div class="monte rounded-xl bg-white/5 border border-white/10 p-7">
-            <p class="titre text-5xl text-glacier-300">3</p>
-            <h3 class="font-medium text-xl mt-4">Votre équipe</h3>
-            <p class="text-cream-300 mt-2 leading-relaxed">Si vous formez à votre tour des partenaires, une part de l'activité de votre équipe vous revient.</p>
-          </div>
-        </div>
-        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
-          <a href="#rappel" class="btn btn-glacier">Être rappelé par Yves</a>
-          <span class="text-sm text-cream-300">Un appel de dix minutes, sans engagement.</span>
-        </div>
-        <p class="monte mt-8 text-cream-300 max-w-[70ch]">Les pourcentages et les paliers sont fixés par le plan de rémunération officiel d'Eqology. Yves vous le présente en visio, ligne par ligne. Ce que vous gagnez dépend de votre activité : aucun revenu n'est garanti.</p>
       </div>
     </section>
 
-    <!-- 5. Un exemple pour comprendre -->
-    <section class="sec bg-cream-50">
-      <div class="wrap grid gap-12 lg:grid-cols-2 items-center">
-        <div class="monte">
-          <p class="oeil">Un exemple pour comprendre</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[15ch]">Le revenu s'additionne, mois après mois.</h2>
-          <p class="lead mt-5">Claire est naturopathe. Chaque mois, elle propose le test à ses patients et quelques-uns prennent l'abonnement. Les commandes des mois précédents continuent : le nombre de clients actifs monte, et ses commissions avec.</p>
+    <!-- 6. Exemple pour comprendre -->
+    <section class="sec bg-white">
+      <div class="wrap filet grid gap-12 lg:grid-cols-2 items-center">
+        <div>
+          <span class="oeil">Un exemple pour comprendre</span>
+          <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[15ch]">Le revenu s'additionne, mois après mois.</h2>
+          <p class="lead mt-5">Claire est naturopathe. Chaque mois, elle propose le test à ses patients et quelques-uns prennent l'abonnement. Les commandes des mois précédents continuent&nbsp;: le nombre de clients actifs monte, et ses commissions avec.</p>
           <p class="mt-4 text-sm text-navy-500">Exemple illustratif pour montrer le mécanisme. Ce n'est ni un cas réel ni une promesse de résultat.</p>
-          <a href="#rappel" class="btn btn-plein mt-8">Voir le plan avec Yves</a>
         </div>
-        <figure class="monte rounded-xl bg-white border border-cream-200 p-6 sm:p-8">
-          <figcaption class="font-semibold">Clients actifs de Claire, mois après mois</figcaption>
+        <figure class="rounded-xl bg-cream-50 border border-cream-200 p-6 sm:p-8">
+          <figcaption class="font-medium">Clients actifs de Claire, mois après mois</figcaption>
           <p class="text-sm text-navy-500">Nouveaux clients chaque mois, moins ceux qui arrêtent</p>
           <div id="graphe" class="mt-6 grid grid-cols-6 gap-3 items-end h-56" role="img" aria-label="Clients actifs : 5 le premier mois, puis 9, 13, 16, 19 et 22 au sixième mois"></div>
         </figure>
       </div>
     </section>
 
-    <!-- 6. Qui fait quoi -->
+    <!-- 7. Pour qui : onglets par profil -->
+    <section class="sec bg-cream-50">
+      <div class="wrap filet">
+        <span class="oeil">Pour qui</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[17ch]">Trois profils, le même accompagnement.</h2>
+        <div class="relative mt-10 rounded-xl overflow-hidden aspect-[4/3] md:aspect-[21/9] bg-navy-800">
+          <img id="onglet-img" src="assets/v2/consultation.webp" alt="" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" loading="lazy">
+          <span id="onglet-tag" class="absolute left-4 top-4 text-sm px-3 py-1.5 rounded-md bg-white text-navy-900">Praticiens de santé</span>
+        </div>
+        <div id="onglets" class="mt-8 grid gap-8 md:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- 8. Phrase qui s'éclaire + qui fait quoi -->
     <section class="sec bg-white">
-      <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil">Qui fait quoi</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Vous parlez aux gens. Eqology fait le reste.</h2>
-        </div>
-        <div class="mt-10 grid gap-4 md:grid-cols-2">
-          <div class="monte rounded-xl bg-cream-50 border border-cream-200 p-7 sm:p-9">
-            <h3 class="titre text-2xl">Ce que vous faites</h3>
-            <ul class="mt-5 space-y-3 text-navy-700">
-              <li class="flex gap-3"><span class="text-glacier-600 font-bold">→</span>Faire connaître le test et les produits</li>
-              <li class="flex gap-3"><span class="text-glacier-600 font-bold">→</span>Partager votre lien de commande</li>
-              <li class="flex gap-3"><span class="text-glacier-600 font-bold">→</span>Suivre vos clients et répondre à leurs questions</li>
-              <li class="flex gap-3"><span class="text-glacier-600 font-bold">→</span>Si vous le souhaitez, former des partenaires</li>
-            </ul>
-          </div>
-          <div class="monte rounded-xl bg-navy-900 text-white p-7 sm:p-9">
-            <h3 class="titre text-2xl">Ce que fait Eqology</h3>
-            <ul class="mt-5 space-y-3 text-cream-200">
-              <li class="flex gap-3"><span class="text-glacier-300 font-bold">✓</span>Fabriquer et contrôler les produits</li>
-              <li class="flex gap-3"><span class="text-glacier-300 font-bold">✓</span>Encaisser les paiements et livrer à domicile</li>
-              <li class="flex gap-3"><span class="text-glacier-300 font-bold">✓</span>Gérer le service client et les abonnements</li>
-              <li class="flex gap-3"><span class="text-glacier-300 font-bold">✓</span>Calculer et verser vos commissions, vous former</li>
-            </ul>
-          </div>
+      <div class="wrap filet">
+        <span class="oeil">Qui fait quoi</span>
+        <p id="revele" class="titre text-[clamp(2rem,4vw,3.4rem)] fin mt-8 max-w-[22ch]">Vous faites connaître le test et les produits. Eqology fabrique, encaisse, livre et vous verse vos commissions.</p>
+        <div class="mt-12 grid gap-4 md:grid-cols-2">
+          <div class="rounded-xl border border-cream-200 p-7 sm:p-9"><h3 class="titre text-2xl">Ce que vous faites</h3><ul class="mt-5 space-y-3 text-navy-700"><li>→ Faire connaître le test et les produits</li><li>→ Partager votre lien de commande</li><li>→ Suivre vos clients et répondre à leurs questions</li><li>→ Si vous le souhaitez, former des partenaires</li></ul></div>
+          <div class="rounded-xl bg-navy-900 text-white p-7 sm:p-9"><h3 class="titre text-2xl">Ce que fait Eqology</h3><ul class="mt-5 space-y-3 text-cream-200"><li>✓ Fabriquer et contrôler les produits</li><li>✓ Encaisser les paiements et livrer à domicile</li><li>✓ Gérer le service client et les abonnements</li><li>✓ Calculer et verser vos commissions, vous former</li></ul></div>
         </div>
       </div>
     </section>
 
-    <!-- 7. Démarrer -->
+    <!-- 9. Démarrer -->
     <section class="sec bg-cream-100">
-      <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil">Démarrer</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Quatre étapes, la première prend une minute.</h2>
-        </div>
-        <ol class="mt-10 grid gap-px bg-cream-300 rounded-xl overflow-hidden border border-cream-300 sm:grid-cols-2 lg:grid-cols-4">
-          <li class="bg-white p-7"><span class="oeil">Aujourd'hui</span><p class="font-medium text-xl mt-3">Vous laissez votre numéro</p><p class="text-navy-600 mt-2">Avec le moment qui vous arrange.</p></li>
-          <li class="bg-white p-7"><span class="oeil">Sous 48 h</span><p class="font-medium text-xl mt-3">Yves vous rappelle</p><p class="text-navy-600 mt-2">Dix minutes pour faire connaissance.</p></li>
-          <li class="bg-white p-7"><span class="oeil">La semaine suivante</span><p class="font-medium text-xl mt-3">La visio de présentation</p><p class="text-navy-600 mt-2">Le plan de rémunération officiel, chiffres à l'appui.</p></li>
-          <li class="bg-white p-7"><span class="oeil">Quand vous êtes prêt</span><p class="font-medium text-xl mt-3">Vous démarrez</p><p class="text-navy-600 mt-2">Votre kit, votre lien, un parrain qui vous suit.</p></li>
+      <div class="wrap filet">
+        <span class="oeil">Démarrer</span>
+        <h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[16ch]">Quatre étapes, la première prend une minute.</h2>
+        <ol class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-navy-900/15">
+          <li class="py-7 pr-6 lg:border-r border-navy-900/15"><span class="text-sm text-navy-400">Aujourd'hui</span><p class="text-xl mt-3">Vous laissez votre numéro</p><p class="text-navy-600 mt-2">Avec le moment qui vous arrange.</p></li>
+          <li class="py-7 lg:px-6 lg:border-r border-navy-900/15"><span class="text-sm text-navy-400">Sous 48 h</span><p class="text-xl mt-3">Yves vous rappelle</p><p class="text-navy-600 mt-2">Dix minutes pour faire connaissance.</p></li>
+          <li class="py-7 pr-6 lg:px-6 lg:border-r border-navy-900/15"><span class="text-sm text-navy-400">La semaine suivante</span><p class="text-xl mt-3">La visio de présentation</p><p class="text-navy-600 mt-2">Le plan de rémunération officiel, chiffres à l'appui.</p></li>
+          <li class="py-7 lg:pl-6"><span class="text-sm text-navy-400">Quand vous êtes prêt</span><p class="text-xl mt-3">Vous démarrez</p><p class="text-navy-600 mt-2">Votre kit, votre lien, un parrain qui vous suit.</p></li>
         </ol>
+        <a href="#rappel" class="btn btn-plein mt-6">Faire la première étape</a>
       </div>
     </section>
 
-    <!-- 8. FAQ -->
+    <!-- 10. FAQ -->
     <section id="questions" class="sec bg-white scroll-mt-24">
-      <div class="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-        <div class="monte">
-          <p class="oeil">Questions fréquentes</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[12ch]">Les vraies questions, sans détour.</h2>
-        </div>
+      <div class="wrap filet grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div><span class="oeil">Questions fréquentes</span><h2 class="titre text-4xl sm:text-5xl fin mt-8 max-w-[12ch]">Les vraies questions, sans détour.</h2></div>
         <div class="divide-y divide-cream-300 border-y border-cream-300">
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Combien peut-on gagner ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Cela dépend du nombre de clients que vous accompagnez et du temps que vous y consacrez. On ne vous donnera pas de chiffre avant de vous avoir montré le plan officiel : c'est l'objet de la visio. Aucun revenu n'est garanti.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Combien coûte le démarrage ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">On démarre avec un kit qui contient des produits et des supports. Il en existe plusieurs, du plus simple au plus complet. Yves vous donne les prix exacts avant tout engagement.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Faut-il acheter du stock ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Non. Vos clients commandent directement sur Eqology avec votre lien et sont livrés chez eux.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Faut-il un statut ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Oui : un Business Partner exerce en indépendant et signe un contrat avec Eqology. On vous explique les options pendant la visio.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Je ne sais pas vendre.<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Il s'agit surtout de proposer le test et de partager ce que vous utilisez vous-même. L'équipe vous donne les mots, les supports et répond avec vous aux questions difficiles.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">D'où vient vraiment l'argent ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Des produits achetés par des clients. Pendant la visio, on vous montre le plan officiel ligne par ligne pour que vous jugiez par vous-même.</p></details>
-          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 font-medium text-lg">Je suis praticien : est-ce compatible ?<span class="plus text-2xl text-glacier-600 font-normal" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Beaucoup de praticiens proposent le test et laissent leurs patients commander seuls. Chaque profession a ses règles : on en parle au téléphone, et vous restez seul juge de vos recommandations.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Combien peut-on gagner&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Cela dépend du nombre de clients que vous accompagnez et du temps que vous y consacrez. On ne vous donnera pas de chiffre avant de vous avoir montré le plan officiel&nbsp;: c'est l'objet de la visio. Aucun revenu n'est garanti.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Combien coûte le démarrage&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">On démarre avec un kit qui contient des produits et des supports. Il en existe plusieurs, du plus simple au plus complet. Yves vous donne les prix exacts avant tout engagement.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Faut-il acheter du stock&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Non. Vos clients commandent directement sur Eqology avec votre lien et sont livrés chez eux.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Faut-il un statut&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Oui&nbsp;: un Business Partner exerce en indépendant et signe un contrat avec Eqology. On vous explique les options pendant la visio.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Je ne sais pas vendre.<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Il s'agit surtout de proposer le test et de partager ce que vous utilisez vous-même. L'équipe vous donne les mots, les supports et répond avec vous aux questions difficiles.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">D'où vient vraiment l'argent&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Des produits achetés par des clients. Pendant la visio, on vous montre le plan officiel ligne par ligne pour que vous jugiez par vous-même.</p></details>
+          <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Je suis praticien&nbsp;: est-ce compatible&nbsp;?<span class="plus text-2xl text-navy-400" aria-hidden="true">+</span></summary><p class="pb-5 text-navy-600 leading-relaxed">Beaucoup de praticiens proposent le test et laissent leurs patients commander seuls. Chaque profession a ses règles&nbsp;: on en parle au téléphone, et vous restez seul juge de vos recommandations.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- Formulaire de rappel -->
+    <!-- 11. Formulaire de rappel -->
     <section id="rappel" class="sec bg-navy-900 text-white scroll-mt-16">
-      <div class="wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr] items-start">
+      <div class="wrap filet grid gap-12 lg:grid-cols-[0.9fr_1.1fr] items-start">
         <div>
-          <p class="oeil !text-glacier-300">Être rappelé</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[13ch]">Yves vous rappelle sous 48 heures.</h2>
+          <span class="oeil">Être rappelé</span>
+          <h2 class="geant !text-[clamp(2.6rem,5vw,4.4rem)] mt-8 max-w-[11ch]">Yves vous rappelle sous <span class="text-glacier-300">48&nbsp;heures.</span></h2>
           <p class="text-cream-200 text-lg leading-relaxed mt-6 max-w-[46ch]">Un appel de dix minutes pour faire connaissance. Vous ne vous engagez à rien en laissant votre numéro.</p>
-          <ul class="mt-8 space-y-3 text-cream-200">
-            <li class="flex gap-3"><svg class="w-5 h-5 text-glacier-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Vos coordonnées ne servent qu'à ce rappel.</li>
-            <li class="flex gap-3"><svg class="w-5 h-5 text-glacier-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Pas de démarchage, pas de liste revendue.</li>
-          </ul>
+          <ul class="mt-8 space-y-3 text-cream-200"><li>✓ Vos coordonnées ne servent qu'à ce rappel.</li><li>✓ Pas de démarchage, pas de liste revendue.</li></ul>
         </div>
-
-        <form id="form-rappel" class="rounded-xl bg-white text-navy-900 p-6 sm:p-9 grid gap-5" novalidate>
+                <form id="form-rappel" class="rounded-xl bg-white text-navy-900 p-6 sm:p-9 shadow-2xl shadow-black/30 grid gap-5" novalidate>
           <p id="pp-suite" class="hidden rounded-xl bg-glacier-50 px-4 py-3 text-sm font-medium">Merci, plus que trois réponses : votre profil, le moment pour vous appeler et votre accord.</p>
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span>
-              <input name="prenom" required autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+              <input name="prenom" required autocomplete="given-name" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
             <label class="grid gap-2"><span class="text-sm font-semibold">Nom</span>
-              <input name="nom" autocomplete="family-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+              <input name="nom" autocomplete="family-name" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
           </div>
           <label class="grid gap-2"><span class="text-sm font-semibold">Téléphone</span>
-            <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+            <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
           <label class="grid gap-2"><span class="text-sm font-semibold">E-mail <span class="font-normal text-navy-400">(facultatif)</span></span>
-            <input name="email" type="email" autocomplete="email" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+            <input name="email" type="email" autocomplete="email" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
 
           <fieldset class="grid gap-2">
             <legend class="text-sm font-semibold mb-2">Vous êtes</legend>
             <div class="grid grid-cols-2 gap-2">
               <label class="relative"><input type="radio" name="profil" value="Particulier" class="peer sr-only" checked>
-                <span class="flex items-center justify-center h-12 rounded-xl border border-cream-300 text-sm font-medium cursor-pointer peer-checked:border-navy-900 peer-checked:bg-navy-900 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Particulier</span></label>
+                <span class="flex items-center justify-center h-12 rounded-lg border border-cream-300 text-sm font-medium cursor-pointer peer-checked:border-navy-900 peer-checked:bg-navy-900 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Particulier</span></label>
               <label class="relative"><input type="radio" name="profil" value="Professionnel de santé" class="peer sr-only">
-                <span class="flex items-center justify-center h-12 rounded-xl border border-cream-300 text-sm font-medium cursor-pointer text-center px-2 peer-checked:border-navy-900 peer-checked:bg-navy-900 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Praticien de santé</span></label>
+                <span class="flex items-center justify-center h-12 rounded-lg border border-cream-300 text-sm font-medium cursor-pointer text-center px-2 peer-checked:border-navy-900 peer-checked:bg-navy-900 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Praticien de santé</span></label>
             </div>
           </fieldset>
           <label id="champ-metier" class="grid gap-2 hidden"><span class="text-sm font-semibold">Votre métier</span>
-            <select name="metier" class="h-12 rounded-xl border border-cream-300 px-3 bg-white focus:border-glacier-500 focus:outline-none">
+            <select name="metier" class="h-12 rounded-lg border border-cream-300 px-3 bg-white focus:border-glacier-500 focus:outline-none">
               <option value="">Choisir</option>
               <option>Naturopathe</option><option>Micronutritionniste</option><option>Diététicien(ne)</option>
               <option>Kinésithérapeute</option><option>Ostéopathe</option><option>Autre</option>
             </select></label>
 
           <label class="grid gap-2"><span class="text-sm font-semibold">Le meilleur moment pour vous appeler</span>
-            <select name="creneau" class="h-12 rounded-xl border border-cream-300 px-3 bg-white focus:border-glacier-500 focus:outline-none">
+            <select name="creneau" class="h-12 rounded-lg border border-cream-300 px-3 bg-white focus:border-glacier-500 focus:outline-none">
               <option>En matinée (9 h - 12 h)</option><option>À midi (12 h - 14 h)</option>
               <option>L'après-midi (14 h - 18 h)</option><option>En soirée (18 h - 20 h)</option>
             </select></label>
@@ -312,15 +262,15 @@
           <p id="form-erreur" class="hidden text-sm text-red-700 bg-red-50 rounded-xl px-4 py-3" role="alert"></p>
           <button type="submit" class="btn btn-plein w-full !min-h-[56px] text-base">Être rappelé par Yves</button>
           <div id="form-ok" class="hidden rounded-2xl bg-glacier-50 p-6 text-center" role="status">
-            <p class="font-medium text-xl">C'est noté, merci.</p>
+            <p class="font-serif font-semibold text-xl">C'est noté, merci.</p>
             <p class="text-navy-600 mt-1">Yves vous rappelle sous 48 heures au moment que vous avez choisi.</p>
           </div>
         </form>
+
       </div>
     </section>
   </main>
 
-  <footer class="bg-navy-900 text-white py-8 pb-24 lg:pb-8 border-t border-white/10"></footer>
   <div id="barre-cta" class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-cream-200 p-3 transition-transform duration-300">
     <a href="#rappel" class="btn btn-plein w-full">Être rappelé par Yves</a>
   </div>
@@ -331,15 +281,16 @@
       if (CIBLE === 'visio') {
         var V = (window.SITE && window.SITE.prochaineVisio) || {};
         var quand = V.jour ? (V.jour + (V.heure ? ' à ' + V.heure : '')) : '';
-        document.getElementById('lp-titre').innerHTML = 'Présentation en ligne&nbsp;: un complément de revenu avec Eqology.';
-        document.getElementById('lp-sous-titre').textContent = (quand ? 'Rendez-vous ' + quand + ', en visio. ' : 'Une visio de présentation, chaque semaine. ') + "Quarante minutes pour comprendre l'activité, le plan de rémunération officiel et la façon de démarrer. Gratuit, sans engagement.";
+        document.getElementById('lp-titre').innerHTML = 'Le partenariat Eqology, <span class="text-glacier-300">en 45&nbsp;minutes.</span>';
+        document.getElementById('lp-sous-titre').textContent = (quand ? 'Rendez-vous ' + quand + ', en visio. ' : 'Une visio de présentation, chaque semaine. ') + "L'activité, le plan de rémunération officiel, la façon de démarrer. Gratuit, sans engagement : posez vos questions en direct.";
         document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { if (/Être rappelé|Voir le plan/.test(a.textContent)) a.textContent = 'Réserver ma place'; });
         var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = 'Réserver ma place';
         document.getElementById('pp-titre').textContent = 'Réservez votre place à la visio'; document.getElementById('pp-bouton').textContent = 'Réserver ma place';
       }
       if (CIBLE === 'pro') {
-        document.getElementById('lp-titre').innerHTML = 'Praticien de santé&nbsp;: un revenu en plus avec le test oméga&#8209;3.';
-        document.getElementById('lp-sous-titre').textContent = "Vos patients vous demandent quoi prendre. Proposez-leur le test : ils commandent seuls chez Eqology, et vous touchez une commission. Rien à vendre au cabinet, pas de stock.";
+        document.getElementById('lp-titre').innerHTML = 'Recommandez, sans rien vendre <span class="text-glacier-300">au cabinet.</span>';
+        document.getElementById('lp-sous-titre').textContent = "Vos patients vous demandent quels oméga-3 prendre ? Donnez-leur une mesure, pas un avis : ils font le test chez eux, commandent seuls chez Eqology avec votre lien, et vous touchez une commission.";
+        var pt = document.getElementById('profil-tag'); if (pt) pt.textContent = 'Praticiens de santé · partenariat Eqology';
         var pro = document.querySelector('input[name="profil"][value="Professionnel de santé"]');
         if (pro) { pro.checked = true; var m = document.getElementById('champ-metier'); if (m) m.classList.remove('hidden'); }
       }
@@ -368,7 +319,21 @@
     })();
   </script>
 
-  <script src="components.js?v=202611251359"></script>
+  <footer class="bg-navy-900 text-white border-t border-white/10"></footer>
+  <script src="components.js?v=202611251403"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251403"></script>
+  <script>
+    (function () {
+      var M = window.MECA;
+      M.orbite([['Vous recommandez', "Le test et les produits, à vos patients, vos proches ou votre réseau, avec votre lien."], ['Le client commande', "Sur la boutique Eqology, souvent en abonnement de 6 mois."], ['Eqology livre', "Paiement, envoi et service client : vous n'avez rien à gérer."], ['Vous êtes rémunéré', "Eqology vous verse une commission sur chaque commande."], ['Vous formez', "Si vous le souhaitez, vous accompagnez à votre tour des partenaires."]]);
+      M.onglets([
+        { t: 'Praticiens de santé', d: "Naturopathes, micronutritionnistes, diététiciens, kinés, ostéopathes : le test donne une mesure objective à vos conseils, et vos patients commandent seuls.", img: 'assets/v2/consultation.webp', tag: 'Praticiens de santé' },
+        { t: 'Actifs et retraités', d: "Un revenu en plus, depuis chez vous, sans horaires imposés. Quelques heures par semaine suffisent pour commencer.", img: 'assets/v2/sante-coeur.webp', tag: 'Complément de revenu' },
+        { t: 'Clients convaincus', d: "Vous prenez déjà les produits et vous en parlez naturellement. Les meilleurs partenaires commencent souvent comme clients.", img: 'assets/v2/flacon-roche.webp', tag: 'Clients Eqology' }
+      ], false);
+      M.eclaire(document.getElementById('revele'));
+    })();
+  </script>
   <script>
   (function () {
     var form = document.getElementById('form-rappel');
@@ -423,4 +388,3 @@
     })();
   </script>
 </body>
-</html>
