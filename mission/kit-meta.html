@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit de lancement Meta · Yves</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/images/eqology-eq.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tw-config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script src="pubs/pubs.js"></script>
+  <script src="pubs/textes.js"></script>
+  <style>
+    .copier{cursor:pointer}
+    @media print { .pas-imprime{display:none!important} html,body,main{background:#fff!important} .fiche{padding:0!important} .fiche h2{font-size:26px} .fiche .lead{font-size:14px;margin-top:6px} .fiche ol{margin-top:14px} .fiche ol>li{padding:9px 14px!important;margin-top:8px!important;font-size:13.5px;line-height:1.45;break-inside:avoid} .fiche ol>li p,.fiche ol>li li{font-size:13.5px} .fiche>div>p:last-child{font-size:12px;margin-top:10px} }
+  </style>
+</head>
+<body class="bg-cream-50">
+  <header class="bg-navy-900 text-white pas-imprime">
+    <div class="wrap py-12 sm:py-16">
+      <img src="../assets/images/eqology-eq.png" alt="Eqology" class="h-7" style="filter:brightness(0) invert(1)">
+      <p class="oeil !text-glacier-300 mt-8">Yves Coignard · lancement Meta du 26 novembre 2026</p>
+      <h1 class="titre text-4xl sm:text-6xl mt-4 max-w-[18ch]">Tout ce qu'il faut pour publier les pubs.</h1>
+      <p class="mt-5 text-cream-200 text-lg max-w-[62ch]">Les visuels à télécharger, les textes à coller dans le gestionnaire de publicités, l'adresse de chaque pub, les e-mails de relance et la fiche d'appel d'Yves.</p>
+      <nav class="mt-8 flex flex-wrap gap-2 text-sm">
+        <a href="#reglages" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20">Réglages communs</a>
+        <a href="#pubs" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20">Les 14 pubs</a>
+        <a href="#emails" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20">E-mails de relance</a>
+        <a href="#fiche" class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20">Fiche d'appel d'Yves</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Réglages communs -->
+    <section id="reglages" class="sec pas-imprime">
+      <div class="wrap">
+        <h2 class="titre text-3xl sm:text-4xl">Réglages communs aux quatre campagnes</h2>
+        <div class="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Objectif</p><p class="text-navy-600 mt-1">Prospects · conversion sur le site · événement <b>Lead</b> (page merci.html).</p></div>
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Catégorie spéciale</p><p class="text-navy-600 mt-1">Aucune au départ. Si Meta refuse une pub pour « emploi », la republier dans la catégorie spéciale sans contester.</p></div>
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Placements</p><p class="text-navy-600 mt-1">Advantage+ (automatiques). Visuel story 9:16 pour Stories et Reels, visuel 4:5 pour les fils.</p></div>
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Exclusion</p><p class="text-navy-600 mt-1">Audience « inscrits » : visiteurs de merci.html sur 180 jours.</p></div>
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Nom des pubs</p><p class="text-navy-600 mt-1">Exactement le nom indiqué sur chaque carte : il remonte dans l'e-mail d'Yves via utm_content.</p></div>
+          <div class="rounded-2xl bg-white border border-cream-200 p-5"><p class="font-semibold">Règles</p><p class="text-navy-600 mt-1">Aucune modification avant J+3 (29/11). Aucun déplacement de budget avant J+7 (3/12).</p></div>
+        </div>
+        <p class="mt-6 text-sm text-navy-500">Interdits dans toutes les pubs : montant de revenu, « liberté financière », « sans effort », « on recrute », « poste », « salaire », faux témoignage, avant / après. La photo de la praticienne est une illustration : jamais de prénom ni de citation dessus.</p>
+      </div>
+    </section>
+
+    <!-- Les pubs -->
+    <section id="pubs" class="sec bg-white pas-imprime">
+      <div class="wrap">
+        <h2 class="titre text-3xl sm:text-4xl">Les pubs, campagne par campagne</h2>
+        <p class="lead mt-3">Cliquez sur un texte pour le copier. Les visuels se téléchargent en 9:16 (story) et 4:5 (fil).</p>
+        <div id="campagnes" class="mt-10 grid gap-16"></div>
+      </div>
+    </section>
+
+    <!-- E-mails -->
+    <section id="emails" class="sec pas-imprime">
+      <div class="wrap">
+        <h2 class="titre text-3xl sm:text-4xl">Les e-mails de relance</h2>
+        <p class="lead mt-3">Envoyés depuis zenco@heyfuture.fr au nom d'Yves, seulement si le contact a laissé son e-mail. À brancher le 2 décembre (plan, partie 9).</p>
+        <div class="mt-8 grid gap-4 lg:grid-cols-2">
+          <article class="rounded-3xl bg-white border border-cream-200 p-7">
+            <p class="oeil">J0 · tout de suite</p>
+            <p class="font-semibold text-lg mt-3">Objet : C'est noté, je vous rappelle sous 48 heures</p>
+            <div class="mt-4 space-y-3 text-navy-700 leading-relaxed">
+              <p>Bonjour {prénom},</p>
+              <p>Merci pour votre demande. Je vous appelle sous 48 heures, {créneau}. L'appel dure une dizaine de minutes : je réponds à vos questions et, si vous voulez aller plus loin, je vous propose la visio de présentation.</p>
+              <p>Le numéro qui vous appellera est le mien. Si je tombe sur votre messagerie, je rappelle.</p>
+              <p>À très vite,<br>Yves Coignard<br><span class="text-navy-500">Distributeur indépendant Eqology</span></p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white border border-cream-200 p-7">
+            <p class="oeil">J2</p>
+            <p class="font-semibold text-lg mt-3">Objet : Eqology en deux minutes de lecture</p>
+            <div class="mt-4 space-y-3 text-navy-700 leading-relaxed">
+              <p>Bonjour {prénom},</p>
+              <p>Avant notre échange, voici ce qu'il faut savoir sur Eqology. C'est une entreprise norvégienne, basée à Oslo, qui fabrique depuis plus de vingt ans des compléments alimentaires basés sur des tests.</p>
+              <p>Son produit phare, Pure Arctic Oil, vient de cabillaud sauvage pêché en Arctique, avec une pêche certifiée MSC. Chaque flacon est traçable jusqu'au bateau. Le test oméga-3 se fait à la maison : on mesure, on complète, puis on mesure à nouveau.</p>
+              <p>Tout est présenté ici : https://eqology-omega3.vercel.app/</p>
+              <p>Yves Coignard</p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white border border-cream-200 p-7">
+            <p class="oeil">J5</p>
+            <p class="font-semibold text-lg mt-3">Objet : La prochaine visio, {date} à {heure}</p>
+            <div class="mt-4 space-y-3 text-navy-700 leading-relaxed">
+              <p>Bonjour {prénom},</p>
+              <p>La prochaine visio de présentation du partenariat Eqology a lieu {date} à {heure}. Comptez 45 minutes : l'activité, le plan de rémunération officiel et la façon de démarrer, avec le temps de poser vos questions.</p>
+              <p>C'est gratuit et sans engagement. Répondez simplement « oui » à cet e-mail et je vous envoie le lien.</p>
+              <p>Yves Coignard</p>
+            </div>
+          </article>
+          <article class="rounded-3xl bg-white border border-cream-200 p-7">
+            <p class="oeil">La veille de la visio</p>
+            <p class="font-semibold text-lg mt-3">Objet : C'est demain à {heure}</p>
+            <div class="mt-4 space-y-3 text-navy-700 leading-relaxed">
+              <p>Bonjour {prénom},</p>
+              <p>Petit rappel : la visio de présentation du partenariat Eqology a lieu demain à {heure}. Voici le lien pour la rejoindre : {lien}.</p>
+              <p>Prévoyez de quoi noter. Toutes les questions sont les bienvenues, même celles qui fâchent.</p>
+              <p>À demain,<br>Yves Coignard</p>
+            </div>
+          </article>
+        </div>
+        <p class="mt-6 text-sm text-navy-500">Aujourd'hui, l'e-mail est facultatif dans le formulaire : seuls les contacts qui le donnent recevront ces relances. Les autres sont rappelés par Yves.</p>
+      </div>
+    </section>
+
+    <!-- Fiche d'appel -->
+    <section id="fiche" class="sec bg-white fiche">
+      <div class="wrap max-w-3xl">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="titre text-3xl sm:text-4xl">Fiche d'appel d'Yves</h2>
+          <button onclick="window.print()" class="btn btn-ligne pas-imprime">Imprimer la fiche</button>
+        </div>
+        <p class="lead mt-3">Dix minutes au téléphone. Le but n'est pas de convaincre : c'est de faire connaissance et de proposer la visio.</p>
+        <ol class="mt-8 space-y-4">
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">1 · Se présenter (30 secondes)</p><p class="text-navy-700 mt-1">« Bonjour {prénom}, Yves Coignard, distributeur Eqology. Vous avez laissé votre numéro sur mon site au sujet du partenariat : c'est un bon moment ? »</p></li>
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">2 · Écouter (3 minutes)</p><p class="text-navy-700 mt-1">« Qu'est-ce qui vous a donné envie de laisser votre numéro ? » · « Que faites-vous aujourd'hui ? » · « Combien de temps aimeriez-vous y consacrer ? » Noter le métier s'il est praticien.</p></li>
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">3 · Expliquer en trois phrases (1 minute)</p><p class="text-navy-700 mt-1">« Vous faites connaître le test et les produits. Vos clients commandent chez Eqology avec votre lien, Eqology livre. Eqology vous verse une commission, et une équipe vous forme. »</p></li>
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">4 · Répondre aux questions (3 minutes)</p>
+            <ul class="text-navy-700 mt-2 space-y-1.5">
+              <li><b>Combien on gagne ?</b> « Ça dépend de chacun. Je ne donne pas de chiffre au téléphone : je vous montre le plan officiel en visio, ligne par ligne. »</li>
+              <li><b>Il faut du stock ?</b> « Non, vos clients commandent directement chez Eqology. »</li>
+              <li><b>Combien ça coûte pour démarrer ?</b> Donner le prix des kits de démarrage.</li>
+              <li><b>Je ne sais pas vendre.</b> « Il s'agit surtout de proposer le test et de partager ce que vous utilisez. L'équipe vous forme. »</li>
+            </ul></li>
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">5 · Proposer la visio (1 minute)</p><p class="text-navy-700 mt-1">« La prochaine visio a lieu {date} à {heure}. Je vous y inscris ? Je vous envoie le lien par SMS. »</p></li>
+          <li class="rounded-2xl border border-cream-300 p-5"><p class="font-semibold">6 · Après l'appel</p><p class="text-navy-700 mt-1">Transférer l'e-mail du contact à Damien en ajoutant un mot : <b>joint</b>, <b>visio</b>, <b>pas intéressé</b> ou <b>à rappeler</b>. Attention : ne pas cliquer sur « Répondre », le message partirait chez le contact. Damien suit ainsi le taux de contacts joints, campagne par campagne.</p></li>
+        </ol>
+        <p class="mt-6 text-sm text-navy-500">Ne jamais promettre de revenu, ne jamais dire « travail » ou « salaire » : on parle d'activité indépendante.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var S = 'https://eqology-omega3.vercel.app/partenaire.html';
+      var V = window.DATE_VISIO;
+      var r = function (s) { return (s || '').replace(/\{DATE\}/g, V.jour || '[date]').replace(/\{HEURE\}/g, V.heure || '20 h'); };
+      var lien = function (c) { return S + '?' + (c.cible ? 'cible=' + c.cible + '&' : '') + 'utm_source=meta&utm_medium=paid&utm_campaign=' + c.utm + '&utm_content={{ad.name}}'; };
+      var echap = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+      var bloc = function (lib, val) {
+        return '<div class="mt-3"><p class="text-xs font-semibold uppercase tracking-wider text-navy-400">' + lib + '</p><p class="copier mt-1 rounded-xl bg-cream-50 border border-cream-200 px-3 py-2 text-[15px] hover:border-glacier-500" title="Cliquer pour copier">' + echap(val) + '</p></div>';
+      };
+      var html = Object.keys(window.CAMPAGNES).map(function (k) {
+        var c = window.CAMPAGNES[k];
+        var pubs = window.PUBS.filter(function (p) { return p.camp === k; });
+        return '<div><div class="flex flex-wrap items-end justify-between gap-3 border-b border-cream-200 pb-4"><div><h3 class="titre text-2xl sm:text-3xl">' + c.nom + '</h3><p class="text-navy-500 mt-1">' + c.public + '</p></div><span class="px-4 py-2 rounded-full bg-navy-900 text-white text-sm font-semibold">' + c.budget + '</span></div>'
+          + bloc('Adresse de destination (identique pour toutes les pubs de la campagne)', lien(c))
+          + '<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">' + pubs.map(function (p) {
+            var t = window.TEXTES[p.id];
+            var attente = p.visio && !V.jour;
+            return '<article class="rounded-3xl border border-cream-200 bg-cream-50 p-4 flex gap-4">'
+              + (attente ? '<div class="a-fournir rounded-xl w-28 shrink-0 aspect-[9/16] grid place-items-center text-xs text-center p-2">En attente de la date</div>'
+                         : '<a href="pubs/png/' + p.id + '-story.png" target="_blank" class="shrink-0"><img src="pubs/png/' + p.id + '-story.png" alt="" class="w-28 rounded-xl" loading="lazy"></a>')
+              + '<div class="min-w-0 flex-1"><p class="font-mono text-sm font-semibold">' + p.id + '</p>'
+              + (attente ? '' : '<p class="text-xs mt-1"><a class="underline" download href="pubs/png/' + p.id + '-story.png">9:16</a> · <a class="underline" download href="pubs/png/' + p.id + '-feed.png">4:5</a></p>')
+              + bloc('Texte principal', r(t.texte) + ' ' + window.SIGNE) + bloc('Titre', r(t.titre)) + bloc('Bouton', t.bouton)
+              + '</div></article>';
+          }).join('') + '</div></div>';
+      }).join('');
+      document.getElementById('campagnes').innerHTML = html;
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('.copier'); if (!el || !navigator.clipboard) return;
+        navigator.clipboard.writeText(el.textContent).then(function () { el.classList.add('!border-glacier-500'); setTimeout(function () { el.classList.remove('!border-glacier-500'); }, 800); });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+// Textes Meta de chaque pub : texte principal, titre (40 signes max), bouton
+window.SIGNE = 'Yves Coignard, distributeur indépendant Eqology.';
+window.TEXTES = {
+  'A1-test-mesure': { titre: 'Le test oméga-3 pour vos patients', bouton: 'En savoir plus',
+    texte: "Vos patients vous demandent quels oméga-3 prendre ? Avec le test Eqology, ils le font chez eux et un laboratoire indépendant mesure leur équilibre oméga-6 / oméga-3. Vous partez d'une mesure, pas d'un avis. Je vous explique comment des praticiens l'intègrent à leurs consultations." },
+  'A2-premier-second-test': { titre: 'Mesurer, puis comparer', bouton: 'En savoir plus',
+    texte: "Un premier test pour savoir d'où part votre patient, un second quelques mois plus tard pour comparer. Le test Eqology se fait à domicile, les résultats arrivent en ligne. Praticiens de santé : découvrez comment le proposer, sans rien vendre au cabinet." },
+  'A3-sans-vendre': { titre: 'Conseiller, sans vendre au cabinet', bouton: 'En savoir plus',
+    texte: "Vos patients commandent seuls chez Eqology, avec votre lien. Vous gardez votre rôle de conseil ; Eqology s'occupe de la commande, de la livraison et du service client. Naturopathes, diététiciens, kinés, ostéos : je vous explique le partenariat en dix minutes." },
+  'A4-trace-msc': { titre: 'Une huile que vous pouvez expliquer', bouton: 'En savoir plus',
+    texte: "Pure Arctic Oil : du cabillaud sauvage de l'Arctique, une pêche certifiée MSC, chaque flacon traçable jusqu'au bateau. Un produit que vous pouvez expliquer à vos patients, et recommander dans le cadre du partenariat Eqology." },
+  'B1-sans-stock': { titre: 'Sans stock, à votre rythme', bouton: 'En savoir plus',
+    texte: "Vous cherchez un revenu en plus, depuis chez vous ? Avec Eqology, vous recommandez des oméga-3 de Norvège : vos clients commandent avec votre lien, Eqology livre. Pas de stock, pas de local. Ce que vous gagnez dépend de votre activité : je vous montre le plan officiel en visio." },
+  'B2-parlez-sante': { titre: 'Et si ça devenait une activité ?', bouton: 'En savoir plus',
+    texte: "Vos proches vous demandent conseil quand il s'agit de santé ? Le partenariat Eqology permet d'en faire une activité : recommander des oméga-3 de qualité, être formé par une équipe, avancer à votre rythme. Laissez votre numéro, je vous rappelle sous 48 heures." },
+  'B3-eqology-livre': { titre: 'Eqology livre, vous recommandez', bouton: 'En savoir plus',
+    texte: "Pas de stock à acheter, pas de colis à envoyer, pas d'horaires imposés. Eqology encaisse, livre et gère le service client ; vous recommandez et vous suivez vos clients. Je vous explique le fonctionnement en dix minutes au téléphone." },
+  'C1-visio-date': { titre: 'Visio gratuite {DATE}', bouton: "S'inscrire",
+    texte: "{DATE} à {HEURE}, en visio : 45 minutes pour comprendre le partenariat Eqology. L'activité, le plan de rémunération officiel, la façon de démarrer. Gratuit, sans engagement. Réservez votre place, je vous confirme par téléphone." },
+  'C2-visio-gratuite': { titre: 'Posez vos questions en direct', bouton: "S'inscrire",
+    texte: "Une visio pour poser toutes vos questions sur le partenariat Eqology, en direct et sans engagement : comment on démarre, combien de temps il faut, ce que fait Eqology et ce que vous faites." },
+  'C3-visio-questions': { titre: 'Toutes les réponses en visio', bouton: "S'inscrire",
+    texte: "Faut-il acheter du stock ? Combien de temps y consacrer ? Comment démarrer ? On répond à tout pendant la visio de présentation du partenariat Eqology. Gratuit, sans engagement." },
+  'C4-plus-que-2-jours': { titre: 'Visio {DATE} à {HEURE}', bouton: "S'inscrire",
+    texte: "Plus que 2 jours avant la visio de présentation du partenariat Eqology, {DATE} à {HEURE}. Gratuit, sans engagement : réservez votre place." },
+  'D1-argent': { titre: 'Le plan officiel, ligne par ligne', bouton: 'En savoir plus',
+    texte: "Dans le partenariat Eqology, le revenu vient des produits achetés par des clients. Pendant la visio, on vous montre le plan de rémunération officiel ligne par ligne, pour que vous jugiez par vous-même." },
+  'D2-eqology-fait-le-reste': { titre: 'Vous parlez, Eqology fait le reste', bouton: 'En savoir plus',
+    texte: "Vous faites connaître le test et les produits. Eqology fabrique, encaisse, livre et gère le service client. C'est le principe du partenariat Eqology, et je vous l'explique en dix minutes." },
+  'D3-aimez-produits': { titre: 'Recommandez ce que vous aimez', bouton: 'En savoir plus',
+    texte: "Vous avez regardé les oméga-3 Eqology. Si vous les aimez, vous pouvez aussi les recommander et en faire une activité, avec l'équipe d'Yves. Sans stock, à votre rythme." },
+};
+window.CAMPAGNES = {
+  A: { nom: 'A · Praticiens de santé', utm: 'recrut-praticiens', cible: 'pro', budget: '10 € / jour', public: 'France, 25-65 ans · intérêts : naturopathie, micronutrition, diététique, ostéopathie, kinésithérapie, médecines douces' },
+  B: { nom: 'B · Complément de revenu', utm: 'recrut-revenu', cible: '', budget: '8 € / jour', public: 'France, 35-65 ans et plus · Advantage+ avec suggestions : entrepreneuriat, travail à domicile, bien-être, compléments alimentaires' },
+  C: { nom: 'C · Visio de présentation', utm: 'recrut-visio', cible: 'visio', budget: '12 € / jour', public: 'Même base que B · à lancer dès que la date est fixée' },
+  D: { nom: 'D · Reciblage (à partir du 4/12)', utm: 'reciblage-partenaire', cible: '', budget: '5 € / jour', public: 'Visiteurs de partenaire.html (30 j), visiteurs boutique (ViewContent, ClicCommander), interactions Instagram (30 j)' },
+};

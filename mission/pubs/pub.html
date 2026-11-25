@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><title>Pub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="pubs.js"></script>
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{background:#0B1D2E}
+.pub{position:relative;width:1080px;overflow:hidden;background:#0B1D2E;color:#fff;font-family:'DM Sans',sans-serif}
+.story{height:1920px}.feed{height:1350px}
+.fond{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.voile{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,46,.35) 0%,rgba(11,29,46,.15) 30%,rgba(11,29,46,.82) 62%,#0B1D2E 92%)}
+.uni{position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(77,168,181,.35),transparent 55%),#0B1D2E}
+.haut{position:absolute;left:80px;right:80px;display:flex;align-items:center;justify-content:space-between}
+.story .haut{top:250px}.feed .haut{top:70px}
+.logo{height:46px;filter:brightness(0) invert(1)}
+.badge{font:600 26px/1 'DM Sans';letter-spacing:.12em;text-transform:uppercase;padding:16px 26px;border-radius:999px;background:#4DA8B5;color:#0B1D2E}
+.texte{position:absolute;left:80px;right:80px}
+.story .texte{bottom:430px}.feed .texte{bottom:150px}
+h1{font:600 96px/1.04 'Space Grotesk';letter-spacing:-.03em;text-wrap:balance}
+.feed h1{font-size:86px}
+p.sous{font-size:42px;line-height:1.35;color:#D5EFF2;margin-top:34px;max-width:860px}
+.signature{position:absolute;left:80px;right:80px;font-size:26px;color:rgba(255,255,255,.7);display:flex;justify-content:space-between}
+.story .signature{bottom:300px}.feed .signature{bottom:60px}
+.produit{position:absolute;right:40px;width:420px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))}
+.story .produit{top:420px}.feed .produit{top:150px;width:360px}
+.double{position:absolute;left:80px;right:80px;display:flex;gap:30px}
+.story .double{top:420px}.feed .double{top:170px}
+.double div{flex:1;border-radius:36px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);padding:36px;text-align:center}
+.double img{width:100%;max-width:300px}
+.double b{display:block;font:600 40px 'Space Grotesk';margin-top:16px;color:#81cfd8}
+.liste{position:absolute;left:80px;right:80px;display:grid;gap:24px}
+.story .liste{top:440px}.feed .liste{top:180px}
+.liste div{font:500 44px/1.2 'DM Sans';padding:34px 40px;border-radius:30px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15)}
+.liste div:before{content:'?';display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#4DA8B5;color:#0B1D2E;font-weight:700;margin-right:24px}
+</style></head>
+<body>
+<div id="pub" class="pub"></div>
+<script>
+  var q = new URLSearchParams(location.search), F = q.get('format') || 'story';
+  var P = window.PUBS.find(function (x) { return x.id === q.get('id'); }) || window.PUBS[0];
+  var V = window.DATE_VISIO, rempl = function (s) { return (s || '').replace(/ ([?:!;])/g, '&nbsp;$1').replace('{DATE}', V.jour || '[date]').replace('{HEURE}', V.heure || '20 h'); };
+  var A = '../../assets/v2/';
+  var h = '';
+  h += P.fond ? '<img class="fond" src="' + A + P.fond + '" style="object-position:' + (P.pos || '50% 50%') + '"><div class="voile"></div>' : '<div class="uni"></div>';
+  h += '<div class="haut"><img class="logo" src="../../assets/images/eqology-eq.png"><span class="badge">' + P.badge + '</span></div>';
+  if (P.double) h += '<div class="double"><div><img src="' + A + 'produits/omega-3-test-kit.webp"><b>1er test</b></div><div><img src="' + A + 'produits/omega-3-test-kit.webp"><b>2e test</b></div></div>';
+  else if (P.liste) h += '<div class="liste">' + P.liste.map(function (l) { return '<div>' + l + '</div>'; }).join('') + '</div>';
+  else if (P.produit && !P.fond) h += '<img class="produit" src="' + A + 'produits/' + P.produit + '.webp">';
+  h += '<div class="texte"><h1>' + rempl(P.titre) + '</h1><p class="sous">' + rempl(P.sous) + '</p></div>';
+  h += '<div class="signature"><span>Yves Coignard · distributeur indépendant Eqology</span></div>';
+  var el = document.getElementById('pub'); el.className = 'pub ' + F; el.innerHTML = h;
+</script>
+</body></html>
