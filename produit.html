@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251640">
-  <script src="site-config.js?v=202611251640"></script>
-  <script src="catalogue.js?v=202611251640"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251700b">
+  <script src="site-config.js?v=202611251700b"></script>
+  <script src="catalogue.js?v=202611251700b"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -90,7 +90,7 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251640"></script>
+  <script src="components.js?v=202611251700b"></script>
   <script>
   (function () {
     const P = window.PRODUITS, C = window.CATEGORIES;
@@ -100,7 +100,7 @@
     document.querySelector('meta[name="description"]').content = p.texte;
     document.getElementById('ariane').innerHTML = `<a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <a href="boutique.html">Boutique</a> <span class="mx-1.5">/</span> <a href="boutique.html?cat=${c.id}">${c.nom}</a> <span class="mx-1.5">/</span> <span aria-current="page">${p.nom}</span>`;
     const v = document.getElementById('visuel'); v.src = 'assets/v2/produits/' + p.slug + '.webp'; v.alt = p.nom;
-    if (p.badge) { const b = document.getElementById('badge'); b.textContent = p.badge; b.classList.remove('hidden'); if (p.badge === 'Noël') b.style.background = '#E3262F'; }
+    if (p.badge) { const b = document.getElementById('badge'); b.textContent = p.badge; b.classList.remove('hidden'); if (p.badge === 'Noël') b.style.background = '#5BBFCB'; }
     document.getElementById('categorie').textContent = c.nom;
     document.getElementById('nom').textContent = p.nom;
     document.getElementById('detail').textContent = p.detail;

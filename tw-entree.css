@@ -5,10 +5,10 @@
 /* ============================================================
    Système du site : celui de patch.io (référence de Damien) sur fond nuit.
    Albert Sans Light (équivalent libre de Muoto), IBM Plex Mono pour les repères,
-   échelle 136 / 68 / 51 / 34 / 21 / 17 / 12,75 px, boutons orange arrondis à 8,5 px.
+   échelle 136 / 68 / 51 / 34 / 21 / 17 / 12,75 px, boutons glacier arrondis à 8,5 px ; couleurs de l'ancien site (marine #0B1D2E, glacier #4DA8B5).
    ============================================================ */
 html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'Albert Sans', system-ui, sans-serif; font-size: 17px; font-weight: 300; line-height: 1.35; letter-spacing: -0.01em; background: #0A1622; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Albert Sans', system-ui, sans-serif; font-size: 17px; font-weight: 300; line-height: 1.35; letter-spacing: -0.01em; background: #0B1D2E; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 b, strong { font-weight: 500; }
 .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 300; font-size: 12.75px; letter-spacing: 0; text-transform: uppercase; }
 
@@ -21,7 +21,7 @@ b, strong { font-weight: 500; }
 :root { --sec: clamp(72px, 9vw, 112px); }
 .sec { padding-block: var(--sec); }
 .sec + .sec:not(.fond-2) { padding-top: 0; }
-.sec.fond-2 { background: #0F2030; }
+.sec.fond-2 { background: #172847; }
 .sec.fond-2 + .sec { padding-top: var(--sec); }
 
 /* Titres : l'échelle de patch.io (136 / 68 / 51 / 34 / 21 px), tout en Light */
@@ -33,14 +33,14 @@ b, strong { font-weight: 500; }
 .h2-s { font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; font-size: clamp(1.6rem, 2.36vw, 2.125rem); }
 .h3 { font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; font-size: 21.25px; }
 .fin { font-weight: 300; }
-/* Le mot mis en avant : en rouge Eqology */
-.points { color: #E3262F; }
+/* Le mot mis en avant : le glacier de l'ancien site */
+.points { color: #5BBFCB; }
 .lead { font-size: 17px; line-height: 1.4; color: rgba(255,255,255,.75); max-width: 52ch; }
 
 /* Étiquette de section */
-.oeil { display: inline-flex; align-self: flex-start; align-items: center; gap: .45rem; width: max-content; max-width: 100%; font-size: 12.75px; font-weight: 400; line-height: 1.2; padding: .3rem .65rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0A1622 !important; }
-.oeil::before { content: ''; width: 7px; height: 7px; background: #0A1622; transform: rotate(45deg); flex-shrink: 0; }
-.bg-sable .oeil, .bg-white .oeil { background: #0A1622; color: #fff !important; }
+.oeil { display: inline-flex; align-self: flex-start; align-items: center; gap: .45rem; width: max-content; max-width: 100%; font-size: 12.75px; font-weight: 400; line-height: 1.2; padding: .3rem .65rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0B1D2E !important; }
+.oeil::before { content: ''; width: 7px; height: 7px; background: #0B1D2E; transform: rotate(45deg); flex-shrink: 0; }
+.bg-sable .oeil, .bg-white .oeil { background: #0B1D2E; color: #fff !important; }
 .bg-sable .oeil::before, .bg-white .oeil::before { background: #fff; }
 
 /* Filet en tête de bloc */
@@ -49,25 +49,25 @@ b, strong { font-weight: 500; }
 /* Boutons : ceux de patch.io (petits, arrondis à 8,5 px, flèche) */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 36px; padding: .53rem .8rem; border-radius: 8.5px; border: 1px solid transparent; font-size: 14.875px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
-.btn-plein, .btn-glacier { background: #EA642B; border-color: #EA642B; color: #fff; }
-.btn-plein:hover, .btn-glacier:hover { background: #D2541F; border-color: #D2541F; }
+.btn-plein, .btn-glacier { background: #4DA8B5; border-color: #4DA8B5; color: #0B1D2E; font-weight: 500; }
+.btn-plein:hover, .btn-glacier:hover { background: #81CFD8; border-color: #81CFD8; }
 .btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
 .btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
 .btn-plein.sans-fleche::after { content: none; }
 .btn-clair, .btn-ligne { border-color: #fff; color: #fff; }
-.btn-clair:hover, .btn-ligne:hover { background: #fff; color: #0A1622; }
-.btn-ligne-nuit { border-color: #0A1622; color: #0A1622; }
-.btn-ligne-nuit:hover { background: #0A1622; color: #fff; }
+.btn-clair:hover, .btn-ligne:hover { background: #fff; color: #0B1D2E; }
+.btn-ligne-nuit { border-color: #0B1D2E; color: #0B1D2E; }
+.btn-ligne-nuit:hover { background: #0B1D2E; color: #fff; }
 .lien-fleche { display: inline-flex; align-items: center; gap: .4rem; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .lien-fleche::after { content: '→'; transition: transform .2s; }
 .lien-fleche:hover::after { transform: translateX(3px); }
 
 /* Cartes */
-.carte { border-radius: 10px; background: #0F2030; border: 1px solid rgba(255,255,255,.1); }
-.carte-claire { border-radius: 10px; background: #F4F3EF; color: #0A1622; }
+.carte { border-radius: 10px; background: #172847; border: 1px solid rgba(255,255,255,.1); }
+.carte-claire { border-radius: 10px; background: #F5F4F0; color: #0B1D2E; }
 
 /* Champs des formulaires (formulaires sur carte blanche) */
-.champ { height: 48px; width: 100%; border-radius: 8px; border: 1px solid #DFDBCF; padding-inline: 1rem; background: #fff; color: #0A1622; }
+.champ { height: 48px; width: 100%; border-radius: 8px; border: 1px solid #DFDBCF; padding-inline: 1rem; background: #fff; color: #0B1D2E; }
 .champ:focus { border-color: #4DA8B5; outline: none; }
 textarea.champ { height: auto; padding-block: .75rem; }
 
@@ -75,7 +75,7 @@ textarea.champ { height: auto; padding-block: .75rem; }
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
 .hero-court { min-height: 78svh; }
 .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-voile { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,22,34,.45), rgba(10,22,34,.55) 45%, rgba(10,22,34,.96)); }
+.hero-voile { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11,29,46,.45), rgba(11,29,46,.55) 45%, rgba(11,29,46,.96)); }
 .hero-bas { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.75rem; overflow: hidden; }
 
 /* En-tête des pages intérieures (sous la navigation flottante) */
@@ -95,7 +95,7 @@ textarea.champ { height: auto; padding-block: .75rem; }
 .texte-long ul li { position: relative; padding-left: 1.4em; }
 .texte-long ul li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,.45); }
 .texte-long ol { list-style: decimal; padding-left: 1.3em; }
-.texte-long blockquote { border-left: 2px solid #E3262F; padding-left: 1.2rem; color: #fff; font-size: 1.25rem; font-weight: 300; }
+.texte-long blockquote { border-left: 2px solid #5BBFCB; padding-left: 1.2rem; color: #fff; font-size: 1.25rem; font-weight: 300; }
 .texte-long table { width: 100%; border-collapse: collapse; font-size: .95rem; }
 .texte-long th, .texte-long td { border-bottom: 1px solid rgba(255,255,255,.12); padding: .7rem .5rem; text-align: left; vertical-align: top; }
 .texte-long th { color: #fff; font-weight: 500; }
@@ -106,7 +106,7 @@ textarea.champ { height: auto; padding-block: .75rem; }
 .orbite { animation: tourne 60s linear infinite; transform-origin: 300px 300px; }
 @keyframes tourne { to { transform: rotate(360deg); } }
 .progres { height: 1px; background: rgba(255,255,255,.15); position: relative; overflow: hidden; }
-.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #E3262F; }
+.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #5BBFCB; }
 .actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
 @keyframes remplit { to { width: 100%; } }
 .rail { padding-inline: max(20px, calc((100vw - 1400px) / 2 + 34px)); scroll-padding-inline: max(20px, calc((100vw - 1400px) / 2 + 34px)); }
