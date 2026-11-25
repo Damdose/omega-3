@@ -33,8 +33,8 @@ b, strong { font-weight: 500; }
 .h2-s { font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; font-size: clamp(1.6rem, 2.36vw, 2.125rem); }
 .h3 { font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; font-size: 21.25px; }
 .fin { font-weight: 300; }
-/* Le mot dessiné en points */
-.points { background-image: radial-gradient(circle, #fff 52%, transparent 56%); background-size: .058em .058em; -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* Le mot mis en avant : en rouge Eqology */
+.points { color: #E3262F; }
 .lead { font-size: 17px; line-height: 1.4; color: rgba(255,255,255,.75); max-width: 52ch; }
 
 /* Étiquette de section */
