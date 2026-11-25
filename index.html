@@ -16,9 +16,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251730">
-  <script src="site-config.js?v=202611251730"></script>
-  <script src="catalogue.js?v=202611251730"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251800">
+  <script src="site-config.js?v=202611251800"></script>
+  <script src="catalogue.js?v=202611251800"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -37,7 +37,7 @@
         <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <h1 class="geant !text-[clamp(3rem,7.4vw,6.75rem)] max-w-[14ch]">Les oméga&#8209;3 de Norvège, <span class="points">mesurés chez vous.</span></h1>
           <div class="lg:max-w-[400px] lg:pb-3">
-            <p class="text-[17px] leading-snug">Eqology est une marque norvégienne de compléments alimentaires, née en 1998. Sur ce site, Yves Coignard vous présente ses produits, vous aide à choisir et vous explique comment devenir partenaire.</p>
+            <p class="text-[17px] leading-snug">Eqology est une marque norvégienne d'oméga&#8209;3, créée en 1998. Ici, Yves Coignard vous aide à choisir. Vous commandez ensuite sur le site officiel d'Eqology, qui vous livre.</p>
             <div class="mt-5 flex flex-wrap gap-3">
               <a href="boutique.html" class="btn btn-plein">Voir la boutique</a>
               <a href="partenaire.html" class="btn btn-clair">Devenir partenaire</a>
@@ -48,64 +48,40 @@
       </div>
     </header>
 
-    <!-- 2. En trente secondes -->
+    <!-- 2. Où suis-je : la marque, Yves, qui fait quoi -->
     <section id="en-bref" class="sec scroll-mt-24">
       <div class="wrap">
-        <div class="filet">
-          <span class="oeil">En trente secondes</span>
-          <h2 class="h2 mt-10 max-w-[20ch]">Vous êtes sur le site d'un conseiller Eqology.</h2>
-        </div>
-        <ol class="mt-12 grid gap-4 md:grid-cols-3">
-          <li class="carte p-7 sm:p-8 flex flex-col">
-            <span class="mono text-glacier-300">01 · La marque</span>
-            <h3 class="h3 mt-6">Eqology, une entreprise norvégienne</h3>
-            <p class="text-white/70 mt-3 leading-relaxed">Elle fabrique depuis 1998 des oméga&#8209;3 et des compléments alimentaires. Son siège se trouve à Oslo.</p>
-          </li>
-          <li class="carte p-7 sm:p-8 flex flex-col">
-            <span class="mono text-glacier-300">02 · Le principe</span>
-            <h3 class="h3 mt-6">On mesure avant de compléter</h3>
-            <p class="text-white/70 mt-3 leading-relaxed">Un test sanguin fait chez vous indique votre taux d'oméga&#8209;3. Vous prenez l'huile qui vous convient, puis un second test montre ce qui a changé.</p>
-          </li>
-          <li class="carte p-7 sm:p-8 flex flex-col">
-            <span class="mono text-glacier-300">03 · Ce site</span>
-            <h3 class="h3 mt-6">Celui d'Yves Coignard</h3>
-            <p class="text-white/70 mt-3 leading-relaxed">Distributeur indépendant Eqology en France, il vous conseille. Vous commandez ensuite sur la boutique officielle de la marque, qui encaisse et livre.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 3. L'histoire de la marque -->
-    <section id="histoire" class="sec fond-2 scroll-mt-24">
-      <div class="wrap">
+        <ul class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/12 border border-white/12 rounded-xl overflow-hidden mb-[var(--sec)]">
+          <li class="bg-nuit p-5 sm:p-6 flex gap-3 items-start"><svg class="w-6 h-6 shrink-0 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><p class="leading-snug"><b class="font-normal">Paiement sécurisé</b><span class="block text-sm text-white/60 mt-1">sur le site officiel d'Eqology</span></p></li>
+          <li class="bg-nuit p-5 sm:p-6 flex gap-3 items-start"><svg class="w-6 h-6 shrink-0 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><p class="leading-snug"><b class="font-normal">Livré chez vous</b><span class="block text-sm text-white/60 mt-1">par Eqology, offert dès deux produits de plus de 60&nbsp;€</span></p></li>
+          <li class="bg-nuit p-5 sm:p-6 flex gap-3 items-start"><svg class="w-6 h-6 shrink-0 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><p class="leading-snug"><b class="font-normal">Un conseil gratuit</b><span class="block text-sm text-white/60 mt-1">Yves répond à vos questions, avant et après</span></p></li>
+          <li class="bg-nuit p-5 sm:p-6 flex gap-3 items-start"><svg class="w-6 h-6 shrink-0 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><p class="leading-snug"><b class="font-normal">Pêche durable</b><span class="block text-sm text-white/60 mt-1">cabillaud sauvage certifié MSC</span></p></li>
+        </ul>
         <div class="filet grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <span class="oeil">L'histoire d'Eqology</span>
-            <h2 class="h2 mt-10 max-w-[16ch]">Près de trente ans d'oméga&#8209;3 en Norvège.</h2>
-            <p class="lead mt-5">L'entreprise est née à Oslo sous le nom de SHINE. Elle a pris le nom d'Eqology en 2011 et vend aujourd'hui dans la plupart des pays d'Europe, grâce à un réseau de distributeurs indépendants.</p>
-            <div class="relative mt-10 rounded-xl overflow-hidden aspect-[4/3]">
-              <img src="assets/v2/peche.webp" alt="Bateau de pêche en mer de Norvège" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-            </div>
+            <span class="oeil">Qui vous conseille</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Vous êtes sur le site d'un conseiller Eqology.</h2>
+            <p class="lead mt-5">Eqology ne se vend pas en magasin&nbsp;: la marque passe par des distributeurs indépendants. Yves Coignard en fait partie. Il conseille ses clients en France et accompagne ceux qui veulent, à leur tour, recommander les produits.</p>
+            <p class="text-white/65 mt-4 max-w-[52ch] leading-relaxed">Passer par lui ne coûte rien de plus&nbsp;: vous payez le prix de la boutique officielle Eqology, qui encaisse et livre.</p>
+            <a href="contact.html" class="lien-fleche mt-8">Écrire à Yves</a>
           </div>
-          <ol class="border-t border-white/12 lg:mt-0">
-            <li class="grid grid-cols-[88px_1fr] gap-6 py-7 border-b border-white/12"><span class="h2-s text-glacier-300">1998</span><div><p class="text-xl">Création à Oslo</p><p class="text-white/65 mt-1.5 leading-relaxed">L'entreprise démarre sous le nom de SHINE, avec des compléments alimentaires vendus par des distributeurs.</p></div></li>
-            <li class="grid grid-cols-[88px_1fr] gap-6 py-7 border-b border-white/12"><span class="h2-s text-glacier-300">2010</span><div><p class="text-xl">Entrée en Bourse</p><p class="text-white/65 mt-1.5 leading-relaxed">La société est cotée à la Bourse d'Oslo de 2010 à 2015.</p></div></li>
-            <li class="grid grid-cols-[88px_1fr] gap-6 py-7 border-b border-white/12"><span class="h2-s text-glacier-300">2011</span><div><p class="text-xl">SHINE devient Eqology</p><p class="text-white/65 mt-1.5 leading-relaxed">Le nouveau nom accompagne une idée simple : des compléments que l'on peut mesurer, grâce à un test sanguin.</p></div></li>
-            <li class="grid grid-cols-[88px_1fr] gap-6 py-7 border-b border-white/12"><span class="h2-s text-glacier-300">Auj.</span><div><p class="text-xl">Présente dans toute l'Europe</p><p class="text-white/65 mt-1.5 leading-relaxed">Les produits se commandent en ligne et sont livrés à domicile. Des distributeurs indépendants, comme Yves en France, conseillent les clients.</p></div></li>
-          </ol>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="carte-claire p-7"><p class="mono text-nuit/60">Eqology</p><h3 class="h3 mt-4">La marque</h3><ul class="mt-5 space-y-2.5 text-nuit/75 leading-snug"><li>✓ Fabrique et contrôle les produits</li><li>✓ Encaisse le paiement</li><li>✓ Livre chez vous</li><li>✓ Gère le service client</li></ul></div>
+            <div class="carte p-7"><p class="mono text-glacier-300">Yves</p><h3 class="h3 mt-4">Le conseil</h3><ul class="mt-5 space-y-2.5 text-white/75 leading-snug"><li>→ Vous aide à choisir</li><li>→ Vous explique le test</li><li>→ Lit le résultat avec vous</li><li>→ Vous rappelle si vous le souhaitez</li></ul></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. Ce que vend Eqology -->
+    <!-- 3. Ce que vend Eqology -->
     <section id="produits" class="sec scroll-mt-24">
       <div class="wrap">
         <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <span class="oeil">Ce que vend Eqology</span>
-            <h2 class="h2 mt-10 max-w-[18ch]">Quatre familles de produits.</h2>
+            <h2 class="h2 mt-10 max-w-[18ch]">Ce que vous trouverez dans la boutique.</h2>
           </div>
-          <a href="boutique.html" class="lien-fleche shrink-0">Toute la boutique</a>
+          <a href="boutique.html" class="btn btn-plein shrink-0">Voir toute la boutique</a>
         </div>
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <a href="boutique.html?cat=omega3" class="group block">
@@ -132,7 +108,7 @@
       </div>
     </section>
 
-    <!-- 5. Ce qui distingue Eqology -->
+    <!-- 4. Ce qui distingue Eqology -->
     <section id="difference" class="sec scroll-mt-24">
       <div class="wrap">
         <div class="filet grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -146,14 +122,13 @@
           <ol class="grid gap-px bg-white/12 border-y border-white/12">
             <li class="bg-nuit py-7"><p class="mono text-glacier-300">01</p><h3 class="h3 mt-3">Une pêche qu'on peut suivre</h3><p class="text-white/65 mt-2 leading-relaxed">Le cabillaud est pêché à l'état sauvage dans l'Arctique par des pêcheries certifiées MSC, le label de la pêche durable.</p></li>
             <li class="bg-nuit py-7"><p class="mono text-glacier-300">02</p><h3 class="h3 mt-3">Une huile d'olive dans le flacon</h3><p class="text-white/65 mt-2 leading-relaxed">Les oméga&#8209;3 sont mélangés à de l'huile d'olive vierge extra de Crète, bio et pressée à froid, avec de la vitamine D3.</p></li>
-            <li class="bg-nuit py-7"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Un résultat que vous voyez</h3><p class="text-white/65 mt-2 leading-relaxed">Le test sanguin donne un point de départ. Quatre mois plus tard, un second test montre ce qui a changé.</p></li>
-            <li class="bg-nuit py-7"><p class="mono text-glacier-300">04</p><h3 class="h3 mt-3">Un goût primé</h3><p class="text-white/65 mt-2 leading-relaxed">Pure Arctic Oil a reçu le Superior Taste Award. Parfumée au citron ou à l'orange, elle se prend à la cuillère.</p></li>
+            <li class="bg-nuit py-7"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Un goût primé</h3><p class="text-white/65 mt-2 leading-relaxed">Pure Arctic Oil a reçu le Superior Taste Award. Parfumée au citron ou à l'orange, elle se prend à la cuillère.</p></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- 6. Comment ça marche : le test -->
+    <!-- 5. Comment ça marche : le test -->
     <section id="methode" class="sec fond-2 scroll-mt-24">
       <div class="wrap">
         <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -172,41 +147,7 @@
       </div>
     </section>
 
-    <!-- 7. Qui est Yves, c'est quoi un distributeur -->
-    <section id="yves" class="sec scroll-mt-24">
-      <div class="wrap">
-        <div class="filet grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div>
-            <span class="oeil">Qui est Yves Coignard</span>
-            <h2 class="h2 mt-10 max-w-[18ch]">Eqology ne se vend pas en magasin.</h2>
-            <p class="lead mt-5">La marque passe par des distributeurs indépendants. Yves Coignard en fait partie : il conseille ses clients en France et accompagne les personnes qui veulent, à leur tour, recommander les produits.</p>
-            <p class="text-white/65 mt-4 max-w-[52ch] leading-relaxed">Vous ne payez rien de plus en passant par lui. Le prix est celui de la boutique officielle Eqology, qui encaisse et livre.</p>
-            <a href="contact.html" class="lien-fleche mt-8">Écrire à Yves</a>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="carte-claire p-7"><p class="mono text-nuit/60">Eqology</p><h3 class="h3 mt-4">La marque</h3><ul class="mt-5 space-y-2.5 text-nuit/75 leading-snug"><li>✓ Fabrique et contrôle les produits</li><li>✓ Encaisse le paiement</li><li>✓ Livre chez vous</li><li>✓ Gère le service client</li></ul></div>
-            <div class="carte p-7"><p class="mono text-glacier-300">Yves</p><h3 class="h3 mt-4">Le conseil</h3><ul class="mt-5 space-y-2.5 text-white/75 leading-snug"><li>→ Vous aide à choisir</li><li>→ Vous explique le test</li><li>→ Lit le résultat avec vous</li><li>→ Vous rappelle si vous le souhaitez</li></ul></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. Meilleures ventes : accès boutique -->
-    <section class="sec">
-      <div class="wrap">
-        <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <span class="oeil">La boutique</span>
-            <h2 class="h2 mt-10 max-w-[20ch]">Les produits par lesquels on commence.</h2>
-          </div>
-          <a href="boutique.html" class="btn btn-plein shrink-0">Voir toute la boutique</a>
-        </div>
-        <div id="ventes" class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
-        <p class="mt-5 text-sm text-white/50">Le bouton «&nbsp;Commander&nbsp;» de chaque fiche vous mène à la boutique officielle Eqology&nbsp;: paiement et livraison par la marque.</p>
-      </div>
-    </section>
-
-    <!-- 9. Le partenariat -->
+    <!-- 6. Le partenariat -->
     <section class="sec">
       <div class="wrap">
         <div class="relative overflow-hidden rounded-xl bg-glacier-900 grid md:grid-cols-[1.1fr_1fr]">
@@ -223,7 +164,7 @@
       </div>
     </section>
 
-    <!-- 10. Questions -->
+    <!-- 7. Questions -->
     <section id="questions" class="sec scroll-mt-24">
       <div class="wrap">
         <div class="filet grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
@@ -231,7 +172,7 @@
           <div class="divide-y divide-white/12 border-y border-white/12">
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Est-ce le site officiel d'Eqology&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Non. C'est le site d'Yves Coignard, distributeur indépendant Eqology en France. Quand vous commandez, vous passez sur la boutique officielle Eqology&nbsp;: c'est elle qui encaisse et qui livre.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Comment se passe une commande&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Vous choisissez un produit ici, puis le bouton «&nbsp;Commander chez Eqology&nbsp;» vous mène à la boutique officielle. Paiement sécurisé, livraison à domicile. Le prix affiché par Eqology au moment de la commande fait foi.</p></details>
-            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Pourquoi commencer par le test&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Pour savoir d'où vous partez. Le test indique votre rapport oméga-6 / oméga-3&nbsp;; un second test, quelques mois plus tard, montre ce qui a changé. Ce n'est pas un diagnostic médical, c'est un repère.</p></details>
+            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Pourquoi commencer par le test&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Pour savoir d'où vous partez. Le test indique votre rapport oméga-6 / oméga-3&nbsp;; un second test, quelques mois plus tard, montre ce qui a changé. Le test donne un repère et ne remplace pas l'avis de votre médecin.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Qui est Yves Coignard&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Un distributeur indépendant Eqology. Il conseille ses clients, répond aux questions sur le test et accompagne les personnes qui veulent devenir partenaires.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Puis-je être conseillé avant d'acheter&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Oui. Écrivez à Yves depuis la <a href="contact.html" class="underline underline-offset-4 text-white">page contact</a>&nbsp;: il vous répond, ou vous rappelle si vous laissez votre numéro.</p></details>
           </div>
@@ -239,27 +180,10 @@
       </div>
     </section>
 
-    <!-- 10. Appel final -->
-    <section class="sec text-center overflow-hidden">
-      <div class="wrap">
-        <h2 class="geant !text-[clamp(2.6rem,5.4vw,4.6rem)] max-w-[14ch] mx-auto">Trouvez l'huile qui <span class="points">vous convient.</span></h2>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="boutique.html" class="btn btn-plein">Voir la boutique</a>
-          <a href="le-test.html" class="btn btn-clair">Commencer par le test</a>
-        </div>
-        <div class="relative mx-auto mt-14 w-[min(980px,95vw)] aspect-[3/1]">
-          <img src="assets/v2/nature.webp" alt="" class="absolute inset-0 w-full h-full object-cover [mask-image:radial-gradient(ellipse_50%_46%_at_50%_50%,#000_70%,transparent_100%)]" loading="lazy">
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251730"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251730"></script>
-  <script>
-    document.getElementById('ventes').innerHTML = ['omega-3-test-kit', 'pure-arctic-oil', 'pure-arctic-oil-gold', 'christmas-pack-large']
-      .map(window.produit).filter(Boolean).map(window.carteProduit).join('');
-  </script>
+  <script src="components.js?v=202611251800"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251800"></script>
 </body>
 </html>

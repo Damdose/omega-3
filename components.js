@@ -44,7 +44,7 @@
       <div class="bg-white rounded-lg shadow-[0_8px_30px_rgba(11,29,46,.12)] h-14 sm:h-[58px] flex items-center justify-between gap-4 pl-4 pr-2 sm:pl-5 sm:pr-3 text-navy-900">
         ${marque('index.html')}
         <div class="hidden lg:flex items-center gap-8 text-[17px] font-normal">
-          ${lien('boutique.html', 'Boutique')}${lien('le-test.html', 'Le test')}${lien('index.html#eqology', 'Qui est Eqology')}${lien('partenaire.html', 'Devenir partenaire')}
+          ${lien('boutique.html', 'Boutique')}${lien('le-test.html', 'Le test')}${lien('index.html#en-bref', 'Qui est Eqology')}${lien('partenaire.html', 'Devenir partenaire')}
         </div>
         <div class="flex items-center gap-1 sm:gap-3">
           <a href="contact.html" class="hidden md:inline text-[17px] font-normal hover:opacity-60">Contact</a>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div id="mobile-menu" class="hidden lg:hidden mt-2 bg-white rounded-lg shadow-xl p-2 text-navy-900 max-h-[75vh] overflow-y-auto">
-        ${[['boutique.html', 'Boutique'], ['le-test.html', 'Le test'], ['index.html#eqology', 'Qui est Eqology'], ['partenaire.html', 'Devenir partenaire'], ['contact.html', 'Contact']].map(([h, t]) => `<a href="${h}" class="block px-3 py-3.5 text-lg border-b border-cream-200 last:border-0">${t}</a>`).join('')}
+        ${[['boutique.html', 'Boutique'], ['le-test.html', 'Le test'], ['index.html#en-bref', 'Qui est Eqology'], ['partenaire.html', 'Devenir partenaire'], ['contact.html', 'Contact']].map(([h, t]) => `<a href="${h}" class="block px-3 py-3.5 text-lg border-b border-cream-200 last:border-0">${t}</a>`).join('')}
         <p class="px-3 pt-4 pb-1 text-sm text-navy-400">Rayons</p>
         ${CATS.map(([h, t]) => `<a href="${h}" class="block px-3 py-2 text-[15px] ${t.startsWith('Coffrets') ? 'text-rouge' : 'text-navy-700'}">${t}</a>`).join('')}
       </div>
@@ -78,7 +78,7 @@
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 text-[15px]">
         ${col('Boutique', CATS.slice(0, 6))}
-        ${col('Comprendre', [['le-test.html', 'Le test oméga-3'], ['science-omega3.html', 'La science'], ['blog.html', 'Articles'], ['index.html#eqology', 'Qui est Eqology']])}
+        ${col('Comprendre', [['le-test.html', 'Le test oméga-3'], ['science-omega3.html', 'La science'], ['blog.html', 'Articles'], ['index.html#en-bref', 'Qui est Eqology']])}
         ${col('Partenariat', [['partenaire.html', 'Devenir partenaire'], ['partenaire.html#rappel', 'Être rappelé'], ['partenaire.html#questions', 'Questions fréquentes']])}
         ${col('Yves Coignard', [['contact.html', 'Contact'], ['mentions-legales.html', 'Mentions légales'], ['confidentialite.html', 'Confidentialité'], ['data:trustpilot', 'Avis Trustpilot']])}
       </div>
