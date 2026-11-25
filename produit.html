@@ -110,6 +110,8 @@
     P.filter((x) => x.cat === p.cat && x.slug !== p.slug).forEach((x) => assoc.push(x));
     P.filter((x) => x.top && !assoc.includes(x) && x.slug !== p.slug).forEach((x) => assoc.push(x));
     document.getElementById('associes').innerHTML = assoc.slice(0, 4).map(window.carteProduit).join('');
+    // Suivi Meta : fiche produit vue
+    if (window.suivre) window.suivre('ViewContent', { content_name: p.nom, content_ids: [p.slug], content_type: 'product', value: p.prix || 0, currency: 'EUR' });
     // Données structurées produit
     const ld = { '@context': 'https://schema.org', '@type': 'Product', name: p.nom, description: p.texte, brand: { '@type': 'Brand', name: 'Eqology' }, image: location.origin + '/assets/v2/produits/' + p.slug + '.webp' };
     if (p.prix) ld.offers = { '@type': 'Offer', price: p.prix, priceCurrency: 'EUR', url: window.lienEqology(p), availability: 'https://schema.org/InStock' };

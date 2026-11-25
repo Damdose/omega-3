@@ -29,8 +29,8 @@
       <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-900/20 lg:via-navy-900/60"></div>
       <div class="relative wrap pt-14 sm:pt-20 pb-14 sm:pb-20">
         <p class="oeil !text-glacier-300">Le partenariat Eqology</p>
-        <h1 class="titre text-[2.5rem] sm:text-6xl mt-5 max-w-[15ch]">Un complément de revenu en recommandant des oméga&#8209;3 de qualité.</h1>
-        <p class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. Pas de stock, pas de local, à votre rythme. Voici comment ça fonctionne.</p>
+        <h1 id="lp-titre" class="titre text-[2.5rem] sm:text-6xl mt-5 max-w-[15ch]">Un complément de revenu en recommandant des oméga&#8209;3 de qualité.</h1>
+        <p id="lp-sous-titre" class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. Pas de stock, pas de local, à votre rythme. Voici comment ça fonctionne.</p>
         <div class="mt-9 flex flex-col sm:flex-row gap-3">
           <a href="#rappel" class="btn btn-glacier">Être rappelé par Yves</a>
           <a href="#systeme" class="btn btn-clair">Comprendre le système</a>
@@ -145,6 +145,10 @@
             <p class="text-cream-300 mt-2 leading-relaxed">Si vous formez à votre tour des partenaires, une part de l'activité de votre équipe vous revient.</p>
           </div>
         </div>
+        <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <a href="#rappel" class="btn btn-glacier">Être rappelé par Yves</a>
+          <span class="text-sm text-cream-300">Un appel de dix minutes, sans engagement.</span>
+        </div>
         <p class="monte mt-8 text-cream-300 max-w-[70ch]">Les pourcentages et les paliers sont fixés par le plan de rémunération officiel d'Eqology. Yves vous le présente en visio, ligne par ligne. Ce que vous gagnez dépend de votre activité : aucun revenu n'est garanti.</p>
       </div>
     </section>
@@ -157,6 +161,7 @@
           <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[15ch]">Le revenu s'additionne, mois après mois.</h2>
           <p class="lead mt-5">Claire est naturopathe. Chaque mois, elle propose le test à ses patients et quelques-uns prennent l'abonnement. Les commandes des mois précédents continuent : le nombre de clients actifs monte, et ses commissions avec.</p>
           <p class="mt-4 text-sm text-navy-500">Exemple illustratif pour montrer le mécanisme. Ce n'est ni un cas réel ni une promesse de résultat.</p>
+          <a href="#rappel" class="btn btn-plein mt-8">Voir le plan avec Yves</a>
         </div>
         <figure class="monte rounded-3xl bg-white border border-cream-200 p-6 sm:p-8">
           <figcaption class="font-semibold">Clients actifs de Claire, mois après mois</figcaption>
@@ -293,7 +298,36 @@
     </section>
   </main>
 
-  <footer class="bg-navy-900 text-white pt-20 pb-10 border-t border-white/10"></footer>
+  <footer class="bg-navy-900 text-white py-8 pb-24 lg:pb-8 border-t border-white/10"></footer>
+  <div id="barre-cta" class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-cream-200 p-3 transition-transform duration-300">
+    <a href="#rappel" class="btn btn-plein w-full">Être rappelé par Yves</a>
+  </div>
+  <script>
+    // Le titre suit la pub : ?cible=pro pour les praticiens de santé
+    var CIBLE = new URLSearchParams(location.search).get('cible') || '';
+    (function () {
+      if (CIBLE === 'visio') {
+        var V = (window.SITE && window.SITE.prochaineVisio) || {};
+        var quand = V.jour ? (V.jour + (V.heure ? ' à ' + V.heure : '')) : '';
+        document.getElementById('lp-titre').innerHTML = 'Présentation en ligne&nbsp;: un complément de revenu avec Eqology.';
+        document.getElementById('lp-sous-titre').textContent = (quand ? 'Rendez-vous ' + quand + ', en visio. ' : 'Une visio de présentation, chaque semaine. ') + "Quarante minutes pour comprendre l'activité, le plan de rémunération officiel et la façon de démarrer. Gratuit, sans engagement.";
+        document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { if (/Être rappelé|Voir le plan/.test(a.textContent)) a.textContent = 'Réserver ma place'; });
+        var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = 'Réserver ma place';
+      }
+      if (CIBLE === 'pro') {
+        document.getElementById('lp-titre').innerHTML = 'Praticien de santé&nbsp;: un revenu en plus avec le test oméga&#8209;3.';
+        document.getElementById('lp-sous-titre').textContent = "Vos patients vous demandent quoi prendre. Proposez-leur le test : ils commandent seuls chez Eqology, et vous touchez une commission. Rien à vendre au cabinet, pas de stock.";
+        var pro = document.querySelector('input[name="profil"][value="Professionnel de santé"]');
+        if (pro) { pro.checked = true; var m = document.getElementById('champ-metier'); if (m) m.classList.remove('hidden'); }
+      }
+      // La barre du bas disparaît quand le formulaire est à l'écran
+      var barre = document.getElementById('barre-cta'), cible = document.getElementById('rappel');
+      if ('IntersectionObserver' in window && cible) new IntersectionObserver(function (e) {
+        barre.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+      }, { threshold: 0.05 }).observe(cible);
+    })();
+  </script>
+
   <script src="components.js"></script>
   <script>
   (function () {
@@ -323,16 +357,14 @@
           name: (form.prenom.value + ' ' + form.nom.value).trim(),
           phone: form.phone.value, email: form.email.value,
           profil: form.profil.value, metier: form.metier.value, creneau: form.creneau.value,
-          utm: utm, source: "Site · Page partenaire"
+          utm: utm, source: "Site · Page partenaire" + (CIBLE === 'pro' ? ' (praticiens)' : CIBLE === 'visio' ? ' (visio)' : '')
         })
       }).then(function (r) {
         if (!r.ok) throw new Error('http ' + r.status);
-        if (window.fbq) fbq('track', 'Lead');
-        form.querySelectorAll('label, fieldset, button[type="submit"]').forEach(function (el) { el.classList.add('hidden'); });
-        document.getElementById('form-ok').classList.remove('hidden');
+        location.href = 'merci.html?prenom=' + encodeURIComponent(form.prenom.value.trim()) + '&creneau=' + encodeURIComponent(form.creneau.value) + (CIBLE === 'visio' ? '&visio=1' : '');
       }).catch(function () {
         btn.disabled = false; btn.textContent = 'Être rappelé par Yves';
-        montre("L'envoi n'a pas marché. Réessayez dans un instant ou écrivez à Yves depuis la page contact.");
+        montre("L'envoi n'a pas marché. Vérifiez votre connexion et réessayez dans un instant.");
       });
       function montre(t) { erreur.textContent = t; erreur.classList.remove('hidden'); }
     });

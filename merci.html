@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci · Yves vous rappelle sous 48 heures</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tw-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <script src="site-config.js"></script>
+</head>
+<body>
+  <nav id="entete" class="sticky top-0 z-40"></nav>
+
+  <main>
+    <section class="bg-cream-50 sec">
+      <div class="wrap max-w-3xl">
+        <span class="inline-flex w-14 h-14 rounded-full bg-glacier-500 text-navy-900 items-center justify-center">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        </span>
+        <h1 id="merci-titre" class="titre text-4xl sm:text-6xl mt-6">C'est noté, merci.</h1>
+        <p id="merci-texte" class="lead mt-5">Yves vous rappelle sous 48 heures. L'appel dure une dizaine de minutes : il répond à vos questions et vous propose, si vous le souhaitez, la visio de présentation.</p>
+
+        <ol class="mt-10 grid gap-3">
+          <li class="flex gap-4 rounded-2xl bg-white border border-cream-200 p-5"><span class="titre text-2xl text-glacier-600">1</span><div><p class="font-semibold">Gardez votre téléphone à portée de main</p><p class="text-navy-600 mt-1">Le numéro qui vous appellera est celui d'Yves. S'il tombe sur votre messagerie, il rappelle.</p></div></li>
+          <li class="flex gap-4 rounded-2xl bg-white border border-cream-200 p-5"><span class="titre text-2xl text-glacier-600">2</span><div><p class="font-semibold">Notez vos questions</p><p class="text-navy-600 mt-1">Le temps disponible, le coût du démarrage, votre métier : tout se demande.</p></div></li>
+          <li class="flex gap-4 rounded-2xl bg-white border border-cream-200 p-5"><span class="titre text-2xl text-glacier-600">3</span><div><p class="font-semibold">La visio de présentation</p><p class="text-navy-600 mt-1">Le plan de rémunération officiel d'Eqology, présenté ligne par ligne.</p></div></li>
+        </ol>
+
+        <div class="mt-10 a-fournir rounded-[28px] aspect-video flex flex-col items-center justify-center text-center p-8">
+          <p class="font-semibold">En attendant : la présentation d'Yves en 10 minutes</p>
+          <p class="text-sm mt-1">Vidéo à tourner</p>
+        </div>
+
+        <p class="mt-10 text-navy-600">Envie de découvrir les produits en attendant ? <a href="boutique.html" class="font-semibold underline underline-offset-4">Voir la boutique</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-navy-900 text-white py-8"></footer>
+  <script src="components.js"></script>
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var prenom = (q.get('prenom') || '').slice(0, 40), creneau = (q.get('creneau') || '').slice(0, 60);
+      if (prenom) document.getElementById('merci-titre').textContent = "C'est noté, " + prenom + ', merci.';
+      if (creneau) document.getElementById('merci-texte').textContent = "Yves vous rappelle sous 48 heures, " + creneau.charAt(0).toLowerCase() + creneau.slice(1) + ". L'appel dure une dizaine de minutes : il répond à vos questions et vous propose, si vous le souhaitez, la visio de présentation.";
+      if (q.get('visio')) document.getElementById('merci-texte').textContent = "Votre place est demandée. Yves vous appelle sous 48 heures pour la confirmer et vous envoie le lien de la visio.";
+      // Conversion comptée ici, une seule fois par visite
+      if (window.suivre) window.suivre('Lead', { content_name: 'Partenariat Eqology' });
+    })();
+  </script>
+</body>
+</html>
