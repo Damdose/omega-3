@@ -13,9 +13,9 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251845">
-  <script src="site-config.js?v=202611251845"></script>
-  <script src="catalogue.js?v=202611251845"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251915">
+  <script src="site-config.js?v=202611251915"></script>
+  <script src="catalogue.js?v=202611251915"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -23,7 +23,7 @@
   <main>
     <!-- 1. Promesse + premier pas -->
     <header data-plein class="hero">
-      <img src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1200w" sizes="100vw" alt="" class="hero-img" fetchpriority="high">
+      <img id="lp-img" src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1200w" sizes="100vw" alt="" class="hero-img" fetchpriority="high">
       <div class="hero-voile"></div>
       <div class="relative wrap w-full pt-32 pb-8">
         <div class="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-end">
@@ -31,28 +31,84 @@
             <span id="profil-tag" class="oeil">Partenariat Eqology · distributeur indépendant</span>
             <h1 id="lp-titre" class="geant mt-6 max-w-[11ch] !text-[clamp(2.9rem,7.2vw,6.5rem)]">Un complément de revenu, <span class="points">sans stock.</span></h1>
             <p id="lp-sous-titre" class="mt-6 text-lg leading-snug max-w-[50ch]">Recommandez les oméga&#8209;3 norvégiens Eqology autour de vous. Vos clients commandent avec votre lien, Eqology les livre et vous verse une commission. À votre rythme, avec l'équipe d'Yves Coignard pour démarrer.</p>
-            <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/85"><li>✓ Sans engagement</li><li>✓ Aucun stock à acheter</li><li>✓ Vos coordonnées ne sont jamais revendues</li></ul>
+            <ul id="lp-rassure" class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/85"><li>✓ Sans engagement</li><li>✓ Aucun stock à acheter</li><li>✓ Vos coordonnées ne sont jamais revendues</li></ul>
           </div>
           <form id="premier-pas" class="rounded-lg bg-white text-nuit p-6 sm:p-7 shadow-2xl shadow-black/40" novalidate>
-            <p class="h3 !text-2xl" id="pp-titre">Yves vous rappelle sous 48&nbsp;heures</p>
-            <p class="text-nuit/60 mt-1.5">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
-            <label class="grid gap-1.5 mt-5"><span class="text-sm font-medium">Prénom</span>
-              <input name="pp_prenom" autocomplete="given-name" class="h-11 rounded-md border border-nuit/20 px-3.5 focus:border-nuit focus:outline-none"></label>
-            <label class="grid gap-1.5 mt-3"><span class="text-sm font-medium">Téléphone</span>
-              <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-11 rounded-md border border-nuit/20 px-3.5 focus:border-nuit focus:outline-none"></label>
+            <div id="pp-etape1">
+              <p class="mono text-nuit/70">Étape 1 sur 2</p>
+              <p class="h3 !text-2xl mt-2" id="pp-titre">Yves vous rappelle sous 48&nbsp;heures</p>
+              <p class="text-nuit/70 mt-1.5" id="pp-texte">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
+              <label class="grid gap-1.5 mt-5"><span class="text-sm font-medium">Prénom</span>
+                <input name="pp_prenom" autocomplete="given-name" class="h-11 rounded-md border border-nuit/20 px-3.5 bg-white focus:border-nuit focus:outline-none"></label>
+              <label class="grid gap-1.5 mt-3"><span class="text-sm font-medium">Téléphone</span>
+                <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-11 rounded-md border border-nuit/20 px-3.5 bg-white focus:border-nuit focus:outline-none"></label>
+              <button type="button" class="btn btn-plein w-full !min-h-[50px] mt-5" id="pp-suivant">Continuer</button>
+              <p class="mt-3 text-xs text-nuit/70 text-center">Encore trois petites questions, puis c'est fini.</p>
+            </div>
+            <div id="pp-etape2" class="hidden">
+              <p class="mono text-nuit/70">Étape 2 sur 2</p>
+              <p class="h3 !text-2xl mt-2" id="pp-bonjour">Merci, plus que trois réponses.</p>
+              <fieldset class="mt-5"><legend class="text-sm font-medium mb-2">Vous êtes</legend>
+                <div class="grid grid-cols-2 gap-2">
+                  <label class="relative"><input type="radio" name="pp_profil" value="Particulier" class="peer sr-only" checked><span class="flex items-center justify-center h-11 rounded-md border border-nuit/20 text-sm cursor-pointer peer-checked:bg-nuit peer-checked:text-white peer-checked:border-nuit peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Particulier</span></label>
+                  <label class="relative"><input type="radio" name="pp_profil" value="Professionnel de santé" class="peer sr-only"><span class="flex items-center justify-center h-11 rounded-md border border-nuit/20 text-sm cursor-pointer peer-checked:bg-nuit peer-checked:text-white peer-checked:border-nuit peer-focus-visible:ring-2 peer-focus-visible:ring-glacier-500">Praticien de santé</span></label>
+                </div></fieldset>
+              <label id="pp-champ-metier" class="grid gap-1.5 mt-3 hidden"><span class="text-sm font-medium">Votre métier</span>
+                <select name="pp_metier" class="h-11 rounded-md border border-nuit/20 px-3.5 bg-white focus:border-nuit focus:outline-none px-3"><option value="">Choisir</option><option>Naturopathe</option><option>Micronutritionniste</option><option>Diététicien(ne)</option><option>Kinésithérapeute</option><option>Ostéopathe</option><option>Coach</option><option>Autre</option></select></label>
+              <label class="grid gap-1.5 mt-3"><span class="text-sm font-medium">Le meilleur moment pour vous appeler</span>
+                <select name="pp_creneau" class="h-11 rounded-md border border-nuit/20 px-3.5 bg-white focus:border-nuit focus:outline-none px-3"><option>En matinée (9 h - 12 h)</option><option>À midi (12 h - 14 h)</option><option>L'après-midi (14 h - 18 h)</option><option>En soirée (18 h - 20 h)</option></select></label>
+              <label class="flex gap-3 items-start text-sm text-nuit/75 mt-4"><input type="checkbox" name="pp_accord" class="mt-0.5 w-5 h-5 accent-nuit shrink-0"><span>J'accepte d'être rappelé par Yves Coignard au sujet de l'activité Eqology (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>
+              <button type="submit" class="btn btn-plein w-full !min-h-[50px] mt-5" id="pp-bouton">Être rappelé par Yves</button>
+            </div>
             <p id="pp-erreur" class="hidden mt-3 text-sm text-red-700" role="alert"></p>
-            <button type="submit" class="btn btn-plein w-full !min-h-[50px] mt-5" id="pp-bouton">Être rappelé par Yves</button>
-            <p class="mt-3 text-xs text-nuit/70 text-center">Encore 3 petites questions à l'étape suivante.</p>
           </form>
         </div>
         <div class="hero-bas" aria-label="Les bases du partenariat">
-          <div class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap">
+          <div id="lp-defile" class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap">
             <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span>
             <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span>
           </div>
         </div>
       </div>
     </header>
+
+    <!-- Praticiens : le test comme outil -->
+    <section data-pour="pro" class="hidden sec fond-2">
+      <div class="wrap">
+        <div class="filet grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <span class="oeil">Pour votre cabinet</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Le test, un outil de suivi pour vos patients.</h2>
+            <div class="relative mt-10 rounded-xl overflow-hidden aspect-[3/2]"><img src="assets/v2/resultat.webp" srcset="assets/v2/resultat-800.webp 800w, assets/v2/resultat.webp 1600w" sizes="(min-width:1024px) 45vw, 100vw" alt="Une praticienne explique un résultat d'analyse à sa patiente" class="absolute inset-0 w-full h-full object-cover " loading="lazy"></div>
+          </div>
+          <ol class="border-t border-white/12">
+            <li class="py-6 border-b border-white/12"><p class="mono text-glacier-300">01</p><h3 class="h3 mt-3">Une mesure avant de conseiller</h3><p class="text-white/65 mt-2 leading-relaxed">Le patient fait le test chez lui&nbsp;: une goutte de sang, un laboratoire indépendant, un résultat en ligne. Vous partez d'un chiffre.</p></li>
+            <li class="py-6 border-b border-white/12"><p class="mono text-glacier-300">02</p><h3 class="h3 mt-3">Un suivi qui se voit</h3><p class="text-white/65 mt-2 leading-relaxed">Quatre mois plus tard, un second test montre ce qui a changé. Vous en parlez ensemble à la consultation suivante.</p></li>
+            <li class="py-6 border-b border-white/12"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Rien à vendre au cabinet</h3><p class="text-white/65 mt-2 leading-relaxed">Le patient commande seul chez Eqology avec votre lien. Vous gardez votre rôle de conseil, et vous restez seul juge de vos recommandations.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visio : ce qu'on y voit -->
+    <section data-pour="visio" class="hidden sec fond-2">
+      <div class="wrap">
+        <div class="filet grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <span class="oeil">La visio</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Ce que vous verrez en 45&nbsp;minutes.</h2>
+            <p id="visio-quand" class="lead mt-5">Une visio de présentation a lieu chaque semaine. Elle est gratuite et vous pouvez poser vos questions en direct.</p>
+            <a href="#premier-pas" class="btn btn-plein mt-8">Réserver ma place</a>
+          </div>
+          <ol class="grid sm:grid-cols-2 gap-4">
+            <li class="carte p-6"><p class="mono text-glacier-300">01</p><h3 class="h3 mt-3">L'entreprise et ses produits</h3><p class="text-white/65 mt-2 leading-relaxed">Qui est Eqology, d'où viennent les oméga&#8209;3, comment fonctionne le test.</p></li>
+            <li class="carte p-6"><p class="mono text-glacier-300">02</p><h3 class="h3 mt-3">L'activité au quotidien</h3><p class="text-white/65 mt-2 leading-relaxed">Ce que fait un partenaire, le temps que ça demande, ce que la marque prend en charge.</p></li>
+            <li class="carte p-6"><p class="mono text-glacier-300">03</p><h3 class="h3 mt-3">Le plan de rémunération</h3><p class="text-white/65 mt-2 leading-relaxed">Le plan officiel d'Eqology, présenté ligne par ligne. Aucune promesse de revenu.</p></li>
+            <li class="carte p-6"><p class="mono text-glacier-300">04</p><h3 class="h3 mt-3">Comment démarrer</h3><p class="text-white/65 mt-2 leading-relaxed">Les kits de départ, leurs prix, et l'équipe qui vous accompagne les premières semaines.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
 
     <!-- 2. Le principe en trois étapes -->
     <section id="principe" class="sec scroll-mt-24">
@@ -70,7 +126,7 @@
     </section>
 
     <!-- 3. Pour qui -->
-    <section id="pour-qui" class="sec fond-2 scroll-mt-24">
+    <section id="pour-qui" data-pour="revenu visio" class="sec fond-2 scroll-mt-24">
       <div class="wrap">
         <div class="filet">
           <span class="oeil">Pour qui</span>
@@ -136,6 +192,20 @@
       </div>
     </section>
 
+    <!-- Qui va vous rappeler -->
+    <section id="yves" class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[auto_1fr] lg:items-center">
+          <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-glacier-500 text-nuit grid place-items-center text-4xl sm:text-5xl font-light" aria-hidden="true">YC</div>
+          <div>
+            <span class="oeil">Qui va vous rappeler</span>
+            <h2 class="h2-s mt-6 max-w-[30ch]">Yves Coignard, distributeur indépendant Eqology.</h2>
+            <p class="lead mt-4 !max-w-[64ch]">Il vous rappelle lui-même, au moment que vous avez choisi. En dix minutes, il répond à vos questions et vous dit si l'activité peut vous convenir. Si ce n'est pas pour vous, vous en restez là.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 7. Démarrer -->
     <section class="sec">
       <div class="wrap">
@@ -178,13 +248,12 @@
         <div class="filet grid gap-12 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <div>
             <span class="oeil">Être rappelé</span>
-            <h2 class="geant !text-[clamp(2.6rem,5.2vw,4.6rem)] mt-10 max-w-[11ch]">Yves vous rappelle sous <span class="points">48&nbsp;heures.</span></h2>
+            <h2 id="rappel-titre" class="geant !text-[clamp(2.6rem,5.2vw,4.6rem)] mt-10 max-w-[11ch]">Yves vous rappelle sous <span class="points">48&nbsp;heures.</span></h2>
             <p class="lead mt-6">Un appel de dix minutes pour faire connaissance. Vous ne vous engagez à rien en laissant votre numéro.</p>
             <ul class="mt-8 space-y-3 text-white/70"><li>✓ Vos coordonnées ne servent qu'à ce rappel.</li><li>✓ Pas de démarchage, pas de liste revendue.</li></ul>
           </div>
           <form id="form-rappel" class="rounded-xl bg-white text-nuit p-6 sm:p-9 shadow-2xl shadow-black/40 grid gap-5" novalidate>
-          <p id="pp-suite" class="hidden rounded-xl bg-glacier-50 px-4 py-3 text-sm font-medium">Merci, plus que trois réponses : votre profil, le moment pour vous appeler et votre accord.</p>
-          <div class="grid gap-5 sm:grid-cols-2">
+                    <div class="grid gap-5 sm:grid-cols-2">
             <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span>
               <input name="prenom" required autocomplete="given-name" class="h-12 rounded-lg border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
             <label class="grid gap-2"><span class="text-sm font-semibold">Nom</span>
@@ -234,96 +303,130 @@
   </main>
 
 <div id="barre-cta" class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-nuit/95 backdrop-blur border-t border-white/10 p-3 transition-transform duration-300">
-    <a href="#rappel" class="btn btn-plein w-full">Être rappelé par Yves</a>
+    <a href="#premier-pas" class="btn btn-plein w-full" id="barre-bouton">Être rappelé par Yves</a>
   </div>
-  <script>
-    // Le titre suit la pub : ?cible=pro pour les praticiens de santé
-    var CIBLE = new URLSearchParams(location.search).get('cible') || '';
-    (function () {
-      if (CIBLE === 'visio') {
-        var V = (window.SITE && window.SITE.prochaineVisio) || {};
-        var quand = V.jour ? (V.jour + (V.heure ? ' à ' + V.heure : '')) : '';
-        document.getElementById('lp-titre').innerHTML = 'Le partenariat Eqology, <span class="points">en 45&nbsp;minutes.</span>';
-        document.getElementById('lp-sous-titre').textContent = (quand ? 'Rendez-vous ' + quand + ', en visio. ' : 'Une visio de présentation, chaque semaine. ') + "L'activité, le plan de rémunération officiel, la façon de démarrer. Gratuit, sans engagement : posez vos questions en direct.";
-        document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { if (/Être rappelé|Voir le plan/.test(a.textContent)) a.textContent = 'Réserver ma place'; });
-        var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = 'Réserver ma place';
-        document.getElementById('pp-titre').textContent = 'Réservez votre place à la visio'; document.getElementById('pp-bouton').textContent = 'Réserver ma place';
-      }
-      if (CIBLE === 'pro') {
-        document.getElementById('lp-titre').innerHTML = 'Recommandez, sans rien vendre <span class="points">au cabinet.</span>';
-        document.getElementById('lp-sous-titre').textContent = "Vos patients vous demandent quels oméga-3 prendre ? Donnez-leur une mesure, pas un avis : ils font le test chez eux, commandent seuls chez Eqology avec votre lien, et vous touchez une commission.";
-        var pt = document.getElementById('profil-tag'); if (pt) pt.textContent = 'Praticiens de santé · partenariat Eqology';
-        var pro = document.querySelector('input[name="profil"][value="Professionnel de santé"]');
-        if (pro) { pro.checked = true; var m = document.getElementById('champ-metier'); if (m) m.classList.remove('hidden'); }
-      }
-      // Premier pas : on recopie prénom et téléphone dans le formulaire complet
-      var pp = document.getElementById('premier-pas');
-      if (pp) pp.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var f = document.getElementById('form-rappel'), err = document.getElementById('pp-erreur');
-        var tel = pp.pp_tel.value.replace(/[^\d+]/g, '');
-        if (!pp.pp_prenom.value.trim() || tel.length < 10) { err.textContent = 'Indiquez votre prénom et un numéro complet.'; err.classList.remove('hidden'); return; }
-        f.prenom.value = pp.pp_prenom.value.trim(); f.phone.value = pp.pp_tel.value;
-        if (window.suivre) window.suivre('PremierPas', {}, true);
-        document.getElementById('rappel').scrollIntoView({ behavior: 'smooth' });
-        var info = document.getElementById('pp-suite'); if (info) info.classList.remove('hidden');
-        setTimeout(function () { var r = f.querySelector('input[name="profil"]:checked') || f.querySelector('input[name="profil"]'); if (r) r.focus({ preventScroll: true }); }, 600);
-      });
-      // La barre du bas disparaît quand le formulaire est à l'écran
-      var barre = document.getElementById('barre-cta'), vus = {};
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (es) {
-          es.forEach(function (e) { vus[e.target.id] = e.isIntersecting; });
-          barre.style.transform = (vus['rappel'] || vus['premier-pas']) ? 'translateY(110%)' : '';
-        }, { threshold: 0.05 });
-        ['rappel', 'premier-pas'].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
-      }
-    })();
-  </script>
 
   <footer></footer>
-  <script src="components.js?v=202611251845"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251845"></script>
+  <script src="components.js?v=202611251915"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251915"></script>
   <script>
   (function () {
-    var form = document.getElementById('form-rappel');
-    var metier = document.getElementById('champ-metier');
-    var erreur = document.getElementById('form-erreur');
-    form.querySelectorAll('input[name="profil"]').forEach(function (r) {
-      r.addEventListener('change', function () { metier.classList.toggle('hidden', form.profil.value !== 'Professionnel de santé'); });
-    });
-    // Les paramètres utm_* de la pub suivent le contact
+    // ---------- 1. La page suit la pub : ?cible=pro (praticiens), ?cible=visio, sinon complément de revenu ----------
     var q = new URLSearchParams(location.search);
-    var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return q.get(k) ? k.replace('utm_', '') + '=' + q.get(k) : ''; }).filter(Boolean).join(' · ');
+    var CIBLE = ({ pro: 'pro', visio: 'visio' })[q.get('cible')] || 'revenu';
+    var $ = function (id) { return document.getElementById(id); };
+    var V = (window.SITE && window.SITE.prochaineVisio) || {};
+    var quand = V.jour ? (V.jour + (V.heure ? ' à ' + V.heure : '')) : '';
+    var PAGES = {
+      pro: {
+        tag: 'Praticiens de santé · partenariat Eqology',
+        titre: 'Proposez le test oméga&#8209;3 <span class="points">à vos patients.</span>',
+        sous: "Une mesure objective avant de conseiller, une seconde pour suivre. Vos patients commandent seuls chez Eqology avec votre lien : vous ne vendez rien au cabinet, et vous touchez une commission.",
+        img: 'praticienne', rassure: ['Sans engagement', 'Rien à vendre au cabinet', 'Vous restez seul juge de vos conseils'],
+        defile: ['Mesure objective', 'Laboratoire indépendant', 'Rien à vendre au cabinet', 'Eqology livre', 'Rappel sous 48 heures'],
+        ppTitre: 'Parlons-en dix minutes avec Yves', ppTexte: "Il vous explique comment d'autres praticiens utilisent le test. Sans engagement.",
+        profil: 'Professionnel de santé'
+      },
+      visio: {
+        tag: 'Visio de présentation · gratuite',
+        titre: 'Le partenariat Eqology, <span class="points">en 45&nbsp;minutes.</span>',
+        sous: (quand ? 'Prochaine visio ' + quand + '. ' : 'Une visio de présentation, chaque semaine. ') + "L'activité, le plan de rémunération officiel et la façon de démarrer, expliqués simplement. Gratuit, sans engagement.",
+        rassure: ['Gratuit', 'Sans engagement', 'Questions en direct'],
+        defile: ['45 minutes', 'Gratuit', 'Sans engagement', 'Le plan officiel', 'Questions en direct'],
+        ppTitre: 'Réservez votre place', ppTexte: quand ? 'Visio ' + quand + '. Yves vous envoie le lien.' : 'Yves vous rappelle pour vous donner la date et le lien.',
+        bouton: 'Réserver ma place'
+      }
+    };
+    var P = PAGES[CIBLE];
+    // On ne garde que les sections faites pour cette pub (retirées du document pour garder les espacements justes)
+    document.querySelectorAll('[data-pour]').forEach(function (el) {
+      if (el.getAttribute('data-pour').split(' ').indexOf(CIBLE) === -1) el.remove(); else el.classList.remove('hidden');
+    });
+    if (P) {
+      $('profil-tag').textContent = P.tag;
+      $('lp-titre').innerHTML = P.titre;
+      $('lp-sous-titre').textContent = P.sous;
+      $('lp-rassure').innerHTML = P.rassure.map(function (t) { return '<li>✓ ' + t + '</li>'; }).join('');
+      $('lp-defile').innerHTML = P.defile.concat(P.defile).map(function (t, i) { return '<span' + (i >= P.defile.length ? ' aria-hidden="true"' : '') + '>' + t + '</span>'; }).join('');
+      $('pp-titre').textContent = P.ppTitre; $('pp-texte').textContent = P.ppTexte;
+      if (P.img) { var im = $('lp-img'); im.src = 'assets/v2/' + P.img + '.webp'; im.srcset = 'assets/v2/' + P.img + '-800.webp 800w, assets/v2/' + P.img + '.webp 1600w'; im.style.objectPosition = '50% 30%'; }
+      if (P.bouton) {
+        $('pp-bouton').textContent = P.bouton; $('barre-bouton').textContent = P.bouton;
+        var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = P.bouton;
+        $('rappel-titre').innerHTML = 'Réservez votre place <span class="points">à la visio.</span>';
+        document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { a.textContent = P.bouton; });
+      }
+      if (CIBLE === 'visio' && quand && $('visio-quand')) $('visio-quand').textContent = 'Prochaine visio ' + quand + '. Elle est gratuite et vous pouvez poser vos questions en direct.';
+      if (P.profil) {
+        var r1 = document.querySelector('input[name="pp_profil"][value="' + P.profil + '"]'); if (r1) r1.checked = true; $('pp-champ-metier').classList.remove('hidden');
+        var r2 = document.querySelector('#form-rappel input[name="profil"][value="' + P.profil + '"]'); if (r2) { r2.checked = true; $('champ-metier').classList.remove('hidden'); }
+      }
+    }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      erreur.classList.add('hidden');
-      var tel = form.phone.value.replace(/[^\d+]/g, '');
-      if (!form.prenom.value.trim()) return montre("Indiquez votre prénom.");
-      if (tel.length < 10) return montre("Indiquez un numéro de téléphone complet.");
-      if (!form.consentement.checked) return montre("Cochez la case pour accepter d'être rappelé.");
-      var btn = form.querySelector('button[type="submit"]');
+    // ---------- 2. Envoi d'une demande (commun aux deux formulaires) ----------
+    var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return q.get(k) ? k.replace('utm_', '') + '=' + q.get(k) : ''; }).filter(Boolean).join(' · ');
+    var SOURCE = 'Site · Page partenaire' + (CIBLE === 'pro' ? ' (praticiens)' : CIBLE === 'visio' ? ' (visio)' : '');
+    var texteBouton = (P && P.bouton) || 'Être rappelé par Yves';
+    function envoyer(d, btn, montre) {
       btn.disabled = true; btn.textContent = 'Envoi…';
-      fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: (form.prenom.value + ' ' + form.nom.value).trim(),
-          phone: form.phone.value, email: form.email.value,
-          profil: form.profil.value, metier: form.metier.value, creneau: form.creneau.value,
-          utm: utm, source: "Site · Page partenaire" + (CIBLE === 'pro' ? ' (praticiens)' : CIBLE === 'visio' ? ' (visio)' : '')
-        })
+      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: d.name, phone: d.phone, email: d.email || '', profil: d.profil, metier: d.metier || '', creneau: d.creneau, utm: utm, source: SOURCE })
       }).then(function (r) {
         if (!r.ok) throw new Error('http ' + r.status);
-        location.href = 'merci.html?prenom=' + encodeURIComponent(form.prenom.value.trim()) + '&creneau=' + encodeURIComponent(form.creneau.value) + (CIBLE === 'visio' ? '&visio=1' : '');
+        location.href = 'merci.html?prenom=' + encodeURIComponent(d.prenom) + '&creneau=' + encodeURIComponent(d.creneau) + (CIBLE === 'visio' ? '&visio=1' : '');
       }).catch(function () {
-        btn.disabled = false; btn.textContent = 'Être rappelé par Yves';
+        btn.disabled = false; btn.textContent = texteBouton;
         montre("L'envoi n'a pas marché. Vérifiez votre connexion et réessayez dans un instant.");
       });
-      function montre(t) { erreur.textContent = t; erreur.classList.remove('hidden'); }
+    }
+
+    // ---------- 3. Formulaire du haut, en deux étapes dans la même carte ----------
+    var pp = $('premier-pas'), ppErr = $('pp-erreur');
+    function ppMontre(t) { ppErr.textContent = t; ppErr.classList.remove('hidden'); }
+    $('pp-suivant').addEventListener('click', function () {
+      ppErr.classList.add('hidden');
+      var tel = pp.pp_tel.value.replace(/[^\d+]/g, '');
+      if (!pp.pp_prenom.value.trim() || tel.length < 10) return ppMontre('Indiquez votre prénom et un numéro complet.');
+      if (window.suivre) window.suivre('PremierPas', {}, true);
+      $('pp-etape1').classList.add('hidden'); $('pp-etape2').classList.remove('hidden');
+      $('pp-bonjour').textContent = 'Merci ' + pp.pp_prenom.value.trim() + ', plus que trois réponses.';
+      var r = pp.querySelector('input[name="pp_profil"]:checked'); if (r) r.focus({ preventScroll: true });
     });
+    pp.querySelectorAll('input[name="pp_profil"]').forEach(function (r) {
+      r.addEventListener('change', function () { $('pp-champ-metier').classList.toggle('hidden', pp.pp_profil.value !== 'Professionnel de santé'); });
+    });
+    pp.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if ($('pp-etape2').classList.contains('hidden')) { $('pp-suivant').click(); return; }
+      ppErr.classList.add('hidden');
+      if (!pp.pp_accord.checked) return ppMontre("Cochez la case pour accepter d'être rappelé.");
+      envoyer({ prenom: pp.pp_prenom.value.trim(), name: pp.pp_prenom.value.trim(), phone: pp.pp_tel.value, profil: pp.pp_profil.value, metier: pp.pp_metier.value, creneau: pp.pp_creneau.value }, $('pp-bouton'), ppMontre);
+    });
+
+    // ---------- 4. Formulaire complet du bas ----------
+    var form = $('form-rappel'), erreur = $('form-erreur');
     function montre(t) { erreur.textContent = t; erreur.classList.remove('hidden'); }
+    form.querySelectorAll('input[name="profil"]').forEach(function (r) {
+      r.addEventListener('change', function () { $('champ-metier').classList.toggle('hidden', form.profil.value !== 'Professionnel de santé'); });
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); erreur.classList.add('hidden');
+      var tel = form.phone.value.replace(/[^\d+]/g, '');
+      if (!form.prenom.value.trim()) return montre('Indiquez votre prénom.');
+      if (tel.length < 10) return montre('Indiquez un numéro de téléphone complet.');
+      if (!form.consentement.checked) return montre("Cochez la case pour accepter d'être rappelé.");
+      envoyer({ prenom: form.prenom.value.trim(), name: (form.prenom.value + ' ' + form.nom.value).trim(), phone: form.phone.value, email: form.email.value, profil: form.profil.value, metier: form.metier.value, creneau: form.creneau.value }, form.querySelector('button[type="submit"]'), montre);
+    });
+
+    // ---------- 5. La barre du bas (mobile) disparaît quand un formulaire est à l'écran ----------
+    var barre = $('barre-cta'), vus = {};
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { vus[e.target.id] = e.isIntersecting; });
+        barre.style.transform = (vus['rappel'] || vus['premier-pas']) ? 'translateY(110%)' : '';
+      }, { threshold: 0.05 });
+      ['rappel', 'premier-pas'].forEach(function (id) { var el = $(id); if (el) obs.observe(el); });
+    }
   })();
   </script>
 </body>
