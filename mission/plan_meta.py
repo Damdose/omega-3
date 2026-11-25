@@ -5,7 +5,7 @@ ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.expanduser('~/Documents/crm-heyfuture/docs/chantier-skills/formats'))
 import explication as X
 
-SITE = 'https://eqology-omega3.vercel.app/'
+SITE = 'https://eqology-france.vercel.app/'
 UTM = 'utm_source=meta&amp;utm_medium=paid'
 
 
@@ -194,7 +194,7 @@ cfg = dict(
                 ('Identifiant du pixel dans site-config.js, puis test du Lead', 'Heyfuture', ('Oui', 'mal')),
                 ('Envoi d’un formulaire de test en production, e-mail reçu par Yves et Damien', 'Heyfuture', 'Le jour même'),
                 ('Bandeau cookies : le pixel ne part qu’après « Accepter »', 'Heyfuture', 'Le jour même'),
-                ('Vérification du domaine dans Meta (eqology-omega3.vercel.app)', 'Heyfuture', 'Sous 7 jours'),
+                ('Vérification du domaine dans Meta (eqology-france.vercel.app)', 'Heyfuture', 'Sous 7 jours'),
                 ('Lien partenaire Eqology d’Yves dans site-config.js', 'Yves', 'Pour la boutique'),
                 ('Date et heure de la prochaine visio, avec le parrain', 'Yves', 'Pour la campagne C'),
                 ('Photo et vidéo d’Yves', 'Yves', 'Facultatif au début'),

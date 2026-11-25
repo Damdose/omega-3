@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /merci.html
 Disallow: /api/
 
-Sitemap: https://eqology-omega3.vercel.app/sitemap.xml
+Sitemap: https://eqology-france.vercel.app/sitemap.xml

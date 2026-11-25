@@ -12,7 +12,7 @@ window.SITE = {
   codePartenaire: '',
   modeleLienProduit: '{url}',
   // Identifiant du pixel Meta (vide = pas de pixel chargé)
-  pixelMeta: '',
+  pixelMeta: '1114935464677335',
   // Page Trustpilot d'Eqology (avis publics, sans note affichée)
   trustpilot: 'https://fr.trustpilot.com/review/eqology.com',
   // Prochaine visio de présentation (pubs « invitation », page partenaire.html?cible=visio)
