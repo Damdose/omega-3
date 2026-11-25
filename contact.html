@@ -13,20 +13,26 @@
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
-  <script src="site-config.js?v=202611251600"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251700">
+  <script src="site-config.js?v=202611251700"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
-    <header data-plein class="tete">
-      <div class="wrap">
+    <header data-plein class="hero hero-court">
+      <img src="assets/v2/sante-immunite.webp" alt="" class="hero-img" fetchpriority="high">
+      <div class="hero-voile"></div>
+      <div class="relative wrap w-full pt-32 pb-10">
         <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5" aria-hidden="true">/</span> <span aria-current="page">Contact</span></nav>
-        <span class="oeil mt-8">Contact</span>
-        <h1 class="h1-page mt-6 max-w-[14ch]">Une question&nbsp;? <span class="points">Écrivez à Yves.</span></h1>
-        <p class="lead mt-6">Un produit à choisir, une commande, le test, le partenariat&nbsp;: Yves Coignard, distributeur indépendant Eqology, vous répond personnellement.</p>
+        <div class="mt-8"><span class="oeil">Contact</span></div>
+        <div class="grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:items-end">
+          <h1 class="geant mt-6 max-w-[13ch]">Une question&nbsp;? <span class="points">Écrivez à Yves.</span></h1>
+          <div class="lg:pb-2"><p class="lead">Un produit à choisir, une commande, le test, le partenariat&nbsp;: Yves Coignard, distributeur indépendant Eqology, vous répond personnellement.</p></div>
+        </div>
+        
+        <div class="hero-bas"></div>
       </div>
     </header>
 
@@ -68,7 +74,7 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251600"></script>
+  <script src="components.js?v=202611251700"></script>
   <script>
   (function () {
     var f = document.getElementById('form-contact'), err = document.getElementById('c-erreur');

@@ -14,36 +14,51 @@
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
-  <script src="site-config.js?v=202611251600"></script>
-  <script src="catalogue.js?v=202611251600"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251700">
+  <script src="site-config.js?v=202611251700"></script>
+  <script src="catalogue.js?v=202611251700"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <!-- 1. Promesse -->
-    <header data-plein class="relative overflow-hidden">
-      <div class="wrap tete">
+    <header data-plein class="hero hero-court">
+      <img src="assets/v2/huile.webp" alt="" class="hero-img" fetchpriority="high">
+      <div class="hero-voile"></div>
+      <div class="relative wrap w-full pt-32 pb-8">
         <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <span aria-current="page">Le test oméga-3</span></nav>
-        <div class="mt-8 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
-          <div>
-            <span class="oeil">Le test oméga-3 à domicile</span>
-            <h1 class="h1-page mt-6 max-w-[13ch]">Savoir où vous en êtes, <span class="points">en cinq minutes.</span></h1>
-            <p class="lead mt-6">Une goutte de sang prélevée chez vous, analysée par un laboratoire indépendant. Vous recevez votre équilibre entre oméga-6 et oméga-3, puis vous refaites le test quelques mois plus tard pour comparer.</p>
-            <div class="mt-8 flex flex-wrap gap-3">
+        <span class="oeil mt-8">Le test oméga-3 à domicile</span>
+        <div class="mt-6 grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:items-end">
+          <h1 class="geant max-w-[13ch]">Savoir où vous en êtes, <span class="points">en cinq minutes.</span></h1>
+          <div class="lg:pb-2">
+            <p class="lead">Une goutte de sang prélevée chez vous, analysée par un laboratoire indépendant. Vous recevez votre équilibre entre oméga-6 et oméga-3, puis vous refaites le test quelques mois plus tard pour comparer.</p>
+            <div class="mt-5 flex flex-wrap gap-3">
               <a href="produit.html?p=omega-3-test-kit" class="btn btn-plein">Commander le test · <span data-prix-test>88&nbsp;€</span></a>
-              <a href="contact.html" class="btn btn-clair">Poser une question à Yves</a>
+              <a href="contact.html" class="btn btn-clair">Poser une question</a>
             </div>
-            <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/60"><li>✓ Sans rendez-vous</li><li>✓ Laboratoire indépendant</li><li>✓ Résultat anonyme, en ligne</li></ul>
           </div>
-          <div class="relative rounded-xl overflow-hidden aspect-square bg-white">
-            <img src="assets/v2/testkit-detail.webp" alt="Le kit de test oméga-3 Eqology" class="absolute inset-0 w-full h-full object-cover" width="1000" height="1000" fetchpriority="high">
+        </div>
+        <div class="hero-bas"><div class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap"><span>Sans rendez-vous</span><span>Laboratoire indépendant</span><span>Résultat anonyme, en ligne</span><span>Second test pour comparer</span><span aria-hidden="true">Sans rendez-vous</span><span aria-hidden="true">Laboratoire indépendant</span><span aria-hidden="true">Résultat anonyme, en ligne</span><span aria-hidden="true">Second test pour comparer</span></div></div>
+      </div>
+    </header>
+
+    <!-- Le kit -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <span class="oeil">Le kit</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Tout est dans l'enveloppe.</h2>
+            <p class="lead mt-5">Le nécessaire pour prélever une goutte de sang, un buvard, une enveloppe retour et un mode d'emploi illustré. Aucun rendez-vous, aucun déplacement.</p>
+          </div>
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-white">
+            <img src="assets/v2/testkit-detail.webp" alt="Le kit de test oméga-3 Eqology" class="absolute inset-0 w-full h-full object-cover" width="1000" height="1000" loading="lazy">
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
     <!-- 2. Comment ça se passe -->
     <section class="sec">
@@ -85,7 +100,7 @@
       <div class="wrap">
         <div class="filet grid gap-12 lg:grid-cols-[1fr_1fr] items-center">
           <figure class="relative rounded-xl overflow-hidden aspect-[4/3] bg-nuit-2 order-last lg:order-first">
-            <img src="assets/v2/huile.webp" alt="Huile Pure Arctic Oil versée d'un flacon" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+            <img src="assets/v2/pao-natural.webp" alt="Flacon de Pure Arctic Oil Natural" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
           </figure>
           <div>
             <span class="oeil">Et après&nbsp;?</span>
@@ -136,7 +151,7 @@
   </main>
 
   <footer></footer>
-  <script src="components.js?v=202611251600"></script>
+  <script src="components.js?v=202611251700"></script>
   <script>
     (function () { var t = window.produit && window.produit('omega-3-test-kit'); if (t) document.querySelectorAll('[data-prix-test]').forEach(function (e) { e.textContent = window.prixTexte(t); }); })();
   </script>

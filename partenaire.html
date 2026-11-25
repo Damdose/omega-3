@@ -14,28 +14,28 @@
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
-  <script src="site-config.js?v=202611251600"></script>
-  <script src="catalogue.js?v=202611251600"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251700">
+  <script src="site-config.js?v=202611251700"></script>
+  <script src="catalogue.js?v=202611251700"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <!-- 1. Promesse + premier pas -->
-    <header data-plein class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
-      <img src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1200w" sizes="100vw" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
-      <div class="absolute inset-0 bg-gradient-to-b from-nuit/40 via-nuit/60 to-nuit/95"></div>
+    <header data-plein class="hero">
+      <img src="assets/v2/consultation.webp" srcset="assets/v2/consultation-800.webp 800w, assets/v2/consultation.webp 1200w" sizes="100vw" alt="" class="hero-img" fetchpriority="high">
+      <div class="hero-voile"></div>
       <div class="relative wrap w-full pt-32 pb-8">
         <div class="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-end">
           <div>
             <span id="profil-tag" class="oeil">Partenariat Eqology · distributeur indépendant</span>
-            <h1 id="lp-titre" class="geant mt-6 max-w-[11ch] !text-[clamp(2.9rem,7vw,6.4rem)]">Un complément de revenu, <span class="points">sans stock.</span></h1>
+            <h1 id="lp-titre" class="geant mt-6 max-w-[11ch] !text-[clamp(2.9rem,7.2vw,6.5rem)]">Un complément de revenu, <span class="points">sans stock.</span></h1>
             <p id="lp-sous-titre" class="mt-6 text-lg leading-snug max-w-[50ch]">Vous parlez déjà santé autour de vous&nbsp;? Recommandez des oméga-3 de Norvège&nbsp;: vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. À votre rythme, avec une équipe qui vous forme.</p>
           </div>
           <form id="premier-pas" class="rounded-lg bg-white text-nuit p-6 sm:p-7 shadow-2xl shadow-black/40" novalidate>
-            <p class="text-2xl" id="pp-titre">Yves vous rappelle sous 48&nbsp;heures</p>
+            <p class="h3 !text-2xl" id="pp-titre">Yves vous rappelle sous 48&nbsp;heures</p>
             <p class="text-nuit/60 mt-1.5">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
             <label class="grid gap-1.5 mt-5"><span class="text-sm font-medium">Prénom</span>
               <input name="pp_prenom" autocomplete="given-name" class="h-11 rounded-md border border-nuit/20 px-3.5 focus:border-nuit focus:outline-none"></label>
@@ -46,8 +46,8 @@
             <p class="mt-3 text-xs text-nuit/50 text-center">Encore 3 petites questions à l'étape suivante.</p>
           </form>
         </div>
-        <div class="mt-10 pt-7 border-t border-white/30 overflow-hidden" aria-label="Les bases du partenariat">
-          <div class="defile text-[26px] md:text-[30px] font-medium tracking-tight text-white/90 whitespace-nowrap">
+        <div class="hero-bas" aria-label="Les bases du partenariat">
+          <div class="defile text-[24px] md:text-[30px] font-normal tracking-tight text-white/90 whitespace-nowrap">
             <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span>
             <span>Sans stock</span><span>Sans local</span><span>À votre rythme</span><span>Eqology livre</span><span>Formé par l'équipe</span><span>Rappel sous 48 heures</span>
           </div>
@@ -73,7 +73,7 @@
               <g id="liens" stroke="rgba(255,255,255,.22)" stroke-width="1"></g>
               <g id="noeuds"></g>
               <circle cx="300" cy="300" r="46" fill="#0A1622" stroke="rgba(255,255,255,.4)"/>
-              <text x="300" y="306" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter Tight, system-ui, sans-serif">Vous</text>
+              <text x="300" y="306" text-anchor="middle" fill="#fff" font-size="17" font-family="Albert Sans, system-ui, sans-serif">Vous</text>
             </svg>
           </div>
         </div>
@@ -326,8 +326,8 @@
   </script>
 
   <footer></footer>
-  <script src="components.js?v=202611251600"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251600"></script>
+  <script src="components.js?v=202611251700"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251700"></script>
   <script>
     (function () {
       var M = window.MECA;

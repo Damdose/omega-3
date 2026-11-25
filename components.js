@@ -39,17 +39,16 @@
   }
 
   function getNav() {
-    if (isLP) return getNavLP();
     const lien = (h, t) => `<a href="${h}" class="hover:opacity-60 transition-opacity ${(h === currentPage || (h === 'boutique.html' && (currentPage === 'boutique.html' || currentPage === 'produit.html'))) ? 'underline underline-offset-[6px] decoration-1' : ''}">${t}</a>`;
     return `<div class="max-w-[1400px] mx-auto">
       <div class="bg-white rounded-lg shadow-[0_8px_30px_rgba(11,29,46,.12)] h-14 sm:h-[58px] flex items-center justify-between gap-4 pl-4 pr-2 sm:pl-5 sm:pr-3 text-navy-900">
         ${marque('index.html')}
-        <div class="hidden lg:flex items-center gap-8 text-[16px]">
+        <div class="hidden lg:flex items-center gap-8 text-[17px] font-normal">
           ${lien('boutique.html', 'Boutique')}${lien('le-test.html', 'Le test')}${lien('index.html#eqology', 'Qui est Eqology')}${lien('partenaire.html', 'Devenir partenaire')}
         </div>
         <div class="flex items-center gap-1 sm:gap-3">
-          <a href="contact.html" class="hidden md:inline text-[16px] hover:opacity-60">Contact</a>
-          <a href="produit.html?p=omega-3-test-kit" class="btn btn-plein !min-h-[40px] !text-sm !px-3 sm:!px-4"><span class="sm:hidden">Le test</span><span class="hidden sm:inline">Commencer par le test</span></a>
+          <a href="contact.html" class="hidden md:inline text-[17px] font-normal hover:opacity-60">Contact</a>
+          ${currentPage === 'partenaire.html' ? `<a href="#rappel" class="btn btn-plein"><span class="sm:hidden">Rappel</span><span class="hidden sm:inline">Être rappelé par Yves</span></a>` : `<a href="le-test.html" class="btn btn-plein"><span class="sm:hidden">Le test</span><span class="hidden sm:inline">Commencer par le test</span></a>`}
           <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 grid place-items-center rounded-lg hover:bg-cream-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
           </button>
@@ -71,7 +70,6 @@
   }
 
   function getFooter() {
-    if (isLP) return getFooterLP();
     const col = (titre, liens) => `<div><p class="text-white/50 pb-3 mb-4 border-b border-white/10">${titre}</p><ul class="space-y-3">${liens.map(([h, t]) => `<li><a href="${h === 'data:trustpilot' ? '#' : h}" ${h === 'data:trustpilot' ? 'data-trustpilot target="_blank" rel="noopener"' : ''} class="hover:opacity-60">${t}</a></li>`).join('')}</ul></div>`;
     return `<div class="wrap">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-10 border-b border-white/10">
@@ -104,7 +102,7 @@
   }
 
   const footer = document.querySelector('body > footer');
-  if (footer) { footer.innerHTML = getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-nuit text-white border-t border-white/10 ' + (isLP ? '' : 'pt-16'); }
+  if (footer) { footer.innerHTML = getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-nuit text-white border-t border-white/10 pt-16'; }
   document.querySelectorAll('[data-trustpilot]').forEach(function (a) { if (window.SITE) a.href = window.SITE.trustpilot; });
 
   // Cookie consent banner

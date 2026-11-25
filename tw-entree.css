@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 /* ============================================================
-   Charte du site (reprise de la page partenaire validée)
-   Fond nuit partout, Inter Tight, mot en points, action en rouge.
+   Système du site : celui de patch.io (référence de Damien) sur fond nuit.
+   Albert Sans Light (équivalent libre de Muoto), IBM Plex Mono pour les repères,
+   échelle 136 / 68 / 51 / 34 / 21 / 17 / 12,75 px, boutons orange arrondis à 8,5 px.
    ============================================================ */
 html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Albert Sans', system-ui, sans-serif; font-size: 17px; font-weight: 300; line-height: 1.35; letter-spacing: -0.01em; background: #0A1622; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+b, strong { font-weight: 500; }
+.mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 300; font-size: 12.75px; letter-spacing: 0; text-transform: uppercase; }
 
 /* Colonne */
 .wrap { max-width: 1400px; margin-inline: auto; padding-inline: 20px; }
@@ -21,18 +24,21 @@ body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; c
 .sec.fond-2 { background: #0F2030; }
 .sec.fond-2 + .sec { padding-top: var(--sec); }
 
-/* Titres */
-.geant { font-weight: 300; letter-spacing: -0.025em; line-height: .98; font-size: clamp(3rem, 8.4vw, 7.6rem); text-wrap: balance; }
-.h2, .titre { font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
-.h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); }
-.h1-page { font-weight: 300; letter-spacing: -0.025em; line-height: 1; font-size: clamp(2.6rem, 6vw, 5.4rem); text-wrap: balance; }
+/* Titres : l'échelle de patch.io (136 / 68 / 51 / 34 / 21 px), tout en Light */
+.geant { font-weight: 300; letter-spacing: -0.02em; line-height: 1; font-size: clamp(3.1rem, 9.45vw, 8.5rem); text-wrap: balance; }
+.hero-court .geant { font-size: clamp(2.8rem, 6.6vw, 6rem); }
+.h1-page { font-weight: 300; letter-spacing: -0.02em; line-height: 1; font-size: clamp(2.6rem, 4.72vw, 4.25rem); text-wrap: balance; }
+.h2, .titre { font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; text-wrap: balance; }
+.h2 { font-size: clamp(2rem, 3.54vw, 3.1875rem); }
+.h2-s { font-weight: 300; letter-spacing: -0.02em; line-height: 1.2; font-size: clamp(1.6rem, 2.36vw, 2.125rem); }
+.h3 { font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; font-size: 21.25px; }
 .fin { font-weight: 300; }
 /* Le mot dessiné en points */
 .points { background-image: radial-gradient(circle, #fff 52%, transparent 56%); background-size: .058em .058em; -webkit-background-clip: text; background-clip: text; color: transparent; }
-.lead { font-size: 1.125rem; line-height: 1.6; color: rgba(255,255,255,.72); max-width: 58ch; }
+.lead { font-size: 17px; line-height: 1.4; color: rgba(255,255,255,.75); max-width: 52ch; }
 
 /* Étiquette de section */
-.oeil { display: inline-flex; align-self: flex-start; align-items: center; gap: .45rem; width: max-content; max-width: 100%; font-size: 12px; font-weight: 500; line-height: 1.2; padding: .3rem .7rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0A1622 !important; }
+.oeil { display: inline-flex; align-self: flex-start; align-items: center; gap: .45rem; width: max-content; max-width: 100%; font-size: 12.75px; font-weight: 400; line-height: 1.2; padding: .3rem .65rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0A1622 !important; }
 .oeil::before { content: ''; width: 7px; height: 7px; background: #0A1622; transform: rotate(45deg); flex-shrink: 0; }
 .bg-sable .oeil, .bg-white .oeil { background: #0A1622; color: #fff !important; }
 .bg-sable .oeil::before, .bg-white .oeil::before { background: #fff; }
@@ -40,17 +46,17 @@ body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; c
 /* Filet en tête de bloc */
 .filet { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.5rem; }
 
-/* Boutons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 44px; padding: 0 1.1rem; border-radius: 6px; font-size: 15px; font-weight: 400; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; cursor: pointer; }
+/* Boutons : ceux de patch.io (petits, arrondis à 8,5 px, flèche) */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 36px; padding: .53rem .8rem; border-radius: 8.5px; border: 1px solid transparent; font-size: 14.875px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
-.btn-plein, .btn-glacier { background: #E3262F; color: #fff; }
-.btn-plein:hover, .btn-glacier:hover { background: #C41E26; }
+.btn-plein, .btn-glacier { background: #EA642B; border-color: #EA642B; color: #fff; }
+.btn-plein:hover, .btn-glacier:hover { background: #D2541F; border-color: #D2541F; }
 .btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
 .btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
 .btn-plein.sans-fleche::after { content: none; }
-.btn-clair, .btn-ligne { border: 1px solid rgba(255,255,255,.85); color: #fff; }
+.btn-clair, .btn-ligne { border-color: #fff; color: #fff; }
 .btn-clair:hover, .btn-ligne:hover { background: #fff; color: #0A1622; }
-.btn-ligne-nuit { border: 1px solid #0A1622; color: #0A1622; }
+.btn-ligne-nuit { border-color: #0A1622; color: #0A1622; }
 .btn-ligne-nuit:hover { background: #0A1622; color: #fff; }
 .lien-fleche { display: inline-flex; align-items: center; gap: .4rem; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 .lien-fleche::after { content: '→'; transition: transform .2s; }
@@ -65,9 +71,16 @@ body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; c
 .champ:focus { border-color: #4DA8B5; outline: none; }
 textarea.champ { height: auto; padding-block: .75rem; }
 
+/* Écran d'ouverture commun à toutes les pages (celui de patch.io) */
+.hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.hero-court { min-height: 78svh; }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-voile { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,22,34,.45), rgba(10,22,34,.55) 45%, rgba(10,22,34,.96)); }
+.hero-bas { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.3); padding-top: 1.75rem; overflow: hidden; }
+
 /* En-tête des pages intérieures (sous la navigation flottante) */
 .tete { padding-top: clamp(128px, 14vw, 168px); padding-bottom: clamp(48px, 6vw, 72px); }
-.ariane { font-size: 14px; color: rgba(255,255,255,.55); }
+.ariane { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 300; font-size: 12.75px; text-transform: uppercase; color: rgba(255,255,255,.6); }
 .ariane a:hover { color: #fff; }
 .ariane span[aria-current] { color: #fff; }
 
