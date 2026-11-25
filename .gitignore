@@ -11,3 +11,6 @@ __pycache__/
 # Captures et journaux Playwright
 .playwright-mcp/
 recopie/patch/node_modules/
+
+# Versions archivées pour comparaison locale
+_versions/

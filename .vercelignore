@@ -20,3 +20,6 @@ mission/
 tailwind.config.cjs
 tw-entree.css
 recopie/
+
+# Versions archivées (local uniquement)
+_versions/
