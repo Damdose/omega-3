@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eqology · Ne devinez pas vos oméga-3, mesurez-les · Yves Coignard</title>
+  <meta name="description" content="Eqology fabrique en Norvège des oméga-3 basés sur des tests : on mesure, on complète, on mesure à nouveau. Présentés par Yves Coignard, distributeur indépendant.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/images/eqology-eq.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tw-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script src="../site-config.js"></script>
+  <script src="../catalogue.js"></script>
+  <style>
+    .geant { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.035em; line-height: .98; font-size: clamp(3rem, 7.6vw, 6.6rem); text-wrap: balance; }
+    .pastille { display: inline-flex; align-items: center; gap: .45rem; font: 600 12px/1 'DM Sans', sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: .5rem .8rem; border-radius: 999px; background: #eef8f9; color: #2e656d; }
+    .pastille::before { content: ''; width: 6px; height: 6px; border-radius: 2px; background: #4DA8B5; transform: rotate(45deg); }
+    .fond-nuit .pastille { background: rgba(255,255,255,.1); color: #81cfd8; }
+    .defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
+    @keyframes defile { to { transform: translateX(-50%); } }
+    .orbite { animation: tourne 70s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
+    .progres { height: 2px; border-radius: 2px; background: rgba(11,29,46,.12); position: relative; overflow: hidden; }
+    .fond-nuit .progres { background: rgba(255,255,255,.15); }
+    .progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #4DA8B5; }
+    .actif .progres > i { animation: remplit var(--d, 6s) linear forwards; } @keyframes remplit { to { width: 100%; } }
+    @media (prefers-reduced-motion: reduce) { .defile, .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } }
+    .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-cream-50">
+
+  <!-- Navigation flottante (le style du site, posée sur l'image) -->
+  <header class="fixed top-0 inset-x-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
+    <div class="max-w-7xl mx-auto">
+      <nav class="bg-white/90 backdrop-blur-xl rounded-2xl border border-white/60 shadow-sm h-16 flex items-center justify-between pl-4 pr-2 sm:pl-5" aria-label="Navigation principale">
+        <a href="index.html" class="flex items-center gap-2.5" aria-label="Accueil"><img src="../assets/images/eqology-eq.png" alt="Eqology" class="h-[26px] w-auto"><span class="hidden sm:block text-[12px] leading-tight text-navy-600 border-l border-cream-300 pl-2.5">Yves Coignard<br><span class="text-navy-400">distributeur indépendant</span></span></a>
+        <div class="hidden lg:flex items-center gap-1 text-[15px] font-medium text-navy-700">
+          <a href="../boutique.html" class="px-3.5 py-2 rounded-xl hover:bg-cream-100">Boutique</a>
+          <a href="../le-test.html" class="px-3.5 py-2 rounded-xl hover:bg-cream-100">Le test</a>
+          <a href="#marque" class="px-3.5 py-2 rounded-xl hover:bg-cream-100">Qui est Eqology</a>
+          <a href="../partenaire.html" class="px-3.5 py-2 rounded-xl hover:bg-cream-100">Devenir partenaire</a>
+        </div>
+        <div class="flex items-center gap-1">
+          <a href="../produit.html?p=omega-3-test-kit" class="btn btn-plein !min-h-[44px] !px-4 !text-sm">Commencer par le test</a>
+          <button id="menu" class="lg:hidden w-11 h-11 grid place-items-center rounded-xl hover:bg-cream-100" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        </div>
+      </nav>
+      <div id="menu-liste" class="hidden lg:hidden mt-2 bg-white rounded-2xl border border-cream-200 shadow-lg p-3">
+        <a class="block px-3 py-3 rounded-xl text-base font-medium hover:bg-cream-100" href="../boutique.html">Boutique</a>
+        <a class="block px-3 py-3 rounded-xl text-base font-medium hover:bg-cream-100" href="../le-test.html">Le test</a>
+        <a class="block px-3 py-3 rounded-xl text-base font-medium hover:bg-cream-100" href="#marque">Qui est Eqology</a>
+        <a class="block px-3 py-3 rounded-xl text-base font-medium hover:bg-cream-100" href="../partenaire.html">Devenir partenaire</a>
+        <a class="block px-3 py-3 rounded-xl text-base font-medium hover:bg-cream-100" href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Ouverture -->
+    <section class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden bg-navy-900 text-white">
+      <img src="../assets/v2/fjord.webp" srcset="../assets/v2/fjord-800.webp 800w, ../assets/v2/fjord.webp 1600w" sizes="100vw" alt="Fjord norvégien sous une aurore boréale" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-navy-900/40 to-navy-900/95"></div>
+      <a href="../boutique.html?cat=coffrets" class="hidden md:flex absolute right-6 top-28 z-10 w-[250px] gap-3 items-center rounded-2xl bg-white/90 backdrop-blur text-navy-900 p-3 shadow-lg hover:bg-white">
+        <img src="../assets/v2/produits/christmas-pack-large.webp" alt="" class="w-14 h-14 rounded-xl bg-cream-100 object-contain p-1">
+        <span><span class="oeil !text-[10px] !text-[#B3261E]">Édition limitée</span><span class="block font-serif font-semibold mt-1">Coffrets de Noël dès 109 €</span></span>
+      </a>
+      <div class="relative wrap w-full pt-40 pb-8">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <h1 class="geant max-w-[12ch]">Ne devinez pas vos oméga&#8209;3. <span class="text-glacier-300">Mesurez&#8209;les.</span></h1>
+          <div class="lg:max-w-[420px] lg:pb-3">
+            <p class="text-lg leading-relaxed text-cream-200">Eqology fabrique en Norvège des compléments basés sur des tests&nbsp;: on mesure, on complète, on mesure à nouveau. Présentés par Yves Coignard, distributeur indépendant.</p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="../produit.html?p=omega-3-test-kit" class="btn btn-glacier">Commencer par le test</a>
+              <a href="../boutique.html" class="btn btn-clair">Voir la boutique</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 pt-7 border-t border-white/20 overflow-hidden" aria-label="Repères qualité">
+          <div class="defile font-serif text-2xl md:text-[28px] font-semibold tracking-tight text-white/85 whitespace-nowrap">
+            <span>Pêche certifiée MSC</span><span>Membre de GOED</span><span>Superior Taste Award</span><span>Oslo · Norvège</span><span>Cabillaud de l'Arctique</span><span>Huile d'olive Terra Creta</span><span>Test à domicile</span>
+            <span>Pêche certifiée MSC</span><span>Membre de GOED</span><span>Superior Taste Award</span><span>Oslo · Norvège</span><span>Cabillaud de l'Arctique</span><span>Huile d'olive Terra Creta</span><span>Test à domicile</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. La méthode (sombre) -->
+    <section class="sec bg-navy-900 text-white fond-nuit">
+      <div class="wrap grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div class="flex flex-col">
+          <span class="pastille self-start">La méthode Eqology</span>
+          <h2 class="titre text-4xl sm:text-5xl mt-6 max-w-[14ch]">Une santé qui se mesure, étape par étape.</h2>
+          <a href="../le-test.html" class="btn btn-clair mt-7 self-start !min-h-[46px]">Comprendre le test</a>
+          <ol id="etapes" class="mt-12 lg:mt-auto"></ol>
+        </div>
+        <div class="relative rounded-[28px] overflow-hidden min-h-[420px] md:min-h-[540px] bg-navy-800">
+          <img src="../assets/v2/huile.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-br from-navy-900/20 to-navy-900/80"></div>
+          <svg viewBox="0 0 600 600" class="relative w-full h-full max-h-[540px]" role="img" aria-label="Le cycle : tester, analyser, compléter, re-tester, ajuster">
+            <g class="orbite" fill="none" stroke="rgba(255,255,255,.15)"><circle cx="300" cy="300" r="230" stroke-dasharray="2 8"/><circle cx="300" cy="300" r="170"/><circle cx="300" cy="300" r="110" stroke-dasharray="3 6"/></g>
+            <g id="liens" stroke="rgba(129,207,216,.35)" stroke-width="1"></g>
+            <g id="noeuds"></g>
+            <circle cx="300" cy="300" r="48" fill="#0B1D2E" stroke="#4DA8B5" stroke-width="1.5"/>
+            <text x="300" y="306" text-anchor="middle" fill="#fff" font-size="18" font-weight="600" font-family="Space Grotesk">Vous</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Qui est Eqology (clair) -->
+    <section id="marque" class="sec bg-cream-50 scroll-mt-24">
+      <div class="wrap">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] items-center">
+          <div class="monte">
+            <span class="pastille">Qui est Eqology</span>
+            <h2 class="titre text-4xl sm:text-5xl mt-6 max-w-[15ch]">Une marque norvégienne qui montre ce qu'elle met dans ses flacons.</h2>
+            <p class="lead mt-5">Depuis plus de 20 ans, Eqology fabrique des compléments alimentaires basés sur des tests, à partir d'ingrédients naturels de Norvège. Siège à Oslo.</p>
+          </div>
+          <figure class="monte relative rounded-[28px] overflow-hidden aspect-[16/11]">
+            <img src="../assets/v2/peche.webp" alt="Pêcheur relevant un filet en mer de Norvège" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+            <figcaption class="absolute left-4 bottom-4 sm:left-6 sm:bottom-6 bg-white rounded-2xl p-4 shadow-xl max-w-[260px]"><p class="font-serif font-semibold">De la mer au flacon</p><p class="text-sm text-navy-500 mt-1">Cabillaud sauvage, pêche arctique certifiée MSC.</p></figcaption>
+          </figure>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2">
+          <blockquote class="monte rounded-3xl bg-white border border-cream-200 p-8">
+            <p class="font-serif text-5xl text-glacier-500 leading-none" aria-hidden="true">“</p>
+            <p class="font-serif text-2xl leading-snug mt-2 text-navy-900">Nous changeons la vie des personnes pour le mieux.</p>
+            <footer class="mt-6 flex items-center gap-3 text-sm"><img src="../assets/images/eqology-eq.png" alt="" class="h-6"><span class="text-navy-600">La philosophie d'Eqology<span class="block text-navy-400">Oslo, Norvège</span></span></footer>
+          </blockquote>
+          <blockquote class="monte rounded-3xl bg-white border border-cream-200 p-8">
+            <p class="font-serif text-5xl text-glacier-500 leading-none" aria-hidden="true">“</p>
+            <p class="font-serif text-2xl leading-snug mt-2 text-navy-900">Chaque flacon de Pure Arctic Oil peut être suivi jusqu'au bateau et à la zone de pêche.</p>
+            <footer class="mt-6 flex items-center gap-3 text-sm"><img src="../assets/images/eqology-eq.png" alt="" class="h-6"><span class="text-navy-600">L'engagement de traçabilité d'Eqology<span class="block text-navy-400">Pure Arctic Oil</span></span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. La gamme (blanc, carrousel) -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <span class="pastille">La gamme</span>
+        <div class="mt-6 grid gap-6 lg:grid-cols-2 items-end">
+          <h2 class="titre text-4xl sm:text-5xl max-w-[16ch]">Tout pour vos oméga&#8209;3, d'une seule marque.</h2>
+          <div class="flex lg:justify-end gap-2">
+            <button id="g-prec" class="w-12 h-12 rounded-full border border-cream-300 grid place-items-center hover:border-navy-900" aria-label="Précédent">←</button>
+            <button id="g-suiv" class="w-12 h-12 rounded-full bg-navy-900 text-white grid place-items-center hover:bg-navy-700" aria-label="Suivant">→</button>
+          </div>
+        </div>
+      </div>
+      <div id="gamme" class="mt-10 flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth px-5 sm:px-8"></div>
+    </section>
+
+    <!-- 5. La différence (clair, onglets) -->
+    <section class="sec bg-cream-50">
+      <div class="wrap">
+        <span class="pastille">La différence Eqology</span>
+        <h2 class="titre text-4xl sm:text-5xl mt-6 max-w-[16ch]">Une qualité bâtie sur des bases solides.</h2>
+        <div class="relative mt-10 rounded-[28px] overflow-hidden aspect-[4/3] md:aspect-[21/9] bg-navy-800">
+          <img id="onglet-img" src="../assets/v2/source.webp" alt="" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" loading="lazy">
+          <span id="onglet-tag" class="absolute left-4 top-4 text-sm font-medium px-4 py-2 rounded-full bg-white/90 text-navy-900">Traçabilité</span>
+        </div>
+        <div id="onglets" class="mt-8 grid gap-8 md:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- 6. Meilleures ventes (blanc, fiches du site) -->
+    <section class="sec bg-white">
+      <div class="wrap">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div><span class="pastille">Meilleures ventes</span><h2 class="titre text-4xl sm:text-5xl mt-6">Les produits par lesquels on commence.</h2></div>
+          <a href="../boutique.html" class="btn btn-ligne">Toute la boutique</a>
+        </div>
+        <div id="ventes" class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+      </div>
+    </section>
+
+    <!-- 7. À propos (texte qui s'éclaire) + bandeau partenaire -->
+    <section class="sec bg-cream-100">
+      <div class="wrap">
+        <span class="pastille">À propos</span>
+        <div class="mt-6 grid gap-10 lg:grid-cols-2">
+          <p id="revele" class="titre text-[clamp(2rem,3.8vw,3.2rem)] text-navy-900 max-w-[18ch]">Pensé pour celles et ceux qui veulent savoir ce qu'ils prennent.</p>
+          <p class="lead lg:pt-3">Yves Coignard est distributeur indépendant Eqology en France. Il vous aide à choisir, répond à vos questions sur le test et vous rappelle si vous le souhaitez. Commandes, paiement et livraison sont assurés par Eqology.</p>
+        </div>
+        <div class="mt-16 relative overflow-hidden rounded-[32px] bg-navy-900 text-white grid md:grid-cols-[1.1fr_1fr] min-h-[400px]">
+          <div class="relative z-10 p-8 sm:p-12 self-center">
+            <p class="oeil !text-glacier-300">Devenir partenaire</p>
+            <h2 class="titre text-3xl sm:text-[2.6rem] mt-4 max-w-[16ch]">Recommandez Eqology, avec une équipe à vos côtés.</h2>
+            <p class="text-cream-200 text-lg leading-relaxed mt-4 max-w-[44ch]">Praticiens de santé ou particuliers&nbsp;: un complément de revenu, sans stock, à votre rythme.</p>
+            <a href="../partenaire.html" class="btn btn-glacier mt-7">Découvrir le partenariat</a>
+          </div>
+          <div class="relative min-h-[260px]">
+            <img src="../assets/v2/consultation.webp" alt="Une praticienne présente un résultat de test à une patiente" class="absolute inset-0 w-full h-full object-cover md:[clip-path:ellipse(85%_95%_at_100%_50%)]" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Appel final -->
+    <section class="sec bg-cream-50 text-center overflow-hidden">
+      <div class="wrap">
+        <h2 class="geant !text-[clamp(2.6rem,5.2vw,4.4rem)] text-navy-900 max-w-[14ch] mx-auto">Remettez vos oméga&#8209;3 en <span class="text-glacier-500">équilibre.</span></h2>
+        <a href="../produit.html?p=omega-3-test-kit" class="btn btn-plein mt-8">Commencer par le test · 88 €</a>
+        <div class="mt-6 flex justify-center flex-wrap gap-2 text-sm"><span class="px-4 py-2 rounded-full bg-white border border-cream-200">Norvège</span><span class="px-4 py-2 rounded-full bg-white border border-cream-200">Mer Arctique</span><span class="px-4 py-2 rounded-full bg-white border border-cream-200">Livré en France</span></div>
+        <div class="relative mx-auto mt-12 w-[min(960px,95vw)] aspect-[3/1]">
+          <img src="../assets/v2/fjord-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover [mask-image:radial-gradient(ellipse_50%_46%_at_50%_50%,#000_68%,transparent_100%)]" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-navy-900 text-white pt-16">
+    <div class="wrap">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 border-b border-white/10 pb-10">
+        <p class="titre text-3xl">Une question&nbsp;? Yves vous répond.</p>
+        <a href="../contact.html" class="btn btn-glacier self-start">Écrire à Yves</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 text-sm">
+        <div><p class="font-serif font-semibold mb-4">Boutique</p><ul class="space-y-3 text-cream-300"><li><a class="hover:text-white" href="../boutique.html?cat=omega3">Oméga-3</a></li><li><a class="hover:text-white" href="../boutique.html?cat=tests">Tests à domicile</a></li><li><a class="hover:text-white" href="../boutique.html?cat=programmes">Programmes</a></li><li><a class="hover:text-white" href="../boutique.html?cat=coffrets">Coffrets de Noël</a></li></ul></div>
+        <div><p class="font-serif font-semibold mb-4">Comprendre</p><ul class="space-y-3 text-cream-300"><li><a class="hover:text-white" href="../le-test.html">Le test oméga-3</a></li><li><a class="hover:text-white" href="../science-omega3.html">La science</a></li><li><a class="hover:text-white" href="../blog.html">Articles</a></li></ul></div>
+        <div><p class="font-serif font-semibold mb-4">Partenariat</p><ul class="space-y-3 text-cream-300"><li><a class="hover:text-white" href="../partenaire.html">Devenir partenaire</a></li><li><a class="hover:text-white" href="../partenaire.html#rappel">Être rappelé</a></li></ul></div>
+        <div><p class="font-serif font-semibold mb-4">Yves Coignard</p><ul class="space-y-3 text-cream-300"><li><a class="hover:text-white" href="../contact.html">Contact</a></li><li><a class="hover:text-white" href="../mentions-legales.html">Mentions légales</a></li><li><a class="hover:text-white" href="../confidentialite.html">Confidentialité</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/10 py-10"><img src="../assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-full h-auto opacity-90" loading="lazy"></div>
+      <div class="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-cream-400">
+        <p>© 2026 ZENCO SAS · Yves Coignard, distributeur indépendant Eqology</p>
+        <p>Commandes, paiement et livraison assurés par Eqology.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var m = document.getElementById('menu'); m.onclick = function () { var l = document.getElementById('menu-liste'); var f = l.classList.toggle('hidden'); m.setAttribute('aria-expanded', String(!f)); };
+
+    // Méthode : étapes qui avancent seules + schéma en orbite
+    var E = [
+      ['Tester', "Une goutte de sang prélevée chez vous, envoyée à un laboratoire indépendant."],
+      ['Analyser', "Vous recevez en ligne votre rapport oméga-6 / oméga-3 et votre indice oméga-3."],
+      ['Compléter', "Une huile chaque jour : Pure Arctic Oil, sa version Gold ou la version végane."],
+      ['Re-tester', "Quelques mois plus tard, un second test montre le chemin parcouru."],
+      ['Ajuster', "Selon le résultat, on adapte le produit ou la dose, avec le conseil d'Yves."]
+    ];
+    document.getElementById('etapes').innerHTML = E.map(function (e, i) { return '<li class="etape cursor-pointer border-t border-white/10 pt-4 pb-4" data-i="' + i + '"><div class="progres -mt-4 mb-4"><i></i></div><p class="font-serif text-lg"><span class="text-glacier-300 mr-2 text-sm">0' + (i + 1) + '</span>' + e[0] + '</p><p class="texte hidden mt-2 text-cream-200 max-w-[42ch] leading-relaxed">' + e[1] + '</p></li>'; }).join('');
+    var cx = 300, cy = 300, r = 200, pts = E.map(function (e, i) { var a = -Math.PI / 2 + i * 2 * Math.PI / E.length; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }), liens = '';
+    pts.forEach(function (p, i) { var q = pts[(i + 2) % pts.length]; liens += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '"/><line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + cx + '" y2="' + cy + '" stroke-dasharray="2 5"/>'; });
+    document.getElementById('liens').innerHTML = liens;
+    document.getElementById('noeuds').innerHTML = pts.map(function (p, i) { var h = p[1] < cy; return '<g class="noeud"><circle cx="' + p[0] + '" cy="' + p[1] + '" r="18" fill="#172847" stroke="rgba(129,207,216,.6)"/><rect x="' + (p[0] - 56) + '" y="' + (p[1] + (h ? -58 : 28)) + '" width="112" height="28" rx="14" fill="#fff"/><text x="' + p[0] + '" y="' + (p[1] + (h ? -39 : 47)) + '" text-anchor="middle" fill="#0B1D2E" font-size="13" font-weight="600" font-family="DM Sans">0' + (i + 1) + ' · ' + E[i][0] + '</text></g>'; }).join('');
+    var actif = 0, t1;
+    function choisir(i) {
+      actif = i;
+      document.querySelectorAll('.etape').forEach(function (li, k) { var on = k === i; li.classList.toggle('actif', on); li.querySelector('.texte').classList.toggle('hidden', !on); li.querySelector('p').style.opacity = on ? 1 : .55; var b = li.querySelector('.progres i'); b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; });
+      document.querySelectorAll('.noeud circle').forEach(function (c, k) { c.setAttribute('fill', k === i ? '#4DA8B5' : '#172847'); });
+      clearTimeout(t1); t1 = setTimeout(function () { choisir((actif + 1) % E.length); }, 6000);
+    }
+    document.querySelectorAll('.etape').forEach(function (li) { li.onclick = function () { choisir(+li.dataset.i); }; });
+    choisir(0);
+
+    // Gamme : carrousel avec flèches
+    var C = window.CATEGORIES, g = document.getElementById('gamme');
+    g.innerHTML = C.map(function (c) {
+      return '<a href="../boutique.html?cat=' + c.id + '" class="group snap-start shrink-0 w-[74vw] sm:w-[310px]"><div class="relative rounded-3xl overflow-hidden aspect-[4/5] ' + (c.produitImg ? 'bg-cream-100' : 'bg-navy-800') + '"><img src="../' + c.image + '" alt="" class="absolute inset-0 w-full h-full ' + (c.produitImg ? 'object-contain p-8' : 'object-cover') + ' group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>'
+        + '<div class="mt-4 flex items-center justify-between gap-3"><span><span class="block font-serif font-semibold text-lg">' + c.nom + '</span><span class="text-sm text-navy-500">' + c.accroche + '</span></span><span class="w-10 h-10 rounded-full bg-cream-100 grid place-items-center group-hover:bg-navy-900 group-hover:text-white transition-colors">→</span></div></a>';
+    }).join('');
+    // Aligne le carrousel sur la colonne des titres
+    function aligne() { var w = document.querySelector('#gamme').previousElementSibling; var x = Math.max(20, w.getBoundingClientRect().left + parseFloat(getComputedStyle(w).paddingLeft)); g.style.paddingLeft = x + 'px'; g.style.paddingRight = x + 'px'; g.style.scrollPaddingLeft = x + 'px'; }
+    aligne(); addEventListener('resize', aligne);
+    document.getElementById('g-suiv').onclick = function () { g.scrollBy({ left: 330, behavior: 'smooth' }); };
+    document.getElementById('g-prec').onclick = function () { g.scrollBy({ left: -330, behavior: 'smooth' }); };
+
+    // La différence : onglets à progression
+    var O = [
+      { t: 'Une pêche traçable', d: "Cabillaud sauvage de la mer Arctique, pêcheries familiales certifiées MSC. Chaque flacon peut être suivi jusqu'au bateau.", img: '../assets/v2/source.webp', tag: 'Traçabilité', lien: '../boutique.html?cat=omega3' },
+      { t: 'Une huile fraîche, analysée', d: "Huile d'olive Terra Creta de Crète, indice d'oxydation (TOTOX) parmi les plus bas : les rapports d'analyse sont publiés.", img: '../assets/v2/huile.webp', tag: 'Fraîcheur', lien: '../produit.html?p=pure-arctic-oil' },
+      { t: 'Un test pour mesurer', d: "Le test à domicile donne un point de départ objectif, puis un second test montre ce qui a changé.", img: '../assets/v2/testkit-detail.webp', tag: 'Mesure', lien: '../le-test.html' }
+    ];
+    document.getElementById('onglets').innerHTML = O.map(function (o, i) { return '<div class="onglet cursor-pointer" data-i="' + i + '" style="--d:7s"><div class="progres mb-5"><i></i></div><p class="font-serif font-semibold text-xl">' + o.t + '</p><p class="mt-2 text-navy-600 leading-relaxed">' + o.d + '</p><a href="' + o.lien + '" class="inline-block mt-3 text-sm font-semibold text-glacier-700 underline underline-offset-4">En savoir plus</a></div>'; }).join('');
+    var oa = 0, t2;
+    function onglet(i) {
+      oa = i; var im = document.getElementById('onglet-img'); im.style.opacity = 0;
+      setTimeout(function () { im.src = O[i].img; im.style.opacity = 1; }, 250);
+      document.getElementById('onglet-tag').textContent = O[i].tag;
+      document.querySelectorAll('.onglet').forEach(function (el, k) { var on = k === i; el.classList.toggle('actif', on); el.style.opacity = on ? 1 : .5; var b = el.querySelector('.progres i'); b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; });
+      clearTimeout(t2); t2 = setTimeout(function () { onglet((oa + 1) % O.length); }, 7000);
+    }
+    document.querySelectorAll('.onglet').forEach(function (el) { el.onclick = function (e) { if (e.target.tagName !== 'A') onglet(+el.dataset.i); }; });
+    onglet(0);
+
+    // Meilleures ventes : les fiches du site (liens corrigés pour le sous-dossier)
+    var P = window.PRODUITS.filter(function (p) { return p.top; }).sort(function (a, b) { return a.top - b.top; }).slice(0, 4);
+    document.getElementById('ventes').innerHTML = P.map(window.carteProduit).join('').replace(/src="assets\//g, 'src="../assets/').replace(/href="produit\.html/g, 'href="../produit.html');
+
+    // Texte qui s'éclaire au défilement
+    var rv = document.getElementById('revele');
+    rv.innerHTML = rv.textContent.split(' ').map(function (w) { return '<span style="transition:opacity .3s">' + w + '</span>'; }).join(' ');
+    var mots = rv.querySelectorAll('span');
+    function eclaire() { var b = rv.getBoundingClientRect(), h = innerHeight; var t = Math.min(1, Math.max(0, (h * 0.85 - b.top) / (h * 0.6))); var n = Math.round(t * mots.length); mots.forEach(function (s, k) { s.style.opacity = k < n ? 1 : .18; }); }
+    addEventListener('scroll', eclaire, { passive: true }); eclaire();
+
+    // Apparitions
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('vu'); }); }, { threshold: .15 });
+    document.querySelectorAll('.monte').forEach(function (el) { io.observe(el); });
+  })();
+  </script>
+</body>
+</html>
