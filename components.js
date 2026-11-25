@@ -143,7 +143,6 @@
         <div class="flex flex-wrap justify-center gap-5">
           <a href="mentions-legales.html" class="hover:text-white">Mentions légales</a>
           <a href="confidentialite.html" class="hover:text-white">Confidentialité</a>
-          <a href="conditions.html" class="hover:text-white">Conditions</a>
         </div>
       </div>
     </div>`;

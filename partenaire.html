@@ -8,10 +8,11 @@
   <link rel="canonical" href="https://eqology-omega3.vercel.app/partenaire.html">
   <meta property="og:title" content="Un complément de revenu avec Eqology">
   <meta property="og:description" content="Recommandez des oméga-3 de qualité, sans stock, à votre rythme. Le système expliqué simplement.">
-  <meta property="og:image" content="https://eqology-omega3.vercel.app/assets/v2/consultation.webp">
+  <meta property="og:image" content="https://eqology-omega3.vercel.app/assets/v2/og-partenaire.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="tw-config.js"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -23,26 +24,46 @@
   <nav id="entete" class="sticky top-0 z-40"></nav>
 
   <main>
-    <!-- 1. Promesse -->
+    <!-- 1. Promesse + premier pas -->
     <header class="relative overflow-hidden bg-navy-900 text-white">
-      <img src="assets/v2/consultation.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-35 lg:opacity-100 lg:left-auto lg:w-[48%] [mask-image:linear-gradient(to_right,transparent,black_35%)]" fetchpriority="high">
-      <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/90 to-navy-900/20 lg:via-navy-900/60"></div>
-      <div class="relative wrap pt-14 sm:pt-20 pb-14 sm:pb-20">
-        <p class="oeil !text-glacier-300">Le partenariat Eqology</p>
-        <h1 id="lp-titre" class="titre text-[2.5rem] sm:text-6xl mt-5 max-w-[15ch]">Un complément de revenu en recommandant des oméga&#8209;3 de qualité.</h1>
-        <p id="lp-sous-titre" class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. Pas de stock, pas de local, à votre rythme. Voici comment ça fonctionne.</p>
-        <div class="mt-9 flex flex-col sm:flex-row gap-3">
-          <a href="#rappel" class="btn btn-glacier">Être rappelé par Yves</a>
-          <a href="#systeme" class="btn btn-clair">Comprendre le système</a>
+      <img src="assets/v2/consultation.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/60"></div>
+      <div class="relative wrap pt-10 sm:pt-16 pb-12 sm:pb-16 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
+        <div>
+          <p class="oeil !text-glacier-300">Le partenariat Eqology</p>
+          <h1 id="lp-titre" class="titre text-[2.4rem] sm:text-6xl mt-5 max-w-[15ch]">Un complément de revenu en recommandant des oméga&#8209;3 de qualité.</h1>
+          <p id="lp-sous-titre" class="mt-6 text-lg sm:text-xl text-cream-200 max-w-[50ch] leading-relaxed">Vos clients commandent chez Eqology avec votre lien, Eqology livre et vous verse vos commissions. Pas de stock, pas de local, à votre rythme.</p>
+          <ul class="mt-8 hidden sm:flex flex-wrap gap-2 text-sm">
+            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans stock</li>
+            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans local</li>
+            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">À temps partiel ou plein</li>
+            <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Formé par l'équipe</li>
+          </ul>
         </div>
-        <ul class="mt-12 flex flex-wrap gap-2 text-sm">
-          <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans stock</li>
-          <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Sans local</li>
-          <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">À temps partiel ou plein</li>
-          <li class="px-4 py-2 rounded-full bg-white/10 border border-white/15">Formé par l'équipe</li>
-        </ul>
+        <!-- Premier pas : prénom + téléphone -->
+        <form id="premier-pas" class="rounded-3xl bg-white text-navy-900 p-6 sm:p-8 shadow-2xl shadow-black/30" novalidate>
+          <p class="titre text-2xl sm:text-3xl" id="pp-titre">Yves vous rappelle sous 48 heures</p>
+          <p class="text-navy-600 mt-2">Dix minutes au téléphone pour tout comprendre. Sans engagement.</p>
+          <label class="grid gap-1.5 mt-5"><span class="text-sm font-semibold">Prénom</span>
+            <input name="pp_prenom" autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+          <label class="grid gap-1.5 mt-3"><span class="text-sm font-semibold">Téléphone</span>
+            <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+          <p id="pp-erreur" class="hidden mt-3 text-sm text-red-700" role="alert"></p>
+          <button type="submit" class="btn btn-plein w-full !min-h-[56px] text-base mt-5" id="pp-bouton">Être rappelé par Yves</button>
+          <p class="mt-3 text-xs text-navy-500 text-center">Encore 3 petites questions à l'étape suivante.</p>
+        </form>
       </div>
     </header>
+
+    <!-- Bandeau de confiance -->
+    <section class="bg-white border-b border-cream-200">
+      <div class="wrap py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <p><b class="block font-serif text-lg">Eqology</b><span class="text-navy-500">entreprise norvégienne, siège à Oslo</span></p>
+        <p><b class="block font-serif text-lg">Plus de 20 ans</b><span class="text-navy-500">de compléments basés sur des tests</span></p>
+        <p><b class="block font-serif text-lg">Pêche MSC</b><span class="text-navy-500">huile traçable jusqu'au bateau</span></p>
+        <p><b class="block font-serif text-lg">Rappel personnel</b><span class="text-navy-500">par Yves, distributeur indépendant</span></p>
+      </div>
+    </section>
 
     <!-- 2. Pour qui -->
     <section class="sec bg-cream-50">
@@ -250,6 +271,7 @@
         </div>
 
         <form id="form-rappel" class="rounded-3xl bg-white text-navy-900 p-6 sm:p-9 grid gap-5" novalidate>
+          <p id="pp-suite" class="hidden rounded-xl bg-glacier-50 px-4 py-3 text-sm font-medium">Merci, plus que trois réponses : votre profil, le moment pour vous appeler et votre accord.</p>
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span>
               <input name="prenom" required autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
@@ -313,6 +335,7 @@
         document.getElementById('lp-sous-titre').textContent = (quand ? 'Rendez-vous ' + quand + ', en visio. ' : 'Une visio de présentation, chaque semaine. ') + "Quarante minutes pour comprendre l'activité, le plan de rémunération officiel et la façon de démarrer. Gratuit, sans engagement.";
         document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { if (/Être rappelé|Voir le plan/.test(a.textContent)) a.textContent = 'Réserver ma place'; });
         var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = 'Réserver ma place';
+        document.getElementById('pp-titre').textContent = 'Réservez votre place à la visio'; document.getElementById('pp-bouton').textContent = 'Réserver ma place';
       }
       if (CIBLE === 'pro') {
         document.getElementById('lp-titre').innerHTML = 'Praticien de santé&nbsp;: un revenu en plus avec le test oméga&#8209;3.';
@@ -320,11 +343,28 @@
         var pro = document.querySelector('input[name="profil"][value="Professionnel de santé"]');
         if (pro) { pro.checked = true; var m = document.getElementById('champ-metier'); if (m) m.classList.remove('hidden'); }
       }
+      // Premier pas : on recopie prénom et téléphone dans le formulaire complet
+      var pp = document.getElementById('premier-pas');
+      if (pp) pp.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var f = document.getElementById('form-rappel'), err = document.getElementById('pp-erreur');
+        var tel = pp.pp_tel.value.replace(/[^\d+]/g, '');
+        if (!pp.pp_prenom.value.trim() || tel.length < 10) { err.textContent = 'Indiquez votre prénom et un numéro complet.'; err.classList.remove('hidden'); return; }
+        f.prenom.value = pp.pp_prenom.value.trim(); f.phone.value = pp.pp_tel.value;
+        if (window.suivre) window.suivre('PremierPas', {}, true);
+        document.getElementById('rappel').scrollIntoView({ behavior: 'smooth' });
+        var info = document.getElementById('pp-suite'); if (info) info.classList.remove('hidden');
+        setTimeout(function () { var r = f.querySelector('input[name="profil"]:checked') || f.querySelector('input[name="profil"]'); if (r) r.focus({ preventScroll: true }); }, 600);
+      });
       // La barre du bas disparaît quand le formulaire est à l'écran
-      var barre = document.getElementById('barre-cta'), cible = document.getElementById('rappel');
-      if ('IntersectionObserver' in window && cible) new IntersectionObserver(function (e) {
-        barre.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
-      }, { threshold: 0.05 }).observe(cible);
+      var barre = document.getElementById('barre-cta'), vus = {};
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { vus[e.target.id] = e.isIntersecting; });
+          barre.style.transform = (vus['rappel'] || vus['premier-pas']) ? 'translateY(110%)' : '';
+        }, { threshold: 0.05 });
+        ['rappel', 'premier-pas'].forEach(function (id) { var el = document.getElementById(id); if (el) obs.observe(el); });
+      }
     })();
   </script>
 

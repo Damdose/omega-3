@@ -83,11 +83,10 @@
               <th class="text-left font-semibold px-4 py-3">Nom</th>
               <th class="text-left font-semibold px-4 py-3">Email</th>
               <th class="text-left font-semibold px-4 py-3">T&eacute;l&eacute;phone</th>
-              <th class="text-left font-semibold px-4 py-3">Ville</th>
-              <th class="text-left font-semibold px-4 py-3">Anciennet&eacute;</th>
-              <th class="text-left font-semibold px-4 py-3">Consultants/mois</th>
-              <th class="text-left font-semibold px-4 py-3">Principal d&eacute;fi</th>
-              <th class="text-left font-semibold px-4 py-3">Recommande d&eacute;j&agrave;&nbsp;?</th>
+              <th class="text-left font-semibold px-4 py-3">Profil</th>
+              <th class="text-left font-semibold px-4 py-3">M&eacute;tier</th>
+              <th class="text-left font-semibold px-4 py-3">&Agrave; rappeler</th>
+              <th class="text-left font-semibold px-4 py-3">Publicit&eacute;</th>
             </tr>
           </thead>
           <tbody id="rows" class="divide-y divide-cream-200"></tbody>
@@ -152,11 +151,10 @@
           '<td class="px-4 py-3 font-medium">' + (esc(l.name) || '—') + '</td>' +
           '<td class="px-4 py-3">' + (l.email ? '<a class="text-glacier-600 hover:underline" href="mailto:' + esc(l.email) + '">' + esc(l.email) + '</a>' : '—') + '</td>' +
           '<td class="px-4 py-3 whitespace-nowrap">' + (l.phone ? '<a class="text-glacier-600 hover:underline" href="tel:' + esc(l.phone.replace(/\s/g, '')) + '">' + esc(l.phone) + '</a>' : '—') + '</td>' +
-          '<td class="px-4 py-3">' + (esc(l.city) || '—') + '</td>' +
-          '<td class="px-4 py-3">' + label('anciennete', l.anciennete) + '</td>' +
-          '<td class="px-4 py-3">' + label('consultants', l.consultants) + '</td>' +
-          '<td class="px-4 py-3">' + label('defi', l.defi) + '</td>' +
-          '<td class="px-4 py-3">' + label('complements', l.complements) + '</td>' +
+          '<td class="px-4 py-3">' + (esc(l.profil) || '—') + '</td>' +
+          '<td class="px-4 py-3">' + (esc(l.metier) || '—') + '</td>' +
+          '<td class="px-4 py-3 whitespace-nowrap">' + (esc(l.creneau) || '—') + '</td>' +
+          '<td class="px-4 py-3 text-xs text-navy-800/60">' + (esc(l.utm) || '—') + '</td>' +
         '</tr>';
       }).join('');
     }

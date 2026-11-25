@@ -71,7 +71,15 @@ module.exports = async (req, res) => {
       emailStatus = 'error: ' + e.message;
     }
 
-    res.status(200).json({ ok: true, id, email: emailStatus });
+    // J0 : confirmation au contact, s'il a laissé son e-mail (best-effort)
+    let confirmation = 'skipped';
+    try {
+      if (record.email && record.profil) confirmation = await sendConfirmation(record);
+    } catch (e) {
+      confirmation = 'error: ' + e.message;
+    }
+
+    res.status(200).json({ ok: true, id, email: emailStatus, confirmation });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -144,4 +152,31 @@ async function sendLeadEmail(r) {
   }
   const data = await resp.json().catch(() => ({}));
   return 'sent' + (data.id ? ':' + data.id : '');
+}
+
+// E-mail J0 au contact : « C'est noté, je vous rappelle sous 48 heures »
+async function sendConfirmation(r) {
+  const key = process.env.RESEND_API_KEY;
+  if (!key || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(r.email)) return 'skipped';
+  const from = process.env.LEAD_EMAIL_FROM || 'Équipe Eqology <zenco@heyfuture.fr>';
+  const repondre = process.env.LEAD_REPLY_TO || 'zenco.coignard@gmail.com';
+  const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const prenom = (r.name || '').split(' ')[0];
+  const quand = r.creneau ? ', ' + r.creneau.charAt(0).toLowerCase() + r.creneau.slice(1) : '';
+  const lignes = [
+    `Bonjour ${prenom},`,
+    `Merci pour votre demande. Je vous appelle sous 48 heures${quand}. L'appel dure une dizaine de minutes : je réponds à vos questions et, si vous voulez aller plus loin, je vous propose la visio de présentation.`,
+    "Le numéro qui vous appellera est le mien. Si je tombe sur votre messagerie, je rappelle.",
+    'À très vite,',
+    'Yves Coignard\nDistributeur indépendant Eqology'
+  ];
+  const html = '<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto;color:#0B1D2E;font-size:15px;line-height:1.6">' +
+    lignes.map((l) => '<p>' + esc(l).replace(/\n/g, '<br>') + '</p>').join('') + '</div>';
+  const resp = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { authorization: 'Bearer ' + key, 'content-type': 'application/json' },
+    body: JSON.stringify({ from, to: [r.email], reply_to: repondre, subject: "C'est noté, je vous rappelle sous 48 heures", html, text: lignes.join('\n\n') })
+  });
+  if (!resp.ok) return 'error: ' + resp.status;
+  return 'sent';
 }

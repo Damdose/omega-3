@@ -34,23 +34,95 @@
       "permanent": false
     },
     {
+      "source": "/rendez-vous",
+      "destination": "/partenaire.html",
+      "permanent": false
+    },
+    {
+      "source": "/candidature.html",
+      "destination": "/partenaire.html",
+      "permanent": false
+    },
+    {
+      "source": "/rejoindre-l-equipe.html",
+      "destination": "/partenaire.html",
+      "permanent": false
+    },
+    {
+      "source": "/webinaire",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/webinaire.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/webinaire-fena.html",
-      "destination": "/webinaire",
-      "permanent": true
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/a-propos.html",
+      "destination": "/#eqology",
+      "permanent": false
+    },
+    {
+      "source": "/omega-de-confiance.html",
+      "destination": "/produit.html?p=pure-arctic-oil",
+      "permanent": false
+    },
+    {
+      "source": "/produit-omega3.html",
+      "destination": "/produit.html?p=pure-arctic-oil-natural",
+      "permanent": false
+    },
+    {
+      "source": "/article.html",
+      "destination": "/blog.html",
+      "permanent": false
+    },
+    {
+      "source": "/conditions.html",
+      "destination": "/mentions-legales.html",
+      "permanent": false
+    },
+    {
+      "source": "/partenaire",
+      "destination": "/partenaire.html",
+      "permanent": false
+    },
+    {
+      "source": "/boutique",
+      "destination": "/boutique.html",
+      "permanent": false
     }
   ],
   "rewrites": [
     {
       "source": "/admin",
       "destination": "/admin.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/merci.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     },
     {
-      "source": "/rendez-vous",
-      "destination": "/candidature.html"
-    },
-    {
-      "source": "/webinaire",
-      "destination": "/webinaire.html"
+      "source": "/admin(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }

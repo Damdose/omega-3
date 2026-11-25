@@ -56,11 +56,13 @@
     .prose blockquote { border-left: 3px solid #4DA8B5; padding-left: 1.5em; margin: 2em 0; font-style: italic; color: rgba(28, 28, 28, 0.55); }
     .prose strong { color: #0B1D2E; }
   </style>
+  <link rel="stylesheet" href="site.css">
+  <script src="site-config.js"></script>
 </head>
 <body class="antialiased text-navy-900 overflow-x-hidden">
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50"></nav>
+  <nav id="entete" class="sticky top-0 z-40"></nav>
 
   <!-- Article -->
   <article class="pt-32 pb-20 md:pt-40 md:pb-28">
@@ -201,13 +203,13 @@
         <div class="reveal">
           <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-8">
             <span class="w-2 h-2 bg-glacier-400 rounded-full animate-pulse"></span>
-            <span class="text-sm font-medium text-glacier-200">Places limit&eacute;es &mdash; 50 naturopathes</span>
+            <span class="text-sm font-medium text-glacier-200">Partenariat Eqology</span>
           </div>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Pr&ecirc;te &agrave; transformer votre pratique&nbsp;?</h2>
-          <p class="mt-6 text-lg text-glacier-300/80 max-w-xl">R&eacute;pondez &agrave; quelques questions et un conseiller YAC vous rappelle sous 24h pour un &eacute;change strat&eacute;gique personnalis&eacute;.</p>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Vous parlez d&eacute;j&agrave; sant&eacute; autour de vous&nbsp;?</h2>
+          <p class="mt-6 text-lg text-glacier-300/80 max-w-xl">Recommandez des om&eacute;ga-3 de qualit&eacute; et faites-en un compl&eacute;ment de revenu, sans stock, avec l&#39;&eacute;quipe d&#39;Yves.</p>
           <div class="mt-10">
-            <a href="candidature.html" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-navy-900 font-semibold rounded-2xl hover:bg-cream-100 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5 text-lg">
-              Prendre rendez-vous
+            <a href="partenaire.html" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-navy-900 font-semibold rounded-2xl hover:bg-cream-100 transition-all duration-300 cursor-pointer shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5 text-lg">
+              D&eacute;couvrir le partenariat
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
           </div>
@@ -291,11 +293,11 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
           <a href="index.html" class="inline-flex items-center" aria-label="Eqology"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:30px;width:auto;display:inline-block;"></a>
-          <p class="text-cream-400 text-sm leading-relaxed mt-4">YAC, premier distributeur EQOLOGY en France.</p>
+          <p class="text-cream-400 text-sm leading-relaxed mt-4">Yves Coignard, distributeur indépendant Eqology.</p>
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Explorer</h4>
-          <ul class="space-y-3 text-sm"><li><a href="omega-de-confiance.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Produits</a></li><li><a href="produit-omega3.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Oméga 3 supérieur</a></li><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li></ul>
+          <ul class="space-y-3 text-sm"><li><a href="produit.html?p=pure-arctic-oil" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Produits</a></li><li><a href="produit.html?p=pure-arctic-oil-natural" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Oméga 3 supérieur</a></li><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li></ul>
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Informations</h4>
@@ -303,7 +305,7 @@
         </div>
         <div>
           <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Contact</h4>
-          <ul class="space-y-3 text-sm"><li><a href="candidature.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Prendre rendez-vous</a></li></ul>
+          <ul class="space-y-3 text-sm"><li><a href="partenaire.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Prendre rendez-vous</a></li></ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">

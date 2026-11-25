@@ -17,3 +17,5 @@ veille/
 
 # Documents de mission (devis, factures)
 mission/
+tailwind.config.cjs
+tw-entree.css

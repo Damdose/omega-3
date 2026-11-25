@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const from = process.env.LEAD_EMAIL_FROM || 'FENA x Eqology <zenco@heyfuture.fr>';
+    const from = process.env.LEAD_EMAIL_FROM || 'Équipe Eqology <zenco@heyfuture.fr>';
     const to = (process.env.LEAD_EMAIL_TO || 'zenco.coignard@gmail.com')
       .split(',').map(s => s.trim()).filter(Boolean);
 
@@ -57,7 +57,7 @@ module.exports = async (req, res) => {
 
     const html =
       `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:auto">
-        <h2 style="color:#0B1D2E;font-size:18px">Nouveau message de contact — FENA × Eqology</h2>
+        <h2 style="color:#0B1D2E;font-size:18px">Nouveau message depuis le site</h2>
         <table style="border-collapse:collapse;width:100%;border:1px solid #eceae4;border-radius:8px;overflow:hidden">${trs}</table>
         <p style="color:#6b7280;font-size:13px;margin:18px 0 6px">Message :</p>
         <div style="white-space:pre-wrap;background:#f5f4f0;border-radius:8px;padding:14px;color:#0B1D2E;font-size:14px;line-height:1.5">${esc(data.message)}</div>
