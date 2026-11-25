@@ -3,221 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Nutrition et santé naturelle | EQOLOGY</title>
-  <meta name="description" content="Articles et ressources sur la nutrition, les oméga-3 et la naturopathie. Conseils pratiques pour enrichir votre pratique.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
-            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-            
-          },
-          fontFamily: {
-            serif: ['Satoshi', 'Georgia', 'serif'],
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Satoshi', sans-serif; background: #FAFAF8; overflow-x: hidden; max-width: 100vw; }
-    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
-    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
-    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-marquee { animation: marquee 30s linear infinite; }
-    
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-answer.open { max-height: 500px; }
-    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-chevron.open { transform: rotate(180deg); }
-    .stat-number { font-variant-numeric: tabular-nums; }
-    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-6px); }
-  </style>
-  <link rel="stylesheet" href="site.css?v=202611251359">
-  <script src="site-config.js?v=202611251359"></script>
+  <title>Articles · Nutrition et santé naturelle · Eqology</title>
+  <meta name="description" content="Articles sur les oméga-3 : ce que dit la science, comment bien les choisir, et pourquoi mesurer avant de compléter.">
+  <link rel="canonical" href="https://eqology-france.vercel.app/blog.html">
+  <meta property="og:title" content="Articles · Nutrition et santé naturelle · Eqology">
+  <meta property="og:description" content="Articles sur les oméga-3 : ce que dit la science, comment bien les choisir, et pourquoi mesurer avant de compléter.">
+  <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/articles/coeur.webp">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
 </head>
-<body class="antialiased text-navy-900 overflow-x-hidden">
+<body>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
-  <!-- Navigation -->
-  <nav id="entete" class="sticky top-0 z-40"></nav>
-
-  <!-- Hero -->
-  <section class="pt-32 pb-8 md:pt-40 md:pb-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight">
-          Nutrition et <br><span class="italic font-normal">santé naturelle</span>
-        </h1>
-        <p class="mt-6 text-lg text-navy-800/60 leading-relaxed">
-          Analyses empiriques et conseils pratiques pour nourrir votre expertise en naturopathie.
-        </p>
+  <main>
+    <header data-plein class="tete">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <span aria-current="page">Articles</span></nav>
+        <span class="oeil mt-8">Articles</span>
+        <h1 class="h1-page mt-6 max-w-[14ch]">Les omégaNutrition et <span class="points">santé naturelle.</span>#8209;3, <span class="points">expliqués.</span></h1>
+        <p class="lead mt-6">Ce que dit la science sur les oméga-3, expliqué simplement, et comment bien les choisir.</p>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Featured article — large, editorial -->
-  <section class="py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="article-coeur.html" class="reveal group block">
-        <div class="grid md:grid-cols-2 gap-0 bg-navy-800 rounded-[2rem] overflow-hidden">
-          <div class="aspect-[16/10] md:aspect-auto bg-navy-700/50 flex items-center justify-center min-h-[250px]">
-            <img src="assets/images/generated/14_blog_cardiac.png" alt="Santé cardiaque et oméga-3" class="w-full h-full object-cover">
-          </div>
-          <div class="p-6 sm:p-10 md:p-14 flex flex-col justify-center">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="px-3 py-1 bg-white/10 text-glacier-200 text-xs font-medium rounded-lg">Recherche</span>
-              <span class="text-glacier-400 text-xs">7 min de lecture</span>
-            </div>
-            <h2 class="font-serif text-2xl md:text-3xl font-bold text-white group-hover:text-glacier-200 transition-colors mb-4">Oméga-3 et santé cardiaque : ce que montrent les études</h2>
-            <p class="text-glacier-300 leading-relaxed mb-6">Allégations autorisées par l'EFSA, fréquence cardiaque, chirurgie cardiaque : un point documenté sur les données cardiovasculaires.</p>
-            <span class="inline-flex items-center gap-2 text-white font-medium text-sm group-hover:gap-3 transition-all">
-              Lire l'article
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Articles grid — varied sizes -->
-  <section class="py-12 md:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- 2 articles side by side -->
-      <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <a href="article-cerveau.html" class="reveal reveal-delay-1 card-hover group block bg-cream-100 rounded-3xl overflow-hidden cursor-pointer">
-          <div class="aspect-[16/9] bg-cream-100 flex items-center justify-center">
-            <img src="assets/images/generated/15_blog_cerveau.png" alt="Cerveau et oméga-3" class="w-full h-full object-cover rounded-t-3xl">
-          </div>
-          <div class="p-5 sm:p-8">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="text-glacier-600 text-xs font-medium">Science</span>
-              <span class="text-navy-800/30 text-xs">6 min</span>
-            </div>
-            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-2">Le DHA, pilier du système nerveux</h3>
-            <p class="text-navy-800/50 text-sm leading-relaxed">Allégation EFSA sur le cerveau, cohorte de Framingham : ce que la recherche établit sur les fonctions cognitives.</p>
+    <section class="sec !pt-0">
+      <div class="wrap">
+        <!-- À la une -->
+        <a href="article-coeur.html" class="group carte overflow-hidden grid md:grid-cols-2 hover:border-white/30 transition-colors">
+          <div class="relative aspect-[16/10] md:aspect-auto md:min-h-[380px] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/coeur.webp" srcset="assets/v2/articles/coeur-800.webp 800w, assets/v2/articles/coeur.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="Santé cardiaque et oméga-3" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" fetchpriority="high"></div>
+          <div class="p-7 sm:p-10 md:p-14 flex flex-col justify-center">
+            <div class="flex flex-wrap items-center gap-3"><span class="oeil">À la une</span><span class="text-sm text-white/55">Recherche · 7 min de lecture</span></div>
+            <h2 class="h2 mt-8">Oméga-3 et santé cardiaque&nbsp;: ce que montrent les études</h2>
+            <p class="text-white/65 mt-4 leading-relaxed max-w-[48ch]">Allégations autorisées par l'EFSA, fréquence cardiaque, chirurgie cardiaque&nbsp;: un point documenté sur les données cardiovasculaires.</p>
+            <span class="lien-fleche mt-8">Lire l'article</span>
           </div>
         </a>
 
-        <a href="article-immunite.html" class="reveal reveal-delay-2 card-hover group block bg-cream-100 rounded-3xl overflow-hidden cursor-pointer">
-          <div class="aspect-[16/9] bg-glacier-50 flex items-center justify-center">
-            <img src="assets/images/generated/18_omega_inclusivite.png" alt="Inflammation, peau et oméga-3" class="w-full h-full object-cover rounded-t-3xl">
-          </div>
-          <div class="p-5 sm:p-8">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="text-glacier-600 text-xs font-medium">Science</span>
-              <span class="text-navy-800/30 text-xs">6 min</span>
+        <div class="mt-4 grid gap-4 md:grid-cols-2">
+          <a href="article-cerveau.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/cerveau-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Science · 6 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Le DHA, pilier du système nerveux</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Allégation EFSA sur le cerveau, cohorte de Framingham&nbsp;: ce que la recherche établit sur les fonctions cognitives.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
             </div>
-            <h3 class="font-serif text-xl font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-2">Inflammation, peau et immunité : où en est la recherche</h3>
-            <p class="text-navy-800/50 text-sm leading-relaxed">Un champ prometteur mais encore exploratoire — présenté honnêtement, avec le point ferme sur la vision.</p>
+          </a>
+          <a href="article-immunite.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/immunite-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Science · 6 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Inflammation, peau et immunité&nbsp;: où en est la recherche</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Un champ prometteur mais encore exploratoire, présenté honnêtement, avec le point ferme sur la vision.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Le dossier pilier -->
+        <a href="science-omega3.html" class="group mt-4 carte-claire p-7 sm:p-10 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+          <div>
+            <span class="text-sm text-nuit/55">Dossier · référence complète</span>
+            <h3 class="text-3xl font-light mt-3 leading-tight">La science des oméga&#8209;3, système par système</h3>
+            <p class="text-nuit/70 mt-3 leading-relaxed max-w-[60ch]">Le dossier documenté&nbsp;: allégations autorisées par l'EFSA, résultats d'études et sources, du système nerveux à la vision.</p>
           </div>
+          <span class="btn btn-ligne-nuit shrink-0">Ouvrir le dossier</span>
         </a>
       </div>
+    </section>
 
-      <!-- Dossier pilier — mise en avant -->
-      <a href="science-omega3.html" class="reveal card-hover group block bg-navy-900 rounded-3xl overflow-hidden mb-6 p-6 sm:p-9">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-          <div class="flex-1">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="px-3 py-1 bg-white/10 text-glacier-200 text-xs font-medium rounded-lg">Dossier</span>
-              <span class="text-glacier-400 text-xs">Référence complète</span>
-            </div>
-            <h3 class="font-serif text-xl md:text-2xl font-bold text-white group-hover:text-glacier-200 transition-colors mb-1">La science des oméga-3, système par système</h3>
-            <p class="text-glacier-300/80 text-sm leading-relaxed">Le dossier documenté : allégations autorisées par l'EFSA, résultats d'études et sources, du système nerveux à la vision.</p>
-          </div>
-          <span class="inline-flex items-center gap-2 text-white font-medium text-sm group-hover:gap-3 transition-all shrink-0">
-            Ouvrir le dossier
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </span>
+    <!-- Repères qualité -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet"><span class="oeil">Bien choisir</span><h2 class="h2 mt-10 max-w-[20ch]">Les repères pour choisir son huile.</h2></div>
+        <div class="mt-12 grid gap-4 md:grid-cols-2">
+          <a href="produit.html?p=pure-arctic-oil" class="group carte p-5 flex gap-5 items-center hover:border-white/30 transition-colors">
+            <div class="relative w-28 h-28 sm:w-36 sm:h-36 shrink-0 rounded-lg overflow-hidden bg-nuit-3"><img src="assets/v2/articles/tracabilite-800.webp" alt="Océan arctique, traçabilité" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div>
+            <div><span class="text-sm text-white/50">Qualité · 5 min</span><h3 class="text-xl font-light mt-2 leading-snug">Traçabilité et qualité d'un oméga-3</h3><p class="text-white/65 text-[15px] mt-1.5 leading-relaxed">Indice Totox, fraîcheur et certifications&nbsp;: les repères pour évaluer une huile.</p></div>
+          </a>
+          <a href="produit.html?p=pure-arctic-oil-natural" class="group carte p-5 flex gap-5 items-center hover:border-white/30 transition-colors">
+            <div class="relative w-28 h-28 sm:w-36 sm:h-36 shrink-0 rounded-lg overflow-hidden bg-nuit-3"><img src="assets/v2/articles/regimes-800.webp" alt="Régimes halal et kascher" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div>
+            <div><span class="text-sm text-white/50">Inclusivité · 5 min</span><h3 class="text-xl font-light mt-2 leading-snug">Régimes spécifiques&nbsp;: halal, kascher et au-delà</h3><p class="text-white/65 text-[15px] mt-1.5 leading-relaxed">Comment proposer une solution adaptée à chaque conviction alimentaire.</p></div>
+          </a>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <!-- Smaller articles — list style -->
-      <div class="reveal space-y-4">
-        <a href="produit.html?p=pure-arctic-oil" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
-          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
-            <img src="assets/images/generated/16_blog_arctic.png" alt="Océan arctique — traçabilité" class="w-full h-full object-cover">
+    <!-- Mesurer plutôt que deviner -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <span class="oeil">Mesurer plutôt que deviner</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Savoir où vous en êtes, avant de <span class="points">compléter.</span></h2>
           </div>
           <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-glacier-600 text-xs font-medium">Qualité</span>
-              <span class="text-navy-800/30 text-xs">5 min</span>
+            <p class="lead">Le test oméga-3 se fait chez vous&nbsp;: une goutte de sang, analysée par un laboratoire indépendant. Vous connaissez votre rapport oméga-6 / oméga-3, puis un second test montre ce qui a changé.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="le-test.html" class="btn btn-plein">Découvrir le test</a>
+              <a href="boutique.html" class="btn btn-clair">Voir la boutique</a>
             </div>
-            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Traçabilité et qualité d'un oméga-3</h3>
-            <p class="text-navy-800/50 text-sm">Indice Totox, fraîcheur et certifications : les repères pour évaluer une huile.</p>
           </div>
-        </a>
-
-        <a href="produit.html?p=pure-arctic-oil-natural" class="group flex flex-col sm:flex-row items-start gap-6 bg-white border border-cream-200 rounded-2xl p-6 hover:border-glacier-200 hover:shadow-sm transition-all cursor-pointer">
-          <div class="w-full sm:w-32 aspect-[4/3] sm:aspect-square rounded-xl overflow-hidden shrink-0">
-            <img src="assets/images/generated/08_halal_kosher.png" alt="Régimes halal et kascher" class="w-full h-full object-cover">
-          </div>
-          <div>
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-navy-500 text-xs font-medium">Inclusivité</span>
-              <span class="text-navy-800/30 text-xs">5 min</span>
-            </div>
-            <h3 class="font-serif text-lg font-bold text-navy-900 group-hover:text-navy-700 transition-colors mb-1">Régimes spécifiques : halal, kascher et au-delà</h3>
-            <p class="text-navy-800/50 text-sm">Comment proposer une solution adaptée à chaque conviction alimentaire.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-navy-900 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <div>
-          <a href="index.html" class="inline-flex items-center" aria-label="Eqology"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:30px;width:auto;display:inline-block;"></a>
-          <p class="text-cream-400 text-sm leading-relaxed mt-4">Yves Coignard, distributeur indépendant Eqology.</p>
-        </div>
-        <div>
-          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Explorer</h4>
-          <ul class="space-y-3 text-sm"><li><a href="produit.html?p=pure-arctic-oil" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Produits</a></li><li><a href="produit.html?p=pure-arctic-oil-natural" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Oméga 3 supérieur</a></li><li><a href="blog.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Blog</a></li></ul>
-        </div>
-        <div>
-          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Informations</h4>
-          <ul class="space-y-3 text-sm"><li><a href="index.html#faq" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">FAQ</a></li><li><a href="#" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Certifications</a></li><li><a href="#" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Études scientifiques</a></li></ul>
-        </div>
-        <div>
-          <h4 class="font-serif font-bold text-sm mb-4 text-cream-300">Contact</h4>
-          <ul class="space-y-3 text-sm"><li><a href="partenaire.html" class="text-cream-400 hover:text-white transition-colors duration-300 cursor-pointer">Prendre rendez-vous</a></li></ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-cream-400/60 text-sm">&copy; 2026 ZENCO SAS · distributeur indépendant Eqology</p>
-        <div class="flex items-center gap-6 text-sm text-cream-400/60">
-          <a href="#" class="hover:text-white transition-colors duration-300 cursor-pointer">Confidentialité</a>
-          <a href="#" class="hover:text-white transition-colors duration-300 cursor-pointer">Conditions</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
+  </main>
 
-  <script src="components.js?v=202611251359"></script>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
 </body>
 </html>

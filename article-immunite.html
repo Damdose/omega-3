@@ -3,157 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oméga-3, inflammation et peau — EQOLOGY</title>
+  <title>Oméga-3, inflammation et peau · Eqology</title>
   <meta name="description" content="Un état des lieux documenté et prudent de la recherche sur les oméga-3, l'inflammation, la peau et la vision. Recherche émergente distinguée du seul point établi (allégation EFSA vision).">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
-            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-
-          },
-          fontFamily: {
-            serif: ['Satoshi', 'Georgia', 'serif'],
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Satoshi', sans-serif; background: #FAFAF8; overflow-x: hidden; max-width: 100vw; }
-    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
-    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
-    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-marquee { animation: marquee 30s linear infinite; }
-
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-answer.open { max-height: 500px; }
-    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-chevron.open { transform: rotate(180deg); }
-    .stat-number { font-variant-numeric: tabular-nums; }
-    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-6px); }
-    .prose p { margin-bottom: 1.5em; line-height: 1.85; color: rgba(28, 28, 28, 0.65); }
-    .prose h2 { font-family: 'Satoshi', Georgia, serif; margin-top: 2.5em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
-    .prose h3 { font-family: 'Satoshi', Georgia, serif; margin-top: 2em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
-    .prose ul { margin: 1.5em 0; padding-left: 1.25em; }
-    .prose ul li { margin-bottom: 0.5em; color: rgba(28, 28, 28, 0.65); line-height: 1.75; }
-    .prose blockquote { border-left: 3px solid #4DA8B5; padding-left: 1.5em; margin: 2em 0; font-style: italic; color: rgba(28, 28, 28, 0.55); }
-    .prose strong { color: #0B1D2E; }
-  </style>
-  <link rel="stylesheet" href="site.css?v=202611251359">
-  <script src="site-config.js?v=202611251359"></script>
+  <link rel="canonical" href="https://eqology-france.vercel.app/article-immunite.html">
+  <meta property="og:title" content="Oméga-3, inflammation et peau · Eqology">
+  <meta property="og:description" content="Un état des lieux documenté et prudent de la recherche sur les oméga-3, l'inflammation, la peau et la vision. Recherche émergente distinguée du seul point établi (allégation EFSA vision).">
+  <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/articles/immunite.webp">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Oméga-3, inflammation et peau : où en est la recherche","author":{"@type":"Person","name":"Yves Coignard"},"image":"https://eqology-france.vercel.app/assets/v2/articles/immunite.webp","inLanguage":"fr"}</script>
 </head>
-<body class="antialiased text-navy-900 overflow-x-hidden">
+<body>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
-  <!-- Navigation -->
-  <nav id="entete" class="sticky top-0 z-40"></nav>
-
-  <!-- Article -->
-  <article class="pt-32 pb-20 md:pt-40 md:pb-28">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-sm text-navy-800/40 mb-10">
-        <a href="blog.html" class="hover:text-glacier-600 transition-colors">Blog</a>
-        <span>/</span>
-        <span class="text-navy-800/70">Article</span>
-      </nav>
-
-      <!-- Meta -->
-      <div class="flex items-center gap-3 mb-6">
-        <span class="px-3 py-1 bg-glacier-50 text-navy-700 text-xs font-medium rounded-lg">Science</span>
-        <span class="text-navy-800/30 text-xs">6 min de lecture</span>
+  <main>
+    <header data-plein class="tete">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <a href="blog.html">Articles</a> <span class="mx-1.5">/</span> <span aria-current="page">Science</span></nav>
+        <div class="mt-8 flex flex-wrap items-center gap-3"><span class="oeil">Science</span><span class="text-sm text-white/55">6 min de lecture · 28 mai 2026</span></div>
+        <h1 class="h1-page mt-6 max-w-[22ch] !text-[clamp(2.3rem,5vw,4.4rem)]">Oméga-3, inflammation et peau&nbsp;: où en est la recherche</h1>
+        <p class="mt-6 text-white/60">Par Yves Coignard, distributeur indépendant Eqology</p>
       </div>
+    </header>
 
-      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 leading-[1.15] mb-8">
-        Oméga-3, inflammation et peau : où en est la recherche
-      </h1>
+    <article class="sec !pt-0">
+      <div class="wrap">
+        <img src="assets/v2/articles/immunite.webp" srcset="assets/v2/articles/immunite-800.webp 800w, assets/v2/articles/immunite.webp 1600w" sizes="(min-width: 1400px) 1332px, 100vw" alt="Oméga-3, inflammation et peau — état de la recherche" class="w-full rounded-xl aspect-[16/9] md:aspect-[21/9] object-cover" fetchpriority="high">
+        <div class="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-20">
+          <div>
+            <div class="texte-long">
+<p>Parmi les oméga-3 à longue chaîne, l'<strong>acide eicosapentaénoïque (EPA)</strong> retient une attention particulière : il est le précurseur de médiateurs lipidiques qui participeraient à la <em>résolution</em> de l'inflammation, c'est-à-dire au retour de l'organisme à son état d'équilibre après une réaction inflammatoire. Aux côtés de l'<strong>acide docosahexaénoïque (DHA)</strong>, l'EPA est un acide gras dit essentiel : le corps ne le synthétise qu'en très faible quantité et doit le puiser dans l'alimentation. C'est ce rôle supposé dans la régulation de l'inflammation qui explique l'ampleur des travaux consacrés à ces molécules. Il convient toutefois d'en dresser un état des lieux prudent : beaucoup de ces pistes relèvent d'une recherche encore émergente, et rien ne saurait être présenté comme acquis.</p>
 
-      <!-- Author -->
-      <div class="flex items-center gap-4 mb-12 pb-10 border-b border-cream-200">
-        <div class="w-10 h-10 bg-glacier-100 rounded-full flex items-center justify-center">
-          <span class="font-serif font-bold text-navy-700 text-sm">FE</span>
-        </div>
-        <div>
-          <p class="font-medium text-navy-900 text-sm">Yves Coignard, distributeur indépendant Eqology</p>
-          <p class="text-navy-800/40 text-xs">28 mai 2026</p>
-        </div>
-      </div>
-
-      <!-- Featured image -->
-      <img src="assets/images/generated/18_omega_inclusivite.png" alt="Oméga-3, inflammation et peau — état de la recherche" class="w-full rounded-2xl sm:rounded-[2rem] aspect-[16/9] object-cover mb-10 sm:mb-14">
-
-      <!-- Article body -->
-      <div class="prose max-w-none text-lg">
-        <p>Parmi les oméga-3 à longue chaîne, l'<strong>acide eicosapentaénoïque (EPA)</strong> retient une attention particulière : il est le précurseur de médiateurs lipidiques qui participeraient à la <em>résolution</em> de l'inflammation, c'est-à-dire au retour de l'organisme à son état d'équilibre après une réaction inflammatoire. Aux côtés de l'<strong>acide docosahexaénoïque (DHA)</strong>, l'EPA est un acide gras dit essentiel : le corps ne le synthétise qu'en très faible quantité et doit le puiser dans l'alimentation. C'est ce rôle supposé dans la régulation de l'inflammation qui explique l'ampleur des travaux consacrés à ces molécules. Il convient toutefois d'en dresser un état des lieux prudent : beaucoup de ces pistes relèvent d'une recherche encore émergente, et rien ne saurait être présenté comme acquis.</p>
-
-        <h2 class="text-2xl">Immunité et inflammation</h2>
+        <h2>Immunité et inflammation</h2>
         <p>Plusieurs équipes explorent l'influence que les oméga-3 pourraient exercer sur le fonctionnement du système immunitaire, notamment sur la production d'anticorps et sur la modulation des réponses inflammatoires. L'hypothèse de travail est cohérente avec la biochimie de l'EPA, mais les résultats disponibles restent hétérogènes et exploratoires. On parle ici d'une <strong>recherche émergente</strong> : les données suggèrent des pistes intéressantes, sans permettre d'affirmer un effet établi ni, a fortiori, une quelconque indication. Ces travaux invitent à la curiosité davantage qu'à la conclusion.</p>
 
-        <h2 class="text-2xl">Peau atopique et asthme</h2>
+        <h2>Peau atopique et asthme</h2>
         <p>Certains travaux rapportent une possible atténuation de l'inflammation cutanée, ainsi qu'une réduction des démangeaisons associées à l'eczéma atopique et de certains symptômes d'asthme. Ces observations, encore préliminaires, ne doivent surtout pas être lues comme la description d'un traitement : les oméga-3 ne sont ni un remède contre l'eczéma, ni un traitement de l'asthme. Il s'agit de signaux issus d'une <strong>recherche émergente</strong>, dont l'ampleur, la reproductibilité et la portée clinique restent à confirmer. Dans le cadre d'un accompagnement, ces éléments relèvent de l'information générale et ne se substituent en aucun cas à un suivi médical.</p>
 
-        <h2 class="text-2xl">Peau et ultraviolets</h2>
+        <h2>Peau et ultraviolets</h2>
         <p>Une autre piste, elle aussi émergente, s'intéresse à un rôle éventuel des oméga-3 vis-à-vis de la sensibilité de la peau aux ultraviolets — la réactivité aux UV étant l'un des facteurs impliqués dans le vieillissement cutané. Des études suggèrent que la supplémentation pourrait moduler cette sensibilité, mais les protocoles, les doses et les effets observés varient d'un travail à l'autre. Là encore, il faut se garder de toute promesse : on ne parle ni de protection solaire, ni de prévention d'une pathologie cutanée. Ces résultats esquissent une hypothèse à approfondir, rien de plus.</p>
 
-        <h2 class="text-2xl">Un mot sur la vision</h2>
+        <h2>Un mot sur la vision</h2>
         <p>Sur l'ensemble de cette page, un seul point échappe au registre de l'hypothèse : la vision. À la différence de ce qui précède, il s'agit d'une <strong>allégation de santé validée</strong>. L'Autorité européenne de sécurité des aliments (EFSA), au titre du règlement (UE) n°432/2012, reconnaît que <strong>le DHA contribue au maintien d'une vision normale</strong>, à partir d'un apport de 250&nbsp;mg par jour. Ce fondement s'explique par la biologie : le DHA est un composant structurel majeur des photorécepteurs de la rétine. Ce point est ferme et se distingue nettement du reste de l'article.</p>
         <p>Dans un registre plus exploratoire, un essai randomisé (Bhargava R. et&nbsp;al., 2015) a par ailleurs associé une supplémentation en oméga-3 à une amélioration des symptômes du syndrome de l'œil sec chez des utilisateurs intensifs d'écrans. Ce résultat, intéressant pour qui passe ses journées devant un écran, décrit une population et un protocole donnés et ne possède pas le statut réglementaire de l'allégation EFSA.</p>
 
-        <h2 class="text-2xl">Ce qu'il faut en retenir</h2>
+        <h2>Ce qu'il faut en retenir</h2>
         <p>Le tableau qui se dessine est celui de nombreuses pistes prometteuses — immunité, peau atopique, sensibilité aux UV — mais encore à confirmer. Ces champs sont actifs et méritent d'être suivis, à condition de les nommer pour ce qu'ils sont : de la <strong>recherche émergente</strong>, à évoquer au conditionnel et jamais comme une promesse. Seule la contribution du DHA au maintien d'une vision normale constitue, à ce jour, un point établi. Pour le professionnel de l'accompagnement, la posture la plus juste consiste à distinguer clairement ce socle du reste, et à ne rien affirmer que la science n'ait démontré.</p>
-        <p><a href="science-omega3.html" class="text-glacier-600 font-medium hover:text-glacier-700 transition-colors">Voir le dossier complet : La science des oméga-3 &rarr;</a></p>
-      </div>
+        <p><a href="science-omega3.html">Voir le dossier complet : La science des oméga-3 &rarr;</a></p>
+            </div>
 
-      <!-- Avertissement -->
-      <div class="mt-14">
-        <div class="bg-cream-100 border border-cream-300 rounded-2xl p-6 sm:p-8">
-          <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-3">Avertissement</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Les informations de cette page sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seule l'allégation signalée comme autorisée par l'EFSA (vision) constitue une allégation de santé validée ; les autres éléments relèvent de la recherche scientifique, encore émergente, et ne sont pas des allégations de santé.</p>
+            <div class="mt-14 carte p-6 sm:p-8 max-w-[68ch]">
+              <p class="text-sm text-white/55">Avertissement</p>
+              <p class="mt-3 text-sm text-white/70 leading-relaxed">Les informations de cette page sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seule l'allégation signalée comme autorisée par l'EFSA (vision) constitue une allégation de santé validée ; les autres éléments relèvent de la recherche scientifique, encore émergente, et ne sont pas des allégations de santé.</p>
+            </div>
+
+            <details class="mt-4 carte max-w-[68ch]">
+              <summary class="flex items-center justify-between gap-6 p-6 text-lg">Sources et références<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary>
+              <ul class="px-6 pb-6 space-y-2.5 text-sm text-white/65 leading-relaxed">
+                <li>Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (contribution du DHA au maintien d'une vision normale).</li>
+                <li>Bhargava R. et al. Essai randomisé sur la supplémentation en oméga-3 et le syndrome de l'œil sec chez les utilisateurs d'écrans, 2015.</li>
+              </ul>
+              <p class="px-6 pb-6 -mt-2 text-sm text-white/45 leading-relaxed">Les références sont indiquées à titre documentaire. Les pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</p>
+            </details>
+          </div>
+          <aside class="lg:sticky lg:top-28 self-start space-y-4">
+            <div class="carte p-6">
+              <p class="text-sm text-white/55">Comment lire les repères</p>
+              <ul class="mt-4 space-y-4 text-sm text-white/70 leading-relaxed">
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span><span class="block mt-1.5">Fait établi et autorisé en Europe.</span></li>
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span><span class="block mt-1.5">Résultat d'essais&nbsp;: solide, mais propre au contexte étudié.</span></li>
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span><span class="block mt-1.5">Piste encore préliminaire, à lire au conditionnel.</span></li>
+              </ul>
+            </div>
+            <a href="science-omega3.html" class="group carte p-6 block hover:border-white/30 transition-colors">
+              <p class="text-sm text-white/55">Le dossier complet</p>
+              <p class="text-xl font-light mt-2 leading-snug">La science des oméga&#8209;3, système par système</p>
+              <span class="lien-fleche mt-4 text-sm">Ouvrir le dossier</span>
+            </a>
+          </aside>
         </div>
       </div>
+    </article>
 
-      <!-- Sources -->
-      <div class="mt-8">
-        <details class="group bg-white border border-cream-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
-            <span class="font-serif font-bold text-navy-900">Sources &amp; références</span>
-            <svg class="w-5 h-5 text-navy-800/40 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="px-6 pb-6 space-y-2.5 text-sm text-navy-800/55 leading-relaxed" style="font-variant-numeric: tabular-nums;">
-            <p>· Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (contribution du DHA au maintien d'une vision normale).</p>
-            <p>· Bhargava R. et al. Essai randomisé sur la supplémentation en oméga-3 et le syndrome de l'œil sec chez les utilisateurs d'écrans, 2015.</p>
-            <p class="text-navy-800/40 pt-2">Les références sont indiquées à titre documentaire. Les pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</p>
+    <!-- Mesurer plutôt que deviner -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <span class="oeil">Mesurer plutôt que deviner</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Savoir où vous en êtes, avant de <span class="points">compléter.</span></h2>
           </div>
-        </details>
+          <div>
+            <p class="lead">Le test oméga-3 se fait chez vous&nbsp;: une goutte de sang, analysée par un laboratoire indépendant. Vous connaissez votre rapport oméga-6 / oméga-3, puis un second test montre ce qui a changé.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="le-test.html" class="btn btn-plein">Découvrir le test</a>
+              <a href="boutique.html" class="btn btn-clair">Voir la boutique</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </article>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-navy-900 text-white py-20"></footer>
+    <!-- À lire aussi -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div><span class="oeil">À lire aussi</span><h2 class="h2 mt-10">Les autres articles.</h2></div>
+          <a href="blog.html" class="lien-fleche shrink-0">Tous les articles</a>
+        </div>
+        <div class="mt-12 grid gap-4 md:grid-cols-2">
+          <a href="article-coeur.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/coeur-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Recherche · 7 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Oméga-3 et santé cardiaque&nbsp;: ce que montrent les études</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Allégations autorisées par l'EFSA, fréquence cardiaque, chirurgie cardiaque&nbsp;: un point documenté sur les données cardiovasculaires.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
+            </div>
+          </a>
+          <a href="article-cerveau.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/cerveau-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Science · 6 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Le DHA, pilier du système nerveux</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Allégation EFSA sur le cerveau, cohorte de Framingham&nbsp;: ce que la recherche établit sur les fonctions cognitives.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <script src="components.js?v=202611251359"></script>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
 </body>
 </html>

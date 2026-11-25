@@ -3,161 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oméga-3 et santé cardiaque — EQOLOGY</title>
+  <title>Oméga-3 et santé cardiaque · Eqology</title>
   <meta name="description" content="Ce que montrent les études sur les oméga-3 (EPA, DHA) et le cœur : allégations autorisées par l'EFSA, fréquence cardiaque, chirurgie cardiaque, rigidité artérielle. Un article documenté pour la pratique en naturopathie.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
-            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-
-          },
-          fontFamily: {
-            serif: ['Satoshi', 'Georgia', 'serif'],
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Satoshi', sans-serif; background: #FAFAF8; overflow-x: hidden; max-width: 100vw; }
-    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
-    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
-    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .animate-marquee { animation: marquee 30s linear infinite; }
-
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-answer.open { max-height: 500px; }
-    .faq-chevron { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .faq-chevron.open { transform: rotate(180deg); }
-    .stat-number { font-variant-numeric: tabular-nums; }
-    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-6px); }
-    .prose p { margin-bottom: 1.5em; line-height: 1.85; color: rgba(28, 28, 28, 0.65); }
-    .prose h2 { font-family: 'Satoshi', Georgia, serif; margin-top: 2.5em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
-    .prose h3 { font-family: 'Satoshi', Georgia, serif; margin-top: 2em; margin-bottom: 0.75em; font-weight: 700; color: #0B1D2E; }
-    .prose ul { margin: 1.5em 0; padding-left: 1.25em; }
-    .prose ul li { margin-bottom: 0.5em; color: rgba(28, 28, 28, 0.65); line-height: 1.75; }
-    .prose blockquote { border-left: 3px solid #4DA8B5; padding-left: 1.5em; margin: 2em 0; font-style: italic; color: rgba(28, 28, 28, 0.55); }
-    .prose strong { color: #0B1D2E; }
-    .pill { display: inline-block; font-size: 11px; font-weight: 600; border-radius: 0.5rem; padding: 0.25rem 0.625rem; vertical-align: middle; }
-    .pill-efsa { background: #eef8f9; color: #2e656d; }
-    .pill-essai { background: #F5F4F0; color: #253c5e; }
-    .pill-emergente { background: #fffbeb; color: #b45309; }
-  </style>
-  <link rel="stylesheet" href="site.css?v=202611251359">
-  <script src="site-config.js?v=202611251359"></script>
+  <link rel="canonical" href="https://eqology-france.vercel.app/article-coeur.html">
+  <meta property="og:title" content="Oméga-3 et santé cardiaque · Eqology">
+  <meta property="og:description" content="Ce que montrent les études sur les oméga-3 (EPA, DHA) et le cœur : allégations autorisées par l'EFSA, fréquence cardiaque, chirurgie cardiaque, rigidité artérielle. Un article documenté pour la pratique en naturopathie.">
+  <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/articles/coeur.webp">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Oméga-3 et santé cardiaque : ce que montrent les études","author":{"@type":"Person","name":"Yves Coignard"},"image":"https://eqology-france.vercel.app/assets/v2/articles/coeur.webp","inLanguage":"fr"}</script>
 </head>
-<body class="antialiased text-navy-900 overflow-x-hidden">
+<body>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
-  <!-- Navigation -->
-  <nav id="entete" class="sticky top-0 z-40"></nav>
-
-  <!-- Article -->
-  <article class="pt-32 pb-20 md:pt-40 md:pb-28">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-sm text-navy-800/40 mb-10">
-        <a href="blog.html" class="hover:text-glacier-600 transition-colors">Blog</a>
-        <span>/</span>
-        <span class="text-navy-800/70">Article</span>
-      </nav>
-
-      <!-- Meta -->
-      <div class="flex items-center gap-3 mb-6">
-        <span class="px-3 py-1 bg-glacier-50 text-navy-700 text-xs font-medium rounded-lg">Recherche</span>
-        <span class="text-navy-800/30 text-xs">7 min de lecture</span>
+  <main>
+    <header data-plein class="tete">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <a href="blog.html">Articles</a> <span class="mx-1.5">/</span> <span aria-current="page">Recherche</span></nav>
+        <div class="mt-8 flex flex-wrap items-center gap-3"><span class="oeil">Recherche</span><span class="text-sm text-white/55">7 min de lecture · 12 juin 2026</span></div>
+        <h1 class="h1-page mt-6 max-w-[22ch] !text-[clamp(2.3rem,5vw,4.4rem)]">Oméga-3 et santé cardiaque&nbsp;: ce que montrent les études</h1>
+        <p class="mt-6 text-white/60">Par Yves Coignard, distributeur indépendant Eqology</p>
       </div>
+    </header>
 
-      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 leading-[1.15] mb-8">
-        Oméga-3 et santé cardiaque : ce que montrent les études
-      </h1>
+    <article class="sec !pt-0">
+      <div class="wrap">
+        <img src="assets/v2/articles/coeur.webp" srcset="assets/v2/articles/coeur-800.webp 800w, assets/v2/articles/coeur.webp 1600w" sizes="(min-width: 1400px) 1332px, 100vw" alt="Oméga-3 et santé cardiovasculaire — EPA, DHA et le cœur" class="w-full rounded-xl aspect-[16/9] md:aspect-[21/9] object-cover" fetchpriority="high">
+        <div class="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-20">
+          <div>
+            <div class="texte-long">
+<p>Parmi tous les champs explorés autour des oméga-3, la santé cardiovasculaire est de loin le mieux documenté. Les acides gras à longue chaîne — l'<strong>acide eicosapentaénoïque (EPA)</strong> et l'<strong>acide docosahexaénoïque (DHA)</strong> — sont des acides gras dits <em>essentiels</em> : l'organisme ne les fabrique qu'en quantité marginale et doit les puiser dans l'alimentation, principalement les poissons gras et certaines micro-algues. Or l'alimentation occidentale actuelle présente un rapport oméga-6 / oméga-3 de l'ordre de <strong>15:1</strong>, très éloigné du 4:1 à 1:1 vers lequel de nombreux travaux suggèrent qu'il serait souhaitable de tendre. C'est ce déséquilibre qui place les oméga-3 au centre des discussions sur le cœur et les vaisseaux.</p>
 
-      <!-- Author -->
-      <div class="flex items-center gap-4 mb-12 pb-10 border-b border-cream-200">
-        <div class="w-10 h-10 bg-glacier-100 rounded-full flex items-center justify-center">
-          <span class="font-serif font-bold text-navy-700 text-sm">FE</span>
-        </div>
-        <div>
-          <p class="font-medium text-navy-900 text-sm">Yves Coignard, distributeur indépendant Eqology</p>
-          <p class="text-navy-800/40 text-xs">12 juin 2026</p>
-        </div>
-      </div>
-
-      <!-- Featured image -->
-      <img src="assets/images/generated/14_blog_cardiac.png" alt="Oméga-3 et santé cardiovasculaire — EPA, DHA et le cœur" class="w-full rounded-2xl sm:rounded-[2rem] aspect-[16/9] object-cover mb-10 sm:mb-14">
-
-      <!-- Article body -->
-      <div class="prose max-w-none text-lg">
-        <p>Parmi tous les champs explorés autour des oméga-3, la santé cardiovasculaire est de loin le mieux documenté. Les acides gras à longue chaîne — l'<strong>acide eicosapentaénoïque (EPA)</strong> et l'<strong>acide docosahexaénoïque (DHA)</strong> — sont des acides gras dits <em>essentiels</em> : l'organisme ne les fabrique qu'en quantité marginale et doit les puiser dans l'alimentation, principalement les poissons gras et certaines micro-algues. Or l'alimentation occidentale actuelle présente un rapport oméga-6 / oméga-3 de l'ordre de <strong>15:1</strong>, très éloigné du 4:1 à 1:1 vers lequel de nombreux travaux suggèrent qu'il serait souhaitable de tendre. C'est ce déséquilibre qui place les oméga-3 au centre des discussions sur le cœur et les vaisseaux.</p>
-
-        <h2 class="text-2xl">Ce que la réglementation valide</h2>
-        <p>Toutes les affirmations ne se valent pas, et il est utile de distinguer d'emblée ce qui est <strong>établi</strong> de ce qui relève de la recherche. En Europe, l'<strong>Autorité européenne de sécurité des aliments (EFSA)</strong> a validé plusieurs allégations de santé, inscrites au règlement (UE) n°432/2012. Sur le versant cardiovasculaire, trois d'entre elles font référence <span class="pill pill-efsa">Allégation EFSA</span> :</p>
-        <ul class="list-disc">
+        <h2>Ce que la réglementation valide</h2>
+        <p>Toutes les affirmations ne se valent pas, et il est utile de distinguer d'emblée ce qui est <strong>établi</strong> de ce qui relève de la recherche. En Europe, l'<strong>Autorité européenne de sécurité des aliments (EFSA)</strong> a validé plusieurs allégations de santé, inscrites au règlement (UE) n°432/2012. Sur le versant cardiovasculaire, trois d'entre elles font référence <span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span> :</p>
+        <ul>
           <li>l'EPA et le DHA contribuent au <strong>fonctionnement normal du cœur</strong>, à partir de 250&nbsp;mg par jour ;</li>
           <li>ils contribuent au <strong>maintien d'une triglycéridémie normale</strong>, à partir de 2&nbsp;g par jour ;</li>
           <li>ils contribuent au <strong>maintien d'une pression artérielle normale</strong>, à partir de 3&nbsp;g par jour.</li>
         </ul>
         <p>Ce sont là des faits établis et juridiquement reconnus, sur lesquels on peut s'appuyer sans réserve. Les oméga-3 tendent par ailleurs à faire baisser les triglycérides et à améliorer le profil lipidique. Tout ce qui suit dans cet article relève, en revanche, de la recherche clinique et est signalé comme tel.</p>
 
-        <h2 class="text-2xl">La fréquence cardiaque au repos</h2>
-        <p>Une méta-analyse d'essais contrôlés a observé, sous huile de poisson, une réduction moyenne de la fréquence cardiaque au repos d'environ <strong>2,5 battements par minute</strong> <span class="pill pill-essai">Méta-analyse</span>. L'effet peut sembler modeste, mais rapporté à l'échelle d'une année, il représente un allègement notable du travail cardiaque. Il s'agit d'une observation issue de la mise en commun de plusieurs essais, et non d'une promesse de résultat individuel.</p>
+        <h2>La fréquence cardiaque au repos</h2>
+        <p>Une méta-analyse d'essais contrôlés a observé, sous huile de poisson, une réduction moyenne de la fréquence cardiaque au repos d'environ <strong>2,5 battements par minute</strong> <span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Méta-analyse</span>. L'effet peut sembler modeste, mais rapporté à l'échelle d'une année, il représente un allègement notable du travail cardiaque. Il s'agit d'une observation issue de la mise en commun de plusieurs essais, et non d'une promesse de résultat individuel.</p>
 
-        <h2 class="text-2xl">Autour de la chirurgie cardiaque</h2>
-        <p>Un autre axe concerne la période qui entoure une intervention cardiaque. Administrés <em>avant</em> l'opération, les oméga-3 ont été associés, dans plusieurs essais, à une <strong>moindre survenue de fibrillation auriculaire</strong> après l'intervention <span class="pill pill-essai">Essai clinique</span>. Là encore, il s'agit d'une association observée dans un contexte clinique précis, et non d'une indication thérapeutique.</p>
+        <h2>Autour de la chirurgie cardiaque</h2>
+        <p>Un autre axe concerne la période qui entoure une intervention cardiaque. Administrés <em>avant</em> l'opération, les oméga-3 ont été associés, dans plusieurs essais, à une <strong>moindre survenue de fibrillation auriculaire</strong> après l'intervention <span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span>. Là encore, il s'agit d'une association observée dans un contexte clinique précis, et non d'une indication thérapeutique.</p>
 
-        <h2 class="text-2xl">Rigidité artérielle et populations à risque</h2>
-        <p>Plusieurs travaux, encore exploratoires, suggèrent que les oméga-3 pourraient <strong>limiter la progression de la rigidité artérielle</strong>, y compris pendant la ménopause <span class="pill pill-emergente">Recherche émergente</span>. Ces pistes demandent confirmation et doivent être évoquées au conditionnel.</p>
-        <p>Un signal plus marqué a été rapporté dans une population particulière : chez des patients dialysés, un essai a observé, après <strong>3,5 années</strong> de supplémentation, une baisse importante des événements cardiovasculaires majeurs et des accidents vasculaires cérébraux <span class="pill pill-essai">Essai clinique</span>. Ce résultat est prometteur, mais il provient d'une population spécifique et à haut risque : il ne peut être transposé tel quel à la population générale et doit être interprété avec prudence.</p>
+        <h2>Rigidité artérielle et populations à risque</h2>
+        <p>Plusieurs travaux, encore exploratoires, suggèrent que les oméga-3 pourraient <strong>limiter la progression de la rigidité artérielle</strong>, y compris pendant la ménopause <span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>. Ces pistes demandent confirmation et doivent être évoquées au conditionnel.</p>
+        <p>Un signal plus marqué a été rapporté dans une population particulière : chez des patients dialysés, un essai a observé, après <strong>3,5 années</strong> de supplémentation, une baisse importante des événements cardiovasculaires majeurs et des accidents vasculaires cérébraux <span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span>. Ce résultat est prometteur, mais il provient d'une population spécifique et à haut risque : il ne peut être transposé tel quel à la population générale et doit être interprété avec prudence.</p>
 
-        <h2 class="text-2xl">En résumé</h2>
+        <h2>En résumé</h2>
         <p>Sur le cœur, les oméga-3 disposent d'un socle solide : les allégations validées par l'EFSA constituent des repères fiables, tandis que la recherche clinique explore des pistes complémentaires — fréquence cardiaque, contexte chirurgical, rigidité artérielle, populations à risque — dont les résultats, encourageants, restent à consolider. Les oméga-3 ne sont pas un traitement ni un remède : ils s'inscrivent dans une hygiène de vie et une alimentation équilibrée, en soutien et non en substitution.</p>
-        <p><a href="science-omega3.html" class="text-glacier-600 font-medium hover:text-glacier-700 underline decoration-glacier-300 underline-offset-4 transition-colors">Voir le dossier complet : La science des oméga-3 →</a></p>
+        <p><a href="science-omega3.html">Voir le dossier complet : La science des oméga-3 →</a></p>
+            </div>
+
+            <div class="mt-14 carte p-6 sm:p-8 max-w-[68ch]">
+              <p class="text-sm text-white/55">Avertissement</p>
+              <p class="mt-3 text-sm text-white/70 leading-relaxed">Les informations de cet article sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seules les allégations signalées comme autorisées par l'EFSA constituent des allégations de santé validées ; les autres éléments relèvent de la recherche scientifique et ne sont pas des allégations de santé.</p>
+            </div>
+
+            <details class="mt-4 carte max-w-[68ch]">
+              <summary class="flex items-center justify-between gap-6 p-6 text-lg">Sources et références<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary>
+              <ul class="px-6 pb-6 space-y-2.5 text-sm text-white/65 leading-relaxed">
+                <li>Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (EPA, DHA).</li>
+                <li>Mozaffarian D. et al. « Fish intake and heart rate ». <em>Circulation</em>, 2005.</li>
+                <li>Calò L. et al. « N-3 fatty acids for the prevention of atrial fibrillation after coronary artery bypass surgery ». <em>Journal of the American College of Cardiology</em>, 2005.</li>
+              </ul>
+              <p class="px-6 pb-6 -mt-2 text-sm text-white/45 leading-relaxed">Les pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</p>
+            </details>
+          </div>
+          <aside class="lg:sticky lg:top-28 self-start space-y-4">
+            <div class="carte p-6">
+              <p class="text-sm text-white/55">Comment lire les repères</p>
+              <ul class="mt-4 space-y-4 text-sm text-white/70 leading-relaxed">
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span><span class="block mt-1.5">Fait établi et autorisé en Europe.</span></li>
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span><span class="block mt-1.5">Résultat d'essais&nbsp;: solide, mais propre au contexte étudié.</span></li>
+                <li><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span><span class="block mt-1.5">Piste encore préliminaire, à lire au conditionnel.</span></li>
+              </ul>
+            </div>
+            <a href="science-omega3.html" class="group carte p-6 block hover:border-white/30 transition-colors">
+              <p class="text-sm text-white/55">Le dossier complet</p>
+              <p class="text-xl font-light mt-2 leading-snug">La science des oméga&#8209;3, système par système</p>
+              <span class="lien-fleche mt-4 text-sm">Ouvrir le dossier</span>
+            </a>
+          </aside>
+        </div>
       </div>
+    </article>
 
-      <!-- Avertissement -->
-      <div class="mt-14 bg-cream-100 border border-cream-300 rounded-2xl p-6 sm:p-8">
-        <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-3">Avertissement</p>
-        <p class="text-sm text-navy-800/60 leading-relaxed">Les informations de cet article sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seules les allégations signalées comme autorisées par l'EFSA constituent des allégations de santé validées ; les autres éléments relèvent de la recherche scientifique et ne sont pas des allégations de santé.</p>
+    <!-- Mesurer plutôt que deviner -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <span class="oeil">Mesurer plutôt que deviner</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Savoir où vous en êtes, avant de <span class="points">compléter.</span></h2>
+          </div>
+          <div>
+            <p class="lead">Le test oméga-3 se fait chez vous&nbsp;: une goutte de sang, analysée par un laboratoire indépendant. Vous connaissez votre rapport oméga-6 / oméga-3, puis un second test montre ce qui a changé.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="le-test.html" class="btn btn-plein">Découvrir le test</a>
+              <a href="boutique.html" class="btn btn-clair">Voir la boutique</a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Sources -->
-      <div class="mt-10 pt-8 border-t border-cream-200">
-        <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-4">Sources</p>
-        <ul class="space-y-2.5 text-sm text-navy-800/55 leading-relaxed" style="font-variant-numeric: tabular-nums;">
-          <li>· Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (EPA, DHA).</li>
-          <li>· Mozaffarian D. et al. « Fish intake and heart rate ». <em>Circulation</em>, 2005.</li>
-          <li>· Calò L. et al. « N-3 fatty acids for the prevention of atrial fibrillation after coronary artery bypass surgery ». <em>Journal of the American College of Cardiology</em>, 2005.</li>
-          <li class="text-navy-800/40 pt-1">Les pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</li>
-        </ul>
+    <!-- À lire aussi -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div><span class="oeil">À lire aussi</span><h2 class="h2 mt-10">Les autres articles.</h2></div>
+          <a href="blog.html" class="lien-fleche shrink-0">Tous les articles</a>
+        </div>
+        <div class="mt-12 grid gap-4 md:grid-cols-2">
+          <a href="article-cerveau.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/cerveau-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Science · 6 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Le DHA, pilier du système nerveux</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Allégation EFSA sur le cerveau, cohorte de Framingham&nbsp;: ce que la recherche établit sur les fonctions cognitives.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
+            </div>
+          </a>
+          <a href="article-immunite.html" class="group carte overflow-hidden flex flex-col hover:border-white/30 transition-colors">
+            <div class="relative aspect-[16/10] overflow-hidden bg-nuit-3"><img src="assets/v2/articles/immunite-800.webp" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy"></div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+              <span class="text-sm text-white/50">Science · 6 min de lecture</span>
+              <h3 class="text-2xl font-light mt-3 leading-snug">Inflammation, peau et immunité&nbsp;: où en est la recherche</h3>
+              <p class="text-white/65 mt-2 leading-relaxed">Un champ prometteur mais encore exploratoire, présenté honnêtement, avec le point ferme sur la vision.</p>
+              <span class="lien-fleche mt-auto pt-6">Lire l'article</span>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-navy-900 text-white py-20"></footer>
-
-  <script src="components.js?v=202611251359"></script>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
 </body>
 </html>

@@ -3,396 +3,346 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La science des oméga-3 — Ce que disent les études | EQOLOGY</title>
-  <meta name="description" content="Un dossier documenté sur les oméga-3 (EPA, DHA) : allégations autorisées par l'EFSA, résultats d'études par système physiologique, sources et repères pour la pratique en naturopathie.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
-            glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-            cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-          },
-          fontFamily: {
-            serif: ['Satoshi', 'Georgia', 'serif'],
-            sans: ['Satoshi', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Satoshi', sans-serif; background: #FAFAF8; overflow-x: hidden; max-width: 100vw; }
-    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .card-hover { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-4px); }
-    .src { font-variant-numeric: tabular-nums; }
-    .anchor-offset { scroll-margin-top: 110px; }
-  </style>
-  <link rel="stylesheet" href="site.css?v=202611251359">
-  <script src="site-config.js?v=202611251359"></script>
+  <title>La science des oméga-3 · ce que disent les études · Eqology</title>
+  <meta name="description" content="Un dossier documenté sur les oméga-3 (EPA, DHA) : allégations autorisées par l'EFSA, résultats d'études par système physiologique, sources et repères pour bien comprendre.">
+  <link rel="canonical" href="https://eqology-france.vercel.app/science-omega3.html">
+  <meta property="og:title" content="La science des oméga-3 · ce que disent les études · Eqology">
+  <meta property="og:description" content="Un dossier documenté sur les oméga-3 (EPA, DHA) : allégations autorisées par l'EFSA, résultats d'études par système physiologique, sources et repères pour bien comprendre.">
+  <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/articles/cerveau.webp">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
 </head>
-<body class="antialiased text-navy-900 overflow-x-hidden">
+<body>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
-  <!-- Navigation -->
-  <nav id="entete" class="sticky top-0 z-40"></nav>
-
-  <!-- Hero -->
-  <section class="pt-32 pb-10 md:pt-40 md:pb-14">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="inline-flex items-center gap-2 px-4 py-2 bg-glacier-50 border border-glacier-200 rounded-full mb-8">
-        <span class="w-2 h-2 bg-glacier-400 rounded-full"></span>
-        <span class="text-xs sm:text-sm font-medium text-navy-700">Dossier documenté · à visée éducative</span>
+  <main>
+    <header data-plein class="tete">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <a href="blog.html">Articles</a> <span class="mx-1.5">/</span> <span aria-current="page">La science</span></nav>
+        <span class="oeil mt-8">Dossier documenté · à visée éducative</span>
+        <h1 class="h1-page mt-6 max-w-[14ch]">La science des <span class="points">oméga&#8209;3.</span></h1>
+        <p class="lead mt-6">Ce que la recherche a établi, ce qu'elle explore encore. Un état des lieux documenté des acides gras EPA et DHA, sources à l'appui, pour savoir de quoi on parle.</p>
       </div>
-      <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.08] tracking-tight text-navy-900">
-        La science des <span class="italic font-normal text-glacier-600">oméga&#8209;3</span>
-      </h1>
-      <p class="mt-7 text-lg md:text-xl text-navy-800/70 leading-relaxed max-w-2xl">
-        Ce que la recherche a établi, ce qu'elle explore encore. Un état des lieux documenté des acides gras EPA et DHA, à destination des professionnels de l'accompagnement en santé naturelle.
-      </p>
-    </div>
-  </section>
+    </header>
 
-  <!-- Intro : de quoi parle-t-on -->
-  <section class="pb-8">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="prose-block text-lg leading-relaxed text-navy-800/70 space-y-6">
-        <p>Les oméga-3 à longue chaîne — l'<strong class="text-navy-900">acide eicosapentaénoïque (EPA)</strong> et l'<strong class="text-navy-900">acide docosahexaénoïque (DHA)</strong> — sont des acides gras dits <em>essentiels</em> : l'organisme ne les synthétise qu'en très faible quantité et doit les puiser dans l'alimentation, principalement les poissons gras et certaines micro-algues.</p>
+    <!-- De quoi parle-t-on -->
+    <section class="sec !pt-0">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div><span class="oeil">De quoi parle-t-on</span><h2 class="h2 mt-10 max-w-[14ch]">EPA, DHA et l'équilibre oméga&#8209;6 / oméga&#8209;3.</h2></div>
+          <div class="texte-long">
+            <p>Les oméga-3 à longue chaîne — l'<strong>acide eicosapentaénoïque (EPA)</strong> et l'<strong>acide docosahexaénoïque (DHA)</strong> — sont des acides gras dits <em>essentiels</em> : l'organisme ne les synthétise qu'en très faible quantité et doit les puiser dans l'alimentation, principalement les poissons gras et certaines micro-algues.</p>
         <p>Le DHA occupe une place particulière dans le système nerveux : il constitue une part majeure des lipides structurels du cerveau et de la rétine, où il participe à la fluidité des membranes et à la transmission des signaux. L'EPA, lui, intervient davantage dans la régulation des processus inflammatoires. C'est cette double action structurelle et fonctionnelle qui explique l'ampleur des travaux consacrés à ces molécules.</p>
-        <p>Un repère revient dans la littérature : le <strong class="text-navy-900">rapport oméga-6 / oméga-3</strong>. L'alimentation occidentale contemporaine présente un ratio de l'ordre de 15:1, très éloigné du 4:1 à 1:1 vers lequel de nombreux travaux suggèrent qu'il serait souhaitable de tendre. Rééquilibrer ce rapport est l'objet central de la démarche nutritionnelle autour des oméga-3.</p>
+        <p>Un repère revient dans la littérature : le <strong>rapport oméga-6 / oméga-3</strong>. L'alimentation occidentale contemporaine présente un ratio de l'ordre de 15:1, très éloigné du 4:1 à 1:1 vers lequel de nombreux travaux suggèrent qu'il serait souhaitable de tendre. Rééquilibrer ce rapport est l'objet central de la démarche nutritionnelle autour des oméga-3.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOCLE EFSA — allégations autorisées -->
-  <section class="py-10">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal bg-navy-900 text-white rounded-[2rem] p-7 sm:p-11 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-72 h-72 bg-glacier-500/10 rounded-full blur-3xl"></div>
-        <div class="relative">
-          <span class="text-xs font-semibold text-glacier-300 tracking-widest uppercase">Le socle réglementaire</span>
-          <h2 class="font-serif text-2xl sm:text-3xl font-bold mt-3 mb-4">Les allégations de santé autorisées</h2>
-          <p class="text-glacier-200/80 leading-relaxed max-w-2xl mb-8">
-            Toutes les affirmations ne se valent pas. En Europe, seules certaines allégations relatives aux oméga-3 sont validées par l'<strong class="text-white">Autorité européenne de sécurité des aliments (EFSA)</strong> et inscrites au règlement (UE) n°432/2012. Ce sont des faits établis. Le reste de cette page relève de la recherche et est signalé comme tel.
-          </p>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-              <p class="font-semibold text-white mb-1">Cœur</p>
-              <p class="text-sm text-glacier-200/70 leading-relaxed">L'EPA et le DHA contribuent au <strong class="text-white">fonctionnement normal du cœur</strong> (à partir de 250&nbsp;mg/jour).</p>
+    <!-- Le socle réglementaire -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="carte-claire p-7 sm:p-11">
+          <span class="oeil">Le socle réglementaire</span>
+          <div class="mt-8 grid gap-6 lg:grid-cols-2 lg:items-end">
+            <h2 class="h2 max-w-[16ch]">Les allégations de santé autorisées.</h2>
+            <p class="text-nuit/70 leading-relaxed max-w-[60ch]">Toutes les affirmations ne se valent pas. En Europe, seules certaines allégations relatives aux oméga-3 sont validées par l'<strong class="text-nuit font-medium">Autorité européenne de sécurité des aliments (EFSA)</strong> et inscrites au règlement (UE) n°432/2012. Ce sont des faits établis. Le reste de cette page relève de la recherche et est signalé comme tel.</p>
+          </div>
+          <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-lg bg-white p-5"><p class="text-lg">Cœur</p><p class="mt-2 text-[15px] text-nuit/70 leading-relaxed">L'EPA et le DHA contribuent au <strong class="font-medium text-nuit">fonctionnement normal du cœur</strong> (à partir de 250&nbsp;mg/jour).</p></div>
+            <div class="rounded-lg bg-white p-5"><p class="text-lg">Cerveau</p><p class="mt-2 text-[15px] text-nuit/70 leading-relaxed">Le DHA contribue au <strong class="font-medium text-nuit">fonctionnement normal du cerveau</strong> (à partir de 250&nbsp;mg/jour).</p></div>
+            <div class="rounded-lg bg-white p-5"><p class="text-lg">Vision</p><p class="mt-2 text-[15px] text-nuit/70 leading-relaxed">Le DHA contribue au <strong class="font-medium text-nuit">maintien d'une vision normale</strong> (à partir de 250&nbsp;mg/jour).</p></div>
+            <div class="rounded-lg bg-white p-5"><p class="text-lg">Triglycérides &amp; tension</p><p class="mt-2 text-[15px] text-nuit/70 leading-relaxed">L'EPA et le DHA contribuent au maintien d'une <strong class="font-medium text-nuit">triglycéridémie normale</strong> (2&nbsp;g/j) et d'une <strong class="font-medium text-nuit">pression artérielle normale</strong> (3&nbsp;g/j).</p></div>
+          </div>
+          <p class="mt-6 text-sm text-nuit/55">Source : Règlement (UE) n°432/2012 établissant une liste des allégations de santé autorisées portant sur les denrées alimentaires.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sommaire -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div><span class="oeil">Explorer par système</span><h2 class="h2 mt-10 max-w-[16ch]">Six domaines, trois niveaux de preuve.</h2></div>
+          <div>
+            <div class="flex flex-wrap gap-2.5">
+              <a href="#nerveux" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Système nerveux</a>
+              <a href="#cardio" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Cœur &amp; vaisseaux</a>
+              <a href="#inflammation" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Immunité &amp; peau</a>
+              <a href="#metabolisme" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Métabolisme &amp; sport</a>
+              <a href="#vision" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Vision</a>
+              <a href="#autres" class="carte px-4 py-2.5 text-[15px] hover:border-white/40 transition-colors">Rein &amp; fertilité</a>
             </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-              <p class="font-semibold text-white mb-1">Cerveau</p>
-              <p class="text-sm text-glacier-200/70 leading-relaxed">Le DHA contribue au <strong class="text-white">fonctionnement normal du cerveau</strong> (à partir de 250&nbsp;mg/jour).</p>
-            </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-              <p class="font-semibold text-white mb-1">Vision</p>
-              <p class="text-sm text-glacier-200/70 leading-relaxed">Le DHA contribue au <strong class="text-white">maintien d'une vision normale</strong> (à partir de 250&nbsp;mg/jour).</p>
-            </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-              <p class="font-semibold text-white mb-1">Triglycérides &amp; tension</p>
-              <p class="text-sm text-glacier-200/70 leading-relaxed">L'EPA et le DHA contribuent au maintien d'une <strong class="text-white">triglycéridémie normale</strong> (2&nbsp;g/j) et d'une <strong class="text-white">pression artérielle normale</strong> (3&nbsp;g/j).</p>
+            <div class="mt-8 grid gap-3">
+              <p class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 text-[15px] text-white/70 leading-relaxed"><span class="shrink-0 sm:w-44"><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span></span><span>Fait établi et juridiquement autorisé en Europe. C'est le socle sur lequel s'appuyer sans réserve.</span></p>
+              <p class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 text-[15px] text-white/70 leading-relaxed"><span class="shrink-0 sm:w-44"><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai / méta-analyse</span></span><span>Résultat issu d'un ou plusieurs essais cliniques. Solide, mais qui décrit une population et un protocole donnés.</span></p>
+              <p class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 text-[15px] text-white/70 leading-relaxed"><span class="shrink-0 sm:w-44"><span class="inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span></span><span>Piste explorée par la science, aux résultats encore préliminaires. À évoquer au conditionnel, jamais comme une promesse.</span></p>
             </div>
           </div>
-          <p class="text-xs text-glacier-300/50 mt-6">Source : Règlement (UE) n°432/2012 établissant une liste des allégations de santé autorisées portant sur les denrées alimentaires.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sommaire -->
-  <section class="py-6">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-4">Explorer par système</p>
-      <div class="flex flex-wrap gap-2.5">
-        <a href="#nerveux" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Système nerveux</a>
-        <a href="#cardio" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Cœur &amp; vaisseaux</a>
-        <a href="#inflammation" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Immunité &amp; peau</a>
-        <a href="#metabolisme" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Métabolisme &amp; sport</a>
-        <a href="#vision" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Vision</a>
-        <a href="#autres" class="px-4 py-2 bg-white border border-cream-200 rounded-xl text-sm font-medium text-navy-800 hover:border-glacier-300 hover:text-glacier-600 transition-all">Rein &amp; fertilité</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SYSTÈME NERVEUX -->
-  <section id="nerveux" class="anchor-offset py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">01</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Système nerveux &amp; cognition</h2>
-      </div>
-      <p class="text-navy-800/60 leading-relaxed mb-8 max-w-2xl">Le DHA est un constituant structurel majeur du tissu cérébral. Au-delà de l'allégation EFSA sur le fonctionnement normal du cerveau, plusieurs travaux d'observation explorent son rôle dans le vieillissement cognitif.</p>
-      <div class="space-y-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Un pilier structurel du cerveau</p>
-            <span class="shrink-0 px-2.5 py-1 bg-glacier-50 text-glacier-700 text-[11px] font-semibold rounded-lg">Allégation EFSA</span>
+    <!-- 01 · Système nerveux &amp; cognition -->
+    <section id="nerveux" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">01 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Système nerveux &amp; cognition</h2>
+            <p class="lead mt-5">Le DHA est un constituant structurel majeur du tissu cérébral. Au-delà de l'allégation EFSA sur le fonctionnement normal du cerveau, plusieurs travaux d'observation explorent son rôle dans le vieillissement cognitif.</p>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Le DHA représente une part importante des acides gras des membranes des neurones. L'EFSA reconnaît sa contribution au fonctionnement normal du cerveau à partir de 250&nbsp;mg/jour.</p>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Vieillissement cognitif</p>
-            <span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Étude de cohorte</span>
+          <div class="grid gap-3">
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Un pilier structurel du cerveau</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Dans l'étude de Framingham, les personnes présentant les taux plasmatiques de DHA les plus élevés avaient un risque de démence réduit d'environ <strong class="text-navy-900">47&nbsp;%</strong> sur le suivi. Un résultat observationnel qui suggère un lien, sans établir de causalité à lui seul.</p>
-          <p class="src text-xs text-navy-800/35 mt-3">Schaefer E. et al., <em>Archives of Neurology</em>, 2006 (cohorte de Framingham).</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Le DHA représente une part importante des acides gras des membranes des neurones. L'EFSA reconnaît sa contribution au fonctionnement normal du cerveau à partir de 250&nbsp;mg/jour.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Maladies neuro-inflammatoires</p>
-            <span class="shrink-0 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Vieillissement cognitif</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Étude de cohorte</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Le rôle des oméga-3 dans la modulation de l'inflammation associée à certaines affections neurologiques (dont la sclérose en plaques) fait l'objet de travaux exploratoires. Les résultats restent préliminaires et ne permettent aucune conclusion thérapeutique.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Dans l'étude de Framingham, les personnes présentant les taux plasmatiques de DHA les plus élevés avaient un risque de démence réduit d'environ <strong class="text-white font-medium">47&nbsp;%</strong> sur le suivi. Un résultat observationnel qui suggère un lien, sans établir de causalité à lui seul.</p>
+          <p class="text-xs text-white/45 mt-3">Schaefer E. et al., <em>Archives of Neurology</em>, 2006 (cohorte de Framingham).</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARDIOVASCULAIRE -->
-  <section id="cardio" class="anchor-offset py-12 bg-cream-100/60">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">02</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Cœur &amp; vaisseaux</h2>
-      </div>
-      <p class="text-navy-800/60 leading-relaxed mb-8 max-w-2xl">C'est le domaine le mieux documenté. L'EFSA valide plusieurs allégations cardiovasculaires ; la recherche clinique en explore d'autres dimensions.</p>
-      <div class="space-y-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Fonction cardiaque, triglycérides, tension</p>
-            <span class="shrink-0 px-2.5 py-1 bg-glacier-50 text-glacier-700 text-[11px] font-semibold rounded-lg">Allégation EFSA</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Maladies neuro-inflammatoires</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">EPA et DHA contribuent au fonctionnement normal du cœur (250&nbsp;mg/j), au maintien d'une triglycéridémie normale (2&nbsp;g/j) et d'une pression artérielle normale (3&nbsp;g/j). Ils tendent par ailleurs à faire baisser les triglycérides et à améliorer le profil lipidique.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Le rôle des oméga-3 dans la modulation de l'inflammation associée à certaines affections neurologiques (dont la sclérose en plaques) fait l'objet de travaux exploratoires. Les résultats restent préliminaires et ne permettent aucune conclusion thérapeutique.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Fréquence cardiaque au repos</p>
-            <span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Méta-analyse</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Cœur &amp; vaisseaux -->
+    <section id="cardio" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">02 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Cœur &amp; vaisseaux</h2>
+            <p class="lead mt-5">C'est le domaine le mieux documenté. L'EFSA valide plusieurs allégations cardiovasculaires ; la recherche clinique en explore d'autres dimensions.</p>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Une méta-analyse d'essais contrôlés a observé une réduction moyenne de la fréquence cardiaque au repos d'environ <strong class="text-navy-900">2,5 battements par minute</strong> sous huile de poisson — soit, cumulé, plus d'un million de battements économisés sur une année.</p>
-          <p class="src text-xs text-navy-800/35 mt-3">Mozaffarian D. et al., <em>Circulation</em>, 2005.</p>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Après une chirurgie cardiaque</p>
-            <span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Essai clinique</span>
+          <div class="grid gap-3">
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Fonction cardiaque, triglycérides, tension</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Administrés <em>avant</em> l'intervention, les oméga-3 ont été associés à une moindre survenue de fibrillation auriculaire et à des complications post-opératoires réduites dans plusieurs essais.</p>
-          <p class="src text-xs text-navy-800/35 mt-3">Calò L. et al., <em>Journal of the American College of Cardiology</em>, 2005.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">EPA et DHA contribuent au fonctionnement normal du cœur (250&nbsp;mg/j), au maintien d'une triglycéridémie normale (2&nbsp;g/j) et d'une pression artérielle normale (3&nbsp;g/j). Ils tendent par ailleurs à faire baisser les triglycérides et à améliorer le profil lipidique.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Rigidité artérielle &amp; ménopause</p>
-            <span class="shrink-0 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Fréquence cardiaque au repos</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Méta-analyse</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Des travaux suggèrent que les oméga-3 pourraient limiter la progression de la rigidité artérielle, y compris pendant la ménopause, et freiner certaines calcifications. Ces pistes demandent confirmation.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Une méta-analyse d'essais contrôlés a observé une réduction moyenne de la fréquence cardiaque au repos d'environ <strong class="text-white font-medium">2,5 battements par minute</strong> sous huile de poisson — soit, cumulé, plus d'un million de battements économisés sur une année.</p>
+          <p class="text-xs text-white/45 mt-3">Mozaffarian D. et al., <em>Circulation</em>, 2005.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Populations à haut risque</p>
-            <span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Essai clinique</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Après une chirurgie cardiaque</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Chez des patients dialysés, un essai a rapporté, après 3,5&nbsp;années de supplémentation, une baisse marquée des événements cardiovasculaires majeurs et des accidents vasculaires cérébraux. Résultat prometteur, issu d'une population spécifique et à interpréter avec prudence.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Administrés <em>avant</em> l'intervention, les oméga-3 ont été associés à une moindre survenue de fibrillation auriculaire et à des complications post-opératoires réduites dans plusieurs essais.</p>
+          <p class="text-xs text-white/45 mt-3">Calò L. et al., <em>Journal of the American College of Cardiology</em>, 2005.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMMUNITÉ & PEAU -->
-  <section id="inflammation" class="anchor-offset py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">03</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Immunité, inflammation &amp; peau</h2>
-      </div>
-      <p class="text-navy-800/60 leading-relaxed mb-8 max-w-2xl">L'EPA est un précurseur de médiateurs qui participent à la résolution de l'inflammation. Ce champ est actif mais encore largement exploratoire.</p>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Réponse immunitaire</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Des études explorent leur influence sur la production d'anticorps et la modulation des réponses inflammatoires.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Peau atopique &amp; asthme</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Des travaux rapportent une atténuation de l'inflammation cutanée, des démangeaisons de l'eczéma atopique et des symptômes de certaines formes d'asthme.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Peau &amp; ultraviolets</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Certaines études s'intéressent à un rôle protecteur vis-à-vis de la sensibilité de la peau aux UV, facteur de vieillissement cutané.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Santé parodontale</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Un soutien de la santé gingivale et parodontale est évoqué dans des travaux préliminaires sur l'inflammation buccale.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTABOLISME & SPORT -->
-  <section id="metabolisme" class="anchor-offset py-12 bg-cream-100/60">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">04</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Métabolisme &amp; récupération</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Récupération musculaire</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Plusieurs essais rapportent une réduction des courbatures (douleurs musculaires d'apparition retardée) et une récupération accélérée après l'effort.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Essais cliniques</span>
-        </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Composition corporelle</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Des travaux suggèrent un soutien de l'oxydation des graisses. Les effets observés sur la masse grasse abdominale restent modestes et dépendants de l'hygiène de vie globale.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISION -->
-  <section id="vision" class="anchor-offset py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">05</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Vision</h2>
-      </div>
-      <p class="text-navy-800/60 leading-relaxed mb-8 max-w-2xl">Le DHA est un composant structurel de la rétine — ce qui fonde l'allégation EFSA sur la vision.</p>
-      <div class="space-y-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Maintien d'une vision normale</p>
-            <span class="shrink-0 px-2.5 py-1 bg-glacier-50 text-glacier-700 text-[11px] font-semibold rounded-lg">Allégation EFSA</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Rigidité artérielle &amp; ménopause</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Le DHA contribue au maintien d'une vision normale à partir de 250&nbsp;mg/jour. Il est fortement présent dans les photorécepteurs de la rétine.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Des travaux suggèrent que les oméga-3 pourraient limiter la progression de la rigidité artérielle, y compris pendant la ménopause, et freiner certaines calcifications. Ces pistes demandent confirmation.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Sécheresse oculaire &amp; écrans</p>
-            <span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg">Essai clinique</span>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Populations à haut risque</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Chez des utilisateurs intensifs d'écrans, une supplémentation en oméga-3 a été associée à une amélioration des symptômes du syndrome de l'œil sec.</p>
-          <p class="src text-xs text-navy-800/35 mt-3">Bhargava R. et al., essai randomisé, 2015.</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Chez des patients dialysés, un essai a rapporté, après 3,5&nbsp;années de supplémentation, une baisse marquée des événements cardiovasculaires majeurs et des accidents vasculaires cérébraux. Résultat prometteur, issu d'une population spécifique et à interpréter avec prudence.</p>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-4 mb-2">
-            <p class="font-semibold text-navy-900">Pression intraoculaire</p>
-            <span class="shrink-0 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · Immunité, inflammation &amp; peau -->
+    <section id="inflammation" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">03 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Immunité, inflammation &amp; peau</h2>
+            <p class="lead mt-5">L'EPA est un précurseur de médiateurs qui participent à la résolution de l'inflammation. Ce champ est actif mais encore largement exploratoire.</p>
           </div>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Une piste explore un effet sur la pression intraoculaire, paramètre associé au glaucome. Les données sont préliminaires.</p>
+          <div class="grid gap-3 sm:grid-cols-2">
+        <div class="carte p-6">
+          <p class="text-lg text-white">Réponse immunitaire</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Des études explorent leur influence sur la production d'anticorps et la modulation des réponses inflammatoires.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Peau atopique &amp; asthme</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Des travaux rapportent une atténuation de l'inflammation cutanée, des démangeaisons de l'eczéma atopique et des symptômes de certaines formes d'asthme.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Peau &amp; ultraviolets</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Certaines études s'intéressent à un rôle protecteur vis-à-vis de la sensibilité de la peau aux UV, facteur de vieillissement cutané.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Santé parodontale</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Un soutien de la santé gingivale et parodontale est évoqué dans des travaux préliminaires sur l'inflammation buccale.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- REIN & FERTILITÉ & ONCO -->
-  <section id="autres" class="anchor-offset py-12 bg-cream-100/60">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-baseline gap-4 mb-6">
-        <span class="font-serif text-glacier-300 text-2xl font-bold">06</span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900">Rein, fertilité &amp; accompagnement</h2>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Fonction rénale</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Un rôle de soutien de la fonction rénale est étudié, notamment dans des populations à risque.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
+    <!-- 04 · Métabolisme &amp; récupération -->
+    <section id="metabolisme" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">04 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Métabolisme &amp; récupération</h2>
+            
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+        <div class="carte p-6">
+          <p class="text-lg text-white">Récupération musculaire</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Plusieurs essais rapportent une réduction des courbatures (douleurs musculaires d'apparition retardée) et une récupération accélérée après l'effort.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essais cliniques</span>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Fertilité</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">Le DHA est un constituant du spermatozoïde ; des travaux explorent un soutien de la fertilité masculine et féminine.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Composition corporelle</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Des travaux suggèrent un soutien de l'oxydation des graisses. Les effets observés sur la masse grasse abdominale restent modestes et dépendants de l'hygiène de vie globale.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
         </div>
-        <div class="card-hover bg-white border border-cream-200 rounded-2xl p-6">
-          <p class="font-semibold text-navy-900 mb-2">Soutien nutritionnel</p>
-          <p class="text-sm text-navy-800/60 leading-relaxed">En oncologie, les oméga-3 sont étudiés comme <em>soutien nutritionnel</em> de l'état général — jamais comme un traitement.</p>
-          <span class="inline-block mt-3 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg">Recherche émergente</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMMENT LIRE -->
-  <section class="py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white border border-cream-200 rounded-[2rem] p-7 sm:p-10">
-        <h2 class="font-serif text-2xl font-bold text-navy-900 mb-5">Comment lire ces données</h2>
-        <div class="space-y-4 text-navy-800/65 leading-relaxed">
-          <p class="flex gap-3"><span class="shrink-0 px-2.5 py-1 bg-glacier-50 text-glacier-700 text-[11px] font-semibold rounded-lg h-fit">Allégation EFSA</span><span class="text-sm">Fait établi et juridiquement autorisé en Europe. C'est le socle sur lequel s'appuyer sans réserve.</span></p>
-          <p class="flex gap-3"><span class="shrink-0 px-2.5 py-1 bg-cream-100 text-navy-700 text-[11px] font-semibold rounded-lg h-fit">Essai / méta-analyse</span><span class="text-sm">Résultat issu d'un ou plusieurs essais cliniques. Solide, mais qui décrit une population et un protocole donnés.</span></p>
-          <p class="flex gap-3"><span class="shrink-0 px-2.5 py-1 bg-amber-50 text-amber-700 text-[11px] font-semibold rounded-lg h-fit">Recherche émergente</span><span class="text-sm">Piste explorée par la science, aux résultats encore préliminaires. À évoquer au conditionnel, jamais comme une promesse.</span></p>
+    <!-- 05 · Vision -->
+    <section id="vision" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">05 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Vision</h2>
+            <p class="lead mt-5">Le DHA est un composant structurel de la rétine — ce qui fonde l'allégation EFSA sur la vision.</p>
+          </div>
+          <div class="grid gap-3">
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Maintien d'une vision normale</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-glacier-300/15 text-glacier-200 border border-glacier-300/30">Allégation EFSA</span>
+          </div>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Le DHA contribue au maintien d'une vision normale à partir de 250&nbsp;mg/jour. Il est fortement présent dans les photorécepteurs de la rétine.</p>
+        </div>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Sécheresse oculaire &amp; écrans</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-white/10 text-white/80 border border-white/15">Essai clinique</span>
+          </div>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Chez des utilisateurs intensifs d'écrans, une supplémentation en oméga-3 a été associée à une amélioration des symptômes du syndrome de l'œil sec.</p>
+          <p class="text-xs text-white/45 mt-3">Bhargava R. et al., essai randomisé, 2015.</p>
+        </div>
+        <div class="carte p-6">
+          <div class="flex flex-col-reverse sm:flex-row items-start sm:justify-between gap-2 sm:gap-4 mb-1">
+            <p class="text-lg text-white">Pression intraoculaire</p>
+            <span class="shrink-0 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+          </div>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Une piste explore un effet sur la pression intraoculaire, paramètre associé au glaucome. Les données sont préliminaires.</p>
+        </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DISCLAIMER -->
-  <section class="pb-6">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-cream-100 border border-cream-300 rounded-2xl p-6 sm:p-8">
-        <p class="text-xs font-semibold text-navy-800/40 tracking-widest uppercase mb-3">Avertissement</p>
-        <p class="text-sm text-navy-800/60 leading-relaxed">Les informations de cette page sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seules les allégations signalées comme autorisées par l'EFSA constituent des allégations de santé validées ; les autres éléments relèvent de la recherche scientifique et ne sont pas des allégations de santé.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOURCES -->
-  <section class="pb-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <details class="group bg-white border border-cream-200 rounded-2xl overflow-hidden">
-        <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
-          <span class="font-serif font-bold text-navy-900">Sources &amp; références</span>
-          <svg class="w-5 h-5 text-navy-800/40 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <div class="px-6 pb-6 space-y-2.5 text-sm text-navy-800/55 leading-relaxed src">
-          <p>· Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (EPA, DHA).</p>
-          <p>· Schaefer E.J. et al. « Plasma phosphatidylcholine docosahexaenoic acid content and risk of dementia and Alzheimer disease ». <em>Archives of Neurology</em>, 2006.</p>
-          <p>· Mozaffarian D. et al. « Fish intake and heart rate ». <em>Circulation</em>, 2005.</p>
-          <p>· Calò L. et al. « N-3 fatty acids for the prevention of atrial fibrillation after coronary artery bypass surgery ». <em>Journal of the American College of Cardiology</em>, 2005.</p>
-          <p>· Bhargava R. et al. Essai randomisé sur la supplémentation en oméga-3 et le syndrome de l'œil sec chez les utilisateurs d'écrans, 2015.</p>
-          <p class="text-navy-800/40 pt-2">Les références sont indiquées à titre documentaire. Certaines pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</p>
+    <!-- 06 · Rein, fertilité &amp; accompagnement -->
+    <section id="autres" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <span class="oeil">06 · Système</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Rein, fertilité &amp; accompagnement</h2>
+            
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+        <div class="carte p-6">
+          <p class="text-lg text-white">Fonction rénale</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Un rôle de soutien de la fonction rénale est étudié, notamment dans des populations à risque.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
         </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- CTA SOBRE -->
-  <section class="py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-glacier-50 border border-glacier-100 rounded-[2rem] p-8 sm:p-12 text-center">
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mb-4">Mettre cette science au service de votre pratique</h2>
-        <p class="text-navy-800/60 leading-relaxed max-w-xl mx-auto mb-8">Découvrez comment intégrer un oméga-3 de qualité documentée dans votre accompagnement, ou parcourez nos analyses détaillées.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="produit.html?p=pure-arctic-oil" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-navy-700 text-white font-medium rounded-xl hover:bg-navy-800 transition-all">Découvrir les produits</a>
-          <a href="blog.html" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white border border-cream-300 text-navy-800 font-medium rounded-xl hover:border-glacier-300 transition-all">Lire le blog</a>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Fertilité</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">Le DHA est un constituant du spermatozoïde ; des travaux explorent un soutien de la fertilité masculine et féminine.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
+        <div class="carte p-6">
+          <p class="text-lg text-white">Soutien nutritionnel</p>
+          <p class="text-[15px] text-white/65 leading-relaxed mt-1">En oncologie, les oméga-3 sont étudiés comme <em>soutien nutritionnel</em> de l'état général — jamais comme un traitement.</p>
+          <span class="mt-4 inline-block align-middle whitespace-nowrap text-[11px] font-medium rounded-md px-2 py-0.5 bg-amber-400/10 text-amber-200 border border-amber-300/30">Recherche émergente</span>
+        </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-navy-900 text-white py-20"></footer>
+    <!-- Avertissement et sources -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-4 lg:grid-cols-2 lg:items-start">
+          <div class="carte p-6 sm:p-8">
+            <p class="text-sm text-white/55">Avertissement</p>
+            <p class="mt-3 text-sm text-white/70 leading-relaxed">Les informations de cette page sont fournies à titre éducatif et d'information. Elles ne constituent pas un avis médical et ne sauraient remplacer une consultation, un diagnostic ou un traitement assurés par un professionnel de santé. Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Seules les allégations signalées comme autorisées par l'EFSA constituent des allégations de santé validées ; les autres éléments relèvent de la recherche scientifique et ne sont pas des allégations de santé.</p>
+          </div>
+          <details class="carte">
+            <summary class="flex items-center justify-between gap-6 p-6 text-lg">Sources et références<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary>
+            <ul class="px-6 pb-6 space-y-2.5 text-sm text-white/65 leading-relaxed">
+              <li>Règlement (UE) n°432/2012 de la Commission — allégations de santé autorisées portant sur les denrées alimentaires (EPA, DHA).</li>
+              <li>Schaefer E.J. et al. « Plasma phosphatidylcholine docosahexaenoic acid content and risk of dementia and Alzheimer disease ». <em>Archives of Neurology</em>, 2006.</li>
+              <li>Mozaffarian D. et al. « Fish intake and heart rate ». <em>Circulation</em>, 2005.</li>
+              <li>Calò L. et al. « N-3 fatty acids for the prevention of atrial fibrillation after coronary artery bypass surgery ». <em>Journal of the American College of Cardiology</em>, 2005.</li>
+              <li>Bhargava R. et al. Essai randomisé sur la supplémentation en oméga-3 et le syndrome de l'œil sec chez les utilisateurs d'écrans, 2015.</li>
+              <li class="text-white/45 pt-1">Les références sont indiquées à titre documentaire. Certaines pistes signalées « recherche émergente » reposent sur des travaux préliminaires dont les conclusions ne sont pas encore consolidées.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
 
-  <script src="components.js?v=202611251359"></script>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+    <!-- Mesurer plutôt que deviner -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <span class="oeil">Mesurer plutôt que deviner</span>
+            <h2 class="h2 mt-10 max-w-[18ch]">Savoir où vous en êtes, avant de <span class="points">compléter.</span></h2>
+          </div>
+          <div>
+            <p class="lead">Le test oméga-3 se fait chez vous&nbsp;: une goutte de sang, analysée par un laboratoire indépendant. Vous connaissez votre rapport oméga-6 / oméga-3, puis un second test montre ce qui a changé.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="le-test.html" class="btn btn-plein">Découvrir le test</a>
+              <a href="boutique.html" class="btn btn-clair">Voir la boutique</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
 </body>
 </html>
