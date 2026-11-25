@@ -1,7 +1,7 @@
 /* Feuille commune de la version 2 */
 html { scroll-behavior: smooth; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { font-family: 'DM Sans', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter Tight', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* Espace des sections : une seule valeur, en haut comme en bas */
 :root { --sec: clamp(56px, 7vw, 88px); }
@@ -12,19 +12,22 @@ body { font-family: 'DM Sans', system-ui, sans-serif; background: #FAFAF8; color
 .wrap { max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
 @media (min-width: 640px) { .wrap { padding-inline: 32px; } }
 
-.oeil { font: 600 12px/1 'DM Sans', sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #3d8691; }
-.titre { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -.025em; line-height: 1.05; text-wrap: balance; }
+
+.titre { font-family: 'Inter Tight', sans-serif; font-weight: 400 !important; letter-spacing: -.025em; line-height: 1.06; text-wrap: balance; }
 .lead { font-size: 1.125rem; line-height: 1.65; color: #335075; max-width: 60ch; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 52px; padding: 0 1.5rem; border-radius: 14px; font-weight: 600; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
+.btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1.25rem; border-radius: 8px; font-weight: 500; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
-.btn-plein { background: #0B1D2E; color: #fff; }
-.btn-plein:hover { background: #253c5e; }
-.btn-glacier { background: #4DA8B5; color: #0B1D2E; }
-.btn-glacier:hover { background: #81cfd8; }
-.btn-ligne { border: 1.5px solid #b3c1d1; color: #0B1D2E; background: transparent; }
-.btn-ligne:hover { border-color: #0B1D2E; }
-.btn-clair { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+.btn-plein { background: #E3262F; color: #fff; }
+.btn-plein:hover { background: #C41E26; }
+.btn-nuit { background: #0B1D2E; color: #fff; }
+.btn-nuit:hover { background: #253c5e; }
+.btn-glacier { background: #E3262F; color: #fff; }
+.btn-glacier:hover { background: #C41E26; }
+.btn-ligne { border: 1px solid #0B1D2E; color: #0B1D2E; background: transparent; }
+.btn-ligne:hover { background: #0B1D2E; color: #fff; }
+.btn-clair { border: 1px solid rgba(255,255,255,.85); color: #fff; }
+.btn-clair:hover { background: #fff; color: #0B1D2E; }
 .btn-clair:hover { border-color: #fff; }
 :focus-visible { outline: 3px solid #4DA8B5; outline-offset: 3px; border-radius: 6px; }
 
@@ -46,3 +49,35 @@ input, select, textarea { font-size: 16px; }
 /* Barres de filtres qui défilent sans barre visible */
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ===== Design « juste milieu » : mécanismes inspirés de patch.io sur la charte ===== */
+/* Petits titres de section : étiquette façon patch */
+.oeil { display: inline-flex; align-items: center; gap: .5rem; font: 500 12.5px/1 'Inter Tight', sans-serif; letter-spacing: 0; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #0B1D2E; color: #fff !important; }
+.oeil::before { content: ''; width: 7px; height: 7px; background: currentColor; transform: rotate(45deg); flex-shrink: 0; }
+.bg-navy-900 .oeil, .bg-navy-800 .oeil, .text-white .oeil { background: #fff; color: #0B1D2E !important; }
+.oeil.nu { padding: 0; background: none !important; color: inherit !important; } .oeil.nu::before { display: none; }
+/* Titre géant */
+.geant { font-family: 'Inter Tight', sans-serif; font-weight: 300; letter-spacing: -0.03em; line-height: .98; font-size: clamp(3rem, 8vw, 7.4rem); text-wrap: balance; }
+.fin { font-weight: 300 !important; }
+/* Filet de section façon patch */
+.filet { border-top: 1px solid rgba(11,29,46,.12); padding-top: 1.5rem; }
+.bg-navy-900 .filet { border-color: rgba(255,255,255,.14); }
+/* Bande qui défile */
+.defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
+@keyframes defile { to { transform: translateX(-50%); } }
+/* Barres de progression (étapes, onglets) */
+.progres { height: 2px; border-radius: 2px; background: rgba(11,29,46,.12); position: relative; overflow: hidden; }
+.bg-navy-900 .progres { background: rgba(255,255,255,.15); }
+.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #4DA8B5; }
+.actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
+@keyframes remplit { to { width: 100%; } }
+.orbite { animation: tourne 70s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .defile, .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } }
+
+.btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
+.btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
+.btn.sans-fleche::after { content: none; }
+
+/* Rail horizontal aligné sur la colonne de contenu, sans script */
+.rail { padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); scroll-padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); }
+@media (min-width: 640px) { .rail { padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); scroll-padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); } }

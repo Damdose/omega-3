@@ -13,42 +13,43 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="stylesheet" href="assets/v2/site-tw.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxRSW32RmYJp_I6.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42VnskPMBBSSJLq2I.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjUQ-aWy5SgqoUP8C6.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjDw-aWy5SgqoUP8C6.woff2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=optional" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="site-config.js"></script>
   <script src="catalogue.js"></script>
 </head>
 <body>
-  <nav id="entete" class="sticky top-0 z-40"></nav>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <!-- En-tête de rayon -->
-    <header class="bg-cream-50">
-      <div class="wrap pt-6 sm:pt-8">
-        <nav class="text-sm text-navy-500" aria-label="Fil d'Ariane"><a href="index.html" class="hover:text-navy-900">Accueil</a> <span class="mx-1.5">/</span> <span id="ariane" class="text-navy-900">Boutique</span></nav>
-        <div id="banniere" class="relative mt-4 overflow-hidden rounded-[28px] bg-navy-900 text-white min-h-[190px] sm:min-h-[230px] flex items-end">
-          <img id="banniere-img" src="assets/v2/gamme.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-60" fetchpriority="high">
-          <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/50 to-transparent"></div>
-          <div class="relative p-6 sm:p-10">
-            <h1 id="titre-rayon" class="titre text-4xl sm:text-5xl">La boutique</h1>
-            <p id="accroche-rayon" class="mt-2 text-cream-200 sm:text-lg">Toute la gamme Eqology, commandée et livrée par la marque.</p>
+    <header data-plein class="relative overflow-hidden bg-navy-900 text-white min-h-[56vh] flex items-end">
+      <img id="banniere-img" src="assets/v2/gamme.webp" alt="" class="absolute inset-0 w-full h-full object-cover opacity-55" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-b from-navy-900/30 via-navy-900/50 to-navy-900/95"></div>
+      <div class="relative wrap w-full pt-32 pb-10">
+        <nav class="text-sm text-cream-300" aria-label="Fil d'Ariane"><a href="index.html" class="hover:text-white">Accueil</a> <span class="mx-1.5">/</span> <span id="ariane" class="text-white">Boutique</span></nav>
+        <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <h1 id="titre-rayon" class="geant !text-[clamp(2.8rem,6.4vw,5.6rem)] max-w-[12ch]">La boutique</h1>
+          <div class="lg:max-w-[400px]">
+            <p id="accroche-rayon" class="text-cream-200 text-lg">Toute la gamme Eqology, commandée et livrée par la marque.</p>
+            <p class="mt-3 text-sm text-cream-400">Paiement sécurisé chez Eqology · livraison offerte dès deux produits de plus de 60 €</p>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="bg-cream-50 pb-[var(--sec)] pt-6">
+    <section class="bg-white pb-[var(--sec)] pt-6">
       <div class="wrap">
         <!-- Filtres -->
-        <div class="sticky top-16 lg:top-[116px] z-30 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 bg-cream-50/95 backdrop-blur flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+        <div class="sticky top-[70px] sm:top-[78px] z-30 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 bg-white/95 backdrop-blur flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
           <div id="filtres" class="flex gap-2 overflow-x-auto no-scrollbar -mx-1 px-1" role="tablist" aria-label="Catégories"></div>
           <div class="flex items-center gap-3 shrink-0">
             <p id="compte" class="text-sm text-navy-500 whitespace-nowrap"></p>
             <label class="sr-only" for="tri">Trier</label>
-            <select id="tri" class="h-10 rounded-full border border-cream-300 bg-white px-4 text-sm">
+            <select id="tri" class="h-10 rounded-lg border border-cream-300 bg-white px-3 text-sm">
               <option value="">Pertinence</option>
               <option value="asc">Prix croissant</option>
               <option value="desc">Prix décroissant</option>
@@ -97,7 +98,7 @@
     function filtres() {
       const items = [['', 'Tout'], ...C.map((c) => [c.id, c.nom])];
       document.getElementById('filtres').innerHTML = items.map(([id, nom]) =>
-        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-full text-sm font-medium border transition-colors ${id === cat ? 'bg-navy-900 text-white border-navy-900' : 'bg-white border-cream-300 hover:border-navy-900'}">${nom}</button>`).join('');
+        `<button type="button" role="tab" aria-selected="${id === cat}" data-cat="${id}" class="shrink-0 h-10 px-4 rounded-lg text-sm border transition-colors ${id === cat ? 'bg-navy-900 text-white border-navy-900' : 'bg-white border-cream-300 hover:border-navy-900'}">${nom}</button>`).join('');
       document.querySelectorAll('#filtres button').forEach((b) => b.onclick = () => { cat = b.dataset.cat; maj(true); });
     }
 

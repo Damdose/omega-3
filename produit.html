@@ -11,16 +11,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="stylesheet" href="assets/v2/site-tw.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxRSW32RmYJp_I6.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42VnskPMBBSSJLq2I.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjUQ-aWy5SgqoUP8C6.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/intertight/v9/NGSnv5HMAFg6IuGlBNMjxJEL2VmU3NS7Z2mjDw-aWy5SgqoUP8C6.woff2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=optional" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="site-config.js"></script>
   <script src="catalogue.js"></script>
 </head>
 <body>
-  <nav id="entete" class="sticky top-0 z-40"></nav>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
     <section class="bg-cream-50 pb-[var(--sec)]">
@@ -28,8 +28,8 @@
         <nav id="ariane" class="text-sm text-navy-500" aria-label="Fil d'Ariane"></nav>
         <div class="mt-5 grid gap-8 lg:gap-14 lg:grid-cols-[1.1fr_1fr] items-start">
           <!-- Visuel -->
-          <div class="lg:sticky lg:top-[140px]">
-            <div class="relative rounded-[28px] bg-gradient-to-b from-white to-cream-100 border border-cream-200 aspect-square overflow-hidden">
+          <div class="lg:sticky lg:top-[100px]">
+            <div class="relative rounded-xl bg-gradient-to-b from-white to-cream-100 border border-cream-200 aspect-square overflow-hidden">
               <span id="badge" class="hidden absolute top-5 left-5 z-[1] text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full bg-navy-900 text-white"></span>
               <img id="visuel" src="" alt="" class="absolute inset-0 w-full h-full object-contain p-8 sm:p-14" width="720" height="720">
             </div>
@@ -43,9 +43,9 @@
           <!-- Achat -->
           <div>
             <p id="categorie" class="oeil"></p>
-            <h1 id="nom" class="titre text-4xl sm:text-5xl mt-3"></h1>
+            <h1 id="nom" class="titre fin text-4xl sm:text-6xl mt-5"></h1>
             <p id="detail" class="mt-2 text-navy-500"></p>
-            <p id="prix" class="mt-6 font-serif font-semibold text-4xl"></p>
+            <p id="prix" class="mt-6 text-4xl fin"></p>
             <p id="prix-note" class="mt-1 text-sm text-navy-500"></p>
             <p id="texte" class="mt-6 text-lg leading-relaxed text-navy-700"></p>
 
@@ -80,13 +80,14 @@
 
     <!-- Associés -->
     <section class="sec bg-white">
-      <div class="wrap">
-        <h2 class="titre text-3xl sm:text-4xl">Souvent commandés avec</h2>
+      <div class="wrap filet">
+        <span class="oeil">Souvent commandés avec</span><h2 class="titre fin text-4xl sm:text-5xl mt-8">Pour aller avec.</h2>
         <div id="associes" class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
       </div>
     </section>
   </main>
 
+  <div id="barre-achat" class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-cream-200 p-3 flex items-center gap-3 translate-y-full transition-transform duration-300"><div class="min-w-0"><p id="ba-nom" class="text-sm truncate"></p><p id="ba-prix" class="font-medium"></p></div><a id="ba-lien" href="#" target="_blank" rel="noopener" class="btn btn-plein flex-1">Commander</a></div>
   <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
   <script src="components.js"></script>
   <script>
@@ -114,6 +115,10 @@
     P.filter((x) => x.cat === p.cat && x.slug !== p.slug).forEach((x) => assoc.push(x));
     P.filter((x) => x.top && !assoc.includes(x) && x.slug !== p.slug).forEach((x) => assoc.push(x));
     document.getElementById('associes').innerHTML = assoc.slice(0, 4).map(window.carteProduit).join('');
+    // Barre d'achat mobile : apparaît quand le bouton principal sort de l'écran
+    document.getElementById('ba-nom').textContent = p.nom; document.getElementById('ba-prix').textContent = window.prixTexte(p); document.getElementById('ba-lien').href = window.lienEqology(p);
+    var cmd = document.getElementById('commander'), ba = document.getElementById('barre-achat');
+    addEventListener('scroll', function () { var r = cmd.getBoundingClientRect(); ba.style.transform = r.bottom < 0 ? 'translateY(0)' : ''; }, { passive: true });
     // Suivi Meta : fiche produit vue
     if (window.suivre) window.suivre('ViewContent', { content_name: p.nom, content_ids: [p.slug], content_type: 'product', value: p.prix || 0, currency: 'EUR' });
     // Données structurées produit
