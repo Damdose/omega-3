@@ -9,7 +9,7 @@ import explication as X
 cfg = dict(
     onglet='Plan Meta Ads · Yves',
     oeil='Yves Coignard · plan Meta Ads · 25 novembre 2026',
-    titre='Deux campagnes à 30 € par jour, lancées quand six prérequis seront réglés',
+    titre='30 € par jour au total, sur deux campagnes, dès que six prérequis sont réglés',
     chapo='Le dossier d’Yves annonçait les pubs pour aujourd’hui. Le dispositif est prêt, mais le portefeuille YAC est vide : ni compte pub, ni Page, ni Instagram. Voici les campagnes, les six premières pubs, les deux premières semaines et ce qui bloque.',
     logo=os.path.join(ICI, '..', 'assets', 'images', 'eqology-eq.png'),
     polices=dict(titre='Space Grotesk', texte='DM Sans',
