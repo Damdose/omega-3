@@ -12,77 +12,133 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251359">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script src="site-config.js?v=202611251359"></script>
-  <script src="catalogue.js?v=202611251359"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
+  <script src="catalogue.js?v=202611251600"></script>
 </head>
 <body>
-  <nav id="entete" class="sticky top-0 z-40"></nav>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
-    <header class="bg-cream-50">
-      <div class="wrap pt-10 sm:pt-16 pb-16 sm:pb-20 grid gap-12 lg:grid-cols-[1.1fr_1fr] items-center">
-        <div>
-          <p class="oeil">Le test oméga-3</p>
-          <h1 class="titre text-[2.5rem] sm:text-6xl mt-5 max-w-[14ch]">Savoir où vous en êtes, en cinq minutes.</h1>
-          <p class="lead mt-6">Une goutte de sang prélevée chez vous, analysée par un laboratoire indépendant. Vous recevez votre équilibre entre oméga-6 et oméga-3, puis vous refaites le test quelques mois plus tard pour comparer.</p>
-          <div class="mt-9 flex flex-col sm:flex-row gap-3">
-            <a href="produit.html?p=omega-3-test-kit" class="btn btn-plein">Commander le test · 88 €</a>
-            <a href="contact.html" class="btn btn-ligne">Poser une question à Yves</a>
+    <!-- 1. Promesse -->
+    <header data-plein class="relative overflow-hidden">
+      <div class="wrap tete">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5">/</span> <span aria-current="page">Le test oméga-3</span></nav>
+        <div class="mt-8 grid gap-10 lg:grid-cols-[1.15fr_1fr] items-center">
+          <div>
+            <span class="oeil">Le test oméga-3 à domicile</span>
+            <h1 class="h1-page mt-6 max-w-[13ch]">Savoir où vous en êtes, <span class="points">en cinq minutes.</span></h1>
+            <p class="lead mt-6">Une goutte de sang prélevée chez vous, analysée par un laboratoire indépendant. Vous recevez votre équilibre entre oméga-6 et oméga-3, puis vous refaites le test quelques mois plus tard pour comparer.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="produit.html?p=omega-3-test-kit" class="btn btn-plein">Commander le test · <span data-prix-test>88&nbsp;€</span></a>
+              <a href="contact.html" class="btn btn-clair">Poser une question à Yves</a>
+            </div>
+            <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/60"><li>✓ Sans rendez-vous</li><li>✓ Laboratoire indépendant</li><li>✓ Résultat anonyme, en ligne</li></ul>
+          </div>
+          <div class="relative rounded-xl overflow-hidden aspect-square bg-white">
+            <img src="assets/v2/testkit-detail.webp" alt="Le kit de test oméga-3 Eqology" class="absolute inset-0 w-full h-full object-cover" width="1000" height="1000" fetchpriority="high">
           </div>
         </div>
-        <img src="assets/v2/testkit.webp" alt="Le kit de test oméga-3 Eqology" class="w-full max-w-md mx-auto aspect-square object-contain" width="700" height="712" fetchpriority="high">
       </div>
     </header>
 
-    <section class="sec bg-white">
+    <!-- 2. Comment ça se passe -->
+    <section class="sec">
       <div class="wrap">
-        <div class="max-w-3xl monte">
-          <p class="oeil">Comment ça se passe</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4">Quatre étapes, sans rendez-vous.</h2>
+        <div class="filet grid gap-6 lg:grid-cols-2 lg:items-end">
+          <div><span class="oeil">Comment ça se passe</span><h2 class="h2 mt-10 max-w-[16ch]">Quatre étapes, sans rendez-vous.</h2></div>
+          <p class="lead">Tout se fait chez vous. Le kit contient le nécessaire et un mode d'emploi illustré.</p>
         </div>
-        <ol class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <li class="monte rounded-xl bg-cream-50 border border-cream-200 p-7"><span class="titre text-4xl text-glacier-500">1</span><p class="font-medium text-xl mt-4">Vous recevez le kit</p><p class="text-navy-600 mt-2">Livré chez vous, avec un mode d'emploi illustré.</p></li>
-          <li class="monte rounded-xl bg-cream-50 border border-cream-200 p-7"><span class="titre text-4xl text-glacier-500">2</span><p class="font-medium text-xl mt-4">Vous prélevez une goutte</p><p class="text-navy-600 mt-2">Une piqûre au bout du doigt, la goutte sèche sur un buvard.</p></li>
-          <li class="monte rounded-xl bg-cream-50 border border-cream-200 p-7"><span class="titre text-4xl text-glacier-500">3</span><p class="font-medium text-xl mt-4">Vous l'envoyez</p><p class="text-navy-600 mt-2">Par la poste, à un laboratoire indépendant.</p></li>
-          <li class="monte rounded-xl bg-cream-50 border border-cream-200 p-7"><span class="titre text-4xl text-glacier-500">4</span><p class="font-medium text-xl mt-4">Vous lisez le résultat</p><p class="text-navy-600 mt-2">En ligne, de façon anonyme, avec votre code personnel.</p></li>
+        <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-white/12">
+          <li class="py-8 sm:pr-6 lg:border-r border-white/12"><p class="geant !text-6xl">01</p><p class="text-xl mt-6">Vous recevez le kit</p><p class="text-white/60 mt-2 leading-relaxed">Livré chez vous, avec un mode d'emploi illustré.</p></li>
+          <li class="py-8 sm:pl-6 lg:px-6 lg:border-r border-white/12 border-t sm:border-t-0"><p class="geant !text-6xl">02</p><p class="text-xl mt-6">Vous prélevez une goutte</p><p class="text-white/60 mt-2 leading-relaxed">Une piqûre au bout du doigt, la goutte sèche sur un buvard.</p></li>
+          <li class="py-8 sm:pr-6 lg:px-6 lg:border-r border-white/12 border-t lg:border-t-0"><p class="geant !text-6xl">03</p><p class="text-xl mt-6">Vous l'envoyez</p><p class="text-white/60 mt-2 leading-relaxed">Par la poste, à un laboratoire indépendant.</p></li>
+          <li class="py-8 sm:pl-6 border-t lg:border-t-0"><p class="geant !text-6xl">04</p><p class="text-xl mt-6">Vous lisez le résultat</p><p class="text-white/60 mt-2 leading-relaxed">En ligne, de façon anonyme, avec votre code personnel.</p></li>
         </ol>
       </div>
     </section>
 
-    <section class="sec bg-navy-900 text-white">
-      <div class="wrap grid gap-12 lg:grid-cols-2 items-center">
-        <div class="monte">
-          <p class="oeil !text-glacier-300">Ce que le test mesure</p>
-          <h2 class="titre text-4xl sm:text-5xl mt-4 max-w-[15ch]">Un équilibre, pas une note.</h2>
-          <p class="text-cream-200 text-lg leading-relaxed mt-6 max-w-[52ch]">L'alimentation actuelle apporte beaucoup d'oméga-6 et peu d'oméga-3. Le test indique le rapport entre les deux et la part d'oméga-3 dans vos cellules. Ce n'est pas un diagnostic médical : c'est un repère pour savoir d'où vous partez.</p>
-        </div>
-        <div class="monte grid gap-3">
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="font-semibold">Le rapport oméga-6 / oméga-3</p><p class="text-cream-300 mt-1">Combien d'oméga-6 pour un oméga-3 dans votre sang.</p></div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="font-semibold">L'indice oméga-3</p><p class="text-cream-300 mt-1">La part d'EPA et de DHA dans les membranes de vos globules rouges.</p></div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-6"><p class="font-semibold">Le second test</p><p class="text-cream-300 mt-1">Les globules rouges se renouvellent en quatre mois environ : c'est le bon délai pour comparer.</p></div>
+    <!-- 3. Ce que le test mesure -->
+    <section class="sec fond-2 bg-navy-900">
+      <div class="wrap">
+        <div class="filet grid gap-12 lg:grid-cols-2 items-start">
+          <div>
+            <span class="oeil">Ce que le test mesure</span>
+            <h2 class="h2 mt-10 max-w-[15ch]">Un équilibre, pas une note.</h2>
+            <p class="lead mt-6">L'alimentation actuelle apporte beaucoup d'oméga-6 et peu d'oméga-3. Le test indique le rapport entre les deux et la part d'oméga-3 dans vos cellules.</p>
+            <p class="mt-4 text-sm text-white/50">Ce n'est pas un diagnostic médical&nbsp;: c'est un repère pour savoir d'où vous partez.</p>
+          </div>
+          <div class="grid gap-3">
+            <div class="carte !bg-nuit p-6 sm:p-7"><p class="text-sm text-white/50">Mesure 1</p><p class="text-xl mt-2">Le rapport oméga-6 / oméga-3</p><p class="text-white/60 mt-1 leading-relaxed">Combien d'oméga-6 pour un oméga-3 dans votre sang.</p></div>
+            <div class="carte !bg-nuit p-6 sm:p-7"><p class="text-sm text-white/50">Mesure 2</p><p class="text-xl mt-2">L'indice oméga-3</p><p class="text-white/60 mt-1 leading-relaxed">La part d'EPA et de DHA dans les membranes de vos globules rouges.</p></div>
+            <div class="carte !bg-nuit p-6 sm:p-7"><p class="text-sm text-white/50">Ensuite</p><p class="text-xl mt-2">Le second test</p><p class="text-white/60 mt-1 leading-relaxed">Les globules rouges se renouvellent en quatre mois environ&nbsp;: c'est le bon délai pour comparer.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="sec bg-cream-100">
+    <!-- 4. Après le test -->
+    <section class="sec">
       <div class="wrap">
-        <div class="monte rounded-2xl bg-white border border-cream-200 p-8 sm:p-12 grid gap-6 lg:grid-cols-[1.4fr_1fr] items-center">
+        <div class="filet grid gap-12 lg:grid-cols-[1fr_1fr] items-center">
+          <figure class="relative rounded-xl overflow-hidden aspect-[4/3] bg-nuit-2 order-last lg:order-first">
+            <img src="assets/v2/huile.webp" alt="Huile Pure Arctic Oil versée d'un flacon" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          </figure>
           <div>
-            <p class="oeil">Praticien de santé ?</p>
-            <h2 class="titre text-3xl sm:text-4xl mt-3">Le test est un bon point de départ avec vos patients.</h2>
-            <p class="text-navy-600 mt-3 max-w-[56ch]">Une mesure objective avant de recommander, et une seconde pour suivre. Yves vous explique comment d'autres praticiens l'utilisent.</p>
+            <span class="oeil">Et après&nbsp;?</span>
+            <h2 class="h2 mt-10 max-w-[16ch]">Vous complétez, puis vous mesurez à nouveau.</h2>
+            <p class="lead mt-5">Selon votre résultat, une huile chaque jour&nbsp;: Pure Arctic Oil, sa version Gold ou la version végane. Quelques mois plus tard, le second test montre ce qui a changé. Yves vous aide à lire le résultat et à choisir.</p>
+            <div class="mt-7 flex flex-wrap gap-3"><a href="boutique.html?cat=omega3" class="btn btn-clair">Voir les huiles</a><a href="boutique.html?cat=programmes" class="lien-fleche self-center">Les programmes avec test inclus</a></div>
           </div>
-          <a href="partenaire.html#rappel" class="btn btn-plein lg:justify-self-end">Être rappelé par Yves</a>
         </div>
+      </div>
+    </section>
+
+    <!-- 5. Questions -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="filet grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div><span class="oeil">Questions fréquentes</span><h2 class="h2 mt-10 max-w-[14ch]">Ce qu'on nous demande.</h2></div>
+          <div class="divide-y divide-white/12 border-y border-white/12">
+            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Est-ce que ça fait mal&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">C'est une petite piqûre au bout du doigt, comme pour un test de glycémie. Le kit contient tout le nécessaire.</p></details>
+            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Qui analyse mon prélèvement&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Un laboratoire indépendant. Vous consultez le résultat en ligne avec votre code personnel, de façon anonyme.</p></details>
+            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Quand refaire le test&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Environ quatre mois plus tard, le temps que les globules rouges se renouvellent. Certains programmes Eqology incluent les deux tests.</p></details>
+            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Où commander le test&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Depuis la <a href="produit.html?p=omega-3-test-kit" class="underline underline-offset-4 text-white">fiche du test</a>&nbsp;: le bouton vous mène à la boutique officielle Eqology, qui encaisse et livre.</p></details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Praticiens -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="carte-claire p-8 sm:p-12 grid gap-6 lg:grid-cols-[1.4fr_1fr] items-center">
+          <div>
+            <span class="oeil">Praticien de santé&nbsp;?</span>
+            <h2 class="h2 mt-6">Le test est un bon point de départ avec vos patients.</h2>
+            <p class="text-nuit/65 mt-3 max-w-[56ch] leading-relaxed">Une mesure objective avant de recommander, et une seconde pour suivre. Yves vous explique comment d'autres praticiens l'utilisent.</p>
+          </div>
+          <a href="partenaire.html?cible=pro" class="btn btn-plein lg:justify-self-end">Découvrir le partenariat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Appel final -->
+    <section class="sec text-center">
+      <div class="wrap">
+        <h2 class="geant !text-[clamp(2.6rem,5.4vw,4.6rem)] max-w-[14ch] mx-auto">Mesurez d'abord, <span class="points">décidez ensuite.</span></h2>
+        <div class="mt-8 flex flex-wrap justify-center gap-3"><a href="produit.html?p=omega-3-test-kit" class="btn btn-plein">Commander le test</a><a href="contact.html" class="btn btn-clair">Poser une question</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
-  <script src="components.js?v=202611251359"></script>
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
+  <script>
+    (function () { var t = window.produit && window.produit('omega-3-test-kit'); if (t) document.querySelectorAll('[data-prix-test]').forEach(function (e) { e.textContent = window.prixTexte(t); }); })();
+  </script>
 </body>
 </html>
