@@ -12,52 +12,12 @@
   <meta property="og:type" content="website">
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors: {
-        nuit: { DEFAULT: '#0A1622', 2: '#0F2030', 3: '#16293B', trait: 'rgba(255,255,255,.12)' },
-        navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#0F2030', 900: '#0A1622' },
-        glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-        cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-        rouge: { DEFAULT: '#E3262F', fonce: '#C41E26' }, sable: '#F4F3EF' },
-      fontFamily: { sans: ['Inter Tight', 'system-ui', 'sans-serif'], serif: ['Inter Tight', 'system-ui', 'sans-serif'] } } } };
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="site-config.js?v=202611251412"></script>
-  <script src="catalogue.js?v=202611251412"></script>
-  <style>
-    html { scroll-behavior: smooth; } body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; color: #fff; -webkit-font-smoothing: antialiased; }
-    .wrap { max-width: 1400px; margin-inline: auto; padding-inline: 20px; } @media (min-width: 768px) { .wrap { padding-inline: 34px; } }
-    .sec { padding-block: clamp(72px, 9vw, 112px); }
-    .geant { font-weight: 300; letter-spacing: -0.025em; line-height: .98; font-size: clamp(3rem, 8.4vw, 7.6rem); text-wrap: balance; }
-    .h2, .titre { font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
-    .h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); }
-    .fin { font-weight: 300; }
-    .points { background-image: radial-gradient(circle, #fff 52%, transparent 56%); background-size: .058em .058em; -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .oeil { display: inline-flex; align-items: center; gap: .45rem; width: max-content; font-size: 12px; font-weight: 500; padding: .3rem .7rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0A1622 !important; }
-    .oeil::before { content: ''; width: 7px; height: 7px; background: #0A1622; transform: rotate(45deg); }
-    .lead { font-size: 1.125rem; line-height: 1.6; color: rgba(255,255,255,.72); max-width: 58ch; }
-    .filet { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.5rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 44px; padding: 0 1.1rem; border-radius: 6px; font-size: 15px; font-weight: 400; white-space: nowrap; transition: background-color .2s, color .2s; cursor: pointer; }
-    .btn-plein, .btn-glacier { background: #E3262F; color: #fff; } .btn-plein:hover, .btn-glacier:hover { background: #C41E26; }
-    .btn-plein::after, .btn-glacier::after { content: '→'; }
-    .btn-clair { border: 1px solid rgba(255,255,255,.85); color: #fff; } .btn-clair:hover { background: #fff; color: #0A1622; }
-    .btn-ligne { border: 1px solid rgba(255,255,255,.85); color: #fff; } .btn-ligne:hover { background: #fff; color: #0A1622; }
-    form .btn-plein { background: #E3262F; color: #fff; }
-    .defile { display: flex; align-items: center; gap: 5rem; width: max-content; animation: defile 40s linear infinite; } @keyframes defile { to { transform: translateX(-50%); } }
-    .orbite { animation: tourne 60s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
-    .progres { height: 1px; background: rgba(255,255,255,.15); position: relative; overflow: hidden; } .progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #E3262F; }
-    .actif .progres > i { animation: remplit var(--d, 6s) linear forwards; } @keyframes remplit { to { width: 100%; } }
-    .rail { padding-inline: max(20px, calc((100vw - 1400px) / 2 + 34px)); }
-    .no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
-    details > summary { list-style: none; cursor: pointer; } details > summary::-webkit-details-marker { display: none; } details[open] .plus { transform: rotate(45deg); } .plus { transition: transform .2s; }
-    input, select, textarea { font-size: 16px; }
-    @media (prefers-reduced-motion: reduce) { .defile, .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } html { scroll-behavior: auto; } }
-    :focus-visible { outline: 2px solid #81cfd8; outline-offset: 3px; }
-  </style>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
+  <script src="catalogue.js?v=202611251600"></script>
 </head>
 <body>
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
@@ -365,9 +325,9 @@
     })();
   </script>
 
-  <footer class="bg-nuit text-white border-t border-white/10"></footer>
-  <script src="components.js?v=202611251412"></script>
-  <script src="assets/v2/mecanismes.js?v=202611251412"></script>
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
+  <script src="assets/v2/mecanismes.js?v=202611251600"></script>
   <script>
     (function () {
       var M = window.MECA;

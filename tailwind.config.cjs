@@ -1,21 +1,22 @@
-// Feuille compilée des pages principales. Après toute modification de classes :
+// Feuille compilée de tout le site (charte : fond nuit, Inter Tight, action en rouge).
+// Après toute modification de classes :
 // npx -y tailwindcss@3.4.17 -c tailwind.config.cjs -i tw-entree.css -o assets/v2/site-tw.css --minify
-module.exports = Object.assign({
+module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
+        nuit: { DEFAULT: '#0A1622', 2: '#0F2030', 3: '#16293B' },
+        navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#0F2030', 900: '#0A1622' },
         glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
-        rouge: { DEFAULT: '#E3262F', fonce: '#C41E26' },
         cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
-        gold: { 300: '#DCCBA8', 400: '#C4A97D', 500: '#A88C5C' },
+        rouge: { DEFAULT: '#E3262F', fonce: '#C41E26' },
+        sable: '#F4F3EF',
       },
       fontFamily: {
-        serif: ['Satoshi', 'system-ui', 'sans-serif'],
-        sans: ['Satoshi', 'system-ui', 'sans-serif'],
+        sans: ['Inter Tight', 'system-ui', 'sans-serif'],
+        serif: ['Inter Tight', 'system-ui', 'sans-serif'],
       },
     },
   },
-}, {
-  content: ['./index.html','./boutique.html','./produit.html','./le-test.html','./partenaire.html','./merci.html','./contact.html','./mentions-legales.html','./confidentialite.html','./404.html','./components.js','./catalogue.js','./site-config.js','./assets/v2/mecanismes.js'],
-});
+  content: ['./*.html', './components.js', './catalogue.js', './site-config.js', './assets/v2/*.js'],
+};

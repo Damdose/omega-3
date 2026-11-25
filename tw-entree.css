@@ -2,98 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Feuille commune (copie de site.css, pour une seule requête) */
-/* Feuille commune de la version 2 */
+/* ============================================================
+   Charte du site (reprise de la page partenaire validée)
+   Fond nuit partout, Inter Tight, mot en points, action en rouge.
+   ============================================================ */
 html { scroll-behavior: smooth; overflow-x: hidden; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { font-family: 'Satoshi', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter Tight', system-ui, sans-serif; background: #0A1622; color: #fff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-/* Espace des sections : une seule valeur, en haut comme en bas */
-:root { --sec: clamp(56px, 7vw, 88px); }
+/* Colonne */
+.wrap { max-width: 1400px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 768px) { .wrap { padding-inline: 34px; } }
+
+/* Espace des sections : UNE valeur, en haut comme en bas.
+   Deux sections de même fond qui se suivent : pas d'espace en double. */
+:root { --sec: clamp(72px, 9vw, 112px); }
 .sec { padding-block: var(--sec); }
-/* Deux sections de même fond qui se suivent : espace réduit entre elles */
-.sec.suite { padding-top: 0; }
+.sec + .sec:not(.fond-2) { padding-top: 0; }
+.sec.fond-2 { background: #0F2030; }
+.sec.fond-2 + .sec { padding-top: var(--sec); }
 
-.wrap { max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
-@media (min-width: 640px) { .wrap { padding-inline: 32px; } }
+/* Titres */
+.geant { font-weight: 300; letter-spacing: -0.025em; line-height: .98; font-size: clamp(3rem, 8.4vw, 7.6rem); text-wrap: balance; }
+.h2, .titre { font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+.h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); }
+.h1-page { font-weight: 300; letter-spacing: -0.025em; line-height: 1; font-size: clamp(2.6rem, 6vw, 5.4rem); text-wrap: balance; }
+.fin { font-weight: 300; }
+/* Le mot dessiné en points */
+.points { background-image: radial-gradient(circle, #fff 52%, transparent 56%); background-size: .058em .058em; -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { font-size: 1.125rem; line-height: 1.6; color: rgba(255,255,255,.72); max-width: 58ch; }
 
-.oeil { display: inline-flex; align-self: flex-start; width: max-content; max-width: 100%; align-items: center; gap: .5rem; font: 700 12.5px/1 'Satoshi', sans-serif; letter-spacing: .01em; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #0B1D2E; color: #fff !important; }
-.oeil::before { content: ''; width: 7px; height: 7px; background: currentColor; transform: rotate(45deg); flex-shrink: 0; }
-.bg-navy-900 .oeil, .bg-navy-800 .oeil, .text-white .oeil, .bg-\[\#7A1E1A\] .oeil { background: #fff; color: #0B1D2E !important; }
-.titre { font-family: 'Satoshi', sans-serif; font-weight: 700 !important; letter-spacing: -.035em; line-height: 1.02; text-wrap: balance; }
-h3.titre, p.titre { font-weight: 500 !important; letter-spacing: -.02em; }
-.lead { font-size: 1.125rem; line-height: 1.65; color: #335075; max-width: 60ch; }
+/* Étiquette de section */
+.oeil { display: inline-flex; align-self: flex-start; align-items: center; gap: .45rem; width: max-content; max-width: 100%; font-size: 12px; font-weight: 500; line-height: 1.2; padding: .3rem .7rem; border-radius: 6px; background: rgba(255,255,255,.92); color: #0A1622 !important; }
+.oeil::before { content: ''; width: 7px; height: 7px; background: #0A1622; transform: rotate(45deg); flex-shrink: 0; }
+.bg-sable .oeil, .bg-white .oeil { background: #0A1622; color: #fff !important; }
+.bg-sable .oeil::before, .bg-white .oeil::before { background: #fff; }
 
-.btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1.25rem; border-radius: 8px; font-weight: 500; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
+/* Filet en tête de bloc */
+.filet { border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.5rem; }
+
+/* Boutons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 44px; padding: 0 1.1rem; border-radius: 6px; font-size: 15px; font-weight: 400; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
-.btn-plein { background: #0B1D2E; color: #fff; }
-.btn-plein:hover { background: #253c5e; }
-.btn-glacier { background: #4DA8B5; color: #0B1D2E; }
-.btn-glacier:hover { background: #81cfd8; }
-.btn-ligne { border: 1px solid #0B1D2E; color: #0B1D2E; background: transparent; }
-.btn-ligne:hover { background: #0B1D2E; color: #fff; }
-.btn-clair { border: 1px solid rgba(255,255,255,.8); color: #fff; }
-.btn-clair:hover { background: #fff; color: #0B1D2E; }
-.btn-clair:hover { border-color: #fff; }
-:focus-visible { outline: 3px solid #4DA8B5; outline-offset: 3px; border-radius: 6px; }
+.btn-plein, .btn-glacier { background: #E3262F; color: #fff; }
+.btn-plein:hover, .btn-glacier:hover { background: #C41E26; }
+.btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
+.btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
+.btn-plein.sans-fleche::after { content: none; }
+.btn-clair, .btn-ligne { border: 1px solid rgba(255,255,255,.85); color: #fff; }
+.btn-clair:hover, .btn-ligne:hover { background: #fff; color: #0A1622; }
+.btn-ligne-nuit { border: 1px solid #0A1622; color: #0A1622; }
+.btn-ligne-nuit:hover { background: #0A1622; color: #fff; }
+.lien-fleche { display: inline-flex; align-items: center; gap: .4rem; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.lien-fleche::after { content: '→'; transition: transform .2s; }
+.lien-fleche:hover::after { transform: translateX(3px); }
 
-/* Placeholder visible pour ce qui reste à fournir */
-.a-fournir { border: 2px dashed #C4A97D; background: repeating-linear-gradient(135deg, #F5F4F0 0 14px, #ECEAE4 14px 28px); color: #6b5a3a; }
+/* Cartes */
+.carte { border-radius: 10px; background: #0F2030; border: 1px solid rgba(255,255,255,.1); }
+.carte-claire { border-radius: 10px; background: #F4F3EF; color: #0A1622; }
 
-/* Apparition douce */
-.monte { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
-.monte.vu { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .monte { opacity: 1; transform: none; transition: none; } }
+/* Champs des formulaires (formulaires sur carte blanche) */
+.champ { height: 48px; width: 100%; border-radius: 8px; border: 1px solid #DFDBCF; padding-inline: 1rem; background: #fff; color: #0A1622; }
+.champ:focus { border-color: #4DA8B5; outline: none; }
+textarea.champ { height: auto; padding-block: .75rem; }
 
-details > summary { list-style: none; cursor: pointer; }
-details > summary::-webkit-details-marker { display: none; }
-details[open] .plus { transform: rotate(45deg); }
-.plus { transition: transform .25s; }
+/* En-tête des pages intérieures (sous la navigation flottante) */
+.tete { padding-top: clamp(128px, 14vw, 168px); padding-bottom: clamp(48px, 6vw, 72px); }
+.ariane { font-size: 14px; color: rgba(255,255,255,.55); }
+.ariane a:hover { color: #fff; }
+.ariane span[aria-current] { color: #fff; }
 
-input, select, textarea { font-size: 16px; }
+/* Texte long (articles, mentions) sur fond nuit */
+.texte-long { color: rgba(255,255,255,.78); font-size: 1.0625rem; line-height: 1.75; max-width: 68ch; }
+.texte-long > * + * { margin-top: 1.1em; }
+.texte-long h2 { color: #fff; font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; font-size: clamp(1.6rem, 2.4vw, 2rem); margin-top: 2.2em; }
+.texte-long h3 { color: #fff; font-weight: 500; font-size: 1.25rem; margin-top: 1.8em; }
+.texte-long a { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.texte-long strong { color: #fff; font-weight: 500; }
+.texte-long ul { list-style: none; padding: 0; }
+.texte-long ul li { position: relative; padding-left: 1.4em; }
+.texte-long ul li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,.45); }
+.texte-long ol { list-style: decimal; padding-left: 1.3em; }
+.texte-long blockquote { border-left: 2px solid #E3262F; padding-left: 1.2rem; color: #fff; font-size: 1.25rem; font-weight: 300; }
+.texte-long table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.texte-long th, .texte-long td { border-bottom: 1px solid rgba(255,255,255,.12); padding: .7rem .5rem; text-align: left; vertical-align: top; }
+.texte-long th { color: #fff; font-weight: 500; }
 
-/* Barres de filtres qui défilent sans barre visible */
+/* Mécanismes (défilement, orbite, progression) */
+.defile { display: flex; align-items: center; gap: 5rem; width: max-content; animation: defile 40s linear infinite; }
+@keyframes defile { to { transform: translateX(-50%); } }
+.orbite { animation: tourne 60s linear infinite; transform-origin: 300px 300px; }
+@keyframes tourne { to { transform: rotate(360deg); } }
+.progres { height: 1px; background: rgba(255,255,255,.15); position: relative; overflow: hidden; }
+.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #E3262F; }
+.actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
+@keyframes remplit { to { width: 100%; } }
+.rail { padding-inline: max(20px, calc((100vw - 1400px) / 2 + 34px)); scroll-padding-inline: max(20px, calc((100vw - 1400px) / 2 + 34px)); }
+@media (min-width: 768px) { .rail { padding-inline: max(34px, calc((100vw - 1400px) / 2 + 34px)); scroll-padding-inline: max(34px, calc((100vw - 1400px) / 2 + 34px)); } }
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* ===== Présentation des blocs façon patch.io ===== */
-/* Filet fin en tête de chaque section, aligné sur la colonne */
-.sec > .wrap { background-image: linear-gradient(rgba(11,29,46,.13), rgba(11,29,46,.13)); background-repeat: no-repeat; background-size: calc(100% - 40px) 1px; background-position: center top; padding-top: 1.75rem; }
-@media (min-width: 640px) { .sec > .wrap { background-size: calc(100% - 64px) 1px; } }
-.bg-navy-900.sec > .wrap, .sec.bg-navy-900 > .wrap { background-image: linear-gradient(rgba(255,255,255,.16), rgba(255,255,255,.16)); }
-.sec > .wrap.sans-filet { background-image: none; padding-top: 0; }
-/* Flèche dans les boutons d'action */
-.btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
-.btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
-/* Bande de preuves qui défile */
-.defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
-@keyframes defile { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .defile { animation: none; } }
+/* Apparition douce */
+.monte { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.monte.vu { opacity: 1; transform: none; }
 
-/* Plus de caractère : chiffres et accroches en gras, texte courant un peu plus dense */
-.chiffre { font-family: 'Satoshi', sans-serif; font-weight: 700; letter-spacing: -.04em; line-height: .9; }
-.lead { font-weight: 500; }
+/* Questions dépliables */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .plus { transform: rotate(45deg); }
+.plus { transition: transform .2s; }
 
-/* ===== Composition façon patch.io (accueil, partenaire) ===== */
-.geant { font-family: 'Satoshi', sans-serif; font-weight: 700; letter-spacing: -0.04em; line-height: .96; font-size: clamp(2.9rem, 7.4vw, 6.6rem); text-wrap: balance; }
-.fin { font-weight: 700 !important; }
-.filet { border-top: 1px solid rgba(11,29,46,.13); padding-top: 1.5rem; }
-.bg-navy-900 .filet, .bg-navy-900.filet { border-color: rgba(255,255,255,.16); }
-.sec > .wrap.filet, .sec > .wrap:has(> .filet) { background-image: none; }
-.progres { height: 2px; border-radius: 2px; background: rgba(11,29,46,.12); position: relative; overflow: hidden; }
-.bg-navy-900 .progres { background: rgba(255,255,255,.18); }
-.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #4DA8B5; }
-.actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
-@keyframes remplit { to { width: 100%; } }
-.orbite { animation: tourne 70s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
-.rail { padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); scroll-padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); }
-@media (min-width: 640px) { .rail { padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); scroll-padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); } }
-.no-scrollbar { scrollbar-width: none; } .no-scrollbar::-webkit-scrollbar { display: none; }
-.btn-nuit { background: #0B1D2E; color: #fff; } .btn-nuit:hover { background: #253c5e; }
-@media (prefers-reduced-motion: reduce) { .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } }
+input, select, textarea { font-size: 16px; }
+:focus-visible { outline: 2px solid #81cfd8; outline-offset: 3px; }
 
-/* Bouton d'action sur fond sombre : glacier, toujours visible */
-.bg-navy-900 .btn-plein, .bg-navy-800 .btn-plein, .text-white .btn-plein { background: #4DA8B5; color: #0B1D2E; }
-.bg-navy-900 .btn-plein:hover, .bg-navy-800 .btn-plein:hover, .text-white .btn-plein:hover { background: #81cfd8; }
-form .btn-plein, .bg-white.rounded-xl .btn-plein { background: #0B1D2E; color: #fff; }
-form .btn-plein:hover, .bg-white.rounded-xl .btn-plein:hover { background: #253c5e; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .defile, .orbite { animation: none; }
+  .actif .progres > i { animation: none; width: 100%; }
+  .monte { opacity: 1; transform: none; transition: none; }
+}

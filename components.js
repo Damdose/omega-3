@@ -29,7 +29,7 @@
   function getBandeau() { return ''; }
 
   const fleche = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0" aria-label="Accueil"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:25px;width:auto"><span class="hidden sm:block text-[12.5px] leading-tight text-navy-500 border-l border-navy-900/10 pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
+  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0" aria-label="Accueil"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="block text-[11px] sm:text-[12.5px] leading-tight text-nuit/60 border-l border-nuit/15 pl-2 sm:pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
 
   function getNavLP() {
     return `<div class="max-w-[1400px] mx-auto"><div class="bg-white rounded-lg shadow-[0_8px_30px_rgba(11,29,46,.12)] h-14 sm:h-[58px] flex items-center justify-between pl-4 pr-2 sm:pl-5 sm:pr-3">
@@ -49,7 +49,6 @@
         </div>
         <div class="flex items-center gap-1 sm:gap-3">
           <a href="contact.html" class="hidden md:inline text-[16px] hover:opacity-60">Contact</a>
-          <a href="boutique.html" class="lg:hidden w-10 h-10 grid place-items-center rounded-lg hover:bg-cream-100" aria-label="La boutique">${ico.sac}</a>
           <a href="produit.html?p=omega-3-test-kit" class="btn btn-plein !min-h-[40px] !text-sm !px-3 sm:!px-4"><span class="sm:hidden">Le test</span><span class="hidden sm:inline">Commencer par le test</span></a>
           <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 grid place-items-center rounded-lg hover:bg-cream-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
@@ -73,10 +72,10 @@
 
   function getFooter() {
     if (isLP) return getFooterLP();
-    const col = (titre, liens) => `<div><p class="text-cream-400 pb-3 mb-4 border-b border-white/10">${titre}</p><ul class="space-y-3">${liens.map(([h, t]) => `<li><a href="${h === 'data:trustpilot' ? '#' : h}" ${h === 'data:trustpilot' ? 'data-trustpilot target="_blank" rel="noopener"' : ''} class="hover:opacity-60">${t}</a></li>`).join('')}</ul></div>`;
+    const col = (titre, liens) => `<div><p class="text-white/50 pb-3 mb-4 border-b border-white/10">${titre}</p><ul class="space-y-3">${liens.map(([h, t]) => `<li><a href="${h === 'data:trustpilot' ? '#' : h}" ${h === 'data:trustpilot' ? 'data-trustpilot target="_blank" rel="noopener"' : ''} class="hover:opacity-60">${t}</a></li>`).join('')}</ul></div>`;
     return `<div class="wrap">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 pb-10 border-b border-white/10">
-        <p class="titre text-3xl sm:text-4xl fin">Une question&nbsp;? Yves vous répond.</p>
+        <p class="h2">Une question&nbsp;? Yves vous répond.</p>
         <a href="contact.html" class="btn btn-plein self-start">Écrire à Yves</a>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 text-[15px]">
@@ -86,7 +85,7 @@
         ${col('Yves Coignard', [['contact.html', 'Contact'], ['mentions-legales.html', 'Mentions légales'], ['confidentialite.html', 'Confidentialité'], ['data:trustpilot', 'Avis Trustpilot']])}
       </div>
       <div class="border-t border-white/10 py-10"><img src="assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-full h-auto opacity-95" loading="lazy" width="1300" height="205"></div>
-      <div class="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-cream-400">
+      <div class="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-white/50">
         <p>© 2026 ZENCO SAS · Yves Coignard, distributeur indépendant Eqology</p>
         <p>Commandes, paiement et livraison assurés par Eqology.</p>
       </div>
@@ -105,14 +104,14 @@
   }
 
   const footer = document.querySelector('body > footer');
-  if (footer) { footer.innerHTML = getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-navy-900 text-white ' + (isLP ? '' : 'pt-16'); }
+  if (footer) { footer.innerHTML = getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-nuit text-white border-t border-white/10 ' + (isLP ? '' : 'pt-16'); }
   document.querySelectorAll('[data-trustpilot]').forEach(function (a) { if (window.SITE) a.href = window.SITE.trustpilot; });
 
   // Cookie consent banner
   if (!localStorage.getItem('cookies_accepted')) {
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
-    banner.className = 'fixed bottom-3 left-3 right-3 sm:right-auto sm:left-5 sm:bottom-5 z-[60] sm:max-w-md bg-navy-900 text-white rounded-lg shadow-2xl p-4 sm:p-5';
+    banner.className = 'fixed bottom-3 left-3 right-3 sm:right-auto sm:left-5 sm:bottom-5 z-[60] sm:max-w-md bg-nuit-2 text-white border border-white/15 rounded-lg shadow-2xl shadow-black/40 p-4 sm:p-5';
     banner.innerHTML = `
       <p class="text-sm leading-relaxed text-cream-200">Avec votre accord, nous mesurons les visites venues de nos publicités (pixel Meta). Rien n'est déposé si vous refusez. <a href="confidentialite.html" class="underline text-white">En savoir plus</a></p>
       <div class="mt-3 flex gap-2">
