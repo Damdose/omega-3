@@ -11,52 +11,64 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251359">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script src="site-config.js?v=202611251359"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251600">
+  <script src="site-config.js?v=202611251600"></script>
 </head>
 <body>
-  <nav id="entete" class="sticky top-0 z-40"></nav>
+  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
+
   <main>
-    <section class="sec bg-cream-50">
-      <div class="wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
-        <div>
-          <p class="oeil">Contact</p>
-          <h1 class="titre text-4xl sm:text-5xl mt-4 max-w-[14ch]">Une question ? Écrivez à Yves.</h1>
-          <p class="lead mt-5">Un produit à choisir, une commande, le test, le partenariat : Yves vous répond personnellement.</p>
-          <ul class="mt-8 grid gap-3">
-            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">E-mail</p><a href="mailto:zenco.coignard@gmail.com" class="font-semibold text-lg">zenco.coignard@gmail.com</a></li>
-            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">Téléphone</p><a href="tel:+33675242626" class="font-semibold text-lg">06 75 24 26 26</a></li>
-            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">Une commande déjà passée ?</p><p class="text-navy-700 mt-1">Le suivi, les retours et les abonnements sont gérés par le service client d'Eqology, depuis votre compte sur eqology.com.</p></li>
-          </ul>
-          <a href="partenaire.html" class="mt-6 flex items-center justify-between gap-4 rounded-2xl bg-navy-900 text-white p-5 group">
-            <span><span class="block font-medium text-lg">Le partenariat vous intéresse ?</span><span class="text-cream-300 text-sm">Tout comprendre et être rappelé</span></span>
-            <span class="text-glacier-300 group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-        </div>
-        <form id="form-contact" class="rounded-xl bg-white border border-cream-200 p-6 sm:p-9 grid gap-5" novalidate>
-          <div class="grid gap-5 sm:grid-cols-2">
-            <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
-            <label class="grid gap-2"><span class="text-sm font-semibold">Nom</span><input name="nom" autocomplete="family-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+    <header data-plein class="tete">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span class="mx-1.5" aria-hidden="true">/</span> <span aria-current="page">Contact</span></nav>
+        <span class="oeil mt-8">Contact</span>
+        <h1 class="h1-page mt-6 max-w-[14ch]">Une question&nbsp;? <span class="points">Écrivez à Yves.</span></h1>
+        <p class="lead mt-6">Un produit à choisir, une commande, le test, le partenariat&nbsp;: Yves Coignard, distributeur indépendant Eqology, vous répond personnellement.</p>
+      </div>
+    </header>
+
+    <section class="sec !pt-0">
+      <div class="wrap">
+        <div class="filet grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
+          <div>
+            <h2 class="h2 max-w-[16ch]">Trois façons de le joindre.</h2>
+            <ul class="mt-8 grid gap-3">
+              <li class="carte p-5 sm:p-6"><p class="text-sm text-white/55">E-mail</p><a href="mailto:zenco.coignard@gmail.com" class="text-lg sm:text-xl mt-1 inline-block underline-offset-4 hover:underline break-all">zenco.coignard@gmail.com</a></li>
+              <li class="carte p-5 sm:p-6"><p class="text-sm text-white/55">Téléphone</p><a href="tel:+33675242626" class="text-lg sm:text-xl mt-1 inline-block underline-offset-4 hover:underline">06 75 24 26 26</a></li>
+              <li class="carte p-5 sm:p-6"><p class="text-sm text-white/55">Ce formulaire</p><p class="text-white/75 mt-1">Remplissez le formulaire de cette page&nbsp;: votre message arrive directement chez Yves.</p></li>
+            </ul>
+            <div class="mt-3 carte-claire p-5 sm:p-6"><p class="text-sm text-nuit/55">Une commande déjà passée&nbsp;?</p><p class="text-nuit/80 mt-1">Le suivi, les retours et les abonnements sont gérés par le service client d'Eqology, depuis votre compte sur eqology.com.</p></div>
+            <a href="partenaire.html" class="mt-3 flex items-center justify-between gap-4 rounded-[10px] bg-glacier-900 border border-white/10 p-5 sm:p-6 group hover:border-white/30 transition-colors">
+              <span><span class="block text-lg">Le partenariat vous intéresse&nbsp;?</span><span class="text-white/60 text-sm">Tout comprendre et être rappelé</span></span>
+              <span class="text-xl group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </a>
           </div>
-          <label class="grid gap-2"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
+          <form id="form-contact" aria-label="Écrire à Yves" class="rounded-xl bg-white text-nuit p-6 sm:p-9 shadow-2xl shadow-black/40 grid gap-5" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+          <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required autocomplete="given-name" class="champ"></label>
+          <label class="grid gap-2"><span class="text-sm font-semibold">Nom</span><input name="nom" autocomplete="family-name" class="champ"></label>
+          </div>
+          <label class="grid gap-2"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="champ"></label>
           <label class="grid gap-2"><span class="text-sm font-semibold">Sujet</span>
-            <select name="sujet" class="h-12 rounded-xl border border-cream-300 px-3 bg-white focus:border-glacier-500 focus:outline-none">
-              <option>Choisir un produit</option><option>Le test oméga-3</option><option>Une commande</option><option>Le partenariat</option><option>Autre</option>
-            </select></label>
-          <label class="grid gap-2"><span class="text-sm font-semibold">Message</span><textarea name="message" rows="6" required class="rounded-xl border border-cream-300 px-4 py-3 focus:border-glacier-500 focus:outline-none"></textarea></label>
-          <label class="flex gap-3 items-start text-sm text-navy-600"><input type="checkbox" name="accord" required class="mt-0.5 w-5 h-5 accent-navy-900 shrink-0"><span>J'accepte que mes données servent à me répondre (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>
+          <select name="sujet" class="champ !px-3">
+          <option>Choisir un produit</option><option>Le test oméga-3</option><option>Une commande</option><option>Le partenariat</option><option>Autre</option>
+          </select></label>
+          <label class="grid gap-2"><span class="text-sm font-semibold">Message</span><textarea name="message" rows="6" required class="champ"></textarea></label>
+          <label class="flex gap-3 items-start text-sm text-nuit/70"><input type="checkbox" name="accord" required class="mt-0.5 w-5 h-5 accent-navy-900 shrink-0"><span>J'accepte que mes données servent à me répondre (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>
           <p id="c-erreur" class="hidden text-sm text-red-700 bg-red-50 rounded-xl px-4 py-3" role="alert"></p>
           <button type="submit" class="btn btn-plein w-full !min-h-[56px] text-base">Envoyer le message</button>
-          <div id="c-ok" class="hidden rounded-2xl bg-glacier-50 p-6 text-center" role="status"><p class="font-medium text-xl">Message envoyé, merci.</p><p class="text-navy-600 mt-1">Yves vous répond rapidement.</p></div>
-        </form>
+          <div id="c-ok" class="hidden rounded-xl bg-glacier-50 p-6 text-center" role="status"><p class="font-medium text-xl">Message envoyé, merci.</p><p class="text-nuit/60 mt-1">Yves vous répond rapidement.</p></div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
-  <script src="components.js?v=202611251359"></script>
+
+  <footer></footer>
+  <script src="components.js?v=202611251600"></script>
   <script>
   (function () {
     var f = document.getElementById('form-contact'), err = document.getElementById('c-erreur');
