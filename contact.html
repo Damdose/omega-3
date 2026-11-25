@@ -11,32 +11,32 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/images/eqology-eq.png">
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251358">
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611251359">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <script src="site-config.js?v=202611251358"></script>
+  <script src="site-config.js?v=202611251359"></script>
 </head>
-<body class="bg-navy-900 text-white">
-  <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
+<body>
+  <nav id="entete" class="sticky top-0 z-40"></nav>
   <main>
-    <section class="sec bg-navy-900 text-white">
+    <section class="sec bg-cream-50">
       <div class="wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-start">
         <div>
           <p class="oeil">Contact</p>
           <h1 class="titre text-4xl sm:text-5xl mt-4 max-w-[14ch]">Une question ? Écrivez à Yves.</h1>
           <p class="lead mt-5">Un produit à choisir, une commande, le test, le partenariat : Yves vous répond personnellement.</p>
           <ul class="mt-8 grid gap-3">
-            <li class="rounded-2xl bg-navy-800 border border-white/10 p-5"><p class="text-sm text-navy-300">E-mail</p><a href="mailto:zenco.coignard@gmail.com" class="font-semibold text-lg">zenco.coignard@gmail.com</a></li>
-            <li class="rounded-2xl bg-navy-800 border border-white/10 p-5"><p class="text-sm text-navy-300">Téléphone</p><a href="tel:+33675242626" class="font-semibold text-lg">06 75 24 26 26</a></li>
-            <li class="rounded-2xl bg-navy-800 border border-white/10 p-5"><p class="text-sm text-navy-300">Une commande déjà passée ?</p><p class="text-cream-200 mt-1">Le suivi, les retours et les abonnements sont gérés par le service client d'Eqology, depuis votre compte sur eqology.com.</p></li>
+            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">E-mail</p><a href="mailto:zenco.coignard@gmail.com" class="font-semibold text-lg">zenco.coignard@gmail.com</a></li>
+            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">Téléphone</p><a href="tel:+33675242626" class="font-semibold text-lg">06 75 24 26 26</a></li>
+            <li class="rounded-2xl bg-white border border-cream-200 p-5"><p class="text-sm text-navy-500">Une commande déjà passée ?</p><p class="text-navy-700 mt-1">Le suivi, les retours et les abonnements sont gérés par le service client d'Eqology, depuis votre compte sur eqology.com.</p></li>
           </ul>
           <a href="partenaire.html" class="mt-6 flex items-center justify-between gap-4 rounded-2xl bg-navy-900 text-white p-5 group">
             <span><span class="block font-medium text-lg">Le partenariat vous intéresse ?</span><span class="text-cream-300 text-sm">Tout comprendre et être rappelé</span></span>
             <span class="text-glacier-300 group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
-        <form id="form-contact" class="rounded-xl bg-white text-navy-900 border border-cream-200 p-6 sm:p-9 grid gap-5" novalidate>
+        <form id="form-contact" class="rounded-xl bg-white border border-cream-200 p-6 sm:p-9 grid gap-5" novalidate>
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="grid gap-2"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required autocomplete="given-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
             <label class="grid gap-2"><span class="text-sm font-semibold">Nom</span><input name="nom" autocomplete="family-name" class="h-12 rounded-xl border border-cream-300 px-4 focus:border-glacier-500 focus:outline-none"></label>
@@ -50,13 +50,13 @@
           <label class="flex gap-3 items-start text-sm text-navy-600"><input type="checkbox" name="accord" required class="mt-0.5 w-5 h-5 accent-navy-900 shrink-0"><span>J'accepte que mes données servent à me répondre (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>
           <p id="c-erreur" class="hidden text-sm text-red-700 bg-red-50 rounded-xl px-4 py-3" role="alert"></p>
           <button type="submit" class="btn btn-plein w-full !min-h-[56px] text-base">Envoyer le message</button>
-          <div id="c-ok" class="hidden rounded-2xl bg-glacier-50 p-6 text-center" role="status"><p class="font-serif font-semibold text-xl">Message envoyé, merci.</p><p class="text-navy-600 mt-1">Yves vous répond rapidement.</p></div>
+          <div id="c-ok" class="hidden rounded-2xl bg-glacier-50 p-6 text-center" role="status"><p class="font-medium text-xl">Message envoyé, merci.</p><p class="text-navy-600 mt-1">Yves vous répond rapidement.</p></div>
         </form>
       </div>
     </section>
   </main>
   <footer class="bg-navy-900 text-white pt-20 pb-10"></footer>
-  <script src="components.js?v=202611251358"></script>
+  <script src="components.js?v=202611251359"></script>
   <script>
   (function () {
     var f = document.getElementById('form-contact'), err = document.getElementById('c-erreur');

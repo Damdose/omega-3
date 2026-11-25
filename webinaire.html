@@ -19,7 +19,7 @@
       theme: {
         extend: {
           colors: {
-            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#1E201C', 900: '#141613' },
+            navy: { 50: '#f0f3f6', 100: '#d9e0e8', 200: '#b3c1d1', 300: '#8da2ba', 400: '#6783a3', 500: '#41648c', 600: '#335075', 700: '#253c5e', 800: '#172847', 900: '#0B1D2E' },
             glacier: { 50: '#eef8f9', 100: '#d5eff2', 200: '#abdfe5', 300: '#81cfd8', 400: '#5bbfcb', 500: '#4DA8B5', 600: '#3d8691', 700: '#2e656d', 800: '#1f4349', 900: '#0f2224' },
             cream: { 50: '#FAFAF8', 100: '#F5F4F0', 200: '#ECEAE4', 300: '#DFDBCF', 400: '#C8C3B5' },
           },
@@ -33,7 +33,7 @@
   </script>
   <style>
     html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Satoshi', sans-serif; background: #141613; }
+    body { font-family: 'Satoshi', sans-serif; background: #0B1D2E; }
 
     /* Grain : casse l'aplat numérique du fond navy */
     .grain::after {
@@ -56,7 +56,7 @@
       content: '';
       position: absolute;
       width: 28px; height: 28px;
-      background: #141613;
+      background: #0B1D2E;
       border-radius: 9999px;
       top: 50%;
       transform: translateY(-50%);
@@ -171,7 +171,7 @@
                 <radialGradient id="core" cx="50%" cy="50%">
                   <stop offset="0%" stop-color="#5bbfcb" stop-opacity=".45"/>
                   <stop offset="70%" stop-color="#4DA8B5" stop-opacity=".06"/>
-                  <stop offset="100%" stop-color="#141613" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#0B1D2E" stop-opacity="0"/>
                 </radialGradient>
               </defs>
               <circle cx="200" cy="200" r="150" fill="url(#core)"/>

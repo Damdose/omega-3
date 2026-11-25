@@ -1,7 +1,7 @@
 /* Feuille commune de la version 2 */
 html { scroll-behavior: smooth; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { font-family: 'Satoshi', system-ui, sans-serif; background: #F7F7F4; color: #141613; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Satoshi', system-ui, sans-serif; background: #FAFAF8; color: #0B1D2E; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* Espace des sections : une seule valeur, en haut comme en bas */
 :root { --sec: clamp(56px, 7vw, 88px); }
@@ -12,22 +12,23 @@ body { font-family: 'Satoshi', system-ui, sans-serif; background: #F7F7F4; color
 .wrap { max-width: 1180px; margin-inline: auto; padding-inline: 20px; }
 @media (min-width: 640px) { .wrap { padding-inline: 32px; } }
 
-
-.titre { font-family: 'Satoshi', sans-serif; font-weight: 400 !important; letter-spacing: -.025em; line-height: 1.06; text-wrap: balance; }
-.lead { font-size: 1.125rem; line-height: 1.65; color: #45463F; max-width: 60ch; }
+.oeil { display: inline-flex; align-self: flex-start; width: max-content; max-width: 100%; align-items: center; gap: .5rem; font: 500 12.5px/1 'Satoshi', sans-serif; letter-spacing: .01em; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #0B1D2E; color: #fff !important; }
+.oeil::before { content: ''; width: 7px; height: 7px; background: currentColor; transform: rotate(45deg); flex-shrink: 0; }
+.bg-navy-900 .oeil, .bg-navy-800 .oeil, .text-white .oeil, .bg-\[\#7A1E1A\] .oeil { background: #fff; color: #0B1D2E !important; }
+.titre { font-family: 'Satoshi', sans-serif; font-weight: 400 !important; letter-spacing: -.03em; line-height: 1.04; text-wrap: balance; }
+h1.titre, h2.titre { font-weight: 300 !important; }
+.lead { font-size: 1.125rem; line-height: 1.65; color: #335075; max-width: 60ch; }
 
 .btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1.25rem; border-radius: 8px; font-weight: 500; font-size: 15px; transition: background-color .25s, transform .25s, box-shadow .25s; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
-.btn-plein { background: #EE6A2C; color: #fff; }
-.btn-plein:hover { background: #D85A1F; }
-.btn-nuit { background: #141613; color: #fff; }
-.btn-nuit:hover { background: #30322C; }
-.btn-glacier { background: #EE6A2C; color: #fff; }
-.btn-glacier:hover { background: #D85A1F; }
-.btn-ligne { border: 1px solid #141613; color: #141613; background: transparent; }
-.btn-ligne:hover { background: #141613; color: #fff; }
-.btn-clair { border: 1px solid rgba(255,255,255,.85); color: #fff; }
-.btn-clair:hover { background: #fff; color: #141613; }
+.btn-plein { background: #0B1D2E; color: #fff; }
+.btn-plein:hover { background: #253c5e; }
+.btn-glacier { background: #4DA8B5; color: #0B1D2E; }
+.btn-glacier:hover { background: #81cfd8; }
+.btn-ligne { border: 1px solid #0B1D2E; color: #0B1D2E; background: transparent; }
+.btn-ligne:hover { background: #0B1D2E; color: #fff; }
+.btn-clair { border: 1px solid rgba(255,255,255,.8); color: #fff; }
+.btn-clair:hover { background: #fff; color: #0B1D2E; }
 .btn-clair:hover { border-color: #fff; }
 :focus-visible { outline: 3px solid #4DA8B5; outline-offset: 3px; border-radius: 6px; }
 
@@ -50,38 +51,16 @@ input, select, textarea { font-size: 16px; }
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* ===== Design « juste milieu » : mécanismes inspirés de patch.io sur la charte ===== */
-/* Petits titres de section : étiquette façon patch */
-.oeil { display: inline-flex; align-items: center; gap: .5rem; font: 500 12.5px/1 'Satoshi', sans-serif; letter-spacing: 0; text-transform: none; padding: .45rem .7rem; border-radius: 6px; background: #141613; color: #fff !important; }
-.oeil::before { content: ''; width: 7px; height: 7px; background: currentColor; transform: rotate(45deg); flex-shrink: 0; }
-.bg-navy-900 .oeil, .bg-navy-800 .oeil, .text-white .oeil { background: #fff; color: #141613 !important; }
-.oeil.nu { padding: 0; background: none !important; color: inherit !important; } .oeil.nu::before { display: none; }
-/* Titre géant */
-.geant { font-family: 'Satoshi', sans-serif; font-weight: 300; letter-spacing: -0.03em; line-height: .98; font-size: clamp(3rem, 8vw, 7.4rem); text-wrap: balance; }
-.fin { font-weight: 300 !important; }
-/* Filet de section façon patch */
-.filet { border-top: 1px solid rgba(11,29,46,.12); padding-top: 1.5rem; }
-.bg-navy-900 .filet { border-color: rgba(255,255,255,.14); }
-/* Bande qui défile */
-.defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
-@keyframes defile { to { transform: translateX(-50%); } }
-/* Barres de progression (étapes, onglets) */
-.progres { height: 2px; border-radius: 2px; background: rgba(11,29,46,.12); position: relative; overflow: hidden; }
-.bg-navy-900 .progres { background: rgba(255,255,255,.15); }
-.progres > i { position: absolute; inset: 0 auto 0 0; width: 0; background: #4DA8B5; }
-.actif .progres > i { animation: remplit var(--d, 6s) linear forwards; }
-@keyframes remplit { to { width: 100%; } }
-.orbite { animation: tourne 70s linear infinite; transform-origin: 300px 300px; } @keyframes tourne { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .defile, .orbite { animation: none; } .actif .progres > i { animation: none; width: 100%; } }
-
+/* ===== Présentation des blocs façon patch.io ===== */
+/* Filet fin en tête de chaque section, aligné sur la colonne */
+.sec > .wrap { background-image: linear-gradient(rgba(11,29,46,.13), rgba(11,29,46,.13)); background-repeat: no-repeat; background-size: calc(100% - 40px) 1px; background-position: center top; padding-top: 1.75rem; }
+@media (min-width: 640px) { .sec > .wrap { background-size: calc(100% - 64px) 1px; } }
+.bg-navy-900.sec > .wrap, .sec.bg-navy-900 > .wrap { background-image: linear-gradient(rgba(255,255,255,.16), rgba(255,255,255,.16)); }
+.sec > .wrap.sans-filet { background-image: none; padding-top: 0; }
+/* Flèche dans les boutons d'action */
 .btn-plein::after, .btn-glacier::after { content: '→'; transition: transform .2s; }
 .btn-plein:hover::after, .btn-glacier:hover::after { transform: translateX(3px); }
-.btn.sans-fleche::after { content: none; }
-
-/* Rail horizontal aligné sur la colonne de contenu, sans script */
-.rail { padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); scroll-padding-inline: max(20px, calc((100vw - 1180px) / 2 + 20px)); }
-@media (min-width: 640px) { .rail { padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); scroll-padding-inline: max(32px, calc((100vw - 1180px) / 2 + 32px)); } }
-
-/* Texte d'introduction sur fond sombre */
-.bg-navy-900 .lead, .bg-navy-800 .lead, .text-white .lead { color: #CCCCC5; }
-.bg-white.text-navy-900 .lead, form .lead { color: #45463F; }
+/* Bande de preuves qui défile */
+.defile { display: flex; align-items: center; gap: 4.5rem; width: max-content; animation: defile 40s linear infinite; }
+@keyframes defile { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .defile { animation: none; } }

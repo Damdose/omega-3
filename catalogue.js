@@ -128,18 +128,18 @@ window.prixTexte = (p) => p.prix ? p.prix.toLocaleString('fr-FR') + ' €' : (p.
 window.lienEqology = (p) => window.lienCommande('https://eqology.com/fr/eqology-' + p.slug);
 
 window.carteProduit = (p) => `
-  <article class="group relative flex flex-col rounded-lg bg-white text-navy-900 border border-cream-200 overflow-hidden hover:shadow-xl hover:shadow-navy-900/5 hover:-translate-y-0.5 transition-all duration-300">
+  <article class="group relative flex flex-col rounded-xl bg-white border border-cream-200 overflow-hidden hover:shadow-xl hover:shadow-navy-900/5 hover:-translate-y-0.5 transition-all duration-300">
     <a href="produit.html?p=${p.slug}" class="absolute inset-0 z-10" aria-label="${p.nom}"></a>
     <div class="relative aspect-square bg-gradient-to-b from-cream-100 to-cream-50">
-      ${p.badge ? `<span class="absolute top-3 left-3 z-[1] text-[11.5px] font-medium px-2 py-1 rounded-md ${p.badge === 'Noël' ? 'bg-rouge text-white' : 'bg-navy-900 text-white'}">${p.badge}</span>` : ''}
+      ${p.badge ? `<span class="absolute top-3 left-3 z-[1] text-[11px] font-medium px-2 py-1 rounded-md ${p.badge === 'Noël' ? 'bg-[#B3261E] text-white' : 'bg-navy-900 text-white'}">${p.badge}</span>` : ''}
       <img src="assets/v2/produits/${p.slug}.webp" alt="${p.nom}" class="absolute inset-0 w-full h-full object-contain p-5 sm:p-7 group-hover:scale-[1.04] transition-transform duration-500" width="720" height="720" loading="lazy" decoding="async">
     </div>
     <div class="flex flex-col flex-1 p-4 sm:p-5">
-      <h3 class="text-[15px] sm:text-lg leading-snug">${p.nom}</h3>
+      <h3 class="font-medium text-[15px] sm:text-lg leading-snug">${p.nom}</h3>
       <p class="text-xs sm:text-sm text-navy-500 mt-1">${p.detail}</p>
       <div class="mt-auto pt-4 flex items-center justify-between gap-2">
-        <span class="text-base sm:text-xl">${window.prixTexte(p)}</span>
-        <span class="relative z-20 hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-md bg-navy-900 text-white group-hover:bg-rouge transition-colors" aria-hidden="true">
+        <span class="font-medium text-base sm:text-xl">${window.prixTexte(p)}</span>
+        <span class="relative z-20 hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white group-hover:bg-glacier-500 group-hover:text-navy-900 transition-colors" aria-hidden="true">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </span>
       </div>
