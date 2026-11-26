@@ -23,3 +23,6 @@ recopie/
 
 # Versions archivées (local uniquement)
 _versions/
+v-patch/
+v-mix/
+admin-test/
