@@ -318,3 +318,12 @@ body[data-entete="lp"] > nav#entete { min-height: 100px; }
 @keyframes quizEntre { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .quiz-entre { animation: none; } }
 .verre.absolute, .verre-nuit.absolute { position: absolute; }
+
+/* Sur mobile, les rangées de cartes deviennent des carrousels qu'on fait glisser */
+@media (max-width: 767px) {
+  .rail-mobile { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin-inline: -20px; padding-inline: 20px; padding-bottom: 6px; scrollbar-width: none; }
+  .rail-mobile::-webkit-scrollbar { display: none; }
+  .rail-mobile > * { flex: 0 0 84%; scroll-snap-align: start; }
+  .rail-mobile + .rail-indice, .rail-indice { display: flex; }
+}
+.rail-indice { display: none; align-items: center; gap: .5rem; margin-top: .75rem; font-size: 13px; opacity: .6; }

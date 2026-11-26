@@ -72,7 +72,7 @@
     <div class="bg-nuit text-white/85 text-[13px]">
       <div class="wrap h-9 flex items-center justify-between gap-4">
         <p class="truncate hidden sm:block"><span class="text-glacier-300">Livraison offerte par Eqology</span> dès deux produits de plus de 60&nbsp;€<span class="hidden lg:inline"> · Paiement sécurisé sur la boutique officielle</span></p>
-        <span class="shrink-0 flex items-center gap-5"><a href="tel:+33675242626" class="hover:text-white">Conseil gratuit&nbsp;: <span class="text-white">06 75 24 26 26</span></a><a href="partenaire.html" class="hidden md:inline hover:text-white">Devenir partenaire →</a></span>
+        <span class="shrink-0 flex items-center gap-5"><a href="tel:+33675242626" class="hover:text-white">Conseil gratuit&nbsp;: <span class="text-white">06 75 24 26 26</span></a><a href="partenaire.html" class="hover:text-white"><span class="sm:hidden">Partenaire →</span><span class="hidden sm:inline">Devenir partenaire →</span></a></span>
       </div>
     </div>
     <div class="entete-verre text-nuit">
@@ -86,7 +86,7 @@
           <input name="q" type="search" placeholder="Rechercher un produit : oméga-3, vitamine D, test…" class="flex-1 bg-transparent outline-none text-[15px] placeholder:text-nuit/50" aria-label="Rechercher un produit">
         </form>
         <div class="ml-auto flex items-center gap-1 sm:gap-2">
-          <a href="partenaire.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-3 text-[15px] hover:opacity-70">${ico.equipe}Devenir partenaire</a>
+          
           <a href="boutique.html" class="md:hidden w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Rechercher">${ico.loupe}</a>
           <button type="button" data-panier-ouvrir class="relative w-11 h-11 grid place-items-center rounded-full hover:bg-sable" aria-label="Ouvrir le panier">${ico.panier}<span data-panier-nombre class="hidden absolute top-0.5 right-0.5 min-w-[19px] h-[19px] px-1 rounded-full bg-glacier-500 text-nuit text-[11px] font-medium leading-[19px] text-center">0</span></button>
           <a href="boutique.html" aria-label="La boutique" class="hidden sm:inline-flex btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
@@ -98,6 +98,7 @@
           <span class="mx-2 h-4 w-px bg-nuit/15"></span>
           <a href="le-test.html" class="px-3 py-1.5 rounded-[8.5px] text-nuit/80 hover:bg-sable">Comprendre le test</a>
           <a href="${ancreYves}" class="px-3 py-1.5 rounded-[8.5px] text-nuit/80 hover:bg-sable">Qui suis-je</a>
+          <a href="partenaire.html" class="ml-auto inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-glacier-500 text-nuit hover:bg-glacier-300 transition-colors">${ico.equipe}Devenir partenaire</a>
         </div>
       </div>
     </div>
@@ -372,7 +373,7 @@
         <div><span class="oeil">Avis clients</span><h2 class="h2 mt-6 max-w-[20ch]">${titre}</h2></div>
         <a href="https://fr.trustpilot.com/review/eqology.com" target="_blank" rel="noopener" class="self-start lg:self-auto inline-flex items-center gap-3 rounded-full bg-white text-nuit border border-nuit/10 pl-4 pr-5 h-12 hover:-translate-y-0.5 transition-transform"><img src="assets/v2/trustpilot.webp" alt="Trustpilot" width="320" height="79" class="h-6 w-auto"><span class="text-[15px]">Tous les avis →</span></a>
       </div>
-      <div class="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1fr_1fr_1fr]">
+      <div class="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1fr_1fr_1fr] rail-mobile">
         <div class="rounded-[14px] bg-nuit text-white p-6 sm:p-7 flex flex-col justify-between gap-6">
           <div><p class="text-sm text-white/65">Sur Trustpilot, Eqology est noté</p><p class="text-3xl font-light mt-1">Excellent</p></div>
           <dl class="grid gap-4">
@@ -391,6 +392,7 @@
           </figcaption>
         </figure>`).join('')}
       </div>
+      <p class="rail-indice" aria-hidden="true">Faites glisser pour voir la suite →</p>
       <p class="mt-4 text-xs opacity-60">Avis publics sur la marque Eqology, relevés sur Trustpilot le 26 novembre 2026. Extraits non modifiés.</p>`;
   });
 

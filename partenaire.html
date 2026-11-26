@@ -13,15 +13,15 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611262100">
-  <script src="site-config.js?v=202611262100"></script>
-  <script src="catalogue.js?v=202611262100"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611262245">
+  <script src="site-config.js?v=202611262245"></script>
+  <script src="catalogue.js?v=202611262245"></script>
 </head>
 <body class="clair" data-entete="lp">
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
-    <!-- 1. Promesse : simuler son complément de revenu avec la gamme, selon le plan officiel -->
+    <!-- 1. Promesse : devenir partenaire, et un formulaire de rappel court -->
     <header data-plein class="hero lp-hero bg-nuit">
       <div class="absolute inset-0" style="background: radial-gradient(50% 70% at 85% 25%, rgba(77,168,181,.28), transparent 65%), radial-gradient(45% 60% at 0% 100%, rgba(77,168,181,.14), transparent 70%)"></div>
       <div class="relative wrap w-full pt-32 pb-8">
@@ -36,33 +36,23 @@
               <li class="flex gap-3"><svg class="w-5 h-5 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#4DA8B5"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#0B1D2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>À votre rythme, depuis chez vous, sans engagement</span></li>
             </ul>
             <div class="hidden sm:flex mt-8 flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-              <a href="demande.html" data-demande id="lp-cta" class="btn btn-plein !min-h-[58px] !px-7 text-[17px]">Voir si c'est pour moi</a>
-              <p class="text-sm text-white/70">5 questions · environ 1 minute<br class="hidden sm:block"> Yves vous rappelle sous 48 heures</p>
+              <a href="demande.html" data-demande id="lp-cta" class="btn btn-plein !min-h-[58px] !px-7 text-[17px] lg:hidden">Être rappelé par Yves</a>
+              <p class="text-sm text-white/70">Rappel sous 48 heures, sans engagement.<br class="hidden sm:block"> Ou appelez Yves au <a href="tel:+33675242626" class="underline underline-offset-4 text-white">06 75 24 26 26</a></p>
             </div>
             <p class="mt-5 sm:mt-7 inline-flex items-center gap-3 text-[14px] text-white/80"><span class="bg-white rounded-[6px] px-2 py-1"><img src="assets/v2/trustpilot.webp" alt="Trustpilot" width="320" height="79" class="h-4 w-auto"></span><span><b class="font-medium text-white">Excellent</b> · 1&nbsp;886 avis · Eqology depuis 1998</span></p>
           </div>
 
-          <div id="simu" class="verre-nuit rounded-[20px] p-6 sm:p-8">
-            <p class="mono text-glacier-300">Simulez votre complément de revenu</p>
-            <p class="text-[24px] sm:text-[28px] leading-snug mt-3">À combien de personnes pourriez-vous recommander Eqology&nbsp;?</p>
-            <p class="text-[15px] text-white/70 mt-2">Proches, amis, collègues, clients… chacune prenant une huile chaque mois.</p>
-            <div class="mt-6 grid grid-cols-4 gap-2" id="s-choix">
-              <button type="button" data-n="10" class="h-14 rounded-[12px] bg-white/10 border border-white/20 text-[20px] hover:bg-white/20 transition-colors">10</button>
-              <button type="button" data-n="25" class="h-14 rounded-[12px] bg-white/10 border border-white/20 text-[20px] hover:bg-white/20 transition-colors">25</button>
-              <button type="button" data-n="50" class="h-14 rounded-[12px] bg-white/10 border border-white/20 text-[20px] hover:bg-white/20 transition-colors">50</button>
-              <button type="button" data-n="100" class="h-14 rounded-[12px] bg-white/10 border border-white/20 text-[20px] hover:bg-white/20 transition-colors">100</button>
+          <div id="premier-pas" class="relative rounded-[20px] bg-white text-nuit p-6 sm:p-8 shadow-2xl shadow-black/40 scroll-mt-32">
+            <div class="flex items-center justify-between gap-3">
+              <p class="mono text-glacier-700">Rappel gratuit · sans engagement</p>
+              <p id="q-etape" class="mono text-nuit/55">1 / 4</p>
             </div>
-            <div class="mt-4 flex items-center gap-4">
-              <input id="s-range" type="range" min="0" max="150" value="25" class="flex-1 accent-[#4DA8B5]" aria-label="Nombre de personnes">
-              <span class="shrink-0 w-24 text-right text-[15px] text-white/80"><b id="s-n" class="text-[20px] font-normal text-white">25</b> pers.</span>
+            <div class="mt-3 h-1 rounded-full bg-nuit/10 overflow-hidden"><div id="q-barre" class="h-full w-1/4 rounded-full bg-glacier-500 transition-[width] duration-500"></div></div>
+            <div id="q-corps" class="mt-5" aria-live="polite"></div>
+            <div class="mt-4 flex items-center justify-between">
+              <button type="button" id="q-retour" class="invisible text-[13px] underline underline-offset-4 text-nuit/70">← Revenir</button>
+              <p class="flex items-center gap-1.5 text-[12px] text-nuit/55"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Vos coordonnées ne servent qu'à ce rappel</p>
             </div>
-            <div class="mt-5 rounded-[16px] bg-white text-nuit p-5 sm:p-6">
-              <p class="text-[14px] text-nuit/65">Votre complément de revenu estimé</p>
-              <p class="mt-1"><span id="s-mois" class="text-[44px] sm:text-[52px] font-light leading-none">0&nbsp;€</span><span class="text-nuit/60"> / mois</span></p>
-              <p class="text-[14px] text-nuit/65 mt-2"><span id="s-an">0&nbsp;€</span> par an, plus <span id="s-cab">0&nbsp;€</span> de bonus d'arrivée</p>
-            </div>
-            <a href="demande.html" data-demande id="s-cta" class="btn btn-plein w-full !min-h-[54px] mt-5 text-[16px]">Être rappelé par Yves</a>
-            <p class="mt-4 text-[11.5px] leading-snug text-white/50">Calcul selon le <a href="https://d1dhn91mufybwl.cloudfront.net/downloads/pdfs/up5rmflcjl/up5rmflcjl.pdf" target="_blank" rel="noopener" class="underline underline-offset-2">plan officiel Eqology</a> (1er janvier 2025)&nbsp;: une personne = un abonnement Pure Arctic Oil de 30 BV par mois, commission de 10 à 25&nbsp;% au-delà de 200 BV, 1 BV ≈ 1&nbsp;€, bonus de 20&nbsp;€ par nouveau client. Hors primes d'équipe. Eqology ne garantit aucun niveau de revenu.</p>
           </div>
         </div>
       </div>
@@ -183,11 +173,11 @@
           <span class="oeil">Profils</span>
           <h2 class="h2 mt-10 max-w-[18ch]">À qui s'adresse le partenariat.</h2>
         </div>
-        <div class="mt-12 grid gap-4 md:grid-cols-3">
+        <div class="mt-12 grid gap-4 md:grid-cols-3 rail-mobile">
           <div><div class="relative rounded-xl overflow-hidden aspect-[4/5] md:aspect-[4/3] [&>img]:object-[50%_30%]"><img src="assets/v2/praticienne.webp" srcset="assets/v2/praticienne-800.webp 800w, assets/v2/praticienne.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une naturopathe présente le flacon et le kit de test Eqology" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span class="absolute left-3 top-3 w-11 h-11 rounded-full bg-white text-nuit grid place-items-center shadow"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="12" r="2"/></svg></span></div><h3 class="h3 mt-5">Vous êtes praticien de santé</h3><p class="text-white/65 mt-2 leading-relaxed">Naturopathe, diététicien, micronutritionniste, kiné, ostéopathe ou coach. Le test donne une mesure à vos conseils, et vos patients commandent seuls.</p><ul class="mt-4 grid gap-2.5"><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 14h9"/></svg></span>Une mesure objective pour vos patients</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>Aucune vente au cabinet</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7.5a5 5 0 1 0 0 9M6 11h8M6 13.5h8"/></svg></span>Une commission sur leurs commandes</li></ul></div>
           <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/lp-revenu.webp" srcset="assets/v2/lp-revenu-800.webp 800w, assets/v2/lp-revenu.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Un homme au téléphone chez lui" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span class="absolute left-3 top-3 w-11 h-11 rounded-full bg-white text-nuit grid place-items-center shadow"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span></div><h3 class="h3 mt-5">Vous cherchez un complément de revenu</h3><p class="text-white/65 mt-2 leading-relaxed">Actif ou retraité, vous avez quelques heures par semaine et un entourage. Vous travaillez depuis chez vous, sans horaires imposés.</p><ul class="mt-4 grid gap-2.5"><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Quelques heures par semaine</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>Depuis chez vous</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg></span>Accompagné par l'équipe d'Yves</li></ul></div>
           <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/lp-client.webp" srcset="assets/v2/lp-client-800.webp 800w, assets/v2/lp-client.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une cuillère de Pure Arctic Oil au petit-déjeuner" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span class="absolute left-3 top-3 w-11 h-11 rounded-full bg-white text-nuit grid place-items-center shadow"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg></span></div><h3 class="h3 mt-5">Vous prenez déjà les produits</h3><p class="text-white/65 mt-2 leading-relaxed">Vous en parlez autour de vous sans y penser. Beaucoup de partenaires ont commencé comme clients.</p><ul class="mt-4 grid gap-2.5"><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>Partagez votre lien</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 12h18M12 8S10 3 7.5 4.5 9 8 12 8Zm0 0s2-5 4.5-3.5S15 8 12 8Z"/></svg></span>Vos produits peuvent devenir gratuits</li><li class="flex items-center gap-3 text-[15px] text-white/85"><span class="shrink-0 w-8 h-8 rounded-full bg-glacier-500/15 text-glacier-300 grid place-items-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7.5a5 5 0 1 0 0 9M6 11h8M6 13.5h8"/></svg></span>Une commission sur chaque commande</li></ul></div>
-        </div>
+        </div><p class="rail-indice" aria-hidden="true">Faites glisser pour voir la suite →</p>
       </div>
     </section>
 
@@ -198,7 +188,7 @@
           <span class="oeil">Accompagnement</span>
           <h2 class="h2 mt-10 max-w-[20ch]">Ce que vous recevez pour démarrer.</h2>
         </div>
-        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple de lien de commande à votre nom"><div class="w-[84%] rounded-[10px] bg-white shadow-lg overflow-hidden text-nuit"><div class="flex items-center gap-1 px-2.5 py-1.5 bg-sable border-b border-nuit/10"><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="ml-2 flex-1 truncate rounded bg-white px-2 py-0.5 text-[9.5px] text-nuit/70">🔒 eqology.com/fr/<b class="font-medium text-nuit">votre-nom</b></span></div><div class="p-2.5 flex items-center gap-2.5"><img src="assets/v2/produits/pure-arctic-oil.webp" alt="" class="w-10 h-10 object-contain" width="40" height="40"><span class="text-[10px] leading-tight">Pure Arctic Oil<span class="block text-nuit/55">Commande attribuée à vous</span></span><span class="ml-auto rounded-full bg-glacier-500 text-nuit text-[9px] px-2 py-1">Commander</span></div></div></div><div class="p-6"><h3 class="h3">Votre lien de commande</h3><p class="text-white/70 mt-2 leading-relaxed">Une page de commande Eqology à votre nom. Chaque achat passé avec ce lien vous est attribué.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple de module de formation"><div class="w-[84%] rounded-[10px] bg-nuit text-white shadow-lg overflow-hidden"><div class="relative aspect-[16/7] bg-gradient-to-br from-[#16324A] to-nuit grid place-items-center"><span class="w-9 h-9 rounded-full bg-white/90 text-nuit grid place-items-center text-[12px]">▶</span><span class="absolute left-2 bottom-1.5 text-[9px] text-white/70">Module 1 · Démarrer</span></div><ul class="px-2.5 py-2 grid gap-1 text-[9.5px]"><li class="flex items-center gap-1.5"><span class="text-glacier-300">✓</span>Présenter le test</li><li class="flex items-center gap-1.5"><span class="text-glacier-300">✓</span>Partager votre lien</li><li class="flex items-center gap-1.5 text-white/60"><span>○</span>Suivre vos clients</li></ul></div></div><div class="p-6"><h3 class="h3">Une formation</h3><p class="text-white/70 mt-2 leading-relaxed">Formations en ligne, guide pas à pas et supports de présentation fournis par Eqology.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple d'échange avec votre parrain"><div class="w-[84%] grid gap-1.5 text-[10px] leading-snug text-nuit"><div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-nuit text-white grid place-items-center text-[9px]">YC</span><span class="rounded-[10px] rounded-tl-[3px] bg-white shadow px-2.5 py-1.5">Comment s'est passée votre première présentation&nbsp;?</span></div><div class="justify-self-end rounded-[10px] rounded-tr-[3px] bg-[#D8F0F2] px-2.5 py-1.5 max-w-[80%]">Très bien, deux personnes veulent faire le test&nbsp;!</div><div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-nuit text-white grid place-items-center text-[9px]">YC</span><span class="rounded-[10px] rounded-tl-[3px] bg-white shadow px-2.5 py-1.5">Parfait, on prépare la suite ensemble.</span></div></div></div><div class="p-6"><h3 class="h3">Un parrain disponible</h3><p class="text-white/70 mt-2 leading-relaxed">Yves vous accompagne les premières semaines et répond à vos questions par téléphone.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Le kit de test oméga-3 Eqology"><img src="assets/v2/produits/omega-3-test-kit.webp" alt="" class="h-[82%] w-auto object-contain drop-shadow-xl" width="720" height="720" loading="lazy"><span class="absolute right-3 bottom-3 rounded-full bg-white text-nuit text-[10px] px-2.5 py-1 shadow">Résultat en ligne</span></div><div class="p-6"><h3 class="h3">Un outil concret</h3><p class="text-white/70 mt-2 leading-relaxed">Le test oméga&#8209;3 à domicile, pour engager la conversation sur un résultat mesuré.</p></div></li></ul>
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 rail-mobile"><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple de lien de commande à votre nom"><div class="w-[84%] rounded-[10px] bg-white shadow-lg overflow-hidden text-nuit"><div class="flex items-center gap-1 px-2.5 py-1.5 bg-sable border-b border-nuit/10"><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="w-1.5 h-1.5 rounded-full bg-nuit/20"></span><span class="ml-2 flex-1 truncate rounded bg-white px-2 py-0.5 text-[9.5px] text-nuit/70">🔒 eqology.com/fr/<b class="font-medium text-nuit">votre-nom</b></span></div><div class="p-2.5 flex items-center gap-2.5"><img src="assets/v2/produits/pure-arctic-oil.webp" alt="" class="w-10 h-10 object-contain" width="40" height="40"><span class="text-[10px] leading-tight">Pure Arctic Oil<span class="block text-nuit/55">Commande attribuée à vous</span></span><span class="ml-auto rounded-full bg-glacier-500 text-nuit text-[9px] px-2 py-1">Commander</span></div></div></div><div class="p-6"><h3 class="h3">Votre lien de commande</h3><p class="text-white/70 mt-2 leading-relaxed">Une page de commande Eqology à votre nom. Chaque achat passé avec ce lien vous est attribué.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple de module de formation"><div class="w-[84%] rounded-[10px] bg-nuit text-white shadow-lg overflow-hidden"><div class="relative aspect-[16/7] bg-gradient-to-br from-[#16324A] to-nuit grid place-items-center"><span class="w-9 h-9 rounded-full bg-white/90 text-nuit grid place-items-center text-[12px]">▶</span><span class="absolute left-2 bottom-1.5 text-[9px] text-white/70">Module 1 · Démarrer</span></div><ul class="px-2.5 py-2 grid gap-1 text-[9.5px]"><li class="flex items-center gap-1.5"><span class="text-glacier-300">✓</span>Présenter le test</li><li class="flex items-center gap-1.5"><span class="text-glacier-300">✓</span>Partager votre lien</li><li class="flex items-center gap-1.5 text-white/60"><span>○</span>Suivre vos clients</li></ul></div></div><div class="p-6"><h3 class="h3">Une formation</h3><p class="text-white/70 mt-2 leading-relaxed">Formations en ligne, guide pas à pas et supports de présentation fournis par Eqology.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Exemple d'échange avec votre parrain"><div class="w-[84%] grid gap-1.5 text-[10px] leading-snug text-nuit"><div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-nuit text-white grid place-items-center text-[9px]">YC</span><span class="rounded-[10px] rounded-tl-[3px] bg-white shadow px-2.5 py-1.5">Comment s'est passée votre première présentation&nbsp;?</span></div><div class="justify-self-end rounded-[10px] rounded-tr-[3px] bg-[#D8F0F2] px-2.5 py-1.5 max-w-[80%]">Très bien, deux personnes veulent faire le test&nbsp;!</div><div class="flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-nuit text-white grid place-items-center text-[9px]">YC</span><span class="rounded-[10px] rounded-tl-[3px] bg-white shadow px-2.5 py-1.5">Parfait, on prépare la suite ensemble.</span></div></div></div><div class="p-6"><h3 class="h3">Un parrain disponible</h3><p class="text-white/70 mt-2 leading-relaxed">Yves vous accompagne les premières semaines et répond à vos questions par téléphone.</p></div></li><li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[16/10] rounded-t-[10px] overflow-hidden grid place-items-center bg-gradient-to-br from-glacier-100 via-[#EAF4F5] to-sable" role="img" aria-label="Le kit de test oméga-3 Eqology"><img src="assets/v2/produits/omega-3-test-kit.webp" alt="" class="h-[82%] w-auto object-contain drop-shadow-xl" width="720" height="720" loading="lazy"><span class="absolute right-3 bottom-3 rounded-full bg-white text-nuit text-[10px] px-2.5 py-1 shadow">Résultat en ligne</span></div><div class="p-6"><h3 class="h3">Un outil concret</h3><p class="text-white/70 mt-2 leading-relaxed">Le test oméga&#8209;3 à domicile, pour engager la conversation sur un résultat mesuré.</p></div></li></ul><p class="rail-indice" aria-hidden="true">Faites glisser pour voir la suite →</p>
         <a href="#rappel" class="btn btn-plein mt-8">Être rappelé par Yves</a>
       </div>
     </section>
@@ -265,11 +255,11 @@
           <h2 class="h2 mt-10 max-w-[22ch]">Des produits que vous pourrez expliquer à vos clients.</h2>
           <p class="lead mt-5 !max-w-[60ch]">Recommander, c'est aussi savoir répondre. Voici ce qu'Eqology met dans Pure Arctic Oil, son huile de référence.</p>
         </div>
-        <ol class="mt-12 grid gap-4 md:grid-cols-3">
+        <ol class="mt-12 grid gap-4 md:grid-cols-3 rail-mobile">
           <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/bateau.webp" srcset="assets/v2/bateau-800.webp 800w, assets/v2/bateau.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Bateau de pêche dans un fjord norvégien" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-600">01</p><h3 class="h3 mt-2">La pêche</h3><p class="text-white/70 mt-2 leading-relaxed">Le cabillaud est pêché à l'état sauvage dans l'Arctique. Eqology et le fabricant de Pure Arctic Oil sont certifiés MSC, le label de la pêche durable.</p></div></li>
           <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/olive.webp" srcset="assets/v2/olive-800.webp 800w, assets/v2/olive.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Flacon Pure Arctic Oil entre des branches d'olivier" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-600">02</p><h3 class="h3 mt-2">L'huile d'olive</h3><p class="text-white/70 mt-2 leading-relaxed">Chaque flacon contient aussi de l'huile d'olive vierge extra de Crète. Eqology la fait analyser : elle ne contient ni métaux lourds, ni HAP, ni dioxines.</p></div></li>
           <li class="carte overflow-hidden flex flex-col"><div class="relative aspect-[4/3]"><img src="assets/v2/cat-omega3.webp" srcset="assets/v2/cat-omega3-800.webp 800w, assets/v2/cat-omega3.webp 1600w" sizes="(min-width:1024px) 33vw, 100vw" alt="Flacon Pure Arctic Oil sur un rocher au bord de la mer" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><div class="p-6 sm:p-7"><p class="mono text-glacier-600">03</p><h3 class="h3 mt-2">La fraîcheur</h3><p class="text-white/70 mt-2 leading-relaxed">Une huile oméga‑3 s'oxyde vite. Pour Pure Arctic Oil, Eqology indique un indice d'oxydation TOTOX de 4 à 6, qu'elle situe parmi les plus bas du marché.</p></div></li>
-        </ol>
+        </ol><p class="rail-indice" aria-hidden="true">Faites glisser pour voir la suite →</p>
         <div class="mt-4 rounded-[14px] bg-nuit text-white p-6 sm:p-9 grid gap-8 lg:grid-cols-[0.9fr_1.6fr] lg:items-center">
           <div>
             <p class="mono text-glacier-300">Pourquoi c'est un bon produit</p>
@@ -341,7 +331,7 @@
         <div class="filet grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div><span class="oeil">Vos questions</span><h2 class="h2 mt-10 max-w-[12ch]">Questions fréquentes.</h2></div>
           <div class="divide-y divide-white/12 border-y border-white/12">
-            <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Combien peut-on gagner&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Cela dépend du nombre de clients que vous accompagnez et du temps que vous y consacrez. On ne vous donnera pas de chiffre avant de vous avoir montré le plan officiel&nbsp;: c'est l'objet de la visio. Aucun revenu n'est garanti.</p></details>
+            <details class="py-2" open><summary class="flex items-center justify-between gap-6 py-4 text-lg">Combien peut-on gagner&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Cela dépend du nombre de clients que vous accompagnez et du temps que vous y consacrez. On ne vous donnera pas de chiffre avant de vous avoir montré le plan officiel&nbsp;: c'est l'objet de la visio. Aucun revenu n'est garanti.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Combien coûte le démarrage&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">On démarre avec un kit qui contient des produits et des supports. Il en existe plusieurs, du plus simple au plus complet. Yves vous donne les prix exacts avant tout engagement.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Faut-il acheter du stock&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Non. Vos clients commandent directement sur Eqology avec votre lien et sont livrés chez eux.</p></details>
             <details class="py-2"><summary class="flex items-center justify-between gap-6 py-4 text-lg">Faut-il un statut&nbsp;?<span class="plus text-2xl text-white/50" aria-hidden="true">+</span></summary><p class="pb-5 text-white/65 leading-relaxed">Oui&nbsp;: un Business Partner exerce en indépendant et signe un contrat avec Eqology. On vous explique les options pendant la visio.</p></details>
@@ -362,10 +352,10 @@
           <div class="relative">
             <span class="oeil">Prise de contact</span>
             <h2 id="rappel-titre" class="geant !text-[clamp(2.4rem,4.6vw,4rem)] mt-8 max-w-[14ch]">Yves vous rappelle sous <span class="points">48&nbsp;heures.</span></h2>
-            <p class="text-white/75 mt-5 text-lg max-w-[46ch]">Cinq questions pour préparer l'appel, puis vos coordonnées. Vous ne vous engagez à rien.</p>
+            <p class="text-white/75 mt-5 text-lg max-w-[46ch]">Laissez votre prénom et votre numéro : Yves vous explique tout au téléphone. Vous ne vous engagez à rien.</p>
           </div>
           <div class="relative grid gap-4">
-            <a href="demande.html" data-demande class="btn btn-plein !min-h-[60px] text-[17px] w-full">Voir si c'est pour moi</a>
+            <a href="demande.html" data-demande class="btn btn-plein !min-h-[60px] text-[17px] w-full">Être rappelé par Yves</a>
             <a href="tel:+33675242626" class="btn btn-clair !min-h-[52px] w-full">Ou appeler Yves&nbsp;: 06 75 24 26 26</a>
             <p class="text-sm text-white/60 text-center">Vos coordonnées ne servent qu'à ce rappel. Pas de démarchage, pas de liste revendue.</p>
           </div>
@@ -380,8 +370,8 @@
   </div>
 
   <footer></footer>
-  <script src="components.js?v=202611262100"></script>
-  <script src="assets/v2/mecanismes.js?v=202611262100"></script>
+  <script src="components.js?v=202611262245"></script>
+  <script src="assets/v2/mecanismes.js?v=202611262245"></script>
   <script>
   (function () {
     // ---------- 1. La page suit la pub : ?cible=pro (praticiens), ?cible=visio, sinon complément de revenu ----------
@@ -444,22 +434,6 @@
       return '<li class="' + (i === 4 ? 'hidden lg:block ' : '') + 'rounded-[14px] bg-sable border border-nuit/10 overflow-hidden"><div class="aspect-square bg-white grid place-items-center"><img src="assets/v2/produits/' + p.slug + '.webp" alt="' + p.nom + '" class="w-full h-full object-contain p-6" width="360" height="360" loading="lazy"></div><div class="p-4"><p class="leading-snug">' + p.nom + '</p><p class="text-sm text-nuit/60 mt-0.5">' + p.detail + '</p></div></li>';
     }).join('');
 
-    // ---------- Simulateur : une seule question (plan de rémunération officiel Eqology, 1er janvier 2025) ----------
-    (function () {
-      var r = $('s-range'); if (!r) return;
-      var eur = function (n) { return (Math.round(n * 10) / 10).toLocaleString('fr-FR', { maximumFractionDigits: n < 100 ? 1 : 0 }) + ' €'; };
-      var vu = false;
-      function calc() {
-        var n = +r.value, bv = n * 30, t = bv > 2500 ? 0.25 : bv > 1000 ? 0.20 : bv > 200 ? 0.10 : 0, mois = Math.max(0, bv - 200) * t;
-        $('s-n').textContent = n; $('s-mois').textContent = eur(mois); $('s-an').textContent = eur(mois * 12); $('s-cab').textContent = eur(n * 20);
-        document.querySelectorAll('#s-choix [data-n]').forEach(function (b) { var on = +b.getAttribute('data-n') === n; b.classList.toggle('bg-white', on); b.classList.toggle('text-nuit', on); b.classList.toggle('bg-white/10', !on); });
-      }
-      function interaction() { if (!vu && window.suivre) { window.suivre('SimulationRevenu', {}, true); vu = true; } }
-      $('s-choix').addEventListener('click', function (e) { var b = e.target.closest('[data-n]'); if (!b) return; r.value = b.getAttribute('data-n'); calc(); interaction(); });
-      r.addEventListener('input', function () { calc(); interaction(); });
-      calc();
-    })();
-
     // ---------- 2. Envoi d'une demande (commun aux deux formulaires) ----------
     var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return q.get(k) ? k.replace('utm_', '') + '=' + q.get(k) : ''; }).filter(Boolean).join(' · ');
     var SOURCE = 'Site · Page partenaire' + (CIBLE === 'pro' ? ' (praticiens)' : CIBLE === 'visio' ? ' (visio)' : '');
@@ -477,12 +451,72 @@
       });
     }
 
-    // ---------- 3. Tous les boutons « Être rappelé » ouvrent la page du questionnaire, avec la même origine de pub ----------
-    var lienDemande = 'demande.html' + location.search;
-    document.querySelectorAll('a[href="#rappel"], a[href="#premier-pas"], #barre-bouton, #nav-cta, [data-demande]').forEach(function (a) { a.setAttribute('href', lienDemande); });
-    document.querySelectorAll('[data-q1]').forEach(function (a) { a.setAttribute('href', lienDemande + (lienDemande.indexOf('?') > -1 ? '&' : '?') + 'q1=' + a.getAttribute('data-q1')); });
-    // Mini-simulateur (variante 2)
-    (function () { var r = $('mc-range'); if (!r) return; var panier = 55; function maj() { $('mc-n').textContent = r.value; $('mc-total').textContent = (r.value * panier).toLocaleString('fr-FR') + '\u00a0€'; } r.addEventListener('input', maj); document.querySelectorAll('#mc-paniers [data-p]').forEach(function (b) { b.addEventListener('click', function () { panier = +b.getAttribute('data-p'); document.querySelectorAll('#mc-paniers [data-p]').forEach(function (x) { x.classList.toggle('bg-white', x === b); x.classList.toggle('text-nuit', x === b); }); maj(); }); }); maj(); })();
+    // ---------- 3. Carte de l'écran d'ouverture : vous êtes, deux questions, puis le rappel ----------
+    var pp = $('premier-pas'), qc = $('q-corps'), REP = {}, etape = 0, premier = false;
+    var ETAPES = ['profil', 'volume', 'interet', 'contact'];
+    var PROFILS = [['Praticien de santé', 'Naturopathe, diététicien, kiné…', 'Professionnel de santé'], ['Coach ou pro du bien-être', 'Sport, yoga, bien-être…', 'Professionnel du bien-être'], ['Particulier', 'En activité ou à la retraite', 'Particulier']];
+    function pro() { return REP.i !== undefined && REP.i < 2; }
+    function question(id) {
+      if (id === 'profil') return { t: 'Vous êtes…', c: PROFILS.map(function (x) { return x[0]; }), s: PROFILS.map(function (x) { return x[1]; }) };
+      if (id === 'volume') return pro()
+        ? { t: 'Combien de clients ou de patients suivez-vous par mois ?', c: ['Moins de 10', '10 à 25', '25 à 50', 'Plus de 50'] }
+        : { t: 'Combien de temps pourriez-vous y consacrer ?', c: ['Quelques heures par mois', 'Quelques heures par semaine', 'Un mi-temps', 'Je ne sais pas encore'] };
+      if (id === 'interet') return { t: "Qu'est-ce qui vous intéresse le plus ?", c: ['Un complément de revenu', pro() ? 'Proposer le test à mes clients' : "Recommander des produits que j'apprécie", 'Payer mes produits moins cher', "D'abord comprendre comment ça marche"] };
+    }
+    function rendreQ() {
+      var id = ETAPES[etape];
+      $('q-etape').textContent = (etape + 1) + ' / ' + ETAPES.length;
+      $('q-barre').style.width = ((etape + 1) / ETAPES.length * 100) + '%';
+      $('q-retour').classList.toggle('invisible', etape === 0);
+      if (id === 'contact') {
+        qc.innerHTML = '<p id="pp-titre" class="text-[24px] font-light leading-tight">' + (CIBLE === 'visio' ? 'Réservez votre place' : 'Yves vous rappelle sous 48&nbsp;heures') + '</p>'
+          + '<p class="text-[14px] text-nuit/65 mt-1">Il vous explique le partenariat et ce qu\'il peut vous apporter, selon votre situation.</p>'
+          + '<form id="q-form" class="mt-4 grid gap-3" novalidate><div class="grid sm:grid-cols-2 gap-3">'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">Prénom</span><input name="prenom" autocomplete="given-name" class="champ !h-12"></label>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">Téléphone</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="champ !h-12"></label></div>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">Le meilleur moment pour vous appeler</span><select name="creneau" class="champ !h-12 px-3"><option>En matinée (9 h - 12 h)</option><option>À midi (12 h - 14 h)</option><option>L\'après-midi (14 h - 18 h)</option><option>En soirée (18 h - 20 h)</option></select></label>'
+          + '<label class="flex gap-3 items-start text-[13px] text-nuit/70"><input type="checkbox" name="accord" class="mt-0.5 w-5 h-5 accent-nuit shrink-0"><span>J\'accepte d\'être rappelé par Yves Coignard au sujet de l\'activité Eqology (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>'
+          + '<p id="pp-erreur" class="hidden text-sm text-red-700" role="alert"></p>'
+          + '<button type="submit" id="pp-bouton" class="btn btn-plein w-full !min-h-[54px] text-[16px]">' + ((P && P.bouton) || 'Être rappelé par Yves') + '</button></form>';
+      } else {
+        var q = question(id);
+        qc.innerHTML = '<p class="text-[22px] sm:text-[24px] font-light leading-snug">' + q.t + '</p><div class="mt-4 grid gap-2.5">'
+          + q.c.map(function (c, i) {
+            var on = REP[id] === c;
+            return '<button type="button" data-choix="' + i + '" class="group w-full flex items-center gap-3 rounded-[12px] border-2 px-4 py-3 text-left transition-colors ' + (on ? 'border-nuit bg-nuit text-white' : 'border-nuit/10 hover:border-glacier-500 hover:bg-glacier-50') + '">'
+              + '<span class="mono shrink-0 w-7 h-7 rounded-md border ' + (on ? 'border-white/40' : 'border-nuit/20') + ' grid place-items-center">' + 'ABCD'[i] + '</span>'
+              + '<span class="leading-snug text-[16px]">' + c + (q.s ? '<span class="block text-[13px] opacity-60">' + q.s[i] + '</span>' : '') + '</span><span class="ml-auto opacity-40" aria-hidden="true">→</span></button>';
+          }).join('') + '</div>';
+      }
+      qc.classList.remove('quiz-entre'); void qc.offsetWidth; qc.classList.add('quiz-entre');
+    }
+    qc.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-choix]'); if (!b) return;
+      var id = ETAPES[etape], q = question(id), i = +b.getAttribute('data-choix');
+      REP[id] = q.c[i]; if (id === 'profil') REP.i = i;
+      if (!premier && window.suivre) { window.suivre('PremierPas', {}, true); premier = true; }
+      rendreQ(); setTimeout(function () { etape++; rendreQ(); if (pp.getBoundingClientRect().top < 90) pp.scrollIntoView({ behavior: 'smooth', block: 'start' }); var f = qc.querySelector('input'); if (f && innerWidth > 640) f.focus({ preventScroll: true }); }, 220);
+    });
+    $('q-retour').addEventListener('click', function () { if (etape > 0) { etape--; rendreQ(); } });
+    qc.addEventListener('submit', function (e) {
+      var f = e.target; if (f.id !== 'q-form') return;
+      e.preventDefault(); var err = $('pp-erreur'); function dit(t) { err.textContent = t; err.classList.remove('hidden'); }
+      err.classList.add('hidden');
+      var tel = f.tel.value.replace(/[^\d+]/g, '');
+      if (!f.prenom.value.trim()) return dit('Indiquez votre prénom.');
+      if (tel.length < 10) return dit('Indiquez un numéro de téléphone complet.');
+      if (!f.accord.checked) return dit("Cochez la case pour accepter d'être rappelé.");
+      envoyer({ prenom: f.prenom.value.trim(), name: f.prenom.value.trim(), phone: f.tel.value, creneau: f.creneau.value, profil: PROFILS[REP.i !== undefined ? REP.i : 2][2], metier: REP.profil || '', volume: REP.volume || '', interet: REP.interet || '' }, $('pp-bouton'), dit);
+    });
+    // version praticiens : profil déjà choisi, on démarre à la question suivante
+    if (CIBLE === 'pro') { REP.profil = PROFILS[0][0]; REP.i = 0; etape = 1; }
+    rendreQ();
+
+    // Tous les boutons « Être rappelé » ramènent à ce formulaire
+    document.querySelectorAll('a[href="#rappel"], #barre-bouton, #nav-cta, [data-demande]').forEach(function (a) {
+      a.setAttribute('href', '#premier-pas');
+      a.addEventListener('click', function (e) { e.preventDefault(); pp.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    });
 
     // ---------- 5. La barre du bas (mobile) disparaît quand un formulaire est à l'écran ----------
     var barre = $('barre-cta'), vus = {};
