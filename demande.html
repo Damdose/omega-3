@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre demande · Partenariat Eqology avec Yves Coignard</title>
+  <meta name="description" content="Cinq questions pour qu'Yves Coignard, distributeur indépendant Eqology, vous rappelle et vous présente le partenariat. Sans engagement.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://eqology-france.vercel.app/demande.html">
+  <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261545">
+  <script src="site-config.js?v=202611261545"></script>
+  <script src="catalogue.js?v=202611261545"></script>
+</head>
+<body class="clair min-h-screen flex flex-col">
+  <header class="wrap w-full h-16 sm:h-20 flex items-center justify-between gap-4 shrink-0">
+    <a id="q-logo" href="partenaire.html" class="flex items-center gap-2.5" aria-label="Retour à la page partenaire"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="hidden sm:block text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>
+    <div class="flex items-center gap-4">
+      <span id="quiz-etape" class="mono text-nuit/70"></span>
+      <a id="quiz-fermer" href="partenaire.html" class="w-10 h-10 grid place-items-center rounded-full hover:bg-white" aria-label="Quitter le questionnaire"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></a>
+    </div>
+  </header>
+  <div class="h-1 bg-nuit/10 shrink-0"><div id="quiz-barre" class="h-full bg-glacier-500 transition-[width] duration-500 ease-out" style="width:20%"></div></div>
+  <main class="flex-1 grid lg:grid-cols-[1fr_420px]">
+    <div class="flex flex-col">
+      <div id="quiz-corps" class="wrap w-full max-w-[760px] py-10 sm:py-16 flex-1"></div>
+      <div class="wrap w-full max-w-[760px] pb-8 pt-2 flex items-center justify-between text-sm">
+        <button type="button" id="quiz-retour" class="invisible underline underline-offset-4">← Revenir</button>
+        <span class="hidden sm:inline text-nuit/55">Tapez A, B, C ou D pour choisir</span>
+      </div>
+    </div>
+    <aside class="hidden lg:flex flex-col justify-between bg-nuit text-white p-10">
+      <div>
+        <p class="mono text-glacier-300">Ce qui se passe ensuite</p>
+        <ol class="mt-6 grid gap-6">
+          <li class="flex gap-4"><span class="shrink-0 w-9 h-9 rounded-full bg-glacier-500 text-nuit grid place-items-center">1</span><div><p>Vous répondez à 5 questions</p><p class="text-sm text-white/60 mt-1">Environ une minute.</p></div></li>
+          <li class="flex gap-4"><span class="shrink-0 w-9 h-9 rounded-full border border-white/30 grid place-items-center">2</span><div><p>Yves vous rappelle sous 48 heures</p><p class="text-sm text-white/60 mt-1">Dix minutes, au moment que vous avez choisi.</p></div></li>
+          <li class="flex gap-4"><span class="shrink-0 w-9 h-9 rounded-full border border-white/30 grid place-items-center">3</span><div><p>Vous décidez ensuite</p><p class="text-sm text-white/60 mt-1">Sans engagement. Le plan officiel vous est présenté avant tout choix.</p></div></li>
+        </ol>
+      </div>
+      <div class="pt-8 border-t border-white/15">
+        <a href="https://fr.trustpilot.com/review/eqology.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 rounded-full bg-white text-nuit pl-3 pr-4 h-10"><img src="assets/v2/trustpilot.webp" alt="Trustpilot" width="320" height="79" class="h-5 w-auto"><span class="text-[14px]">Excellent · 1&nbsp;886 avis</span></a>
+        <p class="text-sm text-white/60 mt-4">Eqology, fondée en Norvège en 1998. Yves Coignard, distributeur indépendant Eqology · 06 75 24 26 26.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="components.js?v=202611261545"></script>
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    var q = new URLSearchParams(location.search);
+    var CIBLE = ({ pro: 'pro', visio: 'visio' })[q.get('cible')] || 'revenu';
+    // Retour vers la bonne version de la page partenaire, avec la même origine de pub
+    ['q-logo', 'quiz-fermer'].forEach(function (id) { $(id).href = 'partenaire.html' + location.search; });
+    var utm = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return q.get(k) ? k.replace('utm_', '') + '=' + q.get(k) : ''; }).filter(Boolean).join(' · ');
+    var SOURCE = 'Site · Page partenaire' + (CIBLE === 'pro' ? ' (praticiens)' : CIBLE === 'visio' ? ' (visio)' : '') + ' · questionnaire';
+    var texteBouton = CIBLE === 'visio' ? 'Réserver ma place' : 'Être rappelé par Yves';
+    function envoyer(d, btn, montre) {
+      btn.disabled = true; btn.textContent = 'Envoi…';
+      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: d.name, phone: d.phone, email: d.email || '', profil: d.profil, metier: d.metier || '', creneau: d.creneau, volume: d.volume || '', interet: d.interet || '', connait: d.connait || '', utm: utm, source: SOURCE })
+      }).then(function (r) {
+        if (!r.ok) throw new Error('http ' + r.status);
+        location.href = 'merci.html?prenom=' + encodeURIComponent(d.prenom) + '&creneau=' + encodeURIComponent(d.creneau) + (CIBLE === 'visio' ? '&visio=1' : '');
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = texteBouton;
+        montre("L'envoi n'a pas marché. Vérifiez votre connexion ou appelez Yves au 06 75 24 26 26.");
+      });
+    }
+    var ETAPES = ['profil', 'volume', 'interet', 'connait', 'contact'], REP = {}, etape = 0, premierPas = false;
+    var Q1 = [['Praticien de santé', 'Naturopathe, diététicien, kiné, ostéopathe…'], ['Coach ou professionnel du bien-être', ''], ['Particulier en activité', ''], ['Particulier à la retraite', '']];
+    function estPro() { return /^(Praticien|Coach)/.test(REP.profil || ''); }
+    function question(id) {
+      if (id === 'profil') return { titre: 'Vous êtes…', aide: 'Yves adapte son appel à votre situation.', choix: Q1.map(function (x) { return x[0]; }), sous: Q1.map(function (x) { return x[1]; }) };
+      if (id === 'volume') return estPro()
+        ? { titre: 'Combien de clients ou de patients suivez-vous par mois ?', aide: 'Pour voir comment le test peut trouver sa place dans vos consultations.', choix: ['Moins de 10', '10 à 25', '25 à 50', 'Plus de 50'] }
+        : { titre: 'Combien de temps pourriez-vous y consacrer ?', aide: "Pour qu'Yves vous propose un rythme adapté.", choix: ['Quelques heures par mois', 'Quelques heures par semaine', 'Un mi-temps', 'Je ne sais pas encore'] };
+      if (id === 'interet') return { titre: "Qu'est-ce qui vous intéresse le plus ?", aide: "Il n'y a pas de mauvaise réponse.", choix: ['Un complément de revenu', estPro() ? 'Proposer le test à mes clients ou patients' : "Recommander des produits que j'apprécie", 'Payer mes produits moins cher', "D'abord comprendre comment ça marche"] };
+      if (id === 'connait') return { titre: 'Connaissez-vous déjà Eqology ?', aide: '', choix: ['Oui, je prends déjà les produits', "J'en ai entendu parler", 'Non, je découvre'] };
+    }
+    function boutonsChoix(q, id) {
+      return q.choix.map(function (c, i) {
+        var choisi = REP[id] === c;
+        return '<button type="button" data-choix="' + i + '" class="group w-full flex items-center gap-3 rounded-[10px] border px-3.5 py-3 text-left transition-colors ' + (choisi ? 'bg-nuit text-white border-nuit' : 'bg-white border-nuit/15 hover:border-nuit hover:bg-sable') + '">'
+          + '<span class="mono shrink-0 w-7 h-7 rounded-md border grid place-items-center ' + (choisi ? 'border-white/40' : 'border-nuit/20') + '">' + 'ABCD'[i] + '</span>'
+          + '<span class="leading-snug">' + c + (q.sous && q.sous[i] ? '<span class="block text-sm opacity-60">' + q.sous[i] + '</span>' : '') + '</span></button>';
+      }).join('');
+    }
+    var corps = $('quiz-corps');
+    function rendre() {
+      var id = ETAPES[etape];
+      $('quiz-etape').textContent = 'Question ' + (etape + 1) + ' sur ' + ETAPES.length;
+      $('quiz-barre').style.width = ((etape + 1) / ETAPES.length * 100) + '%';
+      $('quiz-retour').classList.toggle('invisible', etape === 0);
+      if (id === 'contact') {
+        var visio = CIBLE === 'visio';
+        corps.innerHTML = '<p class="mono text-nuit/60">Dernière étape</p><h2 id="quiz-titre" class="h2 mt-4">Où Yves peut-il vous joindre&nbsp;?</h2>'
+          + '<p class="text-nuit/70 mt-3 text-[17px]">' + (visio ? 'Il vous rappelle sous 48 heures pour vous donner la date et le lien de la visio.' : 'Il vous rappelle sous 48 heures pour un échange de dix minutes, sans engagement.') + '</p>'
+          + '<form id="quiz-form" class="mt-8 grid gap-4" novalidate>'
+          + '<div class="grid gap-4 sm:grid-cols-2"><label class="grid gap-1.5"><span class="text-sm font-medium">Prénom</span><input name="prenom" autocomplete="given-name" class="champ"></label>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">Téléphone</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="champ"></label></div>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">E-mail <span class="font-normal text-nuit/55">(facultatif)</span></span><input name="email" type="email" autocomplete="email" class="champ"></label>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">Le meilleur moment pour vous appeler</span><select name="creneau" class="champ px-3"><option>En matinée (9 h - 12 h)</option><option>À midi (12 h - 14 h)</option><option>L\'après-midi (14 h - 18 h)</option><option>En soirée (18 h - 20 h)</option></select></label>'
+          + '<label class="flex gap-3 items-start text-sm text-nuit/75"><input type="checkbox" name="accord" class="mt-0.5 w-5 h-5 accent-nuit shrink-0"><span>J\'accepte d\'être rappelé par Yves Coignard au sujet de l\'activité Eqology. Mes données ne servent qu\'à ce contact (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>'
+          + '<p id="quiz-erreur" class="hidden text-sm text-red-700" role="alert"></p>'
+          + '<button type="submit" class="btn btn-plein w-full sm:w-auto sm:self-start !min-h-[54px] !px-8 text-base">' + texteBouton + '</button>'
+          + '<p class="text-xs text-nuit/60">Sans engagement. Pas de démarchage, pas de liste revendue.</p></form>';
+      } else {
+        var q = question(id);
+        corps.innerHTML = '<p class="mono text-nuit/60">Question ' + (etape + 1) + '</p><h2 id="quiz-titre" class="h2 mt-4">' + q.titre + '</h2>'
+          + (q.aide ? '<p class="text-nuit/70 mt-3 text-[17px]">' + q.aide + '</p>' : '')
+          + '<div class="mt-8 grid gap-3">' + boutonsChoix(q, id) + '</div>';
+      }
+      corps.classList.remove('quiz-entre'); void corps.offsetWidth; corps.classList.add('quiz-entre');
+      setTimeout(function () { var f = corps.querySelector('[data-choix], input'); if (f) f.focus({ preventScroll: true }); }, 60);
+    }
+    function choisir(i) {
+      var id = ETAPES[etape], q = question(id); if (!q || i >= q.choix.length) return;
+      REP[id] = q.choix[i];
+      if (!premierPas && window.suivre) { window.suivre('PremierPas', {}, true); premierPas = true; }
+      rendre();
+      setTimeout(function () { etape = Math.min(etape + 1, ETAPES.length - 1); rendre(); }, 260);
+    }
+    corps.addEventListener('click', function (e) { var b = e.target.closest('[data-choix]'); if (b) choisir(+b.getAttribute('data-choix')); });
+    $('quiz-retour').addEventListener('click', function () { if (etape > 0) { etape--; rendre(); } });
+    document.addEventListener('keydown', function (e) {
+      if (ETAPES[etape] === 'contact' || e.target.closest('input, select, textarea')) return;
+      var i = 'abcd'.indexOf(e.key.toLowerCase()); if (i > -1) choisir(i);
+    });
+    corps.addEventListener('submit', function (e) {
+      var f = e.target; if (f.id !== 'quiz-form') return;
+      e.preventDefault();
+      var err = $('quiz-erreur'); function dit(t) { err.textContent = t; err.classList.remove('hidden'); }
+      err.classList.add('hidden');
+      var tel = f.tel.value.replace(/[^\d+]/g, '');
+      if (!f.prenom.value.trim()) return dit('Indiquez votre prénom.');
+      if (tel.length < 10) return dit('Indiquez un numéro de téléphone complet.');
+      if (!f.accord.checked) return dit("Cochez la case pour accepter d'être rappelé.");
+      envoyer({ prenom: f.prenom.value.trim(), name: f.prenom.value.trim(), phone: f.tel.value, email: f.email.value, creneau: f.creneau.value,
+        profil: /^Praticien/.test(REP.profil || '') ? 'Professionnel de santé' : /^Coach/.test(REP.profil || '') ? 'Professionnel du bien-être' : 'Particulier',
+        metier: REP.profil || '', volume: REP.volume || '', interet: REP.interet || '', connait: REP.connait || '' }, f.querySelector('button[type="submit"]'), dit);
+    });
+    rendre();
+  })();
+  </script>
+</body>
+</html>
