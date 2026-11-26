@@ -4,10 +4,10 @@
 // Le prix affiché chez Eqology au moment de la commande fait foi.
 // ============================================================
 window.CATEGORIES = [
-  { id: 'omega3', nom: 'Oméga-3', image: 'assets/v2/fjord.webp', accroche: "Huiles de Norvège et version végane" },
+  { id: 'omega3', nom: 'Oméga-3', image: 'assets/v2/cat-omega3.webp', accroche: "Huiles de Norvège et version végane" },
   { id: 'tests', nom: 'Tests à domicile', image: 'assets/v2/testkit-detail.webp', accroche: 'Mesurer avant de compléter' },
-  { id: 'programmes', nom: 'Programmes', image: 'assets/v2/sante-coeur.webp', accroche: 'Huile, complément et test réunis' },
-  { id: 'vitamines', nom: 'Vitamines et forme', image: 'assets/v2/sante-immunite.webp', accroche: 'K2 + D3, Nordic Energy Booster' },
+  { id: 'programmes', nom: 'Programmes', image: 'assets/v2/cat-programmes.webp', accroche: 'Huile, complément et test réunis' },
+  { id: 'vitamines', nom: 'Vitamines et forme', image: 'assets/v2/cat-vitamines.webp', accroche: 'K2 + D3, Nordic Energy Booster' },
   { id: 'beaute', nom: 'Beauté', image: 'assets/v2/produits/ocean-miracle-plumping-serum.webp', produitImg: true, accroche: 'La ligne Ocean Miracle' },
   { id: 'coffrets', nom: 'Coffrets de Noël', image: 'assets/v2/produits/christmas-pack-large.webp', produitImg: true, accroche: 'Des cadeaux prêts à offrir' },
 ];
