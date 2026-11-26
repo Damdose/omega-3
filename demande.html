@@ -10,13 +10,13 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611262245">
-  <script src="site-config.js?v=202611262245"></script>
-  <script src="catalogue.js?v=202611262245"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611262315">
+  <script src="site-config.js?v=202611262315"></script>
+  <script src="catalogue.js?v=202611262315"></script>
 </head>
 <body class="clair min-h-screen flex flex-col">
   <header class="wrap w-full h-16 sm:h-20 flex items-center justify-between gap-4 shrink-0">
-    <a id="q-logo" href="partenaire.html" class="flex items-center gap-2.5" aria-label="Retour à la page partenaire"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="hidden sm:block text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>
+    <a id="q-logo" href="partenaire.html" class="flex items-center gap-2.5" aria-label="Retour à la page partenaire"><img src="assets/images/eqology-eq.png" alt="Eqology" width="45" height="24" style="height:24px;width:auto"><span class="hidden sm:block text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>
     <div class="flex items-center gap-4">
       <span id="quiz-etape" class="mono text-nuit/70"></span>
       <a id="quiz-fermer" href="partenaire.html" class="w-10 h-10 grid place-items-center rounded-full hover:bg-white" aria-label="Quitter le questionnaire"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></a>
@@ -28,7 +28,7 @@
       <div id="quiz-corps" class="wrap w-full max-w-[760px] py-10 sm:py-16 flex-1"></div>
       <div class="wrap w-full max-w-[760px] pb-8 pt-2 flex items-center justify-between text-sm">
         <button type="button" id="quiz-retour" class="invisible underline underline-offset-4">← Revenir</button>
-        <span class="hidden sm:inline text-nuit/55">Tapez la lettre de votre réponse</span>
+        <span class="hidden sm:inline text-nuit/70">Tapez la lettre de votre réponse</span>
       </div>
     </div>
     <aside class="hidden lg:flex flex-col justify-between bg-nuit text-white p-10">
@@ -47,7 +47,7 @@
     </aside>
   </main>
 
-  <script src="components.js?v=202611262245"></script>
+  <script src="components.js?v=202611262315"></script>
   <script>
   (function () {
     var $ = function (id) { return document.getElementById(id); };
@@ -97,12 +97,12 @@
       $('quiz-retour').classList.toggle('invisible', etape === 0);
       if (id === 'contact') {
         var visio = CIBLE === 'visio';
-        corps.innerHTML = '<p class="mono text-nuit/60">Dernière étape</p><h2 id="quiz-titre" class="h2 mt-4">Où Yves peut-il vous joindre&nbsp;?</h2>'
+        corps.innerHTML = '<p class="mono text-nuit/70">Dernière étape</p><h2 id="quiz-titre" class="h2 mt-4">Où Yves peut-il vous joindre&nbsp;?</h2>'
           + '<p class="text-nuit/70 mt-3 text-[17px]">' + (visio ? 'Il vous rappelle sous 48 heures pour vous donner la date et le lien de la visio.' : 'Il vous rappelle sous 48 heures pour un échange de dix minutes, sans engagement.') + '</p>'
           + '<form id="quiz-form" class="mt-8 grid gap-4" novalidate>'
           + '<div class="grid gap-4 sm:grid-cols-2"><label class="grid gap-1.5"><span class="text-sm font-medium">Prénom</span><input name="prenom" autocomplete="given-name" class="champ"></label>'
           + '<label class="grid gap-1.5"><span class="text-sm font-medium">Téléphone</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="champ"></label></div>'
-          + '<label class="grid gap-1.5"><span class="text-sm font-medium">E-mail <span class="font-normal text-nuit/55">(facultatif)</span></span><input name="email" type="email" autocomplete="email" class="champ"></label>'
+          + '<label class="grid gap-1.5"><span class="text-sm font-medium">E-mail <span class="font-normal text-nuit/70">(facultatif)</span></span><input name="email" type="email" autocomplete="email" class="champ"></label>'
           + '<label class="grid gap-1.5"><span class="text-sm font-medium">Le meilleur moment pour vous appeler</span><select name="creneau" class="champ px-3"><option>En matinée (9 h - 12 h)</option><option>À midi (12 h - 14 h)</option><option>L\'après-midi (14 h - 18 h)</option><option>En soirée (18 h - 20 h)</option></select></label>'
           + '<label class="flex gap-3 items-start text-sm text-nuit/75"><input type="checkbox" name="accord" class="mt-0.5 w-5 h-5 accent-nuit shrink-0"><span>J\'accepte d\'être rappelé par Yves Coignard au sujet de l\'activité Eqology. Mes données ne servent qu\'à ce contact (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>'
           + '<p id="quiz-erreur" class="hidden text-sm text-red-700" role="alert"></p>'
@@ -110,7 +110,7 @@
           + '<p class="text-xs text-nuit/60">Sans engagement. Pas de démarchage, pas de liste revendue.</p></form>';
       } else {
         var q = question(id);
-        corps.innerHTML = '<p class="mono text-nuit/60">Question ' + (etape + 1) + '</p><h2 id="quiz-titre" class="h2 mt-4">' + q.titre + '</h2>'
+        corps.innerHTML = '<p class="mono text-nuit/70">Question ' + (etape + 1) + '</p><h2 id="quiz-titre" class="h2 mt-4">' + q.titre + '</h2>'
           + (q.aide ? '<p class="text-nuit/70 mt-3 text-[17px]">' + q.aide + '</p>' : '')
           + '<div class="mt-8 grid gap-3">' + boutonsChoix(q, id) + '</div>';
       }

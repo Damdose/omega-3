@@ -29,7 +29,7 @@
   function getBandeau() { return ''; }
 
   const fleche = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>';
-  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0" aria-label="Accueil"><img src="assets/images/eqology-eq.png" alt="Eqology" style="height:24px;width:auto"><span class="block text-[11px] sm:text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2 sm:pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
+  const marque = (lien) => `<a href="${lien}" class="flex items-center gap-2.5 shrink-0"><img src="assets/images/eqology-eq.png" alt="Eqology, accueil" width="45" height="24" style="height:24px;width:auto"><span class="block text-[11px] sm:text-[12.5px] leading-tight text-nuit/75 border-l border-nuit/15 pl-2 sm:pl-2.5">Yves Coignard<br>distributeur indépendant</span></a>`;
 
   function getNavLP() {
     return `<div class="max-w-[1400px] mx-auto"><div class="bg-white rounded-lg shadow-[0_8px_30px_rgba(11,29,46,.12)] h-14 sm:h-[58px] flex items-center justify-between pl-4 pr-2 sm:pl-5 sm:pr-3">
@@ -365,7 +365,7 @@
     { nom: 'Françoise V.', pays: 'Belgique', date: '19 janvier 2025', etoiles: 4, texte: "Service après vente très appréciable. Mr Wolanin a pu directement m'aider.", url: 'https://fr.trustpilot.com/reviews/678d16f788fd832eae353daa' },
     { nom: 'MoRi', pays: 'Suisse', date: '19 novembre 2026', etoiles: 5, texte: "J'aime vraiment le goût.", note: "Traduit de l'anglais", url: 'https://www.trustpilot.com/reviews/6aff364aa3a53849c2acfa83' },
   ];
-  const etoiles = (n) => '<span class="inline-flex gap-0.5" aria-label="' + n + ' étoiles sur 5">' + [1,2,3,4,5].map((i) => `<span class="w-5 h-5 grid place-items-center rounded-[3px] ${i <= n ? 'bg-[#00B67A]' : 'bg-nuit/15'}"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6z"/></svg></span>`).join('') + '</span>';
+  const etoiles = (n) => '<span class="inline-flex gap-0.5" role="img" aria-label="' + n + ' étoiles sur 5">' + [1,2,3,4,5].map((i) => `<span class="w-5 h-5 grid place-items-center rounded-[3px] ${i <= n ? 'bg-[#00B67A]' : 'bg-nuit/15'}"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6z"/></svg></span>`).join('') + '</span>';
   document.querySelectorAll('[data-avis]').forEach(function (el) {
     const titre = el.getAttribute('data-avis') || "Ce que disent les clients d'Eqology.";
     el.innerHTML = `
@@ -387,13 +387,13 @@
           <blockquote class="mt-5 text-[17px] leading-relaxed flex-1">« ${a.texte} »</blockquote>
           <figcaption class="mt-6 pt-4 border-t border-nuit/10 text-sm">
             <span class="font-medium">${a.nom}</span><span class="text-nuit/60"> · ${a.pays} · ${a.date}</span>
-            ${a.note ? `<span class="block text-xs text-nuit/55 mt-0.5">${a.note}</span>` : ''}
+            ${a.note ? `<span class="block text-xs text-nuit/70 mt-0.5">${a.note}</span>` : ''}
             <a href="${a.url}" target="_blank" rel="noopener" class="block mt-2 text-xs text-nuit/60 underline underline-offset-4 hover:text-nuit">Lire l'avis sur Trustpilot ↗</a>
           </figcaption>
         </figure>`).join('')}
       </div>
       <p class="rail-indice" aria-hidden="true">Faites glisser pour voir la suite →</p>
-      <p class="mt-4 text-xs opacity-60">Avis publics sur la marque Eqology, relevés sur Trustpilot le 26 novembre 2026. Extraits non modifiés.</p>`;
+      <p class="mt-4 text-xs opacity-80">Avis publics sur la marque Eqology, relevés sur Trustpilot le 26 novembre 2026. Extraits non modifiés.</p>`;
   });
 
 })();

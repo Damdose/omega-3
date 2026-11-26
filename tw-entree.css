@@ -236,7 +236,7 @@ body.clair main > .hero .hero-voile { background: linear-gradient(100deg, rgba(1
 :root:not([data-ambiance="sombre"]) body.clair .texte-long :is(th, td) { border-color: rgba(11,29,46,.12); }
 :root:not([data-ambiance="sombre"]) body.clair .texte-long blockquote { border-color: #3D8691; }
 :root:not([data-ambiance="sombre"]) body.clair .ariane { color: rgba(255,255,255,.7); }
-:root:not([data-ambiance="sombre"]) body.clair main > section:not(.hero):not(.fond-2):not(.bg-navy-900):not(.bg-nuit) .ariane { color: rgba(11,29,46,.6); }
+:root:not([data-ambiance="sombre"]) body.clair main > section:not(.hero):not(.fond-2):not(.bg-navy-900):not(.bg-nuit) .ariane { color: rgba(11,29,46,.75); }
 :root:not([data-ambiance="sombre"]) body.clair main > section:not(.hero):not(.fond-2):not(.bg-navy-900):not(.bg-nuit) .ariane span[aria-current] { color: #0B1D2E; }
 /* Boutons pleins en pilule, comme sur l'accueil */
 body.clair .btn { border-radius: 999px; padding-inline: 1.05rem; min-height: 42px; }
@@ -326,4 +326,4 @@ body[data-entete="lp"] > nav#entete { min-height: 100px; }
   .rail-mobile > * { flex: 0 0 84%; scroll-snap-align: start; }
   .rail-mobile + .rail-indice, .rail-indice { display: flex; }
 }
-.rail-indice { display: none; align-items: center; gap: .5rem; margin-top: .75rem; font-size: 13px; opacity: .6; }
+.rail-indice { display: none; align-items: center; gap: .5rem; margin-top: .75rem; font-size: 13px; opacity: .8; }
