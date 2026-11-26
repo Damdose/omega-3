@@ -298,3 +298,13 @@ body.clair main > .hero + :not(section) { margin-top: clamp(40px, 5vw, 72px); }
 [data-ambiance="sombre"] #filtres button[aria-selected="true"] { background: #fff; color: #0B1D2E; border-color: #fff; }
 [data-ambiance="sombre"] #compte { color: rgba(255,255,255,.6); }
 [data-ambiance="sombre"] .verre.sticky { background: rgba(11,29,46,.82); }
+
+/* ================= Site réaliste : bandeaux de page compacts, sans défilement ================= */
+body.clair main > .hero, body.clair main > .hero-court { min-height: 0 !important; }
+body.clair main > .hero > .relative.wrap { padding-top: clamp(36px, 5vw, 64px); padding-bottom: clamp(36px, 5vw, 60px) !important; }
+body.clair main > .hero .geant { font-size: clamp(2.3rem, 4.2vw, 3.75rem) !important; line-height: 1.05; }
+body.clair main > .hero .hero-bas { display: none; }
+body.clair main > .hero .h1-page { font-size: clamp(2.2rem, 3.8vw, 3.25rem); }
+
+/* Le verre ne doit pas annuler une barre collante */
+.verre.sticky, .verre-nuit.sticky { position: sticky; }

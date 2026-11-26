@@ -70,8 +70,8 @@
     return `
     <div class="bg-nuit text-white/85 text-[13px]">
       <div class="wrap h-9 flex items-center justify-between gap-4">
-        <p class="truncate"><span class="text-glacier-300">Livraison offerte par Eqology</span> dès deux produits de plus de 60&nbsp;€<span class="hidden sm:inline"> · Paiement sécurisé sur la boutique officielle</span></p>
-        <a href="partenaire.html" class="shrink-0 hover:text-white">Devenir partenaire →</a>
+        <p class="truncate hidden sm:block"><span class="text-glacier-300">Livraison offerte par Eqology</span> dès deux produits de plus de 60&nbsp;€<span class="hidden lg:inline"> · Paiement sécurisé sur la boutique officielle</span></p>
+        <span class="shrink-0 flex items-center gap-5"><a href="tel:+33675242626" class="hover:text-white">Conseil gratuit&nbsp;: <span class="text-white">06 75 24 26 26</span></a><a href="partenaire.html" class="hidden md:inline hover:text-white">Devenir partenaire →</a></span>
       </div>
     </div>
     <div class="entete-verre text-nuit">
@@ -134,10 +134,13 @@
         ${col('Partenariat', [['partenaire.html', 'Devenir partenaire'], ['partenaire.html#rappel', 'Être rappelé'], ['partenaire.html#questions', 'Questions fréquentes']])}
         ${col('Yves Coignard', [['contact.html', 'Contact'], ['mentions-legales.html', 'Mentions légales'], ['confidentialite.html', 'Confidentialité'], ['data:trustpilot', 'Avis Trustpilot']])}
       </div>
-      <div class="border-t border-white/10 py-10"><img src="assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-full h-auto opacity-95" loading="lazy" width="1300" height="205"></div>
-      <div class="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-white/50">
-        <p>© 2026 ZENCO SAS · Yves Coignard, distributeur indépendant Eqology</p>
-        <p>Commandes, paiement et livraison assurés par Eqology.</p>
+      <div class="border-t border-white/10 py-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <img src="assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-[180px] h-auto opacity-95" loading="lazy" width="1300" height="205">
+        <p class="text-sm text-white/60 max-w-[62ch] md:text-right">Les compléments alimentaires ne se substituent pas à une alimentation variée et équilibrée ni à un mode de vie sain. Tenir hors de portée des enfants. Ne pas dépasser la dose journalière recommandée.</p>
+      </div>
+      <div class="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-white/60">
+        <p>© 2026 ZENCO SAS · SIREN 504 495 946 · Yves Coignard, distributeur indépendant Eqology</p>
+        <p>Commandes, paiement et livraison assurés par Eqology · <a href="mentions-legales.html" class="underline underline-offset-4 hover:text-white">Mentions légales</a></p>
       </div>
     </div>`;
   }
