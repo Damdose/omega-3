@@ -10,9 +10,9 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261830">
-  <script src="site-config.js?v=202611261830"></script>
-  <script src="catalogue.js?v=202611261830"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261930">
+  <script src="site-config.js?v=202611261930"></script>
+  <script src="catalogue.js?v=202611261930"></script>
 </head>
 <body class="clair min-h-screen flex flex-col">
   <header class="wrap w-full h-16 sm:h-20 flex items-center justify-between gap-4 shrink-0">
@@ -28,7 +28,7 @@
       <div id="quiz-corps" class="wrap w-full max-w-[760px] py-10 sm:py-16 flex-1"></div>
       <div class="wrap w-full max-w-[760px] pb-8 pt-2 flex items-center justify-between text-sm">
         <button type="button" id="quiz-retour" class="invisible underline underline-offset-4">← Revenir</button>
-        <span class="hidden sm:inline text-nuit/55">Tapez A, B, C ou D pour choisir</span>
+        <span class="hidden sm:inline text-nuit/55">Tapez la lettre de votre réponse</span>
       </div>
     </div>
     <aside class="hidden lg:flex flex-col justify-between bg-nuit text-white p-10">
@@ -47,7 +47,7 @@
     </aside>
   </main>
 
-  <script src="components.js?v=202611261830"></script>
+  <script src="components.js?v=202611261930"></script>
   <script>
   (function () {
     var $ = function (id) { return document.getElementById(id); };
@@ -71,7 +71,7 @@
       });
     }
     var ETAPES = ['profil', 'volume', 'interet', 'connait', 'contact'], REP = {}, etape = 0, premierPas = false;
-    var Q1 = [['Praticien de santé', 'Naturopathe, diététicien, kiné, ostéopathe…'], ['Coach ou professionnel du bien-être', ''], ['Particulier en activité', ''], ['Particulier à la retraite', '']];
+    var Q1 = [['Praticien de santé', 'Naturopathe, diététicien, kiné, ostéopathe…'], ['Coach ou professionnel du bien-être', ''], ['Particulier', 'En activité ou à la retraite']];
     function estPro() { return /^(Praticien|Coach)/.test(REP.profil || ''); }
     function question(id) {
       if (id === 'profil') return { titre: 'Vous êtes…', aide: 'Yves adapte son appel à votre situation.', choix: Q1.map(function (x) { return x[0]; }), sous: Q1.map(function (x) { return x[1]; }) };
@@ -85,7 +85,7 @@
       return q.choix.map(function (c, i) {
         var choisi = REP[id] === c;
         return '<button type="button" data-choix="' + i + '" class="group w-full flex items-center gap-3 rounded-[10px] border px-3.5 py-3 text-left transition-colors ' + (choisi ? 'bg-nuit text-white border-nuit' : 'bg-white border-nuit/15 hover:border-nuit hover:bg-sable') + '">'
-          + '<span class="mono shrink-0 w-7 h-7 rounded-md border grid place-items-center ' + (choisi ? 'border-white/40' : 'border-nuit/20') + '">' + 'ABCD'[i] + '</span>'
+          + '<span class="mono shrink-0 w-7 h-7 rounded-md border grid place-items-center ' + (choisi ? 'border-white/40' : 'border-nuit/20') + '">' + 'ABCDE'[i] + '</span>'
           + '<span class="leading-snug">' + c + (q.sous && q.sous[i] ? '<span class="block text-sm opacity-60">' + q.sous[i] + '</span>' : '') + '</span></button>';
       }).join('');
     }
@@ -128,7 +128,7 @@
     $('quiz-retour').addEventListener('click', function () { if (etape > 0) { etape--; rendre(); } });
     document.addEventListener('keydown', function (e) {
       if (ETAPES[etape] === 'contact' || e.target.closest('input, select, textarea')) return;
-      var i = 'abcd'.indexOf(e.key.toLowerCase()); if (i > -1) choisir(i);
+      var i = 'abcde'.indexOf(e.key.toLowerCase()); if (i > -1) choisir(i);
     });
     corps.addEventListener('submit', function (e) {
       var f = e.target; if (f.id !== 'quiz-form') return;
