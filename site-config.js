@@ -18,6 +18,9 @@ window.SITE = {
   // Prochaine visio de présentation (pubs « invitation », page partenaire.html?cible=visio)
   // Exemple : { jour: 'jeudi 4 décembre', heure: '20 h' } ; vide = message sans date
   prochaineVisio: { jour: '', heure: '' },
+  // Taux de commission du plan officiel Eqology sur les ventes personnelles (ex. 0.20 pour 20 %).
+  // Vide tant qu'Yves ne l'a pas confirmé : le calculateur n'affiche alors aucun gain, seulement le chiffre d'affaires de vos clients.
+  tauxCommission: null,
 };
 
 // Lien de commande d'un produit (avec l'identifiant partenaire quand il sera connu)

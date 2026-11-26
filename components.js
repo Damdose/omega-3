@@ -377,7 +377,6 @@
           <div><p class="text-sm text-white/65">Sur Trustpilot, Eqology est noté</p><p class="text-3xl font-light mt-1">Excellent</p></div>
           <dl class="grid gap-4">
             <div><dt class="text-sm text-white/65">Avis publiés</dt><dd class="text-2xl font-light">1&nbsp;886</dd></div>
-            <div><dt class="text-sm text-white/65">Avis 5 étoiles</dt><dd class="text-2xl font-light">77&nbsp;%</dd></div>
             <div><dt class="text-sm text-white/65">Avis sur les 12 derniers mois</dt><dd class="text-2xl font-light">862</dd></div>
           </dl>
         </div>

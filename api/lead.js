@@ -37,6 +37,9 @@ module.exports = async (req, res) => {
       profil: clean(body.profil, 60),
       metier: clean(body.metier, 80),
       creneau: clean(body.creneau, 80),
+      volume: clean(body.volume, 80),
+      interet: clean(body.interet, 120),
+      connait: clean(body.connait, 80),
       utm: clean(body.utm, 300),
       source: clean(body.source, 120) || 'Site (candidature)'
     };
@@ -107,6 +110,9 @@ async function sendLeadEmail(r) {
     ['Profil', r.profil],
     ['Métier', r.metier],
     ['À rappeler', r.creneau],
+    ['Clients ou temps disponible', r.volume],
+    ['Ce qui l\'intéresse', r.interet],
+    ['Connaît Eqology', r.connait],
     ['Ancienneté', r.anciennete],
     ['Consultants / mois', r.consultants],
     ['Défi principal', r.defi],
