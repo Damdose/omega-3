@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre panier · Boutique Eqology d'Yves Coignard</title>
+  <meta name="description" content="Votre sélection de produits Eqology : quantités, sous-total, et finalisation de la commande sur la boutique officielle Eqology ou avec Yves Coignard.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://eqology-france.vercel.app/panier.html">
+  <meta property="og:title" content="Contact · Yves Coignard, distributeur indépendant Eqology">
+  <meta property="og:image" content="https://eqology-france.vercel.app/assets/v2/og-accueil.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/eqology-eq.png">
+  <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261145">
+  <script src="site-config.js?v=202611261145"></script>
+  <script src="catalogue.js?v=202611261145"></script>
+</head>
+<body class="clair" data-entete="boutique">
+  <nav id="entete"></nav>
+
+  <main>
+    <section class="sec !pt-10">
+      <div class="wrap">
+        <nav class="ariane" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> <a href="boutique.html">Boutique</a> <span aria-hidden="true">/</span> <span aria-current="page">Panier</span></nav>
+        <h1 class="h1-page mt-5">Votre panier</h1>
+
+        <div class="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+          <div class="carte p-5 sm:p-8">
+            <div id="panier-page"></div>
+          </div>
+
+          <aside id="recap" class="grid gap-4 lg:sticky lg:top-[184px]">
+            <div class="carte p-6 sm:p-7">
+              <h2 class="h3">Récapitulatif</h2>
+              <dl class="mt-5 grid gap-2 text-[15px]">
+                <div class="flex justify-between"><dt>Sous-total</dt><dd id="r-sous-total"></dd></div>
+                <div class="flex justify-between"><dt>Livraison</dt><dd class="text-right">calculée par Eqology</dd></div>
+                <div class="flex justify-between border-t border-white/12 pt-3 mt-2 text-lg"><dt>Total estimé</dt><dd id="r-total"></dd></div>
+              </dl>
+              <p id="r-note" class="hidden text-sm text-white/60 mt-2">Hors produits en abonnement, dont le prix est confirmé par Eqology.</p>
+              <p class="text-sm text-white/60 mt-3">Livraison offerte par Eqology dès deux produits de plus de 60&nbsp;€. Le prix affiché par Eqology au moment du paiement fait foi.</p>
+            </div>
+
+            <div class="carte p-6 sm:p-7">
+              <h2 class="h3">Finaliser la commande</h2>
+              <p class="text-white/70 mt-2 text-[15px] leading-relaxed">Le paiement se fait sur la boutique officielle Eqology, qui encaisse et livre. Deux possibilités&nbsp;:</p>
+
+              <details class="mt-5 rounded-[12px] border border-white/15 open:border-glacier-500" open>
+                <summary class="flex items-center justify-between gap-4 p-4 cursor-pointer"><span><b class="font-medium block">Payer sur la boutique Eqology</b><span class="text-sm text-white/60">Vous ajoutez chaque produit à votre panier Eqology.</span></span><span class="plus text-xl" aria-hidden="true">+</span></summary>
+                <div class="px-4 pb-4">
+                  <ol id="liens-eqology" class="grid gap-2"></ol>
+                  <p class="text-xs text-white/55 mt-3">Chaque lien ouvre le produit sur eqology.com avec le code de votre conseiller. Indiquez la quantité, ajoutez au panier Eqology, puis payez.</p>
+                </div>
+              </details>
+
+              <details class="mt-3 rounded-[12px] border border-white/15 open:border-glacier-500">
+                <summary class="flex items-center justify-between gap-4 p-4 cursor-pointer"><span><b class="font-medium block">Commander avec Yves</b><span class="text-sm text-white/60">Il vous rappelle et vous envoie le lien de paiement.</span></span><span class="plus text-xl" aria-hidden="true">+</span></summary>
+                <form id="form-commande" class="px-4 pb-4 grid gap-3" novalidate>
+                  <label class="grid gap-1.5"><span class="text-sm font-medium">Prénom et nom</span><input name="nom" autocomplete="name" class="champ !h-11"></label>
+                  <label class="grid gap-1.5"><span class="text-sm font-medium">Téléphone</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="champ !h-11"></label>
+                  <label class="grid gap-1.5"><span class="text-sm font-medium">E-mail</span><input name="email" type="email" autocomplete="email" class="champ !h-11"></label>
+                  <label class="flex gap-3 items-start text-sm text-white/70"><input type="checkbox" name="accord" class="mt-0.5 w-5 h-5 accent-nuit shrink-0"><span>J'accepte d'être recontacté par Yves Coignard au sujet de ma commande (<a href="confidentialite.html" class="underline">confidentialité</a>).</span></label>
+                  <p id="c-erreur" class="hidden text-sm text-red-700" role="alert"></p>
+                  <button type="submit" class="btn btn-plein w-full !min-h-[48px]">Envoyer ma commande à Yves</button>
+                  <div id="c-ok" class="hidden rounded-[10px] bg-glacier-50 text-nuit p-4 text-[15px]" role="status"><b class="font-medium">C'est envoyé.</b> Yves vous rappelle sous 48 heures pour finaliser votre commande.</div>
+                </form>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="components.js?v=202611261145"></script>
+  <script src="assets/v2/mecanismes.js?v=202611261145"></script>
+  <script>
+  (function () {
+    var P = window.PANIER, page = document.getElementById('panier-page');
+    function maj() {
+      window.panierLignes(page, false);
+      var vide = !P.lire().length;
+      document.getElementById('recap').classList.toggle('hidden', vide);
+      document.getElementById('r-sous-total').textContent = P.euros(P.total());
+      document.getElementById('r-total').textContent = P.euros(P.total());
+      document.getElementById('r-note').classList.toggle('hidden', !P.aPrixVariable());
+      document.getElementById('liens-eqology').innerHTML = P.lire().map(function (i) {
+        var p = window.produit(i.slug);
+        return '<li><a href="' + window.lienEqology(p) + '" target="_blank" rel="noopener" data-paiement class="flex items-center justify-between gap-3 rounded-[10px] bg-sable text-nuit px-3.5 py-3 hover:bg-glacier-50"><span class="text-[15px]">' + i.qte + ' × ' + p.nom + '</span><span class="text-sm shrink-0">Ouvrir ↗</span></a></li>';
+      }).join('');
+    }
+    document.addEventListener('panier', maj); maj();
+    document.addEventListener('click', function (e) { if (e.target.closest('[data-paiement]') && window.suivre) window.suivre('InitiateCheckout', { value: P.total(), currency: 'EUR', num_items: P.nombre() }); });
+
+    var f = document.getElementById('form-commande'), err = document.getElementById('c-erreur');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault(); err.classList.add('hidden');
+      var tel = f.tel.value.replace(/[^\d+]/g, '');
+      function montre(t) { err.textContent = t; err.classList.remove('hidden'); }
+      if (!f.nom.value.trim()) return montre('Indiquez votre nom.');
+      if (tel.length < 10) return montre('Indiquez un numéro de téléphone complet.');
+      if (!f.accord.checked) return montre("Cochez la case pour accepter d'être recontacté.");
+      var b = f.querySelector('button[type="submit"]'); b.disabled = true; b.textContent = 'Envoi…';
+      var message = 'Commande depuis le site\n\n' + P.texte() + '\n\nSous-total : ' + P.euros(P.total()) + (P.aPrixVariable() ? ' (hors abonnements)' : '') + '\nTéléphone : ' + f.tel.value;
+      fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prenom: f.nom.value.trim(), nom: '', email: f.email.value, sujet: 'Commande depuis le site', message: message }) })
+        .then(function (r) { if (!r.ok) throw new Error(); if (window.suivre) window.suivre('InitiateCheckout', { value: P.total(), currency: 'EUR', num_items: P.nombre() }); b.classList.add('hidden'); document.getElementById('c-ok').classList.remove('hidden'); })
+        .catch(function () { b.disabled = false; b.textContent = 'Envoyer ma commande à Yves'; montre("L'envoi n'a pas marché. Appelez Yves au 06 75 24 26 26."); });
+    });
+  })();
+  </script>
+</body>
+</html>

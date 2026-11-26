@@ -19,6 +19,7 @@
   const ico = {
     loupe: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>',
     sac: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+    panier: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h2l2.2 10.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.1"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>',
     equipe: '<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path stroke-linecap="round" d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path stroke-linecap="round" d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg>',
   };
 
@@ -87,7 +88,8 @@
         <div class="ml-auto flex items-center gap-1 sm:gap-2">
           <a href="partenaire.html" class="hidden lg:inline-flex items-center gap-2 h-11 px-3 text-[15px] hover:opacity-70">${ico.equipe}Devenir partenaire</a>
           <a href="boutique.html" class="md:hidden w-11 h-11 grid place-items-center rounded-[8.5px] hover:bg-sable" aria-label="Rechercher">${ico.loupe}</a>
-          <a href="boutique.html" aria-label="La boutique" class="btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
+          <button type="button" data-panier-ouvrir class="relative w-11 h-11 grid place-items-center rounded-full hover:bg-sable" aria-label="Ouvrir le panier">${ico.panier}<span data-panier-nombre class="hidden absolute top-0.5 right-0.5 min-w-[19px] h-[19px] px-1 rounded-full bg-glacier-500 text-nuit text-[11px] font-medium leading-[19px] text-center">0</span></button>
+          <a href="boutique.html" aria-label="La boutique" class="hidden sm:inline-flex btn !min-h-[44px] !px-4 bg-nuit text-white hover:bg-nuit-2">${ico.sac}<span class="hidden sm:inline">La boutique</span></a>
         </div>
       </div>
       <div class="hidden lg:block border-t border-nuit/10">
@@ -224,4 +226,106 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     revealElements.forEach(el => observer.observe(el));
   }
+
+
+  // ============ Panier : panneau latéral, compteur, ajout depuis n'importe quelle page ============
+  if (window.PANIER) {
+    const P = window.PANIER;
+    const tiroir = document.createElement('div');
+    tiroir.id = 'panier-tiroir';
+    tiroir.className = 'fixed inset-0 z-[70] invisible';
+    tiroir.setAttribute('role', 'dialog'); tiroir.setAttribute('aria-modal', 'true'); tiroir.setAttribute('aria-labelledby', 'panier-titre');
+    tiroir.innerHTML = `
+      <div data-panier-fermer class="absolute inset-0 bg-nuit/50 backdrop-blur-[2px] opacity-0 transition-opacity duration-300"></div>
+      <aside class="absolute right-0 top-0 h-full w-full max-w-[440px] bg-white text-nuit shadow-2xl flex flex-col translate-x-full transition-transform duration-300">
+        <div class="flex items-center justify-between px-5 sm:px-6 h-16 border-b border-nuit/10 shrink-0">
+          <p id="panier-titre" class="text-lg">Votre panier <span data-panier-compte class="text-nuit/60"></span></p>
+          <button type="button" data-panier-fermer class="w-10 h-10 grid place-items-center rounded-full hover:bg-sable" aria-label="Fermer le panier"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </div>
+        <div data-panier-lignes class="flex-1 overflow-y-auto px-5 sm:px-6"></div>
+        <div data-panier-pied class="border-t border-nuit/10 p-5 sm:p-6 shrink-0"></div>
+      </aside>`;
+    document.body.appendChild(tiroir);
+
+    window.panierLignes = function (cible, compact) {
+      const l = P.lire();
+      if (!l.length) { cible.innerHTML = `<div class="py-14 text-center"><p class="text-lg">Votre panier est vide.</p><p class="text-nuit/65 mt-2">Parcourez la boutique et ajoutez les produits qui vous intéressent.</p><a href="boutique.html" class="btn btn-plein mt-6">Voir la boutique</a></div>`; return; }
+      cible.innerHTML = '<ul class="divide-y divide-nuit/10">' + l.map(function (i) {
+        const p = window.produit(i.slug);
+        const prix = p.prix ? P.euros(p.prix * i.qte) : window.prixTexte(p);
+        return `<li class="py-5 flex gap-4">
+          <a href="produit.html?p=${p.slug}" class="shrink-0 w-20 h-20 ${compact ? '' : 'sm:w-24 sm:h-24'} rounded-[10px] bg-sable grid place-items-center"><img src="assets/v2/produits/${p.slug}.webp" alt="" class="w-full h-full object-contain p-2" width="96" height="96" loading="lazy"></a>
+          <div class="flex-1 min-w-0">
+            <div class="flex justify-between gap-3"><a href="produit.html?p=${p.slug}" class="leading-snug hover:underline underline-offset-4">${p.nom}</a><span class="shrink-0">${prix}</span></div>
+            <p class="text-sm text-nuit/60 mt-0.5">${p.detail}</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="inline-flex items-center rounded-full border border-nuit/15">
+                <button type="button" data-panier-moins="${p.slug}" class="w-9 h-9 grid place-items-center" aria-label="Retirer un ${p.nom}">−</button>
+                <span class="w-7 text-center text-[15px]" aria-live="polite">${i.qte}</span>
+                <button type="button" data-panier-plus="${p.slug}" class="w-9 h-9 grid place-items-center" aria-label="Ajouter un ${p.nom}">+</button>
+              </div>
+              <button type="button" data-panier-retirer="${p.slug}" class="text-sm text-nuit/60 underline underline-offset-4 hover:text-nuit">Retirer</button>
+            </div>
+          </div>
+        </li>`;
+      }).join('') + '</ul>';
+    };
+
+    function majPied() {
+      const pied = tiroir.querySelector('[data-panier-pied]');
+      if (!P.lire().length) { pied.innerHTML = ''; pied.classList.add('hidden'); return; }
+      pied.classList.remove('hidden');
+      pied.innerHTML = `
+        <div class="flex justify-between text-lg"><span>Sous-total</span><span>${P.euros(P.total())}</span></div>
+        ${P.aPrixVariable() ? '<p class="text-sm text-nuit/60 mt-1">Hors produits en abonnement, dont le prix est confirmé par Eqology.</p>' : ''}
+        <p class="text-sm text-nuit/65 mt-2">Livraison offerte par Eqology dès deux produits de plus de 60&nbsp;€. Paiement sécurisé sur la boutique officielle.</p>
+        <a href="panier.html" class="btn btn-plein w-full !min-h-[50px] mt-5">Valider mon panier</a>
+        <button type="button" data-panier-fermer class="w-full mt-3 text-[15px] underline underline-offset-4">Continuer mes achats</button>`;
+    }
+    function majCompteurs() {
+      const n = P.nombre();
+      document.querySelectorAll('[data-panier-nombre]').forEach(function (b) { b.textContent = n; b.classList.toggle('hidden', !n); });
+      document.querySelectorAll('[data-panier-ouvrir]').forEach(function (b) { b.setAttribute('aria-label', n ? 'Ouvrir le panier (' + n + ' article' + (n > 1 ? 's' : '') + ')' : 'Ouvrir le panier'); });
+      const c = tiroir.querySelector('[data-panier-compte]'); if (c) c.textContent = n ? '(' + n + ')' : '';
+    }
+    function maj() { window.panierLignes(tiroir.querySelector('[data-panier-lignes]'), true); majPied(); majCompteurs(); }
+    let dernierFocus = null;
+    function ouvrir() {
+      dernierFocus = document.activeElement; maj();
+      tiroir.classList.remove('invisible');
+      requestAnimationFrame(function () { tiroir.querySelector('aside').classList.remove('translate-x-full'); tiroir.firstElementChild.classList.remove('opacity-0'); });
+      document.documentElement.style.overflow = 'hidden';
+      setTimeout(function () { const f = tiroir.querySelector('[data-panier-fermer].w-10'); if (f) f.focus(); }, 50);
+    }
+    function fermer() {
+      tiroir.querySelector('aside').classList.add('translate-x-full'); tiroir.firstElementChild.classList.add('opacity-0');
+      document.documentElement.style.overflow = '';
+      setTimeout(function () { tiroir.classList.add('invisible'); if (dernierFocus) dernierFocus.focus(); }, 300);
+    }
+    window.ouvrirPanier = ouvrir;
+    document.addEventListener('click', function (e) {
+      const t = e.target.closest('[data-ajouter],[data-panier-ouvrir],[data-panier-fermer],[data-panier-plus],[data-panier-moins],[data-panier-retirer]');
+      if (!t) return;
+      if (t.hasAttribute('data-ajouter')) {
+        e.preventDefault(); e.stopPropagation();
+        const slug = t.getAttribute('data-ajouter'), q = parseInt(t.getAttribute('data-quantite') || '1', 10), p = window.produit(slug);
+        P.ajouter(slug, q);
+        if (window.suivre && p) window.suivre('AddToCart', { content_ids: [slug], content_name: p.nom, value: p.prix || 0, currency: 'EUR' });
+        ouvrir(); return;
+      }
+      if (t.hasAttribute('data-panier-ouvrir')) { ouvrir(); return; }
+      if (t.hasAttribute('data-panier-fermer')) { fermer(); return; }
+      const l = P.lire();
+      const slug = t.getAttribute('data-panier-plus') || t.getAttribute('data-panier-moins') || t.getAttribute('data-panier-retirer');
+      const x = l.find(function (i) { return i.slug === slug; }); if (!x) return;
+      if (t.hasAttribute('data-panier-plus')) P.changer(slug, x.qte + 1);
+      else if (t.hasAttribute('data-panier-moins')) { if (x.qte > 1) P.changer(slug, x.qte - 1); else P.retirer(slug); }
+      else P.retirer(slug);
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !tiroir.classList.contains('invisible')) fermer(); });
+    document.addEventListener('panier', maj);
+    window.addEventListener('storage', function (e) { if (e.key === 'panier') maj(); });
+    maj();
+  }
+
 })();

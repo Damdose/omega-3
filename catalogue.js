@@ -139,7 +139,7 @@ window.carteProduit = (p) => `
       <p class="text-xs sm:text-sm text-nuit/60 mt-1">${p.detail}</p>
       <div class="mt-auto pt-4 flex items-center justify-between gap-2">
         <span class="text-base sm:text-lg">${window.prixTexte(p)}</span>
-        <span class="hidden sm:inline-flex items-center text-sm text-nuit/70 group-hover:text-nuit" aria-hidden="true">Voir&nbsp;→</span>
+        <button type="button" data-ajouter="${p.slug}" class="relative z-20 inline-flex items-center gap-1.5 h-9 px-3 rounded-full bg-nuit text-white text-[13px] hover:bg-glacier-600 transition-colors" aria-label="Ajouter ${p.nom} au panier"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="hidden sm:inline">Ajouter</span></button>
       </div>
     </div>
   </article>`;
@@ -147,3 +147,18 @@ window.carteProduit = (p) => `
 // Pas de coffrets de Noël sur le site (décision du 25/11) : rayon et produits retirés partout
 window.CATEGORIES = window.CATEGORIES.filter(function (c) { return c.id !== 'coffrets'; });
 window.PRODUITS = window.PRODUITS.filter(function (p) { return p.cat !== 'coffrets'; });
+
+// ============ Panier (gardé dans le navigateur ; paiement et livraison chez Eqology) ============
+window.PANIER = {
+  lire: function () { try { return JSON.parse(localStorage.getItem('panier') || '[]').filter(function (l) { return window.produit(l.slug); }); } catch (e) { return []; } },
+  ecrire: function (l) { try { localStorage.setItem('panier', JSON.stringify(l)); } catch (e) {} document.dispatchEvent(new CustomEvent('panier')); },
+  ajouter: function (slug, q) { var l = this.lire(), x = l.find(function (i) { return i.slug === slug; }); if (x) x.qte = Math.min(20, x.qte + (q || 1)); else l.push({ slug: slug, qte: q || 1 }); this.ecrire(l); },
+  changer: function (slug, q) { var l = this.lire(); l.forEach(function (i) { if (i.slug === slug) i.qte = Math.max(1, Math.min(20, q)); }); this.ecrire(l); },
+  retirer: function (slug) { this.ecrire(this.lire().filter(function (i) { return i.slug !== slug; })); },
+  vider: function () { this.ecrire([]); },
+  nombre: function () { return this.lire().reduce(function (n, i) { return n + i.qte; }, 0); },
+  total: function () { return this.lire().reduce(function (t, i) { var p = window.produit(i.slug); return t + (p && p.prix ? p.prix * i.qte : 0); }, 0); },
+  aPrixVariable: function () { return this.lire().some(function (i) { var p = window.produit(i.slug); return p && !p.prix; }); },
+  euros: function (n) { return n.toLocaleString('fr-FR', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }) + '\u00a0€'; },
+  texte: function () { return this.lire().map(function (i) { var p = window.produit(i.slug); return i.qte + ' × ' + p.nom + ' (' + window.prixTexte(p) + ')'; }).join('\n'); }
+};
