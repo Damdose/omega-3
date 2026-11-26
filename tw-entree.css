@@ -308,3 +308,7 @@ body.clair main > .hero .h1-page { font-size: clamp(2.2rem, 3.8vw, 3.25rem); }
 
 /* Le verre ne doit pas annuler une barre collante */
 .verre.sticky, .verre-nuit.sticky { position: sticky; }
+
+/* En-tête de la page d'atterrissage : place réservée */
+body[data-entete="lp"] > nav#entete { min-height: 100px; }
+@media (min-width: 1024px) { body[data-entete="lp"] > nav#entete { min-height: 108px; } }

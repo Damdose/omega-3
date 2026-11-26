@@ -116,10 +116,37 @@
     </div>`;
   }
 
+
+  // En-tête de la page d'atterrissage des pubs (data-entete="lp") : logo, téléphone, rappel. Aucune fuite.
+  function getNavLPPro() {
+    return `
+    <div class="bg-nuit text-white/85 text-[13px]">
+      <div class="wrap h-9 flex items-center justify-between gap-4">
+        <p class="truncate">Distributeur indépendant Eqology<span class="hidden sm:inline"> · Rappel sous 48 heures, sans engagement</span></p>
+        <a href="tel:+33675242626" class="shrink-0 hover:text-white">06 75 24 26 26</a>
+      </div>
+    </div>
+    <div class="entete-verre text-nuit">
+      <div class="wrap h-16 lg:h-[72px] flex items-center justify-between gap-4">
+        ${marque('#')}
+        <div class="flex items-center gap-3 sm:gap-5">
+          <a href="tel:+33675242626" class="hidden md:inline-flex items-center gap-2 text-[15px] hover:opacity-70"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>06 75 24 26 26</a>
+          <a href="#premier-pas" id="nav-cta" class="btn btn-plein !min-h-[44px]"><span>Être rappelé<span class="hidden sm:inline"> par Yves</span></span></a>
+        </div>
+      </div>
+    </div>`;
+  }
+
   function getFooterLP() {
-    return `<div class="wrap py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-cream-400">
-      <p>© 2026 ZENCO SAS · Yves Coignard, distributeur indépendant Eqology</p>
-      <div class="flex gap-5"><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a><a href="confidentialite.html" class="hover:text-white">Confidentialité</a></div>
+    return `<div class="wrap py-10 grid gap-6 text-sm text-white/65">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <img src="assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-[150px] h-auto" loading="lazy" width="1300" height="205">
+        <p class="max-w-[70ch] md:text-right">Yves Coignard est distributeur indépendant Eqology. Les revenus d'un partenaire dépendent de son activité&nbsp;: aucun revenu n'est garanti. Le plan de rémunération officiel d'Eqology est présenté avant tout engagement.</p>
+      </div>
+      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-3">
+        <p>© 2026 ZENCO SAS · SIREN 504 495 946</p>
+        <div class="flex gap-5"><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a><a href="confidentialite.html" class="hover:text-white">Confidentialité</a></div>
+      </div>
     </div>`;
   }
 
@@ -150,17 +177,18 @@
   // Inject nav and footer
   const nav = document.querySelector('nav#entete') || document.querySelector('nav.fixed');
   if (nav) {
-    const enteteBoutique = document.body.dataset.entete === 'boutique';
-    nav.innerHTML = enteteBoutique ? getNavBoutique() : getNav();
+    const mode = document.body.dataset.entete;
+    const enteteBoutique = mode === 'boutique' || mode === 'lp';
+    nav.innerHTML = mode === 'lp' ? getNavLPPro() : enteteBoutique ? getNavBoutique() : getNav();
     nav.className = enteteBoutique ? 'sticky top-0 z-50' : 'fixed top-0 inset-x-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5';
     if (nav.id === 'entete') {
       const main = document.querySelector('main');
-      if (main && !document.querySelector('[data-plein]') && document.body.dataset.entete !== 'boutique') main.style.paddingTop = '88px';
+      if (main && !document.querySelector('[data-plein]') && !document.body.dataset.entete) main.style.paddingTop = '88px';
     }
   }
 
   const footer = document.querySelector('body > footer');
-  if (footer) { footer.innerHTML = getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-nuit text-white border-t border-white/10 pt-16'; }
+  if (footer) { footer.innerHTML = document.body.dataset.entete === 'lp' ? getFooterLP() : getFooter(); if (nav && nav.id === 'entete') footer.className = 'bg-nuit text-white border-t border-white/10 pt-16'; }
   document.querySelectorAll('[data-trustpilot]').forEach(function (a) { if (window.SITE) a.href = window.SITE.trustpilot; });
 
   // Cookie consent banner

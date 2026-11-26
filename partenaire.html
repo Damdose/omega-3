@@ -13,11 +13,11 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261145">
-  <script src="site-config.js?v=202611261145"></script>
-  <script src="catalogue.js?v=202611261145"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611261245">
+  <script src="site-config.js?v=202611261245"></script>
+  <script src="catalogue.js?v=202611261245"></script>
 </head>
-<body class="clair" data-entete="boutique">
+<body class="clair" data-entete="lp">
   <nav id="entete" class="fixed top-0 inset-x-0 z-50"></nav>
 
   <main>
@@ -31,7 +31,7 @@
             <span id="profil-tag" class="oeil">Partenariat Eqology · distributeur indépendant</span>
             <h1 id="lp-titre" class="geant mt-6 max-w-[11ch] !text-[clamp(2.9rem,7.2vw,6.5rem)]">Un complément de revenu, <span class="points">sans stock.</span></h1>
             <p id="lp-sous-titre" class="mt-6 text-lg leading-snug max-w-[50ch]">Recommandez les oméga&#8209;3 norvégiens Eqology autour de vous. Vos clients commandent avec votre lien, Eqology les livre et vous verse une commission. À votre rythme, avec l'équipe d'Yves Coignard pour démarrer.</p>
-            <ul id="lp-rassure" class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/85"><li>✓ Sans engagement</li><li>✓ Aucun stock à acheter</li><li>✓ Vos coordonnées ne sont jamais revendues</li></ul>
+            <ul id="lp-rassure" class="hidden sm:flex mt-6 flex-wrap gap-x-6 gap-y-2 text-[15px] text-white/85"><li>✓ Sans engagement</li><li>✓ Aucun stock à acheter</li><li>✓ Vos coordonnées ne sont jamais revendues</li></ul>
           </div>
           <form id="premier-pas" class="rounded-lg bg-white text-nuit p-6 sm:p-7 shadow-2xl shadow-black/40" novalidate>
             <div id="pp-etape1">
@@ -44,6 +44,7 @@
                 <input name="pp_tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" class="h-11 rounded-md border border-nuit/20 px-3.5 bg-white focus:border-nuit focus:outline-none"></label>
               <button type="button" class="btn btn-plein w-full !min-h-[50px] mt-5" id="pp-suivant">Continuer</button>
               <p class="mt-3 text-xs text-nuit/70 text-center">Encore trois petites questions, puis c'est fini.</p>
+              <p class="mt-3 pt-3 border-t border-nuit/10 flex items-center justify-center gap-2 text-xs text-nuit/70"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Sans engagement · Données utilisées uniquement pour ce rappel</p>
             </div>
             <div id="pp-etape2" class="hidden">
               <p class="mono text-nuit/70">Étape 2 sur 2</p>
@@ -71,6 +72,17 @@
         </div>
       </div>
     </header>
+
+    <!-- Repères de confiance -->
+    <div class="wrap" aria-label="Repères sur la marque">
+      <ul class="grid grid-cols-2 lg:grid-cols-5 gap-px rounded-[14px] overflow-hidden border border-nuit/10 bg-nuit/10 text-[14px] text-nuit">
+        <li class="bg-white p-4 sm:p-5"><b class="block font-medium text-[18px]">Depuis 1998</b><span class="text-nuit/70">Eqology, fondée en Norvège</span></li>
+        <li class="bg-white p-4 sm:p-5"><b class="block font-medium text-[18px]">Europe</b><span class="text-nuit/70">Présente dans la plupart des pays</span></li>
+        <li class="bg-white p-4 sm:p-5"><b class="block font-medium text-[18px]">MSC</b><span class="text-nuit/70">Pêche durable certifiée</span></li>
+        <li class="bg-white p-4 sm:p-5"><b class="block font-medium text-[18px]">Laboratoire</b><span class="text-nuit/70">Test analysé de façon indépendante</span></li>
+        <li class="bg-white p-4 sm:p-5 col-span-2 lg:col-span-1 flex items-center"><a data-trustpilot href="https://fr.trustpilot.com/review/eqology.com" target="_blank" rel="noopener" class="inline-flex items-center gap-3 hover:opacity-80"><img src="assets/v2/trustpilot.webp" alt="Trustpilot" width="320" height="79" class="h-6 w-auto"><span class="text-[14px] text-nuit/70">Avis clients publics →</span></a></li>
+      </ul>
+    </div>
 
     <!-- Praticiens : le test comme outil -->
     <section data-pour="pro" class="hidden sec fond-2">
@@ -122,6 +134,7 @@
           <li class="carte p-7 sm:p-8"><div class="flex items-center justify-between"><p class="geant !text-6xl text-glacier-300">2</p><svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11L21 7H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></div><h3 class="h3 mt-6">Ils commandent chez Eqology</h3><p class="text-white/70 mt-2 leading-relaxed">Ils passent commande sur la boutique officielle avec votre lien. Eqology encaisse et livre chez eux.</p></li>
           <li class="carte p-7 sm:p-8"><div class="flex items-center justify-between"><p class="geant !text-6xl text-glacier-300">3</p><svg class="w-10 h-10 text-glacier-300" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4 4 0 1 0 0 7M7 11h6M7 13.5h6"/></svg></div><h3 class="h3 mt-6">Eqology vous verse une commission</h3><p class="text-white/70 mt-2 leading-relaxed">Eqology vous la verse sur chaque commande, y compris sur celles qui reviennent chaque mois avec un abonnement.</p></li>
         </ol>
+        <a href="#rappel" class="btn btn-plein mt-8">Être rappelé par Yves</a>
       </div>
     </section>
 
@@ -137,6 +150,23 @@
           <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/chez-soi.webp" srcset="assets/v2/chez-soi-800.webp 800w, assets/v2/chez-soi.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une femme lit tranquillement chez elle" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous cherchez un complément de revenu</h3><p class="text-white/65 mt-2 leading-relaxed">Actif ou retraité, vous avez quelques heures par semaine et un entourage. Vous travaillez depuis chez vous, sans horaires imposés.</p></div>
           <div><div class="relative rounded-xl overflow-hidden aspect-[4/3]"><img src="assets/v2/cliente.webp" srcset="assets/v2/cliente-800.webp 800w, assets/v2/cliente.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Une femme en tenue de sport au bord de la mer" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div><h3 class="h3 mt-5">Vous prenez déjà les produits</h3><p class="text-white/65 mt-2 leading-relaxed">Vous en parlez autour de vous sans y penser. Beaucoup de partenaires ont commencé comme clients.</p></div>
         </div>
+      </div>
+    </section>
+
+    <!-- Ce que vous recevez -->
+    <section id="accompagnement" class="sec scroll-mt-24">
+      <div class="wrap">
+        <div class="filet">
+          <span class="oeil">Accompagnement</span>
+          <h2 class="h2 mt-10 max-w-[20ch]">Ce que vous recevez pour démarrer.</h2>
+        </div>
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="carte p-6 sm:p-7"><svg class="w-8 h-8 text-glacier-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><h3 class="h3 mt-5">Votre lien de commande</h3><p class="text-white/70 mt-2 leading-relaxed">Une page de commande Eqology à votre nom. Chaque achat passé avec ce lien vous est attribué.</p></li>
+          <li class="carte p-6 sm:p-7"><svg class="w-8 h-8 text-glacier-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 9v5c0 1.5 2.2 3 5 3s5-1.5 5-3V9"/></svg><h3 class="h3 mt-5">Une formation</h3><p class="text-white/70 mt-2 leading-relaxed">Formations en ligne, guide pas à pas et supports de présentation fournis par Eqology.</p></li>
+          <li class="carte p-6 sm:p-7"><svg class="w-8 h-8 text-glacier-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3 3-4.6 5.5-4.6s4.7 1.6 5.5 4.6"/><path d="M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.3.7 2.1 2 2.5 4.2"/></svg><h3 class="h3 mt-5">Un parrain disponible</h3><p class="text-white/70 mt-2 leading-relaxed">Yves vous accompagne les premières semaines et répond à vos questions par téléphone.</p></li>
+          <li class="carte p-6 sm:p-7"><svg class="w-8 h-8 text-glacier-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/></svg><h3 class="h3 mt-5">Un outil concret</h3><p class="text-white/70 mt-2 leading-relaxed">Le test oméga&#8209;3 à domicile, pour engager la conversation sur un résultat mesuré.</p></li>
+        </ul>
+        <a href="#rappel" class="btn btn-plein mt-8">Être rappelé par Yves</a>
       </div>
     </section>
 
@@ -180,7 +210,6 @@
           <div>
             <span class="oeil">La marque</span>
             <h2 class="h2 mt-10 max-w-[18ch]">Pourquoi Eqology.</h2>
-            <a href="index.html" class="lien-fleche mt-8">Découvrir la marque</a>
             <div class="relative mt-10 rounded-xl overflow-hidden aspect-[3/2]"><img src="assets/v2/norvege.webp" srcset="assets/v2/norvege-800.webp 800w, assets/v2/norvege.webp 1600w" sizes="(min-width:768px) 33vw, 100vw" alt="Fjords enneigés de Norvège vus du ciel" class="absolute inset-0 w-full h-full object-cover" loading="lazy"></div>
           </div>
           <div>
@@ -321,8 +350,8 @@
   </div>
 
   <footer></footer>
-  <script src="components.js?v=202611261145"></script>
-  <script src="assets/v2/mecanismes.js?v=202611261145"></script>
+  <script src="components.js?v=202611261245"></script>
+  <script src="assets/v2/mecanismes.js?v=202611261245"></script>
   <script>
   (function () {
     // ---------- 1. La page suit la pub : ?cible=pro (praticiens), ?cible=visio, sinon complément de revenu ----------
@@ -366,6 +395,7 @@
       if (P.img) { var im = $('lp-img'); im.src = 'assets/v2/' + P.img + '.webp'; im.srcset = 'assets/v2/' + P.img + '-800.webp 800w, assets/v2/' + P.img + '.webp 1600w'; im.style.objectPosition = '50% 30%'; }
       if (P.bouton) {
         $('pp-bouton').textContent = P.bouton; $('barre-bouton').textContent = P.bouton;
+        if ($('nav-cta')) $('nav-cta').textContent = P.bouton;
         var bt = document.querySelector('#form-rappel button[type="submit"]'); if (bt) bt.textContent = P.bouton;
         $('rappel-titre').innerHTML = 'Réservez votre place <span class="points">à la visio.</span>';
         document.querySelectorAll('a[href="#rappel"]').forEach(function (a) { a.textContent = P.bouton; });
