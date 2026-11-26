@@ -388,7 +388,7 @@
           <figcaption class="mt-6 pt-4 border-t border-nuit/10 text-sm">
             <span class="font-medium">${a.nom}</span><span class="text-nuit/60"> · ${a.pays} · ${a.date}</span>
             ${a.note ? `<span class="block text-xs text-nuit/70 mt-0.5">${a.note}</span>` : ''}
-            <a href="${a.url}" target="_blank" rel="noopener" class="block mt-2 text-xs text-nuit/60 underline underline-offset-4 hover:text-nuit">Lire l'avis sur Trustpilot ↗</a>
+            <a href="${a.url}" target="_blank" rel="noopener" class="inline-block mt-1 py-2.5 text-xs text-nuit/60 underline underline-offset-4 hover:text-nuit">Lire l'avis sur Trustpilot ↗</a>
           </figcaption>
         </figure>`).join('')}
       </div>

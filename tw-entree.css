@@ -321,9 +321,23 @@ body[data-entete="lp"] > nav#entete { min-height: 100px; }
 
 /* Sur mobile, les rangées de cartes deviennent des carrousels qu'on fait glisser */
 @media (max-width: 767px) {
-  .rail-mobile { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin-inline: -20px; padding-inline: 20px; padding-bottom: 6px; scrollbar-width: none; }
+  .rail-mobile { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; gap: 12px; margin-inline: -20px; padding-inline: 20px; padding-bottom: 6px; scrollbar-width: none; }
   .rail-mobile::-webkit-scrollbar { display: none; }
   .rail-mobile > * { flex: 0 0 84%; scroll-snap-align: start; }
   .rail-mobile + .rail-indice, .rail-indice { display: flex; }
 }
 .rail-indice { display: none; align-items: center; gap: .5rem; margin-top: .75rem; font-size: 13px; opacity: .8; }
+
+/* ================= Téléphone : rythme plus serré, zones tactiles d'au moins 44 px ================= */
+@media (max-width: 767px) {
+  :root { --sec: 60px; }
+  .oeil + .h2.mt-10, .oeil + .h2-s.mt-10, .oeil + .h2.mt-8 { margin-top: 1.25rem; }
+  .filet ~ .mt-12, .filet ~ .mt-10 { margin-top: 1.75rem; }
+  .filet + .rail-mobile, .filet ~ .rail-mobile.mt-12 { margin-top: 1.75rem; }
+  .ariane a { display: inline-block; padding-block: 12px; margin-block: -12px; }
+  footer a { display: inline-block; padding-block: 10px; margin-block: -10px; }
+}
+@media (max-width: 767px) {
+  .lien-fleche { padding-block: 10px; margin-block: -10px; }
+  dd a[href^="tel:"], dd a[href^="mailto:"] { display: inline-block; padding-block: 10px; margin-block: -10px; }
+}

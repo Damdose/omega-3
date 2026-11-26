@@ -138,8 +138,8 @@ window.carteProduit = (p) => `
       <h3 class="text-[16px] sm:text-xl font-light leading-snug">${p.nom}</h3>
       <p class="text-xs sm:text-sm text-nuit/60 mt-1">${p.detail}</p>
       <div class="mt-auto pt-4 flex items-center justify-between gap-2">
-        <span class="text-base sm:text-lg">${window.prixTexte(p)}</span>
-        <button type="button" data-ajouter="${p.slug}" class="relative z-20 inline-flex items-center gap-1.5 h-9 px-3 rounded-full bg-nuit text-white text-[13px] hover:bg-glacier-600 transition-colors" aria-label="Ajouter ${p.nom} au panier"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="hidden sm:inline">Ajouter</span></button>
+        <span class="text-base sm:text-lg leading-tight">${p.prix ? window.prixTexte(p) : (p.parMois ? 'dès ' + p.parMois + '&nbsp;€<span class="block text-xs text-nuit/60">par mois</span>' : '<span class="text-sm">Prix chez Eqology</span>')}</span>
+        <button type="button" data-ajouter="${p.slug}" class="relative z-20 shrink-0 inline-flex items-center gap-1.5 h-10 sm:h-9 px-3 rounded-full bg-nuit text-white text-[13px] hover:bg-glacier-600 transition-colors" aria-label="Ajouter ${p.nom} au panier"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path stroke-linecap="round" d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="hidden sm:inline">Ajouter</span></button>
       </div>
     </div>
   </article>`;
