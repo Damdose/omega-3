@@ -1,53 +1,60 @@
 # Annonces Meta : recrutement de partenaires Eqology
 
-Objectif de campagne : **Prospects** (ou Ventes, avec conversion « Lead » sur le site).
-Conversion à optimiser : `Lead` (envoyé par le pixel 1114935464677335 sur merci.html, vérifié en production le 26/11/2026).
+Objectif de campagne : **Prospects**, conversion sur le site, événement `Lead` (pixel 1114935464677335, envoyé sur merci.html, vérifié en production le 26/11/2026). Conversion personnalisée de secours : « Demande de rappel » (1480872903511367).
 Bouton : **En savoir plus**. Visuels : `annonce-*-4x5.png` (fil), `annonce-*-9x16.png` (stories, reels).
+Page : « Yves Coignard · Distributeur indépendant Eqology » (1562178356968644). Compte pub : 1115842077938719. Annonceur et payeur : ZENCO SAS.
 
-Règles Meta à respecter : pas de montant de gain, pas de « revenu rapide », pas de question sur la situation financière ou la santé de la personne (« Besoin d'argent ? » est refusé).
+Budget : **30 € par jour**, réglé au niveau de chaque ensemble pour garder la priorité aux pros : **20 € pour A, 10 € pour B**. On ne touche à rien pendant 7 jours.
+
+Règles Meta à respecter : pas de montant de gain, pas de « revenu rapide », pas de phrase qui suppose la situation financière, la santé ou le métier de la personne (« Besoin d'argent ? », « Vous êtes fatigué ? » sont refusés).
 
 ---
 
-## Ensemble A : professionnels de santé au naturel
+## Ensemble A (prioritaire) : praticiens de santé et coachs sportifs
 
 Lien :
 `https://eqology-france.vercel.app/partenaire.html?cible=pro&utm_source=meta&utm_medium=paid&utm_campaign=partenaires-pro&utm_content=A1`
 
-Ciblage de départ : France, 28-65 ans, centres d'intérêt naturopathie, micronutrition, diététique, ostéopathie, médecine douce, nutrition.
+Ciblage : France, 25-65 ans. Meta ne cible plus par métier : on passe par les centres d'intérêt les plus proches, et le texte fait le tri.
+Intérêts : naturopathie, micronutrition, diététique, nutrition, ostéopathie, kinésithérapie, médecine douce, coaching sportif, préparation physique, entraîneur personnel, nutrition du sport.
+Visuels : `annonce-pro-4x5.png`, `annonce-pro-9x16.png`.
 
 **Texte principal**
-Vos patients vous demandent quels oméga‑3 choisir ? Avec Eqology, vous leur proposez d'abord un test sanguin à domicile, puis une huile de Norvège issue d'une pêche certifiée MSC.
+Praticiens de santé, coachs sportifs : on vous demande sûrement quels oméga‑3 prendre. Avec Eqology, vous proposez d'abord un test sanguin à domicile, puis une huile de Norvège issue d'une pêche certifiée MSC.
 
-Ils commandent seuls avec votre lien. Eqology encaisse, livre et vous verse une commission sur leurs commandes. Rien à vendre au cabinet, aucun stock.
+Vos patients ou vos sportifs commandent seuls avec votre lien. Eqology encaisse, livre et vous verse une commission sur leurs commandes. Rien à vendre, aucun stock.
 
 Votre kit de bienvenue de 99 € vous est remboursé, histoire de tester vous‑même les produits.
 
 Laissez votre numéro : un distributeur indépendant Eqology vous rappelle sous 48 h.
 
-**Titre** : Proposez Eqology à vos patients
+**Titre** : Proposez Eqology à vos patients et sportifs
 **Description** : Rappel sous 48 h, sans engagement
 
 ---
 
-## Ensemble B : grand public
+## Ensemble B : complément de revenus
 
 Lien :
-`https://eqology-france.vercel.app/partenaire.html?utm_source=meta&utm_medium=paid&utm_campaign=partenaires-public&utm_content=B1`
+`https://eqology-france.vercel.app/partenaire.html?utm_source=meta&utm_medium=paid&utm_campaign=partenaires-revenus&utm_content=B1`
 
-Ciblage de départ : France, 30-65 ans, centres d'intérêt compléments alimentaires, bien-être, alimentation saine, travail à domicile.
+Ciblage : France, 30-65 ans. Intérêts : compléments alimentaires, bien-être, alimentation saine, travail à domicile, entrepreneuriat.
+Visuels : `annonce-revenus-4x5.png`, `annonce-revenus-9x16.png`.
 
 **Texte principal**
-Vous parlez déjà d'oméga‑3 autour de vous ? Devenez partenaire Eqology : vos proches commandent avec votre lien, Eqology encaisse et livre, et vous touchez une commission sur leurs commandes.
+Devenez partenaire Eqology et développez un complément de revenus à votre rythme. Vos proches commandent avec votre lien, Eqology encaisse et livre, et vous touchez une commission sur leurs commandes.
 
-Pas de stock, pas de livraison, à votre rythme et depuis chez vous. Votre kit de bienvenue de 99 € vous est remboursé.
+Pas de stock, pas de livraison, tout se fait depuis chez vous. Votre kit de bienvenue de 99 € vous est remboursé.
 
 Le plan de rémunération officiel vous est présenté avant tout engagement. Aucun revenu n'est garanti.
 
-**Titre** : Devenez partenaire Eqology
+Laissez votre numéro : un distributeur indépendant Eqology vous rappelle sous 48 h.
+
+**Titre** : Un complément de revenus avec Eqology
 **Description** : Être rappelé sous 48 h
 
 ---
 
-## Variante de titre à tester (A et B)
-- Une commission sur chaque commande passée avec votre lien
-- Recommandez des oméga‑3 de Norvège
+## Variantes de titre à tester plus tard
+- A : Le test oméga‑3 pour vos patients et vos sportifs
+- B : Recommandez des oméga‑3 de Norvège

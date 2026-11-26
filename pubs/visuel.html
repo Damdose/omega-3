@@ -37,6 +37,7 @@ li::before { content: '✓'; flex-shrink: 0; width: 48px; height: 48px; border-r
 .produits img { height: 100%; max-height: 560px; width: auto; object-fit: contain; filter: drop-shadow(0 30px 40px rgba(11,29,46,.25)); }
 .produits img.p2 { margin-left: -90px; max-height: 470px; }
 .produits img.p3 { margin-left: -70px; max-height: 420px; }
+.mention { font-size: 22px; margin-top: 24px; opacity: .6; }
 .story .page { padding: 120px 80px 260px; }
 .story h1 { font-size: 112px; }
 </style>
@@ -48,17 +49,18 @@ var q = new URLSearchParams(location.search), v = q.get('v') || 'pro', f = q.get
 if (f === 'story') document.body.classList.add('story');
 var pied = function (blanc) { return '<div class="pied"><img src="../assets/' + (blanc ? 'v2/eqology-logo-blanc.png' : 'images/eqology-logo.png') + '" alt=""><span class="mono">Distributeur indépendant Eqology</span></div>'; };
 var html = v === 'pro'
-  ? '<div class="page nuit"><span class="oeil">Professionnels de santé au naturel</span>'
-    + '<h1>Proposez Eqology <em>à vos patients.</em></h1>'
+  ? '<div class="page nuit"><span class="oeil">Praticiens de santé et coachs sportifs</span>'
+    + '<h1>Proposez Eqology <em>à vos patients et à vos sportifs.</em></h1>'
     + '<p class="sous">Un test sanguin à domicile, des oméga‑3 de Norvège, une commission sur leurs commandes.</p>'
     + '<div class="photo"><img src="../assets/v2/praticienne.webp" style="object-position:50% 30%"><span class="badge">Kit de bienvenue de <b>99&nbsp;€ remboursé</b></span></div>'
-    + '<ul><li>Aucune vente au cabinet</li><li>Vos patients commandent seuls</li></ul>'
+    + '<ul><li>Rien à vendre, aucun stock</li><li>Ils commandent seuls avec votre lien</li></ul>'
     + pied(true) + '</div>'
   : '<div class="page sable"><span class="oeil">Partenariat Eqology</span>'
-    + '<h1>Recommandez des oméga‑3 <em>et touchez une commission.</em></h1>'
-    + '<p class="sous">Vos proches commandent avec votre lien. Eqology encaisse et livre.</p>'
+    + '<h1>Un complément de revenus <em>avec les oméga‑3 Eqology.</em></h1>'
+    + '<p class="sous">Vos proches commandent avec votre lien. Eqology encaisse, livre et vous verse une commission.</p>'
     + '<div class="produits"><img src="../assets/v2/produits/pure-arctic-oil.webp"><img class="p2" src="../assets/v2/produits/omega-3-test-kit.webp"><img class="p3" src="../assets/v2/produits/pure-vegan-oil.webp"></div>'
     + '<ul><li>Sans stock ni livraison</li><li>À votre rythme, depuis chez vous</li><li>Kit de bienvenue de 99&nbsp;€ remboursé</li></ul>'
+    + '<p class="mention">Aucun revenu n’est garanti. Le plan de rémunération officiel vous est présenté avant tout engagement.</p>'
     + pied(false) + '</div>';
 document.getElementById('racine').innerHTML = html;
 document.getElementById('racine').style.height = '100%';
