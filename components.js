@@ -356,4 +356,43 @@
     maj();
   }
 
+
+
+  // ============ Avis clients Eqology (Trustpilot, relevés le 26/11/2026, extraits non modifiés) ============
+  const AVIS = [
+    { nom: 'Odile', pays: 'Autriche', date: '21 janvier 2026', etoiles: 5, texte: "J'ai essayé plusieurs huiles de leur gamme et je les intègre très facilement à mes repas, car délicieuses.", url: 'https://fr.trustpilot.com/reviews/6970d5afdb0f2d2770d17967' },
+    { nom: 'Françoise V.', pays: 'Belgique', date: '19 janvier 2025', etoiles: 4, texte: "Service après vente très appréciable. Mr Wolanin a pu directement m'aider.", url: 'https://fr.trustpilot.com/reviews/678d16f788fd832eae353daa' },
+    { nom: 'MoRi', pays: 'Suisse', date: '19 novembre 2026', etoiles: 5, texte: "J'aime vraiment le goût.", note: "Traduit de l'anglais", url: 'https://www.trustpilot.com/reviews/6aff364aa3a53849c2acfa83' },
+  ];
+  const etoiles = (n) => '<span class="inline-flex gap-0.5" aria-label="' + n + ' étoiles sur 5">' + [1,2,3,4,5].map((i) => `<span class="w-5 h-5 grid place-items-center rounded-[3px] ${i <= n ? 'bg-[#00B67A]' : 'bg-nuit/15'}"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6z"/></svg></span>`).join('') + '</span>';
+  document.querySelectorAll('[data-avis]').forEach(function (el) {
+    const titre = el.getAttribute('data-avis') || "Ce que disent les clients d'Eqology.";
+    el.innerHTML = `
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div><span class="oeil">Avis clients</span><h2 class="h2 mt-6 max-w-[20ch]">${titre}</h2></div>
+        <a href="https://fr.trustpilot.com/review/eqology.com" target="_blank" rel="noopener" class="self-start lg:self-auto inline-flex items-center gap-3 rounded-full bg-white text-nuit border border-nuit/10 pl-4 pr-5 h-12 hover:-translate-y-0.5 transition-transform"><img src="assets/v2/trustpilot.webp" alt="Trustpilot" width="320" height="79" class="h-6 w-auto"><span class="text-[15px]">Tous les avis →</span></a>
+      </div>
+      <div class="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1fr_1fr_1fr]">
+        <div class="rounded-[14px] bg-nuit text-white p-6 sm:p-7 flex flex-col justify-between gap-6">
+          <div><p class="text-sm text-white/65">Sur Trustpilot, Eqology est noté</p><p class="text-3xl font-light mt-1">Excellent</p></div>
+          <dl class="grid gap-4">
+            <div><dt class="text-sm text-white/65">Avis publiés</dt><dd class="text-2xl font-light">1&nbsp;886</dd></div>
+            <div><dt class="text-sm text-white/65">Avis 5 étoiles</dt><dd class="text-2xl font-light">77&nbsp;%</dd></div>
+            <div><dt class="text-sm text-white/65">Avis sur les 12 derniers mois</dt><dd class="text-2xl font-light">862</dd></div>
+          </dl>
+        </div>
+        ${AVIS.map((a) => `
+        <figure class="rounded-[14px] bg-white text-nuit border border-nuit/10 p-6 sm:p-7 flex flex-col">
+          ${etoiles(a.etoiles)}
+          <blockquote class="mt-5 text-[17px] leading-relaxed flex-1">« ${a.texte} »</blockquote>
+          <figcaption class="mt-6 pt-4 border-t border-nuit/10 text-sm">
+            <span class="font-medium">${a.nom}</span><span class="text-nuit/60"> · ${a.pays} · ${a.date}</span>
+            ${a.note ? `<span class="block text-xs text-nuit/55 mt-0.5">${a.note}</span>` : ''}
+            <a href="${a.url}" target="_blank" rel="noopener" class="block mt-2 text-xs text-nuit/60 underline underline-offset-4 hover:text-nuit">Lire l'avis sur Trustpilot ↗</a>
+          </figcaption>
+        </figure>`).join('')}
+      </div>
+      <p class="mt-4 text-xs opacity-60">Avis publics sur la marque Eqology, relevés sur Trustpilot le 26 novembre 2026. Extraits non modifiés.</p>`;
+  });
+
 })();
