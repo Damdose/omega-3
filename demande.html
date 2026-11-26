@@ -10,9 +10,9 @@
   <meta name="facebook-domain-verification" content="iyex3clb7aciozwuicu7trhyxu4wam" />
   <link rel="icon" href="assets/images/eqology-eq.png">
   <link rel="preload" href="assets/fonts/albertsans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611262315">
-  <script src="site-config.js?v=202611262315"></script>
-  <script src="catalogue.js?v=202611262315"></script>
+  <link rel="stylesheet" href="assets/v2/site-tw.css?v=202611271000">
+  <script src="site-config.js?v=202611271000"></script>
+  <script src="catalogue.js?v=202611271000"></script>
 </head>
 <body class="clair min-h-screen flex flex-col">
   <header class="wrap w-full h-16 sm:h-20 flex items-center justify-between gap-4 shrink-0">
@@ -47,7 +47,7 @@
     </aside>
   </main>
 
-  <script src="components.js?v=202611262315"></script>
+  <script src="components.js?v=202611271000"></script>
   <script>
   (function () {
     var $ = function (id) { return document.getElementById(id); };
@@ -71,8 +71,8 @@
       });
     }
     var ETAPES = ['profil', 'volume', 'interet', 'connait', 'contact'], REP = {}, etape = 0, premierPas = false;
-    var Q1 = [['Praticien de santé', 'Naturopathe, diététicien, kiné, ostéopathe…'], ['Coach ou professionnel du bien-être', ''], ['Particulier', 'En activité ou à la retraite']];
-    function estPro() { return /^(Praticien|Coach)/.test(REP.profil || ''); }
+    var Q1 = [['Professionnel de santé au naturel', 'Micronutrition, diététique, kiné, ostéopathie…'], ['Coach ou professionnel du bien-être', ''], ['Particulier', 'En activité ou à la retraite']];
+    function estPro() { return /^(Professionnel de santé|Coach)/.test(REP.profil || ''); }
     function question(id) {
       if (id === 'profil') return { titre: 'Vous êtes…', aide: 'Yves adapte son appel à votre situation.', choix: Q1.map(function (x) { return x[0]; }), sous: Q1.map(function (x) { return x[1]; }) };
       if (id === 'volume') return estPro()
@@ -140,7 +140,7 @@
       if (tel.length < 10) return dit('Indiquez un numéro de téléphone complet.');
       if (!f.accord.checked) return dit("Cochez la case pour accepter d'être rappelé.");
       envoyer({ prenom: f.prenom.value.trim(), name: f.prenom.value.trim(), phone: f.tel.value, email: f.email.value, creneau: f.creneau.value,
-        profil: /^Praticien/.test(REP.profil || '') ? 'Professionnel de santé' : /^Coach/.test(REP.profil || '') ? 'Professionnel du bien-être' : 'Particulier',
+        profil: /^Professionnel de santé/.test(REP.profil || '') ? 'Professionnel de santé au naturel' : /^Coach/.test(REP.profil || '') ? 'Professionnel du bien-être' : 'Particulier',
         metier: REP.profil || '', volume: REP.volume || '', interet: REP.interet || '', connait: REP.connait || '' }, f.querySelector('button[type="submit"]'), dit);
     });
     // Réponse déjà donnée sur la page partenaire (?q1=0..3)

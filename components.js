@@ -142,7 +142,7 @@
     return `<div class="wrap py-10 grid gap-6 text-sm text-white/65">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-5">
         <img src="assets/v2/eqology-logo-blanc.png" alt="Eqology" class="w-[150px] h-auto" loading="lazy" width="1300" height="205">
-        <p class="max-w-[70ch] md:text-right">Yves Coignard est distributeur indépendant Eqology. Les revenus d'un partenaire dépendent de son activité&nbsp;: aucun revenu n'est garanti. Le plan de rémunération officiel d'Eqology est présenté avant tout engagement.</p>
+        <p class="max-w-[70ch] md:text-right">Distributeur indépendant Eqology. Les revenus d'un partenaire dépendent de son activité&nbsp;: aucun revenu n'est garanti. Le plan de rémunération officiel d'Eqology est présenté avant tout engagement.</p>
       </div>
       <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-3">
         <p>© 2026 ZENCO SAS · SIREN 504 495 946</p>
