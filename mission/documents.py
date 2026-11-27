@@ -21,12 +21,15 @@ LOGO_CLAIR = 'data:image/svg+xml;base64,' + base64.b64encode(open(f'{ASSETS}/hey
 
 EMETTEUR = ['SASU au capital de 1 000 €', '138 avenue Victor Hugo, 75116 Paris', 'RCS Paris 131 975 054',
             'SIRET 131 975 054 00019 · NAF 6201Z', 'TVA FR80131975054']
-CLIENT = ['29 boulevard de la Muette', '95140 Garges-lès-Gonesse', 'SIREN 504 495 946', 'TVA FR51504495946',
-          'À l’attention de M. Yves Coignard, co-président']
+# Damien, 27/11 : facture au nom de YAC (SAS, SIREN 840 255 889, président Yves Coignard, registre consulté le 27/11) au lieu de ZENCO.
+# TVA calculée à partir du SIREN (clé FR64). Ancien client : ZENCO SAS, 29 boulevard de la Muette, 95140 Garges-lès-Gonesse, SIREN 504 495 946.
+CLIENT_NOM = 'YAC SAS'
+CLIENT = ['25 rue Cino del Duca', '75017 Paris', 'SIREN 840 255 889', 'TVA FR64840255889',
+          'À l’attention de M. Yves Coignard, président']
 
 LIGNES = [
     ('1. Solution agent Ads Meta : développement, paramétrage et mise en service',
-     'Développement et paramétrage de l’agent logiciel pour ZENCO, connexion technique au compte publicitaire Meta, '
+     'Développement et paramétrage de l’agent logiciel pour YAC, connexion technique au compte publicitaire Meta, '
      'au site et au suivi des conversions (pixel et API de conversions), mise en service.', 1500),
     ('2. Conception et développement du site e-commerce',
      'Page « Rejoindre l’équipe » avec formulaire et prise de rendez-vous en ligne, catalogue produits avec liens partenaire, '
@@ -102,7 +105,7 @@ def doc(titre, corps):
 def parties(titre_client, president=False):
     em = EMETTEUR + (['Président : Damien Tamazout'] if president else [])
     return (f'<div class="deux"><div class="carte"><div class="k">Émis par</div><p><b>TAM LABS</b>{"<br>".join(em)}</p></div>'
-            f'<div class="carte"><div class="k">{titre_client}</div><p><b>ZENCO SAS</b>{"<br>".join(CLIENT)}</p></div></div>')
+            f'<div class="carte"><div class="k">{titre_client}</div><p><b>{CLIENT_NOM}</b>{"<br>".join(CLIENT)}</p></div></div>')
 
 
 def devis():
@@ -129,7 +132,7 @@ def devis():
           'Le budget publicitaire se paie directement à Meta par le client : il n’est pas facturé par Tam Labs. '
           'À partir du deuxième mois, en option : abonnement solution agent Ads (licence, hébergement, maintenance), 500 € HT par mois, sans engagement.</p>')
     c += ('<div class="signature"><div class="carte">Pour TAM LABS<br>Damien Tamazout, président</div>'
-          '<div class="carte">Pour ZENCO SAS<br>Date, signature et mention « Bon pour accord »</div></div>')
+          f'<div class="carte">Pour {CLIENT_NOM}<br>Date, signature et mention « Bon pour accord »</div></div>')
     c += f'<div class="pied">{PIED_TXT}</div></div>'
     return doc(f'Devis {DEVIS}', c)
 
@@ -180,8 +183,7 @@ def avoir():
 
 
 DOCUMENTS = [
-    (f'Devis {DEVIS} TAM LABS ZENCO.pdf', devis()),
-    (f'Facture {FACTURE} TAM LABS ZENCO (acompte).pdf', facture()),
+    (f'Facture {FACTURE} TAM LABS YAC (acompte).pdf', facture()),   # 27/11 : seule la facture passe à YAC, le devis reste tel quel
 ]
 
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'

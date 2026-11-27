@@ -10,6 +10,13 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Albert Sans', sans-serif; font-weight: 300; letter-spacing: -0.02em; }
 body.story { height: 1920px; }
+body.li { width: 1200px; height: 1200px; }
+.li .page { padding: 64px 72px; }
+.li h1 { font-size: 92px; margin-top: 28px; }
+.li ul { margin-top: 28px; gap: 12px; font-size: 30px; }
+.li .pied { margin-top: 28px; padding-top: 24px; }
+.li .frise { margin-top: 28px; }
+.li .photo { margin-top: 32px; }
 #racine { height: 100%; }
 .page { position: relative; width: 100%; height: 100%; padding: 72px; display: flex; flex-direction: column; overflow: hidden; }
 .story .page { padding: 150px 80px 300px; }
@@ -62,6 +69,8 @@ li::before { content: '✓'; flex-shrink: 0; width: 46px; height: 46px; border-r
 <script>
 var q = new URLSearchParams(location.search), c = q.get('c') || 'cures', f = q.get('f') || 'carre';
 if (f === 'story') document.body.classList.add('story');
+// LinkedIn (r=li, 1200×1200) : pas de « commission », on parle de rétribution de suivi et du parrain (Yves, 27/11)
+var li = q.get('r') === 'li'; if (li) document.body.classList.add('li');
 var oeil = '<span class="oeil">Praticiens de santé au naturel</span>';
 var pied = function (blanc) { return '<div class="pied"><img src="../assets/' + (blanc ? 'v2/eqology-logo-blanc.png' : 'images/eqology-logo.png') + '" alt=""><span class="mono">Distributeur indépendant Eqology</span></div>'; };
 var P = {
@@ -74,19 +83,21 @@ var P = {
     +   '<div class="etape fort"><span class="n">Pendant</span><b>La cure</b><span>huile de Norvège, pêche certifiée MSC</span></div>'
     +   '<div class="etape"><span class="n">Après</span><b>Le second test</b><span>pour voir où il en est</span></div>'
     + '</div>'
-    + '<p class="note">Vos patients commandent seuls avec votre lien. Vous touchez une commission sur chaque commande.</p>'
+    + (li ? '<p class="note">Vos patients commandent seuls avec votre lien. Un parrain vous accompagne tout au long du parcours, avec tutoriels et supports.</p>'
+         : '<p class="note">Vos patients commandent seuls avec votre lien. Vous touchez une commission sur chaque commande.</p>')
     + pied(true) + '</div>',
   // 2 · Le test : la science d'abord
   test: '<div class="page sable">' + oeil
     + '<h1>Mesurez avant <em>de conseiller.</em></h1>'
     + '<p class="sous">Un test sanguin à domicile donne à vos patients leur équilibre <span style="white-space:nowrap">oméga‑6 / oméga‑3</span> avant la cure.</p>'
     + '<div class="photo"><img src="../assets/v2/echange.webp" style="object-position:40% 50%"><span class="badge">Kit de bienvenue de <b>99&nbsp;€ remboursé</b></span></div>'
-    + '<ul><li>Prélèvement au bout du doigt, chez eux</li><li>Analysé par un laboratoire indépendant</li></ul>'
+    + '<ul><li>Prélèvement au bout du doigt, chez eux</li><li>Analysé par un laboratoire indépendant</li>' + (li ? '<li>Un parrain vous accompagne, tutoriels et supports</li>' : '') + '</ul>'
     + pied(false) + '</div>',
   // 3 · Le cabinet : l'objection « je ne veux pas vendre »
   cabinet: '<div class="page plein"><div class="fond"><img src="../assets/v2/praticienne.webp"></div><div class="contenu">' + oeil
     + '<h1>Vous conseillez. <em>Eqology encaisse et livre.</em></h1>'
-    + '<ul><li>Aucun stock, aucun paiement au cabinet</li><li>Une commission sur chaque commande</li><li>Kit de bienvenue de 99&nbsp;€ remboursé</li></ul>'
+    + (li ? '<ul><li>Aucun stock, aucun paiement au cabinet</li><li>Une rétribution de suivi sur leurs commandes</li><li>Un parrain vous accompagne tout au long du parcours</li></ul>'
+         : '<ul><li>Aucun stock, aucun paiement au cabinet</li><li>Une commission sur chaque commande</li><li>Kit de bienvenue de 99&nbsp;€ remboursé</li></ul>')
     + pied(true) + '</div></div>'
 };
 document.getElementById('racine').innerHTML = P[c] || P.cures;
