@@ -160,6 +160,30 @@ def facture():
     return doc(f'Facture {FACTURE}', c)
 
 
+def facture_globale():
+    """27/11, Damien : une seule facture pour toute la prestation (site + agent Ads), au nom de YAC, au lieu de l'acompte de 50 %."""
+    ht = TOTAL_HT; tva = round(ht * 0.2, 2); ttc = ht + tva
+    lignes = ''.join(f'<tr><td><span class="t">{t}</span><span class="d">{d}</span></td><td class="n">1</td><td class="n">{euros(p, True)}</td>'
+                     f'<td class="n">20 %</td><td class="n">{euros(p, True)}</td></tr>' for t, d, p in LIGNES)
+    c = '<div class="page">'
+    c += (f'<div class="tete"><div><img class="logo" src="{LOGO}" alt="heyfuture"><div class="contact">heyfuture.fr · 07 60 55 40 00<br>damien.tamazout@gmail.com</div></div>'
+          '<h1>Facture</h1></div>')
+    c += (f'<div class="carte meta meta--4"><div><div class="k">N° de facture</div><div class="v">{FACTURE}</div></div>'
+          f'<div><div class="k">Émise le</div><div class="v">{DATE}</div></div><div><div class="k">Échéance</div><div class="v">À réception</div></div>'
+          f'<div><div class="k">Devis</div><div class="v">{DEVIS}</div></div></div>')
+    c += parties('Facturée à', president=True)
+    c += ('<div class="carte carte--tab"><table><thead><tr><th>Désignation</th><th class="n">Qté</th><th class="n">P.U. HT</th><th class="n">TVA</th><th class="n">Total HT</th></tr></thead>'
+          f'<tbody>{lignes}</tbody></table></div>')
+    c += ('<div class="bas"><div class="carte rib"><div class="k">Règlement par virement</div><p>Titulaire : TAM LABS<br>Banque : Qonto<br>'
+          'IBAN : <b>FR76 1695 8000 0152 9635 4169 030</b><br>BIC : <b>QNTOFRP1XXX</b></p></div>'
+          f'<div class="total"><div><span>Total HT</span><span>{euros(ht, True)}</span></div><div><span>TVA 20 %</span><span>{euros(tva, True)}</span></div>'
+          f'<div class="ttc"><span>Total TTC</span><span>{euros(ttc, True)}</span></div></div></div>')
+    c += (f'<p class="note">Période de la prestation : {PERIODE} · Catégorie de l’opération : prestation de services.<br>'
+          'Le budget publicitaire se paie directement à Meta par le client : il n’est pas facturé par Tam Labs.</p>')
+    c += f'<div class="pied">{PIED_TXT}</div></div>'
+    return doc(f'Facture {FACTURE}', c)
+
+
 def avoir():
     ht = -ACOMPTE_HT; tva = round(ht * 0.2, 2); ttc = ht + tva
     c = '<div class="page">'
@@ -183,7 +207,7 @@ def avoir():
 
 
 DOCUMENTS = [
-    (f'Facture {FACTURE} TAM LABS YAC (acompte).pdf', facture()),   # 27/11 : seule la facture passe à YAC, le devis reste tel quel
+    (f'Facture {FACTURE} TAM LABS YAC.pdf', facture_globale()),   # 27/11 : facture globale au nom de YAC (plus d'acompte) ; le devis reste tel quel
 ]
 
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
